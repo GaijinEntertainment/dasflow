@@ -1,0 +1,33 @@
+{
+  "name": "dasflow",
+  "version": "0.0.1",
+  "description": "dascript nodes editor",
+  "main": "index.js",
+  "keywords": [
+    "dascript"
+  ],
+  "author": "Dima Granetchi",
+  "license": "MIT",
+  "devDependencies": {
+    "css-loader": "^6.5.1",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.4.5",
+    "ts-loader": "^9.2.6",
+    "typescript": "^4.5.3",
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.6.0"
+  },
+  "scripts": {
+    "start": "webpack serve --port 3000",
+    "build": "NODE_ENV=production webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "rete": "^1.4.5",
+    "rete-connection-plugin": "^0.9.0",
+    "rete-vue-render-plugin": "0.5.1",
+    "rete-context-menu-plugin": "0.6.0",
+    "vue": "^2.6.14"
+  }
+}
