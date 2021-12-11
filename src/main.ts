@@ -33,7 +33,7 @@ import './sockets.css'
         },
     })
 
-    const engine = new Rete.Engine('demo@0.1.0');
+    const engine = new Rete.Engine('demo@0.1.0')
 
     comps.forEach(it => {
             editor.register(it)
@@ -41,10 +41,10 @@ import './sockets.css'
         }
     )
 
-    const n1 = await floatComp.createNode({value: 2});
+    const n1 = await floatComp.createNode({value: 2})
     n1.position = [200, 200]
     editor.addNode(n1)
-    const n2 = await floatComp.createNode({value: 3});
+    const n2 = await floatComp.createNode({value: 3})
     n2.position = [0, 200]
     editor.addNode(n2)
     const fn = await functionComp.createNode({name: "foobar"})
@@ -58,7 +58,7 @@ import './sockets.css'
     editor.on(['process', 'nodecreated', 'noderemoved', 'connectioncreated', 'connectionremoved'], async () => {
         await engine.abort()
         await engine.process(editor.toJSON())
-    });
+    })
 
     editor.view.resize()
 

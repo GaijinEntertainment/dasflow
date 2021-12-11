@@ -53,7 +53,7 @@ const VueLabelControl = {
         update() {
             if (this.ikey)
                 this.putData(this.ikey, this.value)
-            this.emitter.trigger('process');
+            this.emitter.trigger('process')
         }
     },
     mounted() {
@@ -92,7 +92,7 @@ const VueNumControl = {
         update() {
             if (this.ikey)
                 this.putData(this.ikey, this.value)
-            this.emitter.trigger('process');
+            this.emitter.trigger('process')
         }
     },
     mounted() {
@@ -140,7 +140,7 @@ export abstract class TopLevelDasComponent extends DasComponent {
 
 export class FloatLet extends DasComponent {
     constructor() {
-        super('FloatLet');
+        super('FloatLet')
     }
 
     async builder(node) {
@@ -165,7 +165,7 @@ export class FloatLet extends DasComponent {
 
 export class Debug extends DasComponent {
     constructor() {
-        super('Debug');
+        super('Debug')
     }
 
     async builder(node) {
