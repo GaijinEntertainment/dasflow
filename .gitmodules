@@ -1,0 +1,3 @@
+[submodule "server/dasweb"]
+	path = server/dasweb
+	url = git@github.com:profelis/das-web.git
