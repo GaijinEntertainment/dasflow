@@ -210,8 +210,11 @@ export class Function extends TopLevelDasComponent {
         ctx.writeLine(`def ${node.data.name}()`)
         ctx.indenting += "\t"
 
-        if (!traverseFlowOut(node, ctx))
+        const res = traverseFlowOut(node, ctx)
+        ctx.indenting = ""
+        if (!res)
             return ctx.addError(node, 'function without body')
+        ctx.writeLine("")
         return true
     }
 
