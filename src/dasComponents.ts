@@ -12,7 +12,7 @@ boolType.combineWith(anyType)
 const flowSocket = new Rete.Socket('execution-flow')
 
 function addFlowIn(node: Node) {
-    let flowIn = new Rete.Input('fin', '', flowSocket)
+    let flowIn = new Rete.Input('fin', '', flowSocket, false)
     node.addInput(flowIn)
 }
 
@@ -121,6 +121,8 @@ class NumControl extends Rete.Control {
 // ------ components
 
 export abstract class DasComponent extends Rete.Component {
+    lazyInit = false
+
     protected constructor(name: string) {
         super(name)
     }
@@ -141,11 +143,11 @@ export abstract class TopLevelDasComponent extends DasComponent {
 export class FloatLet extends DasComponent {
     constructor() {
         super('FloatLet')
+        this.lazyInit = true
     }
 
     async builder(node) {
-        addFlowInOut(node)
-        let out = new Rete.Output('result', 'Value', floatType)
+        let out = new Rete.Output('result', 'Value', floatType, true)
 
         node.addOutput(out)
         node.addControl(new NumControl(this.editor, 'value'))
@@ -157,11 +159,21 @@ export class FloatLet extends DasComponent {
 
     writeDas(node, ctx) {
         ctx.writeLine(`let ${ctx.nodeId(node)} = ${node.data.value}`)
-        traverseFlowOut(node, ctx)
         return true
     }
 }
 
+
+function autoInit(inNode: Node, ctx: WriteDasCtx) {
+    if (ctx.isLazyInited(inNode))
+        return
+    let component = <DasComponent>ctx.editor.components.get(inNode.name)
+    if (!component.lazyInit)
+        return
+
+    ctx.setIsLazyInit(inNode)
+    component.writeDas(inNode, ctx)
+}
 
 export class Debug extends DasComponent {
     constructor() {
@@ -189,6 +201,7 @@ export class Debug extends DasComponent {
         let inNode = inValue.connections[0].output.node
         if (!inNode)
             return ctx.addError(node, 'input expected')
+        autoInit(inNode, ctx)
         ctx.writeLine(`debug(${ctx.nodeId(inNode)})`)
         traverseFlowOut(node, ctx)
         return true
@@ -211,9 +224,9 @@ export class Function extends TopLevelDasComponent {
         ctx.indenting += "\t"
 
         const res = traverseFlowOut(node, ctx)
-        ctx.indenting = ""
         if (!res)
-            return ctx.addError(node, 'function without body')
+            ctx.writeLine("pass")
+        ctx.indenting = ""
         ctx.writeLine("")
         return true
     }
@@ -228,6 +241,7 @@ export class WriteDasCtx {
     indenting = ""
     code = ""
     errors = new Map<number, string[]>()
+    lazyInited = new Set<number>()
 
     constructor(editor: NodeEditor) {
         this.editor = editor
@@ -264,5 +278,13 @@ export class WriteDasCtx {
 
     nodeId(node: Node) {
         return `_${node.id}`
+    }
+
+    isLazyInited(node: Node): boolean {
+        return this.lazyInited.has(node.id)
+    }
+
+    setIsLazyInit(node: Node) {
+        this.lazyInited.add(node.id)
     }
 }

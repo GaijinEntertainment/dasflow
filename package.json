@@ -29,6 +29,7 @@
     "rete-vue-render-plugin": "0.5.1",
     "rete-context-menu-plugin": "0.6.0",
     "vue": "^2.6.14",
-    "jsonrpc-client-websocket": "^1.5.1"
+    "jsonrpc-client-websocket": "^1.5.1",
+    "sub-events": "^1.8.9"
   }
 }

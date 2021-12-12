@@ -3,9 +3,14 @@ import {NodeEditor} from "rete/types/editor"
 import {TopLevelDasComponent, WriteDasCtx} from "./dasComponents"
 
 
-export namespace EditorRpc {
+export namespace FilesRpc {
+    export async function list(ws: JsonRpcWebsocket): Promise<string[]> {
+        let res = await ws.call('files.list')
+        return <string[]>res.result
+    }
+
     export async function load(ws: JsonRpcWebsocket, editor: NodeEditor, path: string): Promise<boolean> {
-        let res = await ws.call('editor.load', path)
+        let res = await ws.call('files.load', path)
         const str = String(res.result)
         try {
             const data = JSON.parse(str)
@@ -18,7 +23,7 @@ export namespace EditorRpc {
 
     export async function save(ws: JsonRpcWebsocket, editor: NodeEditor, path: string): Promise<boolean> {
         const data = JSON.stringify(editor.toJSON())
-        const res = await ws.call('editor.save', [path, data])
+        const res = await ws.call('files.save', [path, data])
         return !!res.result
     }
 }

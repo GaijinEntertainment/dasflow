@@ -1,3 +1,5 @@
+import './sockets.css'
+
 import Rete from "rete"
 import ConnectionPlugin from 'rete-connection-plugin'
 import VueRenderPlugin from 'rete-vue-render-plugin'
@@ -6,14 +8,12 @@ import {JsonRpcError, JsonRpcWebsocket} from "jsonrpc-client-websocket"
 
 import {Debug, FloatLet, Function} from "./dasComponents"
 
-import './sockets.css'
-import {DasRpc, EditorRpc} from "./rpc"
+import {DasRpc} from "./rpc"
+import {DasflowContext} from "./dasflow"
 
 
 (async function () {
 
-    const DEFAULT_FLOW = 'default.dasflow'
-    const EDITOR_VER = 'dasflow@0.0.1'
 
     const websocket = new JsonRpcWebsocket("ws://localhost:9000", 2000,
         (error: JsonRpcError) => {
@@ -21,12 +21,68 @@ import {DasRpc, EditorRpc} from "./rpc"
         })
 
     const container: HTMLElement | null = document.querySelector('#rete')
-    const editor = new Rete.NodeEditor(EDITOR_VER, <HTMLElement>container)
+    const ctx = new DasflowContext(websocket)
+    const editor = new Rete.NodeEditor(ctx.EDITOR_VER, <HTMLElement>container)
+    ctx.editor = editor
 
     const floatComp = new FloatLet()
     const debugComp = new Debug()
     const functionComp = new Function()
     const comps = [floatComp, debugComp, functionComp]
+
+    const defaultFileMenu = {
+        reload() {
+            ctx.reload()
+
+        },
+        save() {
+            ctx.save()
+        },
+        close() {
+            ctx.close()
+        },
+    }
+    const currentFileMenu = {}
+
+    const filesMenu = {
+        'current file': currentFileMenu,
+        // create() {
+        //     throw "not implemented" // TODO:
+        // }
+    }
+    const filePrefix = './'
+    const refreshFilesList = () => {
+        ctx.refreshFilesList().then((files) => {
+            for (const k in Object.keys(filesMenu)) {
+                if (k.startsWith(filePrefix))
+                    delete filesMenu[k]
+            }
+            if (!files)
+                return
+            for (const fn of files)
+                filesMenu[`${filePrefix}${fn}`] = {
+                    load() {
+                        ctx.loadFile(fn)
+                    },
+                }
+        })
+    }
+    filesMenu['refresh list'] = refreshFilesList
+
+    ctx.onCurrentNameChange.subscribe((val) => {
+        for (let key of Object.keys(currentFileMenu)) {
+            delete currentFileMenu[key]
+        }
+        if (val != "") {
+            currentFileMenu[val] = function () {
+            }
+            for (const [k, v] of Object.entries(defaultFileMenu))
+                currentFileMenu[k] = v
+        } else {
+            currentFileMenu["<no file>"] = function () {
+            }
+        }
+    })
 
     editor.use(ConnectionPlugin)
     editor.use(VueRenderPlugin)
@@ -35,21 +91,11 @@ import {DasRpc, EditorRpc} from "./rpc"
             'log dascript'() {
                 DasRpc.compile(websocket, editor)
             },
-            files: {
-                load() {
-                    EditorRpc.load(websocket, editor, DEFAULT_FLOW)
-                },
-                save() {
-                    EditorRpc.save(websocket, editor, DEFAULT_FLOW)
-                },
-            },
+            files: filesMenu
         },
-        // allocate(component) {
-        //     return component.name
-        // },
     })
 
-    const engine = new Rete.Engine(EDITOR_VER)
+    const engine = new Rete.Engine(ctx.EDITOR_VER)
 
     comps.forEach(it => {
             editor.register(it)
@@ -79,6 +125,19 @@ import {DasRpc, EditorRpc} from "./rpc"
     editor.view.resize()
     editor.trigger('process')
 
+
+    websocket['onError'] = (err) => {
+        if (err?.data.type === "close") {
+            const delay = 200
+            console.log(`socket was closed, reopen in ${delay}ms`, err)
+            setTimeout(async () => {
+                let res = await websocket.open()
+                console.log('websocket reopened?', res)
+            }, delay)
+        }
+    }
+
     await websocket.open()
-    await EditorRpc.load(websocket, editor, DEFAULT_FLOW)
+    refreshFilesList()
+    await ctx.firstStart()
 })()
