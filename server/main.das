@@ -1,8 +1,6 @@
 require strings
 
-require dasweb/web_debug_server
-require dasweb/jsonrpc_handler
-require dasweb/jsonrpc_args
+require dasweb/web_server_debug
 require dasweb/jsonrpc_boost
 
 require fio
@@ -18,6 +16,7 @@ def main ()
     compilerPath = args[0]
 
     server = new WebServer()
+    // server.debugLogs = true
     jsonRpc = new JsonRpcHandler()
 
     jsonRpc->addCall("das.execute", new MFunctionRpcCall(@@das_execute))
@@ -29,33 +28,37 @@ def main ()
     return run_debug_server(server)
 
 
+def send_serponse(var data: JsonValue?; id: uint64)
+    jsonRpc->sendResponse(server, data, id)
+
+
 [rpc_call]
 def editor_load(path: string; id: uint64)
     print("< req load data `{path}`\n")
 
-    var res = false
+    var ok = false
     fopen(path, "rb") <| $(f)
         if f != null
             f |> fread <| $(data)
-                res = true
-                jsonRpc->sendResponse(server, JV("{data}"), id)
-    if !res
-        jsonRpc->sendResponse(server, JV(null), id)
+                ok = true
+                send_serponse(JV("{data}"), id)
+    if !ok
+        send_serponse(JV(null), id)
 
 
 [rpc_call]
 def editor_save(path: string; data: string; id: uint64)
     print("< req run save data `{path}`\n{data}\n")
-    var res = false
+    var ok = false
     fopen(path, "wb") <| $(f)
         if f != null
-            res = true
+            ok = true
             f |> fwrite(data)
 
-    jsonRpc->sendResponse(server, JV(res), id)
+    send_serponse(JV(ok), id)
 
 
 [rpc_call]
 def das_execute(code: string; id: uint64)
     print("< req run code\n{code}\n")
-    jsonRpc->sendResponse(server, JV("run! " + code), id)
+    send_serponse(JV("run! " + code), id)

@@ -2,17 +2,18 @@ import Rete from "rete"
 import ConnectionPlugin from 'rete-connection-plugin'
 import VueRenderPlugin from 'rete-vue-render-plugin'
 import ContextMenuPlugin from 'rete-context-menu-plugin'
-import {JsonRpcError, JsonRpcWebsocket, WebsocketReadyStates} from "jsonrpc-client-websocket"
+import {JsonRpcError, JsonRpcWebsocket} from "jsonrpc-client-websocket"
 
-import {Debug, FloatLet, Function, TopLevelDasComponent, WriteDasCtx} from "./dasComponents"
+import {Debug, FloatLet, Function} from "./dasComponents"
 
 import './sockets.css'
-import {EditorRpc} from "./rpc"
+import {DasRpc, EditorRpc} from "./rpc"
 
 
 (async function () {
 
     const DEFAULT_FLOW = 'default.dasflow'
+    const EDITOR_VER = 'dasflow@0.0.1'
 
     const websocket = new JsonRpcWebsocket("ws://localhost:9000", 2000,
         (error: JsonRpcError) => {
@@ -20,7 +21,7 @@ import {EditorRpc} from "./rpc"
         })
 
     const container: HTMLElement | null = document.querySelector('#rete')
-    const editor = new Rete.NodeEditor('demo@0.1.0', <HTMLElement>container)
+    const editor = new Rete.NodeEditor(EDITOR_VER, <HTMLElement>container)
 
     const floatComp = new FloatLet()
     const debugComp = new Debug()
@@ -32,31 +33,23 @@ import {EditorRpc} from "./rpc"
     editor.use(ContextMenuPlugin, {
         items: {
             'log dascript'() {
-                let ctx = new WriteDasCtx(editor)
-                for (const node of editor.nodes) {
-                    let component = editor.components.get(node.name)
-                    if (component instanceof TopLevelDasComponent)
-                        component.writeDas(node, ctx)
-                }
-                console.log(ctx.code)
-                if (ctx.hasErrors()) {
-                    ctx.logErrors()
-                } else if (websocket.state == WebsocketReadyStates.OPEN) {
-                    websocket.call("das.execute", ctx.code).then((res) => {
-                        console.log(res)
-                    })
-                }
+                DasRpc.compile(websocket, editor)
             },
-            'load'() {
-                EditorRpc.load(websocket, editor, DEFAULT_FLOW)
+            files: {
+                load() {
+                    EditorRpc.load(websocket, editor, DEFAULT_FLOW)
+                },
+                save() {
+                    EditorRpc.save(websocket, editor, DEFAULT_FLOW)
+                },
             },
-            'save'() {
-                EditorRpc.save(websocket, editor, DEFAULT_FLOW)
-            }
         },
+        // allocate(component) {
+        //     return component.name
+        // },
     })
 
-    const engine = new Rete.Engine('demo@0.1.0')
+    const engine = new Rete.Engine(EDITOR_VER)
 
     comps.forEach(it => {
             editor.register(it)
@@ -84,12 +77,8 @@ import {EditorRpc} from "./rpc"
     })
 
     editor.view.resize()
-
     editor.trigger('process')
 
     await websocket.open()
-
-
     await EditorRpc.load(websocket, editor, DEFAULT_FLOW)
-
 })()
