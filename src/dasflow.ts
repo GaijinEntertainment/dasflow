@@ -57,6 +57,7 @@ export class DasflowContext {
         if (hasErrors) {
             dasCtx.logErrors()
         }
+        console.log(dasCtx.code)
         return FilesRpc.save(this.websocket, this.editor, !hasErrors ? dasCtx.code : "", this.currentFile)
     }
 

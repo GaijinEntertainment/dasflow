@@ -4,9 +4,10 @@ import Rete from "rete"
 import ConnectionPlugin from 'rete-connection-plugin'
 import VueRenderPlugin from 'rete-vue-render-plugin'
 import ContextMenuPlugin from 'rete-context-menu-plugin'
+import CommentPlugin from 'rete-comment-plugin'
 import {JsonRpcError, JsonRpcWebsocket} from "jsonrpc-client-websocket"
 
-import {Debug, FloatLet, Function, Let, Sin} from "./dasComponents"
+import {Debug, FloatLet, Function, If, Let, Sin} from "./dasComponents"
 
 import {DasflowContext} from "./dasflow"
 
@@ -26,7 +27,7 @@ import {DasflowContext} from "./dasflow"
     const floatComp = new FloatLet()
     const debugComp = new Debug()
     const functionComp = new Function()
-    const comps = [floatComp, debugComp, new Let(), new Sin(), functionComp]
+    const comps = [floatComp, debugComp, new Let(), new Sin(), new If(), functionComp]
 
     const defaultFileMenu = {
         reload() {
@@ -94,6 +95,9 @@ import {DasflowContext} from "./dasflow"
             },
             files: filesMenu
         },
+    })
+    editor.use(CommentPlugin, {
+        margin: 20 // default indent for new frames is 30px
     })
 
     const engine = new Rete.Engine(ctx.EDITOR_VER)

@@ -1,4 +1,4 @@
-import Rete, {Socket} from 'rete'
+import Rete, {Input, Output, Socket} from 'rete'
 import {Node} from 'rete/types/node'
 import {NodeEditor} from 'rete/types/editor'
 import {ComboBoxControl, LabelControl, NumControl} from "./controls"
@@ -32,16 +32,18 @@ export abstract class DasComponent extends Rete.Component {
     worker(node, inputs, outputs) {
     }
 
-    private addFlowIn(node: Node) {
+    addFlowIn(node: Node, key = 'fin'): Input {
         this.lazyInit = false
-        const flowIn = new Rete.Input('fin', '', flowSocket, false)
+        const flowIn = new Rete.Input(key, '', flowSocket, false)
         node.addInput(flowIn)
+        return flowIn
     }
 
-    addFlowOut(node: Node) {
+    addFlowOut(node: Node, key = 'fout'): Output {
         this.flowOut = true
-        const flowOut = new Rete.Output('fout', '', flowSocket, false)
+        const flowOut = new Rete.Output(key, '', flowSocket, false)
         node.addOutput(flowOut)
+        return flowOut
     }
 
     addFlowInOut(node: Node) {
@@ -89,8 +91,8 @@ export abstract class DasComponent extends Rete.Component {
     }
 
 
-    constructDasFlowOut(node: Node, ctx: ConstructDasCtx): boolean {
-        const out = node.outputs.get('fout')
+    constructDasFlowOut(node: Node, ctx: ConstructDasCtx, key = 'fout'): boolean {
+        const out = node.outputs.get(key)
         if (!out || out.connections.length == 0)
             return false
         const nextNode = out.connections[0].input.node
@@ -136,7 +138,7 @@ export class Let extends DasComponent {
     }
 
     async builder(node) {
-        const out = new Rete.Output('result', 'Value', floatType, true)
+        const out = new Rete.Output('result', 'Value', 'type' in node.data ? baseTypes[node.data.type] : floatType, true)
         node.addOutput(out)
         node.addControl(new ComboBoxControl(this.editor, 'type', baseTypes))
         node.addControl(new LabelControl(this.editor, 'value'))
@@ -194,6 +196,43 @@ export class Debug extends DasComponent {
         if (!inNode)
             return false
         ctx.writeLine(`debug(${ctx.nodeId(inNode)})`)
+        return true
+    }
+}
+
+
+export class If extends DasComponent {
+    constructor() {
+        super('If')
+    }
+
+    async builder(node) {
+        this.addFlowInOut(node)
+        const onTrue = this.addFlowOut(node, 'then')
+        onTrue.name = 'then'
+        const onFalse = this.addFlowOut(node, 'else')
+        onFalse.name = 'else'
+        const input = new Rete.Input('inValue', 'Condition', boolType)
+        node.addInput(input)
+    }
+
+    constructDasNode(node, ctx) {
+        const inNode = this.constructInNode(node, 'inValue', ctx)
+        if (!inNode)
+            return false
+
+        ctx.writeLine(`if (${ctx.nodeId(inNode)})`)
+
+        const indenting = ctx.indenting
+        // TODO: push/pop indenting
+        ctx.indenting += "\t"
+        this.constructDasFlowOut(node, ctx, 'then')
+        ctx.indenting = indenting
+        ctx.writeLine("else")
+        ctx.indenting += "\t"
+        if (!this.constructDasFlowOut(node, ctx, 'else'))
+            ctx.writeLine('pass')
+        ctx.indenting = indenting
         return true
     }
 }
