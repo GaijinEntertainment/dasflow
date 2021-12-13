@@ -2,6 +2,7 @@ import {JsonRpcWebsocket} from "jsonrpc-client-websocket"
 import {NodeEditor} from "rete/types/editor"
 import {FilesRpc} from "./rpc"
 import {SubEvent} from 'sub-events'
+import {TopLevelDasComponent, ConstructDasCtx} from "./dasComponents"
 
 
 export class DasflowContext {
@@ -41,8 +42,23 @@ export class DasflowContext {
         return FilesRpc.load(this.websocket, this.editor, this.currentFile)
     }
 
+    constructDas(): ConstructDasCtx {
+        const ctx = new ConstructDasCtx(this.editor)
+        for (const node of this.editor.nodes) {
+            let component = this.editor.components.get(node.name)
+            if (component instanceof TopLevelDasComponent)
+                component.constructDas(node, ctx)
+        }
+        return ctx
+    }
+
     async save(): Promise<boolean> {
-        return FilesRpc.save(this.websocket, this.editor, this.currentFile)
+        const dasCtx = this.constructDas()
+        const hasErrors = dasCtx.hasErrors()
+        if (hasErrors) {
+            dasCtx.logErrors()
+        }
+        return FilesRpc.save(this.websocket, this.editor, !hasErrors ? dasCtx.code : "", this.currentFile)
     }
 
     async firstStart() {

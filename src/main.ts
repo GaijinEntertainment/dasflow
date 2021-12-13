@@ -8,7 +8,6 @@ import {JsonRpcError, JsonRpcWebsocket} from "jsonrpc-client-websocket"
 
 import {Debug, FloatLet, Function, Let, Sin} from "./dasComponents"
 
-import {DasRpc} from "./rpc"
 import {DasflowContext} from "./dasflow"
 
 
@@ -89,7 +88,9 @@ import {DasflowContext} from "./dasflow"
     editor.use(ContextMenuPlugin, {
         items: {
             'log dascript'() {
-                DasRpc.compile(websocket, editor)
+                const dasCtx = ctx.constructDas()
+                console.log(dasCtx.code)
+                dasCtx.logErrors()
             },
             files: filesMenu
         },

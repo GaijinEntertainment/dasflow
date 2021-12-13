@@ -53,7 +53,7 @@ def shutdown()
     server->stop()
 
 
-def send_serponse(var data: JsonValue?; id: uint64)
+def send_response(var data: JsonValue?; id: uint64)
     jsonRpc->sendResponse(server, data, id)
 
 
@@ -67,22 +67,29 @@ def files_load(filePath: string; id: uint64)
         if f != null
             f |> fread <| $(data)
                 ok = true
-                send_serponse(JV("{data}"), id)
+                var lfPos = data |> find('\n')
+                if lfPos < 0
+                    lfPos = length(data)
+                let firstLine = data |> slice(3, lfPos)
+                send_response(JV(firstLine), id)
     if !ok
-        send_serponse(JV(null), id)
+        send_response(JV(null), id)
 
 
 [rpc_call]
-def files_save(filePath: string; data: string; id: uint64)
+def files_save(filePath: string; data: string; code: string; id: uint64)
     let path = flowsDir + filePath
     print("< req run save data `{path}`\n{data}\n")
     var ok = false
     fopen(path, "wb") <| $(f)
         if f != null
             ok = true
+            f |> fwrite("// ")
             f |> fwrite(data)
+            f |> fwrite("\n\n")
+            f |> fwrite(code)
 
-    send_serponse(JV(ok), id)
+    send_response(JV(ok), id)
 
 
 [rpc_call]
@@ -93,13 +100,13 @@ def files_list(id: uint64)
     for f in files
         f = f |> slice(flowsDirLen)
     print("< req files\n{files}\n")
-    send_serponse(JV(files), id)
+    send_response(JV(files), id)
 
 
 [rpc_call]
 def das_execute(code: string; id: uint64)
     print("< req run code\n{code}\n")
-    send_serponse(JV("run! " + code), id)
+    send_response(JV("run! " + code), id)
 
 
 def scan_dir(path: string; var res: array<string>; suffix = ".dasflow"): bool
@@ -117,3 +124,6 @@ def scan_dir(path: string; var res: array<string>; suffix = ".dasflow"): bool
         elif fStat.is_reg && f |> ends_with(suffix)
             res |> push(f)
     return true
+
+
+options debugger

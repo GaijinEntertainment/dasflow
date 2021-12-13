@@ -51,18 +51,18 @@ export abstract class DasComponent extends Rete.Component {
 
     // writer
 
-    writeDas(node: Node, ctx: WriteDasCtx): boolean {
-        const res = this.writeDasNode(node, ctx)
+    constructDas(node: Node, ctx: ConstructDasCtx): boolean {
+        const res = this.constructDasNode(node, ctx)
         if (res && this.flowOut)
-            this.writeDasFlowOut(node, ctx)
+            this.constructDasFlowOut(node, ctx)
         return res
     }
 
 
-    abstract writeDasNode(node: Node, ctx: WriteDasCtx): boolean
+    abstract constructDasNode(node: Node, ctx: ConstructDasCtx): boolean
 
 
-    getInNode(node: Node, name: string, ctx: WriteDasCtx): Node | null {
+    constructInNode(node: Node, name: string, ctx: ConstructDasCtx): Node | null {
         const inValue = node.inputs.get(name)
         if (!inValue || inValue.connections.length == 0) {
             ctx.addError(node, 'input expected')
@@ -73,23 +73,23 @@ export abstract class DasComponent extends Rete.Component {
             ctx.addError(node, 'input expected')
             return null
         }
-        DasComponent.writeAutoInit(inNode, ctx)
+        DasComponent.constructAutoInit(inNode, ctx)
         return inNode
     }
 
 
-    private static writeAutoInit(node: Node, ctx: WriteDasCtx) {
+    private static constructAutoInit(node: Node, ctx: ConstructDasCtx) {
         if (ctx.isLazyInited(node))
             return
         const component = <DasComponent>ctx.editor.components.get(node.name)
         if (!component.lazyInit)
             return
         ctx.setIsLazyInit(node)
-        component.writeDas(node, ctx)
+        component.constructDas(node, ctx)
     }
 
 
-    writeDasFlowOut(node: Node, ctx: WriteDasCtx): boolean {
+    constructDasFlowOut(node: Node, ctx: ConstructDasCtx): boolean {
         const out = node.outputs.get('fout')
         if (!out || out.connections.length == 0)
             return false
@@ -97,7 +97,7 @@ export abstract class DasComponent extends Rete.Component {
         if (!nextNode)
             return false
         const component: DasComponent = <DasComponent>ctx.editor.components.get(nextNode.name)
-        return component.writeDas(nextNode, ctx)
+        return component.constructDas(nextNode, ctx)
     }
 }
 
@@ -124,7 +124,7 @@ export class FloatLet extends DasComponent {
         outputs['result'] = node.data.value
     }
 
-    writeDasNode(node, ctx) {
+    constructDasNode(node, ctx) {
         ctx.writeLine(`let ${ctx.nodeId(node)} = ${node.data.value}`)
         return true
     }
@@ -162,7 +162,7 @@ export class Let extends DasComponent {
         }
     }
 
-    writeDasNode(node, ctx) {
+    constructDasNode(node, ctx) {
         const val = node.data.type == "string" ? `"${node.data.value}"` : node.data.value
         ctx.writeLine(`let ${ctx.nodeId(node)} = ${val}`)
         return true
@@ -189,8 +189,8 @@ export class Debug extends DasComponent {
         label.setValue(val)
     }
 
-    writeDasNode(node, ctx) {
-        const inNode = this.getInNode(node, 'inValue', ctx)
+    constructDasNode(node, ctx) {
+        const inNode = this.constructInNode(node, 'inValue', ctx)
         if (!inNode)
             return false
         ctx.writeLine(`debug(${ctx.nodeId(inNode)})`)
@@ -211,8 +211,8 @@ export class Sin extends DasComponent {
         node.addOutput(result)
     }
 
-    writeDasNode(node, ctx) {
-        const inNode = this.getInNode(node, 'inValue', ctx)
+    constructDasNode(node, ctx) {
+        const inNode = this.constructInNode(node, 'inValue', ctx)
         if (!inNode)
             return false
         ctx.addReqModule('math')
@@ -232,12 +232,12 @@ export class Function extends TopLevelDasComponent {
         node.addControl(new LabelControl(this.editor, 'name'))
     }
 
-    writeDas(node, ctx) {
+    constructDas(node, ctx) {
         // TODO: create new ctx to patch fn arguments
-        ctx.writeLine(`def ${node.data.name}()`)
+        ctx.writeLine(`[export]\ndef ${node.data.name}()`)
         ctx.indenting += "\t"
 
-        const res = this.writeDasFlowOut(node, ctx)
+        const res = this.constructDasFlowOut(node, ctx)
         if (!res)
             ctx.writeLine("pass")
         ctx.indenting = ""
@@ -245,13 +245,13 @@ export class Function extends TopLevelDasComponent {
         return true
     }
 
-    writeDasNode(node: Node, ctx: WriteDasCtx): boolean {
+    constructDasNode(node: Node, ctx: ConstructDasCtx): boolean {
         return true
     }
 }
 
 
-export class WriteDasCtx {
+export class ConstructDasCtx {
     get code(): string {
         if (this.requirements.size > 0) {
             for (const req of this.requirements)

@@ -1,6 +1,5 @@
 import {JsonRpcWebsocket} from "jsonrpc-client-websocket"
 import {NodeEditor} from "rete/types/editor"
-import {TopLevelDasComponent, WriteDasCtx} from "./dasComponents"
 
 
 export namespace FilesRpc {
@@ -21,28 +20,17 @@ export namespace FilesRpc {
         }
     }
 
-    export async function save(ws: JsonRpcWebsocket, editor: NodeEditor, path: string): Promise<boolean> {
+    export async function save(ws: JsonRpcWebsocket, editor: NodeEditor, code: string, path: string): Promise<boolean> {
         const data = JSON.stringify(editor.toJSON())
-        const res = await ws.call('files.save', [path, data])
+        const res = await ws.call('files.save', [path, data, code])
         return !!res.result
     }
 }
 
 export namespace DasRpc {
-    export async function compile(ws: JsonRpcWebsocket, editor: NodeEditor): Promise<boolean> {
-        let ctx = new WriteDasCtx(editor)
-        for (const node of editor.nodes) {
-            let component = editor.components.get(node.name)
-            if (component instanceof TopLevelDasComponent)
-                component.writeDas(node, ctx)
-        }
-        console.log(ctx.code)
-        if (ctx.hasErrors()) {
-            ctx.logErrors()
-            return false
-        }
+    export async function compile(ws: JsonRpcWebsocket, file: string): Promise<boolean> {
         return new Promise<boolean>(resolve => {
-            ws.call("das.execute", ctx.code).then((res) => {
+            ws.call("das.execute", file).then((res) => {
                 console.log(res)
                 resolve(!!res.result)
             })
