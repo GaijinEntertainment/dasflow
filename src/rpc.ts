@@ -24,7 +24,7 @@ export namespace FilesRpc {
 export namespace DasRpc {
     export async function compile(ws: JsonRpcWebsocket, file: string): Promise<boolean> {
         return ws.call("das.execute", file).then(res => {
-            console.log(res)
+            console.log("compile res", res)
             return !!res.result
         })
     }

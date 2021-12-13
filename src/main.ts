@@ -38,6 +38,8 @@ import {DasflowContext} from "./dasflow"
         close() {
             ctx.close()
         },
+        // delete() { // TODO:
+        // }
     }
     const currentFileMenu = {}
 

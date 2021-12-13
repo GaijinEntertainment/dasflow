@@ -19,7 +19,7 @@ export class DasflowContext {
         return this._currentFile
     }
 
-    private websocket: JsonRpcWebsocket
+    private readonly websocket: JsonRpcWebsocket
     public editor: NodeEditor
     private _currentFile = 'default.dasflow'
 
