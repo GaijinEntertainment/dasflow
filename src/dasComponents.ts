@@ -151,14 +151,14 @@ export class Let extends DasComponent {
         const output = this.editor.nodes.find(it => it.id == node.id)?.outputs.get('result')
         if (!output)
             return
-        const newSocket: Socket = baseTypes[node.data.type]
-        if (output.socket != newSocket) {
+        const outputSocket: Socket = baseTypes[node.data.type]
+        if (output.socket != outputSocket) {
             for (const conn of output.connections.concat([])) {
-                if (!conn.output.socket.compatibleWith(newSocket)) {
+                if (!outputSocket.compatibleWith(conn.input.socket)) {
                     this.editor.removeConnection(conn)
                 }
             }
-            output.socket = newSocket
+            output.socket = outputSocket
         }
     }
 
