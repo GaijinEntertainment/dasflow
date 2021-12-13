@@ -6,7 +6,7 @@ import VueRenderPlugin from 'rete-vue-render-plugin'
 import ContextMenuPlugin from 'rete-context-menu-plugin'
 import {JsonRpcError, JsonRpcWebsocket} from "jsonrpc-client-websocket"
 
-import {Debug, FloatLet, Function} from "./dasComponents"
+import {Debug, FloatLet, Function, Let, Sin} from "./dasComponents"
 
 import {DasRpc} from "./rpc"
 import {DasflowContext} from "./dasflow"
@@ -28,7 +28,7 @@ import {DasflowContext} from "./dasflow"
     const floatComp = new FloatLet()
     const debugComp = new Debug()
     const functionComp = new Function()
-    const comps = [floatComp, debugComp, functionComp]
+    const comps = [floatComp, debugComp, new Let(), new Sin(), functionComp]
 
     const defaultFileMenu = {
         reload() {

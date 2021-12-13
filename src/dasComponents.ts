@@ -1,4 +1,4 @@
-import Rete from 'rete'
+import Rete, {Socket} from 'rete'
 import {Node} from 'rete/types/node'
 import {NodeEditor} from 'rete/types/editor'
 
@@ -6,8 +6,16 @@ const anyType = new Rete.Socket("*")
 
 const floatType = new Rete.Socket('float')
 floatType.combineWith(anyType)
+const stringType = new Rete.Socket('string')
+floatType.combineWith(anyType)
 const boolType = new Rete.Socket('bool')
 boolType.combineWith(anyType)
+
+const baseTypes: { [key: string]: Socket } = {
+    float: floatType,
+    string: stringType,
+    bool: boolType
+}
 
 const flowSocket = new Rete.Socket('execution-flow')
 
@@ -36,6 +44,18 @@ function traverseFlowOut(node: Node, ctx: WriteDasCtx) {
         return false
     const component: DasComponent = <DasComponent>ctx.editor.components.get(nextNode.name)
     return component.writeDas(nextNode, ctx)
+}
+
+
+function autoInit(node: Node, ctx: WriteDasCtx) {
+    if (ctx.isLazyInited(node))
+        return
+    let component = <DasComponent>ctx.editor.components.get(node.name)
+    if (!component.lazyInit)
+        return
+
+    ctx.setIsLazyInit(node)
+    component.writeDas(node, ctx)
 }
 
 
@@ -118,6 +138,47 @@ class NumControl extends Rete.Control {
 }
 
 
+const VueComboBoxControl = {
+    props: ['readonly', 'emitter', 'ikey', 'keys', 'getData', 'putData'],
+    template: '<select :value="value" v-on:change="change($event)" @dblclick.stop="" @pointerdown.stop="" @pointermove.stop="">\n' +
+        '   <option v-for="(v,k,i) of keys" :selected="i==0">{{ k }}</option>\n' +
+        '</select>',
+    data() {
+        return {value: "",}
+    },
+    methods: {
+        change(e) {
+            this.value = e.target.value
+            this.update()
+        },
+        update() {
+            if (this.ikey)
+                this.putData(this.ikey, this.value)
+            this.emitter.trigger('process')
+        }
+    },
+    mounted() {
+        this.value = this.getData(this.ikey)
+    }
+}
+
+class ComboBoxControl extends Rete.Control {
+    component: unknown
+    props: { [key: string]: unknown }
+    vueContext: any
+
+    constructor(emitter: NodeEditor | null, key: string, keys: { [key: string]: any }, readonly: boolean = false) {
+        super(key)
+        this.component = VueComboBoxControl
+        this.props = {emitter, ikey: key, readonly, keys}
+    }
+
+    setValue(val: string) {
+        this.vueContext.value = val
+    }
+}
+
+
 // ------ components
 
 export abstract class DasComponent extends Rete.Component {
@@ -163,17 +224,46 @@ export class FloatLet extends DasComponent {
     }
 }
 
+export class Let extends DasComponent {
+    constructor() {
+        super('Let')
+        this.lazyInit = true
+    }
 
-function autoInit(inNode: Node, ctx: WriteDasCtx) {
-    if (ctx.isLazyInited(inNode))
-        return
-    let component = <DasComponent>ctx.editor.components.get(inNode.name)
-    if (!component.lazyInit)
-        return
+    async builder(node) {
+        let out = new Rete.Output('result', 'Value', floatType, true)
 
-    ctx.setIsLazyInit(inNode)
-    component.writeDas(inNode, ctx)
+        node.addOutput(out)
+        node.addControl(new ComboBoxControl(this.editor, 'type', baseTypes))
+        node.addControl(new LabelControl(this.editor, 'value'))
+    }
+
+    worker(node, inputs, outputs) {
+        outputs['result'] = node.data.value
+        outputs['type'] = node.data.type
+        if (!this.editor)
+            return
+        const output = this.editor.nodes.find(it => it.name == node.name)?.outputs.get('result')
+        if (!output)
+            return
+        const newSocket: Socket = baseTypes[node.data.type]
+        if (output.socket != newSocket) {
+            for (const conn of output.connections.concat([])) {
+                if (!conn.output.socket.compatibleWith(newSocket)) {
+                    this.editor.removeConnection(conn)
+                }
+            }
+            output.socket = newSocket
+        }
+    }
+
+    writeDas(node, ctx) {
+        const val = node.data.type == "string" ? `"${node.data.value}"` : node.data.value
+        ctx.writeLine(`let ${ctx.nodeId(node)} = ${val}`)
+        return true
+    }
 }
+
 
 export class Debug extends DasComponent {
     constructor() {
@@ -209,6 +299,38 @@ export class Debug extends DasComponent {
 }
 
 
+export class Sin extends DasComponent {
+    constructor() {
+        super('Sin')
+        this.lazyInit = true
+    }
+
+    async builder(node) {
+        let input = new Rete.Input('inValue', 'Value', floatType)
+        node.addInput(input)
+        let result = new Rete.Output('result', 'Value', floatType, true)
+        node.addOutput(result)
+    }
+
+    worker(node, inputs, outputs) {
+    }
+
+    writeDas(node, ctx) {
+        const inValue = node.inputs.get('inValue')
+        if (!inValue || inValue.connections.length == 0)
+            return ctx.addError(node, 'input expected')
+        let inNode = inValue.connections[0].output.node
+        if (!inNode)
+            return ctx.addError(node, 'input expected')
+        autoInit(inNode, ctx)
+        ctx.addReqModule("math")
+        ctx.writeLine(`let ${ctx.nodeId(node)} = sin(${ctx.nodeId(inNode)})`)
+        traverseFlowOut(node, ctx)
+        return true
+    }
+}
+
+
 export class Function extends TopLevelDasComponent {
     constructor() {
         super('Function')
@@ -237,18 +359,27 @@ export class Function extends TopLevelDasComponent {
 
 
 export class WriteDasCtx {
+    get code(): string {
+        if (this.requirements.size > 0) {
+            for (const req of this.requirements)
+                this._code = `require ${req}\n` + this._code
+        }
+        return this._code
+    }
+
     editor: NodeEditor
     indenting = ""
-    code = ""
+    private _code = ""
     errors = new Map<number, string[]>()
-    lazyInited = new Set<number>()
+    private lazyInited = new Set<number>()
+    private requirements = new Set<string>()
 
     constructor(editor: NodeEditor) {
         this.editor = editor
     }
 
     writeLine(str: string) {
-        this.code += `\n${this.indenting}${str}`
+        this._code += `\n${this.indenting}${str}`
     }
 
     addError(node: Node, msg: string) {
@@ -286,5 +417,9 @@ export class WriteDasCtx {
 
     setIsLazyInit(node: Node) {
         this.lazyInited.add(node.id)
+    }
+
+    addReqModule(module: string) {
+        this.requirements.add(module)
     }
 }
