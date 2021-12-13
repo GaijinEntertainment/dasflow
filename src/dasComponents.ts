@@ -8,7 +8,7 @@ const anyType = new Rete.Socket("*")
 const floatType = new Rete.Socket('float')
 floatType.combineWith(anyType)
 const stringType = new Rete.Socket('string')
-floatType.combineWith(anyType)
+stringType.combineWith(anyType)
 const boolType = new Rete.Socket('bool')
 boolType.combineWith(anyType)
 
@@ -20,55 +20,84 @@ const baseTypes: { [key: string]: Socket } = {
 
 const flowSocket = new Rete.Socket('execution-flow')
 
-function addFlowIn(node: Node) {
-    let flowIn = new Rete.Input('fin', '', flowSocket, false)
-    node.addInput(flowIn)
-}
-
-function addFlowOut(node: Node) {
-    let flowOut = new Rete.Output('fout', '', flowSocket, false)
-    node.addOutput(flowOut)
-}
-
-function addFlowInOut(node: Node) {
-    addFlowIn(node)
-    addFlowOut(node)
-}
-
-
-function traverseFlowOut(node: Node, ctx: WriteDasCtx) {
-    const out = node.outputs.get('fout')
-    if (!out || out.connections.length == 0)
-        return false
-    const nextNode = out.connections[0].input.node
-    if (!nextNode)
-        return false
-    const component: DasComponent = <DasComponent>ctx.editor.components.get(nextNode.name)
-    return component.writeDas(nextNode, ctx)
-}
-
-
-function autoInit(node: Node, ctx: WriteDasCtx) {
-    if (ctx.isLazyInited(node))
-        return
-    let component = <DasComponent>ctx.editor.components.get(node.name)
-    if (!component.lazyInit)
-        return
-
-    ctx.setIsLazyInit(node)
-    component.writeDas(node, ctx)
-}
-
 
 export abstract class DasComponent extends Rete.Component {
-    lazyInit = false
+    private lazyInit = true
+    private flowOut = false
 
     protected constructor(name: string) {
         super(name)
     }
 
-    writeDas(node: Node, ctx: WriteDasCtx) {
-        return true
+    worker(node, inputs, outputs) {
+    }
+
+    private addFlowIn(node: Node) {
+        this.lazyInit = false
+        const flowIn = new Rete.Input('fin', '', flowSocket, false)
+        node.addInput(flowIn)
+    }
+
+    addFlowOut(node: Node) {
+        this.flowOut = true
+        const flowOut = new Rete.Output('fout', '', flowSocket, false)
+        node.addOutput(flowOut)
+    }
+
+    addFlowInOut(node: Node) {
+        this.addFlowIn(node)
+        this.addFlowOut(node)
+    }
+
+    // writer
+
+    writeDas(node: Node, ctx: WriteDasCtx): boolean {
+        const res = this.writeDasNode(node, ctx)
+        if (res && this.flowOut)
+            this.writeDasFlowOut(node, ctx)
+        return res
+    }
+
+
+    abstract writeDasNode(node: Node, ctx: WriteDasCtx): boolean
+
+
+    getInNode(node: Node, name: string, ctx: WriteDasCtx): Node | null {
+        const inValue = node.inputs.get(name)
+        if (!inValue || inValue.connections.length == 0) {
+            ctx.addError(node, 'input expected')
+            return null
+        }
+        const inNode = inValue.connections[0].output.node
+        if (!inNode) {
+            ctx.addError(node, 'input expected')
+            return null
+        }
+        DasComponent.writeAutoInit(inNode, ctx)
+        return inNode
+    }
+
+
+    private static writeAutoInit(node: Node, ctx: WriteDasCtx) {
+        if (ctx.isLazyInited(node))
+            return
+        const component = <DasComponent>ctx.editor.components.get(node.name)
+        if (!component.lazyInit)
+            return
+        ctx.setIsLazyInit(node)
+        component.writeDas(node, ctx)
+    }
+
+
+    writeDasFlowOut(node: Node, ctx: WriteDasCtx): boolean {
+        const out = node.outputs.get('fout')
+        if (!out || out.connections.length == 0)
+            return false
+        const nextNode = out.connections[0].input.node
+        if (!nextNode)
+            return false
+        const component: DasComponent = <DasComponent>ctx.editor.components.get(nextNode.name)
+        return component.writeDas(nextNode, ctx)
     }
 }
 
@@ -83,12 +112,10 @@ export abstract class TopLevelDasComponent extends DasComponent {
 export class FloatLet extends DasComponent {
     constructor() {
         super('FloatLet')
-        this.lazyInit = true
     }
 
     async builder(node) {
-        let out = new Rete.Output('result', 'Value', floatType, true)
-
+        const out = new Rete.Output('result', 'Value', floatType, true)
         node.addOutput(out)
         node.addControl(new NumControl(this.editor, 'value'))
     }
@@ -97,7 +124,7 @@ export class FloatLet extends DasComponent {
         outputs['result'] = node.data.value
     }
 
-    writeDas(node, ctx) {
+    writeDasNode(node, ctx) {
         ctx.writeLine(`let ${ctx.nodeId(node)} = ${node.data.value}`)
         return true
     }
@@ -106,12 +133,10 @@ export class FloatLet extends DasComponent {
 export class Let extends DasComponent {
     constructor() {
         super('Let')
-        this.lazyInit = true
     }
 
     async builder(node) {
-        let out = new Rete.Output('result', 'Value', floatType, true)
-
+        const out = new Rete.Output('result', 'Value', floatType, true)
         node.addOutput(out)
         node.addControl(new ComboBoxControl(this.editor, 'type', baseTypes))
         node.addControl(new LabelControl(this.editor, 'value'))
@@ -120,9 +145,10 @@ export class Let extends DasComponent {
     worker(node, inputs, outputs) {
         outputs['result'] = node.data.value
         outputs['type'] = node.data.type
+        // TODO: validate value
         if (!this.editor)
             return
-        const output = this.editor.nodes.find(it => it.name == node.name)?.outputs.get('result')
+        const output = this.editor.nodes.find(it => it.id == node.id)?.outputs.get('result')
         if (!output)
             return
         const newSocket: Socket = baseTypes[node.data.type]
@@ -136,7 +162,7 @@ export class Let extends DasComponent {
         }
     }
 
-    writeDas(node, ctx) {
+    writeDasNode(node, ctx) {
         const val = node.data.type == "string" ? `"${node.data.value}"` : node.data.value
         ctx.writeLine(`let ${ctx.nodeId(node)} = ${val}`)
         return true
@@ -150,8 +176,8 @@ export class Debug extends DasComponent {
     }
 
     async builder(node) {
-        addFlowInOut(node)
-        let input = new Rete.Input('inValue', 'Value', anyType)
+        this.addFlowInOut(node)
+        const input = new Rete.Input('inValue', 'Value', anyType)
         node.addInput(input)
         node.addControl(new LabelControl(this.editor, 'label', true))
     }
@@ -163,16 +189,11 @@ export class Debug extends DasComponent {
         label.setValue(val)
     }
 
-    writeDas(node, ctx) {
-        const inValue = node.inputs.get('inValue')
-        if (!inValue || inValue.connections.length == 0)
-            return ctx.addError(node, 'input expected')
-        let inNode = inValue.connections[0].output.node
+    writeDasNode(node, ctx) {
+        const inNode = this.getInNode(node, 'inValue', ctx)
         if (!inNode)
-            return ctx.addError(node, 'input expected')
-        autoInit(inNode, ctx)
+            return false
         ctx.writeLine(`debug(${ctx.nodeId(inNode)})`)
-        traverseFlowOut(node, ctx)
         return true
     }
 }
@@ -181,30 +202,21 @@ export class Debug extends DasComponent {
 export class Sin extends DasComponent {
     constructor() {
         super('Sin')
-        this.lazyInit = true
     }
 
     async builder(node) {
-        let input = new Rete.Input('inValue', 'Value', floatType)
+        const input = new Rete.Input('inValue', 'Value', floatType)
         node.addInput(input)
-        let result = new Rete.Output('result', 'Value', floatType, true)
+        const result = new Rete.Output('result', 'Value', floatType, true)
         node.addOutput(result)
     }
 
-    worker(node, inputs, outputs) {
-    }
-
-    writeDas(node, ctx) {
-        const inValue = node.inputs.get('inValue')
-        if (!inValue || inValue.connections.length == 0)
-            return ctx.addError(node, 'input expected')
-        let inNode = inValue.connections[0].output.node
+    writeDasNode(node, ctx) {
+        const inNode = this.getInNode(node, 'inValue', ctx)
         if (!inNode)
-            return ctx.addError(node, 'input expected')
-        autoInit(inNode, ctx)
-        ctx.addReqModule("math")
+            return false
+        ctx.addReqModule('math')
         ctx.writeLine(`let ${ctx.nodeId(node)} = sin(${ctx.nodeId(inNode)})`)
-        traverseFlowOut(node, ctx)
         return true
     }
 }
@@ -216,15 +228,16 @@ export class Function extends TopLevelDasComponent {
     }
 
     async builder(node) {
-        addFlowOut(node)
+        this.addFlowOut(node)
         node.addControl(new LabelControl(this.editor, 'name'))
     }
 
     writeDas(node, ctx) {
+        // TODO: create new ctx to patch fn arguments
         ctx.writeLine(`def ${node.data.name}()`)
         ctx.indenting += "\t"
 
-        const res = traverseFlowOut(node, ctx)
+        const res = this.writeDasFlowOut(node, ctx)
         if (!res)
             ctx.writeLine("pass")
         ctx.indenting = ""
@@ -232,7 +245,8 @@ export class Function extends TopLevelDasComponent {
         return true
     }
 
-    worker(node, inputs, outputs) {
+    writeDasNode(node: Node, ctx: WriteDasCtx): boolean {
+        return true
     }
 }
 
@@ -265,7 +279,7 @@ export class WriteDasCtx {
         if (!this.errors.has(node.id))
             this.errors.set(node.id, [msg])
         else {
-            let data = this.errors.get(node.id)
+            const data = this.errors.get(node.id)
             data?.push(msg)
         }
         return false
