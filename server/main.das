@@ -101,6 +101,7 @@ def files_list(id: uint64)
         f = f |> slice(flowsDirLen)
     print("< req files\n{files}\n")
     send_response(JV(files), id)
+    // jsonRpc->sendError(server, "foobar", 0lf, null, id)
 
 
 [rpc_call]

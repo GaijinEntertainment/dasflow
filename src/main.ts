@@ -13,7 +13,6 @@ import {DasflowContext} from "./dasflow"
 
 (async function () {
 
-
     const websocket = new JsonRpcWebsocket("ws://localhost:9000", 2000,
         (error: JsonRpcError) => {
             console.log(error)
@@ -32,7 +31,6 @@ import {DasflowContext} from "./dasflow"
     const defaultFileMenu = {
         reload() {
             ctx.reload()
-
         },
         save() {
             ctx.save()

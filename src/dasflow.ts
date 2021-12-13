@@ -2,7 +2,7 @@ import {JsonRpcWebsocket} from "jsonrpc-client-websocket"
 import {NodeEditor} from "rete/types/editor"
 import {FilesRpc} from "./rpc"
 import {SubEvent} from 'sub-events'
-import {TopLevelDasComponent, ConstructDasCtx} from "./dasComponents"
+import {ConstructDasCtx, TopLevelDasComponent} from "./dasComponents"
 
 
 export class DasflowContext {
@@ -11,7 +11,6 @@ export class DasflowContext {
     onCurrentNameChange = new SubEvent<string>()
 
     private set currentFile(value: string) {
-        // todo: emit change
         this._currentFile = value
         this.onCurrentNameChange.emit(value)
     }
@@ -61,9 +60,10 @@ export class DasflowContext {
         return FilesRpc.save(this.websocket, this.editor, !hasErrors ? dasCtx.code : "", this.currentFile)
     }
 
-    async firstStart() {
-        this.reload().then((ok) => {
+    async firstStart(): Promise<boolean> {
+        return this.reload().then((ok) => {
             this.currentFile = ok ? this._currentFile : ""
+            return ok
         })
     }
 
