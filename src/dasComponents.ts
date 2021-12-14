@@ -226,7 +226,10 @@ export class If extends DasComponent {
         const indenting = ctx.indenting
         // TODO: push/pop indenting
         ctx.indenting += "\t"
-        this.constructDasFlowOut(node, ctx, 'then')
+        if (!this.constructDasFlowOut(node, ctx, 'then')) {
+            ctx.addError(node, 'then exit expected')
+            return false
+        }
         ctx.indenting = indenting
         ctx.writeLine("else")
         ctx.indenting += "\t"
@@ -236,6 +239,39 @@ export class If extends DasComponent {
         return true
     }
 }
+
+
+export class While extends DasComponent {
+    constructor() {
+        super('While')
+    }
+
+    async builder(node) {
+        this.addFlowInOut(node)
+        const body = this.addFlowOut(node, 'body')
+        body.name = 'body'
+        const input = new Rete.Input('inValue', 'Condition', boolType)
+        node.addInput(input)
+    }
+
+    constructDasNode(node, ctx) {
+        const inNode = this.constructInNode(node, 'inValue', ctx)
+        if (!inNode)
+            return false
+
+        ctx.writeLine(`while (${ctx.nodeId(inNode)})`)
+
+        const indenting = ctx.indenting
+        // TODO: push/pop indenting
+        ctx.indenting += "\t"
+        if (!this.constructDasFlowOut(node, ctx, 'body'))
+            return false
+        ctx.indenting = indenting
+        return true
+    }
+}
+
+// TODO: add iterable types, Foreach components
 
 
 export class Sin extends DasComponent {

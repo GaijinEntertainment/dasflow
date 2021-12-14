@@ -7,7 +7,7 @@ import ContextMenuPlugin from 'rete-context-menu-plugin'
 import CommentPlugin from 'rete-comment-plugin'
 import {JsonRpcError, JsonRpcWebsocket} from "jsonrpc-client-websocket"
 
-import {Debug, FloatLet, Function, If, Let, Sin} from "./dasComponents"
+import {Debug, FloatLet, Function, If, Let, Sin, While} from "./dasComponents"
 
 import {DasflowContext} from "./dasflow"
 
@@ -27,7 +27,7 @@ import {DasflowContext} from "./dasflow"
     const floatComp = new FloatLet()
     const debugComp = new Debug()
     const functionComp = new Function()
-    const comps = [floatComp, debugComp, new Let(), new Sin(), new If(), functionComp]
+    const comps = [floatComp, debugComp, new Let(), new Sin(), new If(), new While(), functionComp]
 
     const defaultFileMenu = {
         reload() {
