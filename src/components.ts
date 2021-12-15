@@ -1,29 +1,80 @@
-import Rete, {Input, Output, Socket} from 'rete'
+import Rete, {Engine, Input, Output, Socket} from 'rete'
 import {Node} from 'rete/types/node'
 import {NodeEditor} from 'rete/types/editor'
-import {ComboBoxControl, LabelControl, NumControl} from "./controls"
+import {LabelControl, LangTypeSelectControl, TextInputControl} from "./controls"
+import {LangCoreDesc, LangType} from "./lang"
+import {Component} from "rete/types"
 
 const anyType = new Rete.Socket("*")
 
+// TODO: remove this type
 const floatType = new Rete.Socket('float')
 floatType.combineWith(anyType)
-const stringType = new Rete.Socket('string')
-stringType.combineWith(anyType)
-const boolType = new Rete.Socket('bool')
-boolType.combineWith(anyType)
-
-const baseTypes: { [key: string]: Socket } = {
-    float: floatType,
-    string: stringType,
-    bool: boolType
-}
 
 const flowSocket = new Rete.Socket('execution-flow')
 
+// TODO: immutable, mutable and any types
+const coreTypes: LangType[] = []
+const coreTypeGroups = new Map<string, LangType[]>()
 
-export abstract class DasComponent extends Rete.Component {
+
+export function getTypeByName(types: LangType[], name: string) {
+    for (let baseType of types) {
+        if (baseType.name == name) {
+            return baseType
+        }
+    }
+    return types[0]
+}
+
+
+export function generateCoreNodes(langCore: LangCoreDesc, editor: NodeEditor, engine: Engine) {
+    console.log(langCore)
+    const logicTypeName = langCore.logicType
+    const comps: Component[] = []
+    for (let typeDesc of langCore.types) {
+        let type = new LangType()
+        type.desc = typeDesc
+        type.socket = new Rete.Socket(typeDesc.name)
+        type.socket.combineWith(anyType)
+
+        if (typeDesc.validator)
+            type.validator = new RegExp(typeDesc.validator)
+
+        if (typeDesc.ctor)
+            type.ctor = (s) => typeDesc.ctor?.replace('$', s) ?? s
+
+        coreTypes.push(type)
+        const group = typeDesc.group ?? typeDesc.name
+        if (coreTypeGroups.has(group))
+            coreTypeGroups.get(group)?.push(type)
+        else
+            coreTypeGroups.set(group, [type])
+
+        if (typeDesc.name == logicTypeName)
+            comps.push(new If(type), new While(type))
+    }
+
+    for (let [groupName, coreTypeGroup] of coreTypeGroups) {
+        const langLet = new LangLet(groupName, coreTypeGroup)
+        comps.push(langLet)
+    }
+
+    for (let comp of comps) {
+        engine.register(comp)
+        editor.register(comp)
+    }
+}
+
+
+export abstract class LangComponent extends Rete.Component {
+    get topLevel(): boolean {
+        return this._topLevel
+    }
+
     private lazyInit = true
     private flowOut = false
+    protected _topLevel = false
 
     protected constructor(name: string) {
         super(name)
@@ -75,7 +126,7 @@ export abstract class DasComponent extends Rete.Component {
             ctx.addError(node, 'input expected')
             return null
         }
-        DasComponent.constructAutoInit(inNode, ctx)
+        LangComponent.constructAutoInit(inNode, ctx)
         return inNode
     }
 
@@ -83,7 +134,7 @@ export abstract class DasComponent extends Rete.Component {
     private static constructAutoInit(node: Node, ctx: ConstructDasCtx) {
         if (ctx.isLazyInited(node))
             return
-        const component = <DasComponent>ctx.editor.components.get(node.name)
+        const component = <LangComponent>ctx.editor.components.get(node.name)
         if (!component.lazyInit)
             return
         ctx.setIsLazyInit(node)
@@ -98,62 +149,48 @@ export abstract class DasComponent extends Rete.Component {
         const nextNode = out.connections[0].input.node
         if (!nextNode)
             return false
-        const component: DasComponent = <DasComponent>ctx.editor.components.get(nextNode.name)
+        const component: LangComponent = <LangComponent>ctx.editor.components.get(nextNode.name)
         return component.constructDas(nextNode, ctx)
     }
 }
 
 
-export abstract class TopLevelDasComponent extends DasComponent {
-    protected constructor(name: string) {
-        super(name)
-    }
-}
+export class LangLet extends LangComponent {
+    baseTypes: LangType[]
 
-
-export class FloatLet extends DasComponent {
-    constructor() {
-        super('FloatLet')
+    constructor(name: string, types: LangType[]) {
+        super(`Let: ${name}`)
+        this.baseTypes = types
     }
 
     async builder(node) {
-        const out = new Rete.Output('result', 'Value', floatType, true)
+        let type = 'type' in node.data ? getTypeByName(this.baseTypes, node.data.type) : this.baseTypes[0]
+        const out = new Rete.Output('result', 'Value', type.socket, true)
         node.addOutput(out)
-        node.addControl(new NumControl(this.editor, 'value'))
-    }
-
-    worker(node, inputs, outputs) {
-        outputs['result'] = node.data.value
-    }
-
-    constructDasNode(node, ctx) {
-        ctx.writeLine(`let ${ctx.nodeId(node)} = ${node.data.value}`)
-        return true
-    }
-}
-
-export class Let extends DasComponent {
-    constructor() {
-        super('Let')
-    }
-
-    async builder(node) {
-        const out = new Rete.Output('result', 'Value', 'type' in node.data ? baseTypes[node.data.type] : floatType, true)
-        node.addOutput(out)
-        node.addControl(new ComboBoxControl(this.editor, 'type', baseTypes))
-        node.addControl(new LabelControl(this.editor, 'value'))
+        if (this.baseTypes.length > 1)
+            node.addControl(new LangTypeSelectControl(this.editor, 'type', this.baseTypes))
+        node.addControl(new TextInputControl(this.editor, 'value', type.validator, type.defaultValue ?? ""))
+        node.data.type = type.name
     }
 
     worker(node, inputs, outputs) {
         outputs['result'] = node.data.value
         outputs['type'] = node.data.type
-        // TODO: validate value
+        let currentType = getTypeByName(this.baseTypes, node.data.type)
+        const nodeRef = this.editor?.nodes.find(it => it.id == node.id)
+        if (nodeRef) {
+            const valueCtrl = nodeRef.controls.get('value') as TextInputControl
+            // todo: use setters
+            valueCtrl.vueContext.validator = currentType.validator
+            valueCtrl.vueContext.defaultValue = currentType.defaultValue ?? ""
+            valueCtrl.setValue(node.data.value)
+        }
         if (!this.editor)
             return
         const output = this.editor.nodes.find(it => it.id == node.id)?.outputs.get('result')
         if (!output)
             return
-        const outputSocket: Socket = baseTypes[node.data.type]
+        const outputSocket: Socket = currentType.socket
         if (output.socket != outputSocket) {
             for (const conn of output.connections.concat([])) {
                 if (!outputSocket.compatibleWith(conn.input.socket)) {
@@ -165,14 +202,14 @@ export class Let extends DasComponent {
     }
 
     constructDasNode(node, ctx) {
-        const val = node.data.type == "string" ? `"${node.data.value}"` : node.data.value
+        const val = getTypeByName(this.baseTypes, node.data.type).ctor(node.data.value)
         ctx.writeLine(`let ${ctx.nodeId(node)} = ${val}`)
         return true
     }
 }
 
 
-export class Debug extends DasComponent {
+export class Debug extends LangComponent {
     constructor() {
         super('Debug')
     }
@@ -201,9 +238,12 @@ export class Debug extends DasComponent {
 }
 
 
-export class If extends DasComponent {
-    constructor() {
+export class If extends LangComponent {
+    private conditionType: LangType
+
+    constructor(conditionType: LangType) {
         super('If')
+        this.conditionType = conditionType
     }
 
     async builder(node) {
@@ -212,7 +252,7 @@ export class If extends DasComponent {
         onTrue.name = 'then'
         const onFalse = this.addFlowOut(node, 'else')
         onFalse.name = 'else'
-        const input = new Rete.Input('inValue', 'Condition', boolType)
+        const input = new Rete.Input('inValue', 'Condition', this.conditionType.socket)
         node.addInput(input)
     }
 
@@ -241,16 +281,19 @@ export class If extends DasComponent {
 }
 
 
-export class While extends DasComponent {
-    constructor() {
+export class While extends LangComponent {
+    private conditionType: LangType
+
+    constructor(conditionType: LangType) {
         super('While')
+        this.conditionType = conditionType
     }
 
     async builder(node) {
         this.addFlowInOut(node)
         const body = this.addFlowOut(node, 'body')
         body.name = 'body'
-        const input = new Rete.Input('inValue', 'Condition', boolType)
+        const input = new Rete.Input('inValue', 'Condition', this.conditionType.socket)
         node.addInput(input)
     }
 
@@ -274,7 +317,7 @@ export class While extends DasComponent {
 // TODO: add iterable types, Foreach components
 
 
-export class Sin extends DasComponent {
+export class Sin extends LangComponent {
     constructor() {
         super('Sin')
     }
@@ -297,9 +340,10 @@ export class Sin extends DasComponent {
 }
 
 
-export class Function extends TopLevelDasComponent {
+export class Function extends LangComponent {
     constructor() {
         super('Function')
+        this._topLevel = true
     }
 
     async builder(node) {
@@ -344,6 +388,14 @@ export class ConstructDasCtx {
 
     constructor(editor: NodeEditor) {
         this.editor = editor
+    }
+
+    getChild(): ConstructDasCtx {
+        let res = new ConstructDasCtx(this.editor)
+        res.errors = this.errors
+        res.lazyInited = this.lazyInited
+        res.requirements = this.requirements
+        return res
     }
 
     writeLine(str: string) {

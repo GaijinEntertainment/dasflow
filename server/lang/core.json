@@ -1,0 +1,149 @@
+{
+    "logicType": "bool",
+    "types": [
+        {
+            "name": "string",
+            "default": "",
+            "ctor": "\"$\""
+        },
+        {
+            "name": "int",
+            "default": "0",
+            "validator": "^[-+]?\\d+$",
+            "group": "int"
+        },
+        {
+            "name": "uint",
+            "default": "0",
+            "validator": "^[-+]?\\d+u?$",
+            "group": "int"
+        },
+        {
+            "name": "int8",
+            "default": "0",
+            "validator": "^[-+]?\\d+$",
+            "group": "int",
+            "ctor": "int8($)"
+        },
+        {
+            "name": "int16",
+            "default": "0",
+            "validator": "^[-+]?\\d+$",
+            "group": "int",
+            "ctor": "int16($)"
+        },
+        {
+            "name": "int64",
+            "default": "0",
+            "validator": "^[-+]?\\d+$",
+            "group": "int",
+            "ctor": "int64($)"
+        },
+        {
+            "name": "uint8",
+            "default": "0u",
+            "validator": "^[-+]?\\d+u?$",
+            "group": "int",
+            "ctor": "uint8($)"
+        },
+        {
+            "name": "uint16",
+            "default": "0",
+            "validator": "^[-+]?\\d+u?$",
+            "group": "int",
+            "ctor": "uint16($)"
+        },
+        {
+            "name": "uint64",
+            "default": "0",
+            "validator": "^[-+]?\\d+u?$",
+            "group": "int",
+            "ctor": "uint64($)"
+        },
+        {
+            "name": "bool",
+            "default": "false",
+            "enum": [
+                "true",
+                "false"
+            ]
+        },
+        {
+            "name": "float",
+            "default": "0",
+            "validator": "^[-+]?\\d+(\\.\\d+)?f?$",
+            "group": "float",
+            "ctor": "float($)"
+        },
+        {
+            "name": "double",
+            "default": "0",
+            "validator": "^[-+]?\\d+(\\.\\d+)?[lf|f]?$",
+            "group": "float",
+            "ctor": "double($)"
+        },
+        {
+            "name": "float2",
+            "struct": [
+                {
+                    "name": "x",
+                    "type": "float"
+                },
+                {
+                    "name": "y",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "float3",
+            "struct": [
+                {
+                    "name": "x",
+                    "type": "float"
+                },
+                {
+                    "name": "y",
+                    "type": "float"
+                },
+                {
+                    "name": "z",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "float4",
+            "struct": [
+                {
+                    "name": "x",
+                    "type": "float"
+                },
+                {
+                    "name": "y",
+                    "type": "float"
+                },
+                {
+                    "name": "z",
+                    "type": "float"
+                },
+                {
+                    "name": "w",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "functions": [
+        {
+            "name": "sin",
+            "arguments": [
+                {
+                    "name": "x",
+                    "type": "float"
+                }
+            ],
+            "returns": "float"
+        }
+    ]
+}

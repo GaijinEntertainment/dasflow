@@ -32,7 +32,8 @@ def initialize()
     // server.debugLogs = true
     jsonRpc = new JsonRpcHandler()
 
-    jsonRpc->addCall("das.execute", new MFunctionRpcCall(@@das_execute))
+    jsonRpc->addCall("lang.getCore", new MFunctionRpcCall(@@lang_getCore))
+    jsonRpc->addCall("lang.execute", new MFunctionRpcCall(@@lang_execute))
     jsonRpc->addCall("files.load", new MFunctionRpcCall(@@files_load))
     jsonRpc->addCall("files.save", new MFunctionRpcCall(@@files_save))
     jsonRpc->addCall("files.list", new MFunctionRpcCall(@@files_list))
@@ -105,7 +106,21 @@ def files_list(id: uint64)
 
 
 [rpc_call]
-def das_execute(code: string; id: uint64)
+def lang_getCore(id: uint64)
+    print("< req lang.getCore\n")
+    var ok = false
+
+    fopen("lang/core.json", "rb") <| $(f)
+        if f != null
+            f |> fread <| $(data)
+                ok = false
+                send_response(JV("{data}"), id)
+    if !ok
+        send_response(JV(null), id)
+
+
+[rpc_call]
+def lang_execute(code: string; id: uint64)
     print("< req run code\n{code}\n")
     send_response(JV("run! " + code), id)
 

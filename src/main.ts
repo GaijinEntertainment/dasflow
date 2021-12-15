@@ -7,9 +7,10 @@ import ContextMenuPlugin from 'rete-context-menu-plugin'
 import CommentPlugin from 'rete-comment-plugin'
 import {JsonRpcError, JsonRpcWebsocket} from "jsonrpc-client-websocket"
 
-import {Debug, FloatLet, Function, If, Let, Sin, While} from "./dasComponents"
+import {Debug, Function, generateCoreNodes, Sin} from "./components"
 
 import {DasflowContext} from "./dasflow"
+import {LangRpc} from "./rpc"
 
 
 (async function () {
@@ -23,11 +24,16 @@ import {DasflowContext} from "./dasflow"
     const ctx = new DasflowContext(websocket)
     const editor = new Rete.NodeEditor(ctx.EDITOR_VER, <HTMLElement>container)
     ctx.editor = editor
+    const engine = new Rete.Engine(ctx.EDITOR_VER)
 
-    const floatComp = new FloatLet()
+    await websocket.open()
+
+    const langCore = await LangRpc.getLangCore(websocket)
+    generateCoreNodes(langCore, editor, engine)
+
     const debugComp = new Debug()
     const functionComp = new Function()
-    const comps = [floatComp, debugComp, new Let(), new Sin(), new If(), new While(), functionComp]
+    const comps = [debugComp, new Sin(), functionComp]
 
     const defaultFileMenu = {
         reload() {
@@ -88,7 +94,7 @@ import {DasflowContext} from "./dasflow"
     editor.use(VueRenderPlugin)
     editor.use(ContextMenuPlugin, {
         items: {
-            'log dascript'() {
+            'show code'() {
                 const dasCtx = ctx.constructDas()
                 console.log(dasCtx.code)
                 dasCtx.logErrors()
@@ -100,20 +106,12 @@ import {DasflowContext} from "./dasflow"
         margin: 20 // default indent for new frames is 30px
     })
 
-    const engine = new Rete.Engine(ctx.EDITOR_VER)
-
     comps.forEach(it => {
             editor.register(it)
             engine.register(it)
         }
     )
 
-    const n1 = await floatComp.createNode({value: 2})
-    n1.position = [200, 200]
-    editor.addNode(n1)
-    const n2 = await floatComp.createNode({value: 3})
-    n2.position = [0, 200]
-    editor.addNode(n2)
     const fn = await functionComp.createNode({name: "foobar"})
     editor.addNode(fn)
 
@@ -142,7 +140,6 @@ import {DasflowContext} from "./dasflow"
         }
     }
 
-    await websocket.open()
     refreshFilesList()
     await ctx.firstStart()
 })()

@@ -2,7 +2,7 @@ import {JsonRpcWebsocket} from "jsonrpc-client-websocket"
 import {NodeEditor} from "rete/types/editor"
 import {FilesRpc} from "./rpc"
 import {SubEvent} from 'sub-events'
-import {ConstructDasCtx, TopLevelDasComponent} from "./dasComponents"
+import {ConstructDasCtx, LangComponent} from "./components"
 
 
 export class DasflowContext {
@@ -44,8 +44,8 @@ export class DasflowContext {
     constructDas(): ConstructDasCtx {
         const ctx = new ConstructDasCtx(this.editor)
         for (const node of this.editor.nodes) {
-            let component = this.editor.components.get(node.name)
-            if (component instanceof TopLevelDasComponent)
+            let component = <LangComponent>this.editor.components.get(node.name)
+            if (component.topLevel)
                 component.constructDas(node, ctx)
         }
         return ctx
