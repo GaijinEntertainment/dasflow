@@ -42,21 +42,21 @@
         {
             "name": "uint8",
             "default": "0u",
-            "validator": "^[-+]?\\d+u?$",
+            "validator": "^[-+]?\\d+$",
             "group": "int",
             "ctor": "uint8($)"
         },
         {
             "name": "uint16",
             "default": "0",
-            "validator": "^[-+]?\\d+u?$",
+            "validator": "^[-+]?\\d+$",
             "group": "int",
             "ctor": "uint16($)"
         },
         {
             "name": "uint64",
             "default": "0",
-            "validator": "^[-+]?\\d+u?$",
+            "validator": "^[-+]?\\d+$",
             "group": "int",
             "ctor": "uint64($)"
         },
@@ -71,14 +71,14 @@
         {
             "name": "float",
             "default": "0",
-            "validator": "^[-+]?\\d+(\\.\\d+)?f?$",
+            "validator": "^[-+]?\\d+(\\.\\d*)?$",
             "group": "float",
             "ctor": "float($)"
         },
         {
             "name": "double",
             "default": "0",
-            "validator": "^[-+]?\\d+(\\.\\d+)?(lf|f)?$",
+            "validator": "^[-+]?\\d+(\\.\\d*)?$",
             "group": "float",
             "ctor": "double($)"
         },
@@ -93,7 +93,8 @@
                     "name": "y",
                     "type": "float"
                 }
-            ]
+            ],
+            "ctor": "float2($x, $y)"
         },
         {
             "name": "float3",
@@ -110,7 +111,8 @@
                     "name": "z",
                     "type": "float"
                 }
-            ]
+            ],
+            "ctor": "float3($x, $y, $z)"
         },
         {
             "name": "float4",
@@ -131,7 +133,8 @@
                     "name": "w",
                     "type": "float"
                 }
-            ]
+            ],
+            "ctor": "float4($x, $y, $z, $w)"
         }
     ],
     "functions": [

@@ -24,17 +24,6 @@ export class LangType {
     desc: LangTypeDesc
     validator?: RegExp
     socket: Socket
-    ctor: (s: string) => string = s => s
-
-    get name(): string | undefined {
-        return this.desc.name
-    }
-
-    get group(): string | undefined {
-        return this.desc.group ?? this.desc.name
-    }
-
-    get defaultValue(): string {
-        return this.desc.default ?? ""
-    }
+    defaultValue: string
+    ctor: (s: string, args: { [key: string]: string }) => string = s => s
 }

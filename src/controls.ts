@@ -125,14 +125,14 @@ const VueTextInputControl = {
         '  <select v-if="this.values" :value="value" @change="change($event)" @dblclick.stop="" @pointerdown.stop="" @pointermove.stop="">\n' +
         '    <option v-for="v of values" :selected="this.value == v">{{ v }}</option>\n' +
         '  </select>' +
-        '  <input v-else type="text" :readonly="readonly" v-model="value" @onfocusout="change($event)" @keyup="keyup($event)" @dblclick.stop="" @pointerdown.stop="" @pointermove.stop=""/>' +
+        '  <input v-else type="text" :readonly="readonly" v-model="value" @onfocusout="change($event)" @onblur="change($event)" @input="change($event)" @keyup="keyup($event)" @dblclick.stop="" @pointerdown.stop="" @pointermove.stop=""/>' +
         '</span>',
     data() {
         return {value: "", values: null}
     },
     methods: {
         change(e) {
-            this.setValue(e.target.value)
+            this.setValue(e.target.value, this.getData(this.ikey))
         },
         keyup(e) {
             if (e.keyCode == 13)
@@ -143,8 +143,9 @@ const VueTextInputControl = {
                 this.putData(this.ikey, this.value)
             this.emitter.trigger('process')
         },
-        setValue(value) {
-            this.value = this.bindControl.validate(value)
+        setValue(value, prevValue) {
+            const validValue = this.bindControl.validate(value, this.value)
+            this.value = validValue != value && prevValue ? prevValue : validValue
             this.update()
         }
     },
