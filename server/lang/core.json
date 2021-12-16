@@ -135,6 +135,114 @@
                 }
             ],
             "ctor": "float4($x, $y, $z, $w)"
+        },
+        {
+            "name": "int2",
+            "struct": [
+                {
+                    "name": "x",
+                    "type": "int"
+                },
+                {
+                    "name": "y",
+                    "type": "int"
+                }
+            ],
+            "ctor": "int2($x, $y)"
+        },
+        {
+            "name": "int3",
+            "struct": [
+                {
+                    "name": "x",
+                    "type": "int"
+                },
+                {
+                    "name": "y",
+                    "type": "int"
+                },
+                {
+                    "name": "z",
+                    "type": "int"
+                }
+            ],
+            "ctor": "int3($x, $y, $z)"
+        },
+        {
+            "name": "int4",
+            "struct": [
+                {
+                    "name": "x",
+                    "type": "int"
+                },
+                {
+                    "name": "y",
+                    "type": "int"
+                },
+                {
+                    "name": "z",
+                    "type": "int"
+                },
+                {
+                    "name": "w",
+                    "type": "int"
+                }
+            ],
+            "ctor": "int4($x, $y, $z, $w)"
+        },
+        {
+            "name": "uint2",
+            "struct": [
+                {
+                    "name": "x",
+                    "type": "uint"
+                },
+                {
+                    "name": "y",
+                    "type": "uint"
+                }
+            ],
+            "ctor": "uint2($x, $y)"
+        },
+        {
+            "name": "uint3",
+            "struct": [
+                {
+                    "name": "x",
+                    "type": "uint"
+                },
+                {
+                    "name": "y",
+                    "type": "uint"
+                },
+                {
+                    "name": "z",
+                    "type": "uint"
+                }
+            ],
+            "ctor": "uint3($x, $y, $z)"
+        },
+        {
+            "name": "uint4",
+            "struct": [
+                {
+                    "name": "x",
+                    "type": "uint"
+                },
+                {
+                    "name": "y",
+                    "type": "uint"
+                },
+                {
+                    "name": "z",
+                    "type": "uint"
+                },
+                {
+                    "name": "w",
+                    "type": "uint"
+                }
+            ],
+            "ctor": "uint4($x, $y, $z, $w)"
         }
     ],
     "functions": [
