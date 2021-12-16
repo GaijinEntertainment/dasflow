@@ -21,7 +21,7 @@ import {Component} from "rete/types"
             console.log(error)
         })
 
-    const container: HTMLElement | null = document.querySelector('#rete')
+    const container = document.querySelector('#rete')
     const ctx = new DasflowContext(websocket)
     const editor = new Rete.NodeEditor(ctx.EDITOR_VER, <HTMLElement>container)
     ctx.editor = editor
@@ -102,7 +102,9 @@ import {Component} from "rete/types"
             },
             files: filesMenu
         },
-        allocate(component: Component) { return (component as LangComponent).group }
+        allocate(component: Component) {
+            return (<LangComponent>component).group
+        }
     })
     editor.use(CommentPlugin, {
         margin: 20 // default indent for new frames is 30px

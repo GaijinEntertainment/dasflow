@@ -137,8 +137,7 @@ const VueTextInputControl = {
         },
         setValue(value) {
             if (this.validator) {
-                const reg: RegExp = this.validator
-                if (!reg.test(value)) {
+                if (!this.validator.test(value)) {
                     this.value = this.defaultValue
                     this.update()
                     return

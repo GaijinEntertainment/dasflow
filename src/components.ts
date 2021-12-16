@@ -1,4 +1,4 @@
-import Rete, {Engine, Input, Output, Socket} from 'rete'
+import Rete, {Engine, Input, Output} from 'rete'
 import {Node} from 'rete/types/node'
 import {NodeEditor} from 'rete/types/editor'
 import {LabelControl, LangTypeSelectControl, TextInputControl} from "./controls"
@@ -153,7 +153,7 @@ export abstract class LangComponent extends Rete.Component {
         const nextNode = out.connections[0].input.node
         if (!nextNode)
             return false
-        const component: LangComponent = <LangComponent>ctx.editor.components.get(nextNode.name)
+        const component = <LangComponent>ctx.editor.components.get(nextNode.name)
         return component.constructDas(nextNode, ctx)
     }
 }
@@ -183,7 +183,7 @@ export class LangLet extends LangComponent {
         let currentType = getTypeByName(this.baseTypes, node.data.type)
         const nodeRef = this.editor?.nodes.find(it => it.id == node.id)
         if (nodeRef) {
-            const valueCtrl = nodeRef.controls.get('value') as TextInputControl
+            const valueCtrl = <TextInputControl>nodeRef.controls.get('value')
             // todo: use setters
             valueCtrl.vueContext.validator = currentType.validator
             valueCtrl.vueContext.defaultValue = currentType.defaultValue ?? ""
@@ -194,7 +194,7 @@ export class LangLet extends LangComponent {
         const output = this.editor.nodes.find(it => it.id == node.id)?.outputs.get('result')
         if (!output)
             return
-        const outputSocket: Socket = currentType.socket
+        const outputSocket = currentType.socket
         if (output.socket != outputSocket) {
             for (const conn of output.connections.concat([])) {
                 if (!outputSocket.compatibleWith(conn.input.socket)) {
@@ -228,7 +228,7 @@ export class Debug extends LangComponent {
     worker(node, inputs, outputs) {
         const val = inputs['inValue']?.length ? inputs['inValue'] : node.data.value
         const refNode = this.editor?.nodes.find(n => n.id === node.id)
-        const label: LabelControl = <LabelControl>refNode?.controls.get('label')
+        const label = <LabelControl>refNode?.controls.get('label')
         label.setValue(val)
     }
 
