@@ -121,14 +121,18 @@ export class ComboBoxControl extends Rete.Control {
 
 const VueTextInputControl = {
     props: ['readonly', 'emitter', 'ikey', 'getData', 'putData', 'bindControl'],
-    template: '<input type="text" :readonly="readonly" v-model="value" @onfocusout="change($event)" @keyup="keyup($event)" @dblclick.stop="" @pointerdown.stop="" @pointermove.stop=""/>',
+    template: '<span>' +
+        '  <select v-if="this.values" :value="value" @change="change($event)" @dblclick.stop="" @pointerdown.stop="" @pointermove.stop="">\n' +
+        '    <option v-for="v of values" :selected="this.value == v">{{ v }}</option>\n' +
+        '  </select>' +
+        '  <input v-else type="text" :readonly="readonly" v-model="value" @onfocusout="change($event)" @keyup="keyup($event)" @dblclick.stop="" @pointerdown.stop="" @pointermove.stop=""/>' +
+        '</span>',
     data() {
-        return {value: ""}
+        return {value: "", values: null}
     },
     methods: {
         change(e) {
             this.setValue(e.target.value)
-            this.update()
         },
         keyup(e) {
             if (e.keyCode == 13)
@@ -140,12 +144,8 @@ const VueTextInputControl = {
             this.emitter.trigger('process')
         },
         setValue(value) {
-            if (this.bindControl.validator && !this.bindControl.validator.test(value)) {
-                this.value = this.bindControl.defaultValue
-                this.update()
-                return
-            }
-            this.value = value
+            this.value = this.bindControl.validate(value)
+            this.update()
         }
     },
     mounted() {
@@ -154,22 +154,47 @@ const VueTextInputControl = {
 }
 
 export class TextInputControl extends Rete.Control {
+    get values(): string[] | undefined {
+        return this._values
+    }
+
+    set values(value: string[] | undefined) {
+        this._values = value
+        if (this.vueContext)
+            this.vueContext.values = value
+        else
+            console.error("vueContext in not yet inited")
+    }
+
     component: unknown
     props: { [key: string]: unknown }
     vueContext: any
     validator?: RegExp
     defaultValue: string
+    private _values?: string[]
 
-    constructor(emitter: NodeEditor | null, key: string, validator: RegExp | undefined, defaultValue: string, readonly: boolean = false) {
+    constructor(emitter: NodeEditor | null, key: string, readonly: boolean = false) {
         super(key)
         this.component = VueTextInputControl
         this.props = {emitter, ikey: key, readonly, bindControl: this}
-        this.validator = validator
-        this.defaultValue = defaultValue
     }
 
-    setValue(val: number) {
-        this.vueContext.setValue(val)
+    validate(val: string): string {
+        if (this.validator && !this.validator.test(val))
+            return this.defaultValue
+        if (this._values) {
+            for (const predefineValue of this._values) {
+                if (predefineValue == val)
+                    return val
+            }
+            return this._values[0]
+        }
+        return val
+    }
+
+    setValue(val: string) {
+        this.vueContext.setValue(this.validate(val))
+        this.vueContext.update()
     }
 }
 

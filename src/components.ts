@@ -173,7 +173,7 @@ export class LangLet extends LangComponent {
         node.addOutput(out)
         if (this.baseTypes.length > 1)
             node.addControl(new LangTypeSelectControl(this.editor, 'type', this.baseTypes))
-        node.addControl(new TextInputControl(this.editor, 'value', type.validator, type.defaultValue ?? ""))
+        node.addControl(new TextInputControl(this.editor, 'value'))
         node.data.type = type.name
     }
 
@@ -186,10 +186,12 @@ export class LangLet extends LangComponent {
 
         const valueCtrl = <TextInputControl>nodeRef.controls.get('value')
         let currentType = getTypeByName(this.baseTypes, node.data.type)
-        if (valueCtrl.validator != currentType.validator || valueCtrl.defaultValue != currentType.defaultValue) {
+        if (valueCtrl.validator != currentType.validator || valueCtrl.defaultValue != currentType.defaultValue || valueCtrl.values != currentType.desc.enum) {
             valueCtrl.validator = currentType.validator
             valueCtrl.defaultValue = currentType.defaultValue
-            valueCtrl.setValue(node.data.value)
+            valueCtrl.values = currentType.desc.enum
+            valueCtrl.setValue(node.data.value) // revalidate data
+            outputs['result'] = node.data.value // refresh output
             const output = nodeRef.outputs.get('result')
             if (output) {
                 const outputSocket = currentType.socket
