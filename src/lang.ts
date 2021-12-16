@@ -34,7 +34,7 @@ export class LangType {
         return this.desc.group ?? this.desc.name
     }
 
-    get defaultValue(): string | undefined {
-        return this.desc.default
+    get defaultValue(): string {
+        return this.desc.default ?? ""
     }
 }

@@ -120,8 +120,8 @@ export class ComboBoxControl extends Rete.Control {
 }
 
 const VueTextInputControl = {
-    props: ['readonly', 'emitter', 'ikey', 'getData', 'putData', 'validator', 'defaultValue'],
-    template: '<input type="text" :readonly="readonly" v-model="value" @input="change($event)" @dblclick.stop="" @pointerdown.stop="" @pointermove.stop=""/>',
+    props: ['readonly', 'emitter', 'ikey', 'getData', 'putData', 'bindControl'],
+    template: '<input type="text" :readonly="readonly" v-model="value" @onfocusout="change($event)" @keyup="keyup($event)" @dblclick.stop="" @pointerdown.stop="" @pointermove.stop=""/>',
     data() {
         return {value: ""}
     },
@@ -130,18 +130,20 @@ const VueTextInputControl = {
             this.setValue(e.target.value)
             this.update()
         },
+        keyup(e) {
+            if (e.keyCode == 13)
+                this.change(e)
+        },
         update() {
             if (this.ikey)
                 this.putData(this.ikey, this.value)
             this.emitter.trigger('process')
         },
         setValue(value) {
-            if (this.validator) {
-                if (!this.validator.test(value)) {
-                    this.value = this.defaultValue
-                    this.update()
-                    return
-                }
+            if (this.bindControl.validator && !this.bindControl.validator.test(value)) {
+                this.value = this.bindControl.defaultValue
+                this.update()
+                return
             }
             this.value = value
         }
@@ -155,11 +157,15 @@ export class TextInputControl extends Rete.Control {
     component: unknown
     props: { [key: string]: unknown }
     vueContext: any
+    validator?: RegExp
+    defaultValue: string
 
     constructor(emitter: NodeEditor | null, key: string, validator: RegExp | undefined, defaultValue: string, readonly: boolean = false) {
         super(key)
         this.component = VueTextInputControl
-        this.props = {emitter, ikey: key, readonly, defaultValue, validator}
+        this.props = {emitter, ikey: key, readonly, bindControl: this}
+        this.validator = validator
+        this.defaultValue = defaultValue
     }
 
     setValue(val: number) {

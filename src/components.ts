@@ -180,28 +180,28 @@ export class LangLet extends LangComponent {
     worker(node, inputs, outputs) {
         outputs['result'] = node.data.value
         outputs['type'] = node.data.type
-        let currentType = getTypeByName(this.baseTypes, node.data.type)
         const nodeRef = this.editor?.nodes.find(it => it.id == node.id)
-        if (nodeRef) {
-            const valueCtrl = <TextInputControl>nodeRef.controls.get('value')
-            // todo: use setters
-            valueCtrl.vueContext.validator = currentType.validator
-            valueCtrl.vueContext.defaultValue = currentType.defaultValue ?? ""
+        if (!nodeRef)
+            return
+
+        const valueCtrl = <TextInputControl>nodeRef.controls.get('value')
+        let currentType = getTypeByName(this.baseTypes, node.data.type)
+        if (valueCtrl.validator != currentType.validator || valueCtrl.defaultValue != currentType.defaultValue) {
+            valueCtrl.validator = currentType.validator
+            valueCtrl.defaultValue = currentType.defaultValue
             valueCtrl.setValue(node.data.value)
-        }
-        if (!this.editor)
-            return
-        const output = this.editor.nodes.find(it => it.id == node.id)?.outputs.get('result')
-        if (!output)
-            return
-        const outputSocket = currentType.socket
-        if (output.socket != outputSocket) {
-            for (const conn of output.connections.concat([])) {
-                if (!outputSocket.compatibleWith(conn.input.socket)) {
-                    this.editor.removeConnection(conn)
+            const output = nodeRef.outputs.get('result')
+            if (output) {
+                const outputSocket = currentType.socket
+                if (output.socket != outputSocket) {
+                    for (const conn of [...output.connections]) {
+                        if (!outputSocket.compatibleWith(conn.input.socket)) {
+                            this.editor?.removeConnection(conn)
+                        }
+                    }
+                    output.socket = outputSocket
                 }
             }
-            output.socket = outputSocket
         }
     }
 

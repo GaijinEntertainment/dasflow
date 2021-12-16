@@ -78,7 +78,7 @@
         {
             "name": "double",
             "default": "0",
-            "validator": "^[-+]?\\d+(\\.\\d+)?[lf|f]?$",
+            "validator": "^[-+]?\\d+(\\.\\d+)?(lf|f)?$",
             "group": "float",
             "ctor": "double($)"
         },
