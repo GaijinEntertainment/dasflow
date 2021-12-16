@@ -10,6 +10,8 @@
         ],
         "strict": false,
         "strictNullChecks": true,
+        "noUnusedLocals": true,
+        "noFallthroughCasesInSwitch": true,
         "sourceMap": true,
         "target": "esnext"
     },

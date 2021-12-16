@@ -7,10 +7,11 @@ import ContextMenuPlugin from 'rete-context-menu-plugin'
 import CommentPlugin from 'rete-comment-plugin'
 import {JsonRpcError, JsonRpcWebsocket} from "jsonrpc-client-websocket"
 
-import {Debug, Function, generateCoreNodes, Sin} from "./components"
+import {Debug, Function, generateCoreNodes, LangComponent, Sin} from "./components"
 
 import {DasflowContext} from "./dasflow"
 import {LangRpc} from "./rpc"
+import {Component} from "rete/types"
 
 
 (async function () {
@@ -59,7 +60,7 @@ import {LangRpc} from "./rpc"
     const filePrefix = './'
     const refreshFilesList = () => {
         ctx.refreshFilesList().then((files) => {
-            for (const k in Object.keys(filesMenu)) {
+            for (const k of Object.keys(filesMenu)) {
                 if (k.startsWith(filePrefix))
                     delete filesMenu[k]
             }
@@ -101,6 +102,7 @@ import {LangRpc} from "./rpc"
             },
             files: filesMenu
         },
+        allocate(component: Component) { return (component as LangComponent).group }
     })
     editor.use(CommentPlugin, {
         margin: 20 // default indent for new frames is 30px

@@ -56,9 +56,10 @@ export function generateCoreNodes(langCore: LangCoreDesc, editor: NodeEditor, en
     }
 
     for (let [groupName, coreTypeGroup] of coreTypeGroups) {
-        const langLet = new LangLet(groupName, coreTypeGroup)
+        const langLet = new LangLet(groupName, ['core types'], coreTypeGroup)
         comps.push(langLet)
     }
+
 
     for (let comp of comps) {
         engine.register(comp)
@@ -68,6 +69,8 @@ export function generateCoreNodes(langCore: LangCoreDesc, editor: NodeEditor, en
 
 
 export abstract class LangComponent extends Rete.Component {
+    group: string[] // context menu path
+
     get topLevel(): boolean {
         return this._topLevel
     }
@@ -76,8 +79,9 @@ export abstract class LangComponent extends Rete.Component {
     private flowOut = false
     protected _topLevel = false
 
-    protected constructor(name: string) {
+    protected constructor(name: string, group: string[] = ['language']) {
         super(name)
+        this.group = group
     }
 
     worker(node, inputs, outputs) {
@@ -158,8 +162,8 @@ export abstract class LangComponent extends Rete.Component {
 export class LangLet extends LangComponent {
     baseTypes: LangType[]
 
-    constructor(name: string, types: LangType[]) {
-        super(`Let: ${name}`)
+    constructor(name: string, group: string[], types: LangType[]) {
+        super(`Let: ${name}`, group)
         this.baseTypes = types
     }
 
@@ -211,7 +215,7 @@ export class LangLet extends LangComponent {
 
 export class Debug extends LangComponent {
     constructor() {
-        super('Debug')
+        super('Debug', ['functions'])
     }
 
     async builder(node) {
@@ -319,7 +323,7 @@ export class While extends LangComponent {
 
 export class Sin extends LangComponent {
     constructor() {
-        super('Sin')
+        super('Sin', ['functions'])
     }
 
     async builder(node) {
