@@ -7,7 +7,7 @@ import ContextMenuPlugin from 'rete-context-menu-plugin'
 import CommentPlugin from 'rete-comment-plugin'
 import {JsonRpcError, JsonRpcWebsocket} from "jsonrpc-client-websocket"
 
-import {Debug, Function, generateCoreNodes, LangComponent, Sin} from "./components"
+import {generateCoreNodes, LangComponent} from "./components"
 
 import {DasflowContext} from "./dasflow"
 import {LangRpc} from "./rpc"
@@ -32,9 +32,6 @@ import {Component} from "rete/types"
     const langCore = await LangRpc.getLangCore(websocket)
     generateCoreNodes(langCore, editor, engine)
 
-    const debugComp = new Debug()
-    const functionComp = new Function()
-    const comps = [debugComp, new Sin(), functionComp]
 
     const defaultFileMenu = {
         reload() {
@@ -110,19 +107,6 @@ import {Component} from "rete/types"
         margin: 20 // default indent for new frames is 30px
     })
 
-    comps.forEach(it => {
-            editor.register(it)
-            engine.register(it)
-        }
-    )
-
-    const fn = await functionComp.createNode({name: "foobar"})
-    editor.addNode(fn)
-
-    const debug = await debugComp.createNode()
-    debug.position = [250, 0]
-
-    editor.addNode(debug)
 
     editor.on(['process', 'nodecreated', 'noderemoved', 'connectioncreated', 'connectionremoved'], async () => {
         await engine.abort()

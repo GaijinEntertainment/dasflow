@@ -1,0 +1,1531 @@
+{
+	"functions" : [
+		{
+			"args" : [
+				{
+					"mn" : "&Is",
+					"name" : "str"
+				},
+				{
+					"mn" : "C_c",
+					"name" : "context"
+				}
+			],
+			"name" : "delete_string",
+			"resultType" : "v"
+		},
+		{
+			"args" : [
+				{
+					"mn" : "CI0<H<strings::StringBuilderWriter>>1<v>$",
+					"name" : "block"
+				},
+				{
+					"mn" : "C_c",
+					"name" : "context"
+				},
+				{
+					"mn" : "C_l",
+					"name" : "lineinfo"
+				}
+			],
+			"name" : "build_string",
+			"resultType" : "s"
+		},
+		{
+			"args" : [
+				{
+					"mn" : "CIs",
+					"name" : "str"
+				},
+				{
+					"mn" : "CI0<C#1<u8>A>1<v>$",
+					"name" : "block"
+				},
+				{
+					"mn" : "C_c",
+					"name" : "context"
+				},
+				{
+					"mn" : "C_l",
+					"name" : "lineinfo"
+				}
+			],
+			"name" : "peek_data",
+			"resultType" : "v"
+		},
+		{
+			"args" : [
+				{
+					"mn" : "CIs",
+					"name" : "str"
+				},
+				{
+					"mn" : "CI0<#1<u8>A>1<v>$",
+					"name" : "block"
+				},
+				{
+					"mn" : "C_c",
+					"name" : "context"
+				},
+				{
+					"mn" : "C_l",
+					"name" : "lineinfo"
+				}
+			],
+			"name" : "modify_data",
+			"resultType" : "s"
+		},
+		{
+			"args" : [
+				{
+					"mn" : "H<strings::StringBuilderWriter>",
+					"name" : "writer"
+				},
+				{
+					"mn" : "C*",
+					"name" : "anything"
+				}
+			],
+			"name" : "write",
+			"resultType" : "v"
+		},
+		{
+			"args" : [
+				{
+					"mn" : "IH<strings::StringBuilderWriter>",
+					"name" : "writer"
+				},
+				{
+					"mn" : "Ci",
+					"name" : "ch"
+				}
+			],
+			"name" : "write_char",
+			"resultType" : "v"
+		},
+		{
+			"args" : [
+				{
+					"mn" : "IH<strings::StringBuilderWriter>",
+					"name" : "writer"
+				},
+				{
+					"mn" : "Ci",
+					"name" : "ch"
+				},
+				{
+					"mn" : "Ci",
+					"name" : "count"
+				}
+			],
+			"name" : "write_chars",
+			"resultType" : "v"
+		},
+		{
+			"args" : [
+				{
+					"mn" : "IH<strings::StringBuilderWriter>",
+					"name" : "writer"
+				},
+				{
+					"mn" : "CIs",
+					"name" : "str"
+				}
+			],
+			"name" : "write_escape_string",
+			"resultType" : "v"
+		},
+		{
+			"args" : [
+				{
+					"mn" : "IH<strings::StringBuilderWriter>",
+					"name" : "writer"
+				},
+				{
+					"mn" : "CIs",
+					"name" : "format"
+				},
+				{
+					"mn" : "Ci",
+					"name" : "value"
+				}
+			],
+			"name" : "format",
+			"resultType" : "v"
+		},
+		{
+			"args" : [
+				{
+					"mn" : "IH<strings::StringBuilderWriter>",
+					"name" : "writer"
+				},
+				{
+					"mn" : "CIs",
+					"name" : "format"
+				},
+				{
+					"mn" : "Cu",
+					"name" : "value"
+				}
+			],
+			"name" : "format",
+			"resultType" : "v"
+		},
+		{
+			"args" : [
+				{
+					"mn" : "IH<strings::StringBuilderWriter>",
+					"name" : "writer"
+				},
+				{
+					"mn" : "CIs",
+					"name" : "format"
+				},
+				{
+					"mn" : "Ci64",
+					"name" : "value"
+				}
+			],
+			"name" : "format",
+			"resultType" : "v"
+		},
+		{
+			"args" : [
+				{
+					"mn" : "IH<strings::StringBuilderWriter>",
+					"name" : "writer"
+				},
+				{
+					"mn" : "CIs",
+					"name" : "format"
+				},
+				{
+					"mn" : "Cu64",
+					"name" : "value"
+				}
+			],
+			"name" : "format",
+			"resultType" : "v"
+		},
+		{
+			"args" : [
+				{
+					"mn" : "IH<strings::StringBuilderWriter>",
+					"name" : "writer"
+				},
+				{
+					"mn" : "CIs",
+					"name" : "format"
+				},
+				{
+					"mn" : "Cf",
+					"name" : "value"
+				}
+			],
+			"name" : "format",
+			"resultType" : "v"
+		},
+		{
+			"args" : [
+				{
+					"mn" : "IH<strings::StringBuilderWriter>",
+					"name" : "writer"
+				},
+				{
+					"mn" : "CIs",
+					"name" : "format"
+				},
+				{
+					"mn" : "Cd",
+					"name" : "value"
+				}
+			],
+			"name" : "format",
+			"resultType" : "v"
+		},
+		{
+			"args" : [
+				{
+					"mn" : "CI1<u8>A",
+					"name" : "bytes"
+				},
+				{
+					"mn" : "C_c",
+					"name" : "context"
+				}
+			],
+			"name" : "string",
+			"resultType" : "s"
+		},
+		{
+			"args" : [
+				{
+					"mn" : "C*",
+					"name" : "anything"
+				}
+			],
+			"name" : "builtin_strdup",
+			"resultType" : "v"
+		},
+		{
+			"args" : [
+				{
+					"mn" : "CIs",
+					"name" : "str"
+				},
+				{
+					"mn" : "Ci",
+					"name" : "idx"
+				},
+				{
+					"mn" : "C_c",
+					"name" : "context"
+				}
+			],
+			"name" : "character_at",
+			"resultType" : "i"
+		},
+		{
+			"args" : [
+				{
+					"mn" : "CIs",
+					"name" : "str"
+				},
+				{
+					"mn" : "Ci",
+					"name" : "idx"
+				}
+			],
+			"name" : "character_uat",
+			"resultType" : "i"
+		},
+		{
+			"args" : [
+				{
+					"mn" : "CIs",
+					"name" : "str"
+				},
+				{
+					"mn" : "Ci",
+					"name" : "count"
+				},
+				{
+					"mn" : "C_c",
+					"name" : "context"
+				}
+			],
+			"name" : "repeat",
+			"resultType" : "s"
+		},
+		{
+			"args" : [
+				{
+					"mn" : "Ci",
+					"name" : "char"
+				},
+				{
+					"mn" : "C_c",
+					"name" : "context"
+				}
+			],
+			"name" : "to_char",
+			"resultType" : "s"
+		},
+		{
+			"args" : [
+				{
+					"mn" : "CIs",
+					"name" : "str"
+				},
+				{
+					"mn" : "CIs",
+					"name" : "cmp"
+				},
+				{
+					"mn" : "C_c",
+					"name" : "context"
+				}
+			],
+			"name" : "ends_with",
+			"resultType" : "b"
+		},
+		{
+			"args" : [
+				{
+					"mn" : "CIH<$::das_string>",
+					"name" : "str"
+				},
+				{
+					"mn" : "CIs",
+					"name" : "cmp"
+				},
+				{
+					"mn" : "C_c",
+					"name" : "context"
+				}
+			],
+			"name" : "ends_with",
+			"resultType" : "b"
+		},
+		{
+			"args" : [
+				{
+					"mn" : "CIs",
+					"name" : "str"
+				},
+				{
+					"mn" : "CIs",
+					"name" : "cmp"
+				},
+				{
+					"mn" : "C_c",
+					"name" : "context"
+				}
+			],
+			"name" : "starts_with",
+			"resultType" : "b"
+		},
+		{
+			"args" : [
+				{
+					"mn" : "CIs",
+					"name" : "str"
+				},
+				{
+					"mn" : "CIs",
+					"name" : "cmp"
+				},
+				{
+					"mn" : "Cu",
+					"name" : "cmpLen"
+				},
+				{
+					"mn" : "C_c",
+					"name" : "context"
+				}
+			],
+			"name" : "starts_with",
+			"resultType" : "b"
+		},
+		{
+			"args" : [
+				{
+					"mn" : "CIs",
+					"name" : "str"
+				},
+				{
+					"mn" : "C_c",
+					"name" : "context"
+				}
+			],
+			"name" : "strip",
+			"resultType" : "s"
+		},
+		{
+			"args" : [
+				{
+					"mn" : "CIs",
+					"name" : "str"
+				},
+				{
+					"mn" : "C_c",
+					"name" : "context"
+				}
+			],
+			"name" : "strip_right",
+			"resultType" : "s"
+		},
+		{
+			"args" : [
+				{
+					"mn" : "CIs",
+					"name" : "str"
+				},
+				{
+					"mn" : "C_c",
+					"name" : "context"
+				}
+			],
+			"name" : "strip_left",
+			"resultType" : "s"
+		},
+		{
+			"args" : [
+				{
+					"mn" : "CIs",
+					"name" : "str"
+				},
+				{
+					"mn" : "Ci",
+					"name" : "start"
+				},
+				{
+					"mn" : "Ci",
+					"name" : "length"
+				},
+				{
+					"mn" : "C_c",
+					"name" : "context"
+				}
+			],
+			"name" : "chop",
+			"resultType" : "s"
+		},
+		{
+			"args" : [
+				{
+					"mn" : "CIs",
+					"name" : "str"
+				},
+				{
+					"mn" : "Ci",
+					"name" : "start"
+				},
+				{
+					"mn" : "Ci",
+					"name" : "end"
+				},
+				{
+					"mn" : "C_c",
+					"name" : "context"
+				}
+			],
+			"name" : "slice",
+			"resultType" : "s"
+		},
+		{
+			"args" : [
+				{
+					"mn" : "CIs",
+					"name" : "str"
+				},
+				{
+					"mn" : "Ci",
+					"name" : "start"
+				},
+				{
+					"mn" : "C_c",
+					"name" : "context"
+				}
+			],
+			"name" : "slice",
+			"resultType" : "s"
+		},
+		{
+			"args" : [
+				{
+					"mn" : "CIs",
+					"name" : "str"
+				},
+				{
+					"mn" : "CIs",
+					"name" : "substr"
+				},
+				{
+					"mn" : "Ci",
+					"name" : "start"
+				},
+				{
+					"mn" : "C_c",
+					"name" : "context"
+				}
+			],
+			"name" : "find",
+			"resultType" : "i"
+		},
+		{
+			"args" : [
+				{
+					"mn" : "CIs",
+					"name" : "str"
+				},
+				{
+					"mn" : "CIs",
+					"name" : "substr"
+				}
+			],
+			"name" : "find",
+			"resultType" : "i"
+		},
+		{
+			"args" : [
+				{
+					"mn" : "CIs",
+					"name" : "str"
+				},
+				{
+					"mn" : "Ci",
+					"name" : "substr"
+				},
+				{
+					"mn" : "C_c",
+					"name" : "context"
+				}
+			],
+			"name" : "find",
+			"resultType" : "i"
+		},
+		{
+			"args" : [
+				{
+					"mn" : "CIs",
+					"name" : "str"
+				},
+				{
+					"mn" : "Ci",
+					"name" : "substr"
+				},
+				{
+					"mn" : "Ci",
+					"name" : "start"
+				},
+				{
+					"mn" : "C_c",
+					"name" : "context"
+				}
+			],
+			"name" : "find",
+			"resultType" : "i"
+		},
+		{
+			"args" : [
+				{
+					"mn" : "CIs",
+					"name" : "str"
+				},
+				{
+					"mn" : "C_c",
+					"name" : "context"
+				}
+			],
+			"name" : "length",
+			"resultType" : "i"
+		},
+		{
+			"args" : [
+				{
+					"mn" : "CIs",
+					"name" : "str"
+				},
+				{
+					"mn" : "C_c",
+					"name" : "context"
+				}
+			],
+			"name" : "reverse",
+			"resultType" : "s"
+		},
+		{
+			"args" : [
+				{
+					"mn" : "IH<$::das_string>",
+					"name" : "str"
+				},
+				{
+					"mn" : "Ci",
+					"name" : "ch"
+				}
+			],
+			"name" : "append",
+			"resultType" : "v"
+		},
+		{
+			"args" : [
+				{
+					"mn" : "IH<$::das_string>",
+					"name" : "str"
+				},
+				{
+					"mn" : "Ci",
+					"name" : "new_length"
+				}
+			],
+			"name" : "resize",
+			"resultType" : "v"
+		},
+		{
+			"args" : [
+				{
+					"mn" : "CIH<$::das_string>",
+					"name" : "str"
+				}
+			],
+			"name" : "length",
+			"resultType" : "i"
+		},
+		{
+			"args" : [
+				{
+					"mn" : "CIs",
+					"name" : "str"
+				},
+				{
+					"mn" : "C_c",
+					"name" : "context"
+				}
+			],
+			"name" : "to_upper",
+			"resultType" : "s"
+		},
+		{
+			"args" : [
+				{
+					"mn" : "CIs",
+					"name" : "str"
+				},
+				{
+					"mn" : "C_c",
+					"name" : "context"
+				}
+			],
+			"name" : "to_lower",
+			"resultType" : "s"
+		},
+		{
+			"args" : [
+				{
+					"mn" : "CIs",
+					"name" : "str"
+				}
+			],
+			"name" : "empty",
+			"resultType" : "b"
+		},
+		{
+			"args" : [
+				{
+					"mn" : "CIH<$::das_string>",
+					"name" : "str"
+				}
+			],
+			"name" : "empty",
+			"resultType" : "b"
+		},
+		{
+			"args" : [
+				{
+					"mn" : "CIs",
+					"name" : "str"
+				}
+			],
+			"name" : "to_lower_in_place",
+			"resultType" : "s"
+		},
+		{
+			"args" : [
+				{
+					"mn" : "CIs",
+					"name" : "str"
+				}
+			],
+			"name" : "to_upper_in_place",
+			"resultType" : "s"
+		},
+		{
+			"args" : [
+				{
+					"mn" : "CIs",
+					"name" : "str"
+				},
+				{
+					"mn" : "CIs",
+					"name" : "delimiter"
+				},
+				{
+					"mn" : "CI$",
+					"name" : "block"
+				},
+				{
+					"mn" : "C_c",
+					"name" : "context"
+				},
+				{
+					"mn" : "C_l",
+					"name" : "lineinfo"
+				}
+			],
+			"name" : "builtin_string_split_by_char",
+			"resultType" : "v"
+		},
+		{
+			"args" : [
+				{
+					"mn" : "CIs",
+					"name" : "str"
+				},
+				{
+					"mn" : "CIs",
+					"name" : "delimiter"
+				},
+				{
+					"mn" : "CI$",
+					"name" : "block"
+				},
+				{
+					"mn" : "C_c",
+					"name" : "context"
+				},
+				{
+					"mn" : "C_l",
+					"name" : "lineinfo"
+				}
+			],
+			"name" : "builtin_string_split",
+			"resultType" : "v"
+		},
+		{
+			"args" : [
+				{
+					"mn" : "CIs",
+					"name" : "str"
+				},
+				{
+					"mn" : "C_c",
+					"name" : "context"
+				}
+			],
+			"name" : "int",
+			"resultType" : "i"
+		},
+		{
+			"args" : [
+				{
+					"mn" : "CIs",
+					"name" : "str"
+				},
+				{
+					"mn" : "C_c",
+					"name" : "context"
+				}
+			],
+			"name" : "uint",
+			"resultType" : "u"
+		},
+		{
+			"args" : [
+				{
+					"mn" : "CIs",
+					"name" : "str"
+				},
+				{
+					"mn" : "C_c",
+					"name" : "context"
+				}
+			],
+			"name" : "float",
+			"resultType" : "f"
+		},
+		{
+			"args" : [
+				{
+					"mn" : "CIs",
+					"name" : "str"
+				},
+				{
+					"mn" : "C_c",
+					"name" : "context"
+				}
+			],
+			"name" : "double",
+			"resultType" : "d"
+		},
+		{
+			"args" : [
+				{
+					"mn" : "CIs",
+					"name" : "value"
+				},
+				{
+					"mn" : "Cb",
+					"name" : "hex"
+				}
+			],
+			"name" : "to_int",
+			"resultType" : "i"
+		},
+		{
+			"args" : [
+				{
+					"mn" : "CIs",
+					"name" : "value"
+				},
+				{
+					"mn" : "Cb",
+					"name" : "hex"
+				}
+			],
+			"name" : "to_uint",
+			"resultType" : "u"
+		},
+		{
+			"args" : [
+				{
+					"mn" : "CIs",
+					"name" : "value"
+				},
+				{
+					"mn" : "Cb",
+					"name" : "hex"
+				}
+			],
+			"name" : "to_int64",
+			"resultType" : "i64"
+		},
+		{
+			"args" : [
+				{
+					"mn" : "CIs",
+					"name" : "value"
+				},
+				{
+					"mn" : "Cb",
+					"name" : "hex"
+				}
+			],
+			"name" : "to_uint64",
+			"resultType" : "u64"
+		},
+		{
+			"args" : [
+				{
+					"mn" : "CIs",
+					"name" : "value"
+				}
+			],
+			"name" : "to_float",
+			"resultType" : "f"
+		},
+		{
+			"args" : [
+				{
+					"mn" : "CIs",
+					"name" : "str"
+				},
+				{
+					"mn" : "C_c",
+					"name" : "context"
+				}
+			],
+			"name" : "escape",
+			"resultType" : "s"
+		},
+		{
+			"args" : [
+				{
+					"mn" : "CIs",
+					"name" : "str"
+				},
+				{
+					"mn" : "C_c",
+					"name" : "context"
+				}
+			],
+			"name" : "unescape",
+			"resultType" : "s"
+		},
+		{
+			"args" : [
+				{
+					"mn" : "CIs",
+					"name" : "str"
+				},
+				{
+					"mn" : "CIs",
+					"name" : "toSearch"
+				},
+				{
+					"mn" : "CIs",
+					"name" : "replace"
+				},
+				{
+					"mn" : "C_c",
+					"name" : "context"
+				}
+			],
+			"name" : "replace",
+			"resultType" : "s"
+		},
+		{
+			"args" : [
+				{
+					"mn" : "CIs",
+					"name" : "str"
+				},
+				{
+					"mn" : "C_c",
+					"name" : "context"
+				}
+			],
+			"name" : "rtrim",
+			"resultType" : "s"
+		},
+		{
+			"args" : [
+				{
+					"mn" : "CIs",
+					"name" : "format"
+				},
+				{
+					"mn" : "Ci",
+					"name" : "value"
+				},
+				{
+					"mn" : "C_c",
+					"name" : "context"
+				}
+			],
+			"name" : "format",
+			"resultType" : "s"
+		},
+		{
+			"args" : [
+				{
+					"mn" : "CIs",
+					"name" : "format"
+				},
+				{
+					"mn" : "Cu",
+					"name" : "value"
+				},
+				{
+					"mn" : "C_c",
+					"name" : "context"
+				}
+			],
+			"name" : "format",
+			"resultType" : "s"
+		},
+		{
+			"args" : [
+				{
+					"mn" : "CIs",
+					"name" : "format"
+				},
+				{
+					"mn" : "Ci64",
+					"name" : "value"
+				},
+				{
+					"mn" : "C_c",
+					"name" : "context"
+				}
+			],
+			"name" : "format",
+			"resultType" : "s"
+		},
+		{
+			"args" : [
+				{
+					"mn" : "CIs",
+					"name" : "format"
+				},
+				{
+					"mn" : "Cu64",
+					"name" : "value"
+				},
+				{
+					"mn" : "C_c",
+					"name" : "context"
+				}
+			],
+			"name" : "format",
+			"resultType" : "s"
+		},
+		{
+			"args" : [
+				{
+					"mn" : "CIs",
+					"name" : "format"
+				},
+				{
+					"mn" : "Cf",
+					"name" : "value"
+				},
+				{
+					"mn" : "C_c",
+					"name" : "context"
+				}
+			],
+			"name" : "format",
+			"resultType" : "s"
+		},
+		{
+			"args" : [
+				{
+					"mn" : "CIs",
+					"name" : "format"
+				},
+				{
+					"mn" : "Cd",
+					"name" : "value"
+				},
+				{
+					"mn" : "C_c",
+					"name" : "context"
+				}
+			],
+			"name" : "format",
+			"resultType" : "s"
+		},
+		{
+			"args" : [
+				{
+					"mn" : "Ci",
+					"name" : "Character"
+				}
+			],
+			"name" : "is_alpha",
+			"resultType" : "b"
+		},
+		{
+			"args" : [
+				{
+					"mn" : "Ci",
+					"name" : "Character"
+				}
+			],
+			"name" : "is_new_line",
+			"resultType" : "b"
+		},
+		{
+			"args" : [
+				{
+					"mn" : "Ci",
+					"name" : "Character"
+				}
+			],
+			"name" : "is_white_space",
+			"resultType" : "b"
+		},
+		{
+			"args" : [
+				{
+					"mn" : "Ci",
+					"name" : "Character"
+				}
+			],
+			"name" : "is_number",
+			"resultType" : "b"
+		},
+		{
+			"args" : [
+				{
+					"mn" : "Ci",
+					"name" : "Character"
+				},
+				{
+					"mn" : "CI[8]u",
+					"name" : "Charset"
+				}
+			],
+			"name" : "is_char_in_set",
+			"resultType" : "b"
+		},
+		{
+			"args" : [
+				{
+					"mn" : "CIs",
+					"name" : "str"
+				},
+				{
+					"mn" : "Ci",
+					"name" : "length"
+				},
+				{
+					"mn" : "C_c",
+					"name" : "context"
+				}
+			],
+			"name" : "reserve_string_buffer",
+			"resultType" : "s"
+		}
+	],
+	"types" : {
+		"f" : {
+			"mn" : "f",
+			"constType" : false,
+			"ctors" : [
+				{
+					"args" : [
+						{
+							"mn" : "CIs",
+							"name" : "str"
+						},
+						{
+							"mn" : "C_c",
+							"name" : "context"
+						}
+					],
+					"name" : "float",
+					"resultType" : "f"
+				}
+			],
+			"refType" : false,
+			"typeName" : "float",
+			"requirements" : [
+				"strings"
+			]
+		},
+		"C_c" : {
+			"mn" : "C_c",
+			"constType" : true,
+			"ctors" : [],
+			"refType" : false,
+			"typeName" : "__context const",
+			"requirements" : [
+				"strings"
+			]
+		},
+		"C_l" : {
+			"mn" : "C_l",
+			"constType" : true,
+			"ctors" : [],
+			"refType" : false,
+			"typeName" : "__lineInfo const",
+			"requirements" : [
+				"strings"
+			]
+		},
+		"CIs" : {
+			"mn" : "CIs",
+			"constType" : true,
+			"ctors" : [],
+			"refType" : false,
+			"typeName" : "string const !",
+			"requirements" : [
+				"strings"
+			]
+		},
+		"C*" : {
+			"mn" : "C*",
+			"constType" : true,
+			"ctors" : [],
+			"refType" : false,
+			"typeName" : "any const",
+			"requirements" : [
+				"strings"
+			]
+		},
+		"Ci" : {
+			"mn" : "Ci",
+			"constType" : true,
+			"ctors" : [],
+			"refType" : false,
+			"typeName" : "int const",
+			"requirements" : [
+				"strings"
+			]
+		},
+		"Cu" : {
+			"mn" : "Cu",
+			"constType" : true,
+			"ctors" : [],
+			"refType" : false,
+			"typeName" : "uint const",
+			"requirements" : [
+				"strings"
+			]
+		},
+		"Ci64" : {
+			"mn" : "Ci64",
+			"constType" : true,
+			"ctors" : [],
+			"refType" : false,
+			"typeName" : "int64 const",
+			"requirements" : [
+				"strings"
+			]
+		},
+		"Cf" : {
+			"mn" : "Cf",
+			"constType" : true,
+			"ctors" : [],
+			"refType" : false,
+			"typeName" : "float const",
+			"requirements" : [
+				"strings"
+			]
+		},
+		"Cd" : {
+			"mn" : "Cd",
+			"constType" : true,
+			"ctors" : [],
+			"refType" : false,
+			"typeName" : "double const",
+			"requirements" : [
+				"strings"
+			]
+		},
+		"CI$" : {
+			"mn" : "CI$",
+			"constType" : true,
+			"ctors" : [],
+			"refType" : false,
+			"typeName" : "block<> const !",
+			"requirements" : [
+				"strings"
+			]
+		},
+		"Cb" : {
+			"mn" : "Cb",
+			"constType" : true,
+			"ctors" : [],
+			"refType" : false,
+			"typeName" : "bool const",
+			"requirements" : [
+				"strings"
+			]
+		},
+		"i64" : {
+			"mn" : "i64",
+			"constType" : false,
+			"ctors" : [],
+			"refType" : false,
+			"typeName" : "int64",
+			"requirements" : [
+				"strings"
+			]
+		},
+		"u64" : {
+			"mn" : "u64",
+			"constType" : false,
+			"ctors" : [],
+			"refType" : false,
+			"typeName" : "uint64",
+			"requirements" : [
+				"strings"
+			]
+		},
+		"Cu64" : {
+			"mn" : "Cu64",
+			"constType" : true,
+			"ctors" : [],
+			"refType" : false,
+			"typeName" : "uint64 const",
+			"requirements" : [
+				"strings"
+			]
+		},
+		"IH<strings::StringBuilderWriter>" : {
+			"mn" : "IH<strings::StringBuilderWriter>",
+			"constType" : false,
+			"ctors" : [],
+			"refType" : false,
+			"typeName" : "StringBuilderWriter !",
+			"requirements" : [
+				"strings"
+			]
+		},
+		"CIH<$::das_string>" : {
+			"mn" : "CIH<$::das_string>",
+			"constType" : true,
+			"ctors" : [],
+			"refType" : false,
+			"typeName" : "das_string const !",
+			"requirements" : [
+				"strings"
+			]
+		},
+		"CI1<u8>A" : {
+			"mn" : "CI1<u8>A",
+			"constType" : true,
+			"ctors" : [],
+			"refType" : false,
+			"typeName" : "array<uint8> const !",
+			"requirements" : [
+				"strings"
+			]
+		},
+		"CI[8]u" : {
+			"mn" : "CI[8]u",
+			"constType" : true,
+			"ctors" : [],
+			"refType" : false,
+			"typeName" : "uint[8] const !",
+			"requirements" : [
+				"strings"
+			]
+		},
+		"H<strings::StringBuilderWriter>" : {
+			"mn" : "H<strings::StringBuilderWriter>",
+			"constType" : false,
+			"ctors" : [],
+			"refType" : false,
+			"typeName" : "StringBuilderWriter",
+			"requirements" : [
+				"strings"
+			]
+		},
+		"d" : {
+			"mn" : "d",
+			"constType" : false,
+			"ctors" : [
+				{
+					"args" : [
+						{
+							"mn" : "CIs",
+							"name" : "str"
+						},
+						{
+							"mn" : "C_c",
+							"name" : "context"
+						}
+					],
+					"name" : "double",
+					"resultType" : "d"
+				}
+			],
+			"refType" : false,
+			"typeName" : "double",
+			"requirements" : [
+				"strings"
+			]
+		},
+		"v" : {
+			"mn" : "v",
+			"constType" : false,
+			"ctors" : [],
+			"refType" : false,
+			"typeName" : "void",
+			"requirements" : [
+				"strings"
+			]
+		},
+		"&Is" : {
+			"mn" : "&Is",
+			"constType" : false,
+			"ctors" : [],
+			"refType" : true,
+			"typeName" : "string & !",
+			"requirements" : [
+				"strings"
+			]
+		},
+		"s" : {
+			"mn" : "s",
+			"constType" : false,
+			"ctors" : [
+				{
+					"args" : [
+						{
+							"mn" : "CI1<u8>A",
+							"name" : "bytes"
+						},
+						{
+							"mn" : "C_c",
+							"name" : "context"
+						}
+					],
+					"name" : "string",
+					"resultType" : "s"
+				}
+			],
+			"refType" : false,
+			"typeName" : "string",
+			"requirements" : [
+				"strings"
+			]
+		},
+		"i" : {
+			"mn" : "i",
+			"constType" : false,
+			"ctors" : [
+				{
+					"args" : [
+						{
+							"mn" : "CIs",
+							"name" : "str"
+						},
+						{
+							"mn" : "C_c",
+							"name" : "context"
+						}
+					],
+					"name" : "int",
+					"resultType" : "i"
+				}
+			],
+			"refType" : false,
+			"typeName" : "int",
+			"requirements" : [
+				"strings"
+			]
+		},
+		"b" : {
+			"mn" : "b",
+			"constType" : false,
+			"ctors" : [],
+			"refType" : false,
+			"typeName" : "bool",
+			"requirements" : [
+				"strings"
+			]
+		},
+		"CI0<H<strings::StringBuilderWriter>>1<v>$" : {
+			"mn" : "CI0<H<strings::StringBuilderWriter>>1<v>$",
+			"constType" : true,
+			"ctors" : [],
+			"refType" : false,
+			"typeName" : "block<(StringBuilderWriter):void> const !",
+			"requirements" : [
+				"strings"
+			]
+		},
+		"u" : {
+			"mn" : "u",
+			"constType" : false,
+			"ctors" : [
+				{
+					"args" : [
+						{
+							"mn" : "CIs",
+							"name" : "str"
+						},
+						{
+							"mn" : "C_c",
+							"name" : "context"
+						}
+					],
+					"name" : "uint",
+					"resultType" : "u"
+				}
+			],
+			"refType" : false,
+			"typeName" : "uint",
+			"requirements" : [
+				"strings"
+			]
+		},
+		"CI0<C#1<u8>A>1<v>$" : {
+			"mn" : "CI0<C#1<u8>A>1<v>$",
+			"constType" : true,
+			"ctors" : [],
+			"refType" : false,
+			"typeName" : "block<(array<uint8> const #):void> const !",
+			"requirements" : [
+				"strings"
+			]
+		},
+		"IH<$::das_string>" : {
+			"mn" : "IH<$::das_string>",
+			"constType" : false,
+			"ctors" : [],
+			"refType" : false,
+			"typeName" : "das_string !",
+			"requirements" : [
+				"strings"
+			]
+		},
+		"CI0<#1<u8>A>1<v>$" : {
+			"mn" : "CI0<#1<u8>A>1<v>$",
+			"constType" : true,
+			"ctors" : [],
+			"refType" : false,
+			"typeName" : "block<(array<uint8> #):void> const !",
+			"requirements" : [
+				"strings"
+			]
+		}
+	}
+}

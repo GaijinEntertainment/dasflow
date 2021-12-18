@@ -31,8 +31,7 @@ export class DasflowContext {
     async loadFile(path: string): Promise<boolean> {
         let res = FilesRpc.load(this.websocket, this.editor, path)
         res.then((res) => {
-            if (res)
-                this.currentFile = path
+            this.currentFile = path
         })
         return res
     }

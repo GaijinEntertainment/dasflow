@@ -15,8 +15,11 @@ export interface LangFunctionDesc {
 
 export interface LangCoreDesc {
     logicType: string
+    anyType: string
+    voidType: string
     types: LangTypeDesc[]
     functions: LangFunctionDesc[]
+    hiddenArguments: string[]
 }
 
 

@@ -1,3 +1,7 @@
+options rtti
+
+require ast
+require rtti
 require strings
 
 require dasweb/web_server
@@ -42,6 +46,109 @@ def initialize()
     jsonRpc->listenUnhandled(server)
     start_server(server)
 
+    program_for_each_registered_module() <| $(mod)
+
+        // if mod.name != "$" && mod.name != "math"
+        //     return
+        print("{mod.name} {mod}\n")
+
+
+        let mods = [[string[] "$"; "math"; "strings"]]
+        if ! mods |> has_value("{mod.name}")
+            return
+
+        lang = new LangDesc
+
+        let modName = "{mod.name}"
+
+
+        print("mod {mod.name}\n")
+        // mod |> for_each_typedef() <| $(typeName, tp)
+        //     print("td {typeName} {tp} \n")
+        // mod |> for_each_structure <| $(st)
+        //     print("st {st.name}\n")
+        using <| $(var mg: ModuleGroup#)
+            mod |> module_for_each_function() <| $(fn)
+
+                let fnName = clone_string(fn.name)
+                lang.functions |> emplace <| [[FuncDesc name=fnName]]
+                var fun & = unsafe(lang.functions[length(lang.functions) - 1])
+
+                for arg in fn
+                    let td = getTypeDesc(type_info(arg), modName)
+                    // print("{td.typeName} {td.mn}\n")
+                    fun.args |> emplace <| [[FuncArg name=clone_string(arg.name), mn=td.mn]]
+
+                var resTypeDesc = getTypeDesc(fn.result, modName)
+                fun.resultType = resTypeDesc.mn
+                if fn.name == resTypeDesc.typeName
+                    resTypeDesc.ctors |> push <| unsafe(addr(fun))
+
+                // print("{fun.name}(): {fun.resultMN}\n")
+
+            fopen("lang/{mod.name}.json", "wb") <| $(f)
+                if f == null
+                    print("Unable to create file lang/{mod.name}.json\n")
+                    return
+                print("write lang/{mod.name}.json\n")
+                f |> fwrite(write_json(JV(lang)))
+
+                // let decl <- parse_mangled_name(fun.resultType, mg, mod)
+                // if decl._module != null
+                //     debug(decl)
+            // debug(types)
+            // debug(functions)
+
+var lang: LangDesc?
+
+struct LangDesc
+    types: table<string; TypeDesc> // mangled name -> TypeDesc
+    functions: array<FuncDesc> // FunctionDesc
+
+
+def getTypeDesc(ti: TypeInfo const?; mod: string): TypeDesc?
+    let mangledName = ti |> get_mangled_name()
+    // print("{mangledName}\n")
+    // if mangledName == "CE"
+    //     debug(ti)
+    // print("{ti |> describe()}\n")
+
+    if !key_exists(lang.types, mangledName)
+        var t <- [[TypeDesc mn=mangledName, typeName=ti |> describe(), constType=ti.isConst, refType=ti.isRef]]
+        // print("{t.typeName} {t.mn}\n")
+        // if ti.enumType != null
+        //     t |> add_req <| "{ti.enumType.module_name}"
+        // if ti.structType != null
+        //     print("struct\n")
+        //     t |> add_req <| "{ti.structType.module_name}"
+        t |> add_req <| mod
+
+        lang.types[t.mn] <- t
+
+    return unsafe(lang.types |> find_for_edit(mangledName))
+
+
+def add_req(var td: TypeDesc; req: string)
+    if !td.requirements |> has_value(req)
+        td.requirements |> push <| req
+
+
+struct TypeDesc
+    typeName: string
+    mn: string
+    requirements: array<string>
+    constType: bool
+    refType: bool
+    ctors: array<FuncDesc?> // argCount -> FuncDesc
+
+struct FuncDesc
+    name: string
+    resultType: string
+    args: array<FuncArg>
+
+struct FuncArg
+    name: string
+    mn: string
 
 [export]
 def act()
@@ -74,7 +181,7 @@ def files_load(filePath: string; id: uint64)
                 let firstLine = data |> slice(3, lfPos)
                 send_response(JV(firstLine), id)
     if !ok
-        send_response(JV(null), id)
+        send_response(JVNull(), id)
 
 
 [rpc_call]
@@ -116,7 +223,7 @@ def lang_getCore(id: uint64)
                 ok = false
                 send_response(JV("{data}"), id)
     if !ok
-        send_response(JV(null), id)
+        send_response(JVNull(), id)
 
 
 [rpc_call]

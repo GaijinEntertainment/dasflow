@@ -1,17 +1,13 @@
-import Rete, {Engine, Input, Output} from 'rete'
+import Rete, {Engine, Input, Output, Socket} from 'rete'
 import {Node} from 'rete/types/node'
 import {NodeEditor} from 'rete/types/editor'
 import {LabelControl, LangTypeSelectControl, TextInputControl} from "./controls"
 import {LangCoreDesc, LangType} from "./lang"
 import {Component} from "rete/types"
 
-const anyType = new Rete.Socket("*")
-
-// TODO: remove this type
-const floatType = new Rete.Socket('float')
-floatType.combineWith(anyType)
 
 const flowSocket = new Rete.Socket('execution-flow')
+
 
 // TODO: immutable, mutable and any types
 const coreTypes = new Map<string, LangType>()
@@ -24,6 +20,7 @@ export function getType(name: string): LangType | undefined {
     return undefined
 }
 
+
 export function getTypeByName(types: LangType[], name: string) {
     for (let baseType of types) {
         if (baseType.desc.name == name) {
@@ -35,8 +32,11 @@ export function getTypeByName(types: LangType[], name: string) {
 
 
 export function generateCoreNodes(langCore: LangCoreDesc, editor: NodeEditor, engine: Engine) {
-    console.log(langCore)
+    // console.log(langCore)
     const logicTypeName = langCore.logicType
+    const anyTypeName = langCore.anyType
+    const voidTypeName = langCore.voidType
+    const anyTypeSocket = anyTypeName ? new Rete.Socket(anyTypeName) : null
     const comps: Component[] = []
     for (const typeDesc of langCore.types) {
         let group = typeDesc.group ?? typeDesc.name
@@ -49,7 +49,8 @@ export function generateCoreNodes(langCore: LangCoreDesc, editor: NodeEditor, en
         type.desc = typeDesc
         type.defaultValue = typeDesc.default ?? ""
         type.socket = new Rete.Socket(typeDesc.name)
-        type.socket.combineWith(anyType)
+        if (anyTypeSocket)
+            type.socket.combineWith(anyTypeSocket)
 
         if (typeDesc.validator)
             type.validator = new RegExp(typeDesc.validator)
@@ -77,13 +78,23 @@ export function generateCoreNodes(langCore: LangCoreDesc, editor: NodeEditor, en
 
         if (typeDesc.name == logicTypeName)
             comps.push(new If(type), new While(type))
+
+        // TODO: remove this
+        if (typeDesc.name == "float")
+            comps.push(new Sin(type.socket))
     }
 
+    if (anyTypeSocket)
+        comps.push(new Debug(anyTypeSocket))
+
+    comps.push(new Function())
+
     for (let [groupName, coreTypeGroup] of coreTypeGroups) {
+        if (groupName == voidTypeName || groupName == anyTypeName)
+            continue
         const langLet = new LangLet(groupName, ['core types'], coreTypeGroup)
         comps.push(langLet)
     }
-
 
     for (let comp of comps) {
         engine.register(comp)
@@ -143,18 +154,23 @@ export abstract class LangComponent extends Rete.Component {
     abstract constructDasNode(node: Node, ctx: ConstructDasCtx): boolean
 
 
-    constructInNode(node: Node, name: string, ctx: ConstructDasCtx): Node | null {
+    constructOptionalInNode(node: Node, name: string, ctx: ConstructDasCtx): Node | null {
         const inValue = node.inputs.get(name)
         if (!inValue || inValue.connections.length == 0) {
-            ctx.addError(node, 'input expected')
             return null
         }
         const inNode = inValue.connections[0].output.node
         if (!inNode) {
-            ctx.addError(node, 'input expected')
             return null
         }
         LangComponent.constructAutoInit(inNode, ctx)
+        return inNode
+    }
+
+    constructInNode(node: Node, name: string, ctx: ConstructDasCtx): Node | null {
+        const inNode = this.constructOptionalInNode(node, name, ctx)
+        if (!inNode)
+            ctx.addError(node, 'input expected')
         return inNode
     }
 
@@ -193,109 +209,143 @@ export class LangLet extends LangComponent {
 
     async builder(node) {
         let type = 'type' in node.data ? getTypeByName(this.baseTypes, node.data.type) : this.baseTypes[0]
-        const out = new Rete.Output('result', 'Value', type.socket, true)
+        const out = new Rete.Output('result', 'Result', type.socket, true)
         node.addOutput(out)
         let struct = this.baseTypes[0].desc.struct
         if (struct) {
-            for (const field of struct)
-                node.addControl(new TextInputControl(this.editor, field.name))
+            for (const field of struct) {
+                const fieldType = getType(field.type)
+                if (!fieldType)
+                    continue
+                const fieldInput = new Rete.Input(field.name, field.name, fieldType.socket, false);
+                fieldInput.addControl(new TextInputControl(this.editor, field.name))
+                node.addInput(fieldInput)
+            }
         } else {
             if (this.baseTypes.length > 1)
                 node.addControl(new LangTypeSelectControl(this.editor, 'type', this.baseTypes))
-            node.addControl(new TextInputControl(this.editor, 'value'))
+            const input = new Rete.Input('value', 'Value', type.socket, false)
+            input.addControl(new TextInputControl(this.editor, 'value'))
+            node.addInput(input)
         }
 
         node.data.type = type.desc.name
     }
 
     worker(node, inputs, outputs) {
-        outputs['result'] = node.data.value
         outputs['type'] = node.data.type
         const nodeRef = this.editor?.nodes.find(it => it.id == node.id)
         if (!nodeRef)
             return
         let currentType = getTypeByName(this.baseTypes, node.data.type)
-        const controls = new Map<TextInputControl, LangType>()
+        const inputControls = new Map<Input, LangType>()
         const struct = currentType.desc.struct
         if (struct) {
             for (const field of struct) {
-                const fieldCtrl = nodeRef.controls.get(field.name)
-                if (fieldCtrl)
-                    controls.set(<TextInputControl>fieldCtrl, <LangType>getType(field.type))
+                const fieldInput = nodeRef.inputs.get(field.name)
+                if (fieldInput)
+                    inputControls.set(fieldInput, <LangType>getType(field.type))
             }
         } else {
-            let valueCtrl = nodeRef.controls.get('value')
-            if (valueCtrl)
-                controls.set(<TextInputControl>valueCtrl, currentType)
+            let valueInput = nodeRef.inputs.get('value')
+            if (valueInput)
+                inputControls.set(valueInput, currentType)
         }
 
-        // const valueCtrl = <TextInputControl>nodeRef.controls.get('value')
-        for (const [valueCtrl, valueType] of controls) {
+        for (const [input, valueType] of inputControls) {
+            // update input socket connections
+            if (input.socket != valueType.socket) {
+                input.socket = valueType.socket
+                for (const conn of [...input.connections]) {
+                    if (!conn.output.socket.compatibleWith(input.socket)) {
+                        this.editor?.removeConnection(conn)
+                        delete inputs[input.key]
+                    }
+                }
+            }
+            if (input.hasConnection())
+                continue
+            const valueCtrl = <TextInputControl>input.control
+            // validate control value
             if (valueCtrl.validator != valueType.validator || valueCtrl.defaultValue != valueType.defaultValue || valueCtrl.values != valueType.desc.enum) {
                 valueCtrl.validator = valueType.validator
                 valueCtrl.defaultValue = valueType.defaultValue
                 valueCtrl.values = valueType.desc.enum
-                valueCtrl.setValue(node.data[valueCtrl.key]) // revalidate data
+                valueCtrl.setValue(node.data[input.key]) // revalidate data
             }
         }
 
         const output = nodeRef.outputs.get('result')
-        if (output) {
-            const outputSocket = currentType.socket
-            if (output.socket != outputSocket) {
-                for (const conn of [...output.connections]) {
-                    if (!outputSocket.compatibleWith(conn.input.socket)) {
-                        this.editor?.removeConnection(conn)
-                    }
+        // update output socket connections
+        if (output && output.socket != currentType.socket) {
+            output.socket = currentType.socket
+            output.name = currentType.desc.name
+            for (const conn of [...output.connections]) {
+                if (!output.socket.compatibleWith(conn.input.socket)) {
+                    this.editor?.removeConnection(conn)
                 }
-                output.socket = outputSocket
             }
         }
-
         const ctorArgs: { [key: string]: string } = {}
+
         if (struct)
             for (const field of struct)
-                ctorArgs[field.name] = node.data[field.name]
-        outputs['result'] = currentType.ctor(node.data.value, ctorArgs)
+                ctorArgs[field.name] = inputs[field.name]?.length ? inputs[field.name] : node.data[field.name]
+
+        outputs['result'] = currentType.ctor(inputs.value?.length ? inputs.value : node.data.value, ctorArgs)
     }
 
     constructDasNode(node, ctx) {
         const currentType = getTypeByName(this.baseTypes, node.data.type)
         const ctorArgs: { [key: string]: string } = {}
         const struct = currentType.desc.struct
-        if (struct)
-            for (const field of struct)
-                ctorArgs[field.name] = getType(field.type)?.ctor(node.data[field.name], {}) ?? ""
+        let valueData = node.data.value
+        if (struct) {
+            for (const field of struct) {
+                const input = this.constructOptionalInNode(node, field.name, ctx)
+                if (input)
+                    ctorArgs[field.name] = ctx.nodeId(input)
+                else
+                    ctorArgs[field.name] = getType(field.type)?.ctor(node.data[field.name], {}) ?? ""
+            }
+        } else {
+            const input = this.constructOptionalInNode(node, 'value', ctx)
+            if (input)
+                valueData = ctx.nodeId(input)
+        }
 
-        const val = currentType.ctor(node.data.value, ctorArgs)
+
+        const val = currentType.ctor(valueData, ctorArgs)
         ctx.writeLine(`let ${ctx.nodeId(node)} = ${val}`)
         return true
     }
 }
 
 
-export class Debug
-    extends LangComponent {
-    constructor() {
+export class Debug extends LangComponent {
+    private anyType: Socket
+
+    constructor(anyType: Socket) {
         super('Debug', ['functions'])
+        this.anyType = anyType;
     }
 
     async builder(node) {
         this.addFlowInOut(node)
-        const input = new Rete.Input('inValue', 'Value', anyType)
+        const input = new Rete.Input('value', 'Value', this.anyType)
         node.addInput(input)
         node.addControl(new LabelControl(this.editor, 'label', true))
     }
 
     worker(node, inputs, outputs) {
-        const val = inputs['inValue']?.length ? inputs['inValue'] : node.data.value
+        const val = inputs.value?.length ? inputs.value : node.data.value
         const refNode = this.editor?.nodes.find(n => n.id === node.id)
         const label = <LabelControl>refNode?.controls.get('label')
         label.setValue(val)
     }
 
     constructDasNode(node, ctx) {
-        const inNode = this.constructInNode(node, 'inValue', ctx)
+        const inNode = this.constructInNode(node, 'value', ctx)
         if (!inNode)
             return false
         ctx.writeLine(`debug(${ctx.nodeId(inNode)})`)
@@ -384,19 +434,27 @@ export class While extends LangComponent {
 
 
 export class Sin extends LangComponent {
-    constructor() {
+    private floatType: Socket
+
+    constructor(floatType: Socket) {
         super('Sin', ['functions'])
+        this.floatType = floatType;
     }
 
     async builder(node) {
-        const input = new Rete.Input('inValue', 'Value', floatType)
+        const input = new Rete.Input('value', 'Value', this.floatType)
         node.addInput(input)
-        const result = new Rete.Output('result', 'Value', floatType, true)
+        const result = new Rete.Output('result', 'Value', this.floatType, true)
         node.addOutput(result)
     }
 
+    worker(node, inputs, outputs) {
+        const val = inputs.value?.length ? inputs.value : node.data.value
+        outputs['result'] = `sin(${val})`
+    }
+
     constructDasNode(node, ctx) {
-        const inNode = this.constructInNode(node, 'inValue', ctx)
+        const inNode = this.constructInNode(node, 'value', ctx)
         if (!inNode)
             return false
         ctx.addReqModule('math')
@@ -441,6 +499,7 @@ export class ConstructDasCtx {
         if (this.requirements.size > 0) {
             for (const req of this.requirements)
                 this._code = `require ${req}\n` + this._code
+            this.requirements.clear()
         }
         return this._code
     }

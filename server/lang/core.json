@@ -1,6 +1,18 @@
 {
     "logicType": "bool",
+    "anyType": "any",
+    "voidType": "void",
+    "hiddenArguments": [
+        "__context const",
+        "__lineInfo const"
+    ],
     "types": [
+        {
+            "name": "any"
+        },
+        {
+            "name": "void"
+        },
         {
             "name": "string",
             "default": "",
@@ -243,18 +255,6 @@
                 }
             ],
             "ctor": "uint4($x, $y, $z, $w)"
-        }
-    ],
-    "functions": [
-        {
-            "name": "sin",
-            "arguments": [
-                {
-                    "name": "x",
-                    "type": "float"
-                }
-            ],
-            "returns": "float"
         }
     ]
 }
