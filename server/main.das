@@ -121,7 +121,8 @@ def getTypeDesc(ti: TypeInfo const?; mod: string): TypeDesc?
         // if ti.structType != null
         //     print("struct\n")
         //     t |> add_req <| "{ti.structType.module_name}"
-        t |> add_req <| mod
+        if mod != "$"
+            t |> add_req <| mod
 
         lang.types[t.mn] <- t
 
