@@ -1,260 +1,293 @@
 {
-    "logicType": "bool",
-    "anyType": "any",
-    "voidType": "void",
+    "logicType": "b",
+    "anyType": "*",
+    "voidType": "v",
     "hiddenArguments": [
         "__context const",
         "__lineInfo const"
     ],
     "types": [
         {
-            "name": "any"
+            "typeName": "any",
+            "mn": "*"
         },
         {
-            "name": "void"
+            "typeName": "void",
+            "mn": "v"
         },
         {
-            "name": "string",
+            "typeName": "string",
+            "mn": "s",
             "default": "",
             "ctor": "\"$\""
         },
         {
-            "name": "int",
+            "typeName": "int",
+            "mn": "i",
             "default": "0",
             "validator": "^[-+]?\\d+$",
             "group": "int"
         },
         {
-            "name": "uint",
+            "typeName": "uint",
+            "mn": "u",
             "default": "0",
             "validator": "^[-+]?\\d+u?$",
             "group": "int"
         },
         {
-            "name": "int8",
+            "typeName": "int8",
+            "mn": "i8",
             "default": "0",
             "validator": "^[-+]?\\d+$",
             "group": "int",
             "ctor": "int8($)"
         },
         {
-            "name": "int16",
+            "typeName": "int16",
+            "mn": "i16",
             "default": "0",
             "validator": "^[-+]?\\d+$",
             "group": "int",
             "ctor": "int16($)"
         },
         {
-            "name": "int64",
+            "typeName": "int64",
+            "mn": "i64",
             "default": "0",
             "validator": "^[-+]?\\d+$",
             "group": "int",
             "ctor": "int64($)"
         },
         {
-            "name": "uint8",
+            "typeName": "uint8",
+            "mn": "u8",
             "default": "0u",
             "validator": "^[-+]?\\d+$",
             "group": "int",
             "ctor": "uint8($)"
         },
         {
-            "name": "uint16",
+            "typeName": "uint16",
+            "mn": "u16",
             "default": "0",
             "validator": "^[-+]?\\d+$",
             "group": "int",
             "ctor": "uint16($)"
         },
         {
-            "name": "uint64",
+            "typeName": "uint64",
+            "mn": "u64",
             "default": "0",
             "validator": "^[-+]?\\d+$",
             "group": "int",
             "ctor": "uint64($)"
         },
         {
-            "name": "bool",
+            "typeName": "bool",
+            "mn": "b",
             "default": "false",
             "enum": [
                 "true",
                 "false"
-            ]
+            ],
+            "group": "bool"
         },
         {
-            "name": "float",
+            "typeName": "float",
+            "mn": "f",
             "default": "0",
             "validator": "^[-+]?\\d+(\\.\\d*)?$",
             "group": "float",
             "ctor": "float($)"
         },
         {
-            "name": "double",
+            "typeName": "double",
+            "mn": "d",
             "default": "0",
             "validator": "^[-+]?\\d+(\\.\\d*)?$",
             "group": "float",
             "ctor": "double($)"
         },
         {
-            "name": "float2",
+            "typeName": "float2",
+            "mn": "f2",
             "struct": [
                 {
                     "name": "x",
-                    "type": "float"
+                    "mn": "f"
                 },
                 {
                     "name": "y",
-                    "type": "float"
+                    "mn": "f"
                 }
             ],
-            "ctor": "float2($x, $y)"
+            "ctor": "float2($x, $y)",
+            "group": "float2"
         },
         {
-            "name": "float3",
+            "typeName": "float3",
+            "mn": "f3",
             "struct": [
                 {
                     "name": "x",
-                    "type": "float"
+                    "mn": "f"
                 },
                 {
                     "name": "y",
-                    "type": "float"
+                    "mn": "f"
                 },
                 {
                     "name": "z",
-                    "type": "float"
+                    "mn": "f"
                 }
             ],
-            "ctor": "float3($x, $y, $z)"
+            "ctor": "float3($x, $y, $z)",
+            "group": "float3"
         },
         {
-            "name": "float4",
+            "typeName": "float4",
+            "mn": "f4",
             "struct": [
                 {
                     "name": "x",
-                    "type": "float"
+                    "mn": "f"
                 },
                 {
                     "name": "y",
-                    "type": "float"
+                    "mn": "f"
                 },
                 {
                     "name": "z",
-                    "type": "float"
+                    "mn": "f"
                 },
                 {
                     "name": "w",
-                    "type": "float"
+                    "mn": "f"
                 }
             ],
-            "ctor": "float4($x, $y, $z, $w)"
+            "ctor": "float4($x, $y, $z, $w)",
+            "group": "float4"
         },
         {
-            "name": "int2",
+            "typeName": "int2",
+            "mn": "i2",
             "struct": [
                 {
                     "name": "x",
-                    "type": "int"
+                    "mn": "i"
                 },
                 {
                     "name": "y",
-                    "type": "int"
+                    "mn": "i"
                 }
             ],
-            "ctor": "int2($x, $y)"
+            "ctor": "int2($x, $y)",
+            "group": "int2"
         },
         {
-            "name": "int3",
+            "typeName": "int3",
+            "mn": "i3",
             "struct": [
                 {
                     "name": "x",
-                    "type": "int"
+                    "mn": "i"
                 },
                 {
                     "name": "y",
-                    "type": "int"
+                    "mn": "i"
                 },
                 {
                     "name": "z",
-                    "type": "int"
+                    "mn": "i"
                 }
             ],
-            "ctor": "int3($x, $y, $z)"
+            "ctor": "int3($x, $y, $z)",
+            "group": "int3"
         },
         {
-            "name": "int4",
+            "typeName": "int4",
+            "mn": "i4",
             "struct": [
                 {
                     "name": "x",
-                    "type": "int"
+                    "mn": "i"
                 },
                 {
                     "name": "y",
-                    "type": "int"
+                    "mn": "i"
                 },
                 {
                     "name": "z",
-                    "type": "int"
+                    "mn": "i"
                 },
                 {
                     "name": "w",
-                    "type": "int"
+                    "mn": "i"
                 }
             ],
-            "ctor": "int4($x, $y, $z, $w)"
+            "ctor": "int4($x, $y, $z, $w)",
+            "group": "int4"
         },
         {
-            "name": "uint2",
+            "typeName": "uint2",
+            "mn": "u2",
             "struct": [
                 {
                     "name": "x",
-                    "type": "uint"
+                    "mn": "u"
                 },
                 {
                     "name": "y",
-                    "type": "uint"
+                    "mn": "u"
                 }
             ],
-            "ctor": "uint2($x, $y)"
+            "ctor": "uint2($x, $y)",
+            "group": "uint2"
         },
         {
-            "name": "uint3",
+            "typeName": "uint3",
+            "mn": "u3",
             "struct": [
                 {
                     "name": "x",
-                    "type": "uint"
+                    "mn": "u"
                 },
                 {
                     "name": "y",
-                    "type": "uint"
+                    "mn": "u"
                 },
                 {
                     "name": "z",
-                    "type": "uint"
+                    "mn": "u"
                 }
             ],
-            "ctor": "uint3($x, $y, $z)"
+            "ctor": "uint3($x, $y, $z)",
+            "group": "uint3"
         },
         {
-            "name": "uint4",
+            "typeName": "uint4",
+            "mn": "u4",
             "struct": [
                 {
                     "name": "x",
-                    "type": "uint"
+                    "mn": "u"
                 },
                 {
                     "name": "y",
-                    "type": "uint"
+                    "mn": "u"
                 },
                 {
                     "name": "z",
-                    "type": "uint"
+                    "mn": "u"
                 },
                 {
                     "name": "w",
-                    "type": "uint"
+                    "mn": "u"
                 }
             ],
-            "ctor": "uint4($x, $y, $z, $w)"
+            "ctor": "uint4($x, $y, $z, $w)",
+            "group": "uint4"
         }
     ]
 }

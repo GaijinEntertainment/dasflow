@@ -1,13 +1,14 @@
 import {Socket} from "rete"
 
 export interface LangTypeDesc {
-    name: string
+    mn: string
+    typeName: string
     default?: string
     ctor?: string
     group?: string
     validator?: string
     enum?: string[]
-    struct?: { name: string, type: string }[]
+    struct?: { name: string, mn: string }[]
 }
 
 export interface LangFunctionDesc {

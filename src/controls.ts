@@ -202,8 +202,8 @@ export class TextInputControl extends Rete.Control {
 
 const VueLangTypeSelectControl = {
     props: ['readonly', 'emitter', 'ikey', 'types', 'getData', 'putData'],
-    template: '<select :value="value" v-on:change="change($event)" @dblclick.stop="" @pointerdown.stop="" @pointermove.stop="">\n' +
-        '   <option v-for="v of types" :selected="this.value == v.desc.name">{{ v.desc.name }}</option>\n' +
+    template: '<select :value="value" @change="change($event)" @dblclick.stop="" @pointerdown.stop="" @pointermove.stop="">\n' +
+        '   <option v-for="v of types" :value="v.desc.mn" :selected="this.value == v.desc.mn">{{ v.desc.typeName }}</option>\n' +
         '</select>',
     data() {
         return {value: "",}

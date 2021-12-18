@@ -10,20 +10,20 @@ const flowSocket = new Rete.Socket('execution-flow')
 
 
 // TODO: immutable, mutable and any types
-const coreTypes = new Map<string, LangType>()
+const coreTypes = new Map</*mn*/string, LangType>()
 const coreTypeGroups = new Map<string, LangType[]>()
 
 
-export function getType(name: string): LangType | undefined {
-    if (coreTypes.has(name))
-        return coreTypes.get(name)
+export function getType(mn: string): LangType | undefined {
+    if (coreTypes.has(mn))
+        return coreTypes.get(mn)
     return undefined
 }
 
 
-export function getTypeByName(types: LangType[], name: string) {
+export function getTypeByMN(types: LangType[], mn: string) {
     for (let baseType of types) {
-        if (baseType.desc.name == name) {
+        if (baseType.desc.mn == mn) {
             return baseType
         }
     }
@@ -39,16 +39,12 @@ export function generateCoreNodes(langCore: LangCoreDesc, editor: NodeEditor, en
     const anyTypeSocket = anyTypeName ? new Rete.Socket(anyTypeName) : null
     const comps: Component[] = []
     for (const typeDesc of langCore.types) {
-        let group = typeDesc.group ?? typeDesc.name
-        if (typeDesc.struct && typeDesc.group) {
-            console.error(`type ${typeDesc.name} with struct and group. Group will be ignored`)
-            group = ''
-        }
+        let group = typeDesc.group ?? typeDesc.mn
 
         let type = new LangType()
         type.desc = typeDesc
         type.defaultValue = typeDesc.default ?? ""
-        type.socket = new Rete.Socket(typeDesc.name)
+        type.socket = new Rete.Socket(typeDesc.mn)
         if (anyTypeSocket)
             type.socket.combineWith(anyTypeSocket)
 
@@ -70,17 +66,17 @@ export function generateCoreNodes(langCore: LangCoreDesc, editor: NodeEditor, en
                 return typeDesc.ctor.replace('$', s) ?? s
             }
 
-        coreTypes.set(typeDesc.name, type)
+        coreTypes.set(typeDesc.mn, type)
         if (coreTypeGroups.has(group))
             coreTypeGroups.get(group)?.push(type)
         else
             coreTypeGroups.set(group, [type])
 
-        if (typeDesc.name == logicTypeName)
+        if (typeDesc.mn == logicTypeName)
             comps.push(new If(type), new While(type))
 
         // TODO: remove this
-        if (typeDesc.name == "float")
+        if (typeDesc.mn == "f")
             comps.push(new Sin(type.socket))
     }
 
@@ -208,13 +204,13 @@ export class LangLet extends LangComponent {
     }
 
     async builder(node) {
-        let type = 'type' in node.data ? getTypeByName(this.baseTypes, node.data.type) : this.baseTypes[0]
+        let type = 'mn' in node.data ? getTypeByMN(this.baseTypes, node.data.mn) : this.baseTypes[0]
         const out = new Rete.Output('result', 'Result', type.socket, true)
         node.addOutput(out)
         let struct = this.baseTypes[0].desc.struct
         if (struct) {
             for (const field of struct) {
-                const fieldType = getType(field.type)
+                const fieldType = getType(field.mn)
                 if (!fieldType)
                     continue
                 const fieldInput = new Rete.Input(field.name, field.name, fieldType.socket, false);
@@ -223,28 +219,28 @@ export class LangLet extends LangComponent {
             }
         } else {
             if (this.baseTypes.length > 1)
-                node.addControl(new LangTypeSelectControl(this.editor, 'type', this.baseTypes))
+                node.addControl(new LangTypeSelectControl(this.editor, 'mn', this.baseTypes))
             const input = new Rete.Input('value', 'Value', type.socket, false)
             input.addControl(new TextInputControl(this.editor, 'value'))
             node.addInput(input)
         }
 
-        node.data.type = type.desc.name
+        node.data.mn = type.desc.mn
     }
 
     worker(node, inputs, outputs) {
-        outputs['type'] = node.data.type
+        outputs['mn'] = node.data.mn
         const nodeRef = this.editor?.nodes.find(it => it.id == node.id)
         if (!nodeRef)
             return
-        let currentType = getTypeByName(this.baseTypes, node.data.type)
+        let currentType = getTypeByMN(this.baseTypes, node.data.mn)
         const inputControls = new Map<Input, LangType>()
         const struct = currentType.desc.struct
         if (struct) {
             for (const field of struct) {
                 const fieldInput = nodeRef.inputs.get(field.name)
                 if (fieldInput)
-                    inputControls.set(fieldInput, <LangType>getType(field.type))
+                    inputControls.set(fieldInput, <LangType>getType(field.mn))
             }
         } else {
             let valueInput = nodeRef.inputs.get('value')
@@ -279,7 +275,7 @@ export class LangLet extends LangComponent {
         // update output socket connections
         if (output && output.socket != currentType.socket) {
             output.socket = currentType.socket
-            output.name = currentType.desc.name
+            output.name = currentType.desc.mn
             for (const conn of [...output.connections]) {
                 if (!output.socket.compatibleWith(conn.input.socket)) {
                     this.editor?.removeConnection(conn)
@@ -296,7 +292,7 @@ export class LangLet extends LangComponent {
     }
 
     constructDasNode(node, ctx) {
-        const currentType = getTypeByName(this.baseTypes, node.data.type)
+        const currentType = getTypeByMN(this.baseTypes, node.data.mn)
         const ctorArgs: { [key: string]: string } = {}
         const struct = currentType.desc.struct
         let valueData = node.data.value
@@ -306,7 +302,7 @@ export class LangLet extends LangComponent {
                 if (input)
                     ctorArgs[field.name] = ctx.nodeId(input)
                 else
-                    ctorArgs[field.name] = getType(field.type)?.ctor(node.data[field.name], {}) ?? ""
+                    ctorArgs[field.name] = getType(field.mn)?.ctor(node.data[field.name], {}) ?? ""
             }
         } else {
             const input = this.constructOptionalInNode(node, 'value', ctx)
