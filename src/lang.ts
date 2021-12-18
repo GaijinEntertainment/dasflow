@@ -20,7 +20,6 @@ export interface LangCoreDesc {
     voidType: string
     types: LangTypeDesc[]
     functions: LangFunctionDesc[]
-    hiddenArguments: string[]
 }
 
 

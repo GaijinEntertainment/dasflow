@@ -2,10 +2,6 @@
     "logicType": "b",
     "anyType": "*",
     "voidType": "v",
-    "hiddenArguments": [
-        "__context const",
-        "__lineInfo const"
-    ],
     "types": [
         {
             "typeName": "any",
