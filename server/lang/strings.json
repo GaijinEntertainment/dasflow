@@ -1144,24 +1144,6 @@
 	"types" : {
 		"f" : {
 			"mn" : "f",
-			"constType" : false,
-			"ctors" : [
-				{
-					"args" : [
-						{
-							"mn" : "CIs",
-							"name" : "str"
-						},
-						{
-							"mn" : "C_c",
-							"name" : "context"
-						}
-					],
-					"name" : "float",
-					"resultType" : "f"
-				}
-			],
-			"refType" : false,
 			"typeName" : "float",
 			"requirements" : [
 				"strings"
@@ -1170,8 +1152,6 @@
 		"C_c" : {
 			"mn" : "C_c",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
 			"typeName" : "__context const",
 			"requirements" : [
 				"strings"
@@ -1180,8 +1160,6 @@
 		"C_l" : {
 			"mn" : "C_l",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
 			"typeName" : "__lineInfo const",
 			"requirements" : [
 				"strings"
@@ -1190,8 +1168,6 @@
 		"CIs" : {
 			"mn" : "CIs",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
 			"typeName" : "string const !",
 			"requirements" : [
 				"strings"
@@ -1200,8 +1176,6 @@
 		"C*" : {
 			"mn" : "C*",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
 			"typeName" : "any const",
 			"requirements" : [
 				"strings"
@@ -1210,8 +1184,6 @@
 		"Ci" : {
 			"mn" : "Ci",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
 			"typeName" : "int const",
 			"requirements" : [
 				"strings"
@@ -1220,8 +1192,6 @@
 		"Cu" : {
 			"mn" : "Cu",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
 			"typeName" : "uint const",
 			"requirements" : [
 				"strings"
@@ -1230,8 +1200,6 @@
 		"Ci64" : {
 			"mn" : "Ci64",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
 			"typeName" : "int64 const",
 			"requirements" : [
 				"strings"
@@ -1240,8 +1208,6 @@
 		"Cf" : {
 			"mn" : "Cf",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
 			"typeName" : "float const",
 			"requirements" : [
 				"strings"
@@ -1250,8 +1216,6 @@
 		"Cd" : {
 			"mn" : "Cd",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
 			"typeName" : "double const",
 			"requirements" : [
 				"strings"
@@ -1260,8 +1224,6 @@
 		"CI$" : {
 			"mn" : "CI$",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
 			"typeName" : "block<> const !",
 			"requirements" : [
 				"strings"
@@ -1270,8 +1232,6 @@
 		"Cb" : {
 			"mn" : "Cb",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
 			"typeName" : "bool const",
 			"requirements" : [
 				"strings"
@@ -1279,9 +1239,6 @@
 		},
 		"i64" : {
 			"mn" : "i64",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
 			"typeName" : "int64",
 			"requirements" : [
 				"strings"
@@ -1289,9 +1246,6 @@
 		},
 		"u64" : {
 			"mn" : "u64",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
 			"typeName" : "uint64",
 			"requirements" : [
 				"strings"
@@ -1300,8 +1254,6 @@
 		"Cu64" : {
 			"mn" : "Cu64",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
 			"typeName" : "uint64 const",
 			"requirements" : [
 				"strings"
@@ -1309,9 +1261,6 @@
 		},
 		"IH<strings::StringBuilderWriter>" : {
 			"mn" : "IH<strings::StringBuilderWriter>",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
 			"typeName" : "StringBuilderWriter !",
 			"requirements" : [
 				"strings"
@@ -1320,8 +1269,6 @@
 		"CIH<$::das_string>" : {
 			"mn" : "CIH<$::das_string>",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
 			"typeName" : "das_string const !",
 			"requirements" : [
 				"strings"
@@ -1330,8 +1277,6 @@
 		"CI1<u8>A" : {
 			"mn" : "CI1<u8>A",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
 			"typeName" : "array<uint8> const !",
 			"requirements" : [
 				"strings"
@@ -1340,8 +1285,6 @@
 		"CI[8]u" : {
 			"mn" : "CI[8]u",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
 			"typeName" : "uint[8] const !",
 			"requirements" : [
 				"strings"
@@ -1349,9 +1292,6 @@
 		},
 		"H<strings::StringBuilderWriter>" : {
 			"mn" : "H<strings::StringBuilderWriter>",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
 			"typeName" : "StringBuilderWriter",
 			"requirements" : [
 				"strings"
@@ -1359,24 +1299,6 @@
 		},
 		"d" : {
 			"mn" : "d",
-			"constType" : false,
-			"ctors" : [
-				{
-					"args" : [
-						{
-							"mn" : "CIs",
-							"name" : "str"
-						},
-						{
-							"mn" : "C_c",
-							"name" : "context"
-						}
-					],
-					"name" : "double",
-					"resultType" : "d"
-				}
-			],
-			"refType" : false,
 			"typeName" : "double",
 			"requirements" : [
 				"strings"
@@ -1384,9 +1306,6 @@
 		},
 		"v" : {
 			"mn" : "v",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
 			"typeName" : "void",
 			"requirements" : [
 				"strings"
@@ -1394,8 +1313,6 @@
 		},
 		"&Is" : {
 			"mn" : "&Is",
-			"constType" : false,
-			"ctors" : [],
 			"refType" : true,
 			"typeName" : "string & !",
 			"requirements" : [
@@ -1404,24 +1321,6 @@
 		},
 		"s" : {
 			"mn" : "s",
-			"constType" : false,
-			"ctors" : [
-				{
-					"args" : [
-						{
-							"mn" : "CI1<u8>A",
-							"name" : "bytes"
-						},
-						{
-							"mn" : "C_c",
-							"name" : "context"
-						}
-					],
-					"name" : "string",
-					"resultType" : "s"
-				}
-			],
-			"refType" : false,
 			"typeName" : "string",
 			"requirements" : [
 				"strings"
@@ -1429,24 +1328,6 @@
 		},
 		"i" : {
 			"mn" : "i",
-			"constType" : false,
-			"ctors" : [
-				{
-					"args" : [
-						{
-							"mn" : "CIs",
-							"name" : "str"
-						},
-						{
-							"mn" : "C_c",
-							"name" : "context"
-						}
-					],
-					"name" : "int",
-					"resultType" : "i"
-				}
-			],
-			"refType" : false,
 			"typeName" : "int",
 			"requirements" : [
 				"strings"
@@ -1454,9 +1335,6 @@
 		},
 		"b" : {
 			"mn" : "b",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
 			"typeName" : "bool",
 			"requirements" : [
 				"strings"
@@ -1465,8 +1343,6 @@
 		"CI0<H<strings::StringBuilderWriter>>1<v>$" : {
 			"mn" : "CI0<H<strings::StringBuilderWriter>>1<v>$",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
 			"typeName" : "block<(StringBuilderWriter):void> const !",
 			"requirements" : [
 				"strings"
@@ -1474,24 +1350,6 @@
 		},
 		"u" : {
 			"mn" : "u",
-			"constType" : false,
-			"ctors" : [
-				{
-					"args" : [
-						{
-							"mn" : "CIs",
-							"name" : "str"
-						},
-						{
-							"mn" : "C_c",
-							"name" : "context"
-						}
-					],
-					"name" : "uint",
-					"resultType" : "u"
-				}
-			],
-			"refType" : false,
 			"typeName" : "uint",
 			"requirements" : [
 				"strings"
@@ -1500,8 +1358,6 @@
 		"CI0<C#1<u8>A>1<v>$" : {
 			"mn" : "CI0<C#1<u8>A>1<v>$",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
 			"typeName" : "block<(array<uint8> const #):void> const !",
 			"requirements" : [
 				"strings"
@@ -1509,9 +1365,6 @@
 		},
 		"IH<$::das_string>" : {
 			"mn" : "IH<$::das_string>",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
 			"typeName" : "das_string !",
 			"requirements" : [
 				"strings"
@@ -1520,8 +1373,6 @@
 		"CI0<#1<u8>A>1<v>$" : {
 			"mn" : "CI0<#1<u8>A>1<v>$",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
 			"typeName" : "block<(array<uint8> #):void> const !",
 			"requirements" : [
 				"strings"

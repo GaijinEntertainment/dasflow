@@ -14744,4543 +14744,939 @@
 		"CIH<$::dasvector`Error>" : {
 			"mn" : "CIH<$::dasvector`Error>",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "dasvector`Error const !",
-			"requirements" : []
+			"typeName" : "dasvector`Error const !"
 		},
 		"i8" : {
 			"mn" : "i8",
-			"constType" : false,
-			"ctors" : [
-				{
-					"args" : [],
-					"name" : "int8",
-					"resultType" : "i8"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cf",
-							"name" : "arg0"
-						}
-					],
-					"name" : "int8",
-					"resultType" : "i8"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cd",
-							"name" : "arg0"
-						}
-					],
-					"name" : "int8",
-					"resultType" : "i8"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ci",
-							"name" : "arg0"
-						}
-					],
-					"name" : "int8",
-					"resultType" : "i8"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cu",
-							"name" : "arg0"
-						}
-					],
-					"name" : "int8",
-					"resultType" : "i8"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ct",
-							"name" : "arg0"
-						}
-					],
-					"name" : "int8",
-					"resultType" : "i8"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ci8",
-							"name" : "arg0"
-						}
-					],
-					"name" : "int8",
-					"resultType" : "i8"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cu8",
-							"name" : "arg0"
-						}
-					],
-					"name" : "int8",
-					"resultType" : "i8"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ci16",
-							"name" : "arg0"
-						}
-					],
-					"name" : "int8",
-					"resultType" : "i8"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cu16",
-							"name" : "arg0"
-						}
-					],
-					"name" : "int8",
-					"resultType" : "i8"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ci64",
-							"name" : "arg0"
-						}
-					],
-					"name" : "int8",
-					"resultType" : "i8"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cu64",
-							"name" : "arg0"
-						}
-					],
-					"name" : "int8",
-					"resultType" : "i8"
-				}
-			],
-			"refType" : false,
-			"typeName" : "int8",
-			"requirements" : []
+			"typeName" : "int8"
 		},
 		"Cb" : {
 			"mn" : "Cb",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "bool const",
-			"requirements" : []
+			"typeName" : "bool const"
 		},
 		"Cf" : {
 			"mn" : "Cf",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "float const",
-			"requirements" : []
+			"typeName" : "float const"
 		},
 		"Cd" : {
 			"mn" : "Cd",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "double const",
-			"requirements" : []
+			"typeName" : "double const"
 		},
 		"Ci" : {
 			"mn" : "Ci",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "int const",
-			"requirements" : []
+			"typeName" : "int const"
 		},
 		"Cu" : {
 			"mn" : "Cu",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "uint const",
-			"requirements" : []
+			"typeName" : "uint const"
 		},
 		"CI?" : {
 			"mn" : "CI?",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : " ? const !",
-			"requirements" : []
+			"typeName" : " ? const !"
 		},
 		"Ct" : {
 			"mn" : "Ct",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "bitfield const",
-			"requirements" : []
+			"typeName" : "bitfield const"
 		},
 		"Ci8" : {
 			"mn" : "Ci8",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "int8 const",
-			"requirements" : []
+			"typeName" : "int8 const"
 		},
 		"Cu8" : {
 			"mn" : "Cu8",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "uint8 const",
-			"requirements" : []
+			"typeName" : "uint8 const"
 		},
 		"u8" : {
 			"mn" : "u8",
-			"constType" : false,
-			"ctors" : [
-				{
-					"args" : [],
-					"name" : "uint8",
-					"resultType" : "u8"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cf",
-							"name" : "arg0"
-						}
-					],
-					"name" : "uint8",
-					"resultType" : "u8"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cd",
-							"name" : "arg0"
-						}
-					],
-					"name" : "uint8",
-					"resultType" : "u8"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ci",
-							"name" : "arg0"
-						}
-					],
-					"name" : "uint8",
-					"resultType" : "u8"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cu",
-							"name" : "arg0"
-						}
-					],
-					"name" : "uint8",
-					"resultType" : "u8"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ct",
-							"name" : "arg0"
-						}
-					],
-					"name" : "uint8",
-					"resultType" : "u8"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ci8",
-							"name" : "arg0"
-						}
-					],
-					"name" : "uint8",
-					"resultType" : "u8"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cu8",
-							"name" : "arg0"
-						}
-					],
-					"name" : "uint8",
-					"resultType" : "u8"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ci16",
-							"name" : "arg0"
-						}
-					],
-					"name" : "uint8",
-					"resultType" : "u8"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cu16",
-							"name" : "arg0"
-						}
-					],
-					"name" : "uint8",
-					"resultType" : "u8"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ci64",
-							"name" : "arg0"
-						}
-					],
-					"name" : "uint8",
-					"resultType" : "u8"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cu64",
-							"name" : "arg0"
-						}
-					],
-					"name" : "uint8",
-					"resultType" : "u8"
-				}
-			],
-			"refType" : false,
-			"typeName" : "uint8",
-			"requirements" : []
+			"typeName" : "uint8"
 		},
 		"CE" : {
 			"mn" : "CE",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "enum const",
-			"requirements" : []
+			"typeName" : "enum const"
 		},
 		"CE8" : {
 			"mn" : "CE8",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "enum const",
-			"requirements" : []
+			"typeName" : "enum const"
 		},
 		"C@@" : {
 			"mn" : "C@@",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "function<> const",
-			"requirements" : []
+			"typeName" : "function<> const"
 		},
 		"C@" : {
 			"mn" : "C@",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "lambda<> const",
-			"requirements" : []
+			"typeName" : "lambda<> const"
 		},
 		"CIs" : {
 			"mn" : "CIs",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "string const !",
-			"requirements" : []
+			"typeName" : "string const !"
 		},
 		"C_c" : {
 			"mn" : "C_c",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "__context const",
-			"requirements" : []
+			"typeName" : "__context const"
 		},
 		"Cf2" : {
 			"mn" : "Cf2",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "float2 const",
-			"requirements" : []
+			"typeName" : "float2 const"
 		},
 		"f2" : {
 			"mn" : "f2",
-			"constType" : false,
-			"ctors" : [
-				{
-					"args" : [],
-					"name" : "float2",
-					"resultType" : "f2"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cf",
-							"name" : "arg0"
-						}
-					],
-					"name" : "float2",
-					"resultType" : "f2"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ci",
-							"name" : "arg0"
-						}
-					],
-					"name" : "float2",
-					"resultType" : "f2"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cu",
-							"name" : "arg0"
-						}
-					],
-					"name" : "float2",
-					"resultType" : "f2"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cf",
-							"name" : "arg0"
-						},
-						{
-							"mn" : "Cf",
-							"name" : "arg1"
-						}
-					],
-					"name" : "float2",
-					"resultType" : "f2"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cd",
-							"name" : "arg0"
-						},
-						{
-							"mn" : "Cd",
-							"name" : "arg1"
-						}
-					],
-					"name" : "float2",
-					"resultType" : "f2"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ci",
-							"name" : "arg0"
-						},
-						{
-							"mn" : "Ci",
-							"name" : "arg1"
-						}
-					],
-					"name" : "float2",
-					"resultType" : "f2"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cu",
-							"name" : "arg0"
-						},
-						{
-							"mn" : "Cu",
-							"name" : "arg1"
-						}
-					],
-					"name" : "float2",
-					"resultType" : "f2"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ci2",
-							"name" : "arg0"
-						}
-					],
-					"name" : "float2",
-					"resultType" : "f2"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cu2",
-							"name" : "arg0"
-						}
-					],
-					"name" : "float2",
-					"resultType" : "f2"
-				}
-			],
-			"refType" : false,
-			"typeName" : "float2",
-			"requirements" : []
+			"typeName" : "float2"
 		},
 		"Cf3" : {
 			"mn" : "Cf3",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "float3 const",
-			"requirements" : []
+			"typeName" : "float3 const"
 		},
 		"f3" : {
 			"mn" : "f3",
-			"constType" : false,
-			"ctors" : [
-				{
-					"args" : [],
-					"name" : "float3",
-					"resultType" : "f3"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cf",
-							"name" : "arg0"
-						}
-					],
-					"name" : "float3",
-					"resultType" : "f3"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ci",
-							"name" : "arg0"
-						}
-					],
-					"name" : "float3",
-					"resultType" : "f3"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cu",
-							"name" : "arg0"
-						}
-					],
-					"name" : "float3",
-					"resultType" : "f3"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cf",
-							"name" : "arg0"
-						},
-						{
-							"mn" : "Cf",
-							"name" : "arg1"
-						},
-						{
-							"mn" : "Cf",
-							"name" : "arg2"
-						}
-					],
-					"name" : "float3",
-					"resultType" : "f3"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cd",
-							"name" : "arg0"
-						},
-						{
-							"mn" : "Cd",
-							"name" : "arg1"
-						},
-						{
-							"mn" : "Cd",
-							"name" : "arg2"
-						}
-					],
-					"name" : "float3",
-					"resultType" : "f3"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ci",
-							"name" : "arg0"
-						},
-						{
-							"mn" : "Ci",
-							"name" : "arg1"
-						},
-						{
-							"mn" : "Ci",
-							"name" : "arg2"
-						}
-					],
-					"name" : "float3",
-					"resultType" : "f3"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cu",
-							"name" : "arg0"
-						},
-						{
-							"mn" : "Cu",
-							"name" : "arg1"
-						},
-						{
-							"mn" : "Cu",
-							"name" : "arg2"
-						}
-					],
-					"name" : "float3",
-					"resultType" : "f3"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ci3",
-							"name" : "arg0"
-						}
-					],
-					"name" : "float3",
-					"resultType" : "f3"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cu3",
-							"name" : "arg0"
-						}
-					],
-					"name" : "float3",
-					"resultType" : "f3"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cf2",
-							"name" : "arg0"
-						},
-						{
-							"mn" : "Cf",
-							"name" : "arg1"
-						}
-					],
-					"name" : "float3",
-					"resultType" : "f3"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cf",
-							"name" : "arg0"
-						},
-						{
-							"mn" : "Cf2",
-							"name" : "arg1"
-						}
-					],
-					"name" : "float3",
-					"resultType" : "f3"
-				}
-			],
-			"refType" : false,
-			"typeName" : "float3",
-			"requirements" : []
+			"typeName" : "float3"
 		},
 		"Cf4" : {
 			"mn" : "Cf4",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "float4 const",
-			"requirements" : []
+			"typeName" : "float4 const"
 		},
 		"f4" : {
 			"mn" : "f4",
-			"constType" : false,
-			"ctors" : [
-				{
-					"args" : [],
-					"name" : "float4",
-					"resultType" : "f4"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cf",
-							"name" : "arg0"
-						}
-					],
-					"name" : "float4",
-					"resultType" : "f4"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ci",
-							"name" : "arg0"
-						}
-					],
-					"name" : "float4",
-					"resultType" : "f4"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cu",
-							"name" : "arg0"
-						}
-					],
-					"name" : "float4",
-					"resultType" : "f4"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cf",
-							"name" : "arg0"
-						},
-						{
-							"mn" : "Cf",
-							"name" : "arg1"
-						},
-						{
-							"mn" : "Cf",
-							"name" : "arg2"
-						},
-						{
-							"mn" : "Cf",
-							"name" : "arg3"
-						}
-					],
-					"name" : "float4",
-					"resultType" : "f4"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cd",
-							"name" : "arg0"
-						},
-						{
-							"mn" : "Cd",
-							"name" : "arg1"
-						},
-						{
-							"mn" : "Cd",
-							"name" : "arg2"
-						},
-						{
-							"mn" : "Cd",
-							"name" : "arg3"
-						}
-					],
-					"name" : "float4",
-					"resultType" : "f4"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ci",
-							"name" : "arg0"
-						},
-						{
-							"mn" : "Ci",
-							"name" : "arg1"
-						},
-						{
-							"mn" : "Ci",
-							"name" : "arg2"
-						},
-						{
-							"mn" : "Ci",
-							"name" : "arg3"
-						}
-					],
-					"name" : "float4",
-					"resultType" : "f4"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cu",
-							"name" : "arg0"
-						},
-						{
-							"mn" : "Cu",
-							"name" : "arg1"
-						},
-						{
-							"mn" : "Cu",
-							"name" : "arg2"
-						},
-						{
-							"mn" : "Cu",
-							"name" : "arg3"
-						}
-					],
-					"name" : "float4",
-					"resultType" : "f4"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ci4",
-							"name" : "arg0"
-						}
-					],
-					"name" : "float4",
-					"resultType" : "f4"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cu4",
-							"name" : "arg0"
-						}
-					],
-					"name" : "float4",
-					"resultType" : "f4"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cf3",
-							"name" : "arg0"
-						},
-						{
-							"mn" : "Cf",
-							"name" : "arg1"
-						}
-					],
-					"name" : "float4",
-					"resultType" : "f4"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cf",
-							"name" : "arg0"
-						},
-						{
-							"mn" : "Cf3",
-							"name" : "arg1"
-						}
-					],
-					"name" : "float4",
-					"resultType" : "f4"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cf2",
-							"name" : "arg0"
-						},
-						{
-							"mn" : "Cf2",
-							"name" : "arg1"
-						}
-					],
-					"name" : "float4",
-					"resultType" : "f4"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cf2",
-							"name" : "arg0"
-						},
-						{
-							"mn" : "Cf",
-							"name" : "arg1"
-						},
-						{
-							"mn" : "Cf",
-							"name" : "arg2"
-						}
-					],
-					"name" : "float4",
-					"resultType" : "f4"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cf",
-							"name" : "arg0"
-						},
-						{
-							"mn" : "Cf2",
-							"name" : "arg1"
-						},
-						{
-							"mn" : "Cf",
-							"name" : "arg2"
-						}
-					],
-					"name" : "float4",
-					"resultType" : "f4"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cf",
-							"name" : "arg0"
-						},
-						{
-							"mn" : "Cf",
-							"name" : "arg1"
-						},
-						{
-							"mn" : "Cf2",
-							"name" : "arg2"
-						}
-					],
-					"name" : "float4",
-					"resultType" : "f4"
-				}
-			],
-			"refType" : false,
-			"typeName" : "float4",
-			"requirements" : []
+			"typeName" : "float4"
 		},
 		"Ci2" : {
 			"mn" : "Ci2",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "int2 const",
-			"requirements" : []
+			"typeName" : "int2 const"
 		},
 		"i2" : {
 			"mn" : "i2",
-			"constType" : false,
-			"ctors" : [
-				{
-					"args" : [],
-					"name" : "int2",
-					"resultType" : "i2"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cf",
-							"name" : "arg0"
-						}
-					],
-					"name" : "int2",
-					"resultType" : "i2"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ci",
-							"name" : "arg0"
-						}
-					],
-					"name" : "int2",
-					"resultType" : "i2"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cu",
-							"name" : "arg0"
-						}
-					],
-					"name" : "int2",
-					"resultType" : "i2"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cf",
-							"name" : "arg0"
-						},
-						{
-							"mn" : "Cf",
-							"name" : "arg1"
-						}
-					],
-					"name" : "int2",
-					"resultType" : "i2"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cd",
-							"name" : "arg0"
-						},
-						{
-							"mn" : "Cd",
-							"name" : "arg1"
-						}
-					],
-					"name" : "int2",
-					"resultType" : "i2"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ci",
-							"name" : "arg0"
-						},
-						{
-							"mn" : "Ci",
-							"name" : "arg1"
-						}
-					],
-					"name" : "int2",
-					"resultType" : "i2"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cu",
-							"name" : "arg0"
-						},
-						{
-							"mn" : "Cu",
-							"name" : "arg1"
-						}
-					],
-					"name" : "int2",
-					"resultType" : "i2"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cf2",
-							"name" : "arg0"
-						}
-					],
-					"name" : "int2",
-					"resultType" : "i2"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cu2",
-							"name" : "arg0"
-						}
-					],
-					"name" : "int2",
-					"resultType" : "i2"
-				}
-			],
-			"refType" : false,
-			"typeName" : "int2",
-			"requirements" : []
+			"typeName" : "int2"
 		},
 		"Ci3" : {
 			"mn" : "Ci3",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "int3 const",
-			"requirements" : []
+			"typeName" : "int3 const"
 		},
 		"i3" : {
 			"mn" : "i3",
-			"constType" : false,
-			"ctors" : [
-				{
-					"args" : [],
-					"name" : "int3",
-					"resultType" : "i3"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cf",
-							"name" : "arg0"
-						}
-					],
-					"name" : "int3",
-					"resultType" : "i3"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ci",
-							"name" : "arg0"
-						}
-					],
-					"name" : "int3",
-					"resultType" : "i3"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cu",
-							"name" : "arg0"
-						}
-					],
-					"name" : "int3",
-					"resultType" : "i3"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cf",
-							"name" : "arg0"
-						},
-						{
-							"mn" : "Cf",
-							"name" : "arg1"
-						},
-						{
-							"mn" : "Cf",
-							"name" : "arg2"
-						}
-					],
-					"name" : "int3",
-					"resultType" : "i3"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cd",
-							"name" : "arg0"
-						},
-						{
-							"mn" : "Cd",
-							"name" : "arg1"
-						},
-						{
-							"mn" : "Cd",
-							"name" : "arg2"
-						}
-					],
-					"name" : "int3",
-					"resultType" : "i3"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ci",
-							"name" : "arg0"
-						},
-						{
-							"mn" : "Ci",
-							"name" : "arg1"
-						},
-						{
-							"mn" : "Ci",
-							"name" : "arg2"
-						}
-					],
-					"name" : "int3",
-					"resultType" : "i3"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cu",
-							"name" : "arg0"
-						},
-						{
-							"mn" : "Cu",
-							"name" : "arg1"
-						},
-						{
-							"mn" : "Cu",
-							"name" : "arg2"
-						}
-					],
-					"name" : "int3",
-					"resultType" : "i3"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cf3",
-							"name" : "arg0"
-						}
-					],
-					"name" : "int3",
-					"resultType" : "i3"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cu3",
-							"name" : "arg0"
-						}
-					],
-					"name" : "int3",
-					"resultType" : "i3"
-				}
-			],
-			"refType" : false,
-			"typeName" : "int3",
-			"requirements" : []
+			"typeName" : "int3"
 		},
 		"Ci4" : {
 			"mn" : "Ci4",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "int4 const",
-			"requirements" : []
+			"typeName" : "int4 const"
 		},
 		"i4" : {
 			"mn" : "i4",
-			"constType" : false,
-			"ctors" : [
-				{
-					"args" : [],
-					"name" : "int4",
-					"resultType" : "i4"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cf",
-							"name" : "arg0"
-						}
-					],
-					"name" : "int4",
-					"resultType" : "i4"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ci",
-							"name" : "arg0"
-						}
-					],
-					"name" : "int4",
-					"resultType" : "i4"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cu",
-							"name" : "arg0"
-						}
-					],
-					"name" : "int4",
-					"resultType" : "i4"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cf",
-							"name" : "arg0"
-						},
-						{
-							"mn" : "Cf",
-							"name" : "arg1"
-						},
-						{
-							"mn" : "Cf",
-							"name" : "arg2"
-						},
-						{
-							"mn" : "Cf",
-							"name" : "arg3"
-						}
-					],
-					"name" : "int4",
-					"resultType" : "i4"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cd",
-							"name" : "arg0"
-						},
-						{
-							"mn" : "Cd",
-							"name" : "arg1"
-						},
-						{
-							"mn" : "Cd",
-							"name" : "arg2"
-						},
-						{
-							"mn" : "Cd",
-							"name" : "arg3"
-						}
-					],
-					"name" : "int4",
-					"resultType" : "i4"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ci",
-							"name" : "arg0"
-						},
-						{
-							"mn" : "Ci",
-							"name" : "arg1"
-						},
-						{
-							"mn" : "Ci",
-							"name" : "arg2"
-						},
-						{
-							"mn" : "Ci",
-							"name" : "arg3"
-						}
-					],
-					"name" : "int4",
-					"resultType" : "i4"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cu",
-							"name" : "arg0"
-						},
-						{
-							"mn" : "Cu",
-							"name" : "arg1"
-						},
-						{
-							"mn" : "Cu",
-							"name" : "arg2"
-						},
-						{
-							"mn" : "Cu",
-							"name" : "arg3"
-						}
-					],
-					"name" : "int4",
-					"resultType" : "i4"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cf4",
-							"name" : "arg0"
-						}
-					],
-					"name" : "int4",
-					"resultType" : "i4"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cu4",
-							"name" : "arg0"
-						}
-					],
-					"name" : "int4",
-					"resultType" : "i4"
-				}
-			],
-			"refType" : false,
-			"typeName" : "int4",
-			"requirements" : []
+			"typeName" : "int4"
 		},
 		"Cu2" : {
 			"mn" : "Cu2",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "uint2 const",
-			"requirements" : []
+			"typeName" : "uint2 const"
 		},
 		"u2" : {
 			"mn" : "u2",
-			"constType" : false,
-			"ctors" : [
-				{
-					"args" : [],
-					"name" : "uint2",
-					"resultType" : "u2"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cf",
-							"name" : "arg0"
-						}
-					],
-					"name" : "uint2",
-					"resultType" : "u2"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ci",
-							"name" : "arg0"
-						}
-					],
-					"name" : "uint2",
-					"resultType" : "u2"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cu",
-							"name" : "arg0"
-						}
-					],
-					"name" : "uint2",
-					"resultType" : "u2"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cf",
-							"name" : "arg0"
-						},
-						{
-							"mn" : "Cf",
-							"name" : "arg1"
-						}
-					],
-					"name" : "uint2",
-					"resultType" : "u2"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cd",
-							"name" : "arg0"
-						},
-						{
-							"mn" : "Cd",
-							"name" : "arg1"
-						}
-					],
-					"name" : "uint2",
-					"resultType" : "u2"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ci",
-							"name" : "arg0"
-						},
-						{
-							"mn" : "Ci",
-							"name" : "arg1"
-						}
-					],
-					"name" : "uint2",
-					"resultType" : "u2"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cu",
-							"name" : "arg0"
-						},
-						{
-							"mn" : "Cu",
-							"name" : "arg1"
-						}
-					],
-					"name" : "uint2",
-					"resultType" : "u2"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cf2",
-							"name" : "arg0"
-						}
-					],
-					"name" : "uint2",
-					"resultType" : "u2"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ci2",
-							"name" : "arg0"
-						}
-					],
-					"name" : "uint2",
-					"resultType" : "u2"
-				}
-			],
-			"refType" : false,
-			"typeName" : "uint2",
-			"requirements" : []
+			"typeName" : "uint2"
 		},
 		"Cu3" : {
 			"mn" : "Cu3",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "uint3 const",
-			"requirements" : []
+			"typeName" : "uint3 const"
 		},
 		"u3" : {
 			"mn" : "u3",
-			"constType" : false,
-			"ctors" : [
-				{
-					"args" : [],
-					"name" : "uint3",
-					"resultType" : "u3"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cf",
-							"name" : "arg0"
-						}
-					],
-					"name" : "uint3",
-					"resultType" : "u3"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ci",
-							"name" : "arg0"
-						}
-					],
-					"name" : "uint3",
-					"resultType" : "u3"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cu",
-							"name" : "arg0"
-						}
-					],
-					"name" : "uint3",
-					"resultType" : "u3"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cf",
-							"name" : "arg0"
-						},
-						{
-							"mn" : "Cf",
-							"name" : "arg1"
-						},
-						{
-							"mn" : "Cf",
-							"name" : "arg2"
-						}
-					],
-					"name" : "uint3",
-					"resultType" : "u3"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cd",
-							"name" : "arg0"
-						},
-						{
-							"mn" : "Cd",
-							"name" : "arg1"
-						},
-						{
-							"mn" : "Cd",
-							"name" : "arg2"
-						}
-					],
-					"name" : "uint3",
-					"resultType" : "u3"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ci",
-							"name" : "arg0"
-						},
-						{
-							"mn" : "Ci",
-							"name" : "arg1"
-						},
-						{
-							"mn" : "Ci",
-							"name" : "arg2"
-						}
-					],
-					"name" : "uint3",
-					"resultType" : "u3"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cu",
-							"name" : "arg0"
-						},
-						{
-							"mn" : "Cu",
-							"name" : "arg1"
-						},
-						{
-							"mn" : "Cu",
-							"name" : "arg2"
-						}
-					],
-					"name" : "uint3",
-					"resultType" : "u3"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cf3",
-							"name" : "arg0"
-						}
-					],
-					"name" : "uint3",
-					"resultType" : "u3"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ci3",
-							"name" : "arg0"
-						}
-					],
-					"name" : "uint3",
-					"resultType" : "u3"
-				}
-			],
-			"refType" : false,
-			"typeName" : "uint3",
-			"requirements" : []
+			"typeName" : "uint3"
 		},
 		"Cu4" : {
 			"mn" : "Cu4",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "uint4 const",
-			"requirements" : []
+			"typeName" : "uint4 const"
 		},
 		"u4" : {
 			"mn" : "u4",
-			"constType" : false,
-			"ctors" : [
-				{
-					"args" : [],
-					"name" : "uint4",
-					"resultType" : "u4"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cf",
-							"name" : "arg0"
-						}
-					],
-					"name" : "uint4",
-					"resultType" : "u4"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ci",
-							"name" : "arg0"
-						}
-					],
-					"name" : "uint4",
-					"resultType" : "u4"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cu",
-							"name" : "arg0"
-						}
-					],
-					"name" : "uint4",
-					"resultType" : "u4"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cf",
-							"name" : "arg0"
-						},
-						{
-							"mn" : "Cf",
-							"name" : "arg1"
-						},
-						{
-							"mn" : "Cf",
-							"name" : "arg2"
-						},
-						{
-							"mn" : "Cf",
-							"name" : "arg3"
-						}
-					],
-					"name" : "uint4",
-					"resultType" : "u4"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cd",
-							"name" : "arg0"
-						},
-						{
-							"mn" : "Cd",
-							"name" : "arg1"
-						},
-						{
-							"mn" : "Cd",
-							"name" : "arg2"
-						},
-						{
-							"mn" : "Cd",
-							"name" : "arg3"
-						}
-					],
-					"name" : "uint4",
-					"resultType" : "u4"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ci",
-							"name" : "arg0"
-						},
-						{
-							"mn" : "Ci",
-							"name" : "arg1"
-						},
-						{
-							"mn" : "Ci",
-							"name" : "arg2"
-						},
-						{
-							"mn" : "Ci",
-							"name" : "arg3"
-						}
-					],
-					"name" : "uint4",
-					"resultType" : "u4"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cu",
-							"name" : "arg0"
-						},
-						{
-							"mn" : "Cu",
-							"name" : "arg1"
-						},
-						{
-							"mn" : "Cu",
-							"name" : "arg2"
-						},
-						{
-							"mn" : "Cu",
-							"name" : "arg3"
-						}
-					],
-					"name" : "uint4",
-					"resultType" : "u4"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cf4",
-							"name" : "arg0"
-						}
-					],
-					"name" : "uint4",
-					"resultType" : "u4"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ci4",
-							"name" : "arg0"
-						}
-					],
-					"name" : "uint4",
-					"resultType" : "u4"
-				}
-			],
-			"refType" : false,
-			"typeName" : "uint4",
-			"requirements" : []
+			"typeName" : "uint4"
 		},
 		"Cr" : {
 			"mn" : "Cr",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "range const",
-			"requirements" : []
+			"typeName" : "range const"
 		},
 		"Cz" : {
 			"mn" : "Cz",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "urange const",
-			"requirements" : []
+			"typeName" : "urange const"
 		},
 		"IA" : {
 			"mn" : "IA",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "array<> !",
-			"requirements" : []
+			"typeName" : "array<> !"
 		},
 		"CIA" : {
 			"mn" : "CIA",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "array<> const !",
-			"requirements" : []
+			"typeName" : "array<> const !"
 		},
 		"CIG" : {
 			"mn" : "CIG",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "iterator<> const !",
-			"requirements" : []
+			"typeName" : "iterator<> const !"
 		},
 		"IG" : {
 			"mn" : "IG",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "iterator<> !",
-			"requirements" : []
+			"typeName" : "iterator<> !"
 		},
 		"C*" : {
 			"mn" : "C*",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "any const",
-			"requirements" : []
+			"typeName" : "any const"
 		},
 		"C_l" : {
 			"mn" : "C_l",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "__lineInfo const",
-			"requirements" : []
+			"typeName" : "__lineInfo const"
 		},
 		"CIV" : {
 			"mn" : "CIV",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "variant<> const !",
-			"requirements" : []
+			"typeName" : "variant<> const !"
 		},
 		"IV" : {
 			"mn" : "IV",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "variant<> !",
-			"requirements" : []
+			"typeName" : "variant<> !"
 		},
 		"CA" : {
 			"mn" : "CA",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "array<> const",
-			"requirements" : []
+			"typeName" : "array<> const"
 		},
 		"C$" : {
 			"mn" : "C$",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "block<> const",
-			"requirements" : []
+			"typeName" : "block<> const"
 		},
 		"IT" : {
 			"mn" : "IT",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "table<,> !",
-			"requirements" : []
+			"typeName" : "table<,> !"
 		},
 		"CIT" : {
 			"mn" : "CIT",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "table<,> const !",
-			"requirements" : []
+			"typeName" : "table<,> const !"
 		},
 		"CI1<v>?M" : {
 			"mn" : "CI1<v>?M",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "void ? const !",
-			"requirements" : []
+			"typeName" : "void ? const !"
 		},
 		"CI$" : {
 			"mn" : "CI$",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "block<> const !",
-			"requirements" : []
+			"typeName" : "block<> const !"
 		},
 		"CI0<u3;u3>1<b>$" : {
 			"mn" : "CI0<u3;u3>1<b>$",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "block<(uint3; uint3):bool> const !",
-			"requirements" : []
+			"typeName" : "block<(uint3; uint3):bool> const !"
 		},
 		"CH<$::clock>" : {
 			"mn" : "CH<$::clock>",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "clock const",
-			"requirements" : []
+			"typeName" : "clock const"
 		},
 		"1<C&1<H<ast::Variable>>?W>G" : {
 			"mn" : "1<C&1<H<ast::Variable>>?W>G",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "iterator<Variable ? const &>",
-			"requirements" : []
+			"typeName" : "iterator<Variable ? const &>"
 		},
 		"IH<$::dasvector`InferHistory>" : {
 			"mn" : "IH<$::dasvector`InferHistory>",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "dasvector`InferHistory !",
-			"requirements" : []
+			"typeName" : "dasvector`InferHistory !"
 		},
 		"CIH<$::dasvector`InferHistory>" : {
 			"mn" : "CIH<$::dasvector`InferHistory>",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "dasvector`InferHistory const !",
-			"requirements" : []
+			"typeName" : "dasvector`InferHistory const !"
 		},
 		"CIH<$::dasvector`smart_ptr`MakeStruct>" : {
 			"mn" : "CIH<$::dasvector`smart_ptr`MakeStruct>",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "dasvector`smart_ptr`MakeStruct const !",
-			"requirements" : []
+			"typeName" : "dasvector`smart_ptr`MakeStruct const !"
 		},
 		"Ci16" : {
 			"mn" : "Ci16",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "int16 const",
-			"requirements" : []
+			"typeName" : "int16 const"
 		},
 		"Ci64" : {
 			"mn" : "Ci64",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "int64 const",
-			"requirements" : []
+			"typeName" : "int64 const"
 		},
 		"&I1<H<ast::MakeFieldDecl>>?W" : {
 			"mn" : "&I1<H<ast::MakeFieldDecl>>?W",
-			"constType" : false,
-			"ctors" : [],
 			"refType" : true,
-			"typeName" : "MakeFieldDecl ? & !",
-			"requirements" : []
+			"typeName" : "MakeFieldDecl ? & !"
 		},
 		"CH<UnitTest::TestObjectFoo>" : {
 			"mn" : "CH<UnitTest::TestObjectFoo>",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "TestObjectFoo const",
-			"requirements" : []
+			"typeName" : "TestObjectFoo const"
 		},
 		"i16" : {
 			"mn" : "i16",
-			"constType" : false,
-			"ctors" : [
-				{
-					"args" : [],
-					"name" : "int16",
-					"resultType" : "i16"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cf",
-							"name" : "arg0"
-						}
-					],
-					"name" : "int16",
-					"resultType" : "i16"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cd",
-							"name" : "arg0"
-						}
-					],
-					"name" : "int16",
-					"resultType" : "i16"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ci",
-							"name" : "arg0"
-						}
-					],
-					"name" : "int16",
-					"resultType" : "i16"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cu",
-							"name" : "arg0"
-						}
-					],
-					"name" : "int16",
-					"resultType" : "i16"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ct",
-							"name" : "arg0"
-						}
-					],
-					"name" : "int16",
-					"resultType" : "i16"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ci8",
-							"name" : "arg0"
-						}
-					],
-					"name" : "int16",
-					"resultType" : "i16"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cu8",
-							"name" : "arg0"
-						}
-					],
-					"name" : "int16",
-					"resultType" : "i16"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ci16",
-							"name" : "arg0"
-						}
-					],
-					"name" : "int16",
-					"resultType" : "i16"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cu16",
-							"name" : "arg0"
-						}
-					],
-					"name" : "int16",
-					"resultType" : "i16"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ci64",
-							"name" : "arg0"
-						}
-					],
-					"name" : "int16",
-					"resultType" : "i16"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cu64",
-							"name" : "arg0"
-						}
-					],
-					"name" : "int16",
-					"resultType" : "i16"
-				}
-			],
-			"refType" : false,
-			"typeName" : "int16",
-			"requirements" : []
+			"typeName" : "int16"
 		},
 		"i64" : {
 			"mn" : "i64",
-			"constType" : false,
-			"ctors" : [
-				{
-					"args" : [],
-					"name" : "int64",
-					"resultType" : "i64"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cf",
-							"name" : "arg0"
-						}
-					],
-					"name" : "int64",
-					"resultType" : "i64"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cd",
-							"name" : "arg0"
-						}
-					],
-					"name" : "int64",
-					"resultType" : "i64"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ci",
-							"name" : "arg0"
-						}
-					],
-					"name" : "int64",
-					"resultType" : "i64"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cu",
-							"name" : "arg0"
-						}
-					],
-					"name" : "int64",
-					"resultType" : "i64"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ct",
-							"name" : "arg0"
-						}
-					],
-					"name" : "int64",
-					"resultType" : "i64"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ci8",
-							"name" : "arg0"
-						}
-					],
-					"name" : "int64",
-					"resultType" : "i64"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cu8",
-							"name" : "arg0"
-						}
-					],
-					"name" : "int64",
-					"resultType" : "i64"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ci16",
-							"name" : "arg0"
-						}
-					],
-					"name" : "int64",
-					"resultType" : "i64"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cu16",
-							"name" : "arg0"
-						}
-					],
-					"name" : "int64",
-					"resultType" : "i64"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ci64",
-							"name" : "arg0"
-						}
-					],
-					"name" : "int64",
-					"resultType" : "i64"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cu64",
-							"name" : "arg0"
-						}
-					],
-					"name" : "int64",
-					"resultType" : "i64"
-				}
-			],
-			"refType" : false,
-			"typeName" : "int64",
-			"requirements" : []
+			"typeName" : "int64"
 		},
 		"1<&1<H<ast::MakeStruct>>?W>G" : {
 			"mn" : "1<&1<H<ast::MakeStruct>>?W>G",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "iterator<MakeStruct ? &>",
-			"requirements" : []
+			"typeName" : "iterator<MakeStruct ? &>"
 		},
 		"1<H<rtti::LineInfo>>G" : {
 			"mn" : "1<H<rtti::LineInfo>>G",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "iterator<LineInfo>",
-			"requirements" : []
+			"typeName" : "iterator<LineInfo>"
 		},
 		"CIH<$::dasvector`pair`uint`uint>" : {
 			"mn" : "CIH<$::dasvector`pair`uint`uint>",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "dasvector`pair`uint`uint const !",
-			"requirements" : []
+			"typeName" : "dasvector`pair`uint`uint const !"
 		},
 		"1<&i>G" : {
 			"mn" : "1<&i>G",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "iterator<int &>",
-			"requirements" : []
+			"typeName" : "iterator<int &>"
 		},
 		"IH<$::dasvector`pair`uint`uint>" : {
 			"mn" : "IH<$::dasvector`pair`uint`uint>",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "dasvector`pair`uint`uint !",
-			"requirements" : []
+			"typeName" : "dasvector`pair`uint`uint !"
 		},
 		"CN<escapeString;namesAndDimensions;typeQualifiers;refAddresses;humanReadable;singleLine>t" : {
 			"mn" : "CN<escapeString;namesAndDimensions;typeQualifiers;refAddresses;humanReadable;singleLine>t",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "bitfield<escapeString; namesAndDimensions; typeQualifiers; refAddresses; humanReadable; singleLine> const",
-			"requirements" : []
+			"typeName" : "bitfield<escapeString; namesAndDimensions; typeQualifiers; refAddresses; humanReadable; singleLine> const"
 		},
 		"1<&1<H<ast::MakeFieldDecl>>?W>G" : {
 			"mn" : "1<&1<H<ast::MakeFieldDecl>>?W>G",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "iterator<MakeFieldDecl ? &>",
-			"requirements" : []
+			"typeName" : "iterator<MakeFieldDecl ? &>"
 		},
 		"H<$::dasvector`InferHistory>" : {
 			"mn" : "H<$::dasvector`InferHistory>",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "dasvector`InferHistory",
-			"requirements" : []
+			"typeName" : "dasvector`InferHistory"
 		},
 		"CI0<u64;u64>1<b>$" : {
 			"mn" : "CI0<u64;u64>1<b>$",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "block<(uint64; uint64):bool> const !",
-			"requirements" : []
+			"typeName" : "block<(uint64; uint64):bool> const !"
 		},
 		"1<CH<rtti::LineInfo>>G" : {
 			"mn" : "1<CH<rtti::LineInfo>>G",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "iterator<LineInfo const>",
-			"requirements" : []
+			"typeName" : "iterator<LineInfo const>"
 		},
 		"IH<$::dasvector`smart_ptr`MakeStruct>" : {
 			"mn" : "IH<$::dasvector`smart_ptr`MakeStruct>",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "dasvector`smart_ptr`MakeStruct !",
-			"requirements" : []
+			"typeName" : "dasvector`smart_ptr`MakeStruct !"
 		},
 		"1<H<UnitTest::TestObjectFoo>>G" : {
 			"mn" : "1<H<UnitTest::TestObjectFoo>>G",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "iterator<TestObjectFoo>",
-			"requirements" : []
+			"typeName" : "iterator<TestObjectFoo>"
 		},
 		"IH<$::dasvector`FieldDeclaration>" : {
 			"mn" : "IH<$::dasvector`FieldDeclaration>",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "dasvector`FieldDeclaration !",
-			"requirements" : []
+			"typeName" : "dasvector`FieldDeclaration !"
 		},
 		"&I1<H<ast::TypeDecl>>?W" : {
 			"mn" : "&I1<H<ast::TypeDecl>>?W",
-			"constType" : false,
-			"ctors" : [],
 			"refType" : true,
-			"typeName" : "TypeDecl ? & !",
-			"requirements" : []
+			"typeName" : "TypeDecl ? & !"
 		},
 		"CI1<i>?" : {
 			"mn" : "CI1<i>?",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "int ? const !",
-			"requirements" : []
+			"typeName" : "int ? const !"
 		},
 		"1<H<$::das_string>>G" : {
 			"mn" : "1<H<$::das_string>>G",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "iterator<das_string>",
-			"requirements" : []
+			"typeName" : "iterator<das_string>"
 		},
 		"CIH<$::dasvector`das_string>" : {
 			"mn" : "CIH<$::dasvector`das_string>",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "dasvector`das_string const !",
-			"requirements" : []
+			"typeName" : "dasvector`das_string const !"
 		},
 		"CIH<$::dasvector`uint8>" : {
 			"mn" : "CIH<$::dasvector`uint8>",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "dasvector`uint8 const !",
-			"requirements" : []
+			"typeName" : "dasvector`uint8 const !"
 		},
 		"&I1<H<ast::MakeStruct>>?W" : {
 			"mn" : "&I1<H<ast::MakeStruct>>?W",
-			"constType" : false,
-			"ctors" : [],
 			"refType" : true,
-			"typeName" : "MakeStruct ? & !",
-			"requirements" : []
+			"typeName" : "MakeStruct ? & !"
 		},
 		"CI0<i;i>1<b>$" : {
 			"mn" : "CI0<i;i>1<b>$",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "block<(int; int):bool> const !",
-			"requirements" : []
+			"typeName" : "block<(int; int):bool> const !"
 		},
 		"1<CH<$::das_string>>G" : {
 			"mn" : "1<CH<$::das_string>>G",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "iterator<das_string const>",
-			"requirements" : []
+			"typeName" : "iterator<das_string const>"
 		},
 		"H<$::dasvector`TestObjectFoo>" : {
 			"mn" : "H<$::dasvector`TestObjectFoo>",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "dasvector`TestObjectFoo",
-			"requirements" : []
+			"typeName" : "dasvector`TestObjectFoo"
 		},
 		"IH<$::dasvector`das_string>" : {
 			"mn" : "IH<$::dasvector`das_string>",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "dasvector`das_string !",
-			"requirements" : []
+			"typeName" : "dasvector`das_string !"
 		},
 		"&I1<v>?M" : {
 			"mn" : "&I1<v>?M",
-			"constType" : false,
-			"ctors" : [],
 			"refType" : true,
-			"typeName" : "void ? & !",
-			"requirements" : []
+			"typeName" : "void ? & !"
 		},
 		"1<CH<rtti::Error>>G" : {
 			"mn" : "1<CH<rtti::Error>>G",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "iterator<Error const>",
-			"requirements" : []
+			"typeName" : "iterator<Error const>"
 		},
 		"u16" : {
 			"mn" : "u16",
-			"constType" : false,
-			"ctors" : [
-				{
-					"args" : [],
-					"name" : "uint16",
-					"resultType" : "u16"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cf",
-							"name" : "arg0"
-						}
-					],
-					"name" : "uint16",
-					"resultType" : "u16"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cd",
-							"name" : "arg0"
-						}
-					],
-					"name" : "uint16",
-					"resultType" : "u16"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ci",
-							"name" : "arg0"
-						}
-					],
-					"name" : "uint16",
-					"resultType" : "u16"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cu",
-							"name" : "arg0"
-						}
-					],
-					"name" : "uint16",
-					"resultType" : "u16"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ct",
-							"name" : "arg0"
-						}
-					],
-					"name" : "uint16",
-					"resultType" : "u16"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ci8",
-							"name" : "arg0"
-						}
-					],
-					"name" : "uint16",
-					"resultType" : "u16"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cu8",
-							"name" : "arg0"
-						}
-					],
-					"name" : "uint16",
-					"resultType" : "u16"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ci16",
-							"name" : "arg0"
-						}
-					],
-					"name" : "uint16",
-					"resultType" : "u16"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cu16",
-							"name" : "arg0"
-						}
-					],
-					"name" : "uint16",
-					"resultType" : "u16"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ci64",
-							"name" : "arg0"
-						}
-					],
-					"name" : "uint16",
-					"resultType" : "u16"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cu64",
-							"name" : "arg0"
-						}
-					],
-					"name" : "uint16",
-					"resultType" : "u16"
-				}
-			],
-			"refType" : false,
-			"typeName" : "uint16",
-			"requirements" : []
+			"typeName" : "uint16"
 		},
 		"u64" : {
 			"mn" : "u64",
-			"constType" : false,
-			"ctors" : [
-				{
-					"args" : [],
-					"name" : "uint64",
-					"resultType" : "u64"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cf",
-							"name" : "arg0"
-						}
-					],
-					"name" : "uint64",
-					"resultType" : "u64"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cd",
-							"name" : "arg0"
-						}
-					],
-					"name" : "uint64",
-					"resultType" : "u64"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ci",
-							"name" : "arg0"
-						}
-					],
-					"name" : "uint64",
-					"resultType" : "u64"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cu",
-							"name" : "arg0"
-						}
-					],
-					"name" : "uint64",
-					"resultType" : "u64"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ct",
-							"name" : "arg0"
-						}
-					],
-					"name" : "uint64",
-					"resultType" : "u64"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ci8",
-							"name" : "arg0"
-						}
-					],
-					"name" : "uint64",
-					"resultType" : "u64"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cu8",
-							"name" : "arg0"
-						}
-					],
-					"name" : "uint64",
-					"resultType" : "u64"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ci16",
-							"name" : "arg0"
-						}
-					],
-					"name" : "uint64",
-					"resultType" : "u64"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cu16",
-							"name" : "arg0"
-						}
-					],
-					"name" : "uint64",
-					"resultType" : "u64"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ci64",
-							"name" : "arg0"
-						}
-					],
-					"name" : "uint64",
-					"resultType" : "u64"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cu64",
-							"name" : "arg0"
-						}
-					],
-					"name" : "uint64",
-					"resultType" : "u64"
-				}
-			],
-			"refType" : false,
-			"typeName" : "uint64",
-			"requirements" : []
+			"typeName" : "uint64"
 		},
 		"1<C&i>G" : {
 			"mn" : "1<C&i>G",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "iterator<int const &>",
-			"requirements" : []
+			"typeName" : "iterator<int const &>"
 		},
 		"1<H<ast::CaptureEntry>>G" : {
 			"mn" : "1<H<ast::CaptureEntry>>G",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "iterator<CaptureEntry>",
-			"requirements" : []
+			"typeName" : "iterator<CaptureEntry>"
 		},
 		"CI0<u;u>1<b>$" : {
 			"mn" : "CI0<u;u>1<b>$",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "block<(uint; uint):bool> const !",
-			"requirements" : []
+			"typeName" : "block<(uint; uint):bool> const !"
 		},
 		"CI1<u64>?" : {
 			"mn" : "CI1<u64>?",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "uint64 ? const !",
-			"requirements" : []
+			"typeName" : "uint64 ? const !"
 		},
 		"1<H<ast::InferHistory>>G" : {
 			"mn" : "1<H<ast::InferHistory>>G",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "iterator<InferHistory>",
-			"requirements" : []
+			"typeName" : "iterator<InferHistory>"
 		},
 		"CI1<u>?" : {
 			"mn" : "CI1<u>?",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "uint ? const !",
-			"requirements" : []
+			"typeName" : "uint ? const !"
 		},
 		"C0<u;u>U" : {
 			"mn" : "C0<u;u>U",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "tuple<uint; uint> const",
-			"requirements" : []
+			"typeName" : "tuple<uint; uint> const"
 		},
 		"1<&1<H<ast::Expression>>?W>G" : {
 			"mn" : "1<&1<H<ast::Expression>>?W>G",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "iterator<Expression ? &>",
-			"requirements" : []
+			"typeName" : "iterator<Expression ? &>"
 		},
 		"CI0<z;z>1<b>$" : {
 			"mn" : "CI0<z;z>1<b>$",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "block<(urange; urange):bool> const !",
-			"requirements" : []
+			"typeName" : "block<(urange; urange):bool> const !"
 		},
 		"IH<$::dasvector`Error>" : {
 			"mn" : "IH<$::dasvector`Error>",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "dasvector`Error !",
-			"requirements" : []
+			"typeName" : "dasvector`Error !"
 		},
 		"CIH<$::dasvector`EnumEntry>" : {
 			"mn" : "CIH<$::dasvector`EnumEntry>",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "dasvector`EnumEntry const !",
-			"requirements" : []
+			"typeName" : "dasvector`EnumEntry const !"
 		},
 		"CI0<i4;i4>1<b>$" : {
 			"mn" : "CI0<i4;i4>1<b>$",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "block<(int4; int4):bool> const !",
-			"requirements" : []
+			"typeName" : "block<(int4; int4):bool> const !"
 		},
 		"1<CH<UnitTest::TestObjectFoo>>G" : {
 			"mn" : "1<CH<UnitTest::TestObjectFoo>>G",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "iterator<TestObjectFoo const>",
-			"requirements" : []
+			"typeName" : "iterator<TestObjectFoo const>"
 		},
 		"CI0<i64;i64>1<b>$" : {
 			"mn" : "CI0<i64;i64>1<b>$",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "block<(int64; int64):bool> const !",
-			"requirements" : []
+			"typeName" : "block<(int64; int64):bool> const !"
 		},
 		"Cu16" : {
 			"mn" : "Cu16",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "uint16 const",
-			"requirements" : []
+			"typeName" : "uint16 const"
 		},
 		"Cu64" : {
 			"mn" : "Cu64",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "uint64 const",
-			"requirements" : []
+			"typeName" : "uint64 const"
 		},
 		"IH<$::dasvector`TestObjectFoo>" : {
 			"mn" : "IH<$::dasvector`TestObjectFoo>",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "dasvector`TestObjectFoo !",
-			"requirements" : []
+			"typeName" : "dasvector`TestObjectFoo !"
 		},
 		"1<C&1<H<ast::Expression>>?W>G" : {
 			"mn" : "1<C&1<H<ast::Expression>>?W>G",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "iterator<Expression ? const &>",
-			"requirements" : []
+			"typeName" : "iterator<Expression ? const &>"
 		},
 		"1<C&1<H<ast::MakeFieldDecl>>?W>G" : {
 			"mn" : "1<C&1<H<ast::MakeFieldDecl>>?W>G",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "iterator<MakeFieldDecl ? const &>",
-			"requirements" : []
+			"typeName" : "iterator<MakeFieldDecl ? const &>"
 		},
 		"CH<rtti::LineInfo>" : {
 			"mn" : "CH<rtti::LineInfo>",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "LineInfo const",
-			"requirements" : []
+			"typeName" : "LineInfo const"
 		},
 		"&I1<H<ast::Expression>>?W" : {
 			"mn" : "&I1<H<ast::Expression>>?W",
-			"constType" : false,
-			"ctors" : [],
 			"refType" : true,
-			"typeName" : "Expression ? & !",
-			"requirements" : []
+			"typeName" : "Expression ? & !"
 		},
 		"CIH<$::dasvector`LineInfo>" : {
 			"mn" : "CIH<$::dasvector`LineInfo>",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "dasvector`LineInfo const !",
-			"requirements" : []
+			"typeName" : "dasvector`LineInfo const !"
 		},
 		"IH<$::dasvector`LineInfo>" : {
 			"mn" : "IH<$::dasvector`LineInfo>",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "dasvector`LineInfo !",
-			"requirements" : []
+			"typeName" : "dasvector`LineInfo !"
 		},
 		"CI1<i64>?" : {
 			"mn" : "CI1<i64>?",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "int64 ? const !",
-			"requirements" : []
+			"typeName" : "int64 ? const !"
 		},
 		"CI0<u2;u2>1<b>$" : {
 			"mn" : "CI0<u2;u2>1<b>$",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "block<(uint2; uint2):bool> const !",
-			"requirements" : []
+			"typeName" : "block<(uint2; uint2):bool> const !"
 		},
 		"CIH<$::das_string>" : {
 			"mn" : "CIH<$::das_string>",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "das_string const !",
-			"requirements" : []
+			"typeName" : "das_string const !"
 		},
 		"CI0<i3;i3>1<b>$" : {
 			"mn" : "CI0<i3;i3>1<b>$",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "block<(int3; int3):bool> const !",
-			"requirements" : []
+			"typeName" : "block<(int3; int3):bool> const !"
 		},
 		"&I1<H<ast::Variable>>?W" : {
 			"mn" : "&I1<H<ast::Variable>>?W",
-			"constType" : false,
-			"ctors" : [],
 			"refType" : true,
-			"typeName" : "Variable ? & !",
-			"requirements" : []
+			"typeName" : "Variable ? & !"
 		},
 		"IH<$::dasvector`smart_ptr`TypeDecl>" : {
 			"mn" : "IH<$::dasvector`smart_ptr`TypeDecl>",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "dasvector`smart_ptr`TypeDecl !",
-			"requirements" : []
+			"typeName" : "dasvector`smart_ptr`TypeDecl !"
 		},
 		"CI0<d;d>1<b>$" : {
 			"mn" : "CI0<d;d>1<b>$",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "block<(double; double):bool> const !",
-			"requirements" : []
+			"typeName" : "block<(double; double):bool> const !"
 		},
 		"1<C&1<H<ast::MakeStruct>>?W>G" : {
 			"mn" : "1<C&1<H<ast::MakeStruct>>?W>G",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "iterator<MakeStruct ? const &>",
-			"requirements" : []
+			"typeName" : "iterator<MakeStruct ? const &>"
 		},
 		"1<&u8>G" : {
 			"mn" : "1<&u8>G",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "iterator<uint8 &>",
-			"requirements" : []
+			"typeName" : "iterator<uint8 &>"
 		},
 		"H<$::dasvector`pair`uint`uint>" : {
 			"mn" : "H<$::dasvector`pair`uint`uint>",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "dasvector`pair`uint`uint",
-			"requirements" : []
+			"typeName" : "dasvector`pair`uint`uint"
 		},
 		"CI0<u4;u4>1<b>$" : {
 			"mn" : "CI0<u4;u4>1<b>$",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "block<(uint4; uint4):bool> const !",
-			"requirements" : []
+			"typeName" : "block<(uint4; uint4):bool> const !"
 		},
 		"1<C0<u;u>U>G" : {
 			"mn" : "1<C0<u;u>U>G",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "iterator<tuple<uint; uint> const>",
-			"requirements" : []
+			"typeName" : "iterator<tuple<uint; uint> const>"
 		},
 		"1<H<rtti::Error>>G" : {
 			"mn" : "1<H<rtti::Error>>G",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "iterator<Error>",
-			"requirements" : []
+			"typeName" : "iterator<Error>"
 		},
 		"CIH<$::dasvector`TestObjectFoo>" : {
 			"mn" : "CIH<$::dasvector`TestObjectFoo>",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "dasvector`TestObjectFoo const !",
-			"requirements" : []
+			"typeName" : "dasvector`TestObjectFoo const !"
 		},
 		"0<u;u>U" : {
 			"mn" : "0<u;u>U",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "tuple<uint; uint>",
-			"requirements" : []
+			"typeName" : "tuple<uint; uint>"
 		},
 		"&Ii64" : {
 			"mn" : "&Ii64",
-			"constType" : false,
-			"ctors" : [],
 			"refType" : true,
-			"typeName" : "int64 & !",
-			"requirements" : []
+			"typeName" : "int64 & !"
 		},
 		"CIH<$::dasvector`smart_ptr`MakeFieldDecl>" : {
 			"mn" : "CIH<$::dasvector`smart_ptr`MakeFieldDecl>",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "dasvector`smart_ptr`MakeFieldDecl const !",
-			"requirements" : []
+			"typeName" : "dasvector`smart_ptr`MakeFieldDecl const !"
 		},
 		"1<C&1<H<ast::TypeDecl>>?W>G" : {
 			"mn" : "1<C&1<H<ast::TypeDecl>>?W>G",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "iterator<TypeDecl ? const &>",
-			"requirements" : []
+			"typeName" : "iterator<TypeDecl ? const &>"
 		},
 		"1<CH<ast::CaptureEntry>>G" : {
 			"mn" : "1<CH<ast::CaptureEntry>>G",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "iterator<CaptureEntry const>",
-			"requirements" : []
+			"typeName" : "iterator<CaptureEntry const>"
 		},
 		"H<UnitTest::TestObjectFoo>" : {
 			"mn" : "H<UnitTest::TestObjectFoo>",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "TestObjectFoo",
-			"requirements" : []
+			"typeName" : "TestObjectFoo"
 		},
 		"1<H<ast::FieldDeclaration>>G" : {
 			"mn" : "1<H<ast::FieldDeclaration>>G",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "iterator<FieldDeclaration>",
-			"requirements" : []
+			"typeName" : "iterator<FieldDeclaration>"
 		},
 		"IH<$::dasvector`smart_ptr`MakeFieldDecl>" : {
 			"mn" : "IH<$::dasvector`smart_ptr`MakeFieldDecl>",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "dasvector`smart_ptr`MakeFieldDecl !",
-			"requirements" : []
+			"typeName" : "dasvector`smart_ptr`MakeFieldDecl !"
 		},
 		"CI0<r;r>1<b>$" : {
 			"mn" : "CI0<r;r>1<b>$",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "block<(range; range):bool> const !",
-			"requirements" : []
+			"typeName" : "block<(range; range):bool> const !"
 		},
 		"b" : {
 			"mn" : "b",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "bool",
-			"requirements" : []
+			"typeName" : "bool"
 		},
 		"v" : {
 			"mn" : "v",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "void",
-			"requirements" : []
+			"typeName" : "void"
 		},
 		"i" : {
 			"mn" : "i",
-			"constType" : false,
-			"ctors" : [
-				{
-					"args" : [],
-					"name" : "int",
-					"resultType" : "i"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cf",
-							"name" : "arg0"
-						}
-					],
-					"name" : "int",
-					"resultType" : "i"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cd",
-							"name" : "arg0"
-						}
-					],
-					"name" : "int",
-					"resultType" : "i"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ci",
-							"name" : "arg0"
-						}
-					],
-					"name" : "int",
-					"resultType" : "i"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cu",
-							"name" : "arg0"
-						}
-					],
-					"name" : "int",
-					"resultType" : "i"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ct",
-							"name" : "arg0"
-						}
-					],
-					"name" : "int",
-					"resultType" : "i"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ci8",
-							"name" : "arg0"
-						}
-					],
-					"name" : "int",
-					"resultType" : "i"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cu8",
-							"name" : "arg0"
-						}
-					],
-					"name" : "int",
-					"resultType" : "i"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ci16",
-							"name" : "arg0"
-						}
-					],
-					"name" : "int",
-					"resultType" : "i"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cu16",
-							"name" : "arg0"
-						}
-					],
-					"name" : "int",
-					"resultType" : "i"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ci64",
-							"name" : "arg0"
-						}
-					],
-					"name" : "int",
-					"resultType" : "i"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cu64",
-							"name" : "arg0"
-						}
-					],
-					"name" : "int",
-					"resultType" : "i"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "CE",
-							"name" : "src"
-						}
-					],
-					"name" : "int",
-					"resultType" : "i"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "CE8",
-							"name" : "src"
-						}
-					],
-					"name" : "int",
-					"resultType" : "i"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "CE16",
-							"name" : "src"
-						}
-					],
-					"name" : "int",
-					"resultType" : "i"
-				}
-			],
-			"refType" : false,
-			"typeName" : "int",
-			"requirements" : []
+			"typeName" : "int"
 		},
 		"u" : {
 			"mn" : "u",
-			"constType" : false,
-			"ctors" : [
-				{
-					"args" : [],
-					"name" : "uint",
-					"resultType" : "u"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cf",
-							"name" : "arg0"
-						}
-					],
-					"name" : "uint",
-					"resultType" : "u"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cd",
-							"name" : "arg0"
-						}
-					],
-					"name" : "uint",
-					"resultType" : "u"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ci",
-							"name" : "arg0"
-						}
-					],
-					"name" : "uint",
-					"resultType" : "u"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cu",
-							"name" : "arg0"
-						}
-					],
-					"name" : "uint",
-					"resultType" : "u"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ct",
-							"name" : "arg0"
-						}
-					],
-					"name" : "uint",
-					"resultType" : "u"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ci8",
-							"name" : "arg0"
-						}
-					],
-					"name" : "uint",
-					"resultType" : "u"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cu8",
-							"name" : "arg0"
-						}
-					],
-					"name" : "uint",
-					"resultType" : "u"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ci16",
-							"name" : "arg0"
-						}
-					],
-					"name" : "uint",
-					"resultType" : "u"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cu16",
-							"name" : "arg0"
-						}
-					],
-					"name" : "uint",
-					"resultType" : "u"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ci64",
-							"name" : "arg0"
-						}
-					],
-					"name" : "uint",
-					"resultType" : "u"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cu64",
-							"name" : "arg0"
-						}
-					],
-					"name" : "uint",
-					"resultType" : "u"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "CE",
-							"name" : "src"
-						}
-					],
-					"name" : "uint",
-					"resultType" : "u"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "CE8",
-							"name" : "src"
-						}
-					],
-					"name" : "uint",
-					"resultType" : "u"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "CE16",
-							"name" : "src"
-						}
-					],
-					"name" : "uint",
-					"resultType" : "u"
-				}
-			],
-			"refType" : false,
-			"typeName" : "uint",
-			"requirements" : []
+			"typeName" : "uint"
 		},
 		"t" : {
 			"mn" : "t",
-			"constType" : false,
-			"ctors" : [
-				{
-					"args" : [],
-					"name" : "bitfield",
-					"resultType" : "t"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cf",
-							"name" : "arg0"
-						}
-					],
-					"name" : "bitfield",
-					"resultType" : "t"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cd",
-							"name" : "arg0"
-						}
-					],
-					"name" : "bitfield",
-					"resultType" : "t"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ci",
-							"name" : "arg0"
-						}
-					],
-					"name" : "bitfield",
-					"resultType" : "t"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cu",
-							"name" : "arg0"
-						}
-					],
-					"name" : "bitfield",
-					"resultType" : "t"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ct",
-							"name" : "arg0"
-						}
-					],
-					"name" : "bitfield",
-					"resultType" : "t"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ci8",
-							"name" : "arg0"
-						}
-					],
-					"name" : "bitfield",
-					"resultType" : "t"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cu8",
-							"name" : "arg0"
-						}
-					],
-					"name" : "bitfield",
-					"resultType" : "t"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ci16",
-							"name" : "arg0"
-						}
-					],
-					"name" : "bitfield",
-					"resultType" : "t"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cu16",
-							"name" : "arg0"
-						}
-					],
-					"name" : "bitfield",
-					"resultType" : "t"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ci64",
-							"name" : "arg0"
-						}
-					],
-					"name" : "bitfield",
-					"resultType" : "t"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cu64",
-							"name" : "arg0"
-						}
-					],
-					"name" : "bitfield",
-					"resultType" : "t"
-				}
-			],
-			"refType" : false,
-			"typeName" : "bitfield",
-			"requirements" : []
+			"typeName" : "bitfield"
 		},
 		"f" : {
 			"mn" : "f",
-			"constType" : false,
-			"ctors" : [
-				{
-					"args" : [],
-					"name" : "float",
-					"resultType" : "f"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cf",
-							"name" : "arg0"
-						}
-					],
-					"name" : "float",
-					"resultType" : "f"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cd",
-							"name" : "arg0"
-						}
-					],
-					"name" : "float",
-					"resultType" : "f"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ci",
-							"name" : "arg0"
-						}
-					],
-					"name" : "float",
-					"resultType" : "f"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cu",
-							"name" : "arg0"
-						}
-					],
-					"name" : "float",
-					"resultType" : "f"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ct",
-							"name" : "arg0"
-						}
-					],
-					"name" : "float",
-					"resultType" : "f"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ci8",
-							"name" : "arg0"
-						}
-					],
-					"name" : "float",
-					"resultType" : "f"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cu8",
-							"name" : "arg0"
-						}
-					],
-					"name" : "float",
-					"resultType" : "f"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ci16",
-							"name" : "arg0"
-						}
-					],
-					"name" : "float",
-					"resultType" : "f"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cu16",
-							"name" : "arg0"
-						}
-					],
-					"name" : "float",
-					"resultType" : "f"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ci64",
-							"name" : "arg0"
-						}
-					],
-					"name" : "float",
-					"resultType" : "f"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cu64",
-							"name" : "arg0"
-						}
-					],
-					"name" : "float",
-					"resultType" : "f"
-				}
-			],
-			"refType" : false,
-			"typeName" : "float",
-			"requirements" : []
+			"typeName" : "float"
 		},
 		"d" : {
 			"mn" : "d",
-			"constType" : false,
-			"ctors" : [
-				{
-					"args" : [],
-					"name" : "double",
-					"resultType" : "d"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cf",
-							"name" : "arg0"
-						}
-					],
-					"name" : "double",
-					"resultType" : "d"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cd",
-							"name" : "arg0"
-						}
-					],
-					"name" : "double",
-					"resultType" : "d"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ci",
-							"name" : "arg0"
-						}
-					],
-					"name" : "double",
-					"resultType" : "d"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cu",
-							"name" : "arg0"
-						}
-					],
-					"name" : "double",
-					"resultType" : "d"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ct",
-							"name" : "arg0"
-						}
-					],
-					"name" : "double",
-					"resultType" : "d"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ci8",
-							"name" : "arg0"
-						}
-					],
-					"name" : "double",
-					"resultType" : "d"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cu8",
-							"name" : "arg0"
-						}
-					],
-					"name" : "double",
-					"resultType" : "d"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ci16",
-							"name" : "arg0"
-						}
-					],
-					"name" : "double",
-					"resultType" : "d"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cu16",
-							"name" : "arg0"
-						}
-					],
-					"name" : "double",
-					"resultType" : "d"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ci64",
-							"name" : "arg0"
-						}
-					],
-					"name" : "double",
-					"resultType" : "d"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cu64",
-							"name" : "arg0"
-						}
-					],
-					"name" : "double",
-					"resultType" : "d"
-				}
-			],
-			"refType" : false,
-			"typeName" : "double",
-			"requirements" : []
+			"typeName" : "double"
 		},
 		"s" : {
 			"mn" : "s",
-			"constType" : false,
-			"ctors" : [
-				{
-					"args" : [
-						{
-							"mn" : "Ci",
-							"name" : "arg0"
-						},
-						{
-							"mn" : "C_c",
-							"name" : "arg1"
-						}
-					],
-					"name" : "string",
-					"resultType" : "s"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cu",
-							"name" : "arg0"
-						},
-						{
-							"mn" : "C_c",
-							"name" : "arg1"
-						}
-					],
-					"name" : "string",
-					"resultType" : "s"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ci64",
-							"name" : "arg0"
-						},
-						{
-							"mn" : "C_c",
-							"name" : "arg1"
-						}
-					],
-					"name" : "string",
-					"resultType" : "s"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cu64",
-							"name" : "arg0"
-						},
-						{
-							"mn" : "C_c",
-							"name" : "arg1"
-						}
-					],
-					"name" : "string",
-					"resultType" : "s"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cf",
-							"name" : "arg0"
-						},
-						{
-							"mn" : "C_c",
-							"name" : "arg1"
-						}
-					],
-					"name" : "string",
-					"resultType" : "s"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "CIH<$::das_string>",
-							"name" : "source"
-						},
-						{
-							"mn" : "C_c",
-							"name" : "context"
-						}
-					],
-					"name" : "string",
-					"resultType" : "s"
-				}
-			],
-			"refType" : false,
-			"typeName" : "string",
-			"requirements" : []
+			"typeName" : "string"
 		},
 		"r" : {
 			"mn" : "r",
-			"constType" : false,
-			"ctors" : [
-				{
-					"args" : [],
-					"name" : "range",
-					"resultType" : "r"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cf",
-							"name" : "arg0"
-						}
-					],
-					"name" : "range",
-					"resultType" : "r"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cd",
-							"name" : "arg0"
-						}
-					],
-					"name" : "range",
-					"resultType" : "r"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ci",
-							"name" : "arg0"
-						}
-					],
-					"name" : "range",
-					"resultType" : "r"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cu",
-							"name" : "arg0"
-						}
-					],
-					"name" : "range",
-					"resultType" : "r"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cf",
-							"name" : "arg0"
-						},
-						{
-							"mn" : "Cf",
-							"name" : "arg1"
-						}
-					],
-					"name" : "range",
-					"resultType" : "r"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cd",
-							"name" : "arg0"
-						},
-						{
-							"mn" : "Cd",
-							"name" : "arg1"
-						}
-					],
-					"name" : "range",
-					"resultType" : "r"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ci",
-							"name" : "arg0"
-						},
-						{
-							"mn" : "Ci",
-							"name" : "arg1"
-						}
-					],
-					"name" : "range",
-					"resultType" : "r"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cu",
-							"name" : "arg0"
-						},
-						{
-							"mn" : "Cu",
-							"name" : "arg1"
-						}
-					],
-					"name" : "range",
-					"resultType" : "r"
-				}
-			],
-			"refType" : false,
-			"typeName" : "range",
-			"requirements" : []
+			"typeName" : "range"
 		},
 		"&If" : {
 			"mn" : "&If",
-			"constType" : false,
-			"ctors" : [],
 			"refType" : true,
-			"typeName" : "float & !",
-			"requirements" : []
+			"typeName" : "float & !"
 		},
 		"&Ib" : {
 			"mn" : "&Ib",
-			"constType" : false,
-			"ctors" : [],
 			"refType" : true,
-			"typeName" : "bool & !",
-			"requirements" : []
+			"typeName" : "bool & !"
 		},
 		"&Ii" : {
 			"mn" : "&Ii",
-			"constType" : false,
-			"ctors" : [],
 			"refType" : true,
-			"typeName" : "int & !",
-			"requirements" : []
+			"typeName" : "int & !"
 		},
 		"&Iu" : {
 			"mn" : "&Iu",
-			"constType" : false,
-			"ctors" : [],
 			"refType" : true,
-			"typeName" : "uint & !",
-			"requirements" : []
+			"typeName" : "uint & !"
 		},
 		"&It" : {
 			"mn" : "&It",
-			"constType" : false,
-			"ctors" : [],
 			"refType" : true,
-			"typeName" : "bitfield & !",
-			"requirements" : []
+			"typeName" : "bitfield & !"
 		},
 		"&Id" : {
 			"mn" : "&Id",
-			"constType" : false,
-			"ctors" : [],
 			"refType" : true,
-			"typeName" : "double & !",
-			"requirements" : []
+			"typeName" : "double & !"
 		},
 		"&Is" : {
 			"mn" : "&Is",
-			"constType" : false,
-			"ctors" : [],
 			"refType" : true,
-			"typeName" : "string & !",
-			"requirements" : []
+			"typeName" : "string & !"
 		},
 		"z" : {
 			"mn" : "z",
-			"constType" : false,
-			"ctors" : [
-				{
-					"args" : [],
-					"name" : "urange",
-					"resultType" : "z"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cf",
-							"name" : "arg0"
-						}
-					],
-					"name" : "urange",
-					"resultType" : "z"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cd",
-							"name" : "arg0"
-						}
-					],
-					"name" : "urange",
-					"resultType" : "z"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ci",
-							"name" : "arg0"
-						}
-					],
-					"name" : "urange",
-					"resultType" : "z"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cu",
-							"name" : "arg0"
-						}
-					],
-					"name" : "urange",
-					"resultType" : "z"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cf",
-							"name" : "arg0"
-						},
-						{
-							"mn" : "Cf",
-							"name" : "arg1"
-						}
-					],
-					"name" : "urange",
-					"resultType" : "z"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cd",
-							"name" : "arg0"
-						},
-						{
-							"mn" : "Cd",
-							"name" : "arg1"
-						}
-					],
-					"name" : "urange",
-					"resultType" : "z"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Ci",
-							"name" : "arg0"
-						},
-						{
-							"mn" : "Ci",
-							"name" : "arg1"
-						}
-					],
-					"name" : "urange",
-					"resultType" : "z"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "Cu",
-							"name" : "arg0"
-						},
-						{
-							"mn" : "Cu",
-							"name" : "arg1"
-						}
-					],
-					"name" : "urange",
-					"resultType" : "z"
-				}
-			],
-			"refType" : false,
-			"typeName" : "urange",
-			"requirements" : []
+			"typeName" : "urange"
 		},
 		"C&I1<v>?M" : {
 			"mn" : "C&I1<v>?M",
 			"constType" : true,
-			"ctors" : [],
 			"refType" : true,
-			"typeName" : "void ? const & !",
-			"requirements" : []
+			"typeName" : "void ? const & !"
 		},
 		"?" : {
 			"mn" : "?",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : " ?",
-			"requirements" : []
+			"typeName" : " ?"
 		},
 		"&I?" : {
 			"mn" : "&I?",
-			"constType" : false,
-			"ctors" : [],
 			"refType" : true,
-			"typeName" : " ? & !",
-			"requirements" : []
+			"typeName" : " ? & !"
 		},
 		"CI0<f2;f2>1<b>$" : {
 			"mn" : "CI0<f2;f2>1<b>$",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "block<(float2; float2):bool> const !",
-			"requirements" : []
+			"typeName" : "block<(float2; float2):bool> const !"
 		},
 		"CI0<f3;f3>1<b>$" : {
 			"mn" : "CI0<f3;f3>1<b>$",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "block<(float3; float3):bool> const !",
-			"requirements" : []
+			"typeName" : "block<(float3; float3):bool> const !"
 		},
 		"CI0<s;s>1<b>$" : {
 			"mn" : "CI0<s;s>1<b>$",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "block<(string; string):bool> const !",
-			"requirements" : []
+			"typeName" : "block<(string; string):bool> const !"
 		},
 		"CIH<$::dasvector`smart_ptr`TypeDecl>" : {
 			"mn" : "CIH<$::dasvector`smart_ptr`TypeDecl>",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "dasvector`smart_ptr`TypeDecl const !",
-			"requirements" : []
+			"typeName" : "dasvector`smart_ptr`TypeDecl const !"
 		},
 		"CIH<$::dasvector`smart_ptr`Variable>" : {
 			"mn" : "CIH<$::dasvector`smart_ptr`Variable>",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "dasvector`smart_ptr`Variable const !",
-			"requirements" : []
+			"typeName" : "dasvector`smart_ptr`Variable const !"
 		},
 		"1<C&u8>G" : {
 			"mn" : "1<C&u8>G",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "iterator<uint8 const &>",
-			"requirements" : []
+			"typeName" : "iterator<uint8 const &>"
 		},
 		"1<0<u;u>U>G" : {
 			"mn" : "1<0<u;u>U>G",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "iterator<tuple<uint; uint>>",
-			"requirements" : []
+			"typeName" : "iterator<tuple<uint; uint>>"
 		},
 		"CI0<f;f>1<b>$" : {
 			"mn" : "CI0<f;f>1<b>$",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "block<(float; float):bool> const !",
-			"requirements" : []
+			"typeName" : "block<(float; float):bool> const !"
 		},
 		"IH<$::dasvector`CaptureEntry>" : {
 			"mn" : "IH<$::dasvector`CaptureEntry>",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "dasvector`CaptureEntry !",
-			"requirements" : []
+			"typeName" : "dasvector`CaptureEntry !"
 		},
 		"CIH<$::dasvector`int>" : {
 			"mn" : "CIH<$::dasvector`int>",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "dasvector`int const !",
-			"requirements" : []
+			"typeName" : "dasvector`int const !"
 		},
 		"CH<ast::InferHistory>" : {
 			"mn" : "CH<ast::InferHistory>",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "InferHistory const",
-			"requirements" : []
+			"typeName" : "InferHistory const"
 		},
 		"CI1<d>?" : {
 			"mn" : "CI1<d>?",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "double ? const !",
-			"requirements" : []
+			"typeName" : "double ? const !"
 		},
 		"IH<$::dasvector`smart_ptr`Expression>" : {
 			"mn" : "IH<$::dasvector`smart_ptr`Expression>",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "dasvector`smart_ptr`Expression !",
-			"requirements" : []
+			"typeName" : "dasvector`smart_ptr`Expression !"
 		},
 		"1<CH<ast::FieldDeclaration>>G" : {
 			"mn" : "1<CH<ast::FieldDeclaration>>G",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "iterator<FieldDeclaration const>",
-			"requirements" : []
+			"typeName" : "iterator<FieldDeclaration const>"
 		},
 		"1<&1<H<ast::Variable>>?W>G" : {
 			"mn" : "1<&1<H<ast::Variable>>?W>G",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "iterator<Variable ? &>",
-			"requirements" : []
+			"typeName" : "iterator<Variable ? &>"
 		},
 		"IH<$::dasvector`uint8>" : {
 			"mn" : "IH<$::dasvector`uint8>",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "dasvector`uint8 !",
-			"requirements" : []
+			"typeName" : "dasvector`uint8 !"
 		},
 		"1<CH<ast::InferHistory>>G" : {
 			"mn" : "1<CH<ast::InferHistory>>G",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "iterator<InferHistory const>",
-			"requirements" : []
+			"typeName" : "iterator<InferHistory const>"
 		},
 		"H<ast::InferHistory>" : {
 			"mn" : "H<ast::InferHistory>",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "InferHistory",
-			"requirements" : []
+			"typeName" : "InferHistory"
 		},
 		"CI1<f>?" : {
 			"mn" : "CI1<f>?",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "float ? const !",
-			"requirements" : []
+			"typeName" : "float ? const !"
 		},
 		"CI0<C#s>1<v>$" : {
 			"mn" : "CI0<C#s>1<v>$",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "block<(string const #):void> const !",
-			"requirements" : []
+			"typeName" : "block<(string const #):void> const !"
 		},
 		"H<$::clock>" : {
 			"mn" : "H<$::clock>",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "clock",
-			"requirements" : []
+			"typeName" : "clock"
 		},
 		"1<&1<H<ast::TypeDecl>>?W>G" : {
 			"mn" : "1<&1<H<ast::TypeDecl>>?W>G",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "iterator<TypeDecl ? &>",
-			"requirements" : []
+			"typeName" : "iterator<TypeDecl ? &>"
 		},
 		"IH<$::das_string>" : {
 			"mn" : "IH<$::das_string>",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "das_string !",
-			"requirements" : []
+			"typeName" : "das_string !"
 		},
 		"H<rtti::LineInfo>" : {
 			"mn" : "H<rtti::LineInfo>",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "LineInfo",
-			"requirements" : []
+			"typeName" : "LineInfo"
 		},
 		"&Iu2" : {
 			"mn" : "&Iu2",
-			"constType" : false,
-			"ctors" : [],
 			"refType" : true,
-			"typeName" : "uint2 & !",
-			"requirements" : []
+			"typeName" : "uint2 & !"
 		},
 		"&Ii3" : {
 			"mn" : "&Ii3",
-			"constType" : false,
-			"ctors" : [],
 			"refType" : true,
-			"typeName" : "int3 & !",
-			"requirements" : []
+			"typeName" : "int3 & !"
 		},
 		"&If2" : {
 			"mn" : "&If2",
-			"constType" : false,
-			"ctors" : [],
 			"refType" : true,
-			"typeName" : "float2 & !",
-			"requirements" : []
+			"typeName" : "float2 & !"
 		},
 		"&If3" : {
 			"mn" : "&If3",
-			"constType" : false,
-			"ctors" : [],
 			"refType" : true,
-			"typeName" : "float3 & !",
-			"requirements" : []
+			"typeName" : "float3 & !"
 		},
 		"&If4" : {
 			"mn" : "&If4",
-			"constType" : false,
-			"ctors" : [],
 			"refType" : true,
-			"typeName" : "float4 & !",
-			"requirements" : []
+			"typeName" : "float4 & !"
 		},
 		"&Ii2" : {
 			"mn" : "&Ii2",
-			"constType" : false,
-			"ctors" : [],
 			"refType" : true,
-			"typeName" : "int2 & !",
-			"requirements" : []
+			"typeName" : "int2 & !"
 		},
 		"&Ii4" : {
 			"mn" : "&Ii4",
-			"constType" : false,
-			"ctors" : [],
 			"refType" : true,
-			"typeName" : "int4 & !",
-			"requirements" : []
+			"typeName" : "int4 & !"
 		},
 		"&Iu3" : {
 			"mn" : "&Iu3",
-			"constType" : false,
-			"ctors" : [],
 			"refType" : true,
-			"typeName" : "uint3 & !",
-			"requirements" : []
+			"typeName" : "uint3 & !"
 		},
 		"CE16" : {
 			"mn" : "CE16",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "enum const",
-			"requirements" : []
+			"typeName" : "enum const"
 		},
 		"&Iu4" : {
 			"mn" : "&Iu4",
-			"constType" : false,
-			"ctors" : [],
 			"refType" : true,
-			"typeName" : "uint4 & !",
-			"requirements" : []
+			"typeName" : "uint4 & !"
 		},
 		"CI0<f4;f4>1<b>$" : {
 			"mn" : "CI0<f4;f4>1<b>$",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "block<(float4; float4):bool> const !",
-			"requirements" : []
+			"typeName" : "block<(float4; float4):bool> const !"
 		},
 		"CIH<$::dasvector`smart_ptr`Expression>" : {
 			"mn" : "CIH<$::dasvector`smart_ptr`Expression>",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "dasvector`smart_ptr`Expression const !",
-			"requirements" : []
+			"typeName" : "dasvector`smart_ptr`Expression const !"
 		},
 		"1<v>?M" : {
 			"mn" : "1<v>?M",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "void ?",
-			"requirements" : []
+			"typeName" : "void ?"
 		},
 		"IH<$::dasvector`int>" : {
 			"mn" : "IH<$::dasvector`int>",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "dasvector`int !",
-			"requirements" : []
+			"typeName" : "dasvector`int !"
 		},
 		"IH<$::dasvector`EnumEntry>" : {
 			"mn" : "IH<$::dasvector`EnumEntry>",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "dasvector`EnumEntry !",
-			"requirements" : []
+			"typeName" : "dasvector`EnumEntry !"
 		},
 		"1<CH<ast::EnumEntry>>G" : {
 			"mn" : "1<CH<ast::EnumEntry>>G",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "iterator<EnumEntry const>",
-			"requirements" : []
+			"typeName" : "iterator<EnumEntry const>"
 		},
 		"&Iu8" : {
 			"mn" : "&Iu8",
-			"constType" : false,
-			"ctors" : [],
 			"refType" : true,
-			"typeName" : "uint8 & !",
-			"requirements" : []
+			"typeName" : "uint8 & !"
 		},
 		"CIH<$::dasvector`FieldDeclaration>" : {
 			"mn" : "CIH<$::dasvector`FieldDeclaration>",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "dasvector`FieldDeclaration const !",
-			"requirements" : []
+			"typeName" : "dasvector`FieldDeclaration const !"
 		},
 		"&Iu64" : {
 			"mn" : "&Iu64",
-			"constType" : false,
-			"ctors" : [],
 			"refType" : true,
-			"typeName" : "uint64 & !",
-			"requirements" : []
+			"typeName" : "uint64 & !"
 		},
 		"IH<$::dasvector`smart_ptr`Variable>" : {
 			"mn" : "IH<$::dasvector`smart_ptr`Variable>",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "dasvector`smart_ptr`Variable !",
-			"requirements" : []
+			"typeName" : "dasvector`smart_ptr`Variable !"
 		},
 		"H<$::dasvector`LineInfo>" : {
 			"mn" : "H<$::dasvector`LineInfo>",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "dasvector`LineInfo",
-			"requirements" : []
+			"typeName" : "dasvector`LineInfo"
 		},
 		"CI0<i2;i2>1<b>$" : {
 			"mn" : "CI0<i2;i2>1<b>$",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "block<(int2; int2):bool> const !",
-			"requirements" : []
+			"typeName" : "block<(int2; int2):bool> const !"
 		},
 		"1<H<ast::EnumEntry>>G" : {
 			"mn" : "1<H<ast::EnumEntry>>G",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "iterator<EnumEntry>",
-			"requirements" : []
+			"typeName" : "iterator<EnumEntry>"
 		},
 		"CIH<$::dasvector`CaptureEntry>" : {
 			"mn" : "CIH<$::dasvector`CaptureEntry>",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
-			"typeName" : "dasvector`CaptureEntry const !",
-			"requirements" : []
+			"typeName" : "dasvector`CaptureEntry const !"
 		}
 	}
 }

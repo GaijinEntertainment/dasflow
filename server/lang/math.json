@@ -3203,8 +3203,6 @@
 		"Cf" : {
 			"mn" : "Cf",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
 			"typeName" : "float const",
 			"requirements" : [
 				"math"
@@ -3213,8 +3211,6 @@
 		"Cf2" : {
 			"mn" : "Cf2",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
 			"typeName" : "float2 const",
 			"requirements" : [
 				"math"
@@ -3222,9 +3218,6 @@
 		},
 		"f2" : {
 			"mn" : "f2",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
 			"typeName" : "float2",
 			"requirements" : [
 				"math"
@@ -3233,8 +3226,6 @@
 		"Cf3" : {
 			"mn" : "Cf3",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
 			"typeName" : "float3 const",
 			"requirements" : [
 				"math"
@@ -3242,9 +3233,6 @@
 		},
 		"f3" : {
 			"mn" : "f3",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
 			"typeName" : "float3",
 			"requirements" : [
 				"math"
@@ -3253,8 +3241,6 @@
 		"Cf4" : {
 			"mn" : "Cf4",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
 			"typeName" : "float4 const",
 			"requirements" : [
 				"math"
@@ -3262,9 +3248,6 @@
 		},
 		"f4" : {
 			"mn" : "f4",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
 			"typeName" : "float4",
 			"requirements" : [
 				"math"
@@ -3273,8 +3256,6 @@
 		"Ci" : {
 			"mn" : "Ci",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
 			"typeName" : "int const",
 			"requirements" : [
 				"math"
@@ -3283,8 +3264,6 @@
 		"Ci2" : {
 			"mn" : "Ci2",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
 			"typeName" : "int2 const",
 			"requirements" : [
 				"math"
@@ -3292,9 +3271,6 @@
 		},
 		"i2" : {
 			"mn" : "i2",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
 			"typeName" : "int2",
 			"requirements" : [
 				"math"
@@ -3303,8 +3279,6 @@
 		"Ci3" : {
 			"mn" : "Ci3",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
 			"typeName" : "int3 const",
 			"requirements" : [
 				"math"
@@ -3312,9 +3286,6 @@
 		},
 		"i3" : {
 			"mn" : "i3",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
 			"typeName" : "int3",
 			"requirements" : [
 				"math"
@@ -3323,8 +3294,6 @@
 		"Ci4" : {
 			"mn" : "Ci4",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
 			"typeName" : "int4 const",
 			"requirements" : [
 				"math"
@@ -3332,9 +3301,6 @@
 		},
 		"i4" : {
 			"mn" : "i4",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
 			"typeName" : "int4",
 			"requirements" : [
 				"math"
@@ -3343,8 +3309,6 @@
 		"Cu" : {
 			"mn" : "Cu",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
 			"typeName" : "uint const",
 			"requirements" : [
 				"math"
@@ -3353,8 +3317,6 @@
 		"Cd" : {
 			"mn" : "Cd",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
 			"typeName" : "double const",
 			"requirements" : [
 				"math"
@@ -3363,8 +3325,6 @@
 		"Ci64" : {
 			"mn" : "Ci64",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
 			"typeName" : "int64 const",
 			"requirements" : [
 				"math"
@@ -3372,9 +3332,6 @@
 		},
 		"i64" : {
 			"mn" : "i64",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
 			"typeName" : "int64",
 			"requirements" : [
 				"math"
@@ -3382,9 +3339,6 @@
 		},
 		"u64" : {
 			"mn" : "u64",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
 			"typeName" : "uint64",
 			"requirements" : [
 				"math"
@@ -3392,15 +3346,6 @@
 		},
 		"H<math::float4x4>" : {
 			"mn" : "H<math::float4x4>",
-			"constType" : false,
-			"ctors" : [
-				{
-					"args" : [],
-					"name" : "float4x4",
-					"resultType" : "H<math::float4x4>"
-				}
-			],
-			"refType" : false,
 			"typeName" : "float4x4",
 			"requirements" : [
 				"math"
@@ -3408,9 +3353,6 @@
 		},
 		"IH<math::float4x4>" : {
 			"mn" : "IH<math::float4x4>",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
 			"typeName" : "float4x4 !",
 			"requirements" : [
 				"math"
@@ -3419,8 +3361,6 @@
 		"CIH<math::float4x4>" : {
 			"mn" : "CIH<math::float4x4>",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
 			"typeName" : "float4x4 const !",
 			"requirements" : [
 				"math"
@@ -3429,8 +3369,6 @@
 		"Cu64" : {
 			"mn" : "Cu64",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
 			"typeName" : "uint64 const",
 			"requirements" : [
 				"math"
@@ -3438,35 +3376,6 @@
 		},
 		"H<math::float3x3>" : {
 			"mn" : "H<math::float3x3>",
-			"constType" : false,
-			"ctors" : [
-				{
-					"args" : [],
-					"name" : "float3x3",
-					"resultType" : "H<math::float3x3>"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "CIH<math::float4x4>",
-							"name" : "arg0"
-						}
-					],
-					"name" : "float3x3",
-					"resultType" : "H<math::float3x3>"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "CIH<math::float3x4>",
-							"name" : "arg0"
-						}
-					],
-					"name" : "float3x3",
-					"resultType" : "H<math::float3x3>"
-				}
-			],
-			"refType" : false,
 			"typeName" : "float3x3",
 			"requirements" : [
 				"math"
@@ -3474,25 +3383,6 @@
 		},
 		"H<math::float3x4>" : {
 			"mn" : "H<math::float3x4>",
-			"constType" : false,
-			"ctors" : [
-				{
-					"args" : [],
-					"name" : "float3x4",
-					"resultType" : "H<math::float3x4>"
-				},
-				{
-					"args" : [
-						{
-							"mn" : "CIH<math::float4x4>",
-							"name" : "arg0"
-						}
-					],
-					"name" : "float3x4",
-					"resultType" : "H<math::float3x4>"
-				}
-			],
-			"refType" : false,
 			"typeName" : "float3x4",
 			"requirements" : [
 				"math"
@@ -3500,9 +3390,6 @@
 		},
 		"v" : {
 			"mn" : "v",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
 			"typeName" : "void",
 			"requirements" : [
 				"math"
@@ -3510,9 +3397,6 @@
 		},
 		"f" : {
 			"mn" : "f",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
 			"typeName" : "float",
 			"requirements" : [
 				"math"
@@ -3520,9 +3404,6 @@
 		},
 		"i" : {
 			"mn" : "i",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
 			"typeName" : "int",
 			"requirements" : [
 				"math"
@@ -3530,9 +3411,6 @@
 		},
 		"u" : {
 			"mn" : "u",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
 			"typeName" : "uint",
 			"requirements" : [
 				"math"
@@ -3540,9 +3418,6 @@
 		},
 		"d" : {
 			"mn" : "d",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
 			"typeName" : "double",
 			"requirements" : [
 				"math"
@@ -3550,9 +3425,6 @@
 		},
 		"b" : {
 			"mn" : "b",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
 			"typeName" : "bool",
 			"requirements" : [
 				"math"
@@ -3560,8 +3432,6 @@
 		},
 		"&If" : {
 			"mn" : "&If",
-			"constType" : false,
-			"ctors" : [],
 			"refType" : true,
 			"typeName" : "float & !",
 			"requirements" : [
@@ -3570,8 +3440,6 @@
 		},
 		"&Id" : {
 			"mn" : "&Id",
-			"constType" : false,
-			"ctors" : [],
 			"refType" : true,
 			"typeName" : "double & !",
 			"requirements" : [
@@ -3580,9 +3448,6 @@
 		},
 		"IH<math::float3x4>" : {
 			"mn" : "IH<math::float3x4>",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
 			"typeName" : "float3x4 !",
 			"requirements" : [
 				"math"
@@ -3591,8 +3456,6 @@
 		"CIH<math::float3x4>" : {
 			"mn" : "CIH<math::float3x4>",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
 			"typeName" : "float3x4 const !",
 			"requirements" : [
 				"math"
@@ -3600,9 +3463,6 @@
 		},
 		"IH<math::float3x3>" : {
 			"mn" : "IH<math::float3x3>",
-			"constType" : false,
-			"ctors" : [],
-			"refType" : false,
 			"typeName" : "float3x3 !",
 			"requirements" : [
 				"math"
@@ -3611,8 +3471,6 @@
 		"CIH<math::float3x3>" : {
 			"mn" : "CIH<math::float3x3>",
 			"constType" : true,
-			"ctors" : [],
-			"refType" : false,
 			"typeName" : "float3x3 const !",
 			"requirements" : [
 				"math"
@@ -3620,8 +3478,6 @@
 		},
 		"&If3" : {
 			"mn" : "&If3",
-			"constType" : false,
-			"ctors" : [],
 			"refType" : true,
 			"typeName" : "float3 & !",
 			"requirements" : [
@@ -3630,8 +3486,6 @@
 		},
 		"&If4" : {
 			"mn" : "&If4",
-			"constType" : false,
-			"ctors" : [],
 			"refType" : true,
 			"typeName" : "float4 & !",
 			"requirements" : [

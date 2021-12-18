@@ -74,15 +74,16 @@ def initialize()
                 lang.functions |> emplace <| [[FuncDesc name=fnName]]
                 var fun & = unsafe(lang.functions[length(lang.functions) - 1])
 
+                var first = true
                 for arg in fn
                     let td = getTypeDesc(type_info(arg), modName)
                     // print("{td.typeName} {td.mn}\n")
                     fun.args |> emplace <| [[FuncArg name=clone_string(arg.name), mn=td.mn]]
+                    first = false
 
                 var resTypeDesc = getTypeDesc(fn.result, modName)
                 fun.resultType = resTypeDesc.mn
-                if fn.name == resTypeDesc.typeName
-                    resTypeDesc.ctors |> push <| unsafe(addr(fun))
+
 
                 // print("{fun.name}(): {fun.resultMN}\n")
 
@@ -133,6 +134,15 @@ def add_req(var td: TypeDesc; req: string)
     if !td.requirements |> has_value(req)
         td.requirements |> push <| req
 
+def JV(val: TypeDesc)
+    var res <- {{"typeName" => JV(val.typeName); "mn" => JV(val.mn)}}
+    if val.constType
+        res["constType"] = JV(val.constType)
+    if val.refType
+        res["refType"] = JV(val.refType)
+    if !empty(val.requirements)
+        res["requirements"] = JV(val.requirements)
+    return JV(res)
 
 struct TypeDesc
     typeName: string
@@ -140,7 +150,6 @@ struct TypeDesc
     requirements: array<string>
     constType: bool
     refType: bool
-    ctors: array<FuncDesc?> // argCount -> FuncDesc
 
 struct FuncDesc
     name: string
