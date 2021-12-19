@@ -411,7 +411,7 @@ export class LangFunc extends LangComponent {
     constructor(fn: LangFunctionDesc) {
         const resTypeName = getTypeName(fn.resMn);
         const name = fn.name + "(" + fn.args.map(it => getTypeName(it.mn)).join(",") + "):" + resTypeName
-        super(name, ['language', resTypeName, fn.name])
+        super(name, ['language', fn.args.length.toString(), fn.resMn.length.toString(), resTypeName, fn.name])
         this.fn = fn
     }
 
@@ -446,7 +446,13 @@ export class LangFunc extends LangComponent {
             const argNode = this.constructInNode(node, arg.name, ctx)
             if (!argNode)
                 return false
+            for (let req of getType(arg.mn)?.desc.requirements ?? []) {
+                ctx.addReqModule(req)
+            }
             args.push(ctx.nodeId(argNode))
+        }
+        for (let req of getType(this.fn.resMn)?.desc.requirements ?? []) {
+            ctx.addReqModule(req)
         }
         // TODO: handle canCopy flag
         // TODO: move operators list to core.json

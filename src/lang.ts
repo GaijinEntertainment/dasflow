@@ -11,6 +11,7 @@ export interface LangTypeDesc {
     validator?: string
     enum?: string[]
     struct?: { name: string, mn: string }[]
+    requirements?: string[]
 }
 
 interface LangFunctionArgDesc {
