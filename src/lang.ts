@@ -1,8 +1,10 @@
-import {Socket} from "rete"
-
 export interface LangTypeDesc {
     mn: string
+    baseMn?: string
     typeName: string
+    isConst?: boolean
+    isRef?: boolean
+    canCopy?: boolean
     default?: string
     ctor?: string
     group?: string
@@ -20,13 +22,4 @@ export interface LangCoreDesc {
     voidType: string
     types: LangTypeDesc[]
     functions: LangFunctionDesc[]
-}
-
-
-export class LangType {
-    desc: LangTypeDesc
-    validator?: RegExp
-    socket: Socket
-    defaultValue: string
-    ctor: (s: string, args: { [key: string]: string }) => string = s => s
 }

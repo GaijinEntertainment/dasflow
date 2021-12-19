@@ -1,6 +1,6 @@
 import Rete from "rete"
 import {NodeEditor} from "rete/types/editor"
-import {LangType} from "./lang"
+import {LangType} from "./components";
 
 const VueLabelControl = {
     props: ['readonly', 'emitter', 'ikey', 'getData', 'putData'],

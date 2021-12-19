@@ -17869,646 +17869,705 @@
 			"name" : "reserve_string_buffer"
 		}
 	],
-	"types" : {
-		"i8" : {
+	"types" : [
+		{
 			"mn" : "i8",
 			"baseMn" : "i8",
+			"canCopy" : true,
 			"typeName" : "int8"
 		},
-		"Cb" : {
+		{
 			"mn" : "Cb",
 			"baseMn" : "b",
-			"constType" : true,
+			"canCopy" : true,
+			"isConst" : true,
 			"typeName" : "bool const"
 		},
-		"Cf" : {
+		{
 			"mn" : "Cf",
 			"baseMn" : "f",
-			"constType" : true,
+			"canCopy" : true,
+			"isConst" : true,
 			"typeName" : "float const"
 		},
-		"Cd" : {
+		{
 			"mn" : "Cd",
 			"baseMn" : "d",
-			"constType" : true,
+			"canCopy" : true,
+			"isConst" : true,
 			"typeName" : "double const"
 		},
-		"Ci" : {
+		{
 			"mn" : "Ci",
 			"baseMn" : "i",
-			"constType" : true,
+			"canCopy" : true,
+			"isConst" : true,
 			"typeName" : "int const"
 		},
-		"Cu" : {
+		{
 			"mn" : "Cu",
 			"baseMn" : "u",
-			"constType" : true,
+			"canCopy" : true,
+			"isConst" : true,
 			"typeName" : "uint const"
 		},
-		"CI?" : {
+		{
 			"mn" : "CI?",
 			"baseMn" : "?",
-			"constType" : true,
+			"canCopy" : true,
+			"isConst" : true,
 			"typeName" : " ? const !"
 		},
-		"Ct" : {
+		{
 			"mn" : "Ct",
 			"baseMn" : "t",
-			"constType" : true,
+			"canCopy" : true,
+			"isConst" : true,
 			"typeName" : "bitfield const"
 		},
-		"Ci8" : {
+		{
 			"mn" : "Ci8",
 			"baseMn" : "i8",
-			"constType" : true,
+			"canCopy" : true,
+			"isConst" : true,
 			"typeName" : "int8 const"
 		},
-		"Cu8" : {
+		{
 			"mn" : "Cu8",
 			"baseMn" : "u8",
-			"constType" : true,
+			"canCopy" : true,
+			"isConst" : true,
 			"typeName" : "uint8 const"
 		},
-		"u8" : {
+		{
 			"mn" : "u8",
 			"baseMn" : "u8",
+			"canCopy" : true,
 			"typeName" : "uint8"
 		},
-		"CE" : {
+		{
 			"mn" : "CE",
 			"baseMn" : "E",
-			"constType" : true,
+			"canCopy" : true,
+			"isConst" : true,
 			"typeName" : "enum const"
 		},
-		"CE8" : {
+		{
 			"mn" : "CE8",
 			"baseMn" : "E8",
-			"constType" : true,
+			"canCopy" : true,
+			"isConst" : true,
 			"typeName" : "enum const"
 		},
-		"C@@" : {
+		{
 			"mn" : "C@@",
 			"baseMn" : "@@",
-			"constType" : true,
+			"canCopy" : true,
+			"isConst" : true,
 			"typeName" : "function<> const"
 		},
-		"C@" : {
+		{
 			"mn" : "C@",
 			"baseMn" : "@",
-			"constType" : true,
+			"isConst" : true,
 			"typeName" : "lambda<> const"
 		},
-		"CIs" : {
+		{
 			"mn" : "CIs",
 			"baseMn" : "s",
-			"constType" : true,
+			"canCopy" : true,
+			"isConst" : true,
 			"typeName" : "string const !"
 		},
-		"C_c" : {
+		{
 			"mn" : "C_c",
 			"baseMn" : "_c",
-			"constType" : true,
+			"canCopy" : true,
+			"isConst" : true,
 			"typeName" : "__context const"
 		},
-		"Cf2" : {
+		{
 			"mn" : "Cf2",
 			"baseMn" : "f2",
-			"constType" : true,
+			"canCopy" : true,
+			"isConst" : true,
 			"typeName" : "float2 const"
 		},
-		"f2" : {
+		{
 			"mn" : "f2",
 			"baseMn" : "f2",
+			"canCopy" : true,
 			"typeName" : "float2"
 		},
-		"Cf3" : {
+		{
 			"mn" : "Cf3",
 			"baseMn" : "f3",
-			"constType" : true,
+			"canCopy" : true,
+			"isConst" : true,
 			"typeName" : "float3 const"
 		},
-		"f3" : {
+		{
 			"mn" : "f3",
 			"baseMn" : "f3",
+			"canCopy" : true,
 			"typeName" : "float3"
 		},
-		"Cf4" : {
+		{
 			"mn" : "Cf4",
 			"baseMn" : "f4",
-			"constType" : true,
+			"canCopy" : true,
+			"isConst" : true,
 			"typeName" : "float4 const"
 		},
-		"f4" : {
+		{
 			"mn" : "f4",
 			"baseMn" : "f4",
+			"canCopy" : true,
 			"typeName" : "float4"
 		},
-		"Ci2" : {
+		{
 			"mn" : "Ci2",
 			"baseMn" : "i2",
-			"constType" : true,
+			"canCopy" : true,
+			"isConst" : true,
 			"typeName" : "int2 const"
 		},
-		"i2" : {
+		{
 			"mn" : "i2",
 			"baseMn" : "i2",
+			"canCopy" : true,
 			"typeName" : "int2"
 		},
-		"Ci3" : {
+		{
 			"mn" : "Ci3",
 			"baseMn" : "i3",
-			"constType" : true,
+			"canCopy" : true,
+			"isConst" : true,
 			"typeName" : "int3 const"
 		},
-		"i3" : {
+		{
 			"mn" : "i3",
 			"baseMn" : "i3",
+			"canCopy" : true,
 			"typeName" : "int3"
 		},
-		"Ci4" : {
+		{
 			"mn" : "Ci4",
 			"baseMn" : "i4",
-			"constType" : true,
+			"canCopy" : true,
+			"isConst" : true,
 			"typeName" : "int4 const"
 		},
-		"i4" : {
+		{
 			"mn" : "i4",
 			"baseMn" : "i4",
+			"canCopy" : true,
 			"typeName" : "int4"
 		},
-		"Cu2" : {
+		{
 			"mn" : "Cu2",
 			"baseMn" : "u2",
-			"constType" : true,
+			"canCopy" : true,
+			"isConst" : true,
 			"typeName" : "uint2 const"
 		},
-		"u2" : {
+		{
 			"mn" : "u2",
 			"baseMn" : "u2",
+			"canCopy" : true,
 			"typeName" : "uint2"
 		},
-		"Cu3" : {
+		{
 			"mn" : "Cu3",
 			"baseMn" : "u3",
-			"constType" : true,
+			"canCopy" : true,
+			"isConst" : true,
 			"typeName" : "uint3 const"
 		},
-		"u3" : {
+		{
 			"mn" : "u3",
 			"baseMn" : "u3",
+			"canCopy" : true,
 			"typeName" : "uint3"
 		},
-		"Cu4" : {
+		{
 			"mn" : "Cu4",
 			"baseMn" : "u4",
-			"constType" : true,
+			"canCopy" : true,
+			"isConst" : true,
 			"typeName" : "uint4 const"
 		},
-		"u4" : {
+		{
 			"mn" : "u4",
 			"baseMn" : "u4",
+			"canCopy" : true,
 			"typeName" : "uint4"
 		},
-		"Cr" : {
+		{
 			"mn" : "Cr",
 			"baseMn" : "r",
-			"constType" : true,
+			"canCopy" : true,
+			"isConst" : true,
 			"typeName" : "range const"
 		},
-		"Cz" : {
+		{
 			"mn" : "Cz",
 			"baseMn" : "z",
-			"constType" : true,
+			"canCopy" : true,
+			"isConst" : true,
 			"typeName" : "urange const"
 		},
-		"IA" : {
+		{
 			"mn" : "IA",
 			"baseMn" : "A",
 			"typeName" : "array<> !"
 		},
-		"CIA" : {
+		{
 			"mn" : "CIA",
 			"baseMn" : "A",
-			"constType" : true,
+			"isConst" : true,
 			"typeName" : "array<> const !"
 		},
-		"CIG" : {
+		{
 			"mn" : "CIG",
 			"baseMn" : "G",
-			"constType" : true,
+			"isConst" : true,
 			"typeName" : "iterator<> const !"
 		},
-		"IG" : {
+		{
 			"mn" : "IG",
 			"baseMn" : "G",
 			"typeName" : "iterator<> !"
 		},
-		"C*" : {
+		{
 			"mn" : "C*",
 			"baseMn" : "*",
-			"constType" : true,
+			"canCopy" : true,
+			"isConst" : true,
 			"typeName" : "any const"
 		},
-		"C_l" : {
+		{
 			"mn" : "C_l",
 			"baseMn" : "_l",
-			"constType" : true,
+			"canCopy" : true,
+			"isConst" : true,
 			"typeName" : "__lineInfo const"
 		},
-		"CIV" : {
+		{
 			"mn" : "CIV",
 			"baseMn" : "V",
-			"constType" : true,
+			"canCopy" : true,
+			"isConst" : true,
 			"typeName" : "variant<> const !"
 		},
-		"IV" : {
+		{
 			"mn" : "IV",
 			"baseMn" : "V",
+			"canCopy" : true,
 			"typeName" : "variant<> !"
 		},
-		"CA" : {
+		{
 			"mn" : "CA",
 			"baseMn" : "A",
-			"constType" : true,
+			"isConst" : true,
 			"typeName" : "array<> const"
 		},
-		"C$" : {
+		{
 			"mn" : "C$",
 			"baseMn" : "$",
-			"constType" : true,
+			"isConst" : true,
 			"typeName" : "block<> const"
 		},
-		"IT" : {
+		{
 			"mn" : "IT",
 			"baseMn" : "T",
 			"typeName" : "table<,> !"
 		},
-		"CIT" : {
+		{
 			"mn" : "CIT",
 			"baseMn" : "T",
-			"constType" : true,
+			"isConst" : true,
 			"typeName" : "table<,> const !"
 		},
-		"CI1<v>?M" : {
+		{
 			"mn" : "CI1<v>?M",
 			"baseMn" : "1<v>?M",
-			"constType" : true,
+			"isConst" : true,
 			"typeName" : "void ? const !"
 		},
-		"CI$" : {
+		{
 			"mn" : "CI$",
 			"baseMn" : "$",
-			"constType" : true,
+			"isConst" : true,
 			"typeName" : "block<> const !"
 		},
-		"CI0<u3;u3>1<b>$" : {
+		{
 			"mn" : "CI0<u3;u3>1<b>$",
 			"baseMn" : "0<u3;u3>1<b>$",
-			"constType" : true,
+			"isConst" : true,
 			"typeName" : "block<(uint3; uint3):bool> const !"
 		},
-		"CH<$::clock>" : {
+		{
 			"mn" : "CH<$::clock>",
 			"baseMn" : "H<$::clock>",
-			"constType" : true,
+			"canCopy" : true,
+			"isConst" : true,
 			"typeName" : "clock const"
 		},
-		"1<C&1<H<ast::Variable>>?W>G" : {
+		{
 			"mn" : "1<C&1<H<ast::Variable>>?W>G",
 			"baseMn" : "1<C&1<H<ast::Variable>>?W>G",
 			"typeName" : "iterator<Variable ? const &>"
 		},
-		"IH<$::dasvector`InferHistory>" : {
+		{
 			"mn" : "IH<$::dasvector`InferHistory>",
 			"baseMn" : "H<$::dasvector`InferHistory>",
 			"typeName" : "dasvector`InferHistory !"
 		},
-		"CIH<$::dasvector`InferHistory>" : {
+		{
 			"mn" : "CIH<$::dasvector`InferHistory>",
 			"baseMn" : "H<$::dasvector`InferHistory>",
-			"constType" : true,
+			"isConst" : true,
 			"typeName" : "dasvector`InferHistory const !"
 		},
-		"CIH<$::dasvector`smart_ptr`MakeStruct>" : {
+		{
 			"mn" : "CIH<$::dasvector`smart_ptr`MakeStruct>",
 			"baseMn" : "H<$::dasvector`smart_ptr`MakeStruct>",
-			"constType" : true,
+			"isConst" : true,
 			"typeName" : "dasvector`smart_ptr`MakeStruct const !"
 		},
-		"Ci16" : {
+		{
 			"mn" : "Ci16",
 			"baseMn" : "i16",
-			"constType" : true,
+			"canCopy" : true,
+			"isConst" : true,
 			"typeName" : "int16 const"
 		},
-		"Ci64" : {
+		{
 			"mn" : "Ci64",
 			"baseMn" : "i64",
-			"constType" : true,
+			"canCopy" : true,
+			"isConst" : true,
 			"typeName" : "int64 const"
 		},
-		"&I1<H<ast::MakeFieldDecl>>?W" : {
+		{
 			"mn" : "&I1<H<ast::MakeFieldDecl>>?W",
+			"isRef" : true,
 			"baseMn" : "1<H<ast::MakeFieldDecl>>?W",
-			"refType" : true,
 			"typeName" : "MakeFieldDecl ? & !"
 		},
-		"IH<math::float4x4>" : {
+		{
 			"mn" : "IH<math::float4x4>",
 			"baseMn" : "H<math::float4x4>",
+			"canCopy" : true,
 			"typeName" : "float4x4 !",
 			"requirements" : [
 				"math"
 			]
 		},
-		"CI[8]u" : {
+		{
 			"mn" : "CI[8]u",
 			"baseMn" : "[8]u",
-			"constType" : true,
+			"canCopy" : true,
+			"isConst" : true,
 			"typeName" : "uint[8] const !",
 			"requirements" : [
 				"strings"
 			]
 		},
-		"CH<UnitTest::TestObjectFoo>" : {
+		{
 			"mn" : "CH<UnitTest::TestObjectFoo>",
 			"baseMn" : "H<UnitTest::TestObjectFoo>",
-			"constType" : true,
+			"canCopy" : true,
+			"isConst" : true,
 			"typeName" : "TestObjectFoo const"
 		},
-		"i16" : {
+		{
 			"mn" : "i16",
 			"baseMn" : "i16",
+			"canCopy" : true,
 			"typeName" : "int16"
 		},
-		"i64" : {
+		{
 			"mn" : "i64",
 			"baseMn" : "i64",
+			"canCopy" : true,
 			"typeName" : "int64"
 		},
-		"1<&1<H<ast::MakeStruct>>?W>G" : {
+		{
 			"mn" : "1<&1<H<ast::MakeStruct>>?W>G",
 			"baseMn" : "1<&1<H<ast::MakeStruct>>?W>G",
 			"typeName" : "iterator<MakeStruct ? &>"
 		},
-		"1<H<rtti::LineInfo>>G" : {
+		{
 			"mn" : "1<H<rtti::LineInfo>>G",
 			"baseMn" : "1<H<rtti::LineInfo>>G",
 			"typeName" : "iterator<LineInfo>"
 		},
-		"CIH<$::dasvector`pair`uint`uint>" : {
+		{
 			"mn" : "CIH<$::dasvector`pair`uint`uint>",
 			"baseMn" : "H<$::dasvector`pair`uint`uint>",
-			"constType" : true,
+			"isConst" : true,
 			"typeName" : "dasvector`pair`uint`uint const !"
 		},
-		"1<&i>G" : {
+		{
 			"mn" : "1<&i>G",
 			"baseMn" : "1<&i>G",
 			"typeName" : "iterator<int &>"
 		},
-		"IH<$::dasvector`pair`uint`uint>" : {
+		{
 			"mn" : "IH<$::dasvector`pair`uint`uint>",
 			"baseMn" : "H<$::dasvector`pair`uint`uint>",
 			"typeName" : "dasvector`pair`uint`uint !"
 		},
-		"CN<escapeString;namesAndDimensions;typeQualifiers;refAddresses;humanReadable;singleLine>t" : {
+		{
 			"mn" : "CN<escapeString;namesAndDimensions;typeQualifiers;refAddresses;humanReadable;singleLine>t",
 			"baseMn" : "N<escapeString;namesAndDimensions;typeQualifiers;refAddresses;humanReadable;singleLine>t",
-			"constType" : true,
+			"canCopy" : true,
+			"isConst" : true,
 			"typeName" : "bitfield<escapeString; namesAndDimensions; typeQualifiers; refAddresses; humanReadable; singleLine> const"
 		},
-		"1<&1<H<ast::MakeFieldDecl>>?W>G" : {
+		{
 			"mn" : "1<&1<H<ast::MakeFieldDecl>>?W>G",
 			"baseMn" : "1<&1<H<ast::MakeFieldDecl>>?W>G",
 			"typeName" : "iterator<MakeFieldDecl ? &>"
 		},
-		"H<$::dasvector`InferHistory>" : {
+		{
 			"mn" : "H<$::dasvector`InferHistory>",
 			"baseMn" : "H<$::dasvector`InferHistory>",
 			"typeName" : "dasvector`InferHistory"
 		},
-		"CI0<u64;u64>1<b>$" : {
+		{
 			"mn" : "CI0<u64;u64>1<b>$",
 			"baseMn" : "0<u64;u64>1<b>$",
-			"constType" : true,
+			"isConst" : true,
 			"typeName" : "block<(uint64; uint64):bool> const !"
 		},
-		"1<CH<rtti::LineInfo>>G" : {
+		{
 			"mn" : "1<CH<rtti::LineInfo>>G",
 			"baseMn" : "1<CH<rtti::LineInfo>>G",
 			"typeName" : "iterator<LineInfo const>"
 		},
-		"IH<$::dasvector`smart_ptr`MakeStruct>" : {
+		{
 			"mn" : "IH<$::dasvector`smart_ptr`MakeStruct>",
 			"baseMn" : "H<$::dasvector`smart_ptr`MakeStruct>",
 			"typeName" : "dasvector`smart_ptr`MakeStruct !"
 		},
-		"1<H<UnitTest::TestObjectFoo>>G" : {
+		{
 			"mn" : "1<H<UnitTest::TestObjectFoo>>G",
 			"baseMn" : "1<H<UnitTest::TestObjectFoo>>G",
 			"typeName" : "iterator<TestObjectFoo>"
 		},
-		"IH<$::dasvector`FieldDeclaration>" : {
+		{
 			"mn" : "IH<$::dasvector`FieldDeclaration>",
 			"baseMn" : "H<$::dasvector`FieldDeclaration>",
 			"typeName" : "dasvector`FieldDeclaration !"
 		},
-		"&I1<H<ast::TypeDecl>>?W" : {
+		{
 			"mn" : "&I1<H<ast::TypeDecl>>?W",
+			"isRef" : true,
 			"baseMn" : "1<H<ast::TypeDecl>>?W",
-			"refType" : true,
 			"typeName" : "TypeDecl ? & !"
 		},
-		"CI1<i>?" : {
+		{
 			"mn" : "CI1<i>?",
 			"baseMn" : "1<i>?",
-			"constType" : true,
+			"canCopy" : true,
+			"isConst" : true,
 			"typeName" : "int ? const !"
 		},
-		"1<H<$::das_string>>G" : {
+		{
 			"mn" : "1<H<$::das_string>>G",
 			"baseMn" : "1<H<$::das_string>>G",
 			"typeName" : "iterator<das_string>"
 		},
-		"CIH<$::dasvector`das_string>" : {
+		{
 			"mn" : "CIH<$::dasvector`das_string>",
 			"baseMn" : "H<$::dasvector`das_string>",
-			"constType" : true,
+			"isConst" : true,
 			"typeName" : "dasvector`das_string const !"
 		},
-		"CIH<$::dasvector`uint8>" : {
+		{
 			"mn" : "CIH<$::dasvector`uint8>",
 			"baseMn" : "H<$::dasvector`uint8>",
-			"constType" : true,
+			"isConst" : true,
 			"typeName" : "dasvector`uint8 const !"
 		},
-		"&I1<H<ast::MakeStruct>>?W" : {
+		{
 			"mn" : "&I1<H<ast::MakeStruct>>?W",
+			"isRef" : true,
 			"baseMn" : "1<H<ast::MakeStruct>>?W",
-			"refType" : true,
 			"typeName" : "MakeStruct ? & !"
 		},
-		"CI0<i;i>1<b>$" : {
+		{
 			"mn" : "CI0<i;i>1<b>$",
 			"baseMn" : "0<i;i>1<b>$",
-			"constType" : true,
+			"isConst" : true,
 			"typeName" : "block<(int; int):bool> const !"
 		},
-		"1<CH<$::das_string>>G" : {
+		{
 			"mn" : "1<CH<$::das_string>>G",
 			"baseMn" : "1<CH<$::das_string>>G",
 			"typeName" : "iterator<das_string const>"
 		},
-		"H<$::dasvector`TestObjectFoo>" : {
+		{
 			"mn" : "H<$::dasvector`TestObjectFoo>",
 			"baseMn" : "H<$::dasvector`TestObjectFoo>",
 			"typeName" : "dasvector`TestObjectFoo"
 		},
-		"IH<$::dasvector`das_string>" : {
+		{
 			"mn" : "IH<$::dasvector`das_string>",
 			"baseMn" : "H<$::dasvector`das_string>",
 			"typeName" : "dasvector`das_string !"
 		},
-		"&I1<v>?M" : {
+		{
 			"mn" : "&I1<v>?M",
+			"isRef" : true,
 			"baseMn" : "1<v>?M",
-			"refType" : true,
 			"typeName" : "void ? & !"
 		},
-		"H<math::float4x4>" : {
+		{
 			"mn" : "H<math::float4x4>",
 			"baseMn" : "H<math::float4x4>",
+			"canCopy" : true,
 			"typeName" : "float4x4",
 			"requirements" : [
 				"math"
 			]
 		},
-		"1<CH<rtti::Error>>G" : {
+		{
 			"mn" : "1<CH<rtti::Error>>G",
 			"baseMn" : "1<CH<rtti::Error>>G",
 			"typeName" : "iterator<Error const>"
 		},
-		"CIH<math::float4x4>" : {
+		{
 			"mn" : "CIH<math::float4x4>",
 			"baseMn" : "H<math::float4x4>",
-			"constType" : true,
+			"canCopy" : true,
+			"isConst" : true,
 			"typeName" : "float4x4 const !",
 			"requirements" : [
 				"math"
 			]
 		},
-		"u16" : {
+		{
 			"mn" : "u16",
 			"baseMn" : "u16",
+			"canCopy" : true,
 			"typeName" : "uint16"
 		},
-		"u64" : {
+		{
 			"mn" : "u64",
 			"baseMn" : "u64",
+			"canCopy" : true,
 			"typeName" : "uint64"
 		},
-		"1<C&i>G" : {
+		{
 			"mn" : "1<C&i>G",
 			"baseMn" : "1<C&i>G",
 			"typeName" : "iterator<int const &>"
 		},
-		"1<H<ast::CaptureEntry>>G" : {
+		{
 			"mn" : "1<H<ast::CaptureEntry>>G",
 			"baseMn" : "1<H<ast::CaptureEntry>>G",
 			"typeName" : "iterator<CaptureEntry>"
 		},
-		"CI0<u;u>1<b>$" : {
+		{
 			"mn" : "CI0<u;u>1<b>$",
 			"baseMn" : "0<u;u>1<b>$",
-			"constType" : true,
+			"isConst" : true,
 			"typeName" : "block<(uint; uint):bool> const !"
 		},
-		"CI1<u64>?" : {
+		{
 			"mn" : "CI1<u64>?",
 			"baseMn" : "1<u64>?",
-			"constType" : true,
+			"canCopy" : true,
+			"isConst" : true,
 			"typeName" : "uint64 ? const !"
 		},
-		"1<H<ast::InferHistory>>G" : {
+		{
 			"mn" : "1<H<ast::InferHistory>>G",
 			"baseMn" : "1<H<ast::InferHistory>>G",
 			"typeName" : "iterator<InferHistory>"
 		},
-		"CI1<u>?" : {
+		{
 			"mn" : "CI1<u>?",
 			"baseMn" : "1<u>?",
-			"constType" : true,
+			"canCopy" : true,
+			"isConst" : true,
 			"typeName" : "uint ? const !"
 		},
-		"C0<u;u>U" : {
+		{
 			"mn" : "C0<u;u>U",
 			"baseMn" : "0<u;u>U",
-			"constType" : true,
+			"canCopy" : true,
+			"isConst" : true,
 			"typeName" : "tuple<uint; uint> const"
 		},
-		"1<&1<H<ast::Expression>>?W>G" : {
+		{
 			"mn" : "1<&1<H<ast::Expression>>?W>G",
 			"baseMn" : "1<&1<H<ast::Expression>>?W>G",
 			"typeName" : "iterator<Expression ? &>"
 		},
-		"CI0<z;z>1<b>$" : {
+		{
 			"mn" : "CI0<z;z>1<b>$",
 			"baseMn" : "0<z;z>1<b>$",
-			"constType" : true,
+			"isConst" : true,
 			"typeName" : "block<(urange; urange):bool> const !"
 		},
-		"IH<$::dasvector`Error>" : {
+		{
 			"mn" : "IH<$::dasvector`Error>",
 			"baseMn" : "H<$::dasvector`Error>",
 			"typeName" : "dasvector`Error !"
 		},
-		"CIH<$::dasvector`EnumEntry>" : {
+		{
 			"mn" : "CIH<$::dasvector`EnumEntry>",
 			"baseMn" : "H<$::dasvector`EnumEntry>",
-			"constType" : true,
+			"isConst" : true,
 			"typeName" : "dasvector`EnumEntry const !"
 		},
-		"CI0<i4;i4>1<b>$" : {
+		{
 			"mn" : "CI0<i4;i4>1<b>$",
 			"baseMn" : "0<i4;i4>1<b>$",
-			"constType" : true,
+			"isConst" : true,
 			"typeName" : "block<(int4; int4):bool> const !"
 		},
-		"1<CH<UnitTest::TestObjectFoo>>G" : {
+		{
 			"mn" : "1<CH<UnitTest::TestObjectFoo>>G",
 			"baseMn" : "1<CH<UnitTest::TestObjectFoo>>G",
 			"typeName" : "iterator<TestObjectFoo const>"
 		},
-		"CI0<i64;i64>1<b>$" : {
+		{
 			"mn" : "CI0<i64;i64>1<b>$",
 			"baseMn" : "0<i64;i64>1<b>$",
-			"constType" : true,
+			"isConst" : true,
 			"typeName" : "block<(int64; int64):bool> const !"
 		},
-		"Cu16" : {
+		{
 			"mn" : "Cu16",
 			"baseMn" : "u16",
-			"constType" : true,
+			"canCopy" : true,
+			"isConst" : true,
 			"typeName" : "uint16 const"
 		},
-		"Cu64" : {
+		{
 			"mn" : "Cu64",
 			"baseMn" : "u64",
-			"constType" : true,
+			"canCopy" : true,
+			"isConst" : true,
 			"typeName" : "uint64 const"
 		},
-		"IH<$::dasvector`TestObjectFoo>" : {
+		{
 			"mn" : "IH<$::dasvector`TestObjectFoo>",
 			"baseMn" : "H<$::dasvector`TestObjectFoo>",
 			"typeName" : "dasvector`TestObjectFoo !"
 		},
-		"1<C&1<H<ast::Expression>>?W>G" : {
+		{
 			"mn" : "1<C&1<H<ast::Expression>>?W>G",
 			"baseMn" : "1<C&1<H<ast::Expression>>?W>G",
 			"typeName" : "iterator<Expression ? const &>"
 		},
-		"IH<strings::StringBuilderWriter>" : {
+		{
 			"mn" : "IH<strings::StringBuilderWriter>",
 			"baseMn" : "H<strings::StringBuilderWriter>",
 			"typeName" : "StringBuilderWriter !",
@@ -18516,625 +18575,673 @@
 				"strings"
 			]
 		},
-		"1<C&1<H<ast::MakeFieldDecl>>?W>G" : {
+		{
 			"mn" : "1<C&1<H<ast::MakeFieldDecl>>?W>G",
 			"baseMn" : "1<C&1<H<ast::MakeFieldDecl>>?W>G",
 			"typeName" : "iterator<MakeFieldDecl ? const &>"
 		},
-		"CH<rtti::LineInfo>" : {
+		{
 			"mn" : "CH<rtti::LineInfo>",
 			"baseMn" : "H<rtti::LineInfo>",
-			"constType" : true,
+			"canCopy" : true,
+			"isConst" : true,
 			"typeName" : "LineInfo const"
 		},
-		"&I1<H<ast::Expression>>?W" : {
+		{
 			"mn" : "&I1<H<ast::Expression>>?W",
+			"isRef" : true,
 			"baseMn" : "1<H<ast::Expression>>?W",
-			"refType" : true,
 			"typeName" : "Expression ? & !"
 		},
-		"CIH<$::dasvector`LineInfo>" : {
+		{
 			"mn" : "CIH<$::dasvector`LineInfo>",
 			"baseMn" : "H<$::dasvector`LineInfo>",
-			"constType" : true,
+			"isConst" : true,
 			"typeName" : "dasvector`LineInfo const !"
 		},
-		"IH<$::dasvector`LineInfo>" : {
+		{
 			"mn" : "IH<$::dasvector`LineInfo>",
 			"baseMn" : "H<$::dasvector`LineInfo>",
 			"typeName" : "dasvector`LineInfo !"
 		},
-		"CI1<i64>?" : {
+		{
 			"mn" : "CI1<i64>?",
 			"baseMn" : "1<i64>?",
-			"constType" : true,
+			"canCopy" : true,
+			"isConst" : true,
 			"typeName" : "int64 ? const !"
 		},
-		"CI0<u2;u2>1<b>$" : {
+		{
 			"mn" : "CI0<u2;u2>1<b>$",
 			"baseMn" : "0<u2;u2>1<b>$",
-			"constType" : true,
+			"isConst" : true,
 			"typeName" : "block<(uint2; uint2):bool> const !"
 		},
-		"CIH<$::das_string>" : {
+		{
 			"mn" : "CIH<$::das_string>",
 			"baseMn" : "H<$::das_string>",
-			"constType" : true,
+			"isConst" : true,
 			"typeName" : "das_string const !"
 		},
-		"CI0<i3;i3>1<b>$" : {
+		{
 			"mn" : "CI0<i3;i3>1<b>$",
 			"baseMn" : "0<i3;i3>1<b>$",
-			"constType" : true,
+			"isConst" : true,
 			"typeName" : "block<(int3; int3):bool> const !"
 		},
-		"&I1<H<ast::Variable>>?W" : {
+		{
 			"mn" : "&I1<H<ast::Variable>>?W",
+			"isRef" : true,
 			"baseMn" : "1<H<ast::Variable>>?W",
-			"refType" : true,
 			"typeName" : "Variable ? & !"
 		},
-		"IH<$::dasvector`smart_ptr`TypeDecl>" : {
+		{
 			"mn" : "IH<$::dasvector`smart_ptr`TypeDecl>",
 			"baseMn" : "H<$::dasvector`smart_ptr`TypeDecl>",
 			"typeName" : "dasvector`smart_ptr`TypeDecl !"
 		},
-		"CI0<d;d>1<b>$" : {
+		{
 			"mn" : "CI0<d;d>1<b>$",
 			"baseMn" : "0<d;d>1<b>$",
-			"constType" : true,
+			"isConst" : true,
 			"typeName" : "block<(double; double):bool> const !"
 		},
-		"CI1<u8>A" : {
+		{
 			"mn" : "CI1<u8>A",
 			"baseMn" : "1<u8>A",
-			"constType" : true,
+			"isConst" : true,
 			"typeName" : "array<uint8> const !",
 			"requirements" : [
 				"strings"
 			]
 		},
-		"1<C&1<H<ast::MakeStruct>>?W>G" : {
+		{
 			"mn" : "1<C&1<H<ast::MakeStruct>>?W>G",
 			"baseMn" : "1<C&1<H<ast::MakeStruct>>?W>G",
 			"typeName" : "iterator<MakeStruct ? const &>"
 		},
-		"1<&u8>G" : {
+		{
 			"mn" : "1<&u8>G",
 			"baseMn" : "1<&u8>G",
 			"typeName" : "iterator<uint8 &>"
 		},
-		"H<$::dasvector`pair`uint`uint>" : {
+		{
 			"mn" : "H<$::dasvector`pair`uint`uint>",
 			"baseMn" : "H<$::dasvector`pair`uint`uint>",
 			"typeName" : "dasvector`pair`uint`uint"
 		},
-		"CI0<u4;u4>1<b>$" : {
+		{
 			"mn" : "CI0<u4;u4>1<b>$",
 			"baseMn" : "0<u4;u4>1<b>$",
-			"constType" : true,
+			"isConst" : true,
 			"typeName" : "block<(uint4; uint4):bool> const !"
 		},
-		"1<C0<u;u>U>G" : {
+		{
 			"mn" : "1<C0<u;u>U>G",
 			"baseMn" : "1<C0<u;u>U>G",
 			"typeName" : "iterator<tuple<uint; uint> const>"
 		},
-		"1<H<rtti::Error>>G" : {
+		{
 			"mn" : "1<H<rtti::Error>>G",
 			"baseMn" : "1<H<rtti::Error>>G",
 			"typeName" : "iterator<Error>"
 		},
-		"CIH<$::dasvector`TestObjectFoo>" : {
+		{
 			"mn" : "CIH<$::dasvector`TestObjectFoo>",
 			"baseMn" : "H<$::dasvector`TestObjectFoo>",
-			"constType" : true,
+			"isConst" : true,
 			"typeName" : "dasvector`TestObjectFoo const !"
 		},
-		"0<u;u>U" : {
+		{
 			"mn" : "0<u;u>U",
 			"baseMn" : "0<u;u>U",
+			"canCopy" : true,
 			"typeName" : "tuple<uint; uint>"
 		},
-		"&Ii64" : {
+		{
 			"mn" : "&Ii64",
+			"isRef" : true,
 			"baseMn" : "i64",
-			"refType" : true,
+			"canCopy" : true,
 			"typeName" : "int64 & !"
 		},
-		"H<math::float3x3>" : {
+		{
 			"mn" : "H<math::float3x3>",
 			"baseMn" : "H<math::float3x3>",
+			"canCopy" : true,
 			"typeName" : "float3x3",
 			"requirements" : [
 				"math"
 			]
 		},
-		"H<math::float3x4>" : {
+		{
 			"mn" : "H<math::float3x4>",
 			"baseMn" : "H<math::float3x4>",
+			"canCopy" : true,
 			"typeName" : "float3x4",
 			"requirements" : [
 				"math"
 			]
 		},
-		"CIH<$::dasvector`smart_ptr`MakeFieldDecl>" : {
+		{
 			"mn" : "CIH<$::dasvector`smart_ptr`MakeFieldDecl>",
 			"baseMn" : "H<$::dasvector`smart_ptr`MakeFieldDecl>",
-			"constType" : true,
+			"isConst" : true,
 			"typeName" : "dasvector`smart_ptr`MakeFieldDecl const !"
 		},
-		"1<C&1<H<ast::TypeDecl>>?W>G" : {
+		{
 			"mn" : "1<C&1<H<ast::TypeDecl>>?W>G",
 			"baseMn" : "1<C&1<H<ast::TypeDecl>>?W>G",
 			"typeName" : "iterator<TypeDecl ? const &>"
 		},
-		"1<CH<ast::CaptureEntry>>G" : {
+		{
 			"mn" : "1<CH<ast::CaptureEntry>>G",
 			"baseMn" : "1<CH<ast::CaptureEntry>>G",
 			"typeName" : "iterator<CaptureEntry const>"
 		},
-		"H<UnitTest::TestObjectFoo>" : {
+		{
 			"mn" : "H<UnitTest::TestObjectFoo>",
 			"baseMn" : "H<UnitTest::TestObjectFoo>",
+			"canCopy" : true,
 			"typeName" : "TestObjectFoo"
 		},
-		"1<H<ast::FieldDeclaration>>G" : {
+		{
 			"mn" : "1<H<ast::FieldDeclaration>>G",
 			"baseMn" : "1<H<ast::FieldDeclaration>>G",
 			"typeName" : "iterator<FieldDeclaration>"
 		},
-		"IH<$::dasvector`smart_ptr`MakeFieldDecl>" : {
+		{
 			"mn" : "IH<$::dasvector`smart_ptr`MakeFieldDecl>",
 			"baseMn" : "H<$::dasvector`smart_ptr`MakeFieldDecl>",
 			"typeName" : "dasvector`smart_ptr`MakeFieldDecl !"
 		},
-		"IH<math::float3x4>" : {
+		{
 			"mn" : "IH<math::float3x4>",
 			"baseMn" : "H<math::float3x4>",
+			"canCopy" : true,
 			"typeName" : "float3x4 !",
 			"requirements" : [
 				"math"
 			]
 		},
-		"CI0<r;r>1<b>$" : {
+		{
 			"mn" : "CI0<r;r>1<b>$",
 			"baseMn" : "0<r;r>1<b>$",
-			"constType" : true,
+			"isConst" : true,
 			"typeName" : "block<(range; range):bool> const !"
 		},
-		"b" : {
+		{
 			"mn" : "b",
 			"baseMn" : "b",
+			"canCopy" : true,
 			"typeName" : "bool"
 		},
-		"v" : {
+		{
 			"mn" : "v",
 			"baseMn" : "v",
+			"canCopy" : true,
 			"typeName" : "void"
 		},
-		"i" : {
+		{
 			"mn" : "i",
 			"baseMn" : "i",
+			"canCopy" : true,
 			"typeName" : "int"
 		},
-		"u" : {
+		{
 			"mn" : "u",
 			"baseMn" : "u",
+			"canCopy" : true,
 			"typeName" : "uint"
 		},
-		"t" : {
+		{
 			"mn" : "t",
 			"baseMn" : "t",
+			"canCopy" : true,
 			"typeName" : "bitfield"
 		},
-		"f" : {
+		{
 			"mn" : "f",
 			"baseMn" : "f",
+			"canCopy" : true,
 			"typeName" : "float"
 		},
-		"d" : {
+		{
 			"mn" : "d",
 			"baseMn" : "d",
+			"canCopy" : true,
 			"typeName" : "double"
 		},
-		"s" : {
+		{
 			"mn" : "s",
 			"baseMn" : "s",
+			"canCopy" : true,
 			"typeName" : "string"
 		},
-		"r" : {
+		{
 			"mn" : "r",
 			"baseMn" : "r",
+			"canCopy" : true,
 			"typeName" : "range"
 		},
-		"&If" : {
+		{
 			"mn" : "&If",
+			"isRef" : true,
 			"baseMn" : "f",
-			"refType" : true,
+			"canCopy" : true,
 			"typeName" : "float & !"
 		},
-		"&Ib" : {
+		{
 			"mn" : "&Ib",
+			"isRef" : true,
 			"baseMn" : "b",
-			"refType" : true,
+			"canCopy" : true,
 			"typeName" : "bool & !"
 		},
-		"&Ii" : {
+		{
 			"mn" : "&Ii",
+			"isRef" : true,
 			"baseMn" : "i",
-			"refType" : true,
+			"canCopy" : true,
 			"typeName" : "int & !"
 		},
-		"&Iu" : {
+		{
 			"mn" : "&Iu",
+			"isRef" : true,
 			"baseMn" : "u",
-			"refType" : true,
+			"canCopy" : true,
 			"typeName" : "uint & !"
 		},
-		"&It" : {
+		{
 			"mn" : "&It",
+			"isRef" : true,
 			"baseMn" : "t",
-			"refType" : true,
+			"canCopy" : true,
 			"typeName" : "bitfield & !"
 		},
-		"&Id" : {
+		{
 			"mn" : "&Id",
+			"isRef" : true,
 			"baseMn" : "d",
-			"refType" : true,
+			"canCopy" : true,
 			"typeName" : "double & !"
 		},
-		"&Is" : {
+		{
 			"mn" : "&Is",
+			"isRef" : true,
 			"baseMn" : "s",
-			"refType" : true,
+			"canCopy" : true,
 			"typeName" : "string & !"
 		},
-		"z" : {
+		{
 			"mn" : "z",
 			"baseMn" : "z",
+			"canCopy" : true,
 			"typeName" : "urange"
 		},
-		"C&I1<v>?M" : {
+		{
 			"mn" : "C&I1<v>?M",
+			"isRef" : true,
 			"baseMn" : "1<v>?M",
-			"constType" : true,
-			"refType" : true,
+			"isConst" : true,
 			"typeName" : "void ? const & !"
 		},
-		"?" : {
+		{
 			"mn" : "?",
 			"baseMn" : "?",
+			"canCopy" : true,
 			"typeName" : " ?"
 		},
-		"&I?" : {
+		{
 			"mn" : "&I?",
+			"isRef" : true,
 			"baseMn" : "?",
-			"refType" : true,
+			"canCopy" : true,
 			"typeName" : " ? & !"
 		},
-		"CI0<f2;f2>1<b>$" : {
+		{
 			"mn" : "CI0<f2;f2>1<b>$",
 			"baseMn" : "0<f2;f2>1<b>$",
-			"constType" : true,
+			"isConst" : true,
 			"typeName" : "block<(float2; float2):bool> const !"
 		},
-		"CI0<f3;f3>1<b>$" : {
+		{
 			"mn" : "CI0<f3;f3>1<b>$",
 			"baseMn" : "0<f3;f3>1<b>$",
-			"constType" : true,
+			"isConst" : true,
 			"typeName" : "block<(float3; float3):bool> const !"
 		},
-		"CI0<s;s>1<b>$" : {
+		{
 			"mn" : "CI0<s;s>1<b>$",
 			"baseMn" : "0<s;s>1<b>$",
-			"constType" : true,
+			"isConst" : true,
 			"typeName" : "block<(string; string):bool> const !"
 		},
-		"CIH<$::dasvector`smart_ptr`TypeDecl>" : {
+		{
 			"mn" : "CIH<$::dasvector`smart_ptr`TypeDecl>",
 			"baseMn" : "H<$::dasvector`smart_ptr`TypeDecl>",
-			"constType" : true,
+			"isConst" : true,
 			"typeName" : "dasvector`smart_ptr`TypeDecl const !"
 		},
-		"CIH<$::dasvector`smart_ptr`Variable>" : {
+		{
 			"mn" : "CIH<$::dasvector`smart_ptr`Variable>",
 			"baseMn" : "H<$::dasvector`smart_ptr`Variable>",
-			"constType" : true,
+			"isConst" : true,
 			"typeName" : "dasvector`smart_ptr`Variable const !"
 		},
-		"1<C&u8>G" : {
+		{
 			"mn" : "1<C&u8>G",
 			"baseMn" : "1<C&u8>G",
 			"typeName" : "iterator<uint8 const &>"
 		},
-		"CIH<math::float3x4>" : {
+		{
 			"mn" : "CIH<math::float3x4>",
 			"baseMn" : "H<math::float3x4>",
-			"constType" : true,
+			"canCopy" : true,
+			"isConst" : true,
 			"typeName" : "float3x4 const !",
 			"requirements" : [
 				"math"
 			]
 		},
-		"IH<math::float3x3>" : {
+		{
 			"mn" : "IH<math::float3x3>",
 			"baseMn" : "H<math::float3x3>",
+			"canCopy" : true,
 			"typeName" : "float3x3 !",
 			"requirements" : [
 				"math"
 			]
 		},
-		"CIH<math::float3x3>" : {
+		{
 			"mn" : "CIH<math::float3x3>",
 			"baseMn" : "H<math::float3x3>",
-			"constType" : true,
+			"canCopy" : true,
+			"isConst" : true,
 			"typeName" : "float3x3 const !",
 			"requirements" : [
 				"math"
 			]
 		},
-		"1<0<u;u>U>G" : {
+		{
 			"mn" : "1<0<u;u>U>G",
 			"baseMn" : "1<0<u;u>U>G",
 			"typeName" : "iterator<tuple<uint; uint>>"
 		},
-		"CI0<f;f>1<b>$" : {
+		{
 			"mn" : "CI0<f;f>1<b>$",
 			"baseMn" : "0<f;f>1<b>$",
-			"constType" : true,
+			"isConst" : true,
 			"typeName" : "block<(float; float):bool> const !"
 		},
-		"IH<$::dasvector`CaptureEntry>" : {
+		{
 			"mn" : "IH<$::dasvector`CaptureEntry>",
 			"baseMn" : "H<$::dasvector`CaptureEntry>",
 			"typeName" : "dasvector`CaptureEntry !"
 		},
-		"CIH<$::dasvector`int>" : {
+		{
 			"mn" : "CIH<$::dasvector`int>",
 			"baseMn" : "H<$::dasvector`int>",
-			"constType" : true,
+			"isConst" : true,
 			"typeName" : "dasvector`int const !"
 		},
-		"CH<ast::InferHistory>" : {
+		{
 			"mn" : "CH<ast::InferHistory>",
 			"baseMn" : "H<ast::InferHistory>",
-			"constType" : true,
+			"canCopy" : true,
+			"isConst" : true,
 			"typeName" : "InferHistory const"
 		},
-		"CI1<d>?" : {
+		{
 			"mn" : "CI1<d>?",
 			"baseMn" : "1<d>?",
-			"constType" : true,
+			"canCopy" : true,
+			"isConst" : true,
 			"typeName" : "double ? const !"
 		},
-		"IH<$::dasvector`smart_ptr`Expression>" : {
+		{
 			"mn" : "IH<$::dasvector`smart_ptr`Expression>",
 			"baseMn" : "H<$::dasvector`smart_ptr`Expression>",
 			"typeName" : "dasvector`smart_ptr`Expression !"
 		},
-		"1<CH<ast::FieldDeclaration>>G" : {
+		{
 			"mn" : "1<CH<ast::FieldDeclaration>>G",
 			"baseMn" : "1<CH<ast::FieldDeclaration>>G",
 			"typeName" : "iterator<FieldDeclaration const>"
 		},
-		"1<&1<H<ast::Variable>>?W>G" : {
+		{
 			"mn" : "1<&1<H<ast::Variable>>?W>G",
 			"baseMn" : "1<&1<H<ast::Variable>>?W>G",
 			"typeName" : "iterator<Variable ? &>"
 		},
-		"IH<$::dasvector`uint8>" : {
+		{
 			"mn" : "IH<$::dasvector`uint8>",
 			"baseMn" : "H<$::dasvector`uint8>",
 			"typeName" : "dasvector`uint8 !"
 		},
-		"1<CH<ast::InferHistory>>G" : {
+		{
 			"mn" : "1<CH<ast::InferHistory>>G",
 			"baseMn" : "1<CH<ast::InferHistory>>G",
 			"typeName" : "iterator<InferHistory const>"
 		},
-		"CI0<H<strings::StringBuilderWriter>>1<v>$" : {
+		{
 			"mn" : "CI0<H<strings::StringBuilderWriter>>1<v>$",
 			"baseMn" : "0<H<strings::StringBuilderWriter>>1<v>$",
-			"constType" : true,
+			"isConst" : true,
 			"typeName" : "block<(StringBuilderWriter):void> const !",
 			"requirements" : [
 				"strings"
 			]
 		},
-		"H<ast::InferHistory>" : {
+		{
 			"mn" : "H<ast::InferHistory>",
 			"baseMn" : "H<ast::InferHistory>",
+			"canCopy" : true,
 			"typeName" : "InferHistory"
 		},
-		"CI1<f>?" : {
+		{
 			"mn" : "CI1<f>?",
 			"baseMn" : "1<f>?",
-			"constType" : true,
+			"canCopy" : true,
+			"isConst" : true,
 			"typeName" : "float ? const !"
 		},
-		"CI0<C#s>1<v>$" : {
+		{
 			"mn" : "CI0<C#s>1<v>$",
 			"baseMn" : "0<C#s>1<v>$",
-			"constType" : true,
+			"isConst" : true,
 			"typeName" : "block<(string const #):void> const !"
 		},
-		"H<$::clock>" : {
+		{
 			"mn" : "H<$::clock>",
 			"baseMn" : "H<$::clock>",
+			"canCopy" : true,
 			"typeName" : "clock"
 		},
-		"1<&1<H<ast::TypeDecl>>?W>G" : {
+		{
 			"mn" : "1<&1<H<ast::TypeDecl>>?W>G",
 			"baseMn" : "1<&1<H<ast::TypeDecl>>?W>G",
 			"typeName" : "iterator<TypeDecl ? &>"
 		},
-		"IH<$::das_string>" : {
+		{
 			"mn" : "IH<$::das_string>",
 			"baseMn" : "H<$::das_string>",
 			"typeName" : "das_string !"
 		},
-		"CI0<C#1<u8>A>1<v>$" : {
+		{
 			"mn" : "CI0<C#1<u8>A>1<v>$",
 			"baseMn" : "0<C#1<u8>A>1<v>$",
-			"constType" : true,
+			"isConst" : true,
 			"typeName" : "block<(array<uint8> const #):void> const !",
 			"requirements" : [
 				"strings"
 			]
 		},
-		"H<rtti::LineInfo>" : {
+		{
 			"mn" : "H<rtti::LineInfo>",
 			"baseMn" : "H<rtti::LineInfo>",
+			"canCopy" : true,
 			"typeName" : "LineInfo"
 		},
-		"&Iu2" : {
+		{
 			"mn" : "&Iu2",
+			"isRef" : true,
 			"baseMn" : "u2",
-			"refType" : true,
+			"canCopy" : true,
 			"typeName" : "uint2 & !"
 		},
-		"&Ii3" : {
+		{
 			"mn" : "&Ii3",
+			"isRef" : true,
 			"baseMn" : "i3",
-			"refType" : true,
+			"canCopy" : true,
 			"typeName" : "int3 & !"
 		},
-		"&If2" : {
+		{
 			"mn" : "&If2",
+			"isRef" : true,
 			"baseMn" : "f2",
-			"refType" : true,
+			"canCopy" : true,
 			"typeName" : "float2 & !"
 		},
-		"&If3" : {
+		{
 			"mn" : "&If3",
+			"isRef" : true,
 			"baseMn" : "f3",
-			"refType" : true,
+			"canCopy" : true,
 			"typeName" : "float3 & !"
 		},
-		"&If4" : {
+		{
 			"mn" : "&If4",
+			"isRef" : true,
 			"baseMn" : "f4",
-			"refType" : true,
+			"canCopy" : true,
 			"typeName" : "float4 & !"
 		},
-		"&Ii2" : {
+		{
 			"mn" : "&Ii2",
+			"isRef" : true,
 			"baseMn" : "i2",
-			"refType" : true,
+			"canCopy" : true,
 			"typeName" : "int2 & !"
 		},
-		"&Ii4" : {
+		{
 			"mn" : "&Ii4",
+			"isRef" : true,
 			"baseMn" : "i4",
-			"refType" : true,
+			"canCopy" : true,
 			"typeName" : "int4 & !"
 		},
-		"&Iu3" : {
+		{
 			"mn" : "&Iu3",
+			"isRef" : true,
 			"baseMn" : "u3",
-			"refType" : true,
+			"canCopy" : true,
 			"typeName" : "uint3 & !"
 		},
-		"CE16" : {
+		{
 			"mn" : "CE16",
 			"baseMn" : "E16",
-			"constType" : true,
+			"canCopy" : true,
+			"isConst" : true,
 			"typeName" : "enum const"
 		},
-		"&Iu4" : {
+		{
 			"mn" : "&Iu4",
+			"isRef" : true,
 			"baseMn" : "u4",
-			"refType" : true,
+			"canCopy" : true,
 			"typeName" : "uint4 & !"
 		},
-		"CI0<f4;f4>1<b>$" : {
+		{
 			"mn" : "CI0<f4;f4>1<b>$",
 			"baseMn" : "0<f4;f4>1<b>$",
-			"constType" : true,
+			"isConst" : true,
 			"typeName" : "block<(float4; float4):bool> const !"
 		},
-		"CIH<$::dasvector`smart_ptr`Expression>" : {
+		{
 			"mn" : "CIH<$::dasvector`smart_ptr`Expression>",
 			"baseMn" : "H<$::dasvector`smart_ptr`Expression>",
-			"constType" : true,
+			"isConst" : true,
 			"typeName" : "dasvector`smart_ptr`Expression const !"
 		},
-		"1<v>?M" : {
+		{
 			"mn" : "1<v>?M",
 			"baseMn" : "1<v>?M",
 			"typeName" : "void ?"
 		},
-		"IH<$::dasvector`int>" : {
+		{
 			"mn" : "IH<$::dasvector`int>",
 			"baseMn" : "H<$::dasvector`int>",
 			"typeName" : "dasvector`int !"
 		},
-		"IH<$::dasvector`EnumEntry>" : {
+		{
 			"mn" : "IH<$::dasvector`EnumEntry>",
 			"baseMn" : "H<$::dasvector`EnumEntry>",
 			"typeName" : "dasvector`EnumEntry !"
 		},
-		"1<CH<ast::EnumEntry>>G" : {
+		{
 			"mn" : "1<CH<ast::EnumEntry>>G",
 			"baseMn" : "1<CH<ast::EnumEntry>>G",
 			"typeName" : "iterator<EnumEntry const>"
 		},
-		"&Iu8" : {
+		{
 			"mn" : "&Iu8",
+			"isRef" : true,
 			"baseMn" : "u8",
-			"refType" : true,
+			"canCopy" : true,
 			"typeName" : "uint8 & !"
 		},
-		"CIH<$::dasvector`FieldDeclaration>" : {
+		{
 			"mn" : "CIH<$::dasvector`FieldDeclaration>",
 			"baseMn" : "H<$::dasvector`FieldDeclaration>",
-			"constType" : true,
+			"isConst" : true,
 			"typeName" : "dasvector`FieldDeclaration const !"
 		},
-		"&Iu64" : {
+		{
 			"mn" : "&Iu64",
+			"isRef" : true,
 			"baseMn" : "u64",
-			"refType" : true,
+			"canCopy" : true,
 			"typeName" : "uint64 & !"
 		},
-		"IH<$::dasvector`smart_ptr`Variable>" : {
+		{
 			"mn" : "IH<$::dasvector`smart_ptr`Variable>",
 			"baseMn" : "H<$::dasvector`smart_ptr`Variable>",
 			"typeName" : "dasvector`smart_ptr`Variable !"
 		},
-		"H<$::dasvector`LineInfo>" : {
+		{
 			"mn" : "H<$::dasvector`LineInfo>",
 			"baseMn" : "H<$::dasvector`LineInfo>",
 			"typeName" : "dasvector`LineInfo"
 		},
-		"CI0<i2;i2>1<b>$" : {
+		{
 			"mn" : "CI0<i2;i2>1<b>$",
 			"baseMn" : "0<i2;i2>1<b>$",
-			"constType" : true,
+			"isConst" : true,
 			"typeName" : "block<(int2; int2):bool> const !"
 		},
-		"1<H<ast::EnumEntry>>G" : {
+		{
 			"mn" : "1<H<ast::EnumEntry>>G",
 			"baseMn" : "1<H<ast::EnumEntry>>G",
 			"typeName" : "iterator<EnumEntry>"
 		},
-		"CIH<$::dasvector`CaptureEntry>" : {
+		{
 			"mn" : "CIH<$::dasvector`CaptureEntry>",
 			"baseMn" : "H<$::dasvector`CaptureEntry>",
-			"constType" : true,
+			"isConst" : true,
 			"typeName" : "dasvector`CaptureEntry const !"
 		},
-		"CI0<#1<u8>A>1<v>$" : {
+		{
 			"mn" : "CI0<#1<u8>A>1<v>$",
 			"baseMn" : "0<#1<u8>A>1<v>$",
-			"constType" : true,
+			"isConst" : true,
 			"typeName" : "block<(array<uint8> #):void> const !",
 			"requirements" : [
 				"strings"
 			]
 		},
-		"H<strings::StringBuilderWriter>" : {
+		{
 			"mn" : "H<strings::StringBuilderWriter>",
 			"baseMn" : "H<strings::StringBuilderWriter>",
 			"typeName" : "StringBuilderWriter",
@@ -19142,11 +19249,11 @@
 				"strings"
 			]
 		},
-		"CIH<$::dasvector`Error>" : {
+		{
 			"mn" : "CIH<$::dasvector`Error>",
 			"baseMn" : "H<$::dasvector`Error>",
-			"constType" : true,
+			"isConst" : true,
 			"typeName" : "dasvector`Error const !"
 		}
-	}
+	]
 }

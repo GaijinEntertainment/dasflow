@@ -15,21 +15,24 @@
             "typeName": "string",
             "mn": "s",
             "default": "",
-            "ctor": "\"$\""
+            "ctor": "\"$\"",
+            "canCopy": true
         },
         {
             "typeName": "int",
             "mn": "i",
             "default": "0",
             "validator": "^[-+]?\\d+$",
-            "group": "int"
+            "group": "int",
+            "canCopy": true
         },
         {
             "typeName": "uint",
             "mn": "u",
             "default": "0",
             "validator": "^[-+]?\\d+u?$",
-            "group": "int"
+            "group": "int",
+            "canCopy": true
         },
         {
             "typeName": "int8",
@@ -37,7 +40,8 @@
             "default": "0",
             "validator": "^[-+]?\\d+$",
             "group": "int",
-            "ctor": "int8($)"
+            "ctor": "int8($)",
+            "canCopy": true
         },
         {
             "typeName": "int16",
@@ -45,7 +49,8 @@
             "default": "0",
             "validator": "^[-+]?\\d+$",
             "group": "int",
-            "ctor": "int16($)"
+            "ctor": "int16($)",
+            "canCopy": true
         },
         {
             "typeName": "int64",
@@ -53,7 +58,8 @@
             "default": "0",
             "validator": "^[-+]?\\d+$",
             "group": "int",
-            "ctor": "int64($)"
+            "ctor": "int64($)",
+            "canCopy": true
         },
         {
             "typeName": "uint8",
@@ -61,7 +67,8 @@
             "default": "0u",
             "validator": "^[-+]?\\d+$",
             "group": "int",
-            "ctor": "uint8($)"
+            "ctor": "uint8($)",
+            "canCopy": true
         },
         {
             "typeName": "uint16",
@@ -69,7 +76,8 @@
             "default": "0",
             "validator": "^[-+]?\\d+$",
             "group": "int",
-            "ctor": "uint16($)"
+            "ctor": "uint16($)",
+            "canCopy": true
         },
         {
             "typeName": "uint64",
@@ -77,7 +85,8 @@
             "default": "0",
             "validator": "^[-+]?\\d+$",
             "group": "int",
-            "ctor": "uint64($)"
+            "ctor": "uint64($)",
+            "canCopy": true
         },
         {
             "typeName": "bool",
@@ -87,7 +96,8 @@
                 "true",
                 "false"
             ],
-            "group": "bool"
+            "group": "bool",
+            "canCopy": true
         },
         {
             "typeName": "float",
@@ -95,7 +105,8 @@
             "default": "0",
             "validator": "^[-+]?\\d+(\\.\\d*)?$",
             "group": "float",
-            "ctor": "float($)"
+            "ctor": "float($)",
+            "canCopy": true
         },
         {
             "typeName": "double",
@@ -103,7 +114,8 @@
             "default": "0",
             "validator": "^[-+]?\\d+(\\.\\d*)?$",
             "group": "float",
-            "ctor": "double($)"
+            "ctor": "double($)",
+            "canCopy": true
         },
         {
             "typeName": "float2",
@@ -119,7 +131,8 @@
                 }
             ],
             "ctor": "float2($x, $y)",
-            "group": "float2"
+            "group": "float2",
+            "canCopy": true
         },
         {
             "typeName": "float3",
@@ -139,7 +152,8 @@
                 }
             ],
             "ctor": "float3($x, $y, $z)",
-            "group": "float3"
+            "group": "float3",
+            "canCopy": true
         },
         {
             "typeName": "float4",
@@ -163,7 +177,8 @@
                 }
             ],
             "ctor": "float4($x, $y, $z, $w)",
-            "group": "float4"
+            "group": "float4",
+            "canCopy": true
         },
         {
             "typeName": "int2",
@@ -179,7 +194,8 @@
                 }
             ],
             "ctor": "int2($x, $y)",
-            "group": "int2"
+            "group": "int2",
+            "canCopy": true
         },
         {
             "typeName": "int3",
@@ -199,7 +215,8 @@
                 }
             ],
             "ctor": "int3($x, $y, $z)",
-            "group": "int3"
+            "group": "int3",
+            "canCopy": true
         },
         {
             "typeName": "int4",
@@ -223,7 +240,8 @@
                 }
             ],
             "ctor": "int4($x, $y, $z, $w)",
-            "group": "int4"
+            "group": "int4",
+            "canCopy": true
         },
         {
             "typeName": "uint2",
@@ -239,7 +257,8 @@
                 }
             ],
             "ctor": "uint2($x, $y)",
-            "group": "uint2"
+            "group": "uint2",
+            "canCopy": true
         },
         {
             "typeName": "uint3",
@@ -259,7 +278,8 @@
                 }
             ],
             "ctor": "uint3($x, $y, $z)",
-            "group": "uint3"
+            "group": "uint3",
+            "canCopy": true
         },
         {
             "typeName": "uint4",
@@ -283,7 +303,8 @@
                 }
             ],
             "ctor": "uint4($x, $y, $z, $w)",
-            "group": "uint4"
+            "group": "uint4",
+            "canCopy": true
         }
     ]
 }

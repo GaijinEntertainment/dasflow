@@ -6,6 +6,7 @@ require fio
 require strings
 
 require daslib/json_boost
+require daslib/defer
 
 
 struct TypeDesc
@@ -15,6 +16,7 @@ struct TypeDesc
     requirements: array<string>
     isConst: bool
     isRef: bool
+    canCopy: bool
 
 
 struct FuncDesc
@@ -80,7 +82,8 @@ def private dumpModule(ctx: DumpContext; mod: rtti::Module?; var lang: LangDesc)
 
         var first = true
         for arg in fn
-            let td = lang |> getTypeDesc(type_info(arg), modName)
+            let ti = type_info(arg)
+            let td = lang |> getTypeDesc(ti, modName)
             // print("{td.typeName} {td.mn}\n")
             if ctx.ignoredArgumentTypes |> has_value(td.mn)
                 continue
@@ -100,7 +103,7 @@ def getTypeDesc(var lang: LangDesc; ti: TypeInfo const?; mod: string): TypeDesc?
     // print("{ti |> describe()}\n")
 
     if !key_exists(lang.types, mangledName)
-        var t <- [[TypeDesc mn=mangledName, typeName=ti |> describe(), isConst=ti.isConst, isRef=ti.isRef]]
+        var t <- [[TypeDesc mn=mangledName, typeName=ti |> describe(), isConst=ti.isConst, isRef=ti.isRef, canCopy=ti.canCopy]]
         // print("{t.typeName} {t.mn}\n")
         // if ti.enumType != null
         //     t |> add_req <| "{ti.enumType.module_name}"
@@ -112,6 +115,8 @@ def getTypeDesc(var lang: LangDesc; ti: TypeInfo const?; mod: string): TypeDesc?
             t.baseMn = t.baseMn |> removePrefix("C")
         if ti.isRef
             t.baseMn = t.baseMn |> removePrefix("&")
+        if ti.isTemp
+            t.baseMn = t.baseMn |> removePrefix("#")
         if ti.isImplicit
             t.baseMn = t.baseMn |> removePrefix("I")
 
@@ -128,16 +133,27 @@ def add_req(var td: TypeDesc; req: string)
         td.requirements |> push <| req
 
 
+def JV(val: LangDesc)
+    var types <- [{ for val in values(val.types); JV(val) }]
+    defer_delete(types)
+    return JV({{"functions"=>JV(val.functions); "types"=>JV(types)}})
+
+
 def JV(val: TypeDesc)
     var res <- {{"typeName"=>JV(val.typeName); "mn"=>JV(val.mn); "baseMn"=>JV(val.baseMn)}}
     if val.isConst
-        res["constType"] = JV(val.isConst)
+        res["isConst"] = JV(val.isConst)
     if val.isRef
-        res["refType"] = JV(val.isRef)
+        res["isRef"] = JV(val.isRef)
+    if val.canCopy
+        res["canCopy"] = JV(val.canCopy)
     if !empty(val.requirements)
         res["requirements"] = JV(val.requirements)
     return JV(res)
 
+// def JV(val: FuncArg)
+//     var res <- {{"name"=>JV(val.name); "mn"=>JV(val.mn)}}
+//     return JV(res)
 
 def removePrefix(str: string; prefix: string)
     if str |> starts_with(prefix)

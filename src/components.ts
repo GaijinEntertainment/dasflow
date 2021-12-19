@@ -2,11 +2,62 @@ import Rete, {Engine, Input, Output, Socket} from 'rete'
 import {Node} from 'rete/types/node'
 import {NodeEditor} from 'rete/types/editor'
 import {LabelControl, LangTypeSelectControl, TextInputControl} from "./controls"
-import {LangCoreDesc, LangType} from "./lang"
+import {LangCoreDesc, LangTypeDesc} from "./lang"
 import {Component} from "rete/types"
 
 
 const flowSocket = new Rete.Socket('execution-flow')
+
+enum SocketType {
+    constant = 0b01, // 0b ref const
+    ref = 0b10,
+    constRef = 0b11,
+}
+
+class LangSocket extends Socket {
+    typeName: string
+    socketType: SocketType
+
+    constructor(typeName: string, socketType: SocketType) {
+        super(typeName + (socketType & 0b1 ? ' const' : '') + (socketType & 0b10 ? ' &' : ''))
+        this.typeName = typeName
+        this.socketType = socketType
+    }
+
+    compatibleWith(socket: Socket): boolean {
+        if (this === socket)
+            return true
+        if (socket instanceof LangSocket && socket.typeName == this.typeName) {
+            if (socket.socketType == SocketType.ref)
+                return this.socketType == SocketType.ref
+            if (socket.socketType == SocketType.constRef)
+                return this.socketType == SocketType.constRef || this.socketType == SocketType.ref
+            return true
+        }
+        return super.compatibleWith(socket)
+    }
+}
+
+export class LangType {
+    desc: LangTypeDesc
+    validator?: RegExp
+    defaultValue: string
+    ctor: (s: string, args: { [key: string]: string }) => string = s => s
+
+    sockets = new Map<SocketType, LangSocket>()
+    anyTypeSocket?: Socket
+
+    getSocket(socketType: SocketType): LangSocket {
+        if (this.sockets.has(socketType))
+            return this.sockets.get(socketType)!
+
+        const res = new LangSocket(this.desc.mn, socketType)
+        if (this.anyTypeSocket)
+            res.combineWith(this.anyTypeSocket)
+        this.sockets.set(socketType, res)
+        return res
+    }
+}
 
 
 // TODO: immutable, mutable and any types
@@ -21,7 +72,7 @@ export function getType(mn: string): LangType | undefined {
 }
 
 
-export function getTypeByMN(types: LangType[], mn: string) {
+export function getTypeByMN(types: LangType[], mn: string): LangType {
     for (let baseType of types) {
         if (baseType.desc.mn == mn) {
             return baseType
@@ -36,7 +87,7 @@ export function generateCoreNodes(langCore: LangCoreDesc, editor: NodeEditor, en
     const logicTypeName = langCore.logicType
     const anyTypeName = langCore.anyType
     const voidTypeName = langCore.voidType
-    const anyTypeSocket = anyTypeName ? new Rete.Socket(anyTypeName) : null
+    const anyTypeSocket = anyTypeName ? new Rete.Socket(anyTypeName) : undefined
     const comps: Component[] = []
     for (const typeDesc of langCore.types) {
         let group = typeDesc.group ?? typeDesc.mn
@@ -44,9 +95,8 @@ export function generateCoreNodes(langCore: LangCoreDesc, editor: NodeEditor, en
         let type = new LangType()
         type.desc = typeDesc
         type.defaultValue = typeDesc.default ?? ""
-        type.socket = new Rete.Socket(typeDesc.mn)
-        if (anyTypeSocket)
-            type.socket.combineWith(anyTypeSocket)
+        // type.socket = new Rete.Socket(typeDesc.mn)
+        type.anyTypeSocket = anyTypeSocket
 
         if (typeDesc.validator)
             type.validator = new RegExp(typeDesc.validator)
@@ -77,7 +127,7 @@ export function generateCoreNodes(langCore: LangCoreDesc, editor: NodeEditor, en
 
         // TODO: remove this
         if (typeDesc.mn == "f")
-            comps.push(new Sin(type.socket))
+            comps.push(new Sin(type))
     }
 
     if (anyTypeSocket)
@@ -205,7 +255,7 @@ export class LangLet extends LangComponent {
 
     async builder(node) {
         let type = 'mn' in node.data ? getTypeByMN(this.baseTypes, node.data.mn) : this.baseTypes[0]
-        const out = new Rete.Output('result', 'Result', type.socket, true)
+        const out = new Rete.Output('result', 'Result', type.getSocket(SocketType.constRef), true)
         node.addOutput(out)
         let struct = this.baseTypes[0].desc.struct
         if (struct) {
@@ -213,14 +263,14 @@ export class LangLet extends LangComponent {
                 const fieldType = getType(field.mn)
                 if (!fieldType)
                     continue
-                const fieldInput = new Rete.Input(field.name, field.name, fieldType.socket, false);
+                const fieldInput = new Rete.Input(field.name, field.name, fieldType.getSocket(SocketType.constant), false);
                 fieldInput.addControl(new TextInputControl(this.editor, field.name))
                 node.addInput(fieldInput)
             }
         } else {
             if (this.baseTypes.length > 1)
                 node.addControl(new LangTypeSelectControl(this.editor, 'mn', this.baseTypes))
-            const input = new Rete.Input('value', 'Value', type.socket, false)
+            const input = new Rete.Input('value', 'Value', type.getSocket(SocketType.constant), false)
             input.addControl(new TextInputControl(this.editor, 'value'))
             node.addInput(input)
         }
@@ -250,8 +300,8 @@ export class LangLet extends LangComponent {
 
         for (const [input, valueType] of inputControls) {
             // update input socket connections
-            if (input.socket != valueType.socket) {
-                input.socket = valueType.socket
+            if (input.socket != valueType.getSocket(SocketType.constant)) {
+                input.socket = valueType.getSocket(SocketType.constant)
                 for (const conn of [...input.connections]) {
                     if (!conn.output.socket.compatibleWith(input.socket)) {
                         this.editor?.removeConnection(conn)
@@ -273,8 +323,8 @@ export class LangLet extends LangComponent {
 
         const output = nodeRef.outputs.get('result')
         // update output socket connections
-        if (output && output.socket != currentType.socket) {
-            output.socket = currentType.socket
+        if (output && output.socket != currentType.getSocket(SocketType.constRef)) {
+            output.socket = currentType.getSocket(SocketType.constRef)
             output.name = currentType.desc.mn
             for (const conn of [...output.connections]) {
                 if (!output.socket.compatibleWith(conn.input.socket)) {
@@ -364,7 +414,7 @@ export class If extends LangComponent {
         onTrue.name = 'then'
         const onFalse = this.addFlowOut(node, 'else')
         onFalse.name = 'else'
-        const input = new Rete.Input('inValue', 'Condition', this.conditionType.socket)
+        const input = new Rete.Input('inValue', 'Condition', this.conditionType.getSocket(SocketType.constant))
         node.addInput(input)
     }
 
@@ -405,7 +455,7 @@ export class While extends LangComponent {
         this.addFlowInOut(node)
         const body = this.addFlowOut(node, 'body')
         body.name = 'body'
-        const input = new Rete.Input('inValue', 'Condition', this.conditionType.socket)
+        const input = new Rete.Input('inValue', 'Condition', this.conditionType.getSocket(SocketType.constant))
         node.addInput(input)
     }
 
@@ -430,17 +480,17 @@ export class While extends LangComponent {
 
 
 export class Sin extends LangComponent {
-    private floatType: Socket
+    private floatType: LangType
 
-    constructor(floatType: Socket) {
+    constructor(floatType: LangType) {
         super('Sin', ['functions'])
         this.floatType = floatType;
     }
 
     async builder(node) {
-        const input = new Rete.Input('value', 'Value', this.floatType)
+        const input = new Rete.Input('value', 'Value', this.floatType.getSocket(SocketType.constant))
         node.addInput(input)
-        const result = new Rete.Output('result', 'Value', this.floatType, true)
+        const result = new Rete.Output('result', 'Value', this.floatType.getSocket(SocketType.constRef), true)
         node.addOutput(result)
     }
 
@@ -454,7 +504,10 @@ export class Sin extends LangComponent {
         if (!inNode)
             return false
         ctx.addReqModule('math')
-        ctx.writeLine(`let ${ctx.nodeId(node)} = sin(${ctx.nodeId(inNode)})`)
+        if (this.floatType.desc.canCopy)
+            ctx.writeLine(`let ${ctx.nodeId(node)} = sin(${ctx.nodeId(inNode)})`)
+        else
+            ctx.setNodeRes(node, `sin(${ctx.nodeId(inNode)})`)
         return true
     }
 }
@@ -507,6 +560,8 @@ export class ConstructDasCtx {
     private lazyInited = new Set<number>()
     private requirements = new Set<string>()
 
+    private nodeResults = new Map<number, string>()
+
     constructor(editor: NodeEditor) {
         this.editor = editor
     }
@@ -548,8 +603,12 @@ export class ConstructDasCtx {
         }
     }
 
-    nodeId(node: Node) {
-        return `_${node.id}`
+    nodeId(node: Node): string {
+        if (this.nodeResults.has(node.id)) {
+            return this.nodeResults.get(node.id)!
+        } else {
+            return `_${node.id}`
+        }
     }
 
     isLazyInited(node: Node): boolean {
@@ -562,5 +621,9 @@ export class ConstructDasCtx {
 
     addReqModule(module: string) {
         this.requirements.add(module)
+    }
+
+    setNodeRes(node: Node, s: string) {
+        this.nodeResults.set(node.id, s)
     }
 }
