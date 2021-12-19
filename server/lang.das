@@ -1,4 +1,5 @@
 options rtti
+options remove_unused_symbols = false
 
 require rtti
 require ast
@@ -22,6 +23,8 @@ struct TypeDesc
 struct FuncDesc
     name: string
     resMn: string
+    sideeffect: bool
+    ctor: string
     args: array<FuncArg>
 
 
@@ -74,60 +77,79 @@ def private dumpModule(ctx: DumpContext; mod: rtti::Module?; var lang: LangDesc)
     //     print("td {typeName} {tp} \n")
     // mod |> for_each_structure <| $(st)
     //     print("st {st.name}\n")
-    mod |> module_for_each_function() <| $(fn)
 
-        let fnName = clone_string(fn.name)
-        lang.functions |> emplace <| [[FuncDesc name=fnName]]
+    var faNum = 0
+    mod |> for_each_function("") <| $(fn)
+        faNum += 1
+        // fa.result
+
+        let fnName = "{fn.name}"
+        let reqFlow = fn.sideEffectFlags.modifyExternal || fn.sideEffectFlags.modifyArgument || fn.sideEffectFlags.accessGlobal || fn.sideEffectFlags.invoke || fn.sideEffectFlags.userScenario
+        lang.functions |> emplace <| [[FuncDesc name=fnName, sideeffect=reqFlow]]
         var fun & = unsafe(lang.functions[length(lang.functions) - 1])
 
-        var first = true
-        for arg in fn
-            let ti = type_info(arg)
-            let td = lang |> getTypeDesc(ti, modName)
+
+        if fn.sideEffectFlags._unsafe
+            fun.ctor = "unsafe({fnName}($args))"
+
+        for arg in fn.arguments
+            let td = lang |> getTypeDesc(arg._type)
             // print("{td.typeName} {td.mn}\n")
             if ctx.ignoredArgumentTypes |> has_value(td.mn)
                 continue
-            var argType <- [[FuncArg name=clone_string(arg.name), mn=td.mn]]
-            fun.args |> emplace <| argType
-            first = false
 
-        var resTypeDesc = lang |> getTypeDesc(fn.result, modName)
+            var argType <- [[FuncArg name="{arg.name}", mn=td.mn]]
+            fun.args |> emplace <| argType
+
+        var resTypeDesc = lang |> getTypeDesc(fn.result)
         fun.resMn = resTypeDesc.mn
 
 
-def getTypeDesc(var lang: LangDesc; ti: TypeInfo const?; mod: string): TypeDesc?
+def getTypeDesc(var lang: LangDesc; ti: smart_ptr<TypeDecl>): TypeDesc?
     let mangledName = ti |> get_mangled_name()
-    // print("{mangledName}\n")
-    // if mangledName == "CE"
-    //     debug(ti)
-    // print("{ti |> describe()}\n")
 
     if !key_exists(lang.types, mangledName)
         var t <- [[TypeDesc mn=mangledName, typeName=ti |> describe(), isConst=ti.isConst, isRef=ti.isRef, canCopy=ti.canCopy]]
-        if t.typeName == "enum const"
-            t.typeName = "enum const {mangledName}"
+
         // print("{t.typeName} {t.mn}\n")
-        // if ti.enumType != null
-        //     t |> add_req <| "{ti.enumType.module_name}"
-        // if ti.structType != null
-        //     print("struct\n")
-        //     t |> add_req <| "{ti.structType.module_name}"
+        // debug(t)
         t.baseMn = t.mn
         if ti.isConst
             t.baseMn = t.baseMn |> removePrefix("C")
-        if ti.isRef
-            t.baseMn = t.baseMn |> removePrefix("&")
-        if ti.isTemp
+        if ti.isRefType || ti.isRef
+            t.baseMn = t.baseMn |> removePrefix("&", false)
+        if ti.flags.temporary
             t.baseMn = t.baseMn |> removePrefix("#")
-        if ti.isImplicit
+        if ti.flags._implicit
             t.baseMn = t.baseMn |> removePrefix("I")
 
-        if mod != "$"
-            t |> add_req <| mod
+        ti |> get_modules <| $(mod)
+            if !empty(mod) && mod != "$"
+                t |> add_req <| mod
+
+        if t.typeName == "unspecified enumeration const"
+            t.typeName = "enum const {t.baseMn}"
 
         lang.types[t.mn] <- t
 
     return unsafe(lang.types |> find_for_edit(mangledName))
+
+
+def get_modules(ti: smart_ptr<TypeDecl>; blk: block<(mod: string): void>): void
+    if ti.annotation != null && ti.annotation._module != null
+        blk |> invoke("{ti.annotation._module.name}")
+    if ti.structType != null && ti.structType._module != null
+        blk |> invoke("{ti.structType._module.name}")
+    if ti.enumType != null && ti.enumType._module != null
+        blk |> invoke("{ti.enumType._module.name}")
+
+    if ti.firstType != null
+        get_modules(ti.firstType, blk)
+    if ti.secondType != null
+        get_modules(ti.secondType, blk)
+
+    if ti._module != null
+        blk |> invoke("{ti._module.name}")
 
 
 def add_req(var td: TypeDesc; req: string)
@@ -155,12 +177,19 @@ def JV(val: TypeDesc)
         res["requirements"] = JV(val.requirements)
     return JV(res)
 
-// def JV(val: FuncArg)
-//     var res <- {{"name"=>JV(val.name); "mn"=>JV(val.mn)}}
-//     return JV(res)
 
-def removePrefix(str: string; prefix: string)
+def JV(val: FuncDesc)
+    var res <- {{"name"=>JV(val.name); "args"=>JV(val.args); "resMn"=>JV(val.resMn)}}
+    if val.sideeffect
+        res["sideeffect"] = JV(val.sideeffect)
+    if !empty(val.ctor)
+        res["ctor"] = JV(val.ctor)
+    return JV(res)
+
+
+def removePrefix(str: string; prefix: string; showError = true)
     if str |> starts_with(prefix)
         return str |> slice(length(prefix))
-    print("[E] removePrefix: {str} {prefix}\n")
+    if showError
+        print("[E] removePrefix: {str} {prefix}\n")
     return str

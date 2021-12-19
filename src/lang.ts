@@ -22,6 +22,9 @@ interface LangFunctionArgDesc {
 export interface LangFunctionDesc {
     name: string
     resMn: string
+    sideeffect?: boolean
+    unsafe?: boolean
+    ctor?: string
     args: LangFunctionArgDesc[]
 }
 

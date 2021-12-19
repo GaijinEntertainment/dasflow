@@ -47,6 +47,7 @@ export class DasflowContext {
             if (component.topLevel)
                 component.constructDas(node, ctx)
         }
+        ctx.build()
         return ctx
     }
 

@@ -72,7 +72,7 @@ function getType(mn: string): LangType | undefined {
 }
 
 
-function getTypeName(mn:string): string {
+function getTypeName(mn: string): string {
     const type = getType(mn)
     return type ? type.desc.typeName : mn
 }
@@ -143,10 +143,6 @@ export function generateCoreNodes(langCore: LangCoreDesc, lang: LangDesc, editor
 
         if (typeDesc.mn == logicTypeName)
             comps.push(new If(type), new While(type))
-
-        // TODO: remove this
-        if (typeDesc.mn == "f")
-            comps.push(new Sin(type))
     }
 
     if (anyTypeSocket)
@@ -227,6 +223,7 @@ export abstract class LangComponent extends Rete.Component {
     // writer
 
     constructDas(node: Node, ctx: ConstructDasCtx): boolean {
+        ctx.addProcessedNode(node)
         const res = this.constructDasNode(node, ctx)
         if (res && this.flowOut)
             this.constructDasFlowOut(node, ctx)
@@ -411,11 +408,13 @@ export class LangFunc extends LangComponent {
     constructor(fn: LangFunctionDesc) {
         const resTypeName = getTypeName(fn.resMn);
         const name = fn.name + "(" + fn.args.map(it => getTypeName(it.mn)).join(",") + "):" + resTypeName
-        super(name, ['language', fn.args.length.toString(), fn.resMn.length.toString(), resTypeName, fn.name])
+        super(name, ['language', resTypeName.substring(0, 2), resTypeName, fn.name.substring(0, 2)])
         this.fn = fn
     }
 
     async builder(node) {
+        if (this.fn.sideeffect)
+            this.addFlowInOut(node)
         for (let arg of this.fn.args) {
             const argType = getBaseType(arg.mn)
             if (!argType) {
@@ -435,7 +434,8 @@ export class LangFunc extends LangComponent {
             node.addInput(fieldInput)
         }
 
-        const result = new Rete.Output('result', 'result', getType(this.fn.resMn)!.getSocket(SocketType.constant), true)
+        const multiRes = !this.fn.sideeffect
+        const result = new Rete.Output('result', 'result', getType(this.fn.resMn)!.getSocket(SocketType.constant), multiRes)
         // fieldInput.addControl(new TextInputControl(this.editor, field.name))
         node.addOutput(result)
     }
@@ -451,21 +451,29 @@ export class LangFunc extends LangComponent {
             }
             args.push(ctx.nodeId(argNode))
         }
-        for (let req of getType(this.fn.resMn)?.desc.requirements ?? []) {
+        const resType = getType(this.fn.resMn);
+        for (let req of resType?.desc.requirements ?? []) {
             ctx.addReqModule(req)
         }
-        // TODO: handle canCopy flag
-        // TODO: move operators list to core.json
+        const ctor = this.fn.ctor ?? `${this.fn.name}($args)`
+        const addLet = resType?.desc.canCopy
+        let line = addLet ? `let ${ctx.nodeId(node)} = ` : ''
         if (this.isOperator(this.fn.name) && args.length <= 2) {
-            let line = `let ${ctx.nodeId(node)} = ${args[0]} ${this.fn.name}`
+            line = `${line}${args[0]} ${this.fn.name}`
             if (args.length == 2)
                 line += ` ${args[1]}`
+
+        } else {
+            line = `${line}${ctor.replace('$args', args.join(','))}`;
+        }
+        if (addLet)
             ctx.writeLine(line)
-        } else
-            ctx.writeLine(`let ${ctx.nodeId(node)} = ${this.fn.name}(${args.join(", ")})`)
+        else
+            ctx.setNodeRes(node, line)
         return true
     }
 
+    // TODO: move operators list to core.json
     isOperator(n: string) {
         return n == "--" || n == "++" || n == "==" || n == "!="
             || n == ">" || n == "<" || n == ">=" || n == "<=" || n == "+++" || n == "---"
@@ -500,6 +508,7 @@ export class Debug extends LangComponent {
         const inNode = this.constructInNode(node, 'value', ctx)
         if (!inNode)
             return false
+        ctx.reqNode(inNode)
         ctx.writeLine(`debug(${ctx.nodeId(inNode)})`)
         return true
     }
@@ -582,42 +591,6 @@ export class While extends LangComponent {
     }
 }
 
-// TODO: add iterable types, Foreach components
-
-
-export class Sin extends LangComponent {
-    private floatType: LangType
-
-    constructor(floatType: LangType) {
-        super('Sin', ['functions'])
-        this.floatType = floatType;
-    }
-
-    async builder(node) {
-        const input = new Rete.Input('value', 'Value', this.floatType.getSocket(SocketType.constant))
-        node.addInput(input)
-        const result = new Rete.Output('result', 'Value', this.floatType.getSocket(SocketType.constRef), true)
-        node.addOutput(result)
-    }
-
-    worker(node, inputs, outputs) {
-        const val = inputs.value?.length ? inputs.value : node.data.value
-        outputs['result'] = `sin(${val})`
-    }
-
-    constructDasNode(node, ctx) {
-        const inNode = this.constructInNode(node, 'value', ctx)
-        if (!inNode)
-            return false
-        ctx.addReqModule('math')
-        if (this.floatType.desc.canCopy)
-            ctx.writeLine(`let ${ctx.nodeId(node)} = sin(${ctx.nodeId(inNode)})`)
-        else
-            ctx.setNodeRes(node, `sin(${ctx.nodeId(inNode)})`)
-        return true
-    }
-}
-
 
 export class Function extends LangComponent {
     constructor() {
@@ -650,23 +623,17 @@ export class Function extends LangComponent {
 
 
 export class ConstructDasCtx {
-    get code(): string {
-        if (this.requirements.size > 0) {
-            for (const req of this.requirements)
-                this._code = `require ${req}\n` + this._code
-            this.requirements.clear()
-        }
-        return this._code
-    }
 
     editor: NodeEditor
     indenting = ""
-    private _code = ""
+    code = ""
     errors = new Map<number, string[]>()
     private lazyInited = new Set<number>()
     private requirements = new Set<string>()
 
     private nodeResults = new Map<number, string>()
+    private processedNodes = new Set<number>()
+    private requiredNodes = new Set<number>()
 
     constructor(editor: NodeEditor) {
         this.editor = editor
@@ -680,15 +647,19 @@ export class ConstructDasCtx {
         return res
     }
 
-    writeLine(str: string) {
-        this._code += `\n${this.indenting}${str}`
+    writeLine(str: string): void {
+        this.code += `\n${this.indenting}${str}`
     }
 
-    addError(node: Node, msg: string) {
-        if (!this.errors.has(node.id))
-            this.errors.set(node.id, [msg])
+    addError(node: Node, msg: string): boolean {
+        return this.addErrorId(node.id, msg)
+    }
+
+    addErrorId(id: number, msg: string): boolean {
+        if (!this.errors.has(id))
+            this.errors.set(id, [msg])
         else {
-            const data = this.errors.get(node.id)
+            const data = this.errors.get(id)
             data?.push(msg)
         }
         return false
@@ -731,5 +702,25 @@ export class ConstructDasCtx {
 
     setNodeRes(node: Node, s: string) {
         this.nodeResults.set(node.id, s)
+    }
+
+    reqNode(node: Node) {
+        this.requiredNodes.add(node.id)
+    }
+
+    addProcessedNode(node: Node) {
+        this.processedNodes.add(node.id)
+    }
+
+    build() {
+        if (this.requirements.size > 0) {
+            for (const req of this.requirements)
+                this.code = `require ${req}\n` + this.code
+            this.requirements.clear()
+        }
+        this.processedNodes.forEach(it => this.requiredNodes.delete(it))
+        for (let requiredNode of this.requiredNodes) {
+            this.addErrorId(requiredNode, "Node is not processed")
+        }
     }
 }

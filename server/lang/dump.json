@@ -82,6 +82,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Ib",
@@ -96,6 +97,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Ib",
@@ -110,6 +112,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Ib",
@@ -654,6 +657,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Ii",
@@ -702,6 +706,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Ii",
@@ -744,6 +749,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Ii",
@@ -758,6 +764,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Ii",
@@ -786,6 +793,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Ii",
@@ -800,6 +808,7 @@
 		},
 		{
 			"resMn" : "i",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Ii",
@@ -810,6 +819,7 @@
 		},
 		{
 			"resMn" : "i",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Ii",
@@ -820,6 +830,7 @@
 		},
 		{
 			"resMn" : "i",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Ii",
@@ -830,6 +841,7 @@
 		},
 		{
 			"resMn" : "i",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Ii",
@@ -948,6 +960,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Ii",
@@ -962,6 +975,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Ii",
@@ -976,6 +990,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Ii",
@@ -1046,6 +1061,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Ii",
@@ -1060,6 +1076,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Ii",
@@ -1074,6 +1091,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Ii",
@@ -1088,6 +1106,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Ii",
@@ -1259,6 +1278,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Iu",
@@ -1307,6 +1327,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Iu",
@@ -1349,6 +1370,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Iu",
@@ -1363,6 +1385,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Iu",
@@ -1391,6 +1414,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Iu",
@@ -1405,6 +1429,7 @@
 		},
 		{
 			"resMn" : "u",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Iu",
@@ -1415,6 +1440,7 @@
 		},
 		{
 			"resMn" : "u",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Iu",
@@ -1425,6 +1451,7 @@
 		},
 		{
 			"resMn" : "u",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Iu",
@@ -1435,6 +1462,7 @@
 		},
 		{
 			"resMn" : "u",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Iu",
@@ -1553,6 +1581,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Iu",
@@ -1567,6 +1596,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Iu",
@@ -1581,6 +1611,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Iu",
@@ -1651,6 +1682,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Iu",
@@ -1665,6 +1697,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Iu",
@@ -1679,6 +1712,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Iu",
@@ -1693,6 +1727,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Iu",
@@ -2017,6 +2052,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&It",
@@ -2031,6 +2067,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&It",
@@ -2045,6 +2082,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&It",
@@ -2101,6 +2139,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Ii64",
@@ -2149,6 +2188,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Ii64",
@@ -2191,6 +2231,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Ii64",
@@ -2205,6 +2246,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Ii64",
@@ -2233,6 +2275,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Ii64",
@@ -2247,6 +2290,7 @@
 		},
 		{
 			"resMn" : "i64",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Ii64",
@@ -2257,6 +2301,7 @@
 		},
 		{
 			"resMn" : "i64",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Ii64",
@@ -2267,6 +2312,7 @@
 		},
 		{
 			"resMn" : "i64",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Ii64",
@@ -2277,6 +2323,7 @@
 		},
 		{
 			"resMn" : "i64",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Ii64",
@@ -2395,6 +2442,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Ii64",
@@ -2409,6 +2457,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Ii64",
@@ -2423,6 +2472,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Ii64",
@@ -2493,6 +2543,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Ii64",
@@ -2507,6 +2558,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Ii64",
@@ -2521,6 +2573,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Ii64",
@@ -2535,6 +2588,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Ii64",
@@ -2706,6 +2760,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Iu64",
@@ -2754,6 +2809,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Iu64",
@@ -2796,6 +2852,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Iu64",
@@ -2810,6 +2867,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Iu64",
@@ -2838,6 +2896,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Iu64",
@@ -2852,6 +2911,7 @@
 		},
 		{
 			"resMn" : "u64",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Iu64",
@@ -2862,6 +2922,7 @@
 		},
 		{
 			"resMn" : "u64",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Iu64",
@@ -2872,6 +2933,7 @@
 		},
 		{
 			"resMn" : "u64",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Iu64",
@@ -2882,6 +2944,7 @@
 		},
 		{
 			"resMn" : "u64",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Iu64",
@@ -3000,6 +3063,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Iu64",
@@ -3014,6 +3078,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Iu64",
@@ -3028,6 +3093,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Iu64",
@@ -3098,6 +3164,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Iu64",
@@ -3112,6 +3179,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Iu64",
@@ -3126,6 +3194,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Iu64",
@@ -3140,6 +3209,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Iu64",
@@ -3311,6 +3381,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&If",
@@ -3359,6 +3430,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&If",
@@ -3401,6 +3473,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&If",
@@ -3415,6 +3488,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&If",
@@ -3443,6 +3517,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&If",
@@ -3457,6 +3532,7 @@
 		},
 		{
 			"resMn" : "f",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&If",
@@ -3467,6 +3543,7 @@
 		},
 		{
 			"resMn" : "f",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&If",
@@ -3477,6 +3554,7 @@
 		},
 		{
 			"resMn" : "f",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&If",
@@ -3487,6 +3565,7 @@
 		},
 		{
 			"resMn" : "f",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&If",
@@ -3710,6 +3789,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Id",
@@ -3758,6 +3838,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Id",
@@ -3800,6 +3881,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Id",
@@ -3814,6 +3896,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Id",
@@ -3842,6 +3925,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Id",
@@ -3856,6 +3940,7 @@
 		},
 		{
 			"resMn" : "d",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Id",
@@ -3866,6 +3951,7 @@
 		},
 		{
 			"resMn" : "d",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Id",
@@ -3876,6 +3962,7 @@
 		},
 		{
 			"resMn" : "d",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Id",
@@ -3886,6 +3973,7 @@
 		},
 		{
 			"resMn" : "d",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Id",
@@ -4505,6 +4593,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Is",
@@ -4611,6 +4700,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&If2",
@@ -4659,6 +4749,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&If2",
@@ -4701,6 +4792,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&If2",
@@ -4715,6 +4807,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&If2",
@@ -4785,6 +4878,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&If2",
@@ -4799,6 +4893,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&If2",
@@ -4855,6 +4950,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&If3",
@@ -4903,6 +4999,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&If3",
@@ -4945,6 +5042,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&If3",
@@ -4959,6 +5057,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&If3",
@@ -5029,6 +5128,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&If3",
@@ -5043,6 +5143,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&If3",
@@ -5099,6 +5200,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&If4",
@@ -5147,6 +5249,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&If4",
@@ -5189,6 +5292,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&If4",
@@ -5203,6 +5307,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&If4",
@@ -5273,6 +5378,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&If4",
@@ -5287,6 +5393,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&If4",
@@ -5343,6 +5450,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Ii2",
@@ -5391,6 +5499,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Ii2",
@@ -5433,6 +5542,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Ii2",
@@ -5447,6 +5557,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Ii2",
@@ -5517,6 +5628,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Ii2",
@@ -5531,6 +5643,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Ii2",
@@ -5615,6 +5728,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Ii2",
@@ -5629,6 +5743,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Ii2",
@@ -5643,6 +5758,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Ii2",
@@ -5657,6 +5773,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Ii2",
@@ -5671,6 +5788,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Ii2",
@@ -5727,6 +5845,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Ii3",
@@ -5775,6 +5894,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Ii3",
@@ -5817,6 +5937,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Ii3",
@@ -5831,6 +5952,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Ii3",
@@ -5901,6 +6023,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Ii3",
@@ -5915,6 +6038,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Ii3",
@@ -5999,6 +6123,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Ii3",
@@ -6013,6 +6138,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Ii3",
@@ -6027,6 +6153,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Ii3",
@@ -6041,6 +6168,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Ii3",
@@ -6055,6 +6183,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Ii3",
@@ -6111,6 +6240,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Ii4",
@@ -6159,6 +6289,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Ii4",
@@ -6201,6 +6332,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Ii4",
@@ -6215,6 +6347,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Ii4",
@@ -6285,6 +6418,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Ii4",
@@ -6299,6 +6433,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Ii4",
@@ -6383,6 +6518,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Ii4",
@@ -6397,6 +6533,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Ii4",
@@ -6411,6 +6548,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Ii4",
@@ -6425,6 +6563,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Ii4",
@@ -6439,6 +6578,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Ii4",
@@ -6495,6 +6635,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Iu2",
@@ -6543,6 +6684,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Iu2",
@@ -6585,6 +6727,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Iu2",
@@ -6599,6 +6742,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Iu2",
@@ -6669,6 +6813,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Iu2",
@@ -6683,6 +6828,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Iu2",
@@ -6767,6 +6913,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Iu2",
@@ -6781,6 +6928,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Iu2",
@@ -6795,6 +6943,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Iu2",
@@ -6809,6 +6958,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Iu2",
@@ -6823,6 +6973,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Iu2",
@@ -6879,6 +7030,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Iu3",
@@ -6927,6 +7079,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Iu3",
@@ -6969,6 +7122,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Iu3",
@@ -6983,6 +7137,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Iu3",
@@ -7053,6 +7208,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Iu3",
@@ -7067,6 +7223,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Iu3",
@@ -7151,6 +7308,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Iu3",
@@ -7165,6 +7323,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Iu3",
@@ -7179,6 +7338,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Iu3",
@@ -7193,6 +7353,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Iu3",
@@ -7207,6 +7368,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Iu3",
@@ -7263,6 +7425,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Iu4",
@@ -7311,6 +7474,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Iu4",
@@ -7353,6 +7517,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Iu4",
@@ -7367,6 +7532,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Iu4",
@@ -7437,6 +7603,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Iu4",
@@ -7451,6 +7618,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Iu4",
@@ -7535,6 +7703,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Iu4",
@@ -7549,6 +7718,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Iu4",
@@ -7563,6 +7733,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Iu4",
@@ -7577,6 +7748,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Iu4",
@@ -7591,6 +7763,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Iu4",
@@ -9130,6 +9303,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IA",
@@ -9170,6 +9344,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IA",
@@ -9188,6 +9363,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IA",
@@ -9206,6 +9382,7 @@
 		},
 		{
 			"resMn" : "i",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IA",
@@ -9224,6 +9401,7 @@
 		},
 		{
 			"resMn" : "i",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IA",
@@ -9242,6 +9420,7 @@
 		},
 		{
 			"resMn" : "i",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IA",
@@ -9256,6 +9435,7 @@
 		},
 		{
 			"resMn" : "i",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IA",
@@ -9270,6 +9450,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IA",
@@ -9288,6 +9469,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "CIA",
@@ -9298,6 +9480,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "CIA",
@@ -9308,6 +9491,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "CIA",
@@ -9318,11 +9502,13 @@
 		},
 		{
 			"resMn" : "s",
+			"sideeffect" : true,
 			"args" : [],
 			"name" : "get_das_root"
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IA",
@@ -9333,16 +9519,19 @@
 		},
 		{
 			"resMn" : "b",
+			"sideeffect" : true,
 			"args" : [],
 			"name" : "is_compiling"
 		},
 		{
 			"resMn" : "b",
+			"sideeffect" : true,
 			"args" : [],
 			"name" : "is_compiling_macros"
 		},
 		{
 			"resMn" : "b",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -9353,6 +9542,7 @@
 		},
 		{
 			"resMn" : "b",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "CIG",
@@ -9367,6 +9557,7 @@
 		},
 		{
 			"resMn" : "b",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "CIG",
@@ -9381,6 +9572,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "CIG",
@@ -9395,6 +9587,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "CIG",
@@ -9405,6 +9598,7 @@
 		},
 		{
 			"resMn" : "b",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "CIG",
@@ -9419,6 +9613,7 @@
 		},
 		{
 			"resMn" : "b",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "CIG",
@@ -9429,6 +9624,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IG",
@@ -9447,6 +9643,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IG",
@@ -9469,6 +9666,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IG",
@@ -9483,6 +9681,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IG",
@@ -9497,6 +9696,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IG",
@@ -9507,6 +9707,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IG",
@@ -9525,6 +9726,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "C*",
@@ -9535,6 +9737,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -9545,6 +9748,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -9555,6 +9759,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -9565,13 +9770,14 @@
 		},
 		{
 			"resMn" : "s",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "C*",
 					"name" : "value"
 				},
 				{
-					"mn" : "CN<escapeString;namesAndDimensions;typeQualifiers;refAddresses;humanReadable;singleLine>t",
+					"mn" : "CY<print_flags>N<escapeString;namesAndDimensions;typeQualifiers;refAddresses;humanReadable;singleLine>t",
 					"name" : "flags"
 				}
 			],
@@ -9579,16 +9785,19 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [],
 			"name" : "terminate"
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [],
 			"name" : "breakpoint"
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "Cb",
@@ -9603,16 +9812,19 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [],
 			"name" : "reset_profiler"
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [],
 			"name" : "dump_profile_info"
 		},
 		{
 			"resMn" : "s",
+			"sideeffect" : true,
 			"args" : [],
 			"name" : "collect_profile_info"
 		},
@@ -9628,6 +9840,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IV",
@@ -9642,26 +9855,31 @@
 		},
 		{
 			"resMn" : "u64",
+			"sideeffect" : true,
 			"args" : [],
 			"name" : "heap_bytes_allocated"
 		},
 		{
 			"resMn" : "i",
+			"sideeffect" : true,
 			"args" : [],
 			"name" : "heap_depth"
 		},
 		{
 			"resMn" : "u64",
+			"sideeffect" : true,
 			"args" : [],
 			"name" : "string_heap_bytes_allocated"
 		},
 		{
 			"resMn" : "i",
+			"sideeffect" : true,
 			"args" : [],
 			"name" : "string_heap_depth"
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "Cb",
@@ -9672,6 +9890,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "Cb",
@@ -9686,16 +9905,19 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [],
 			"name" : "string_heap_report"
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [],
 			"name" : "heap_report"
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "Cb",
@@ -9706,6 +9928,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "C*",
@@ -9720,6 +9943,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "C*",
@@ -9744,6 +9968,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "C*",
@@ -9754,6 +9979,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IT",
@@ -9784,6 +10010,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "CIT",
@@ -9794,6 +10021,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "CIT",
@@ -9804,6 +10032,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "CIT",
@@ -9814,6 +10043,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IG",
@@ -9832,6 +10062,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IG",
@@ -9850,6 +10081,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IA",
@@ -9864,6 +10096,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IT",
@@ -9882,6 +10115,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&I1<v>?M",
@@ -9896,6 +10130,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&I1<v>?M",
@@ -10004,6 +10239,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -10018,6 +10254,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -10032,6 +10269,7 @@
 		},
 		{
 			"resMn" : "?",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -10042,6 +10280,7 @@
 		},
 		{
 			"resMn" : "1<v>?M",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -10052,11 +10291,13 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [],
 			"name" : "gc0_reset"
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "CI?",
@@ -10093,6 +10334,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&I?",
@@ -10107,6 +10349,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&I?",
@@ -10157,6 +10400,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&I?",
@@ -10175,6 +10419,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&I?",
@@ -10221,6 +10466,7 @@
 		},
 		{
 			"resMn" : "f",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -10249,6 +10495,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::das_string>",
@@ -10263,6 +10510,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Is",
@@ -10277,6 +10525,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "CIH<$::das_string>",
@@ -10497,6 +10746,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "CI?",
@@ -10515,6 +10765,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IA",
@@ -10533,11 +10784,13 @@
 		},
 		{
 			"resMn" : "b",
+			"sideeffect" : true,
 			"args" : [],
 			"name" : "is_in_aot"
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -10552,6 +10805,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "CI1<i>?",
@@ -10566,6 +10820,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "C*",
@@ -10588,6 +10843,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IA",
@@ -10610,6 +10866,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "C*",
@@ -10632,6 +10889,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "CI1<u>?",
@@ -10646,6 +10904,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "C*",
@@ -10668,6 +10927,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IA",
@@ -10690,6 +10950,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "C*",
@@ -10712,6 +10973,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "CI1<i64>?",
@@ -10726,6 +10988,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "C*",
@@ -10748,6 +11011,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IA",
@@ -10770,6 +11034,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "C*",
@@ -10792,6 +11057,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "CI1<u64>?",
@@ -10806,6 +11072,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "C*",
@@ -10828,6 +11095,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IA",
@@ -10850,6 +11118,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "C*",
@@ -10872,6 +11141,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "CI1<f>?",
@@ -10886,6 +11156,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "C*",
@@ -10908,6 +11179,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IA",
@@ -10930,6 +11202,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "C*",
@@ -10952,6 +11225,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "CI1<d>?",
@@ -10966,6 +11240,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "C*",
@@ -10988,6 +11263,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IA",
@@ -11010,6 +11286,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "C*",
@@ -11032,6 +11309,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "C*",
@@ -11054,6 +11332,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IA",
@@ -11076,6 +11355,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "C*",
@@ -11098,6 +11378,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "C*",
@@ -11120,6 +11401,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IA",
@@ -11142,6 +11424,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "C*",
@@ -11164,6 +11447,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "C*",
@@ -11186,6 +11470,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IA",
@@ -11208,6 +11493,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "C*",
@@ -11230,6 +11516,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "C*",
@@ -11252,6 +11539,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IA",
@@ -11274,6 +11562,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "C*",
@@ -11296,6 +11585,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "C*",
@@ -11318,6 +11608,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IA",
@@ -11340,6 +11631,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "C*",
@@ -11362,6 +11654,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "C*",
@@ -11384,6 +11677,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IA",
@@ -11406,6 +11700,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "C*",
@@ -11428,6 +11723,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "C*",
@@ -11450,6 +11746,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IA",
@@ -11472,6 +11769,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "C*",
@@ -11494,6 +11792,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "C*",
@@ -11516,6 +11815,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IA",
@@ -11538,6 +11838,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "C*",
@@ -11560,6 +11861,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "C*",
@@ -11582,6 +11884,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IA",
@@ -11604,6 +11907,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "C*",
@@ -11626,6 +11930,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "C*",
@@ -11648,6 +11953,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IA",
@@ -11670,6 +11976,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "C*",
@@ -11692,6 +11999,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "C*",
@@ -11714,6 +12022,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IA",
@@ -11736,6 +12045,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "C*",
@@ -11758,6 +12068,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "CI?",
@@ -11772,6 +12083,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "C*",
@@ -11794,6 +12106,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IA",
@@ -11816,6 +12129,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "C*",
@@ -11838,6 +12152,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "CI?",
@@ -11860,6 +12175,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "CI?",
@@ -11882,6 +12198,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IA",
@@ -11904,6 +12221,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IA",
@@ -11926,6 +12244,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "C*",
@@ -11948,6 +12267,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "C*",
@@ -12068,16 +12388,19 @@
 		},
 		{
 			"resMn" : "H<$::clock>",
+			"sideeffect" : true,
 			"args" : [],
 			"name" : "get_clock"
 		},
 		{
 			"resMn" : "i64",
+			"sideeffect" : true,
 			"args" : [],
 			"name" : "ref_time_ticks"
 		},
 		{
 			"resMn" : "i",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "Ci64",
@@ -12088,6 +12411,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`Error>",
@@ -12098,6 +12422,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`Error>",
@@ -12108,6 +12433,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`Error>",
@@ -12122,6 +12448,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`Error>",
@@ -12135,20 +12462,20 @@
 			"name" : "erase"
 		},
 		{
-			"resMn" : "1<H<rtti::Error>>G",
+			"resMn" : "1<&H<rtti::Error>>G",
 			"args" : [
 				{
-					"mn" : "IH<$::dasvector`Error>",
+					"mn" : "I=H<$::dasvector`Error>",
 					"name" : "arg0"
 				}
 			],
 			"name" : "each"
 		},
 		{
-			"resMn" : "1<CH<rtti::Error>>G",
+			"resMn" : "1<C&H<rtti::Error>>G",
 			"args" : [
 				{
-					"mn" : "CIH<$::dasvector`Error>",
+					"mn" : "CI=H<$::dasvector`Error>",
 					"name" : "arg0"
 				}
 			],
@@ -12156,6 +12483,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`smart_ptr`TypeDecl>",
@@ -12174,6 +12502,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`smart_ptr`TypeDecl>",
@@ -12188,6 +12517,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`smart_ptr`TypeDecl>",
@@ -12198,6 +12528,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`smart_ptr`TypeDecl>",
@@ -12208,6 +12539,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`smart_ptr`TypeDecl>",
@@ -12222,6 +12554,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`smart_ptr`TypeDecl>",
@@ -12238,7 +12571,7 @@
 			"resMn" : "1<&1<H<ast::TypeDecl>>?W>G",
 			"args" : [
 				{
-					"mn" : "IH<$::dasvector`smart_ptr`TypeDecl>",
+					"mn" : "I=H<$::dasvector`smart_ptr`TypeDecl>",
 					"name" : "vec"
 				}
 			],
@@ -12248,7 +12581,7 @@
 			"resMn" : "1<C&1<H<ast::TypeDecl>>?W>G",
 			"args" : [
 				{
-					"mn" : "CIH<$::dasvector`smart_ptr`TypeDecl>",
+					"mn" : "CI=H<$::dasvector`smart_ptr`TypeDecl>",
 					"name" : "vec"
 				}
 			],
@@ -12256,6 +12589,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`das_string>",
@@ -12266,6 +12600,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`das_string>",
@@ -12276,6 +12611,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`das_string>",
@@ -12290,6 +12626,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`das_string>",
@@ -12303,20 +12640,20 @@
 			"name" : "erase"
 		},
 		{
-			"resMn" : "1<H<$::das_string>>G",
+			"resMn" : "1<&H<$::das_string>>G",
 			"args" : [
 				{
-					"mn" : "IH<$::dasvector`das_string>",
+					"mn" : "I=H<$::dasvector`das_string>",
 					"name" : "arg0"
 				}
 			],
 			"name" : "each"
 		},
 		{
-			"resMn" : "1<CH<$::das_string>>G",
+			"resMn" : "1<C&H<$::das_string>>G",
 			"args" : [
 				{
-					"mn" : "CIH<$::dasvector`das_string>",
+					"mn" : "CI=H<$::dasvector`das_string>",
 					"name" : "arg0"
 				}
 			],
@@ -12324,6 +12661,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`int>",
@@ -12342,6 +12680,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`int>",
@@ -12356,6 +12695,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`int>",
@@ -12374,6 +12714,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`int>",
@@ -12388,6 +12729,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`int>",
@@ -12398,6 +12740,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`int>",
@@ -12408,6 +12751,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`int>",
@@ -12422,6 +12766,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`int>",
@@ -12438,7 +12783,7 @@
 			"resMn" : "1<&i>G",
 			"args" : [
 				{
-					"mn" : "IH<$::dasvector`int>",
+					"mn" : "I=H<$::dasvector`int>",
 					"name" : "vec"
 				}
 			],
@@ -12448,7 +12793,7 @@
 			"resMn" : "1<C&i>G",
 			"args" : [
 				{
-					"mn" : "CIH<$::dasvector`int>",
+					"mn" : "CI=H<$::dasvector`int>",
 					"name" : "vec"
 				}
 			],
@@ -12456,6 +12801,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`smart_ptr`Expression>",
@@ -12474,6 +12820,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`smart_ptr`Expression>",
@@ -12488,6 +12835,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`smart_ptr`Expression>",
@@ -12498,6 +12846,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`smart_ptr`Expression>",
@@ -12508,6 +12857,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`smart_ptr`Expression>",
@@ -12522,6 +12872,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`smart_ptr`Expression>",
@@ -12538,7 +12889,7 @@
 			"resMn" : "1<&1<H<ast::Expression>>?W>G",
 			"args" : [
 				{
-					"mn" : "IH<$::dasvector`smart_ptr`Expression>",
+					"mn" : "I=H<$::dasvector`smart_ptr`Expression>",
 					"name" : "vec"
 				}
 			],
@@ -12548,7 +12899,7 @@
 			"resMn" : "1<C&1<H<ast::Expression>>?W>G",
 			"args" : [
 				{
-					"mn" : "CIH<$::dasvector`smart_ptr`Expression>",
+					"mn" : "CI=H<$::dasvector`smart_ptr`Expression>",
 					"name" : "vec"
 				}
 			],
@@ -12556,6 +12907,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`FieldDeclaration>",
@@ -12566,6 +12918,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`FieldDeclaration>",
@@ -12576,6 +12929,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`FieldDeclaration>",
@@ -12590,6 +12944,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`FieldDeclaration>",
@@ -12603,20 +12958,20 @@
 			"name" : "erase"
 		},
 		{
-			"resMn" : "1<H<ast::FieldDeclaration>>G",
+			"resMn" : "1<&H<ast::FieldDeclaration>>G",
 			"args" : [
 				{
-					"mn" : "IH<$::dasvector`FieldDeclaration>",
+					"mn" : "I=H<$::dasvector`FieldDeclaration>",
 					"name" : "arg0"
 				}
 			],
 			"name" : "each"
 		},
 		{
-			"resMn" : "1<CH<ast::FieldDeclaration>>G",
+			"resMn" : "1<C&H<ast::FieldDeclaration>>G",
 			"args" : [
 				{
-					"mn" : "CIH<$::dasvector`FieldDeclaration>",
+					"mn" : "CI=H<$::dasvector`FieldDeclaration>",
 					"name" : "arg0"
 				}
 			],
@@ -12624,6 +12979,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`EnumEntry>",
@@ -12634,6 +12990,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`EnumEntry>",
@@ -12644,6 +13001,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`EnumEntry>",
@@ -12658,6 +13016,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`EnumEntry>",
@@ -12671,20 +13030,20 @@
 			"name" : "erase"
 		},
 		{
-			"resMn" : "1<H<ast::EnumEntry>>G",
+			"resMn" : "1<&H<ast::EnumEntry>>G",
 			"args" : [
 				{
-					"mn" : "IH<$::dasvector`EnumEntry>",
+					"mn" : "I=H<$::dasvector`EnumEntry>",
 					"name" : "arg0"
 				}
 			],
 			"name" : "each"
 		},
 		{
-			"resMn" : "1<CH<ast::EnumEntry>>G",
+			"resMn" : "1<C&H<ast::EnumEntry>>G",
 			"args" : [
 				{
-					"mn" : "CIH<$::dasvector`EnumEntry>",
+					"mn" : "CI=H<$::dasvector`EnumEntry>",
 					"name" : "arg0"
 				}
 			],
@@ -12692,6 +13051,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`smart_ptr`Variable>",
@@ -12710,6 +13070,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`smart_ptr`Variable>",
@@ -12724,6 +13085,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`smart_ptr`Variable>",
@@ -12734,6 +13096,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`smart_ptr`Variable>",
@@ -12744,6 +13107,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`smart_ptr`Variable>",
@@ -12758,6 +13122,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`smart_ptr`Variable>",
@@ -12774,7 +13139,7 @@
 			"resMn" : "1<&1<H<ast::Variable>>?W>G",
 			"args" : [
 				{
-					"mn" : "IH<$::dasvector`smart_ptr`Variable>",
+					"mn" : "I=H<$::dasvector`smart_ptr`Variable>",
 					"name" : "vec"
 				}
 			],
@@ -12784,7 +13149,7 @@
 			"resMn" : "1<C&1<H<ast::Variable>>?W>G",
 			"args" : [
 				{
-					"mn" : "CIH<$::dasvector`smart_ptr`Variable>",
+					"mn" : "CI=H<$::dasvector`smart_ptr`Variable>",
 					"name" : "vec"
 				}
 			],
@@ -12792,6 +13157,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "H<$::dasvector`InferHistory>",
@@ -12810,6 +13176,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "H<$::dasvector`InferHistory>",
@@ -12824,6 +13191,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "H<$::dasvector`InferHistory>",
@@ -12842,6 +13210,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "H<$::dasvector`InferHistory>",
@@ -12856,6 +13225,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`InferHistory>",
@@ -12866,6 +13236,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`InferHistory>",
@@ -12876,6 +13247,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`InferHistory>",
@@ -12890,6 +13262,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`InferHistory>",
@@ -12903,20 +13276,20 @@
 			"name" : "erase"
 		},
 		{
-			"resMn" : "1<H<ast::InferHistory>>G",
+			"resMn" : "1<&H<ast::InferHistory>>G",
 			"args" : [
 				{
-					"mn" : "IH<$::dasvector`InferHistory>",
+					"mn" : "I=H<$::dasvector`InferHistory>",
 					"name" : "arg0"
 				}
 			],
 			"name" : "each"
 		},
 		{
-			"resMn" : "1<CH<ast::InferHistory>>G",
+			"resMn" : "1<C&H<ast::InferHistory>>G",
 			"args" : [
 				{
-					"mn" : "CIH<$::dasvector`InferHistory>",
+					"mn" : "CI=H<$::dasvector`InferHistory>",
 					"name" : "arg0"
 				}
 			],
@@ -12924,6 +13297,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "H<$::dasvector`pair`uint`uint>",
@@ -12942,6 +13316,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "H<$::dasvector`pair`uint`uint>",
@@ -12956,6 +13331,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "H<$::dasvector`pair`uint`uint>",
@@ -12974,6 +13350,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "H<$::dasvector`pair`uint`uint>",
@@ -12988,6 +13365,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`pair`uint`uint>",
@@ -12998,6 +13376,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`pair`uint`uint>",
@@ -13008,6 +13387,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`pair`uint`uint>",
@@ -13022,6 +13402,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`pair`uint`uint>",
@@ -13035,20 +13416,20 @@
 			"name" : "erase"
 		},
 		{
-			"resMn" : "1<0<u;u>U>G",
+			"resMn" : "1<&0<u;u>U>G",
 			"args" : [
 				{
-					"mn" : "IH<$::dasvector`pair`uint`uint>",
+					"mn" : "I=H<$::dasvector`pair`uint`uint>",
 					"name" : "arg0"
 				}
 			],
 			"name" : "each"
 		},
 		{
-			"resMn" : "1<C0<u;u>U>G",
+			"resMn" : "1<C&0<u;u>U>G",
 			"args" : [
 				{
-					"mn" : "CIH<$::dasvector`pair`uint`uint>",
+					"mn" : "CI=H<$::dasvector`pair`uint`uint>",
 					"name" : "arg0"
 				}
 			],
@@ -13056,6 +13437,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "H<$::dasvector`LineInfo>",
@@ -13074,6 +13456,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "H<$::dasvector`LineInfo>",
@@ -13088,6 +13471,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "H<$::dasvector`LineInfo>",
@@ -13106,6 +13490,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "H<$::dasvector`LineInfo>",
@@ -13120,6 +13505,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`LineInfo>",
@@ -13130,6 +13516,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`LineInfo>",
@@ -13140,6 +13527,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`LineInfo>",
@@ -13154,6 +13542,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`LineInfo>",
@@ -13167,20 +13556,20 @@
 			"name" : "erase"
 		},
 		{
-			"resMn" : "1<H<rtti::LineInfo>>G",
+			"resMn" : "1<&H<rtti::LineInfo>>G",
 			"args" : [
 				{
-					"mn" : "IH<$::dasvector`LineInfo>",
+					"mn" : "I=H<$::dasvector`LineInfo>",
 					"name" : "arg0"
 				}
 			],
 			"name" : "each"
 		},
 		{
-			"resMn" : "1<CH<rtti::LineInfo>>G",
+			"resMn" : "1<C&H<rtti::LineInfo>>G",
 			"args" : [
 				{
-					"mn" : "CIH<$::dasvector`LineInfo>",
+					"mn" : "CI=H<$::dasvector`LineInfo>",
 					"name" : "arg0"
 				}
 			],
@@ -13188,6 +13577,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`smart_ptr`MakeStruct>",
@@ -13206,6 +13596,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`smart_ptr`MakeStruct>",
@@ -13220,6 +13611,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`smart_ptr`MakeStruct>",
@@ -13230,6 +13622,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`smart_ptr`MakeStruct>",
@@ -13240,6 +13633,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`smart_ptr`MakeStruct>",
@@ -13254,6 +13648,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`smart_ptr`MakeStruct>",
@@ -13270,7 +13665,7 @@
 			"resMn" : "1<&1<H<ast::MakeStruct>>?W>G",
 			"args" : [
 				{
-					"mn" : "IH<$::dasvector`smart_ptr`MakeStruct>",
+					"mn" : "I=H<$::dasvector`smart_ptr`MakeStruct>",
 					"name" : "vec"
 				}
 			],
@@ -13280,7 +13675,7 @@
 			"resMn" : "1<C&1<H<ast::MakeStruct>>?W>G",
 			"args" : [
 				{
-					"mn" : "CIH<$::dasvector`smart_ptr`MakeStruct>",
+					"mn" : "CI=H<$::dasvector`smart_ptr`MakeStruct>",
 					"name" : "vec"
 				}
 			],
@@ -13288,6 +13683,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`smart_ptr`MakeFieldDecl>",
@@ -13306,6 +13702,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`smart_ptr`MakeFieldDecl>",
@@ -13320,6 +13717,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`smart_ptr`MakeFieldDecl>",
@@ -13330,6 +13728,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`smart_ptr`MakeFieldDecl>",
@@ -13340,6 +13739,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`smart_ptr`MakeFieldDecl>",
@@ -13354,6 +13754,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`smart_ptr`MakeFieldDecl>",
@@ -13370,7 +13771,7 @@
 			"resMn" : "1<&1<H<ast::MakeFieldDecl>>?W>G",
 			"args" : [
 				{
-					"mn" : "IH<$::dasvector`smart_ptr`MakeFieldDecl>",
+					"mn" : "I=H<$::dasvector`smart_ptr`MakeFieldDecl>",
 					"name" : "vec"
 				}
 			],
@@ -13380,7 +13781,7 @@
 			"resMn" : "1<C&1<H<ast::MakeFieldDecl>>?W>G",
 			"args" : [
 				{
-					"mn" : "CIH<$::dasvector`smart_ptr`MakeFieldDecl>",
+					"mn" : "CI=H<$::dasvector`smart_ptr`MakeFieldDecl>",
 					"name" : "vec"
 				}
 			],
@@ -13388,6 +13789,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`uint8>",
@@ -13406,6 +13808,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`uint8>",
@@ -13420,6 +13823,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`uint8>",
@@ -13438,6 +13842,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`uint8>",
@@ -13452,6 +13857,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`uint8>",
@@ -13462,6 +13868,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`uint8>",
@@ -13472,6 +13879,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`uint8>",
@@ -13486,6 +13894,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`uint8>",
@@ -13502,7 +13911,7 @@
 			"resMn" : "1<&u8>G",
 			"args" : [
 				{
-					"mn" : "IH<$::dasvector`uint8>",
+					"mn" : "I=H<$::dasvector`uint8>",
 					"name" : "vec"
 				}
 			],
@@ -13512,7 +13921,7 @@
 			"resMn" : "1<C&u8>G",
 			"args" : [
 				{
-					"mn" : "CIH<$::dasvector`uint8>",
+					"mn" : "CI=H<$::dasvector`uint8>",
 					"name" : "vec"
 				}
 			],
@@ -13520,6 +13929,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`CaptureEntry>",
@@ -13530,6 +13940,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`CaptureEntry>",
@@ -13540,6 +13951,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`CaptureEntry>",
@@ -13554,6 +13966,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`CaptureEntry>",
@@ -13567,20 +13980,20 @@
 			"name" : "erase"
 		},
 		{
-			"resMn" : "1<H<ast::CaptureEntry>>G",
+			"resMn" : "1<&H<ast::CaptureEntry>>G",
 			"args" : [
 				{
-					"mn" : "IH<$::dasvector`CaptureEntry>",
+					"mn" : "I=H<$::dasvector`CaptureEntry>",
 					"name" : "arg0"
 				}
 			],
 			"name" : "each"
 		},
 		{
-			"resMn" : "1<CH<ast::CaptureEntry>>G",
+			"resMn" : "1<C&H<ast::CaptureEntry>>G",
 			"args" : [
 				{
-					"mn" : "CIH<$::dasvector`CaptureEntry>",
+					"mn" : "CI=H<$::dasvector`CaptureEntry>",
 					"name" : "arg0"
 				}
 			],
@@ -13588,6 +14001,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "H<$::dasvector`TestObjectFoo>",
@@ -13606,6 +14020,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "H<$::dasvector`TestObjectFoo>",
@@ -13620,6 +14035,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "H<$::dasvector`TestObjectFoo>",
@@ -13638,6 +14054,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "H<$::dasvector`TestObjectFoo>",
@@ -13652,6 +14069,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`TestObjectFoo>",
@@ -13662,6 +14080,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`TestObjectFoo>",
@@ -13672,6 +14091,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`TestObjectFoo>",
@@ -13686,6 +14106,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::dasvector`TestObjectFoo>",
@@ -13699,20 +14120,20 @@
 			"name" : "erase"
 		},
 		{
-			"resMn" : "1<H<UnitTest::TestObjectFoo>>G",
+			"resMn" : "1<&H<UnitTest::TestObjectFoo>>G",
 			"args" : [
 				{
-					"mn" : "IH<$::dasvector`TestObjectFoo>",
+					"mn" : "I=H<$::dasvector`TestObjectFoo>",
 					"name" : "arg0"
 				}
 			],
 			"name" : "each"
 		},
 		{
-			"resMn" : "1<CH<UnitTest::TestObjectFoo>>G",
+			"resMn" : "1<C&H<UnitTest::TestObjectFoo>>G",
 			"args" : [
 				{
-					"mn" : "CIH<$::dasvector`TestObjectFoo>",
+					"mn" : "CI=H<$::dasvector`TestObjectFoo>",
 					"name" : "arg0"
 				}
 			],
@@ -16130,6 +16551,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -16148,6 +16570,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -16413,6 +16836,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<math::float4x4>",
@@ -16542,6 +16966,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "CIH<math::float4x4>",
@@ -16602,6 +17027,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<math::float3x4>",
@@ -16827,6 +17253,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<math::float3x3>",
@@ -16918,6 +17345,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "&Is",
@@ -16928,6 +17356,7 @@
 		},
 		{
 			"resMn" : "s",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "CI0<H<strings::StringBuilderWriter>>1<v>$",
@@ -16938,6 +17367,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -16952,6 +17382,7 @@
 		},
 		{
 			"resMn" : "s",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -16966,6 +17397,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "H<strings::StringBuilderWriter>",
@@ -16980,6 +17412,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<strings::StringBuilderWriter>",
@@ -16994,6 +17427,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<strings::StringBuilderWriter>",
@@ -17012,6 +17446,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<strings::StringBuilderWriter>",
@@ -17026,6 +17461,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<strings::StringBuilderWriter>",
@@ -17044,6 +17480,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<strings::StringBuilderWriter>",
@@ -17062,6 +17499,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<strings::StringBuilderWriter>",
@@ -17080,6 +17518,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<strings::StringBuilderWriter>",
@@ -17098,6 +17537,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<strings::StringBuilderWriter>",
@@ -17116,6 +17556,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<strings::StringBuilderWriter>",
@@ -17144,6 +17585,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "C*",
@@ -17430,6 +17872,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::das_string>",
@@ -17444,6 +17887,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "IH<$::das_string>",
@@ -17528,6 +17972,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -17546,6 +17991,7 @@
 		},
 		{
 			"resMn" : "v",
+			"sideeffect" : true,
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -17871,9 +18317,28 @@
 	],
 	"types" : [
 		{
+			"mn" : "1<&H<UnitTest::TestObjectFoo>>G",
+			"isRef" : true,
+			"typeName" : "iterator<UnitTest::TestObjectFoo&>",
+			"requirements" : [
+				"UnitTest"
+			]
+		},
+		{
+			"mn" : "I=H<$::dasvector`uint8>",
+			"isRef" : true,
+			"baseMn" : "=H<$::dasvector`uint8>",
+			"typeName" : "$::dasvector`uint8 implicit =const"
+		},
+		{
 			"mn" : "i8",
 			"canCopy" : true,
 			"typeName" : "int8"
+		},
+		{
+			"mn" : "u8",
+			"canCopy" : true,
+			"typeName" : "uint8"
 		},
 		{
 			"mn" : "Cb",
@@ -17911,13 +18376,6 @@
 			"typeName" : "uint const"
 		},
 		{
-			"mn" : "CI?",
-			"baseMn" : "?",
-			"canCopy" : true,
-			"isConst" : true,
-			"typeName" : " ? const !"
-		},
-		{
 			"mn" : "Ct",
 			"baseMn" : "t",
 			"canCopy" : true,
@@ -17925,37 +18383,22 @@
 			"typeName" : "bitfield const"
 		},
 		{
-			"mn" : "Ci8",
-			"baseMn" : "i8",
-			"canCopy" : true,
-			"isConst" : true,
-			"typeName" : "int8 const"
-		},
-		{
-			"mn" : "Cu8",
-			"baseMn" : "u8",
-			"canCopy" : true,
-			"isConst" : true,
-			"typeName" : "uint8 const"
-		},
-		{
-			"mn" : "u8",
-			"canCopy" : true,
-			"typeName" : "uint8"
-		},
-		{
 			"mn" : "CE",
 			"baseMn" : "E",
 			"canCopy" : true,
 			"isConst" : true,
-			"typeName" : "enum const CE"
+			"typeName" : "enum const E"
 		},
 		{
-			"mn" : "CE8",
-			"baseMn" : "E8",
-			"canCopy" : true,
+			"mn" : "C@",
+			"baseMn" : "@",
 			"isConst" : true,
-			"typeName" : "enum const CE8"
+			"typeName" : "lambda<> const"
+		},
+		{
+			"mn" : "f2",
+			"canCopy" : true,
+			"typeName" : "float2"
 		},
 		{
 			"mn" : "C@@",
@@ -17965,17 +18408,39 @@
 			"typeName" : "function<> const"
 		},
 		{
-			"mn" : "C@",
-			"baseMn" : "@",
+			"mn" : "CI?",
+			"baseMn" : "?",
+			"canCopy" : true,
 			"isConst" : true,
-			"typeName" : "lambda<> const"
+			"typeName" : "void? const implicit"
+		},
+		{
+			"mn" : "Cu8",
+			"baseMn" : "u8",
+			"canCopy" : true,
+			"isConst" : true,
+			"typeName" : "uint8 const"
+		},
+		{
+			"mn" : "Ci8",
+			"baseMn" : "i8",
+			"canCopy" : true,
+			"isConst" : true,
+			"typeName" : "int8 const"
+		},
+		{
+			"mn" : "CE8",
+			"baseMn" : "E8",
+			"canCopy" : true,
+			"isConst" : true,
+			"typeName" : "enum const E8"
 		},
 		{
 			"mn" : "CIs",
 			"baseMn" : "s",
 			"canCopy" : true,
 			"isConst" : true,
-			"typeName" : "string const !"
+			"typeName" : "string const implicit"
 		},
 		{
 			"mn" : "C_c",
@@ -17990,11 +18455,6 @@
 			"canCopy" : true,
 			"isConst" : true,
 			"typeName" : "float2 const"
-		},
-		{
-			"mn" : "f2",
-			"canCopy" : true,
-			"typeName" : "float2"
 		},
 		{
 			"mn" : "Cf3",
@@ -18108,25 +18568,29 @@
 		},
 		{
 			"mn" : "IA",
+			"isRef" : true,
 			"baseMn" : "A",
-			"typeName" : "array<> !"
+			"typeName" : "array implicit"
 		},
 		{
 			"mn" : "CIA",
+			"isRef" : true,
 			"baseMn" : "A",
 			"isConst" : true,
-			"typeName" : "array<> const !"
+			"typeName" : "array const implicit"
 		},
 		{
 			"mn" : "CIG",
+			"isRef" : true,
 			"baseMn" : "G",
 			"isConst" : true,
-			"typeName" : "iterator<> const !"
+			"typeName" : "iterator const implicit"
 		},
 		{
 			"mn" : "IG",
+			"isRef" : true,
 			"baseMn" : "G",
-			"typeName" : "iterator<> !"
+			"typeName" : "iterator implicit"
 		},
 		{
 			"mn" : "C*",
@@ -18144,85 +18608,150 @@
 		},
 		{
 			"mn" : "CIV",
+			"isRef" : true,
 			"baseMn" : "V",
 			"canCopy" : true,
 			"isConst" : true,
-			"typeName" : "variant<> const !"
+			"typeName" : "variant<> const implicit"
 		},
 		{
 			"mn" : "IV",
+			"isRef" : true,
 			"baseMn" : "V",
 			"canCopy" : true,
-			"typeName" : "variant<> !"
+			"typeName" : "variant<> implicit"
 		},
 		{
 			"mn" : "CA",
+			"isRef" : true,
 			"baseMn" : "A",
 			"isConst" : true,
-			"typeName" : "array<> const"
+			"typeName" : "array const"
 		},
 		{
 			"mn" : "C$",
+			"isRef" : true,
 			"baseMn" : "$",
 			"isConst" : true,
 			"typeName" : "block<> const"
 		},
 		{
 			"mn" : "IT",
+			"isRef" : true,
 			"baseMn" : "T",
-			"typeName" : "table<,> !"
+			"typeName" : "table implicit"
 		},
 		{
 			"mn" : "CIT",
+			"isRef" : true,
 			"baseMn" : "T",
 			"isConst" : true,
-			"typeName" : "table<,> const !"
+			"typeName" : "table const implicit"
 		},
 		{
 			"mn" : "CI1<v>?M",
 			"baseMn" : "1<v>?M",
 			"isConst" : true,
-			"typeName" : "void ? const !"
+			"typeName" : "smart_ptr<void> const implicit"
 		},
 		{
 			"mn" : "CI$",
+			"isRef" : true,
 			"baseMn" : "$",
 			"isConst" : true,
-			"typeName" : "block<> const !"
+			"typeName" : "block<> const implicit"
 		},
 		{
 			"mn" : "CI0<u3;u3>1<b>$",
+			"isRef" : true,
 			"baseMn" : "0<u3;u3>1<b>$",
 			"isConst" : true,
-			"typeName" : "block<(uint3; uint3):bool> const !"
+			"typeName" : "block<(uint3;uint3):bool> const implicit"
+		},
+		{
+			"mn" : "IH<$::dasvector`InferHistory>",
+			"isRef" : true,
+			"baseMn" : "H<$::dasvector`InferHistory>",
+			"typeName" : "$::dasvector`InferHistory implicit"
+		},
+		{
+			"mn" : "CI=H<$::dasvector`smart_ptr`MakeFieldDecl>",
+			"isRef" : true,
+			"baseMn" : "=H<$::dasvector`smart_ptr`MakeFieldDecl>",
+			"isConst" : true,
+			"typeName" : "$::dasvector`smart_ptr`MakeFieldDecl const implicit =const"
+		},
+		{
+			"mn" : "IH<math::float4x4>",
+			"isRef" : true,
+			"baseMn" : "H<math::float4x4>",
+			"canCopy" : true,
+			"typeName" : "math::float4x4 implicit",
+			"requirements" : [
+				"math"
+			]
+		},
+		{
+			"mn" : "I=H<$::dasvector`InferHistory>",
+			"isRef" : true,
+			"baseMn" : "=H<$::dasvector`InferHistory>",
+			"typeName" : "$::dasvector`InferHistory implicit =const"
+		},
+		{
+			"mn" : "I=H<$::dasvector`LineInfo>",
+			"isRef" : true,
+			"baseMn" : "=H<$::dasvector`LineInfo>",
+			"typeName" : "$::dasvector`LineInfo implicit =const"
+		},
+		{
+			"mn" : "CI[8]u",
+			"isRef" : true,
+			"baseMn" : "[8]u",
+			"canCopy" : true,
+			"isConst" : true,
+			"typeName" : "uint const[8] implicit"
 		},
 		{
 			"mn" : "CH<$::clock>",
 			"baseMn" : "H<$::clock>",
 			"canCopy" : true,
 			"isConst" : true,
-			"typeName" : "clock const"
+			"typeName" : "$::clock const"
+		},
+		{
+			"mn" : "&I1<H<ast::MakeFieldDecl>>?W",
+			"isRef" : true,
+			"baseMn" : "1<H<ast::MakeFieldDecl>>?W",
+			"typeName" : "smart_ptr<ast::MakeFieldDecl>& implicit",
+			"requirements" : [
+				"ast"
+			]
+		},
+		{
+			"mn" : "CI=H<$::dasvector`Error>",
+			"isRef" : true,
+			"baseMn" : "=H<$::dasvector`Error>",
+			"isConst" : true,
+			"typeName" : "$::dasvector`Error const implicit =const"
+		},
+		{
+			"mn" : "1<&H<$::das_string>>G",
+			"isRef" : true,
+			"typeName" : "iterator<$::das_string&>"
 		},
 		{
 			"mn" : "1<C&1<H<ast::Variable>>?W>G",
-			"typeName" : "iterator<Variable ? const &>"
+			"isRef" : true,
+			"typeName" : "iterator<smart_ptr<ast::Variable> const&>",
+			"requirements" : [
+				"ast"
+			]
 		},
 		{
-			"mn" : "IH<$::dasvector`InferHistory>",
-			"baseMn" : "H<$::dasvector`InferHistory>",
-			"typeName" : "dasvector`InferHistory !"
-		},
-		{
-			"mn" : "CIH<$::dasvector`InferHistory>",
-			"baseMn" : "H<$::dasvector`InferHistory>",
-			"isConst" : true,
-			"typeName" : "dasvector`InferHistory const !"
-		},
-		{
-			"mn" : "CIH<$::dasvector`smart_ptr`MakeStruct>",
-			"baseMn" : "H<$::dasvector`smart_ptr`MakeStruct>",
-			"isConst" : true,
-			"typeName" : "dasvector`smart_ptr`MakeStruct const !"
+			"mn" : "I=H<$::dasvector`TestObjectFoo>",
+			"isRef" : true,
+			"baseMn" : "=H<$::dasvector`TestObjectFoo>",
+			"typeName" : "$::dasvector`TestObjectFoo implicit =const"
 		},
 		{
 			"mn" : "Ci16",
@@ -18239,36 +18768,22 @@
 			"typeName" : "int64 const"
 		},
 		{
-			"mn" : "&I1<H<ast::MakeFieldDecl>>?W",
+			"mn" : "CI=H<$::dasvector`uint8>",
 			"isRef" : true,
-			"baseMn" : "1<H<ast::MakeFieldDecl>>?W",
-			"typeName" : "MakeFieldDecl ? & !"
-		},
-		{
-			"mn" : "IH<math::float4x4>",
-			"baseMn" : "H<math::float4x4>",
-			"canCopy" : true,
-			"typeName" : "float4x4 !",
-			"requirements" : [
-				"math"
-			]
-		},
-		{
-			"mn" : "CI[8]u",
-			"baseMn" : "[8]u",
-			"canCopy" : true,
+			"baseMn" : "=H<$::dasvector`uint8>",
 			"isConst" : true,
-			"typeName" : "uint[8] const !",
-			"requirements" : [
-				"strings"
-			]
+			"typeName" : "$::dasvector`uint8 const implicit =const"
 		},
 		{
 			"mn" : "CH<UnitTest::TestObjectFoo>",
+			"isRef" : true,
 			"baseMn" : "H<UnitTest::TestObjectFoo>",
 			"canCopy" : true,
 			"isConst" : true,
-			"typeName" : "TestObjectFoo const"
+			"typeName" : "UnitTest::TestObjectFoo const",
+			"requirements" : [
+				"UnitTest"
+			]
 		},
 		{
 			"mn" : "i16",
@@ -18282,147 +18797,171 @@
 		},
 		{
 			"mn" : "1<&1<H<ast::MakeStruct>>?W>G",
-			"typeName" : "iterator<MakeStruct ? &>"
-		},
-		{
-			"mn" : "1<H<rtti::LineInfo>>G",
-			"typeName" : "iterator<LineInfo>"
-		},
-		{
-			"mn" : "CIH<$::dasvector`pair`uint`uint>",
-			"baseMn" : "H<$::dasvector`pair`uint`uint>",
-			"isConst" : true,
-			"typeName" : "dasvector`pair`uint`uint const !"
+			"isRef" : true,
+			"typeName" : "iterator<smart_ptr<ast::MakeStruct>&>",
+			"requirements" : [
+				"ast"
+			]
 		},
 		{
 			"mn" : "1<&i>G",
-			"typeName" : "iterator<int &>"
+			"isRef" : true,
+			"typeName" : "iterator<int&>"
 		},
 		{
 			"mn" : "IH<$::dasvector`pair`uint`uint>",
+			"isRef" : true,
 			"baseMn" : "H<$::dasvector`pair`uint`uint>",
-			"typeName" : "dasvector`pair`uint`uint !"
-		},
-		{
-			"mn" : "CN<escapeString;namesAndDimensions;typeQualifiers;refAddresses;humanReadable;singleLine>t",
-			"baseMn" : "N<escapeString;namesAndDimensions;typeQualifiers;refAddresses;humanReadable;singleLine>t",
-			"canCopy" : true,
-			"isConst" : true,
-			"typeName" : "bitfield<escapeString; namesAndDimensions; typeQualifiers; refAddresses; humanReadable; singleLine> const"
+			"typeName" : "$::dasvector`pair`uint`uint implicit"
 		},
 		{
 			"mn" : "1<&1<H<ast::MakeFieldDecl>>?W>G",
-			"typeName" : "iterator<MakeFieldDecl ? &>"
+			"isRef" : true,
+			"typeName" : "iterator<smart_ptr<ast::MakeFieldDecl>&>",
+			"requirements" : [
+				"ast"
+			]
 		},
 		{
 			"mn" : "H<$::dasvector`InferHistory>",
-			"typeName" : "dasvector`InferHistory"
+			"isRef" : true,
+			"typeName" : "$::dasvector`InferHistory"
 		},
 		{
 			"mn" : "CI0<u64;u64>1<b>$",
+			"isRef" : true,
 			"baseMn" : "0<u64;u64>1<b>$",
 			"isConst" : true,
-			"typeName" : "block<(uint64; uint64):bool> const !"
-		},
-		{
-			"mn" : "1<CH<rtti::LineInfo>>G",
-			"typeName" : "iterator<LineInfo const>"
+			"typeName" : "block<(uint64;uint64):bool> const implicit"
 		},
 		{
 			"mn" : "IH<$::dasvector`smart_ptr`MakeStruct>",
+			"isRef" : true,
 			"baseMn" : "H<$::dasvector`smart_ptr`MakeStruct>",
-			"typeName" : "dasvector`smart_ptr`MakeStruct !"
-		},
-		{
-			"mn" : "1<H<UnitTest::TestObjectFoo>>G",
-			"typeName" : "iterator<TestObjectFoo>"
+			"typeName" : "$::dasvector`smart_ptr`MakeStruct implicit"
 		},
 		{
 			"mn" : "IH<$::dasvector`FieldDeclaration>",
+			"isRef" : true,
 			"baseMn" : "H<$::dasvector`FieldDeclaration>",
-			"typeName" : "dasvector`FieldDeclaration !"
+			"typeName" : "$::dasvector`FieldDeclaration implicit"
 		},
 		{
 			"mn" : "&I1<H<ast::TypeDecl>>?W",
 			"isRef" : true,
 			"baseMn" : "1<H<ast::TypeDecl>>?W",
-			"typeName" : "TypeDecl ? & !"
+			"typeName" : "smart_ptr<ast::TypeDecl>& implicit",
+			"requirements" : [
+				"ast"
+			]
 		},
 		{
 			"mn" : "CI1<i>?",
 			"baseMn" : "1<i>?",
 			"canCopy" : true,
 			"isConst" : true,
-			"typeName" : "int ? const !"
-		},
-		{
-			"mn" : "1<H<$::das_string>>G",
-			"typeName" : "iterator<das_string>"
-		},
-		{
-			"mn" : "CIH<$::dasvector`das_string>",
-			"baseMn" : "H<$::dasvector`das_string>",
-			"isConst" : true,
-			"typeName" : "dasvector`das_string const !"
-		},
-		{
-			"mn" : "CIH<$::dasvector`uint8>",
-			"baseMn" : "H<$::dasvector`uint8>",
-			"isConst" : true,
-			"typeName" : "dasvector`uint8 const !"
+			"typeName" : "int? const implicit"
 		},
 		{
 			"mn" : "&I1<H<ast::MakeStruct>>?W",
 			"isRef" : true,
 			"baseMn" : "1<H<ast::MakeStruct>>?W",
-			"typeName" : "MakeStruct ? & !"
+			"typeName" : "smart_ptr<ast::MakeStruct>& implicit",
+			"requirements" : [
+				"ast"
+			]
 		},
 		{
 			"mn" : "CI0<i;i>1<b>$",
+			"isRef" : true,
 			"baseMn" : "0<i;i>1<b>$",
 			"isConst" : true,
-			"typeName" : "block<(int; int):bool> const !"
-		},
-		{
-			"mn" : "1<CH<$::das_string>>G",
-			"typeName" : "iterator<das_string const>"
+			"typeName" : "block<(int;int):bool> const implicit"
 		},
 		{
 			"mn" : "H<$::dasvector`TestObjectFoo>",
-			"typeName" : "dasvector`TestObjectFoo"
+			"isRef" : true,
+			"typeName" : "$::dasvector`TestObjectFoo"
 		},
 		{
 			"mn" : "IH<$::dasvector`das_string>",
+			"isRef" : true,
 			"baseMn" : "H<$::dasvector`das_string>",
-			"typeName" : "dasvector`das_string !"
+			"typeName" : "$::dasvector`das_string implicit"
 		},
 		{
 			"mn" : "&I1<v>?M",
 			"isRef" : true,
 			"baseMn" : "1<v>?M",
-			"typeName" : "void ? & !"
+			"typeName" : "smart_ptr<void>& implicit"
+		},
+		{
+			"mn" : "1<C&H<rtti::LineInfo>>G",
+			"isRef" : true,
+			"typeName" : "iterator<rtti::LineInfo const&>",
+			"requirements" : [
+				"rtti"
+			]
 		},
 		{
 			"mn" : "H<math::float4x4>",
+			"isRef" : true,
 			"canCopy" : true,
-			"typeName" : "float4x4",
+			"typeName" : "math::float4x4",
 			"requirements" : [
 				"math"
 			]
 		},
 		{
-			"mn" : "1<CH<rtti::Error>>G",
-			"typeName" : "iterator<Error const>"
+			"mn" : "I=H<$::dasvector`int>",
+			"isRef" : true,
+			"baseMn" : "=H<$::dasvector`int>",
+			"typeName" : "$::dasvector`int implicit =const"
 		},
 		{
 			"mn" : "CIH<math::float4x4>",
+			"isRef" : true,
 			"baseMn" : "H<math::float4x4>",
 			"canCopy" : true,
 			"isConst" : true,
-			"typeName" : "float4x4 const !",
+			"typeName" : "math::float4x4 const implicit",
 			"requirements" : [
 				"math"
 			]
+		},
+		{
+			"mn" : "CI=H<$::dasvector`InferHistory>",
+			"isRef" : true,
+			"baseMn" : "=H<$::dasvector`InferHistory>",
+			"isConst" : true,
+			"typeName" : "$::dasvector`InferHistory const implicit =const"
+		},
+		{
+			"mn" : "CI=H<$::dasvector`int>",
+			"isRef" : true,
+			"baseMn" : "=H<$::dasvector`int>",
+			"isConst" : true,
+			"typeName" : "$::dasvector`int const implicit =const"
+		},
+		{
+			"mn" : "CI=H<$::dasvector`smart_ptr`MakeStruct>",
+			"isRef" : true,
+			"baseMn" : "=H<$::dasvector`smart_ptr`MakeStruct>",
+			"isConst" : true,
+			"typeName" : "$::dasvector`smart_ptr`MakeStruct const implicit =const"
+		},
+		{
+			"mn" : "I=H<$::dasvector`smart_ptr`TypeDecl>",
+			"isRef" : true,
+			"baseMn" : "=H<$::dasvector`smart_ptr`TypeDecl>",
+			"typeName" : "$::dasvector`smart_ptr`TypeDecl implicit =const"
+		},
+		{
+			"mn" : "CI=H<$::dasvector`EnumEntry>",
+			"isRef" : true,
+			"baseMn" : "=H<$::dasvector`EnumEntry>",
+			"isConst" : true,
+			"typeName" : "$::dasvector`EnumEntry const implicit =const"
 		},
 		{
 			"mn" : "u16",
@@ -18435,80 +18974,121 @@
 			"typeName" : "uint64"
 		},
 		{
-			"mn" : "1<C&i>G",
-			"typeName" : "iterator<int const &>"
+			"mn" : "1<&H<ast::FieldDeclaration>>G",
+			"isRef" : true,
+			"typeName" : "iterator<ast::FieldDeclaration&>",
+			"requirements" : [
+				"ast"
+			]
 		},
 		{
-			"mn" : "1<H<ast::CaptureEntry>>G",
-			"typeName" : "iterator<CaptureEntry>"
+			"mn" : "I=H<$::dasvector`FieldDeclaration>",
+			"isRef" : true,
+			"baseMn" : "=H<$::dasvector`FieldDeclaration>",
+			"typeName" : "$::dasvector`FieldDeclaration implicit =const"
+		},
+		{
+			"mn" : "CI=H<$::dasvector`CaptureEntry>",
+			"isRef" : true,
+			"baseMn" : "=H<$::dasvector`CaptureEntry>",
+			"isConst" : true,
+			"typeName" : "$::dasvector`CaptureEntry const implicit =const"
+		},
+		{
+			"mn" : "I=H<$::dasvector`CaptureEntry>",
+			"isRef" : true,
+			"baseMn" : "=H<$::dasvector`CaptureEntry>",
+			"typeName" : "$::dasvector`CaptureEntry implicit =const"
+		},
+		{
+			"mn" : "1<C&i>G",
+			"isRef" : true,
+			"typeName" : "iterator<int const&>"
 		},
 		{
 			"mn" : "CI0<u;u>1<b>$",
+			"isRef" : true,
 			"baseMn" : "0<u;u>1<b>$",
 			"isConst" : true,
-			"typeName" : "block<(uint; uint):bool> const !"
+			"typeName" : "block<(uint;uint):bool> const implicit"
 		},
 		{
 			"mn" : "CI1<u64>?",
 			"baseMn" : "1<u64>?",
 			"canCopy" : true,
 			"isConst" : true,
-			"typeName" : "uint64 ? const !"
-		},
-		{
-			"mn" : "1<H<ast::InferHistory>>G",
-			"typeName" : "iterator<InferHistory>"
+			"typeName" : "uint64? const implicit"
 		},
 		{
 			"mn" : "CI1<u>?",
 			"baseMn" : "1<u>?",
 			"canCopy" : true,
 			"isConst" : true,
-			"typeName" : "uint ? const !"
+			"typeName" : "uint? const implicit"
 		},
 		{
 			"mn" : "C0<u;u>U",
+			"isRef" : true,
 			"baseMn" : "0<u;u>U",
 			"canCopy" : true,
 			"isConst" : true,
-			"typeName" : "tuple<uint; uint> const"
+			"typeName" : "tuple<uint;uint> const"
 		},
 		{
 			"mn" : "1<&1<H<ast::Expression>>?W>G",
-			"typeName" : "iterator<Expression ? &>"
+			"isRef" : true,
+			"typeName" : "iterator<smart_ptr<ast::Expression>&>",
+			"requirements" : [
+				"ast"
+			]
 		},
 		{
 			"mn" : "CI0<z;z>1<b>$",
+			"isRef" : true,
 			"baseMn" : "0<z;z>1<b>$",
 			"isConst" : true,
-			"typeName" : "block<(urange; urange):bool> const !"
+			"typeName" : "block<(urange;urange):bool> const implicit"
+		},
+		{
+			"mn" : "1<C&H<ast::EnumEntry>>G",
+			"isRef" : true,
+			"typeName" : "iterator<ast::EnumEntry const&>",
+			"requirements" : [
+				"ast"
+			]
 		},
 		{
 			"mn" : "IH<$::dasvector`Error>",
+			"isRef" : true,
 			"baseMn" : "H<$::dasvector`Error>",
-			"typeName" : "dasvector`Error !"
+			"typeName" : "$::dasvector`Error implicit"
 		},
 		{
-			"mn" : "CIH<$::dasvector`EnumEntry>",
-			"baseMn" : "H<$::dasvector`EnumEntry>",
-			"isConst" : true,
-			"typeName" : "dasvector`EnumEntry const !"
+			"mn" : "1<C&0<u;u>U>G",
+			"isRef" : true,
+			"typeName" : "iterator<tuple<uint;uint> const&>"
 		},
 		{
 			"mn" : "CI0<i4;i4>1<b>$",
+			"isRef" : true,
 			"baseMn" : "0<i4;i4>1<b>$",
 			"isConst" : true,
-			"typeName" : "block<(int4; int4):bool> const !"
+			"typeName" : "block<(int4;int4):bool> const implicit"
 		},
 		{
-			"mn" : "1<CH<UnitTest::TestObjectFoo>>G",
-			"typeName" : "iterator<TestObjectFoo const>"
+			"mn" : "1<C&H<rtti::Error>>G",
+			"isRef" : true,
+			"typeName" : "iterator<rtti::Error const&>",
+			"requirements" : [
+				"rtti"
+			]
 		},
 		{
 			"mn" : "CI0<i64;i64>1<b>$",
+			"isRef" : true,
 			"baseMn" : "0<i64;i64>1<b>$",
 			"isConst" : true,
-			"typeName" : "block<(int64; int64):bool> const !"
+			"typeName" : "block<(int64;int64):bool> const implicit"
 		},
 		{
 			"mn" : "Cu16",
@@ -18526,202 +19106,296 @@
 		},
 		{
 			"mn" : "IH<$::dasvector`TestObjectFoo>",
+			"isRef" : true,
 			"baseMn" : "H<$::dasvector`TestObjectFoo>",
-			"typeName" : "dasvector`TestObjectFoo !"
+			"typeName" : "$::dasvector`TestObjectFoo implicit"
 		},
 		{
 			"mn" : "1<C&1<H<ast::Expression>>?W>G",
-			"typeName" : "iterator<Expression ? const &>"
+			"isRef" : true,
+			"typeName" : "iterator<smart_ptr<ast::Expression> const&>",
+			"requirements" : [
+				"ast"
+			]
 		},
 		{
 			"mn" : "IH<strings::StringBuilderWriter>",
+			"isRef" : true,
 			"baseMn" : "H<strings::StringBuilderWriter>",
-			"typeName" : "StringBuilderWriter !",
+			"typeName" : "strings::StringBuilderWriter implicit",
 			"requirements" : [
 				"strings"
 			]
 		},
 		{
 			"mn" : "1<C&1<H<ast::MakeFieldDecl>>?W>G",
-			"typeName" : "iterator<MakeFieldDecl ? const &>"
+			"isRef" : true,
+			"typeName" : "iterator<smart_ptr<ast::MakeFieldDecl> const&>",
+			"requirements" : [
+				"ast"
+			]
+		},
+		{
+			"mn" : "1<&H<ast::EnumEntry>>G",
+			"isRef" : true,
+			"typeName" : "iterator<ast::EnumEntry&>",
+			"requirements" : [
+				"ast"
+			]
 		},
 		{
 			"mn" : "CH<rtti::LineInfo>",
+			"isRef" : true,
 			"baseMn" : "H<rtti::LineInfo>",
 			"canCopy" : true,
 			"isConst" : true,
-			"typeName" : "LineInfo const"
+			"typeName" : "rtti::LineInfo const",
+			"requirements" : [
+				"rtti"
+			]
 		},
 		{
 			"mn" : "&I1<H<ast::Expression>>?W",
 			"isRef" : true,
 			"baseMn" : "1<H<ast::Expression>>?W",
-			"typeName" : "Expression ? & !"
-		},
-		{
-			"mn" : "CIH<$::dasvector`LineInfo>",
-			"baseMn" : "H<$::dasvector`LineInfo>",
-			"isConst" : true,
-			"typeName" : "dasvector`LineInfo const !"
+			"typeName" : "smart_ptr<ast::Expression>& implicit",
+			"requirements" : [
+				"ast"
+			]
 		},
 		{
 			"mn" : "IH<$::dasvector`LineInfo>",
+			"isRef" : true,
 			"baseMn" : "H<$::dasvector`LineInfo>",
-			"typeName" : "dasvector`LineInfo !"
+			"typeName" : "$::dasvector`LineInfo implicit"
 		},
 		{
 			"mn" : "CI1<i64>?",
 			"baseMn" : "1<i64>?",
 			"canCopy" : true,
 			"isConst" : true,
-			"typeName" : "int64 ? const !"
+			"typeName" : "int64? const implicit"
 		},
 		{
 			"mn" : "CI0<u2;u2>1<b>$",
+			"isRef" : true,
 			"baseMn" : "0<u2;u2>1<b>$",
 			"isConst" : true,
-			"typeName" : "block<(uint2; uint2):bool> const !"
+			"typeName" : "block<(uint2;uint2):bool> const implicit"
+		},
+		{
+			"mn" : "I=H<$::dasvector`das_string>",
+			"isRef" : true,
+			"baseMn" : "=H<$::dasvector`das_string>",
+			"typeName" : "$::dasvector`das_string implicit =const"
 		},
 		{
 			"mn" : "CIH<$::das_string>",
+			"isRef" : true,
 			"baseMn" : "H<$::das_string>",
 			"isConst" : true,
-			"typeName" : "das_string const !"
+			"typeName" : "$::das_string const implicit"
 		},
 		{
 			"mn" : "CI0<i3;i3>1<b>$",
+			"isRef" : true,
 			"baseMn" : "0<i3;i3>1<b>$",
 			"isConst" : true,
-			"typeName" : "block<(int3; int3):bool> const !"
+			"typeName" : "block<(int3;int3):bool> const implicit"
+		},
+		{
+			"mn" : "1<C&H<ast::CaptureEntry>>G",
+			"isRef" : true,
+			"typeName" : "iterator<ast::CaptureEntry const&>",
+			"requirements" : [
+				"ast"
+			]
 		},
 		{
 			"mn" : "&I1<H<ast::Variable>>?W",
 			"isRef" : true,
 			"baseMn" : "1<H<ast::Variable>>?W",
-			"typeName" : "Variable ? & !"
-		},
-		{
-			"mn" : "IH<$::dasvector`smart_ptr`TypeDecl>",
-			"baseMn" : "H<$::dasvector`smart_ptr`TypeDecl>",
-			"typeName" : "dasvector`smart_ptr`TypeDecl !"
-		},
-		{
-			"mn" : "CI0<d;d>1<b>$",
-			"baseMn" : "0<d;d>1<b>$",
-			"isConst" : true,
-			"typeName" : "block<(double; double):bool> const !"
-		},
-		{
-			"mn" : "CI1<u8>A",
-			"baseMn" : "1<u8>A",
-			"isConst" : true,
-			"typeName" : "array<uint8> const !",
+			"typeName" : "smart_ptr<ast::Variable>& implicit",
 			"requirements" : [
-				"strings"
+				"ast"
 			]
 		},
 		{
+			"mn" : "IH<$::dasvector`smart_ptr`TypeDecl>",
+			"isRef" : true,
+			"baseMn" : "H<$::dasvector`smart_ptr`TypeDecl>",
+			"typeName" : "$::dasvector`smart_ptr`TypeDecl implicit"
+		},
+		{
+			"mn" : "1<C&H<ast::InferHistory>>G",
+			"isRef" : true,
+			"typeName" : "iterator<ast::InferHistory const&>",
+			"requirements" : [
+				"ast"
+			]
+		},
+		{
+			"mn" : "CI0<d;d>1<b>$",
+			"isRef" : true,
+			"baseMn" : "0<d;d>1<b>$",
+			"isConst" : true,
+			"typeName" : "block<(double;double):bool> const implicit"
+		},
+		{
+			"mn" : "CI1<u8>A",
+			"isRef" : true,
+			"baseMn" : "1<u8>A",
+			"isConst" : true,
+			"typeName" : "array<uint8> const implicit"
+		},
+		{
+			"mn" : "I=H<$::dasvector`smart_ptr`MakeStruct>",
+			"isRef" : true,
+			"baseMn" : "=H<$::dasvector`smart_ptr`MakeStruct>",
+			"typeName" : "$::dasvector`smart_ptr`MakeStruct implicit =const"
+		},
+		{
 			"mn" : "1<C&1<H<ast::MakeStruct>>?W>G",
-			"typeName" : "iterator<MakeStruct ? const &>"
+			"isRef" : true,
+			"typeName" : "iterator<smart_ptr<ast::MakeStruct> const&>",
+			"requirements" : [
+				"ast"
+			]
 		},
 		{
 			"mn" : "1<&u8>G",
-			"typeName" : "iterator<uint8 &>"
+			"isRef" : true,
+			"typeName" : "iterator<uint8&>"
 		},
 		{
 			"mn" : "H<$::dasvector`pair`uint`uint>",
-			"typeName" : "dasvector`pair`uint`uint"
+			"isRef" : true,
+			"typeName" : "$::dasvector`pair`uint`uint"
 		},
 		{
 			"mn" : "CI0<u4;u4>1<b>$",
+			"isRef" : true,
 			"baseMn" : "0<u4;u4>1<b>$",
 			"isConst" : true,
-			"typeName" : "block<(uint4; uint4):bool> const !"
+			"typeName" : "block<(uint4;uint4):bool> const implicit"
 		},
 		{
-			"mn" : "1<C0<u;u>U>G",
-			"typeName" : "iterator<tuple<uint; uint> const>"
+			"mn" : "I=H<$::dasvector`smart_ptr`Expression>",
+			"isRef" : true,
+			"baseMn" : "=H<$::dasvector`smart_ptr`Expression>",
+			"typeName" : "$::dasvector`smart_ptr`Expression implicit =const"
 		},
 		{
-			"mn" : "1<H<rtti::Error>>G",
-			"typeName" : "iterator<Error>"
-		},
-		{
-			"mn" : "CIH<$::dasvector`TestObjectFoo>",
-			"baseMn" : "H<$::dasvector`TestObjectFoo>",
-			"isConst" : true,
-			"typeName" : "dasvector`TestObjectFoo const !"
+			"mn" : "1<&0<u;u>U>G",
+			"isRef" : true,
+			"typeName" : "iterator<tuple<uint;uint>&>"
 		},
 		{
 			"mn" : "0<u;u>U",
+			"isRef" : true,
 			"canCopy" : true,
-			"typeName" : "tuple<uint; uint>"
+			"typeName" : "tuple<uint;uint>"
+		},
+		{
+			"mn" : "CY<print_flags>N<escapeString;namesAndDimensions;typeQualifiers;refAddresses;humanReadable;singleLine>t",
+			"baseMn" : "Y<print_flags>N<escapeString;namesAndDimensions;typeQualifiers;refAddresses;humanReadable;singleLine>t",
+			"canCopy" : true,
+			"isConst" : true,
+			"typeName" : "bitfield<escapeString;namesAndDimensions;typeQualifiers;refAddresses;humanReadable;singleLine> aka print_flags const"
 		},
 		{
 			"mn" : "&Ii64",
 			"isRef" : true,
 			"baseMn" : "i64",
 			"canCopy" : true,
-			"typeName" : "int64 & !"
+			"typeName" : "int64& implicit"
 		},
 		{
 			"mn" : "H<math::float3x3>",
+			"isRef" : true,
 			"canCopy" : true,
-			"typeName" : "float3x3",
+			"typeName" : "math::float3x3",
 			"requirements" : [
 				"math"
 			]
 		},
 		{
 			"mn" : "H<math::float3x4>",
+			"isRef" : true,
 			"canCopy" : true,
-			"typeName" : "float3x4",
+			"typeName" : "math::float3x4",
 			"requirements" : [
 				"math"
 			]
 		},
 		{
-			"mn" : "CIH<$::dasvector`smart_ptr`MakeFieldDecl>",
-			"baseMn" : "H<$::dasvector`smart_ptr`MakeFieldDecl>",
-			"isConst" : true,
-			"typeName" : "dasvector`smart_ptr`MakeFieldDecl const !"
+			"mn" : "I=H<$::dasvector`smart_ptr`Variable>",
+			"isRef" : true,
+			"baseMn" : "=H<$::dasvector`smart_ptr`Variable>",
+			"typeName" : "$::dasvector`smart_ptr`Variable implicit =const"
+		},
+		{
+			"mn" : "I=H<$::dasvector`pair`uint`uint>",
+			"isRef" : true,
+			"baseMn" : "=H<$::dasvector`pair`uint`uint>",
+			"typeName" : "$::dasvector`pair`uint`uint implicit =const"
 		},
 		{
 			"mn" : "1<C&1<H<ast::TypeDecl>>?W>G",
-			"typeName" : "iterator<TypeDecl ? const &>"
-		},
-		{
-			"mn" : "1<CH<ast::CaptureEntry>>G",
-			"typeName" : "iterator<CaptureEntry const>"
+			"isRef" : true,
+			"typeName" : "iterator<smart_ptr<ast::TypeDecl> const&>",
+			"requirements" : [
+				"ast"
+			]
 		},
 		{
 			"mn" : "H<UnitTest::TestObjectFoo>",
+			"isRef" : true,
 			"canCopy" : true,
-			"typeName" : "TestObjectFoo"
+			"typeName" : "UnitTest::TestObjectFoo",
+			"requirements" : [
+				"UnitTest"
+			]
 		},
 		{
-			"mn" : "1<H<ast::FieldDeclaration>>G",
-			"typeName" : "iterator<FieldDeclaration>"
+			"mn" : "CI=H<$::dasvector`smart_ptr`TypeDecl>",
+			"isRef" : true,
+			"baseMn" : "=H<$::dasvector`smart_ptr`TypeDecl>",
+			"isConst" : true,
+			"typeName" : "$::dasvector`smart_ptr`TypeDecl const implicit =const"
 		},
 		{
 			"mn" : "IH<$::dasvector`smart_ptr`MakeFieldDecl>",
+			"isRef" : true,
 			"baseMn" : "H<$::dasvector`smart_ptr`MakeFieldDecl>",
-			"typeName" : "dasvector`smart_ptr`MakeFieldDecl !"
+			"typeName" : "$::dasvector`smart_ptr`MakeFieldDecl implicit"
 		},
 		{
 			"mn" : "IH<math::float3x4>",
+			"isRef" : true,
 			"baseMn" : "H<math::float3x4>",
 			"canCopy" : true,
-			"typeName" : "float3x4 !",
+			"typeName" : "math::float3x4 implicit",
+			"requirements" : [
+				"math"
+			]
+		},
+		{
+			"mn" : "IH<math::float3x3>",
+			"isRef" : true,
+			"baseMn" : "H<math::float3x3>",
+			"canCopy" : true,
+			"typeName" : "math::float3x3 implicit",
 			"requirements" : [
 				"math"
 			]
 		},
 		{
 			"mn" : "CI0<r;r>1<b>$",
+			"isRef" : true,
 			"baseMn" : "0<r;r>1<b>$",
 			"isConst" : true,
-			"typeName" : "block<(range; range):bool> const !"
+			"typeName" : "block<(range;range):bool> const implicit"
 		},
 		{
 			"mn" : "b",
@@ -18769,55 +19443,6 @@
 			"typeName" : "range"
 		},
 		{
-			"mn" : "&If",
-			"isRef" : true,
-			"baseMn" : "f",
-			"canCopy" : true,
-			"typeName" : "float & !"
-		},
-		{
-			"mn" : "&Ib",
-			"isRef" : true,
-			"baseMn" : "b",
-			"canCopy" : true,
-			"typeName" : "bool & !"
-		},
-		{
-			"mn" : "&Ii",
-			"isRef" : true,
-			"baseMn" : "i",
-			"canCopy" : true,
-			"typeName" : "int & !"
-		},
-		{
-			"mn" : "&Iu",
-			"isRef" : true,
-			"baseMn" : "u",
-			"canCopy" : true,
-			"typeName" : "uint & !"
-		},
-		{
-			"mn" : "&It",
-			"isRef" : true,
-			"baseMn" : "t",
-			"canCopy" : true,
-			"typeName" : "bitfield & !"
-		},
-		{
-			"mn" : "&Id",
-			"isRef" : true,
-			"baseMn" : "d",
-			"canCopy" : true,
-			"typeName" : "double & !"
-		},
-		{
-			"mn" : "&Is",
-			"isRef" : true,
-			"baseMn" : "s",
-			"canCopy" : true,
-			"typeName" : "string & !"
-		},
-		{
 			"mn" : "z",
 			"canCopy" : true,
 			"typeName" : "urange"
@@ -18827,361 +19452,492 @@
 			"isRef" : true,
 			"baseMn" : "1<v>?M",
 			"isConst" : true,
-			"typeName" : "void ? const & !"
+			"typeName" : "smart_ptr<void> const& implicit"
 		},
 		{
 			"mn" : "?",
 			"canCopy" : true,
-			"typeName" : " ?"
+			"typeName" : "void?"
+		},
+		{
+			"mn" : "CI0<s;s>1<b>$",
+			"isRef" : true,
+			"baseMn" : "0<s;s>1<b>$",
+			"isConst" : true,
+			"typeName" : "block<(string;string):bool> const implicit"
+		},
+		{
+			"mn" : "CI=H<$::dasvector`smart_ptr`Expression>",
+			"isRef" : true,
+			"baseMn" : "=H<$::dasvector`smart_ptr`Expression>",
+			"isConst" : true,
+			"typeName" : "$::dasvector`smart_ptr`Expression const implicit =const"
+		},
+		{
+			"mn" : "CI=H<$::dasvector`TestObjectFoo>",
+			"isRef" : true,
+			"baseMn" : "=H<$::dasvector`TestObjectFoo>",
+			"isConst" : true,
+			"typeName" : "$::dasvector`TestObjectFoo const implicit =const"
+		},
+		{
+			"mn" : "&If",
+			"isRef" : true,
+			"baseMn" : "f",
+			"canCopy" : true,
+			"typeName" : "float& implicit"
+		},
+		{
+			"mn" : "&Ib",
+			"isRef" : true,
+			"baseMn" : "b",
+			"canCopy" : true,
+			"typeName" : "bool& implicit"
+		},
+		{
+			"mn" : "&Ii",
+			"isRef" : true,
+			"baseMn" : "i",
+			"canCopy" : true,
+			"typeName" : "int& implicit"
+		},
+		{
+			"mn" : "&Iu",
+			"isRef" : true,
+			"baseMn" : "u",
+			"canCopy" : true,
+			"typeName" : "uint& implicit"
+		},
+		{
+			"mn" : "&It",
+			"isRef" : true,
+			"baseMn" : "t",
+			"canCopy" : true,
+			"typeName" : "bitfield& implicit"
+		},
+		{
+			"mn" : "&Id",
+			"isRef" : true,
+			"baseMn" : "d",
+			"canCopy" : true,
+			"typeName" : "double& implicit"
+		},
+		{
+			"mn" : "&Is",
+			"isRef" : true,
+			"baseMn" : "s",
+			"canCopy" : true,
+			"typeName" : "string& implicit"
 		},
 		{
 			"mn" : "&I?",
 			"isRef" : true,
 			"baseMn" : "?",
 			"canCopy" : true,
-			"typeName" : " ? & !"
-		},
-		{
-			"mn" : "CI0<f2;f2>1<b>$",
-			"baseMn" : "0<f2;f2>1<b>$",
-			"isConst" : true,
-			"typeName" : "block<(float2; float2):bool> const !"
+			"typeName" : "void?& implicit"
 		},
 		{
 			"mn" : "CI0<f3;f3>1<b>$",
+			"isRef" : true,
 			"baseMn" : "0<f3;f3>1<b>$",
 			"isConst" : true,
-			"typeName" : "block<(float3; float3):bool> const !"
+			"typeName" : "block<(float3;float3):bool> const implicit"
 		},
 		{
-			"mn" : "CI0<s;s>1<b>$",
-			"baseMn" : "0<s;s>1<b>$",
+			"mn" : "CI0<f2;f2>1<b>$",
+			"isRef" : true,
+			"baseMn" : "0<f2;f2>1<b>$",
 			"isConst" : true,
-			"typeName" : "block<(string; string):bool> const !"
+			"typeName" : "block<(float2;float2):bool> const implicit"
 		},
 		{
-			"mn" : "CIH<$::dasvector`smart_ptr`TypeDecl>",
-			"baseMn" : "H<$::dasvector`smart_ptr`TypeDecl>",
+			"mn" : "CI=H<$::dasvector`FieldDeclaration>",
+			"isRef" : true,
+			"baseMn" : "=H<$::dasvector`FieldDeclaration>",
 			"isConst" : true,
-			"typeName" : "dasvector`smart_ptr`TypeDecl const !"
-		},
-		{
-			"mn" : "CIH<$::dasvector`smart_ptr`Variable>",
-			"baseMn" : "H<$::dasvector`smart_ptr`Variable>",
-			"isConst" : true,
-			"typeName" : "dasvector`smart_ptr`Variable const !"
+			"typeName" : "$::dasvector`FieldDeclaration const implicit =const"
 		},
 		{
 			"mn" : "1<C&u8>G",
-			"typeName" : "iterator<uint8 const &>"
+			"isRef" : true,
+			"typeName" : "iterator<uint8 const&>"
 		},
 		{
-			"mn" : "CIH<math::float3x4>",
-			"baseMn" : "H<math::float3x4>",
-			"canCopy" : true,
-			"isConst" : true,
-			"typeName" : "float3x4 const !",
+			"mn" : "1<&H<ast::CaptureEntry>>G",
+			"isRef" : true,
+			"typeName" : "iterator<ast::CaptureEntry&>",
 			"requirements" : [
-				"math"
+				"ast"
 			]
 		},
 		{
-			"mn" : "IH<math::float3x3>",
-			"baseMn" : "H<math::float3x3>",
+			"mn" : "I=H<$::dasvector`EnumEntry>",
+			"isRef" : true,
+			"baseMn" : "=H<$::dasvector`EnumEntry>",
+			"typeName" : "$::dasvector`EnumEntry implicit =const"
+		},
+		{
+			"mn" : "CIH<math::float3x4>",
+			"isRef" : true,
+			"baseMn" : "H<math::float3x4>",
 			"canCopy" : true,
-			"typeName" : "float3x3 !",
+			"isConst" : true,
+			"typeName" : "math::float3x4 const implicit",
 			"requirements" : [
 				"math"
 			]
 		},
 		{
 			"mn" : "CIH<math::float3x3>",
+			"isRef" : true,
 			"baseMn" : "H<math::float3x3>",
 			"canCopy" : true,
 			"isConst" : true,
-			"typeName" : "float3x3 const !",
+			"typeName" : "math::float3x3 const implicit",
 			"requirements" : [
 				"math"
 			]
 		},
 		{
-			"mn" : "1<0<u;u>U>G",
-			"typeName" : "iterator<tuple<uint; uint>>"
+			"mn" : "1<C&H<UnitTest::TestObjectFoo>>G",
+			"isRef" : true,
+			"typeName" : "iterator<UnitTest::TestObjectFoo const&>",
+			"requirements" : [
+				"UnitTest"
+			]
 		},
 		{
 			"mn" : "CI0<f;f>1<b>$",
+			"isRef" : true,
 			"baseMn" : "0<f;f>1<b>$",
 			"isConst" : true,
-			"typeName" : "block<(float; float):bool> const !"
+			"typeName" : "block<(float;float):bool> const implicit"
 		},
 		{
 			"mn" : "IH<$::dasvector`CaptureEntry>",
+			"isRef" : true,
 			"baseMn" : "H<$::dasvector`CaptureEntry>",
-			"typeName" : "dasvector`CaptureEntry !"
+			"typeName" : "$::dasvector`CaptureEntry implicit"
 		},
 		{
-			"mn" : "CIH<$::dasvector`int>",
-			"baseMn" : "H<$::dasvector`int>",
+			"mn" : "CI=H<$::dasvector`LineInfo>",
+			"isRef" : true,
+			"baseMn" : "=H<$::dasvector`LineInfo>",
 			"isConst" : true,
-			"typeName" : "dasvector`int const !"
+			"typeName" : "$::dasvector`LineInfo const implicit =const"
+		},
+		{
+			"mn" : "1<&H<rtti::LineInfo>>G",
+			"isRef" : true,
+			"typeName" : "iterator<rtti::LineInfo&>",
+			"requirements" : [
+				"rtti"
+			]
 		},
 		{
 			"mn" : "CH<ast::InferHistory>",
+			"isRef" : true,
 			"baseMn" : "H<ast::InferHistory>",
 			"canCopy" : true,
 			"isConst" : true,
-			"typeName" : "InferHistory const"
+			"typeName" : "ast::InferHistory const",
+			"requirements" : [
+				"ast"
+			]
 		},
 		{
 			"mn" : "CI1<d>?",
 			"baseMn" : "1<d>?",
 			"canCopy" : true,
 			"isConst" : true,
-			"typeName" : "double ? const !"
+			"typeName" : "double? const implicit"
 		},
 		{
 			"mn" : "IH<$::dasvector`smart_ptr`Expression>",
+			"isRef" : true,
 			"baseMn" : "H<$::dasvector`smart_ptr`Expression>",
-			"typeName" : "dasvector`smart_ptr`Expression !"
+			"typeName" : "$::dasvector`smart_ptr`Expression implicit"
 		},
 		{
-			"mn" : "1<CH<ast::FieldDeclaration>>G",
-			"typeName" : "iterator<FieldDeclaration const>"
-		},
-		{
-			"mn" : "1<&1<H<ast::Variable>>?W>G",
-			"typeName" : "iterator<Variable ? &>"
-		},
-		{
-			"mn" : "IH<$::dasvector`uint8>",
-			"baseMn" : "H<$::dasvector`uint8>",
-			"typeName" : "dasvector`uint8 !"
-		},
-		{
-			"mn" : "1<CH<ast::InferHistory>>G",
-			"typeName" : "iterator<InferHistory const>"
-		},
-		{
-			"mn" : "CI0<H<strings::StringBuilderWriter>>1<v>$",
-			"baseMn" : "0<H<strings::StringBuilderWriter>>1<v>$",
-			"isConst" : true,
-			"typeName" : "block<(StringBuilderWriter):void> const !",
+			"mn" : "1<&H<ast::InferHistory>>G",
+			"isRef" : true,
+			"typeName" : "iterator<ast::InferHistory&>",
 			"requirements" : [
-				"strings"
+				"ast"
 			]
 		},
 		{
+			"mn" : "CI=H<$::dasvector`smart_ptr`Variable>",
+			"isRef" : true,
+			"baseMn" : "=H<$::dasvector`smart_ptr`Variable>",
+			"isConst" : true,
+			"typeName" : "$::dasvector`smart_ptr`Variable const implicit =const"
+		},
+		{
+			"mn" : "1<&1<H<ast::Variable>>?W>G",
+			"isRef" : true,
+			"typeName" : "iterator<smart_ptr<ast::Variable>&>",
+			"requirements" : [
+				"ast"
+			]
+		},
+		{
+			"mn" : "IH<$::dasvector`uint8>",
+			"isRef" : true,
+			"baseMn" : "H<$::dasvector`uint8>",
+			"typeName" : "$::dasvector`uint8 implicit"
+		},
+		{
+			"mn" : "1<&H<rtti::Error>>G",
+			"isRef" : true,
+			"typeName" : "iterator<rtti::Error&>",
+			"requirements" : [
+				"rtti"
+			]
+		},
+		{
+			"mn" : "CI0<H<strings::StringBuilderWriter>>1<v>$",
+			"isRef" : true,
+			"baseMn" : "0<H<strings::StringBuilderWriter>>1<v>$",
+			"isConst" : true,
+			"typeName" : "block<(strings::StringBuilderWriter):void> const implicit"
+		},
+		{
 			"mn" : "H<ast::InferHistory>",
+			"isRef" : true,
 			"canCopy" : true,
-			"typeName" : "InferHistory"
+			"typeName" : "ast::InferHistory",
+			"requirements" : [
+				"ast"
+			]
 		},
 		{
 			"mn" : "CI1<f>?",
 			"baseMn" : "1<f>?",
 			"canCopy" : true,
 			"isConst" : true,
-			"typeName" : "float ? const !"
+			"typeName" : "float? const implicit"
 		},
 		{
 			"mn" : "CI0<C#s>1<v>$",
+			"isRef" : true,
 			"baseMn" : "0<C#s>1<v>$",
 			"isConst" : true,
-			"typeName" : "block<(string const #):void> const !"
+			"typeName" : "block<(string const#):void> const implicit"
 		},
 		{
 			"mn" : "H<$::clock>",
 			"canCopy" : true,
-			"typeName" : "clock"
+			"typeName" : "$::clock"
 		},
 		{
 			"mn" : "1<&1<H<ast::TypeDecl>>?W>G",
-			"typeName" : "iterator<TypeDecl ? &>"
-		},
-		{
-			"mn" : "IH<$::das_string>",
-			"baseMn" : "H<$::das_string>",
-			"typeName" : "das_string !"
-		},
-		{
-			"mn" : "CI0<C#1<u8>A>1<v>$",
-			"baseMn" : "0<C#1<u8>A>1<v>$",
-			"isConst" : true,
-			"typeName" : "block<(array<uint8> const #):void> const !",
+			"isRef" : true,
+			"typeName" : "iterator<smart_ptr<ast::TypeDecl>&>",
 			"requirements" : [
-				"strings"
+				"ast"
 			]
 		},
 		{
+			"mn" : "IH<$::das_string>",
+			"isRef" : true,
+			"baseMn" : "H<$::das_string>",
+			"typeName" : "$::das_string implicit"
+		},
+		{
+			"mn" : "CI0<C#1<u8>A>1<v>$",
+			"isRef" : true,
+			"baseMn" : "0<C#1<u8>A>1<v>$",
+			"isConst" : true,
+			"typeName" : "block<(array<uint8> const#):void> const implicit"
+		},
+		{
+			"mn" : "1<C&H<$::das_string>>G",
+			"isRef" : true,
+			"typeName" : "iterator<$::das_string const&>"
+		},
+		{
 			"mn" : "H<rtti::LineInfo>",
+			"isRef" : true,
 			"canCopy" : true,
-			"typeName" : "LineInfo"
+			"typeName" : "rtti::LineInfo",
+			"requirements" : [
+				"rtti"
+			]
 		},
 		{
 			"mn" : "&Iu2",
 			"isRef" : true,
 			"baseMn" : "u2",
 			"canCopy" : true,
-			"typeName" : "uint2 & !"
+			"typeName" : "uint2& implicit"
 		},
 		{
 			"mn" : "&Ii3",
 			"isRef" : true,
 			"baseMn" : "i3",
 			"canCopy" : true,
-			"typeName" : "int3 & !"
+			"typeName" : "int3& implicit"
 		},
 		{
 			"mn" : "&If2",
 			"isRef" : true,
 			"baseMn" : "f2",
 			"canCopy" : true,
-			"typeName" : "float2 & !"
+			"typeName" : "float2& implicit"
 		},
 		{
 			"mn" : "&If3",
 			"isRef" : true,
 			"baseMn" : "f3",
 			"canCopy" : true,
-			"typeName" : "float3 & !"
+			"typeName" : "float3& implicit"
 		},
 		{
 			"mn" : "&If4",
 			"isRef" : true,
 			"baseMn" : "f4",
 			"canCopy" : true,
-			"typeName" : "float4 & !"
+			"typeName" : "float4& implicit"
 		},
 		{
 			"mn" : "&Ii2",
 			"isRef" : true,
 			"baseMn" : "i2",
 			"canCopy" : true,
-			"typeName" : "int2 & !"
+			"typeName" : "int2& implicit"
 		},
 		{
 			"mn" : "&Ii4",
 			"isRef" : true,
 			"baseMn" : "i4",
 			"canCopy" : true,
-			"typeName" : "int4 & !"
+			"typeName" : "int4& implicit"
 		},
 		{
 			"mn" : "&Iu3",
 			"isRef" : true,
 			"baseMn" : "u3",
 			"canCopy" : true,
-			"typeName" : "uint3 & !"
-		},
-		{
-			"mn" : "CE16",
-			"baseMn" : "E16",
-			"canCopy" : true,
-			"isConst" : true,
-			"typeName" : "enum const CE16"
+			"typeName" : "uint3& implicit"
 		},
 		{
 			"mn" : "&Iu4",
 			"isRef" : true,
 			"baseMn" : "u4",
 			"canCopy" : true,
-			"typeName" : "uint4 & !"
+			"typeName" : "uint4& implicit"
 		},
 		{
 			"mn" : "CI0<f4;f4>1<b>$",
+			"isRef" : true,
 			"baseMn" : "0<f4;f4>1<b>$",
 			"isConst" : true,
-			"typeName" : "block<(float4; float4):bool> const !"
+			"typeName" : "block<(float4;float4):bool> const implicit"
 		},
 		{
-			"mn" : "CIH<$::dasvector`smart_ptr`Expression>",
-			"baseMn" : "H<$::dasvector`smart_ptr`Expression>",
+			"mn" : "CI=H<$::dasvector`pair`uint`uint>",
+			"isRef" : true,
+			"baseMn" : "=H<$::dasvector`pair`uint`uint>",
 			"isConst" : true,
-			"typeName" : "dasvector`smart_ptr`Expression const !"
-		},
-		{
-			"mn" : "1<v>?M",
-			"typeName" : "void ?"
-		},
-		{
-			"mn" : "IH<$::dasvector`int>",
-			"baseMn" : "H<$::dasvector`int>",
-			"typeName" : "dasvector`int !"
+			"typeName" : "$::dasvector`pair`uint`uint const implicit =const"
 		},
 		{
 			"mn" : "IH<$::dasvector`EnumEntry>",
+			"isRef" : true,
 			"baseMn" : "H<$::dasvector`EnumEntry>",
-			"typeName" : "dasvector`EnumEntry !"
-		},
-		{
-			"mn" : "1<CH<ast::EnumEntry>>G",
-			"typeName" : "iterator<EnumEntry const>"
+			"typeName" : "$::dasvector`EnumEntry implicit"
 		},
 		{
 			"mn" : "&Iu8",
 			"isRef" : true,
 			"baseMn" : "u8",
 			"canCopy" : true,
-			"typeName" : "uint8 & !"
+			"typeName" : "uint8& implicit"
 		},
 		{
-			"mn" : "CIH<$::dasvector`FieldDeclaration>",
-			"baseMn" : "H<$::dasvector`FieldDeclaration>",
+			"mn" : "CE16",
+			"baseMn" : "E16",
+			"canCopy" : true,
 			"isConst" : true,
-			"typeName" : "dasvector`FieldDeclaration const !"
+			"typeName" : "enum const E16"
+		},
+		{
+			"mn" : "IH<$::dasvector`int>",
+			"isRef" : true,
+			"baseMn" : "H<$::dasvector`int>",
+			"typeName" : "$::dasvector`int implicit"
+		},
+		{
+			"mn" : "1<v>?M",
+			"typeName" : "smart_ptr<void>"
+		},
+		{
+			"mn" : "I=H<$::dasvector`Error>",
+			"isRef" : true,
+			"baseMn" : "=H<$::dasvector`Error>",
+			"typeName" : "$::dasvector`Error implicit =const"
+		},
+		{
+			"mn" : "I=H<$::dasvector`smart_ptr`MakeFieldDecl>",
+			"isRef" : true,
+			"baseMn" : "=H<$::dasvector`smart_ptr`MakeFieldDecl>",
+			"typeName" : "$::dasvector`smart_ptr`MakeFieldDecl implicit =const"
 		},
 		{
 			"mn" : "&Iu64",
 			"isRef" : true,
 			"baseMn" : "u64",
 			"canCopy" : true,
-			"typeName" : "uint64 & !"
+			"typeName" : "uint64& implicit"
 		},
 		{
 			"mn" : "IH<$::dasvector`smart_ptr`Variable>",
+			"isRef" : true,
 			"baseMn" : "H<$::dasvector`smart_ptr`Variable>",
-			"typeName" : "dasvector`smart_ptr`Variable !"
+			"typeName" : "$::dasvector`smart_ptr`Variable implicit"
 		},
 		{
 			"mn" : "H<$::dasvector`LineInfo>",
-			"typeName" : "dasvector`LineInfo"
+			"isRef" : true,
+			"typeName" : "$::dasvector`LineInfo"
 		},
 		{
 			"mn" : "CI0<i2;i2>1<b>$",
+			"isRef" : true,
 			"baseMn" : "0<i2;i2>1<b>$",
 			"isConst" : true,
-			"typeName" : "block<(int2; int2):bool> const !"
-		},
-		{
-			"mn" : "1<H<ast::EnumEntry>>G",
-			"typeName" : "iterator<EnumEntry>"
-		},
-		{
-			"mn" : "CIH<$::dasvector`CaptureEntry>",
-			"baseMn" : "H<$::dasvector`CaptureEntry>",
-			"isConst" : true,
-			"typeName" : "dasvector`CaptureEntry const !"
-		},
-		{
-			"mn" : "CI0<#1<u8>A>1<v>$",
-			"baseMn" : "0<#1<u8>A>1<v>$",
-			"isConst" : true,
-			"typeName" : "block<(array<uint8> #):void> const !",
-			"requirements" : [
-				"strings"
-			]
+			"typeName" : "block<(int2;int2):bool> const implicit"
 		},
 		{
 			"mn" : "H<strings::StringBuilderWriter>",
-			"typeName" : "StringBuilderWriter",
+			"isRef" : true,
+			"typeName" : "strings::StringBuilderWriter",
 			"requirements" : [
 				"strings"
 			]
 		},
 		{
-			"mn" : "CIH<$::dasvector`Error>",
-			"baseMn" : "H<$::dasvector`Error>",
+			"mn" : "CI0<#1<u8>A>1<v>$",
+			"isRef" : true,
+			"baseMn" : "0<#1<u8>A>1<v>$",
 			"isConst" : true,
-			"typeName" : "dasvector`Error const !"
+			"typeName" : "block<(array<uint8>#):void> const implicit"
+		},
+		{
+			"mn" : "1<C&H<ast::FieldDeclaration>>G",
+			"isRef" : true,
+			"typeName" : "iterator<ast::FieldDeclaration const&>",
+			"requirements" : [
+				"ast"
+			]
+		},
+		{
+			"mn" : "CI=H<$::dasvector`das_string>",
+			"isRef" : true,
+			"baseMn" : "=H<$::dasvector`das_string>",
+			"isConst" : true,
+			"typeName" : "$::dasvector`das_string const implicit =const"
 		}
 	]
 }
