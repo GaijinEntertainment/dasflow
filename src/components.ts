@@ -404,12 +404,14 @@ export class LangLet extends LangComponent {
 
 export class LangFunc extends LangComponent {
     private fn: LangFunctionDesc;
+    private useLocal: boolean;
 
     constructor(fn: LangFunctionDesc) {
         const resTypeName = getTypeName(fn.resMn);
         const name = fn.name + "(" + fn.args.map(it => getTypeName(it.mn)).join(",") + "):" + resTypeName
-        super(name, ['language', resTypeName.substring(0, 2), resTypeName, fn.name.substring(0, 2)])
+        super(name, ['language', resTypeName.substring(0, 2), resTypeName, fn.name.substring(0, 1)])
         this.fn = fn
+        this.useLocal = getType(this.fn.resMn)?.desc.canCopy ?? false
     }
 
     async builder(node) {
@@ -434,8 +436,7 @@ export class LangFunc extends LangComponent {
             node.addInput(fieldInput)
         }
 
-        const multiRes = !this.fn.sideeffect
-        const result = new Rete.Output('result', 'result', getType(this.fn.resMn)!.getSocket(SocketType.constant), multiRes)
+        const result = new Rete.Output('result', 'result', getType(this.fn.resMn)!.getSocket(SocketType.constant), this.useLocal)
         // fieldInput.addControl(new TextInputControl(this.editor, field.name))
         node.addOutput(result)
     }
@@ -456,8 +457,7 @@ export class LangFunc extends LangComponent {
             ctx.addReqModule(req)
         }
         const ctor = this.fn.ctor ?? `${this.fn.name}($args)`
-        const addLet = resType?.desc.canCopy
-        let line = addLet ? `let ${ctx.nodeId(node)} = ` : ''
+        let line = this.useLocal ? `let ${ctx.nodeId(node)} = ` : ''
         if (this.isOperator(this.fn.name) && args.length <= 2) {
             line = `${line}${args[0]} ${this.fn.name}`
             if (args.length == 2)
@@ -466,7 +466,7 @@ export class LangFunc extends LangComponent {
         } else {
             line = `${line}${ctor.replace('$args', args.join(','))}`;
         }
-        if (addLet)
+        if (this.useLocal)
             ctx.writeLine(line)
         else
             ctx.setNodeRes(node, line)
