@@ -2,7 +2,7 @@ import Rete, {Engine, Input, Output, Socket} from 'rete'
 import {Node} from 'rete/types/node'
 import {NodeEditor} from 'rete/types/editor'
 import {LabelControl, LangTypeSelectControl, TextInputControl} from "./controls"
-import {LangCoreDesc, LangTypeDesc} from "./lang"
+import {LangCoreDesc, LangDesc, LangFunctionDesc, LangTypeDesc} from "./lang"
 import {Component} from "rete/types"
 
 
@@ -41,17 +41,17 @@ class LangSocket extends Socket {
 export class LangType {
     desc: LangTypeDesc
     validator?: RegExp
-    defaultValue: string
+    defaultValue?: string
     ctor: (s: string, args: { [key: string]: string }) => string = s => s
-
-    sockets = new Map<SocketType, LangSocket>()
     anyTypeSocket?: Socket
+
+    private sockets = new Map<SocketType, LangSocket>()
 
     getSocket(socketType: SocketType): LangSocket {
         if (this.sockets.has(socketType))
             return this.sockets.get(socketType)!
 
-        const res = new LangSocket(this.desc.mn, socketType)
+        const res = new LangSocket(this.desc.baseMn ?? this.desc.mn, socketType)
         if (this.anyTypeSocket)
             res.combineWith(this.anyTypeSocket)
         this.sockets.set(socketType, res)
@@ -65,10 +65,29 @@ const coreTypes = new Map</*mn*/string, LangType>()
 const coreTypeGroups = new Map<string, LangType[]>()
 
 
-export function getType(mn: string): LangType | undefined {
+function getType(mn: string): LangType | undefined {
     if (coreTypes.has(mn))
         return coreTypes.get(mn)
     return undefined
+}
+
+
+function getTypeName(mn:string): string {
+    const type = getType(mn)
+    return type ? type.desc.typeName : mn
+}
+
+
+function getBaseType(mn: string): LangType | undefined {
+    const res = getType(mn)
+    if (res && res.desc.baseMn)
+        return getType(res.desc.baseMn) ?? res
+    return res
+}
+
+export function getBaseTypeName(mn: string): string {
+    const res = getBaseType(mn)
+    return res ? res.desc.typeName : mn
 }
 
 
@@ -82,7 +101,7 @@ export function getTypeByMN(types: LangType[], mn: string): LangType {
 }
 
 
-export function generateCoreNodes(langCore: LangCoreDesc, editor: NodeEditor, engine: Engine) {
+export function generateCoreNodes(langCore: LangCoreDesc, lang: LangDesc, editor: NodeEditor, engine: Engine) {
     // console.log(langCore)
     const logicTypeName = langCore.logicType
     const anyTypeName = langCore.anyType
@@ -94,7 +113,7 @@ export function generateCoreNodes(langCore: LangCoreDesc, editor: NodeEditor, en
 
         let type = new LangType()
         type.desc = typeDesc
-        type.defaultValue = typeDesc.default ?? ""
+        type.defaultValue = typeDesc.default
         // type.socket = new Rete.Socket(typeDesc.mn)
         type.anyTypeSocket = anyTypeSocket
 
@@ -140,6 +159,24 @@ export function generateCoreNodes(langCore: LangCoreDesc, editor: NodeEditor, en
             continue
         const langLet = new LangLet(groupName, ['core types'], coreTypeGroup)
         comps.push(langLet)
+    }
+
+    if (langCore.functions)
+        console.error("core functions are not supported yet")
+
+    for (let typeDesc of lang.types) {
+        if (coreTypes.has(typeDesc.mn))
+            continue
+        let type = new LangType()
+        type.desc = typeDesc
+        type.anyTypeSocket = anyTypeSocket
+        coreTypes.set(typeDesc.mn, type)
+        // TODO: search ctors without args and add ctor nodes
+    }
+
+    for (const func of lang.functions) {
+        const fn = new LangFunc(func)
+        comps.push(fn)
     }
 
     for (let comp of comps) {
@@ -263,7 +300,7 @@ export class LangLet extends LangComponent {
                 const fieldType = getType(field.mn)
                 if (!fieldType)
                     continue
-                const fieldInput = new Rete.Input(field.name, field.name, fieldType.getSocket(SocketType.constant), false);
+                const fieldInput = new Rete.Input(field.name, field.name, fieldType.getSocket(SocketType.constant), false)
                 fieldInput.addControl(new TextInputControl(this.editor, field.name))
                 node.addInput(fieldInput)
             }
@@ -315,7 +352,7 @@ export class LangLet extends LangComponent {
             // validate control value
             if (valueCtrl.validator != valueType.validator || valueCtrl.defaultValue != valueType.defaultValue || valueCtrl.values != valueType.desc.enum) {
                 valueCtrl.validator = valueType.validator
-                valueCtrl.defaultValue = valueType.defaultValue
+                valueCtrl.defaultValue = valueType.defaultValue ?? ""
                 valueCtrl.values = valueType.desc.enum
                 valueCtrl.setValue(node.data[input.key]) // revalidate data
             }
@@ -367,6 +404,69 @@ export class LangLet extends LangComponent {
     }
 }
 
+
+export class LangFunc extends LangComponent {
+    private fn: LangFunctionDesc;
+
+    constructor(fn: LangFunctionDesc) {
+        const resTypeName = getTypeName(fn.resMn);
+        const name = fn.name + "(" + fn.args.map(it => getTypeName(it.mn)).join(",") + "):" + resTypeName
+        super(name, ['language', resTypeName, fn.name])
+        this.fn = fn
+    }
+
+    async builder(node) {
+        for (let arg of this.fn.args) {
+            const argType = getBaseType(arg.mn)
+            if (!argType) {
+                console.error(`Func ${this.fn.name} arg ${arg.name} has unknown type ${arg.mn}`)
+                continue
+            }
+            // if (argType.desc.baseMn)
+            //     argType = getType(argType.desc.baseMn)
+            // if (!argType) {
+            //     console.error(`Func ${this.fn.name} arg ${arg.name} has unknown base type ${arg.mn}`)
+            //     continue
+            // }
+            // TODO: copy const/ref from arg.mn type
+            // TODO: handle canCopy flag
+            const fieldInput = new Rete.Input(arg.name, arg.name, argType.getSocket(SocketType.constant), false)
+            // fieldInput.addControl(new TextInputControl(this.editor, field.name))
+            node.addInput(fieldInput)
+        }
+
+        const result = new Rete.Output('result', 'result', getType(this.fn.resMn)!.getSocket(SocketType.constant), true)
+        // fieldInput.addControl(new TextInputControl(this.editor, field.name))
+        node.addOutput(result)
+    }
+
+    constructDasNode(node: Node, ctx: ConstructDasCtx): boolean {
+        const args: string[] = []
+        for (let arg of this.fn.args) {
+            const argNode = this.constructInNode(node, arg.name, ctx)
+            if (!argNode)
+                return false
+            args.push(ctx.nodeId(argNode))
+        }
+        // TODO: handle canCopy flag
+        // TODO: move operators list to core.json
+        if (this.isOperator(this.fn.name) && args.length <= 2) {
+            let line = `let ${ctx.nodeId(node)} = ${args[0]} ${this.fn.name}`
+            if (args.length == 2)
+                line += ` ${args[1]}`
+            ctx.writeLine(line)
+        } else
+            ctx.writeLine(`let ${ctx.nodeId(node)} = ${this.fn.name}(${args.join(", ")})`)
+        return true
+    }
+
+    isOperator(n: string) {
+        return n == "--" || n == "++" || n == "==" || n == "!="
+            || n == ">" || n == "<" || n == ">=" || n == "<=" || n == "+++" || n == "---"
+            || n == "&&" || n == "||" || n == "!" || n == "*" || n == "/" || n == "%"
+            || n == "+" || n == "-" || n == "&" || n == "|" || n == "^" || n == "<<" || n == ">>"
+    }
+}
 
 export class Debug extends LangComponent {
     private anyType: Socket

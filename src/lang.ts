@@ -13,13 +13,26 @@ export interface LangTypeDesc {
     struct?: { name: string, mn: string }[]
 }
 
+interface LangFunctionArgDesc {
+    name: string
+    mn: string
+}
+
 export interface LangFunctionDesc {
+    name: string
+    resMn: string
+    args: LangFunctionArgDesc[]
 }
 
 export interface LangCoreDesc {
     logicType: string
     anyType: string
     voidType: string
+    types: LangTypeDesc[]
+    functions: LangFunctionDesc[]
+}
+
+export interface LangDesc {
     types: LangTypeDesc[]
     functions: LangFunctionDesc[]
 }

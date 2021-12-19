@@ -17872,7 +17872,6 @@
 	"types" : [
 		{
 			"mn" : "i8",
-			"baseMn" : "i8",
 			"canCopy" : true,
 			"typeName" : "int8"
 		},
@@ -17941,7 +17940,6 @@
 		},
 		{
 			"mn" : "u8",
-			"baseMn" : "u8",
 			"canCopy" : true,
 			"typeName" : "uint8"
 		},
@@ -17950,14 +17948,14 @@
 			"baseMn" : "E",
 			"canCopy" : true,
 			"isConst" : true,
-			"typeName" : "enum const"
+			"typeName" : "enum const CE"
 		},
 		{
 			"mn" : "CE8",
 			"baseMn" : "E8",
 			"canCopy" : true,
 			"isConst" : true,
-			"typeName" : "enum const"
+			"typeName" : "enum const CE8"
 		},
 		{
 			"mn" : "C@@",
@@ -17995,7 +17993,6 @@
 		},
 		{
 			"mn" : "f2",
-			"baseMn" : "f2",
 			"canCopy" : true,
 			"typeName" : "float2"
 		},
@@ -18008,7 +18005,6 @@
 		},
 		{
 			"mn" : "f3",
-			"baseMn" : "f3",
 			"canCopy" : true,
 			"typeName" : "float3"
 		},
@@ -18021,7 +18017,6 @@
 		},
 		{
 			"mn" : "f4",
-			"baseMn" : "f4",
 			"canCopy" : true,
 			"typeName" : "float4"
 		},
@@ -18034,7 +18029,6 @@
 		},
 		{
 			"mn" : "i2",
-			"baseMn" : "i2",
 			"canCopy" : true,
 			"typeName" : "int2"
 		},
@@ -18047,7 +18041,6 @@
 		},
 		{
 			"mn" : "i3",
-			"baseMn" : "i3",
 			"canCopy" : true,
 			"typeName" : "int3"
 		},
@@ -18060,7 +18053,6 @@
 		},
 		{
 			"mn" : "i4",
-			"baseMn" : "i4",
 			"canCopy" : true,
 			"typeName" : "int4"
 		},
@@ -18073,7 +18065,6 @@
 		},
 		{
 			"mn" : "u2",
-			"baseMn" : "u2",
 			"canCopy" : true,
 			"typeName" : "uint2"
 		},
@@ -18086,7 +18077,6 @@
 		},
 		{
 			"mn" : "u3",
-			"baseMn" : "u3",
 			"canCopy" : true,
 			"typeName" : "uint3"
 		},
@@ -18099,7 +18089,6 @@
 		},
 		{
 			"mn" : "u4",
-			"baseMn" : "u4",
 			"canCopy" : true,
 			"typeName" : "uint4"
 		},
@@ -18216,7 +18205,6 @@
 		},
 		{
 			"mn" : "1<C&1<H<ast::Variable>>?W>G",
-			"baseMn" : "1<C&1<H<ast::Variable>>?W>G",
 			"typeName" : "iterator<Variable ? const &>"
 		},
 		{
@@ -18284,24 +18272,20 @@
 		},
 		{
 			"mn" : "i16",
-			"baseMn" : "i16",
 			"canCopy" : true,
 			"typeName" : "int16"
 		},
 		{
 			"mn" : "i64",
-			"baseMn" : "i64",
 			"canCopy" : true,
 			"typeName" : "int64"
 		},
 		{
 			"mn" : "1<&1<H<ast::MakeStruct>>?W>G",
-			"baseMn" : "1<&1<H<ast::MakeStruct>>?W>G",
 			"typeName" : "iterator<MakeStruct ? &>"
 		},
 		{
 			"mn" : "1<H<rtti::LineInfo>>G",
-			"baseMn" : "1<H<rtti::LineInfo>>G",
 			"typeName" : "iterator<LineInfo>"
 		},
 		{
@@ -18312,7 +18296,6 @@
 		},
 		{
 			"mn" : "1<&i>G",
-			"baseMn" : "1<&i>G",
 			"typeName" : "iterator<int &>"
 		},
 		{
@@ -18329,12 +18312,10 @@
 		},
 		{
 			"mn" : "1<&1<H<ast::MakeFieldDecl>>?W>G",
-			"baseMn" : "1<&1<H<ast::MakeFieldDecl>>?W>G",
 			"typeName" : "iterator<MakeFieldDecl ? &>"
 		},
 		{
 			"mn" : "H<$::dasvector`InferHistory>",
-			"baseMn" : "H<$::dasvector`InferHistory>",
 			"typeName" : "dasvector`InferHistory"
 		},
 		{
@@ -18345,7 +18326,6 @@
 		},
 		{
 			"mn" : "1<CH<rtti::LineInfo>>G",
-			"baseMn" : "1<CH<rtti::LineInfo>>G",
 			"typeName" : "iterator<LineInfo const>"
 		},
 		{
@@ -18355,7 +18335,6 @@
 		},
 		{
 			"mn" : "1<H<UnitTest::TestObjectFoo>>G",
-			"baseMn" : "1<H<UnitTest::TestObjectFoo>>G",
 			"typeName" : "iterator<TestObjectFoo>"
 		},
 		{
@@ -18378,7 +18357,6 @@
 		},
 		{
 			"mn" : "1<H<$::das_string>>G",
-			"baseMn" : "1<H<$::das_string>>G",
 			"typeName" : "iterator<das_string>"
 		},
 		{
@@ -18407,12 +18385,10 @@
 		},
 		{
 			"mn" : "1<CH<$::das_string>>G",
-			"baseMn" : "1<CH<$::das_string>>G",
 			"typeName" : "iterator<das_string const>"
 		},
 		{
 			"mn" : "H<$::dasvector`TestObjectFoo>",
-			"baseMn" : "H<$::dasvector`TestObjectFoo>",
 			"typeName" : "dasvector`TestObjectFoo"
 		},
 		{
@@ -18428,7 +18404,6 @@
 		},
 		{
 			"mn" : "H<math::float4x4>",
-			"baseMn" : "H<math::float4x4>",
 			"canCopy" : true,
 			"typeName" : "float4x4",
 			"requirements" : [
@@ -18437,7 +18412,6 @@
 		},
 		{
 			"mn" : "1<CH<rtti::Error>>G",
-			"baseMn" : "1<CH<rtti::Error>>G",
 			"typeName" : "iterator<Error const>"
 		},
 		{
@@ -18452,24 +18426,20 @@
 		},
 		{
 			"mn" : "u16",
-			"baseMn" : "u16",
 			"canCopy" : true,
 			"typeName" : "uint16"
 		},
 		{
 			"mn" : "u64",
-			"baseMn" : "u64",
 			"canCopy" : true,
 			"typeName" : "uint64"
 		},
 		{
 			"mn" : "1<C&i>G",
-			"baseMn" : "1<C&i>G",
 			"typeName" : "iterator<int const &>"
 		},
 		{
 			"mn" : "1<H<ast::CaptureEntry>>G",
-			"baseMn" : "1<H<ast::CaptureEntry>>G",
 			"typeName" : "iterator<CaptureEntry>"
 		},
 		{
@@ -18487,7 +18457,6 @@
 		},
 		{
 			"mn" : "1<H<ast::InferHistory>>G",
-			"baseMn" : "1<H<ast::InferHistory>>G",
 			"typeName" : "iterator<InferHistory>"
 		},
 		{
@@ -18506,7 +18475,6 @@
 		},
 		{
 			"mn" : "1<&1<H<ast::Expression>>?W>G",
-			"baseMn" : "1<&1<H<ast::Expression>>?W>G",
 			"typeName" : "iterator<Expression ? &>"
 		},
 		{
@@ -18534,7 +18502,6 @@
 		},
 		{
 			"mn" : "1<CH<UnitTest::TestObjectFoo>>G",
-			"baseMn" : "1<CH<UnitTest::TestObjectFoo>>G",
 			"typeName" : "iterator<TestObjectFoo const>"
 		},
 		{
@@ -18564,7 +18531,6 @@
 		},
 		{
 			"mn" : "1<C&1<H<ast::Expression>>?W>G",
-			"baseMn" : "1<C&1<H<ast::Expression>>?W>G",
 			"typeName" : "iterator<Expression ? const &>"
 		},
 		{
@@ -18577,7 +18543,6 @@
 		},
 		{
 			"mn" : "1<C&1<H<ast::MakeFieldDecl>>?W>G",
-			"baseMn" : "1<C&1<H<ast::MakeFieldDecl>>?W>G",
 			"typeName" : "iterator<MakeFieldDecl ? const &>"
 		},
 		{
@@ -18657,17 +18622,14 @@
 		},
 		{
 			"mn" : "1<C&1<H<ast::MakeStruct>>?W>G",
-			"baseMn" : "1<C&1<H<ast::MakeStruct>>?W>G",
 			"typeName" : "iterator<MakeStruct ? const &>"
 		},
 		{
 			"mn" : "1<&u8>G",
-			"baseMn" : "1<&u8>G",
 			"typeName" : "iterator<uint8 &>"
 		},
 		{
 			"mn" : "H<$::dasvector`pair`uint`uint>",
-			"baseMn" : "H<$::dasvector`pair`uint`uint>",
 			"typeName" : "dasvector`pair`uint`uint"
 		},
 		{
@@ -18678,12 +18640,10 @@
 		},
 		{
 			"mn" : "1<C0<u;u>U>G",
-			"baseMn" : "1<C0<u;u>U>G",
 			"typeName" : "iterator<tuple<uint; uint> const>"
 		},
 		{
 			"mn" : "1<H<rtti::Error>>G",
-			"baseMn" : "1<H<rtti::Error>>G",
 			"typeName" : "iterator<Error>"
 		},
 		{
@@ -18694,7 +18654,6 @@
 		},
 		{
 			"mn" : "0<u;u>U",
-			"baseMn" : "0<u;u>U",
 			"canCopy" : true,
 			"typeName" : "tuple<uint; uint>"
 		},
@@ -18707,7 +18666,6 @@
 		},
 		{
 			"mn" : "H<math::float3x3>",
-			"baseMn" : "H<math::float3x3>",
 			"canCopy" : true,
 			"typeName" : "float3x3",
 			"requirements" : [
@@ -18716,7 +18674,6 @@
 		},
 		{
 			"mn" : "H<math::float3x4>",
-			"baseMn" : "H<math::float3x4>",
 			"canCopy" : true,
 			"typeName" : "float3x4",
 			"requirements" : [
@@ -18731,23 +18688,19 @@
 		},
 		{
 			"mn" : "1<C&1<H<ast::TypeDecl>>?W>G",
-			"baseMn" : "1<C&1<H<ast::TypeDecl>>?W>G",
 			"typeName" : "iterator<TypeDecl ? const &>"
 		},
 		{
 			"mn" : "1<CH<ast::CaptureEntry>>G",
-			"baseMn" : "1<CH<ast::CaptureEntry>>G",
 			"typeName" : "iterator<CaptureEntry const>"
 		},
 		{
 			"mn" : "H<UnitTest::TestObjectFoo>",
-			"baseMn" : "H<UnitTest::TestObjectFoo>",
 			"canCopy" : true,
 			"typeName" : "TestObjectFoo"
 		},
 		{
 			"mn" : "1<H<ast::FieldDeclaration>>G",
-			"baseMn" : "1<H<ast::FieldDeclaration>>G",
 			"typeName" : "iterator<FieldDeclaration>"
 		},
 		{
@@ -18772,55 +18725,46 @@
 		},
 		{
 			"mn" : "b",
-			"baseMn" : "b",
 			"canCopy" : true,
 			"typeName" : "bool"
 		},
 		{
 			"mn" : "v",
-			"baseMn" : "v",
 			"canCopy" : true,
 			"typeName" : "void"
 		},
 		{
 			"mn" : "i",
-			"baseMn" : "i",
 			"canCopy" : true,
 			"typeName" : "int"
 		},
 		{
 			"mn" : "u",
-			"baseMn" : "u",
 			"canCopy" : true,
 			"typeName" : "uint"
 		},
 		{
 			"mn" : "t",
-			"baseMn" : "t",
 			"canCopy" : true,
 			"typeName" : "bitfield"
 		},
 		{
 			"mn" : "f",
-			"baseMn" : "f",
 			"canCopy" : true,
 			"typeName" : "float"
 		},
 		{
 			"mn" : "d",
-			"baseMn" : "d",
 			"canCopy" : true,
 			"typeName" : "double"
 		},
 		{
 			"mn" : "s",
-			"baseMn" : "s",
 			"canCopy" : true,
 			"typeName" : "string"
 		},
 		{
 			"mn" : "r",
-			"baseMn" : "r",
 			"canCopy" : true,
 			"typeName" : "range"
 		},
@@ -18875,7 +18819,6 @@
 		},
 		{
 			"mn" : "z",
-			"baseMn" : "z",
 			"canCopy" : true,
 			"typeName" : "urange"
 		},
@@ -18888,7 +18831,6 @@
 		},
 		{
 			"mn" : "?",
-			"baseMn" : "?",
 			"canCopy" : true,
 			"typeName" : " ?"
 		},
@@ -18931,7 +18873,6 @@
 		},
 		{
 			"mn" : "1<C&u8>G",
-			"baseMn" : "1<C&u8>G",
 			"typeName" : "iterator<uint8 const &>"
 		},
 		{
@@ -18965,7 +18906,6 @@
 		},
 		{
 			"mn" : "1<0<u;u>U>G",
-			"baseMn" : "1<0<u;u>U>G",
 			"typeName" : "iterator<tuple<uint; uint>>"
 		},
 		{
@@ -19006,12 +18946,10 @@
 		},
 		{
 			"mn" : "1<CH<ast::FieldDeclaration>>G",
-			"baseMn" : "1<CH<ast::FieldDeclaration>>G",
 			"typeName" : "iterator<FieldDeclaration const>"
 		},
 		{
 			"mn" : "1<&1<H<ast::Variable>>?W>G",
-			"baseMn" : "1<&1<H<ast::Variable>>?W>G",
 			"typeName" : "iterator<Variable ? &>"
 		},
 		{
@@ -19021,7 +18959,6 @@
 		},
 		{
 			"mn" : "1<CH<ast::InferHistory>>G",
-			"baseMn" : "1<CH<ast::InferHistory>>G",
 			"typeName" : "iterator<InferHistory const>"
 		},
 		{
@@ -19035,7 +18972,6 @@
 		},
 		{
 			"mn" : "H<ast::InferHistory>",
-			"baseMn" : "H<ast::InferHistory>",
 			"canCopy" : true,
 			"typeName" : "InferHistory"
 		},
@@ -19054,13 +18990,11 @@
 		},
 		{
 			"mn" : "H<$::clock>",
-			"baseMn" : "H<$::clock>",
 			"canCopy" : true,
 			"typeName" : "clock"
 		},
 		{
 			"mn" : "1<&1<H<ast::TypeDecl>>?W>G",
-			"baseMn" : "1<&1<H<ast::TypeDecl>>?W>G",
 			"typeName" : "iterator<TypeDecl ? &>"
 		},
 		{
@@ -19079,7 +19013,6 @@
 		},
 		{
 			"mn" : "H<rtti::LineInfo>",
-			"baseMn" : "H<rtti::LineInfo>",
 			"canCopy" : true,
 			"typeName" : "LineInfo"
 		},
@@ -19144,7 +19077,7 @@
 			"baseMn" : "E16",
 			"canCopy" : true,
 			"isConst" : true,
-			"typeName" : "enum const"
+			"typeName" : "enum const CE16"
 		},
 		{
 			"mn" : "&Iu4",
@@ -19167,7 +19100,6 @@
 		},
 		{
 			"mn" : "1<v>?M",
-			"baseMn" : "1<v>?M",
 			"typeName" : "void ?"
 		},
 		{
@@ -19182,7 +19114,6 @@
 		},
 		{
 			"mn" : "1<CH<ast::EnumEntry>>G",
-			"baseMn" : "1<CH<ast::EnumEntry>>G",
 			"typeName" : "iterator<EnumEntry const>"
 		},
 		{
@@ -19212,7 +19143,6 @@
 		},
 		{
 			"mn" : "H<$::dasvector`LineInfo>",
-			"baseMn" : "H<$::dasvector`LineInfo>",
 			"typeName" : "dasvector`LineInfo"
 		},
 		{
@@ -19223,7 +19153,6 @@
 		},
 		{
 			"mn" : "1<H<ast::EnumEntry>>G",
-			"baseMn" : "1<H<ast::EnumEntry>>G",
 			"typeName" : "iterator<EnumEntry>"
 		},
 		{
@@ -19243,7 +19172,6 @@
 		},
 		{
 			"mn" : "H<strings::StringBuilderWriter>",
-			"baseMn" : "H<strings::StringBuilderWriter>",
 			"typeName" : "StringBuilderWriter",
 			"requirements" : [
 				"strings"

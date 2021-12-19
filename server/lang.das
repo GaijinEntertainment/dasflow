@@ -104,6 +104,8 @@ def getTypeDesc(var lang: LangDesc; ti: TypeInfo const?; mod: string): TypeDesc?
 
     if !key_exists(lang.types, mangledName)
         var t <- [[TypeDesc mn=mangledName, typeName=ti |> describe(), isConst=ti.isConst, isRef=ti.isRef, canCopy=ti.canCopy]]
+        if t.typeName == "enum const"
+            t.typeName = "enum const {mangledName}"
         // print("{t.typeName} {t.mn}\n")
         // if ti.enumType != null
         //     t |> add_req <| "{ti.enumType.module_name}"
@@ -140,7 +142,9 @@ def JV(val: LangDesc)
 
 
 def JV(val: TypeDesc)
-    var res <- {{"typeName"=>JV(val.typeName); "mn"=>JV(val.mn); "baseMn"=>JV(val.baseMn)}}
+    var res <- {{"typeName"=>JV(val.typeName); "mn"=>JV(val.mn)}}
+    if val.mn != val.baseMn
+        res["baseMn"] = JV(val.baseMn)
     if val.isConst
         res["isConst"] = JV(val.isConst)
     if val.isRef

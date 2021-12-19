@@ -1,6 +1,6 @@
 import {JsonRpcWebsocket} from "jsonrpc-client-websocket"
 import {NodeEditor} from "rete/types/editor"
-import {LangCoreDesc} from "./lang"
+import {LangCoreDesc, LangDesc} from "./lang"
 
 
 export namespace FilesRpc {
@@ -26,6 +26,12 @@ export namespace LangRpc {
     export async function getLangCore(ws: JsonRpcWebsocket): Promise<LangCoreDesc> {
         return ws.call("lang.getCore").then(res => {
             return <LangCoreDesc> JSON.parse(res.result)
+        })
+    }
+
+    export async function getLang(ws: JsonRpcWebsocket): Promise<LangDesc> {
+        return ws.call("lang.get").then(res => {
+            return <LangDesc> JSON.parse(res.result)
         })
     }
 

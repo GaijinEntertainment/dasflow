@@ -38,6 +38,7 @@ def initialize()
     jsonRpc = new JsonRpcHandler()
 
     jsonRpc->addCall("lang.getCore", new MFunctionRpcCall(@@lang_getCore))
+    jsonRpc->addCall("lang.get", new MFunctionRpcCall(@@lang_get))
     jsonRpc->addCall("lang.execute", new MFunctionRpcCall(@@lang_execute))
     jsonRpc->addCall("files.load", new MFunctionRpcCall(@@files_load))
     jsonRpc->addCall("files.save", new MFunctionRpcCall(@@files_save))
@@ -127,6 +128,22 @@ def lang_getCore(id: uint64)
                 send_response(JV("{data}"), id)
     if !ok
         send_response(JVNull(), id)
+
+
+
+[rpc_call]
+def lang_get(id: uint64)
+    print("< req lang.get\n")
+    var ok = false
+
+    fopen("lang/dump.json", "rb") <| $(f)
+        if f != null
+            f |> fread <| $(data)
+                ok = false
+                send_response(JV("{data}"), id)
+    if !ok
+        send_response(JVNull(), id)
+
 
 
 [rpc_call]
