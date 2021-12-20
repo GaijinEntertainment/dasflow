@@ -2,6 +2,7 @@
 	"functions" : [
 		{
 			"resMn" : "b",
+			"mn" : "==(Cb,Cb):b",
 			"args" : [
 				{
 					"mn" : "Cb",
@@ -16,6 +17,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "!=(Cb,Cb):b",
 			"args" : [
 				{
 					"mn" : "Cb",
@@ -30,6 +32,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "!(Cb):b",
 			"args" : [
 				{
 					"mn" : "Cb",
@@ -40,6 +43,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "&&(Cb,Cb):b",
 			"args" : [
 				{
 					"mn" : "Cb",
@@ -54,6 +58,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "||(Cb,Cb):b",
 			"args" : [
 				{
 					"mn" : "Cb",
@@ -68,6 +73,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "^^(Cb,Cb):b",
 			"args" : [
 				{
 					"mn" : "Cb",
@@ -82,6 +88,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "&&=(&Ib,Cb):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -97,6 +104,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "||=(&Ib,Cb):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -112,6 +120,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "^^=(&Ib,Cb):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -127,6 +136,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "==(CI?,CI?):b",
 			"args" : [
 				{
 					"mn" : "CI?",
@@ -141,6 +151,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "!=(CI?,CI?):b",
 			"args" : [
 				{
 					"mn" : "CI?",
@@ -155,11 +166,13 @@
 		},
 		{
 			"resMn" : "i8",
+			"mn" : "int8():i8",
 			"args" : [],
 			"name" : "int8"
 		},
 		{
 			"resMn" : "i8",
+			"mn" : "int8(Cf):i8",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -170,6 +183,7 @@
 		},
 		{
 			"resMn" : "i8",
+			"mn" : "int8(Cd):i8",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -180,6 +194,7 @@
 		},
 		{
 			"resMn" : "i8",
+			"mn" : "int8(Ci):i8",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -190,6 +205,7 @@
 		},
 		{
 			"resMn" : "i8",
+			"mn" : "int8(Cu):i8",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -200,6 +216,7 @@
 		},
 		{
 			"resMn" : "i8",
+			"mn" : "int8(Ct):i8",
 			"args" : [
 				{
 					"mn" : "Ct",
@@ -210,6 +227,7 @@
 		},
 		{
 			"resMn" : "i8",
+			"mn" : "int8(Ci8):i8",
 			"args" : [
 				{
 					"mn" : "Ci8",
@@ -220,6 +238,7 @@
 		},
 		{
 			"resMn" : "i8",
+			"mn" : "int8(Cu8):i8",
 			"args" : [
 				{
 					"mn" : "Cu8",
@@ -230,6 +249,7 @@
 		},
 		{
 			"resMn" : "i8",
+			"mn" : "int8(Ci16):i8",
 			"args" : [
 				{
 					"mn" : "Ci16",
@@ -240,6 +260,7 @@
 		},
 		{
 			"resMn" : "i8",
+			"mn" : "int8(Cu16):i8",
 			"args" : [
 				{
 					"mn" : "Cu16",
@@ -250,6 +271,7 @@
 		},
 		{
 			"resMn" : "i8",
+			"mn" : "int8(Ci64):i8",
 			"args" : [
 				{
 					"mn" : "Ci64",
@@ -260,6 +282,7 @@
 		},
 		{
 			"resMn" : "i8",
+			"mn" : "int8(Cu64):i8",
 			"args" : [
 				{
 					"mn" : "Cu64",
@@ -270,11 +293,13 @@
 		},
 		{
 			"resMn" : "i16",
+			"mn" : "int16():i16",
 			"args" : [],
 			"name" : "int16"
 		},
 		{
 			"resMn" : "i16",
+			"mn" : "int16(Cf):i16",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -285,6 +310,7 @@
 		},
 		{
 			"resMn" : "i16",
+			"mn" : "int16(Cd):i16",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -295,6 +321,7 @@
 		},
 		{
 			"resMn" : "i16",
+			"mn" : "int16(Ci):i16",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -305,6 +332,7 @@
 		},
 		{
 			"resMn" : "i16",
+			"mn" : "int16(Cu):i16",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -315,6 +343,7 @@
 		},
 		{
 			"resMn" : "i16",
+			"mn" : "int16(Ct):i16",
 			"args" : [
 				{
 					"mn" : "Ct",
@@ -325,6 +354,7 @@
 		},
 		{
 			"resMn" : "i16",
+			"mn" : "int16(Ci8):i16",
 			"args" : [
 				{
 					"mn" : "Ci8",
@@ -335,6 +365,7 @@
 		},
 		{
 			"resMn" : "i16",
+			"mn" : "int16(Cu8):i16",
 			"args" : [
 				{
 					"mn" : "Cu8",
@@ -345,6 +376,7 @@
 		},
 		{
 			"resMn" : "i16",
+			"mn" : "int16(Ci16):i16",
 			"args" : [
 				{
 					"mn" : "Ci16",
@@ -355,6 +387,7 @@
 		},
 		{
 			"resMn" : "i16",
+			"mn" : "int16(Cu16):i16",
 			"args" : [
 				{
 					"mn" : "Cu16",
@@ -365,6 +398,7 @@
 		},
 		{
 			"resMn" : "i16",
+			"mn" : "int16(Ci64):i16",
 			"args" : [
 				{
 					"mn" : "Ci64",
@@ -375,6 +409,7 @@
 		},
 		{
 			"resMn" : "i16",
+			"mn" : "int16(Cu64):i16",
 			"args" : [
 				{
 					"mn" : "Cu64",
@@ -385,11 +420,13 @@
 		},
 		{
 			"resMn" : "u8",
+			"mn" : "uint8():u8",
 			"args" : [],
 			"name" : "uint8"
 		},
 		{
 			"resMn" : "u8",
+			"mn" : "uint8(Cf):u8",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -400,6 +437,7 @@
 		},
 		{
 			"resMn" : "u8",
+			"mn" : "uint8(Cd):u8",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -410,6 +448,7 @@
 		},
 		{
 			"resMn" : "u8",
+			"mn" : "uint8(Ci):u8",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -420,6 +459,7 @@
 		},
 		{
 			"resMn" : "u8",
+			"mn" : "uint8(Cu):u8",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -430,6 +470,7 @@
 		},
 		{
 			"resMn" : "u8",
+			"mn" : "uint8(Ct):u8",
 			"args" : [
 				{
 					"mn" : "Ct",
@@ -440,6 +481,7 @@
 		},
 		{
 			"resMn" : "u8",
+			"mn" : "uint8(Ci8):u8",
 			"args" : [
 				{
 					"mn" : "Ci8",
@@ -450,6 +492,7 @@
 		},
 		{
 			"resMn" : "u8",
+			"mn" : "uint8(Cu8):u8",
 			"args" : [
 				{
 					"mn" : "Cu8",
@@ -460,6 +503,7 @@
 		},
 		{
 			"resMn" : "u8",
+			"mn" : "uint8(Ci16):u8",
 			"args" : [
 				{
 					"mn" : "Ci16",
@@ -470,6 +514,7 @@
 		},
 		{
 			"resMn" : "u8",
+			"mn" : "uint8(Cu16):u8",
 			"args" : [
 				{
 					"mn" : "Cu16",
@@ -480,6 +525,7 @@
 		},
 		{
 			"resMn" : "u8",
+			"mn" : "uint8(Ci64):u8",
 			"args" : [
 				{
 					"mn" : "Ci64",
@@ -490,6 +536,7 @@
 		},
 		{
 			"resMn" : "u8",
+			"mn" : "uint8(Cu64):u8",
 			"args" : [
 				{
 					"mn" : "Cu64",
@@ -500,11 +547,13 @@
 		},
 		{
 			"resMn" : "u16",
+			"mn" : "uint16():u16",
 			"args" : [],
 			"name" : "uint16"
 		},
 		{
 			"resMn" : "u16",
+			"mn" : "uint16(Cf):u16",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -515,6 +564,7 @@
 		},
 		{
 			"resMn" : "u16",
+			"mn" : "uint16(Cd):u16",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -525,6 +575,7 @@
 		},
 		{
 			"resMn" : "u16",
+			"mn" : "uint16(Ci):u16",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -535,6 +586,7 @@
 		},
 		{
 			"resMn" : "u16",
+			"mn" : "uint16(Cu):u16",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -545,6 +597,7 @@
 		},
 		{
 			"resMn" : "u16",
+			"mn" : "uint16(Ct):u16",
 			"args" : [
 				{
 					"mn" : "Ct",
@@ -555,6 +608,7 @@
 		},
 		{
 			"resMn" : "u16",
+			"mn" : "uint16(Ci8):u16",
 			"args" : [
 				{
 					"mn" : "Ci8",
@@ -565,6 +619,7 @@
 		},
 		{
 			"resMn" : "u16",
+			"mn" : "uint16(Cu8):u16",
 			"args" : [
 				{
 					"mn" : "Cu8",
@@ -575,6 +630,7 @@
 		},
 		{
 			"resMn" : "u16",
+			"mn" : "uint16(Ci16):u16",
 			"args" : [
 				{
 					"mn" : "Ci16",
@@ -585,6 +641,7 @@
 		},
 		{
 			"resMn" : "u16",
+			"mn" : "uint16(Cu16):u16",
 			"args" : [
 				{
 					"mn" : "Cu16",
@@ -595,6 +652,7 @@
 		},
 		{
 			"resMn" : "u16",
+			"mn" : "uint16(Ci64):u16",
 			"args" : [
 				{
 					"mn" : "Ci64",
@@ -605,6 +663,7 @@
 		},
 		{
 			"resMn" : "u16",
+			"mn" : "uint16(Cu64):u16",
 			"args" : [
 				{
 					"mn" : "Cu64",
@@ -615,6 +674,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "==(Ci,Ci):b",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -629,6 +689,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "!=(Ci,Ci):b",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -643,6 +704,7 @@
 		},
 		{
 			"resMn" : "i",
+			"mn" : "+(Ci,Ci):i",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -657,6 +719,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "+=(&Ii,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -672,6 +735,7 @@
 		},
 		{
 			"resMn" : "i",
+			"mn" : "+(Ci):i",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -682,6 +746,7 @@
 		},
 		{
 			"resMn" : "i",
+			"mn" : "-(Ci):i",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -692,6 +757,7 @@
 		},
 		{
 			"resMn" : "i",
+			"mn" : "-(Ci,Ci):i",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -706,6 +772,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "-=(&Ii,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -721,6 +788,7 @@
 		},
 		{
 			"resMn" : "i",
+			"mn" : "*(Ci,Ci):i",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -735,6 +803,7 @@
 		},
 		{
 			"resMn" : "i",
+			"mn" : "/(Ci,Ci):i",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -749,6 +818,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "*=(&Ii,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -764,6 +834,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "/=(&Ii,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -779,6 +850,7 @@
 		},
 		{
 			"resMn" : "i",
+			"mn" : "%(Ci,Ci):i",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -793,6 +865,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "%=(&Ii,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -808,6 +881,7 @@
 		},
 		{
 			"resMn" : "i",
+			"mn" : "++(&Ii):i",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -819,6 +893,7 @@
 		},
 		{
 			"resMn" : "i",
+			"mn" : "--(&Ii):i",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -830,6 +905,7 @@
 		},
 		{
 			"resMn" : "i",
+			"mn" : "+++(&Ii):i",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -841,6 +917,7 @@
 		},
 		{
 			"resMn" : "i",
+			"mn" : "---(&Ii):i",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -852,6 +929,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : ">=(Ci,Ci):b",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -866,6 +944,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "<=(Ci,Ci):b",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -880,6 +959,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : ">(Ci,Ci):b",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -894,6 +974,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "<(Ci,Ci):b",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -908,6 +989,7 @@
 		},
 		{
 			"resMn" : "i",
+			"mn" : "~(Ci):i",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -918,6 +1000,7 @@
 		},
 		{
 			"resMn" : "i",
+			"mn" : "&(Ci,Ci):i",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -932,6 +1015,7 @@
 		},
 		{
 			"resMn" : "i",
+			"mn" : "|(Ci,Ci):i",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -946,6 +1030,7 @@
 		},
 		{
 			"resMn" : "i",
+			"mn" : "^(Ci,Ci):i",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -960,6 +1045,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "&=(&Ii,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -975,6 +1061,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "|=(&Ii,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -990,6 +1077,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "^=(&Ii,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -1005,6 +1093,7 @@
 		},
 		{
 			"resMn" : "i",
+			"mn" : "<<(Ci,Ci):i",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -1019,6 +1108,7 @@
 		},
 		{
 			"resMn" : "i",
+			"mn" : ">>(Ci,Ci):i",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -1033,6 +1123,7 @@
 		},
 		{
 			"resMn" : "i",
+			"mn" : "<<<(Ci,Ci):i",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -1047,6 +1138,7 @@
 		},
 		{
 			"resMn" : "i",
+			"mn" : ">>>(Ci,Ci):i",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -1061,6 +1153,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "<<=(&Ii,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -1076,6 +1169,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : ">>=(&Ii,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -1091,6 +1185,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "<<<=(&Ii,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -1106,6 +1201,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : ">>>=(&Ii,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -1121,11 +1217,13 @@
 		},
 		{
 			"resMn" : "i",
+			"mn" : "int():i",
 			"args" : [],
 			"name" : "int"
 		},
 		{
 			"resMn" : "i",
+			"mn" : "int(Cf):i",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -1136,6 +1234,7 @@
 		},
 		{
 			"resMn" : "i",
+			"mn" : "int(Cd):i",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -1146,6 +1245,7 @@
 		},
 		{
 			"resMn" : "i",
+			"mn" : "int(Ci):i",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -1156,6 +1256,7 @@
 		},
 		{
 			"resMn" : "i",
+			"mn" : "int(Cu):i",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -1166,6 +1267,7 @@
 		},
 		{
 			"resMn" : "i",
+			"mn" : "int(Ct):i",
 			"args" : [
 				{
 					"mn" : "Ct",
@@ -1176,6 +1278,7 @@
 		},
 		{
 			"resMn" : "i",
+			"mn" : "int(Ci8):i",
 			"args" : [
 				{
 					"mn" : "Ci8",
@@ -1186,6 +1289,7 @@
 		},
 		{
 			"resMn" : "i",
+			"mn" : "int(Cu8):i",
 			"args" : [
 				{
 					"mn" : "Cu8",
@@ -1196,6 +1300,7 @@
 		},
 		{
 			"resMn" : "i",
+			"mn" : "int(Ci16):i",
 			"args" : [
 				{
 					"mn" : "Ci16",
@@ -1206,6 +1311,7 @@
 		},
 		{
 			"resMn" : "i",
+			"mn" : "int(Cu16):i",
 			"args" : [
 				{
 					"mn" : "Cu16",
@@ -1216,6 +1322,7 @@
 		},
 		{
 			"resMn" : "i",
+			"mn" : "int(Ci64):i",
 			"args" : [
 				{
 					"mn" : "Ci64",
@@ -1226,6 +1333,7 @@
 		},
 		{
 			"resMn" : "i",
+			"mn" : "int(Cu64):i",
 			"args" : [
 				{
 					"mn" : "Cu64",
@@ -1236,6 +1344,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "==(Cu,Cu):b",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -1250,6 +1359,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "!=(Cu,Cu):b",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -1264,6 +1374,7 @@
 		},
 		{
 			"resMn" : "u",
+			"mn" : "+(Cu,Cu):u",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -1278,6 +1389,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "+=(&Iu,Cu):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -1293,6 +1405,7 @@
 		},
 		{
 			"resMn" : "u",
+			"mn" : "+(Cu):u",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -1303,6 +1416,7 @@
 		},
 		{
 			"resMn" : "u",
+			"mn" : "-(Cu):u",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -1313,6 +1427,7 @@
 		},
 		{
 			"resMn" : "u",
+			"mn" : "-(Cu,Cu):u",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -1327,6 +1442,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "-=(&Iu,Cu):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -1342,6 +1458,7 @@
 		},
 		{
 			"resMn" : "u",
+			"mn" : "*(Cu,Cu):u",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -1356,6 +1473,7 @@
 		},
 		{
 			"resMn" : "u",
+			"mn" : "/(Cu,Cu):u",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -1370,6 +1488,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "*=(&Iu,Cu):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -1385,6 +1504,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "/=(&Iu,Cu):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -1400,6 +1520,7 @@
 		},
 		{
 			"resMn" : "u",
+			"mn" : "%(Cu,Cu):u",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -1414,6 +1535,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "%=(&Iu,Cu):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -1429,6 +1551,7 @@
 		},
 		{
 			"resMn" : "u",
+			"mn" : "++(&Iu):u",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -1440,6 +1563,7 @@
 		},
 		{
 			"resMn" : "u",
+			"mn" : "--(&Iu):u",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -1451,6 +1575,7 @@
 		},
 		{
 			"resMn" : "u",
+			"mn" : "+++(&Iu):u",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -1462,6 +1587,7 @@
 		},
 		{
 			"resMn" : "u",
+			"mn" : "---(&Iu):u",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -1473,6 +1599,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : ">=(Cu,Cu):b",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -1487,6 +1614,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "<=(Cu,Cu):b",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -1501,6 +1629,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : ">(Cu,Cu):b",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -1515,6 +1644,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "<(Cu,Cu):b",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -1529,6 +1659,7 @@
 		},
 		{
 			"resMn" : "u",
+			"mn" : "~(Cu):u",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -1539,6 +1670,7 @@
 		},
 		{
 			"resMn" : "u",
+			"mn" : "&(Cu,Cu):u",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -1553,6 +1685,7 @@
 		},
 		{
 			"resMn" : "u",
+			"mn" : "|(Cu,Cu):u",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -1567,6 +1700,7 @@
 		},
 		{
 			"resMn" : "u",
+			"mn" : "^(Cu,Cu):u",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -1581,6 +1715,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "&=(&Iu,Cu):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -1596,6 +1731,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "|=(&Iu,Cu):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -1611,6 +1747,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "^=(&Iu,Cu):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -1626,6 +1763,7 @@
 		},
 		{
 			"resMn" : "u",
+			"mn" : "<<(Cu,Cu):u",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -1640,6 +1778,7 @@
 		},
 		{
 			"resMn" : "u",
+			"mn" : ">>(Cu,Cu):u",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -1654,6 +1793,7 @@
 		},
 		{
 			"resMn" : "u",
+			"mn" : "<<<(Cu,Cu):u",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -1668,6 +1808,7 @@
 		},
 		{
 			"resMn" : "u",
+			"mn" : ">>>(Cu,Cu):u",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -1682,6 +1823,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "<<=(&Iu,Cu):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -1697,6 +1839,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : ">>=(&Iu,Cu):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -1712,6 +1855,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "<<<=(&Iu,Cu):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -1727,6 +1871,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : ">>>=(&Iu,Cu):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -1742,11 +1887,13 @@
 		},
 		{
 			"resMn" : "u",
+			"mn" : "uint():u",
 			"args" : [],
 			"name" : "uint"
 		},
 		{
 			"resMn" : "u",
+			"mn" : "uint(Cf):u",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -1757,6 +1904,7 @@
 		},
 		{
 			"resMn" : "u",
+			"mn" : "uint(Cd):u",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -1767,6 +1915,7 @@
 		},
 		{
 			"resMn" : "u",
+			"mn" : "uint(Ci):u",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -1777,6 +1926,7 @@
 		},
 		{
 			"resMn" : "u",
+			"mn" : "uint(Cu):u",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -1787,6 +1937,7 @@
 		},
 		{
 			"resMn" : "u",
+			"mn" : "uint(Ct):u",
 			"args" : [
 				{
 					"mn" : "Ct",
@@ -1797,6 +1948,7 @@
 		},
 		{
 			"resMn" : "u",
+			"mn" : "uint(Ci8):u",
 			"args" : [
 				{
 					"mn" : "Ci8",
@@ -1807,6 +1959,7 @@
 		},
 		{
 			"resMn" : "u",
+			"mn" : "uint(Cu8):u",
 			"args" : [
 				{
 					"mn" : "Cu8",
@@ -1817,6 +1970,7 @@
 		},
 		{
 			"resMn" : "u",
+			"mn" : "uint(Ci16):u",
 			"args" : [
 				{
 					"mn" : "Ci16",
@@ -1827,6 +1981,7 @@
 		},
 		{
 			"resMn" : "u",
+			"mn" : "uint(Cu16):u",
 			"args" : [
 				{
 					"mn" : "Cu16",
@@ -1837,6 +1992,7 @@
 		},
 		{
 			"resMn" : "u",
+			"mn" : "uint(Ci64):u",
 			"args" : [
 				{
 					"mn" : "Ci64",
@@ -1847,6 +2003,7 @@
 		},
 		{
 			"resMn" : "u",
+			"mn" : "uint(Cu64):u",
 			"args" : [
 				{
 					"mn" : "Cu64",
@@ -1857,11 +2014,13 @@
 		},
 		{
 			"resMn" : "t",
+			"mn" : "bitfield():t",
 			"args" : [],
 			"name" : "bitfield"
 		},
 		{
 			"resMn" : "t",
+			"mn" : "bitfield(Cf):t",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -1872,6 +2031,7 @@
 		},
 		{
 			"resMn" : "t",
+			"mn" : "bitfield(Cd):t",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -1882,6 +2042,7 @@
 		},
 		{
 			"resMn" : "t",
+			"mn" : "bitfield(Ci):t",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -1892,6 +2053,7 @@
 		},
 		{
 			"resMn" : "t",
+			"mn" : "bitfield(Cu):t",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -1902,6 +2064,7 @@
 		},
 		{
 			"resMn" : "t",
+			"mn" : "bitfield(Ct):t",
 			"args" : [
 				{
 					"mn" : "Ct",
@@ -1912,6 +2075,7 @@
 		},
 		{
 			"resMn" : "t",
+			"mn" : "bitfield(Ci8):t",
 			"args" : [
 				{
 					"mn" : "Ci8",
@@ -1922,6 +2086,7 @@
 		},
 		{
 			"resMn" : "t",
+			"mn" : "bitfield(Cu8):t",
 			"args" : [
 				{
 					"mn" : "Cu8",
@@ -1932,6 +2097,7 @@
 		},
 		{
 			"resMn" : "t",
+			"mn" : "bitfield(Ci16):t",
 			"args" : [
 				{
 					"mn" : "Ci16",
@@ -1942,6 +2108,7 @@
 		},
 		{
 			"resMn" : "t",
+			"mn" : "bitfield(Cu16):t",
 			"args" : [
 				{
 					"mn" : "Cu16",
@@ -1952,6 +2119,7 @@
 		},
 		{
 			"resMn" : "t",
+			"mn" : "bitfield(Ci64):t",
 			"args" : [
 				{
 					"mn" : "Ci64",
@@ -1962,6 +2130,7 @@
 		},
 		{
 			"resMn" : "t",
+			"mn" : "bitfield(Cu64):t",
 			"args" : [
 				{
 					"mn" : "Cu64",
@@ -1972,6 +2141,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "==(Ct,Ct):b",
 			"args" : [
 				{
 					"mn" : "Ct",
@@ -1986,6 +2156,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "!=(Ct,Ct):b",
 			"args" : [
 				{
 					"mn" : "Ct",
@@ -2000,6 +2171,7 @@
 		},
 		{
 			"resMn" : "t",
+			"mn" : "~(Ct):t",
 			"args" : [
 				{
 					"mn" : "Ct",
@@ -2010,6 +2182,7 @@
 		},
 		{
 			"resMn" : "t",
+			"mn" : "&(Ct,Ct):t",
 			"args" : [
 				{
 					"mn" : "Ct",
@@ -2024,6 +2197,7 @@
 		},
 		{
 			"resMn" : "t",
+			"mn" : "|(Ct,Ct):t",
 			"args" : [
 				{
 					"mn" : "Ct",
@@ -2038,6 +2212,7 @@
 		},
 		{
 			"resMn" : "t",
+			"mn" : "^(Ct,Ct):t",
 			"args" : [
 				{
 					"mn" : "Ct",
@@ -2052,6 +2227,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "&=(&It,Ct):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -2067,6 +2243,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "|=(&It,Ct):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -2082,6 +2259,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "^=(&It,Ct):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -2097,6 +2275,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "==(Ci64,Ci64):b",
 			"args" : [
 				{
 					"mn" : "Ci64",
@@ -2111,6 +2290,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "!=(Ci64,Ci64):b",
 			"args" : [
 				{
 					"mn" : "Ci64",
@@ -2125,6 +2305,7 @@
 		},
 		{
 			"resMn" : "i64",
+			"mn" : "+(Ci64,Ci64):i64",
 			"args" : [
 				{
 					"mn" : "Ci64",
@@ -2139,6 +2320,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "+=(&Ii64,Ci64):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -2154,6 +2336,7 @@
 		},
 		{
 			"resMn" : "i64",
+			"mn" : "+(Ci64):i64",
 			"args" : [
 				{
 					"mn" : "Ci64",
@@ -2164,6 +2347,7 @@
 		},
 		{
 			"resMn" : "i64",
+			"mn" : "-(Ci64):i64",
 			"args" : [
 				{
 					"mn" : "Ci64",
@@ -2174,6 +2358,7 @@
 		},
 		{
 			"resMn" : "i64",
+			"mn" : "-(Ci64,Ci64):i64",
 			"args" : [
 				{
 					"mn" : "Ci64",
@@ -2188,6 +2373,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "-=(&Ii64,Ci64):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -2203,6 +2389,7 @@
 		},
 		{
 			"resMn" : "i64",
+			"mn" : "*(Ci64,Ci64):i64",
 			"args" : [
 				{
 					"mn" : "Ci64",
@@ -2217,6 +2404,7 @@
 		},
 		{
 			"resMn" : "i64",
+			"mn" : "/(Ci64,Ci64):i64",
 			"args" : [
 				{
 					"mn" : "Ci64",
@@ -2231,6 +2419,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "*=(&Ii64,Ci64):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -2246,6 +2435,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "/=(&Ii64,Ci64):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -2261,6 +2451,7 @@
 		},
 		{
 			"resMn" : "i64",
+			"mn" : "%(Ci64,Ci64):i64",
 			"args" : [
 				{
 					"mn" : "Ci64",
@@ -2275,6 +2466,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "%=(&Ii64,Ci64):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -2290,6 +2482,7 @@
 		},
 		{
 			"resMn" : "i64",
+			"mn" : "++(&Ii64):i64",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -2301,6 +2494,7 @@
 		},
 		{
 			"resMn" : "i64",
+			"mn" : "--(&Ii64):i64",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -2312,6 +2506,7 @@
 		},
 		{
 			"resMn" : "i64",
+			"mn" : "+++(&Ii64):i64",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -2323,6 +2518,7 @@
 		},
 		{
 			"resMn" : "i64",
+			"mn" : "---(&Ii64):i64",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -2334,6 +2530,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : ">=(Ci64,Ci64):b",
 			"args" : [
 				{
 					"mn" : "Ci64",
@@ -2348,6 +2545,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "<=(Ci64,Ci64):b",
 			"args" : [
 				{
 					"mn" : "Ci64",
@@ -2362,6 +2560,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : ">(Ci64,Ci64):b",
 			"args" : [
 				{
 					"mn" : "Ci64",
@@ -2376,6 +2575,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "<(Ci64,Ci64):b",
 			"args" : [
 				{
 					"mn" : "Ci64",
@@ -2390,6 +2590,7 @@
 		},
 		{
 			"resMn" : "i64",
+			"mn" : "~(Ci64):i64",
 			"args" : [
 				{
 					"mn" : "Ci64",
@@ -2400,6 +2601,7 @@
 		},
 		{
 			"resMn" : "i64",
+			"mn" : "&(Ci64,Ci64):i64",
 			"args" : [
 				{
 					"mn" : "Ci64",
@@ -2414,6 +2616,7 @@
 		},
 		{
 			"resMn" : "i64",
+			"mn" : "|(Ci64,Ci64):i64",
 			"args" : [
 				{
 					"mn" : "Ci64",
@@ -2428,6 +2631,7 @@
 		},
 		{
 			"resMn" : "i64",
+			"mn" : "^(Ci64,Ci64):i64",
 			"args" : [
 				{
 					"mn" : "Ci64",
@@ -2442,6 +2646,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "&=(&Ii64,Ci64):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -2457,6 +2662,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "|=(&Ii64,Ci64):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -2472,6 +2678,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "^=(&Ii64,Ci64):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -2487,6 +2694,7 @@
 		},
 		{
 			"resMn" : "i64",
+			"mn" : "<<(Ci64,Ci64):i64",
 			"args" : [
 				{
 					"mn" : "Ci64",
@@ -2501,6 +2709,7 @@
 		},
 		{
 			"resMn" : "i64",
+			"mn" : ">>(Ci64,Ci64):i64",
 			"args" : [
 				{
 					"mn" : "Ci64",
@@ -2515,6 +2724,7 @@
 		},
 		{
 			"resMn" : "i64",
+			"mn" : "<<<(Ci64,Ci64):i64",
 			"args" : [
 				{
 					"mn" : "Ci64",
@@ -2529,6 +2739,7 @@
 		},
 		{
 			"resMn" : "i64",
+			"mn" : ">>>(Ci64,Ci64):i64",
 			"args" : [
 				{
 					"mn" : "Ci64",
@@ -2543,6 +2754,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "<<=(&Ii64,Ci64):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -2558,6 +2770,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : ">>=(&Ii64,Ci64):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -2573,6 +2786,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "<<<=(&Ii64,Ci64):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -2588,6 +2802,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : ">>>=(&Ii64,Ci64):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -2603,11 +2818,13 @@
 		},
 		{
 			"resMn" : "i64",
+			"mn" : "int64():i64",
 			"args" : [],
 			"name" : "int64"
 		},
 		{
 			"resMn" : "i64",
+			"mn" : "int64(Cf):i64",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -2618,6 +2835,7 @@
 		},
 		{
 			"resMn" : "i64",
+			"mn" : "int64(Cd):i64",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -2628,6 +2846,7 @@
 		},
 		{
 			"resMn" : "i64",
+			"mn" : "int64(Ci):i64",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -2638,6 +2857,7 @@
 		},
 		{
 			"resMn" : "i64",
+			"mn" : "int64(Cu):i64",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -2648,6 +2868,7 @@
 		},
 		{
 			"resMn" : "i64",
+			"mn" : "int64(Ct):i64",
 			"args" : [
 				{
 					"mn" : "Ct",
@@ -2658,6 +2879,7 @@
 		},
 		{
 			"resMn" : "i64",
+			"mn" : "int64(Ci8):i64",
 			"args" : [
 				{
 					"mn" : "Ci8",
@@ -2668,6 +2890,7 @@
 		},
 		{
 			"resMn" : "i64",
+			"mn" : "int64(Cu8):i64",
 			"args" : [
 				{
 					"mn" : "Cu8",
@@ -2678,6 +2901,7 @@
 		},
 		{
 			"resMn" : "i64",
+			"mn" : "int64(Ci16):i64",
 			"args" : [
 				{
 					"mn" : "Ci16",
@@ -2688,6 +2912,7 @@
 		},
 		{
 			"resMn" : "i64",
+			"mn" : "int64(Cu16):i64",
 			"args" : [
 				{
 					"mn" : "Cu16",
@@ -2698,6 +2923,7 @@
 		},
 		{
 			"resMn" : "i64",
+			"mn" : "int64(Ci64):i64",
 			"args" : [
 				{
 					"mn" : "Ci64",
@@ -2708,6 +2934,7 @@
 		},
 		{
 			"resMn" : "i64",
+			"mn" : "int64(Cu64):i64",
 			"args" : [
 				{
 					"mn" : "Cu64",
@@ -2718,6 +2945,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "==(Cu64,Cu64):b",
 			"args" : [
 				{
 					"mn" : "Cu64",
@@ -2732,6 +2960,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "!=(Cu64,Cu64):b",
 			"args" : [
 				{
 					"mn" : "Cu64",
@@ -2746,6 +2975,7 @@
 		},
 		{
 			"resMn" : "u64",
+			"mn" : "+(Cu64,Cu64):u64",
 			"args" : [
 				{
 					"mn" : "Cu64",
@@ -2760,6 +2990,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "+=(&Iu64,Cu64):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -2775,6 +3006,7 @@
 		},
 		{
 			"resMn" : "u64",
+			"mn" : "+(Cu64):u64",
 			"args" : [
 				{
 					"mn" : "Cu64",
@@ -2785,6 +3017,7 @@
 		},
 		{
 			"resMn" : "u64",
+			"mn" : "-(Cu64):u64",
 			"args" : [
 				{
 					"mn" : "Cu64",
@@ -2795,6 +3028,7 @@
 		},
 		{
 			"resMn" : "u64",
+			"mn" : "-(Cu64,Cu64):u64",
 			"args" : [
 				{
 					"mn" : "Cu64",
@@ -2809,6 +3043,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "-=(&Iu64,Cu64):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -2824,6 +3059,7 @@
 		},
 		{
 			"resMn" : "u64",
+			"mn" : "*(Cu64,Cu64):u64",
 			"args" : [
 				{
 					"mn" : "Cu64",
@@ -2838,6 +3074,7 @@
 		},
 		{
 			"resMn" : "u64",
+			"mn" : "/(Cu64,Cu64):u64",
 			"args" : [
 				{
 					"mn" : "Cu64",
@@ -2852,6 +3089,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "*=(&Iu64,Cu64):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -2867,6 +3105,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "/=(&Iu64,Cu64):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -2882,6 +3121,7 @@
 		},
 		{
 			"resMn" : "u64",
+			"mn" : "%(Cu64,Cu64):u64",
 			"args" : [
 				{
 					"mn" : "Cu64",
@@ -2896,6 +3136,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "%=(&Iu64,Cu64):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -2911,6 +3152,7 @@
 		},
 		{
 			"resMn" : "u64",
+			"mn" : "++(&Iu64):u64",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -2922,6 +3164,7 @@
 		},
 		{
 			"resMn" : "u64",
+			"mn" : "--(&Iu64):u64",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -2933,6 +3176,7 @@
 		},
 		{
 			"resMn" : "u64",
+			"mn" : "+++(&Iu64):u64",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -2944,6 +3188,7 @@
 		},
 		{
 			"resMn" : "u64",
+			"mn" : "---(&Iu64):u64",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -2955,6 +3200,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : ">=(Cu64,Cu64):b",
 			"args" : [
 				{
 					"mn" : "Cu64",
@@ -2969,6 +3215,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "<=(Cu64,Cu64):b",
 			"args" : [
 				{
 					"mn" : "Cu64",
@@ -2983,6 +3230,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : ">(Cu64,Cu64):b",
 			"args" : [
 				{
 					"mn" : "Cu64",
@@ -2997,6 +3245,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "<(Cu64,Cu64):b",
 			"args" : [
 				{
 					"mn" : "Cu64",
@@ -3011,6 +3260,7 @@
 		},
 		{
 			"resMn" : "u64",
+			"mn" : "~(Cu64):u64",
 			"args" : [
 				{
 					"mn" : "Cu64",
@@ -3021,6 +3271,7 @@
 		},
 		{
 			"resMn" : "u64",
+			"mn" : "&(Cu64,Cu64):u64",
 			"args" : [
 				{
 					"mn" : "Cu64",
@@ -3035,6 +3286,7 @@
 		},
 		{
 			"resMn" : "u64",
+			"mn" : "|(Cu64,Cu64):u64",
 			"args" : [
 				{
 					"mn" : "Cu64",
@@ -3049,6 +3301,7 @@
 		},
 		{
 			"resMn" : "u64",
+			"mn" : "^(Cu64,Cu64):u64",
 			"args" : [
 				{
 					"mn" : "Cu64",
@@ -3063,6 +3316,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "&=(&Iu64,Cu64):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -3078,6 +3332,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "|=(&Iu64,Cu64):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -3093,6 +3348,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "^=(&Iu64,Cu64):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -3108,6 +3364,7 @@
 		},
 		{
 			"resMn" : "u64",
+			"mn" : "<<(Cu64,Cu64):u64",
 			"args" : [
 				{
 					"mn" : "Cu64",
@@ -3122,6 +3379,7 @@
 		},
 		{
 			"resMn" : "u64",
+			"mn" : ">>(Cu64,Cu64):u64",
 			"args" : [
 				{
 					"mn" : "Cu64",
@@ -3136,6 +3394,7 @@
 		},
 		{
 			"resMn" : "u64",
+			"mn" : "<<<(Cu64,Cu64):u64",
 			"args" : [
 				{
 					"mn" : "Cu64",
@@ -3150,6 +3409,7 @@
 		},
 		{
 			"resMn" : "u64",
+			"mn" : ">>>(Cu64,Cu64):u64",
 			"args" : [
 				{
 					"mn" : "Cu64",
@@ -3164,6 +3424,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "<<=(&Iu64,Cu64):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -3179,6 +3440,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : ">>=(&Iu64,Cu64):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -3194,6 +3456,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "<<<=(&Iu64,Cu64):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -3209,6 +3472,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : ">>>=(&Iu64,Cu64):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -3224,11 +3488,13 @@
 		},
 		{
 			"resMn" : "u64",
+			"mn" : "uint64():u64",
 			"args" : [],
 			"name" : "uint64"
 		},
 		{
 			"resMn" : "u64",
+			"mn" : "uint64(Cf):u64",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -3239,6 +3505,7 @@
 		},
 		{
 			"resMn" : "u64",
+			"mn" : "uint64(Cd):u64",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -3249,6 +3516,7 @@
 		},
 		{
 			"resMn" : "u64",
+			"mn" : "uint64(Ci):u64",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -3259,6 +3527,7 @@
 		},
 		{
 			"resMn" : "u64",
+			"mn" : "uint64(Cu):u64",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -3269,6 +3538,7 @@
 		},
 		{
 			"resMn" : "u64",
+			"mn" : "uint64(Ct):u64",
 			"args" : [
 				{
 					"mn" : "Ct",
@@ -3279,6 +3549,7 @@
 		},
 		{
 			"resMn" : "u64",
+			"mn" : "uint64(Ci8):u64",
 			"args" : [
 				{
 					"mn" : "Ci8",
@@ -3289,6 +3560,7 @@
 		},
 		{
 			"resMn" : "u64",
+			"mn" : "uint64(Cu8):u64",
 			"args" : [
 				{
 					"mn" : "Cu8",
@@ -3299,6 +3571,7 @@
 		},
 		{
 			"resMn" : "u64",
+			"mn" : "uint64(Ci16):u64",
 			"args" : [
 				{
 					"mn" : "Ci16",
@@ -3309,6 +3582,7 @@
 		},
 		{
 			"resMn" : "u64",
+			"mn" : "uint64(Cu16):u64",
 			"args" : [
 				{
 					"mn" : "Cu16",
@@ -3319,6 +3593,7 @@
 		},
 		{
 			"resMn" : "u64",
+			"mn" : "uint64(Ci64):u64",
 			"args" : [
 				{
 					"mn" : "Ci64",
@@ -3329,6 +3604,7 @@
 		},
 		{
 			"resMn" : "u64",
+			"mn" : "uint64(Cu64):u64",
 			"args" : [
 				{
 					"mn" : "Cu64",
@@ -3339,6 +3615,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "==(Cf,Cf):b",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -3353,6 +3630,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "!=(Cf,Cf):b",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -3367,6 +3645,7 @@
 		},
 		{
 			"resMn" : "f",
+			"mn" : "+(Cf,Cf):f",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -3381,6 +3660,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "+=(&If,Cf):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -3396,6 +3676,7 @@
 		},
 		{
 			"resMn" : "f",
+			"mn" : "+(Cf):f",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -3406,6 +3687,7 @@
 		},
 		{
 			"resMn" : "f",
+			"mn" : "-(Cf):f",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -3416,6 +3698,7 @@
 		},
 		{
 			"resMn" : "f",
+			"mn" : "-(Cf,Cf):f",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -3430,6 +3713,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "-=(&If,Cf):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -3445,6 +3729,7 @@
 		},
 		{
 			"resMn" : "f",
+			"mn" : "*(Cf,Cf):f",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -3459,6 +3744,7 @@
 		},
 		{
 			"resMn" : "f",
+			"mn" : "/(Cf,Cf):f",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -3473,6 +3759,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "*=(&If,Cf):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -3488,6 +3775,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "/=(&If,Cf):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -3503,6 +3791,7 @@
 		},
 		{
 			"resMn" : "f",
+			"mn" : "%(Cf,Cf):f",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -3517,6 +3806,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "%=(&If,Cf):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -3532,6 +3822,7 @@
 		},
 		{
 			"resMn" : "f",
+			"mn" : "++(&If):f",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -3543,6 +3834,7 @@
 		},
 		{
 			"resMn" : "f",
+			"mn" : "--(&If):f",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -3554,6 +3846,7 @@
 		},
 		{
 			"resMn" : "f",
+			"mn" : "+++(&If):f",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -3565,6 +3858,7 @@
 		},
 		{
 			"resMn" : "f",
+			"mn" : "---(&If):f",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -3576,6 +3870,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : ">=(Cf,Cf):b",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -3590,6 +3885,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "<=(Cf,Cf):b",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -3604,6 +3900,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : ">(Cf,Cf):b",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -3618,6 +3915,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "<(Cf,Cf):b",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -3632,11 +3930,13 @@
 		},
 		{
 			"resMn" : "f",
+			"mn" : "float():f",
 			"args" : [],
 			"name" : "float"
 		},
 		{
 			"resMn" : "f",
+			"mn" : "float(Cf):f",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -3647,6 +3947,7 @@
 		},
 		{
 			"resMn" : "f",
+			"mn" : "float(Cd):f",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -3657,6 +3958,7 @@
 		},
 		{
 			"resMn" : "f",
+			"mn" : "float(Ci):f",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -3667,6 +3969,7 @@
 		},
 		{
 			"resMn" : "f",
+			"mn" : "float(Cu):f",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -3677,6 +3980,7 @@
 		},
 		{
 			"resMn" : "f",
+			"mn" : "float(Ct):f",
 			"args" : [
 				{
 					"mn" : "Ct",
@@ -3687,6 +3991,7 @@
 		},
 		{
 			"resMn" : "f",
+			"mn" : "float(Ci8):f",
 			"args" : [
 				{
 					"mn" : "Ci8",
@@ -3697,6 +4002,7 @@
 		},
 		{
 			"resMn" : "f",
+			"mn" : "float(Cu8):f",
 			"args" : [
 				{
 					"mn" : "Cu8",
@@ -3707,6 +4013,7 @@
 		},
 		{
 			"resMn" : "f",
+			"mn" : "float(Ci16):f",
 			"args" : [
 				{
 					"mn" : "Ci16",
@@ -3717,6 +4024,7 @@
 		},
 		{
 			"resMn" : "f",
+			"mn" : "float(Cu16):f",
 			"args" : [
 				{
 					"mn" : "Cu16",
@@ -3727,6 +4035,7 @@
 		},
 		{
 			"resMn" : "f",
+			"mn" : "float(Ci64):f",
 			"args" : [
 				{
 					"mn" : "Ci64",
@@ -3737,6 +4046,7 @@
 		},
 		{
 			"resMn" : "f",
+			"mn" : "float(Cu64):f",
 			"args" : [
 				{
 					"mn" : "Cu64",
@@ -3747,6 +4057,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "==(Cd,Cd):b",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -3761,6 +4072,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "!=(Cd,Cd):b",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -3775,6 +4087,7 @@
 		},
 		{
 			"resMn" : "d",
+			"mn" : "+(Cd,Cd):d",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -3789,6 +4102,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "+=(&Id,Cd):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -3804,6 +4118,7 @@
 		},
 		{
 			"resMn" : "d",
+			"mn" : "+(Cd):d",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -3814,6 +4129,7 @@
 		},
 		{
 			"resMn" : "d",
+			"mn" : "-(Cd):d",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -3824,6 +4140,7 @@
 		},
 		{
 			"resMn" : "d",
+			"mn" : "-(Cd,Cd):d",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -3838,6 +4155,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "-=(&Id,Cd):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -3853,6 +4171,7 @@
 		},
 		{
 			"resMn" : "d",
+			"mn" : "*(Cd,Cd):d",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -3867,6 +4186,7 @@
 		},
 		{
 			"resMn" : "d",
+			"mn" : "/(Cd,Cd):d",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -3881,6 +4201,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "*=(&Id,Cd):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -3896,6 +4217,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "/=(&Id,Cd):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -3911,6 +4233,7 @@
 		},
 		{
 			"resMn" : "d",
+			"mn" : "%(Cd,Cd):d",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -3925,6 +4248,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "%=(&Id,Cd):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -3940,6 +4264,7 @@
 		},
 		{
 			"resMn" : "d",
+			"mn" : "++(&Id):d",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -3951,6 +4276,7 @@
 		},
 		{
 			"resMn" : "d",
+			"mn" : "--(&Id):d",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -3962,6 +4288,7 @@
 		},
 		{
 			"resMn" : "d",
+			"mn" : "+++(&Id):d",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -3973,6 +4300,7 @@
 		},
 		{
 			"resMn" : "d",
+			"mn" : "---(&Id):d",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -3984,6 +4312,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : ">=(Cd,Cd):b",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -3998,6 +4327,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "<=(Cd,Cd):b",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -4012,6 +4342,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : ">(Cd,Cd):b",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -4026,6 +4357,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "<(Cd,Cd):b",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -4040,11 +4372,13 @@
 		},
 		{
 			"resMn" : "d",
+			"mn" : "double():d",
 			"args" : [],
 			"name" : "double"
 		},
 		{
 			"resMn" : "d",
+			"mn" : "double(Cf):d",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -4055,6 +4389,7 @@
 		},
 		{
 			"resMn" : "d",
+			"mn" : "double(Cd):d",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -4065,6 +4400,7 @@
 		},
 		{
 			"resMn" : "d",
+			"mn" : "double(Ci):d",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -4075,6 +4411,7 @@
 		},
 		{
 			"resMn" : "d",
+			"mn" : "double(Cu):d",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -4085,6 +4422,7 @@
 		},
 		{
 			"resMn" : "d",
+			"mn" : "double(Ct):d",
 			"args" : [
 				{
 					"mn" : "Ct",
@@ -4095,6 +4433,7 @@
 		},
 		{
 			"resMn" : "d",
+			"mn" : "double(Ci8):d",
 			"args" : [
 				{
 					"mn" : "Ci8",
@@ -4105,6 +4444,7 @@
 		},
 		{
 			"resMn" : "d",
+			"mn" : "double(Cu8):d",
 			"args" : [
 				{
 					"mn" : "Cu8",
@@ -4115,6 +4455,7 @@
 		},
 		{
 			"resMn" : "d",
+			"mn" : "double(Ci16):d",
 			"args" : [
 				{
 					"mn" : "Ci16",
@@ -4125,6 +4466,7 @@
 		},
 		{
 			"resMn" : "d",
+			"mn" : "double(Cu16):d",
 			"args" : [
 				{
 					"mn" : "Cu16",
@@ -4135,6 +4477,7 @@
 		},
 		{
 			"resMn" : "d",
+			"mn" : "double(Ci64):d",
 			"args" : [
 				{
 					"mn" : "Ci64",
@@ -4145,6 +4488,7 @@
 		},
 		{
 			"resMn" : "d",
+			"mn" : "double(Cu64):d",
 			"args" : [
 				{
 					"mn" : "Cu64",
@@ -4155,6 +4499,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "==(Ci8,Ci8):b",
 			"args" : [
 				{
 					"mn" : "Ci8",
@@ -4169,6 +4514,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "!=(Ci8,Ci8):b",
 			"args" : [
 				{
 					"mn" : "Ci8",
@@ -4183,6 +4529,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "==(Cu8,Cu8):b",
 			"args" : [
 				{
 					"mn" : "Cu8",
@@ -4197,6 +4544,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "!=(Cu8,Cu8):b",
 			"args" : [
 				{
 					"mn" : "Cu8",
@@ -4211,6 +4559,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "==(Ci16,Ci16):b",
 			"args" : [
 				{
 					"mn" : "Ci16",
@@ -4225,6 +4574,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "!=(Ci16,Ci16):b",
 			"args" : [
 				{
 					"mn" : "Ci16",
@@ -4239,6 +4589,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "==(Cu16,Cu16):b",
 			"args" : [
 				{
 					"mn" : "Cu16",
@@ -4253,6 +4604,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "!=(Cu16,Cu16):b",
 			"args" : [
 				{
 					"mn" : "Cu16",
@@ -4267,6 +4619,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "==(CE,CE):b",
 			"args" : [
 				{
 					"mn" : "CE",
@@ -4281,6 +4634,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "!=(CE,CE):b",
 			"args" : [
 				{
 					"mn" : "CE",
@@ -4295,6 +4649,7 @@
 		},
 		{
 			"resMn" : "i",
+			"mn" : "int(CE):i",
 			"args" : [
 				{
 					"mn" : "CE",
@@ -4305,6 +4660,7 @@
 		},
 		{
 			"resMn" : "u",
+			"mn" : "uint(CE):u",
 			"args" : [
 				{
 					"mn" : "CE",
@@ -4315,6 +4671,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "==(CE8,CE8):b",
 			"args" : [
 				{
 					"mn" : "CE8",
@@ -4329,6 +4686,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "!=(CE8,CE8):b",
 			"args" : [
 				{
 					"mn" : "CE8",
@@ -4343,6 +4701,7 @@
 		},
 		{
 			"resMn" : "i",
+			"mn" : "int(CE8):i",
 			"args" : [
 				{
 					"mn" : "CE8",
@@ -4353,6 +4712,7 @@
 		},
 		{
 			"resMn" : "u",
+			"mn" : "uint(CE8):u",
 			"args" : [
 				{
 					"mn" : "CE8",
@@ -4363,6 +4723,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "==(CE16,CE16):b",
 			"args" : [
 				{
 					"mn" : "CE16",
@@ -4377,6 +4738,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "!=(CE16,CE16):b",
 			"args" : [
 				{
 					"mn" : "CE16",
@@ -4391,6 +4753,7 @@
 		},
 		{
 			"resMn" : "i",
+			"mn" : "int(CE16):i",
 			"args" : [
 				{
 					"mn" : "CE16",
@@ -4401,6 +4764,7 @@
 		},
 		{
 			"resMn" : "u",
+			"mn" : "uint(CE16):u",
 			"args" : [
 				{
 					"mn" : "CE16",
@@ -4411,6 +4775,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "==(C@@,C@@):b",
 			"args" : [
 				{
 					"mn" : "C@@",
@@ -4425,6 +4790,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "!=(C@@,C@@):b",
 			"args" : [
 				{
 					"mn" : "C@@",
@@ -4439,6 +4805,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "==(C@@,CI?):b",
 			"args" : [
 				{
 					"mn" : "C@@",
@@ -4453,6 +4820,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "!=(C@@,CI?):b",
 			"args" : [
 				{
 					"mn" : "C@@",
@@ -4467,6 +4835,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "==(C@,CI?):b",
 			"args" : [
 				{
 					"mn" : "C@",
@@ -4481,6 +4850,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "!=(C@,CI?):b",
 			"args" : [
 				{
 					"mn" : "C@",
@@ -4495,6 +4865,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "==(CIs,CIs):b",
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -4509,6 +4880,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "!=(CIs,CIs):b",
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -4523,6 +4895,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : ">=(CIs,CIs):b",
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -4537,6 +4910,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "<=(CIs,CIs):b",
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -4551,6 +4925,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : ">(CIs,CIs):b",
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -4565,6 +4940,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "<(CIs,CIs):b",
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -4579,6 +4955,7 @@
 		},
 		{
 			"resMn" : "s",
+			"mn" : "+(CIs,CIs):s",
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -4593,6 +4970,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "+=(&Is,CIs):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -4608,6 +4986,7 @@
 		},
 		{
 			"resMn" : "s",
+			"mn" : "string(Ci):s",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -4618,6 +4997,7 @@
 		},
 		{
 			"resMn" : "s",
+			"mn" : "string(Cu):s",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -4628,6 +5008,7 @@
 		},
 		{
 			"resMn" : "s",
+			"mn" : "string(Ci64):s",
 			"args" : [
 				{
 					"mn" : "Ci64",
@@ -4638,6 +5019,7 @@
 		},
 		{
 			"resMn" : "s",
+			"mn" : "string(Cu64):s",
 			"args" : [
 				{
 					"mn" : "Cu64",
@@ -4648,6 +5030,7 @@
 		},
 		{
 			"resMn" : "s",
+			"mn" : "string(Cf):s",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -4658,6 +5041,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "==(Cf2,Cf2):b",
 			"args" : [
 				{
 					"mn" : "Cf2",
@@ -4672,6 +5056,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "!=(Cf2,Cf2):b",
 			"args" : [
 				{
 					"mn" : "Cf2",
@@ -4686,6 +5071,7 @@
 		},
 		{
 			"resMn" : "f2",
+			"mn" : "+(Cf2,Cf2):f2",
 			"args" : [
 				{
 					"mn" : "Cf2",
@@ -4700,6 +5086,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "+=(&If2,Cf2):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -4715,6 +5102,7 @@
 		},
 		{
 			"resMn" : "f2",
+			"mn" : "+(Cf2):f2",
 			"args" : [
 				{
 					"mn" : "Cf2",
@@ -4725,6 +5113,7 @@
 		},
 		{
 			"resMn" : "f2",
+			"mn" : "-(Cf2):f2",
 			"args" : [
 				{
 					"mn" : "Cf2",
@@ -4735,6 +5124,7 @@
 		},
 		{
 			"resMn" : "f2",
+			"mn" : "-(Cf2,Cf2):f2",
 			"args" : [
 				{
 					"mn" : "Cf2",
@@ -4749,6 +5139,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "-=(&If2,Cf2):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -4764,6 +5155,7 @@
 		},
 		{
 			"resMn" : "f2",
+			"mn" : "*(Cf2,Cf2):f2",
 			"args" : [
 				{
 					"mn" : "Cf2",
@@ -4778,6 +5170,7 @@
 		},
 		{
 			"resMn" : "f2",
+			"mn" : "/(Cf2,Cf2):f2",
 			"args" : [
 				{
 					"mn" : "Cf2",
@@ -4792,6 +5185,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "*=(&If2,Cf2):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -4807,6 +5201,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "/=(&If2,Cf2):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -4822,6 +5217,7 @@
 		},
 		{
 			"resMn" : "f2",
+			"mn" : "*(Cf,Cf2):f2",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -4836,6 +5232,7 @@
 		},
 		{
 			"resMn" : "f2",
+			"mn" : "/(Cf,Cf2):f2",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -4850,6 +5247,7 @@
 		},
 		{
 			"resMn" : "f2",
+			"mn" : "*(Cf2,Cf):f2",
 			"args" : [
 				{
 					"mn" : "Cf2",
@@ -4864,6 +5262,7 @@
 		},
 		{
 			"resMn" : "f2",
+			"mn" : "/(Cf2,Cf):f2",
 			"args" : [
 				{
 					"mn" : "Cf2",
@@ -4878,6 +5277,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "*=(&If2,Cf):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -4893,6 +5293,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "/=(&If2,Cf):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -4908,6 +5309,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "==(Cf3,Cf3):b",
 			"args" : [
 				{
 					"mn" : "Cf3",
@@ -4922,6 +5324,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "!=(Cf3,Cf3):b",
 			"args" : [
 				{
 					"mn" : "Cf3",
@@ -4936,6 +5339,7 @@
 		},
 		{
 			"resMn" : "f3",
+			"mn" : "+(Cf3,Cf3):f3",
 			"args" : [
 				{
 					"mn" : "Cf3",
@@ -4950,6 +5354,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "+=(&If3,Cf3):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -4965,6 +5370,7 @@
 		},
 		{
 			"resMn" : "f3",
+			"mn" : "+(Cf3):f3",
 			"args" : [
 				{
 					"mn" : "Cf3",
@@ -4975,6 +5381,7 @@
 		},
 		{
 			"resMn" : "f3",
+			"mn" : "-(Cf3):f3",
 			"args" : [
 				{
 					"mn" : "Cf3",
@@ -4985,6 +5392,7 @@
 		},
 		{
 			"resMn" : "f3",
+			"mn" : "-(Cf3,Cf3):f3",
 			"args" : [
 				{
 					"mn" : "Cf3",
@@ -4999,6 +5407,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "-=(&If3,Cf3):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -5014,6 +5423,7 @@
 		},
 		{
 			"resMn" : "f3",
+			"mn" : "*(Cf3,Cf3):f3",
 			"args" : [
 				{
 					"mn" : "Cf3",
@@ -5028,6 +5438,7 @@
 		},
 		{
 			"resMn" : "f3",
+			"mn" : "/(Cf3,Cf3):f3",
 			"args" : [
 				{
 					"mn" : "Cf3",
@@ -5042,6 +5453,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "*=(&If3,Cf3):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -5057,6 +5469,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "/=(&If3,Cf3):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -5072,6 +5485,7 @@
 		},
 		{
 			"resMn" : "f3",
+			"mn" : "*(Cf,Cf3):f3",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -5086,6 +5500,7 @@
 		},
 		{
 			"resMn" : "f3",
+			"mn" : "/(Cf,Cf3):f3",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -5100,6 +5515,7 @@
 		},
 		{
 			"resMn" : "f3",
+			"mn" : "*(Cf3,Cf):f3",
 			"args" : [
 				{
 					"mn" : "Cf3",
@@ -5114,6 +5530,7 @@
 		},
 		{
 			"resMn" : "f3",
+			"mn" : "/(Cf3,Cf):f3",
 			"args" : [
 				{
 					"mn" : "Cf3",
@@ -5128,6 +5545,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "*=(&If3,Cf):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -5143,6 +5561,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "/=(&If3,Cf):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -5158,6 +5577,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "==(Cf4,Cf4):b",
 			"args" : [
 				{
 					"mn" : "Cf4",
@@ -5172,6 +5592,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "!=(Cf4,Cf4):b",
 			"args" : [
 				{
 					"mn" : "Cf4",
@@ -5186,6 +5607,7 @@
 		},
 		{
 			"resMn" : "f4",
+			"mn" : "+(Cf4,Cf4):f4",
 			"args" : [
 				{
 					"mn" : "Cf4",
@@ -5200,6 +5622,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "+=(&If4,Cf4):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -5215,6 +5638,7 @@
 		},
 		{
 			"resMn" : "f4",
+			"mn" : "+(Cf4):f4",
 			"args" : [
 				{
 					"mn" : "Cf4",
@@ -5225,6 +5649,7 @@
 		},
 		{
 			"resMn" : "f4",
+			"mn" : "-(Cf4):f4",
 			"args" : [
 				{
 					"mn" : "Cf4",
@@ -5235,6 +5660,7 @@
 		},
 		{
 			"resMn" : "f4",
+			"mn" : "-(Cf4,Cf4):f4",
 			"args" : [
 				{
 					"mn" : "Cf4",
@@ -5249,6 +5675,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "-=(&If4,Cf4):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -5264,6 +5691,7 @@
 		},
 		{
 			"resMn" : "f4",
+			"mn" : "*(Cf4,Cf4):f4",
 			"args" : [
 				{
 					"mn" : "Cf4",
@@ -5278,6 +5706,7 @@
 		},
 		{
 			"resMn" : "f4",
+			"mn" : "/(Cf4,Cf4):f4",
 			"args" : [
 				{
 					"mn" : "Cf4",
@@ -5292,6 +5721,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "*=(&If4,Cf4):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -5307,6 +5737,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "/=(&If4,Cf4):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -5322,6 +5753,7 @@
 		},
 		{
 			"resMn" : "f4",
+			"mn" : "*(Cf,Cf4):f4",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -5336,6 +5768,7 @@
 		},
 		{
 			"resMn" : "f4",
+			"mn" : "/(Cf,Cf4):f4",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -5350,6 +5783,7 @@
 		},
 		{
 			"resMn" : "f4",
+			"mn" : "*(Cf4,Cf):f4",
 			"args" : [
 				{
 					"mn" : "Cf4",
@@ -5364,6 +5798,7 @@
 		},
 		{
 			"resMn" : "f4",
+			"mn" : "/(Cf4,Cf):f4",
 			"args" : [
 				{
 					"mn" : "Cf4",
@@ -5378,6 +5813,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "*=(&If4,Cf):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -5393,6 +5829,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "/=(&If4,Cf):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -5408,6 +5845,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "==(Ci2,Ci2):b",
 			"args" : [
 				{
 					"mn" : "Ci2",
@@ -5422,6 +5860,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "!=(Ci2,Ci2):b",
 			"args" : [
 				{
 					"mn" : "Ci2",
@@ -5436,6 +5875,7 @@
 		},
 		{
 			"resMn" : "i2",
+			"mn" : "+(Ci2,Ci2):i2",
 			"args" : [
 				{
 					"mn" : "Ci2",
@@ -5450,6 +5890,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "+=(&Ii2,Ci2):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -5465,6 +5906,7 @@
 		},
 		{
 			"resMn" : "i2",
+			"mn" : "+(Ci2):i2",
 			"args" : [
 				{
 					"mn" : "Ci2",
@@ -5475,6 +5917,7 @@
 		},
 		{
 			"resMn" : "i2",
+			"mn" : "-(Ci2):i2",
 			"args" : [
 				{
 					"mn" : "Ci2",
@@ -5485,6 +5928,7 @@
 		},
 		{
 			"resMn" : "i2",
+			"mn" : "-(Ci2,Ci2):i2",
 			"args" : [
 				{
 					"mn" : "Ci2",
@@ -5499,6 +5943,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "-=(&Ii2,Ci2):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -5514,6 +5959,7 @@
 		},
 		{
 			"resMn" : "i2",
+			"mn" : "*(Ci2,Ci2):i2",
 			"args" : [
 				{
 					"mn" : "Ci2",
@@ -5528,6 +5974,7 @@
 		},
 		{
 			"resMn" : "i2",
+			"mn" : "/(Ci2,Ci2):i2",
 			"args" : [
 				{
 					"mn" : "Ci2",
@@ -5542,6 +5989,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "*=(&Ii2,Ci2):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -5557,6 +6005,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "/=(&Ii2,Ci2):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -5572,6 +6021,7 @@
 		},
 		{
 			"resMn" : "i2",
+			"mn" : "*(Ci,Ci2):i2",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -5586,6 +6036,7 @@
 		},
 		{
 			"resMn" : "i2",
+			"mn" : "/(Ci,Ci2):i2",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -5600,6 +6051,7 @@
 		},
 		{
 			"resMn" : "i2",
+			"mn" : "*(Ci2,Ci):i2",
 			"args" : [
 				{
 					"mn" : "Ci2",
@@ -5614,6 +6066,7 @@
 		},
 		{
 			"resMn" : "i2",
+			"mn" : "/(Ci2,Ci):i2",
 			"args" : [
 				{
 					"mn" : "Ci2",
@@ -5628,6 +6081,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "*=(&Ii2,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -5643,6 +6097,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "/=(&Ii2,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -5658,6 +6113,7 @@
 		},
 		{
 			"resMn" : "i2",
+			"mn" : "&(Ci2,Ci2):i2",
 			"args" : [
 				{
 					"mn" : "Ci2",
@@ -5672,6 +6128,7 @@
 		},
 		{
 			"resMn" : "i2",
+			"mn" : "|(Ci2,Ci2):i2",
 			"args" : [
 				{
 					"mn" : "Ci2",
@@ -5686,6 +6143,7 @@
 		},
 		{
 			"resMn" : "i2",
+			"mn" : "^(Ci2,Ci2):i2",
 			"args" : [
 				{
 					"mn" : "Ci2",
@@ -5700,6 +6158,7 @@
 		},
 		{
 			"resMn" : "i2",
+			"mn" : "<<(Ci2,Ci):i2",
 			"args" : [
 				{
 					"mn" : "Ci2",
@@ -5714,6 +6173,7 @@
 		},
 		{
 			"resMn" : "i2",
+			"mn" : ">>(Ci2,Ci):i2",
 			"args" : [
 				{
 					"mn" : "Ci2",
@@ -5728,6 +6188,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "&=(&Ii2,Ci2):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -5743,6 +6204,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "|=(&Ii2,Ci2):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -5758,6 +6220,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "^=(&Ii2,Ci2):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -5773,6 +6236,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "<<=(&Ii2,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -5788,6 +6252,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : ">>=(&Ii2,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -5803,6 +6268,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "==(Ci3,Ci3):b",
 			"args" : [
 				{
 					"mn" : "Ci3",
@@ -5817,6 +6283,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "!=(Ci3,Ci3):b",
 			"args" : [
 				{
 					"mn" : "Ci3",
@@ -5831,6 +6298,7 @@
 		},
 		{
 			"resMn" : "i3",
+			"mn" : "+(Ci3,Ci3):i3",
 			"args" : [
 				{
 					"mn" : "Ci3",
@@ -5845,6 +6313,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "+=(&Ii3,Ci3):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -5860,6 +6329,7 @@
 		},
 		{
 			"resMn" : "i3",
+			"mn" : "+(Ci3):i3",
 			"args" : [
 				{
 					"mn" : "Ci3",
@@ -5870,6 +6340,7 @@
 		},
 		{
 			"resMn" : "i3",
+			"mn" : "-(Ci3):i3",
 			"args" : [
 				{
 					"mn" : "Ci3",
@@ -5880,6 +6351,7 @@
 		},
 		{
 			"resMn" : "i3",
+			"mn" : "-(Ci3,Ci3):i3",
 			"args" : [
 				{
 					"mn" : "Ci3",
@@ -5894,6 +6366,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "-=(&Ii3,Ci3):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -5909,6 +6382,7 @@
 		},
 		{
 			"resMn" : "i3",
+			"mn" : "*(Ci3,Ci3):i3",
 			"args" : [
 				{
 					"mn" : "Ci3",
@@ -5923,6 +6397,7 @@
 		},
 		{
 			"resMn" : "i3",
+			"mn" : "/(Ci3,Ci3):i3",
 			"args" : [
 				{
 					"mn" : "Ci3",
@@ -5937,6 +6412,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "*=(&Ii3,Ci3):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -5952,6 +6428,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "/=(&Ii3,Ci3):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -5967,6 +6444,7 @@
 		},
 		{
 			"resMn" : "i3",
+			"mn" : "*(Ci,Ci3):i3",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -5981,6 +6459,7 @@
 		},
 		{
 			"resMn" : "i3",
+			"mn" : "/(Ci,Ci3):i3",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -5995,6 +6474,7 @@
 		},
 		{
 			"resMn" : "i3",
+			"mn" : "*(Ci3,Ci):i3",
 			"args" : [
 				{
 					"mn" : "Ci3",
@@ -6009,6 +6489,7 @@
 		},
 		{
 			"resMn" : "i3",
+			"mn" : "/(Ci3,Ci):i3",
 			"args" : [
 				{
 					"mn" : "Ci3",
@@ -6023,6 +6504,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "*=(&Ii3,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -6038,6 +6520,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "/=(&Ii3,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -6053,6 +6536,7 @@
 		},
 		{
 			"resMn" : "i3",
+			"mn" : "&(Ci3,Ci3):i3",
 			"args" : [
 				{
 					"mn" : "Ci3",
@@ -6067,6 +6551,7 @@
 		},
 		{
 			"resMn" : "i3",
+			"mn" : "|(Ci3,Ci3):i3",
 			"args" : [
 				{
 					"mn" : "Ci3",
@@ -6081,6 +6566,7 @@
 		},
 		{
 			"resMn" : "i3",
+			"mn" : "^(Ci3,Ci3):i3",
 			"args" : [
 				{
 					"mn" : "Ci3",
@@ -6095,6 +6581,7 @@
 		},
 		{
 			"resMn" : "i3",
+			"mn" : "<<(Ci3,Ci):i3",
 			"args" : [
 				{
 					"mn" : "Ci3",
@@ -6109,6 +6596,7 @@
 		},
 		{
 			"resMn" : "i3",
+			"mn" : ">>(Ci3,Ci):i3",
 			"args" : [
 				{
 					"mn" : "Ci3",
@@ -6123,6 +6611,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "&=(&Ii3,Ci3):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -6138,6 +6627,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "|=(&Ii3,Ci3):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -6153,6 +6643,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "^=(&Ii3,Ci3):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -6168,6 +6659,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "<<=(&Ii3,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -6183,6 +6675,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : ">>=(&Ii3,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -6198,6 +6691,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "==(Ci4,Ci4):b",
 			"args" : [
 				{
 					"mn" : "Ci4",
@@ -6212,6 +6706,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "!=(Ci4,Ci4):b",
 			"args" : [
 				{
 					"mn" : "Ci4",
@@ -6226,6 +6721,7 @@
 		},
 		{
 			"resMn" : "i4",
+			"mn" : "+(Ci4,Ci4):i4",
 			"args" : [
 				{
 					"mn" : "Ci4",
@@ -6240,6 +6736,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "+=(&Ii4,Ci4):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -6255,6 +6752,7 @@
 		},
 		{
 			"resMn" : "i4",
+			"mn" : "+(Ci4):i4",
 			"args" : [
 				{
 					"mn" : "Ci4",
@@ -6265,6 +6763,7 @@
 		},
 		{
 			"resMn" : "i4",
+			"mn" : "-(Ci4):i4",
 			"args" : [
 				{
 					"mn" : "Ci4",
@@ -6275,6 +6774,7 @@
 		},
 		{
 			"resMn" : "i4",
+			"mn" : "-(Ci4,Ci4):i4",
 			"args" : [
 				{
 					"mn" : "Ci4",
@@ -6289,6 +6789,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "-=(&Ii4,Ci4):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -6304,6 +6805,7 @@
 		},
 		{
 			"resMn" : "i4",
+			"mn" : "*(Ci4,Ci4):i4",
 			"args" : [
 				{
 					"mn" : "Ci4",
@@ -6318,6 +6820,7 @@
 		},
 		{
 			"resMn" : "i4",
+			"mn" : "/(Ci4,Ci4):i4",
 			"args" : [
 				{
 					"mn" : "Ci4",
@@ -6332,6 +6835,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "*=(&Ii4,Ci4):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -6347,6 +6851,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "/=(&Ii4,Ci4):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -6362,6 +6867,7 @@
 		},
 		{
 			"resMn" : "i4",
+			"mn" : "*(Ci,Ci4):i4",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -6376,6 +6882,7 @@
 		},
 		{
 			"resMn" : "i4",
+			"mn" : "/(Ci,Ci4):i4",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -6390,6 +6897,7 @@
 		},
 		{
 			"resMn" : "i4",
+			"mn" : "*(Ci4,Ci):i4",
 			"args" : [
 				{
 					"mn" : "Ci4",
@@ -6404,6 +6912,7 @@
 		},
 		{
 			"resMn" : "i4",
+			"mn" : "/(Ci4,Ci):i4",
 			"args" : [
 				{
 					"mn" : "Ci4",
@@ -6418,6 +6927,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "*=(&Ii4,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -6433,6 +6943,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "/=(&Ii4,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -6448,6 +6959,7 @@
 		},
 		{
 			"resMn" : "i4",
+			"mn" : "&(Ci4,Ci4):i4",
 			"args" : [
 				{
 					"mn" : "Ci4",
@@ -6462,6 +6974,7 @@
 		},
 		{
 			"resMn" : "i4",
+			"mn" : "|(Ci4,Ci4):i4",
 			"args" : [
 				{
 					"mn" : "Ci4",
@@ -6476,6 +6989,7 @@
 		},
 		{
 			"resMn" : "i4",
+			"mn" : "^(Ci4,Ci4):i4",
 			"args" : [
 				{
 					"mn" : "Ci4",
@@ -6490,6 +7004,7 @@
 		},
 		{
 			"resMn" : "i4",
+			"mn" : "<<(Ci4,Ci):i4",
 			"args" : [
 				{
 					"mn" : "Ci4",
@@ -6504,6 +7019,7 @@
 		},
 		{
 			"resMn" : "i4",
+			"mn" : ">>(Ci4,Ci):i4",
 			"args" : [
 				{
 					"mn" : "Ci4",
@@ -6518,6 +7034,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "&=(&Ii4,Ci4):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -6533,6 +7050,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "|=(&Ii4,Ci4):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -6548,6 +7066,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "^=(&Ii4,Ci4):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -6563,6 +7082,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "<<=(&Ii4,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -6578,6 +7098,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : ">>=(&Ii4,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -6593,6 +7114,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "==(Cu2,Cu2):b",
 			"args" : [
 				{
 					"mn" : "Cu2",
@@ -6607,6 +7129,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "!=(Cu2,Cu2):b",
 			"args" : [
 				{
 					"mn" : "Cu2",
@@ -6621,6 +7144,7 @@
 		},
 		{
 			"resMn" : "u2",
+			"mn" : "+(Cu2,Cu2):u2",
 			"args" : [
 				{
 					"mn" : "Cu2",
@@ -6635,6 +7159,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "+=(&Iu2,Cu2):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -6650,6 +7175,7 @@
 		},
 		{
 			"resMn" : "u2",
+			"mn" : "+(Cu2):u2",
 			"args" : [
 				{
 					"mn" : "Cu2",
@@ -6660,6 +7186,7 @@
 		},
 		{
 			"resMn" : "u2",
+			"mn" : "-(Cu2):u2",
 			"args" : [
 				{
 					"mn" : "Cu2",
@@ -6670,6 +7197,7 @@
 		},
 		{
 			"resMn" : "u2",
+			"mn" : "-(Cu2,Cu2):u2",
 			"args" : [
 				{
 					"mn" : "Cu2",
@@ -6684,6 +7212,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "-=(&Iu2,Cu2):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -6699,6 +7228,7 @@
 		},
 		{
 			"resMn" : "u2",
+			"mn" : "*(Cu2,Cu2):u2",
 			"args" : [
 				{
 					"mn" : "Cu2",
@@ -6713,6 +7243,7 @@
 		},
 		{
 			"resMn" : "u2",
+			"mn" : "/(Cu2,Cu2):u2",
 			"args" : [
 				{
 					"mn" : "Cu2",
@@ -6727,6 +7258,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "*=(&Iu2,Cu2):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -6742,6 +7274,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "/=(&Iu2,Cu2):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -6757,6 +7290,7 @@
 		},
 		{
 			"resMn" : "u2",
+			"mn" : "*(Cu,Cu2):u2",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -6771,6 +7305,7 @@
 		},
 		{
 			"resMn" : "u2",
+			"mn" : "/(Cu,Cu2):u2",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -6785,6 +7320,7 @@
 		},
 		{
 			"resMn" : "u2",
+			"mn" : "*(Cu2,Cu):u2",
 			"args" : [
 				{
 					"mn" : "Cu2",
@@ -6799,6 +7335,7 @@
 		},
 		{
 			"resMn" : "u2",
+			"mn" : "/(Cu2,Cu):u2",
 			"args" : [
 				{
 					"mn" : "Cu2",
@@ -6813,6 +7350,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "*=(&Iu2,Cu):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -6828,6 +7366,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "/=(&Iu2,Cu):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -6843,6 +7382,7 @@
 		},
 		{
 			"resMn" : "u2",
+			"mn" : "&(Cu2,Cu2):u2",
 			"args" : [
 				{
 					"mn" : "Cu2",
@@ -6857,6 +7397,7 @@
 		},
 		{
 			"resMn" : "u2",
+			"mn" : "|(Cu2,Cu2):u2",
 			"args" : [
 				{
 					"mn" : "Cu2",
@@ -6871,6 +7412,7 @@
 		},
 		{
 			"resMn" : "u2",
+			"mn" : "^(Cu2,Cu2):u2",
 			"args" : [
 				{
 					"mn" : "Cu2",
@@ -6885,6 +7427,7 @@
 		},
 		{
 			"resMn" : "u2",
+			"mn" : "<<(Cu2,Ci):u2",
 			"args" : [
 				{
 					"mn" : "Cu2",
@@ -6899,6 +7442,7 @@
 		},
 		{
 			"resMn" : "u2",
+			"mn" : ">>(Cu2,Ci):u2",
 			"args" : [
 				{
 					"mn" : "Cu2",
@@ -6913,6 +7457,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "&=(&Iu2,Cu2):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -6928,6 +7473,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "|=(&Iu2,Cu2):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -6943,6 +7489,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "^=(&Iu2,Cu2):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -6958,6 +7505,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "<<=(&Iu2,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -6973,6 +7521,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : ">>=(&Iu2,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -6988,6 +7537,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "==(Cu3,Cu3):b",
 			"args" : [
 				{
 					"mn" : "Cu3",
@@ -7002,6 +7552,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "!=(Cu3,Cu3):b",
 			"args" : [
 				{
 					"mn" : "Cu3",
@@ -7016,6 +7567,7 @@
 		},
 		{
 			"resMn" : "u3",
+			"mn" : "+(Cu3,Cu3):u3",
 			"args" : [
 				{
 					"mn" : "Cu3",
@@ -7030,6 +7582,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "+=(&Iu3,Cu3):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -7045,6 +7598,7 @@
 		},
 		{
 			"resMn" : "u3",
+			"mn" : "+(Cu3):u3",
 			"args" : [
 				{
 					"mn" : "Cu3",
@@ -7055,6 +7609,7 @@
 		},
 		{
 			"resMn" : "u3",
+			"mn" : "-(Cu3):u3",
 			"args" : [
 				{
 					"mn" : "Cu3",
@@ -7065,6 +7620,7 @@
 		},
 		{
 			"resMn" : "u3",
+			"mn" : "-(Cu3,Cu3):u3",
 			"args" : [
 				{
 					"mn" : "Cu3",
@@ -7079,6 +7635,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "-=(&Iu3,Cu3):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -7094,6 +7651,7 @@
 		},
 		{
 			"resMn" : "u3",
+			"mn" : "*(Cu3,Cu3):u3",
 			"args" : [
 				{
 					"mn" : "Cu3",
@@ -7108,6 +7666,7 @@
 		},
 		{
 			"resMn" : "u3",
+			"mn" : "/(Cu3,Cu3):u3",
 			"args" : [
 				{
 					"mn" : "Cu3",
@@ -7122,6 +7681,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "*=(&Iu3,Cu3):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -7137,6 +7697,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "/=(&Iu3,Cu3):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -7152,6 +7713,7 @@
 		},
 		{
 			"resMn" : "u3",
+			"mn" : "*(Cu,Cu3):u3",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -7166,6 +7728,7 @@
 		},
 		{
 			"resMn" : "u3",
+			"mn" : "/(Cu,Cu3):u3",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -7180,6 +7743,7 @@
 		},
 		{
 			"resMn" : "u3",
+			"mn" : "*(Cu3,Cu):u3",
 			"args" : [
 				{
 					"mn" : "Cu3",
@@ -7194,6 +7758,7 @@
 		},
 		{
 			"resMn" : "u3",
+			"mn" : "/(Cu3,Cu):u3",
 			"args" : [
 				{
 					"mn" : "Cu3",
@@ -7208,6 +7773,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "*=(&Iu3,Cu):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -7223,6 +7789,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "/=(&Iu3,Cu):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -7238,6 +7805,7 @@
 		},
 		{
 			"resMn" : "u3",
+			"mn" : "&(Cu3,Cu3):u3",
 			"args" : [
 				{
 					"mn" : "Cu3",
@@ -7252,6 +7820,7 @@
 		},
 		{
 			"resMn" : "u3",
+			"mn" : "|(Cu3,Cu3):u3",
 			"args" : [
 				{
 					"mn" : "Cu3",
@@ -7266,6 +7835,7 @@
 		},
 		{
 			"resMn" : "u3",
+			"mn" : "^(Cu3,Cu3):u3",
 			"args" : [
 				{
 					"mn" : "Cu3",
@@ -7280,6 +7850,7 @@
 		},
 		{
 			"resMn" : "u3",
+			"mn" : "<<(Cu3,Ci):u3",
 			"args" : [
 				{
 					"mn" : "Cu3",
@@ -7294,6 +7865,7 @@
 		},
 		{
 			"resMn" : "u3",
+			"mn" : ">>(Cu3,Ci):u3",
 			"args" : [
 				{
 					"mn" : "Cu3",
@@ -7308,6 +7880,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "&=(&Iu3,Cu3):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -7323,6 +7896,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "|=(&Iu3,Cu3):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -7338,6 +7912,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "^=(&Iu3,Cu3):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -7353,6 +7928,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "<<=(&Iu3,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -7368,6 +7944,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : ">>=(&Iu3,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -7383,6 +7960,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "==(Cu4,Cu4):b",
 			"args" : [
 				{
 					"mn" : "Cu4",
@@ -7397,6 +7975,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "!=(Cu4,Cu4):b",
 			"args" : [
 				{
 					"mn" : "Cu4",
@@ -7411,6 +7990,7 @@
 		},
 		{
 			"resMn" : "u4",
+			"mn" : "+(Cu4,Cu4):u4",
 			"args" : [
 				{
 					"mn" : "Cu4",
@@ -7425,6 +8005,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "+=(&Iu4,Cu4):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -7440,6 +8021,7 @@
 		},
 		{
 			"resMn" : "u4",
+			"mn" : "+(Cu4):u4",
 			"args" : [
 				{
 					"mn" : "Cu4",
@@ -7450,6 +8032,7 @@
 		},
 		{
 			"resMn" : "u4",
+			"mn" : "-(Cu4):u4",
 			"args" : [
 				{
 					"mn" : "Cu4",
@@ -7460,6 +8043,7 @@
 		},
 		{
 			"resMn" : "u4",
+			"mn" : "-(Cu4,Cu4):u4",
 			"args" : [
 				{
 					"mn" : "Cu4",
@@ -7474,6 +8058,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "-=(&Iu4,Cu4):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -7489,6 +8074,7 @@
 		},
 		{
 			"resMn" : "u4",
+			"mn" : "*(Cu4,Cu4):u4",
 			"args" : [
 				{
 					"mn" : "Cu4",
@@ -7503,6 +8089,7 @@
 		},
 		{
 			"resMn" : "u4",
+			"mn" : "/(Cu4,Cu4):u4",
 			"args" : [
 				{
 					"mn" : "Cu4",
@@ -7517,6 +8104,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "*=(&Iu4,Cu4):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -7532,6 +8120,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "/=(&Iu4,Cu4):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -7547,6 +8136,7 @@
 		},
 		{
 			"resMn" : "u4",
+			"mn" : "*(Cu,Cu4):u4",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -7561,6 +8151,7 @@
 		},
 		{
 			"resMn" : "u4",
+			"mn" : "/(Cu,Cu4):u4",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -7575,6 +8166,7 @@
 		},
 		{
 			"resMn" : "u4",
+			"mn" : "*(Cu4,Cu):u4",
 			"args" : [
 				{
 					"mn" : "Cu4",
@@ -7589,6 +8181,7 @@
 		},
 		{
 			"resMn" : "u4",
+			"mn" : "/(Cu4,Cu):u4",
 			"args" : [
 				{
 					"mn" : "Cu4",
@@ -7603,6 +8196,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "*=(&Iu4,Cu):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -7618,6 +8212,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "/=(&Iu4,Cu):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -7633,6 +8228,7 @@
 		},
 		{
 			"resMn" : "u4",
+			"mn" : "&(Cu4,Cu4):u4",
 			"args" : [
 				{
 					"mn" : "Cu4",
@@ -7647,6 +8243,7 @@
 		},
 		{
 			"resMn" : "u4",
+			"mn" : "|(Cu4,Cu4):u4",
 			"args" : [
 				{
 					"mn" : "Cu4",
@@ -7661,6 +8258,7 @@
 		},
 		{
 			"resMn" : "u4",
+			"mn" : "^(Cu4,Cu4):u4",
 			"args" : [
 				{
 					"mn" : "Cu4",
@@ -7675,6 +8273,7 @@
 		},
 		{
 			"resMn" : "u4",
+			"mn" : "<<(Cu4,Ci):u4",
 			"args" : [
 				{
 					"mn" : "Cu4",
@@ -7689,6 +8288,7 @@
 		},
 		{
 			"resMn" : "u4",
+			"mn" : ">>(Cu4,Ci):u4",
 			"args" : [
 				{
 					"mn" : "Cu4",
@@ -7703,6 +8303,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "&=(&Iu4,Cu4):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -7718,6 +8319,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "|=(&Iu4,Cu4):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -7733,6 +8335,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "^=(&Iu4,Cu4):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -7748,6 +8351,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "<<=(&Iu4,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -7763,6 +8367,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : ">>=(&Iu4,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -7778,6 +8383,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "==(Cr,Cr):b",
 			"args" : [
 				{
 					"mn" : "Cr",
@@ -7792,6 +8398,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "!=(Cr,Cr):b",
 			"args" : [
 				{
 					"mn" : "Cr",
@@ -7806,6 +8413,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "==(Cz,Cz):b",
 			"args" : [
 				{
 					"mn" : "Cz",
@@ -7820,6 +8428,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "!=(Cz,Cz):b",
 			"args" : [
 				{
 					"mn" : "Cz",
@@ -7834,11 +8443,13 @@
 		},
 		{
 			"resMn" : "f2",
+			"mn" : "float2():f2",
 			"args" : [],
 			"name" : "float2"
 		},
 		{
 			"resMn" : "f2",
+			"mn" : "float2(Cf):f2",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -7849,6 +8460,7 @@
 		},
 		{
 			"resMn" : "f2",
+			"mn" : "float2(Ci):f2",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -7859,6 +8471,7 @@
 		},
 		{
 			"resMn" : "f2",
+			"mn" : "float2(Cu):f2",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -7869,6 +8482,7 @@
 		},
 		{
 			"resMn" : "f2",
+			"mn" : "float2(Cf,Cf):f2",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -7883,6 +8497,7 @@
 		},
 		{
 			"resMn" : "f2",
+			"mn" : "float2(Cd,Cd):f2",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -7897,6 +8512,7 @@
 		},
 		{
 			"resMn" : "f2",
+			"mn" : "float2(Ci,Ci):f2",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -7911,6 +8527,7 @@
 		},
 		{
 			"resMn" : "f2",
+			"mn" : "float2(Cu,Cu):f2",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -7925,6 +8542,7 @@
 		},
 		{
 			"resMn" : "f2",
+			"mn" : "float2(Ci2):f2",
 			"args" : [
 				{
 					"mn" : "Ci2",
@@ -7935,6 +8553,7 @@
 		},
 		{
 			"resMn" : "f2",
+			"mn" : "float2(Cu2):f2",
 			"args" : [
 				{
 					"mn" : "Cu2",
@@ -7945,11 +8564,13 @@
 		},
 		{
 			"resMn" : "f3",
+			"mn" : "float3():f3",
 			"args" : [],
 			"name" : "float3"
 		},
 		{
 			"resMn" : "f3",
+			"mn" : "float3(Cf):f3",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -7960,6 +8581,7 @@
 		},
 		{
 			"resMn" : "f3",
+			"mn" : "float3(Ci):f3",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -7970,6 +8592,7 @@
 		},
 		{
 			"resMn" : "f3",
+			"mn" : "float3(Cu):f3",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -7980,6 +8603,7 @@
 		},
 		{
 			"resMn" : "f3",
+			"mn" : "float3(Cf,Cf,Cf):f3",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -7998,6 +8622,7 @@
 		},
 		{
 			"resMn" : "f3",
+			"mn" : "float3(Cd,Cd,Cd):f3",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -8016,6 +8641,7 @@
 		},
 		{
 			"resMn" : "f3",
+			"mn" : "float3(Ci,Ci,Ci):f3",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -8034,6 +8660,7 @@
 		},
 		{
 			"resMn" : "f3",
+			"mn" : "float3(Cu,Cu,Cu):f3",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -8052,6 +8679,7 @@
 		},
 		{
 			"resMn" : "f3",
+			"mn" : "float3(Ci3):f3",
 			"args" : [
 				{
 					"mn" : "Ci3",
@@ -8062,6 +8690,7 @@
 		},
 		{
 			"resMn" : "f3",
+			"mn" : "float3(Cu3):f3",
 			"args" : [
 				{
 					"mn" : "Cu3",
@@ -8072,6 +8701,7 @@
 		},
 		{
 			"resMn" : "f3",
+			"mn" : "float3(Cf2,Cf):f3",
 			"args" : [
 				{
 					"mn" : "Cf2",
@@ -8086,6 +8716,7 @@
 		},
 		{
 			"resMn" : "f3",
+			"mn" : "float3(Cf,Cf2):f3",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -8100,11 +8731,13 @@
 		},
 		{
 			"resMn" : "f4",
+			"mn" : "float4():f4",
 			"args" : [],
 			"name" : "float4"
 		},
 		{
 			"resMn" : "f4",
+			"mn" : "float4(Cf):f4",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -8115,6 +8748,7 @@
 		},
 		{
 			"resMn" : "f4",
+			"mn" : "float4(Ci):f4",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -8125,6 +8759,7 @@
 		},
 		{
 			"resMn" : "f4",
+			"mn" : "float4(Cu):f4",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -8135,6 +8770,7 @@
 		},
 		{
 			"resMn" : "f4",
+			"mn" : "float4(Cf,Cf,Cf,Cf):f4",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -8157,6 +8793,7 @@
 		},
 		{
 			"resMn" : "f4",
+			"mn" : "float4(Cd,Cd,Cd,Cd):f4",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -8179,6 +8816,7 @@
 		},
 		{
 			"resMn" : "f4",
+			"mn" : "float4(Ci,Ci,Ci,Ci):f4",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -8201,6 +8839,7 @@
 		},
 		{
 			"resMn" : "f4",
+			"mn" : "float4(Cu,Cu,Cu,Cu):f4",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -8223,6 +8862,7 @@
 		},
 		{
 			"resMn" : "f4",
+			"mn" : "float4(Ci4):f4",
 			"args" : [
 				{
 					"mn" : "Ci4",
@@ -8233,6 +8873,7 @@
 		},
 		{
 			"resMn" : "f4",
+			"mn" : "float4(Cu4):f4",
 			"args" : [
 				{
 					"mn" : "Cu4",
@@ -8243,6 +8884,7 @@
 		},
 		{
 			"resMn" : "f4",
+			"mn" : "float4(Cf3,Cf):f4",
 			"args" : [
 				{
 					"mn" : "Cf3",
@@ -8257,6 +8899,7 @@
 		},
 		{
 			"resMn" : "f4",
+			"mn" : "float4(Cf,Cf3):f4",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -8271,6 +8914,7 @@
 		},
 		{
 			"resMn" : "f4",
+			"mn" : "float4(Cf2,Cf2):f4",
 			"args" : [
 				{
 					"mn" : "Cf2",
@@ -8285,6 +8929,7 @@
 		},
 		{
 			"resMn" : "f4",
+			"mn" : "float4(Cf2,Cf,Cf):f4",
 			"args" : [
 				{
 					"mn" : "Cf2",
@@ -8303,6 +8948,7 @@
 		},
 		{
 			"resMn" : "f4",
+			"mn" : "float4(Cf,Cf2,Cf):f4",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -8321,6 +8967,7 @@
 		},
 		{
 			"resMn" : "f4",
+			"mn" : "float4(Cf,Cf,Cf2):f4",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -8339,11 +8986,13 @@
 		},
 		{
 			"resMn" : "i2",
+			"mn" : "int2():i2",
 			"args" : [],
 			"name" : "int2"
 		},
 		{
 			"resMn" : "i2",
+			"mn" : "int2(Cf):i2",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -8354,6 +9003,7 @@
 		},
 		{
 			"resMn" : "i2",
+			"mn" : "int2(Ci):i2",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -8364,6 +9014,7 @@
 		},
 		{
 			"resMn" : "i2",
+			"mn" : "int2(Cu):i2",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -8374,6 +9025,7 @@
 		},
 		{
 			"resMn" : "i2",
+			"mn" : "int2(Cf,Cf):i2",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -8388,6 +9040,7 @@
 		},
 		{
 			"resMn" : "i2",
+			"mn" : "int2(Cd,Cd):i2",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -8402,6 +9055,7 @@
 		},
 		{
 			"resMn" : "i2",
+			"mn" : "int2(Ci,Ci):i2",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -8416,6 +9070,7 @@
 		},
 		{
 			"resMn" : "i2",
+			"mn" : "int2(Cu,Cu):i2",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -8430,6 +9085,7 @@
 		},
 		{
 			"resMn" : "i2",
+			"mn" : "int2(Cf2):i2",
 			"args" : [
 				{
 					"mn" : "Cf2",
@@ -8440,6 +9096,7 @@
 		},
 		{
 			"resMn" : "i2",
+			"mn" : "int2(Cu2):i2",
 			"args" : [
 				{
 					"mn" : "Cu2",
@@ -8450,11 +9107,13 @@
 		},
 		{
 			"resMn" : "i3",
+			"mn" : "int3():i3",
 			"args" : [],
 			"name" : "int3"
 		},
 		{
 			"resMn" : "i3",
+			"mn" : "int3(Cf):i3",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -8465,6 +9124,7 @@
 		},
 		{
 			"resMn" : "i3",
+			"mn" : "int3(Ci):i3",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -8475,6 +9135,7 @@
 		},
 		{
 			"resMn" : "i3",
+			"mn" : "int3(Cu):i3",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -8485,6 +9146,7 @@
 		},
 		{
 			"resMn" : "i3",
+			"mn" : "int3(Cf,Cf,Cf):i3",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -8503,6 +9165,7 @@
 		},
 		{
 			"resMn" : "i3",
+			"mn" : "int3(Cd,Cd,Cd):i3",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -8521,6 +9184,7 @@
 		},
 		{
 			"resMn" : "i3",
+			"mn" : "int3(Ci,Ci,Ci):i3",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -8539,6 +9203,7 @@
 		},
 		{
 			"resMn" : "i3",
+			"mn" : "int3(Cu,Cu,Cu):i3",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -8557,6 +9222,7 @@
 		},
 		{
 			"resMn" : "i3",
+			"mn" : "int3(Cf3):i3",
 			"args" : [
 				{
 					"mn" : "Cf3",
@@ -8567,6 +9233,7 @@
 		},
 		{
 			"resMn" : "i3",
+			"mn" : "int3(Cu3):i3",
 			"args" : [
 				{
 					"mn" : "Cu3",
@@ -8577,11 +9244,13 @@
 		},
 		{
 			"resMn" : "i4",
+			"mn" : "int4():i4",
 			"args" : [],
 			"name" : "int4"
 		},
 		{
 			"resMn" : "i4",
+			"mn" : "int4(Cf):i4",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -8592,6 +9261,7 @@
 		},
 		{
 			"resMn" : "i4",
+			"mn" : "int4(Ci):i4",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -8602,6 +9272,7 @@
 		},
 		{
 			"resMn" : "i4",
+			"mn" : "int4(Cu):i4",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -8612,6 +9283,7 @@
 		},
 		{
 			"resMn" : "i4",
+			"mn" : "int4(Cf,Cf,Cf,Cf):i4",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -8634,6 +9306,7 @@
 		},
 		{
 			"resMn" : "i4",
+			"mn" : "int4(Cd,Cd,Cd,Cd):i4",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -8656,6 +9329,7 @@
 		},
 		{
 			"resMn" : "i4",
+			"mn" : "int4(Ci,Ci,Ci,Ci):i4",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -8678,6 +9352,7 @@
 		},
 		{
 			"resMn" : "i4",
+			"mn" : "int4(Cu,Cu,Cu,Cu):i4",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -8700,6 +9375,7 @@
 		},
 		{
 			"resMn" : "i4",
+			"mn" : "int4(Cf4):i4",
 			"args" : [
 				{
 					"mn" : "Cf4",
@@ -8710,6 +9386,7 @@
 		},
 		{
 			"resMn" : "i4",
+			"mn" : "int4(Cu4):i4",
 			"args" : [
 				{
 					"mn" : "Cu4",
@@ -8720,11 +9397,13 @@
 		},
 		{
 			"resMn" : "u2",
+			"mn" : "uint2():u2",
 			"args" : [],
 			"name" : "uint2"
 		},
 		{
 			"resMn" : "u2",
+			"mn" : "uint2(Cf):u2",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -8735,6 +9414,7 @@
 		},
 		{
 			"resMn" : "u2",
+			"mn" : "uint2(Ci):u2",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -8745,6 +9425,7 @@
 		},
 		{
 			"resMn" : "u2",
+			"mn" : "uint2(Cu):u2",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -8755,6 +9436,7 @@
 		},
 		{
 			"resMn" : "u2",
+			"mn" : "uint2(Cf,Cf):u2",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -8769,6 +9451,7 @@
 		},
 		{
 			"resMn" : "u2",
+			"mn" : "uint2(Cd,Cd):u2",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -8783,6 +9466,7 @@
 		},
 		{
 			"resMn" : "u2",
+			"mn" : "uint2(Ci,Ci):u2",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -8797,6 +9481,7 @@
 		},
 		{
 			"resMn" : "u2",
+			"mn" : "uint2(Cu,Cu):u2",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -8811,6 +9496,7 @@
 		},
 		{
 			"resMn" : "u2",
+			"mn" : "uint2(Cf2):u2",
 			"args" : [
 				{
 					"mn" : "Cf2",
@@ -8821,6 +9507,7 @@
 		},
 		{
 			"resMn" : "u2",
+			"mn" : "uint2(Ci2):u2",
 			"args" : [
 				{
 					"mn" : "Ci2",
@@ -8831,11 +9518,13 @@
 		},
 		{
 			"resMn" : "u3",
+			"mn" : "uint3():u3",
 			"args" : [],
 			"name" : "uint3"
 		},
 		{
 			"resMn" : "u3",
+			"mn" : "uint3(Cf):u3",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -8846,6 +9535,7 @@
 		},
 		{
 			"resMn" : "u3",
+			"mn" : "uint3(Ci):u3",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -8856,6 +9546,7 @@
 		},
 		{
 			"resMn" : "u3",
+			"mn" : "uint3(Cu):u3",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -8866,6 +9557,7 @@
 		},
 		{
 			"resMn" : "u3",
+			"mn" : "uint3(Cf,Cf,Cf):u3",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -8884,6 +9576,7 @@
 		},
 		{
 			"resMn" : "u3",
+			"mn" : "uint3(Cd,Cd,Cd):u3",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -8902,6 +9595,7 @@
 		},
 		{
 			"resMn" : "u3",
+			"mn" : "uint3(Ci,Ci,Ci):u3",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -8920,6 +9614,7 @@
 		},
 		{
 			"resMn" : "u3",
+			"mn" : "uint3(Cu,Cu,Cu):u3",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -8938,6 +9633,7 @@
 		},
 		{
 			"resMn" : "u3",
+			"mn" : "uint3(Cf3):u3",
 			"args" : [
 				{
 					"mn" : "Cf3",
@@ -8948,6 +9644,7 @@
 		},
 		{
 			"resMn" : "u3",
+			"mn" : "uint3(Ci3):u3",
 			"args" : [
 				{
 					"mn" : "Ci3",
@@ -8958,11 +9655,13 @@
 		},
 		{
 			"resMn" : "u4",
+			"mn" : "uint4():u4",
 			"args" : [],
 			"name" : "uint4"
 		},
 		{
 			"resMn" : "u4",
+			"mn" : "uint4(Cf):u4",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -8973,6 +9672,7 @@
 		},
 		{
 			"resMn" : "u4",
+			"mn" : "uint4(Ci):u4",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -8983,6 +9683,7 @@
 		},
 		{
 			"resMn" : "u4",
+			"mn" : "uint4(Cu):u4",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -8993,6 +9694,7 @@
 		},
 		{
 			"resMn" : "u4",
+			"mn" : "uint4(Cf,Cf,Cf,Cf):u4",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -9015,6 +9717,7 @@
 		},
 		{
 			"resMn" : "u4",
+			"mn" : "uint4(Cd,Cd,Cd,Cd):u4",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -9037,6 +9740,7 @@
 		},
 		{
 			"resMn" : "u4",
+			"mn" : "uint4(Ci,Ci,Ci,Ci):u4",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -9059,6 +9763,7 @@
 		},
 		{
 			"resMn" : "u4",
+			"mn" : "uint4(Cu,Cu,Cu,Cu):u4",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -9081,6 +9786,7 @@
 		},
 		{
 			"resMn" : "u4",
+			"mn" : "uint4(Cf4):u4",
 			"args" : [
 				{
 					"mn" : "Cf4",
@@ -9091,6 +9797,7 @@
 		},
 		{
 			"resMn" : "u4",
+			"mn" : "uint4(Ci4):u4",
 			"args" : [
 				{
 					"mn" : "Ci4",
@@ -9101,11 +9808,13 @@
 		},
 		{
 			"resMn" : "r",
+			"mn" : "range():r",
 			"args" : [],
 			"name" : "range"
 		},
 		{
 			"resMn" : "r",
+			"mn" : "range(Cf):r",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -9116,6 +9825,7 @@
 		},
 		{
 			"resMn" : "r",
+			"mn" : "range(Cd):r",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -9126,6 +9836,7 @@
 		},
 		{
 			"resMn" : "r",
+			"mn" : "range(Ci):r",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -9136,6 +9847,7 @@
 		},
 		{
 			"resMn" : "r",
+			"mn" : "range(Cu):r",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -9146,6 +9858,7 @@
 		},
 		{
 			"resMn" : "r",
+			"mn" : "range(Cf,Cf):r",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -9160,6 +9873,7 @@
 		},
 		{
 			"resMn" : "r",
+			"mn" : "range(Cd,Cd):r",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -9174,6 +9888,7 @@
 		},
 		{
 			"resMn" : "r",
+			"mn" : "range(Ci,Ci):r",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -9188,6 +9903,7 @@
 		},
 		{
 			"resMn" : "r",
+			"mn" : "range(Cu,Cu):r",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -9202,11 +9918,13 @@
 		},
 		{
 			"resMn" : "z",
+			"mn" : "urange():z",
 			"args" : [],
 			"name" : "urange"
 		},
 		{
 			"resMn" : "z",
+			"mn" : "urange(Cf):z",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -9217,6 +9935,7 @@
 		},
 		{
 			"resMn" : "z",
+			"mn" : "urange(Cd):z",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -9227,6 +9946,7 @@
 		},
 		{
 			"resMn" : "z",
+			"mn" : "urange(Ci):z",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -9237,6 +9957,7 @@
 		},
 		{
 			"resMn" : "z",
+			"mn" : "urange(Cu):z",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -9247,6 +9968,7 @@
 		},
 		{
 			"resMn" : "z",
+			"mn" : "urange(Cf,Cf):z",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -9261,6 +9983,7 @@
 		},
 		{
 			"resMn" : "z",
+			"mn" : "urange(Cd,Cd):z",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -9275,6 +9998,7 @@
 		},
 		{
 			"resMn" : "z",
+			"mn" : "urange(Ci,Ci):z",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -9289,6 +10013,7 @@
 		},
 		{
 			"resMn" : "z",
+			"mn" : "urange(Cu,Cu):z",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -9303,6 +10028,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "clear(IA):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -9314,6 +10040,7 @@
 		},
 		{
 			"resMn" : "i",
+			"mn" : "length(CIA):i",
 			"args" : [
 				{
 					"mn" : "CIA",
@@ -9324,6 +10051,7 @@
 		},
 		{
 			"resMn" : "i",
+			"mn" : "capacity(CIA):i",
 			"args" : [
 				{
 					"mn" : "CIA",
@@ -9334,6 +10062,7 @@
 		},
 		{
 			"resMn" : "i",
+			"mn" : "lock_count(CIA):i",
 			"args" : [
 				{
 					"mn" : "CIA",
@@ -9344,6 +10073,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_array_resize(IA,Ci,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -9363,6 +10093,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_array_reserve(IA,Ci,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -9382,6 +10113,7 @@
 		},
 		{
 			"resMn" : "i",
+			"mn" : "__builtin_array_push(IA,Ci,Ci):i",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -9401,6 +10133,7 @@
 		},
 		{
 			"resMn" : "i",
+			"mn" : "__builtin_array_push_zero(IA,Ci,Ci):i",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -9420,6 +10153,7 @@
 		},
 		{
 			"resMn" : "i",
+			"mn" : "__builtin_array_push_back(IA,Ci):i",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -9435,6 +10169,7 @@
 		},
 		{
 			"resMn" : "i",
+			"mn" : "__builtin_array_push_back_zero(IA,Ci):i",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -9450,6 +10185,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_array_erase(IA,Ci,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -9469,6 +10205,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_array_lock(CIA):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -9480,6 +10217,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_array_unlock(CIA):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -9491,6 +10229,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_array_clear_lock(CIA):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -9502,12 +10241,14 @@
 		},
 		{
 			"resMn" : "s",
+			"mn" : "get_das_root():s",
 			"sideeffect" : true,
 			"args" : [],
 			"name" : "get_das_root"
 		},
 		{
 			"resMn" : "v",
+			"mn" : "builtin_get_command_line_arguments(IA):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -9519,18 +10260,21 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "is_compiling():b",
 			"sideeffect" : true,
 			"args" : [],
 			"name" : "is_compiling"
 		},
 		{
 			"resMn" : "b",
+			"mn" : "is_compiling_macros():b",
 			"sideeffect" : true,
 			"args" : [],
 			"name" : "is_compiling_macros"
 		},
 		{
 			"resMn" : "b",
+			"mn" : "is_compiling_macros_in_module(CIs):b",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -9542,6 +10286,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "_builtin_iterator_first(CIG,CI?):b",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -9557,6 +10302,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "_builtin_iterator_next(CIG,CI?):b",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -9572,6 +10318,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "_builtin_iterator_close(CIG,CI?):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -9587,6 +10334,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "_builtin_iterator_delete(CIG):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -9598,6 +10346,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "_builtin_iterator_iterate(CIG,CI?):b",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -9613,6 +10362,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "empty(CIG):b",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -9624,6 +10374,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "_builtin_make_good_array_iterator(IG,CIA,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -9643,6 +10394,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "_builtin_make_fixed_array_iterator(IG,CI?,Ci,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -9666,6 +10418,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "_builtin_make_range_iterator(IG,Cr):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -9681,6 +10434,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "_builtin_make_string_iterator(IG,CIs):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -9696,6 +10450,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "_builtin_make_nil_iterator(IG):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -9707,6 +10462,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "_builtin_make_lambda_iterator(IG,C@,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -9726,6 +10482,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "_builtin_make_enum_iterator(C*):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -9737,6 +10494,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "panic(CIs):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -9748,6 +10506,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "print(CIs):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -9759,6 +10518,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "error(CIs):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -9770,6 +10530,7 @@
 		},
 		{
 			"resMn" : "s",
+			"mn" : "sprint(C*,CY<print_flags>N<escapeString;namesAndDimensions;typeQualifiers;refAddresses;humanReadable;singleLine>t):s",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -9785,18 +10546,21 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "terminate():v",
 			"sideeffect" : true,
 			"args" : [],
 			"name" : "terminate"
 		},
 		{
 			"resMn" : "v",
+			"mn" : "breakpoint():v",
 			"sideeffect" : true,
 			"args" : [],
 			"name" : "breakpoint"
 		},
 		{
 			"resMn" : "v",
+			"mn" : "stackwalk(Cb,Cb):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -9812,24 +10576,28 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "reset_profiler():v",
 			"sideeffect" : true,
 			"args" : [],
 			"name" : "reset_profiler"
 		},
 		{
 			"resMn" : "v",
+			"mn" : "dump_profile_info():v",
 			"sideeffect" : true,
 			"args" : [],
 			"name" : "dump_profile_info"
 		},
 		{
 			"resMn" : "s",
+			"mn" : "collect_profile_info():s",
 			"sideeffect" : true,
 			"args" : [],
 			"name" : "collect_profile_info"
 		},
 		{
 			"resMn" : "i",
+			"mn" : "variant_index(CIV):i",
 			"args" : [
 				{
 					"mn" : "CIV",
@@ -9840,6 +10608,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "set_variant_index(IV,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -9855,30 +10624,35 @@
 		},
 		{
 			"resMn" : "u64",
+			"mn" : "heap_bytes_allocated():u64",
 			"sideeffect" : true,
 			"args" : [],
 			"name" : "heap_bytes_allocated"
 		},
 		{
 			"resMn" : "i",
+			"mn" : "heap_depth():i",
 			"sideeffect" : true,
 			"args" : [],
 			"name" : "heap_depth"
 		},
 		{
 			"resMn" : "u64",
+			"mn" : "string_heap_bytes_allocated():u64",
 			"sideeffect" : true,
 			"args" : [],
 			"name" : "string_heap_bytes_allocated"
 		},
 		{
 			"resMn" : "i",
+			"mn" : "string_heap_depth():i",
 			"sideeffect" : true,
 			"args" : [],
 			"name" : "string_heap_depth"
 		},
 		{
 			"resMn" : "v",
+			"mn" : "string_heap_collect(Cb):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -9890,6 +10664,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "heap_collect(Cb,Cb):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -9905,18 +10680,21 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "string_heap_report():v",
 			"sideeffect" : true,
 			"args" : [],
 			"name" : "string_heap_report"
 		},
 		{
 			"resMn" : "v",
+			"mn" : "heap_report():v",
 			"sideeffect" : true,
 			"args" : [],
 			"name" : "heap_report"
 		},
 		{
 			"resMn" : "v",
+			"mn" : "memory_report(Cb):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -9928,6 +10706,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "_builtin_binary_load(C*,CA):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -9943,6 +10722,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "_builtin_binary_save(C*,C$):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -9958,6 +10738,7 @@
 		},
 		{
 			"resMn" : "u64",
+			"mn" : "hash(C*):u64",
 			"args" : [
 				{
 					"mn" : "C*",
@@ -9968,6 +10749,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "_builtin_verify_locks(C*):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -9979,6 +10761,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "clear(IT):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -9990,6 +10773,7 @@
 		},
 		{
 			"resMn" : "i",
+			"mn" : "length(CIT):i",
 			"args" : [
 				{
 					"mn" : "CIT",
@@ -10000,6 +10784,7 @@
 		},
 		{
 			"resMn" : "i",
+			"mn" : "capacity(CIT):i",
 			"args" : [
 				{
 					"mn" : "CIT",
@@ -10010,6 +10795,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_table_lock(CIT):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -10021,6 +10807,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_table_unlock(CIT):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -10032,6 +10819,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_table_clear_lock(CIT):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -10043,6 +10831,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_table_keys(IG,CIT,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -10062,6 +10851,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_table_values(IG,CIT,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -10081,6 +10871,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_array_free(IA,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -10096,6 +10887,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_table_free(IT,Ci,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -10115,6 +10907,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "smart_ptr_clone(&I1<v>?M,CI?):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -10130,6 +10923,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "smart_ptr_clone(&I1<v>?M,CI1<v>?M):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -10145,6 +10939,7 @@
 		},
 		{
 			"resMn" : "u",
+			"mn" : "smart_ptr_use_count(CI1<v>?M):u",
 			"args" : [
 				{
 					"mn" : "CI1<v>?M",
@@ -10155,6 +10950,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "==(C&I1<v>?M,C&I1<v>?M):b",
 			"args" : [
 				{
 					"mn" : "C&I1<v>?M",
@@ -10169,6 +10965,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "!=(C&I1<v>?M,C&I1<v>?M):b",
 			"args" : [
 				{
 					"mn" : "C&I1<v>?M",
@@ -10183,6 +10980,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "==(CI?,C&I1<v>?M):b",
 			"args" : [
 				{
 					"mn" : "CI?",
@@ -10197,6 +10995,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "!=(CI?,C&I1<v>?M):b",
 			"args" : [
 				{
 					"mn" : "CI?",
@@ -10211,6 +11010,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "==(C&I1<v>?M,CI?):b",
 			"args" : [
 				{
 					"mn" : "C&I1<v>?M",
@@ -10225,6 +11025,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "!=(C&I1<v>?M,CI?):b",
 			"args" : [
 				{
 					"mn" : "C&I1<v>?M",
@@ -10239,6 +11040,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "gc0_save_ptr(CIs,CI?):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -10254,6 +11056,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "gc0_save_smart_ptr(CIs,CI1<v>?M):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -10269,6 +11072,7 @@
 		},
 		{
 			"resMn" : "?",
+			"mn" : "gc0_restore_ptr(CIs):?",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -10280,6 +11084,7 @@
 		},
 		{
 			"resMn" : "1<v>?M",
+			"mn" : "gc0_restore_smart_ptr(CIs):1<v>?M",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -10291,12 +11096,14 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "gc0_reset():v",
 			"sideeffect" : true,
 			"args" : [],
 			"name" : "gc0_reset"
 		},
 		{
 			"resMn" : "v",
+			"mn" : "memcpy(CI?,CI?,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -10316,6 +11123,7 @@
 		},
 		{
 			"resMn" : "i",
+			"mn" : "memcmp(CI?,CI?,Ci):i",
 			"args" : [
 				{
 					"mn" : "CI?",
@@ -10334,6 +11142,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "i_das_ptr_inc(&I?,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -10349,6 +11158,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "i_das_ptr_dec(&I?,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -10364,6 +11174,7 @@
 		},
 		{
 			"resMn" : "?",
+			"mn" : "i_das_ptr_add(CI?,Ci,Ci):?",
 			"args" : [
 				{
 					"mn" : "CI?",
@@ -10382,6 +11193,7 @@
 		},
 		{
 			"resMn" : "?",
+			"mn" : "i_das_ptr_sub(&I?,Ci,Ci):?",
 			"args" : [
 				{
 					"mn" : "&I?",
@@ -10400,6 +11212,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "i_das_ptr_set_add(&I?,Ci,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -10419,6 +11232,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "i_das_ptr_set_sub(&I?,Ci,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -10438,6 +11252,7 @@
 		},
 		{
 			"resMn" : "i64",
+			"mn" : "i_das_ptr_diff(CI?,CI?,Ci):i64",
 			"args" : [
 				{
 					"mn" : "CI?",
@@ -10456,6 +11271,7 @@
 		},
 		{
 			"resMn" : "i",
+			"mn" : "class_rtti_size(CI?):i",
 			"args" : [
 				{
 					"mn" : "CI?",
@@ -10466,6 +11282,7 @@
 		},
 		{
 			"resMn" : "f",
+			"mn" : "profile(Ci,CIs,CI$):f",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -10485,6 +11302,7 @@
 		},
 		{
 			"resMn" : "s",
+			"mn" : "string(CIH<$::das_string>):s",
 			"args" : [
 				{
 					"mn" : "CIH<$::das_string>",
@@ -10495,6 +11313,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "clone(IH<$::das_string>,CIs):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -10510,6 +11329,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "clone(&Is,CIH<$::das_string>):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -10525,6 +11345,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "peek(CIH<$::das_string>,CI0<C#s>1<v>$):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -10540,6 +11361,7 @@
 		},
 		{
 			"resMn" : "s",
+			"mn" : "clone_string(CIs):s",
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -10550,6 +11372,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "==(CIH<$::das_string>,CIH<$::das_string>):b",
 			"args" : [
 				{
 					"mn" : "CIH<$::das_string>",
@@ -10564,6 +11387,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "!=(CIH<$::das_string>,CIH<$::das_string>):b",
 			"args" : [
 				{
 					"mn" : "CIH<$::das_string>",
@@ -10578,6 +11402,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "==(CIs,CIH<$::das_string>):b",
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -10592,6 +11417,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "==(CIH<$::das_string>,CIs):b",
 			"args" : [
 				{
 					"mn" : "CIH<$::das_string>",
@@ -10606,6 +11432,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "!=(CIs,CIH<$::das_string>):b",
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -10620,6 +11447,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "!=(CIH<$::das_string>,CIs):b",
 			"args" : [
 				{
 					"mn" : "CIH<$::das_string>",
@@ -10634,6 +11462,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : ">=(CIs,CIH<$::das_string>):b",
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -10648,6 +11477,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : ">=(CIH<$::das_string>,CIs):b",
 			"args" : [
 				{
 					"mn" : "CIH<$::das_string>",
@@ -10662,6 +11492,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "<=(CIs,CIH<$::das_string>):b",
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -10676,6 +11507,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "<=(CIH<$::das_string>,CIs):b",
 			"args" : [
 				{
 					"mn" : "CIH<$::das_string>",
@@ -10690,6 +11522,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "<(CIs,CIH<$::das_string>):b",
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -10704,6 +11537,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "<(CIH<$::das_string>,CIs):b",
 			"args" : [
 				{
 					"mn" : "CIH<$::das_string>",
@@ -10718,6 +11552,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : ">(CIs,CIH<$::das_string>):b",
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -10732,6 +11567,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : ">(CIH<$::das_string>,CIs):b",
 			"args" : [
 				{
 					"mn" : "CIH<$::das_string>",
@@ -10746,6 +11582,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "_builtin_temp_array(CI?,Ci,CI$):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -10765,6 +11602,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "_builtin_make_temp_array(IA,CI?,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -10784,12 +11622,14 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "is_in_aot():b",
 			"sideeffect" : true,
 			"args" : [],
 			"name" : "is_in_aot"
 		},
 		{
 			"resMn" : "v",
+			"mn" : "to_log(Ci,CIs):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -10805,6 +11645,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_sort(CI1<i>?,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -10820,6 +11661,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_sort_cblock(C*,Ci,Ci,CI0<i;i>1<b>$):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -10843,6 +11685,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_sort_cblock_array(IA,Ci,Ci,CI0<i;i>1<b>$):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -10866,6 +11709,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_sort_cblock_dim(C*,Ci,Ci,CI0<i;i>1<b>$):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -10889,6 +11733,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_sort(CI1<u>?,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -10904,6 +11749,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_sort_cblock(C*,Ci,Ci,CI0<u;u>1<b>$):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -10927,6 +11773,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_sort_cblock_array(IA,Ci,Ci,CI0<u;u>1<b>$):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -10950,6 +11797,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_sort_cblock_dim(C*,Ci,Ci,CI0<u;u>1<b>$):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -10973,6 +11821,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_sort(CI1<i64>?,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -10988,6 +11837,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_sort_cblock(C*,Ci,Ci,CI0<i64;i64>1<b>$):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -11011,6 +11861,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_sort_cblock_array(IA,Ci,Ci,CI0<i64;i64>1<b>$):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -11034,6 +11885,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_sort_cblock_dim(C*,Ci,Ci,CI0<i64;i64>1<b>$):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -11057,6 +11909,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_sort(CI1<u64>?,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -11072,6 +11925,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_sort_cblock(C*,Ci,Ci,CI0<u64;u64>1<b>$):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -11095,6 +11949,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_sort_cblock_array(IA,Ci,Ci,CI0<u64;u64>1<b>$):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -11118,6 +11973,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_sort_cblock_dim(C*,Ci,Ci,CI0<u64;u64>1<b>$):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -11141,6 +11997,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_sort(CI1<f>?,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -11156,6 +12013,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_sort_cblock(C*,Ci,Ci,CI0<f;f>1<b>$):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -11179,6 +12037,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_sort_cblock_array(IA,Ci,Ci,CI0<f;f>1<b>$):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -11202,6 +12061,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_sort_cblock_dim(C*,Ci,Ci,CI0<f;f>1<b>$):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -11225,6 +12085,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_sort(CI1<d>?,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -11240,6 +12101,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_sort_cblock(C*,Ci,Ci,CI0<d;d>1<b>$):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -11263,6 +12125,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_sort_cblock_array(IA,Ci,Ci,CI0<d;d>1<b>$):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -11286,6 +12149,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_sort_cblock_dim(C*,Ci,Ci,CI0<d;d>1<b>$):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -11309,6 +12173,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_sort_cblock(C*,Ci,Ci,CI0<r;r>1<b>$):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -11332,6 +12197,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_sort_cblock_array(IA,Ci,Ci,CI0<r;r>1<b>$):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -11355,6 +12221,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_sort_cblock_dim(C*,Ci,Ci,CI0<r;r>1<b>$):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -11378,6 +12245,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_sort_cblock(C*,Ci,Ci,CI0<z;z>1<b>$):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -11401,6 +12269,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_sort_cblock_array(IA,Ci,Ci,CI0<z;z>1<b>$):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -11424,6 +12293,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_sort_cblock_dim(C*,Ci,Ci,CI0<z;z>1<b>$):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -11447,6 +12317,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_sort_cblock(C*,Ci,Ci,CI0<i2;i2>1<b>$):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -11470,6 +12341,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_sort_cblock_array(IA,Ci,Ci,CI0<i2;i2>1<b>$):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -11493,6 +12365,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_sort_cblock_dim(C*,Ci,Ci,CI0<i2;i2>1<b>$):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -11516,6 +12389,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_sort_cblock(C*,Ci,Ci,CI0<i3;i3>1<b>$):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -11539,6 +12413,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_sort_cblock_array(IA,Ci,Ci,CI0<i3;i3>1<b>$):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -11562,6 +12437,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_sort_cblock_dim(C*,Ci,Ci,CI0<i3;i3>1<b>$):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -11585,6 +12461,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_sort_cblock(C*,Ci,Ci,CI0<i4;i4>1<b>$):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -11608,6 +12485,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_sort_cblock_array(IA,Ci,Ci,CI0<i4;i4>1<b>$):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -11631,6 +12509,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_sort_cblock_dim(C*,Ci,Ci,CI0<i4;i4>1<b>$):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -11654,6 +12533,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_sort_cblock(C*,Ci,Ci,CI0<u2;u2>1<b>$):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -11677,6 +12557,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_sort_cblock_array(IA,Ci,Ci,CI0<u2;u2>1<b>$):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -11700,6 +12581,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_sort_cblock_dim(C*,Ci,Ci,CI0<u2;u2>1<b>$):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -11723,6 +12605,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_sort_cblock(C*,Ci,Ci,CI0<u3;u3>1<b>$):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -11746,6 +12629,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_sort_cblock_array(IA,Ci,Ci,CI0<u3;u3>1<b>$):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -11769,6 +12653,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_sort_cblock_dim(C*,Ci,Ci,CI0<u3;u3>1<b>$):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -11792,6 +12677,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_sort_cblock(C*,Ci,Ci,CI0<u4;u4>1<b>$):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -11815,6 +12701,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_sort_cblock_array(IA,Ci,Ci,CI0<u4;u4>1<b>$):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -11838,6 +12725,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_sort_cblock_dim(C*,Ci,Ci,CI0<u4;u4>1<b>$):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -11861,6 +12749,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_sort_cblock(C*,Ci,Ci,CI0<f2;f2>1<b>$):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -11884,6 +12773,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_sort_cblock_array(IA,Ci,Ci,CI0<f2;f2>1<b>$):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -11907,6 +12797,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_sort_cblock_dim(C*,Ci,Ci,CI0<f2;f2>1<b>$):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -11930,6 +12821,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_sort_cblock(C*,Ci,Ci,CI0<f3;f3>1<b>$):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -11953,6 +12845,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_sort_cblock_array(IA,Ci,Ci,CI0<f3;f3>1<b>$):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -11976,6 +12869,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_sort_cblock_dim(C*,Ci,Ci,CI0<f3;f3>1<b>$):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -11999,6 +12893,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_sort_cblock(C*,Ci,Ci,CI0<f4;f4>1<b>$):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -12022,6 +12917,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_sort_cblock_array(IA,Ci,Ci,CI0<f4;f4>1<b>$):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -12045,6 +12941,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_sort_cblock_dim(C*,Ci,Ci,CI0<f4;f4>1<b>$):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -12068,6 +12965,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_sort_string(CI?,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -12083,6 +12981,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_sort_cblock(C*,Ci,Ci,CI0<s;s>1<b>$):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -12106,6 +13005,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_sort_cblock_array(IA,Ci,Ci,CI0<s;s>1<b>$):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -12129,6 +13029,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_sort_cblock_dim(C*,Ci,Ci,CI0<s;s>1<b>$):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -12152,6 +13053,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_sort_any_cblock(CI?,Ci,Ci,CI$):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -12175,6 +13077,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_sort_any_ref_cblock(CI?,Ci,Ci,CI$):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -12198,6 +13101,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_sort_array_any_cblock(IA,Ci,Ci,CI$):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -12221,6 +13125,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_sort_array_any_ref_cblock(IA,Ci,Ci,CI$):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -12244,6 +13149,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_sort_dim_any_cblock(C*,Ci,Ci,CI$):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -12267,6 +13173,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "__builtin_sort_dim_any_ref_cblock(C*,Ci,Ci,CI$):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -12290,6 +13197,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "==(CH<$::clock>,CH<$::clock>):b",
 			"args" : [
 				{
 					"mn" : "CH<$::clock>",
@@ -12304,6 +13212,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "!=(CH<$::clock>,CH<$::clock>):b",
 			"args" : [
 				{
 					"mn" : "CH<$::clock>",
@@ -12318,6 +13227,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : ">=(CH<$::clock>,CH<$::clock>):b",
 			"args" : [
 				{
 					"mn" : "CH<$::clock>",
@@ -12332,6 +13242,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "<=(CH<$::clock>,CH<$::clock>):b",
 			"args" : [
 				{
 					"mn" : "CH<$::clock>",
@@ -12346,6 +13257,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : ">(CH<$::clock>,CH<$::clock>):b",
 			"args" : [
 				{
 					"mn" : "CH<$::clock>",
@@ -12360,6 +13272,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "<(CH<$::clock>,CH<$::clock>):b",
 			"args" : [
 				{
 					"mn" : "CH<$::clock>",
@@ -12374,6 +13287,7 @@
 		},
 		{
 			"resMn" : "f",
+			"mn" : "-(CH<$::clock>,CH<$::clock>):f",
 			"args" : [
 				{
 					"mn" : "CH<$::clock>",
@@ -12388,18 +13302,21 @@
 		},
 		{
 			"resMn" : "H<$::clock>",
+			"mn" : "get_clock():H<$::clock>",
 			"sideeffect" : true,
 			"args" : [],
 			"name" : "get_clock"
 		},
 		{
 			"resMn" : "i64",
+			"mn" : "ref_time_ticks():i64",
 			"sideeffect" : true,
 			"args" : [],
 			"name" : "ref_time_ticks"
 		},
 		{
 			"resMn" : "i",
+			"mn" : "get_time_usec(Ci64):i",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -12411,6 +13328,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "pop(IH<$::dasvector`Error>):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -12422,6 +13340,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "clear(IH<$::dasvector`Error>):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -12433,6 +13352,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "resize(IH<$::dasvector`Error>,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -12448,6 +13368,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "erase(IH<$::dasvector`Error>,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -12463,6 +13384,7 @@
 		},
 		{
 			"resMn" : "1<&H<rtti::Error>>G",
+			"mn" : "each(I=H<$::dasvector`Error>):1<&H<rtti::Error>>G",
 			"args" : [
 				{
 					"mn" : "I=H<$::dasvector`Error>",
@@ -12473,6 +13395,7 @@
 		},
 		{
 			"resMn" : "1<C&H<rtti::Error>>G",
+			"mn" : "each(CI=H<$::dasvector`Error>):1<C&H<rtti::Error>>G",
 			"args" : [
 				{
 					"mn" : "CI=H<$::dasvector`Error>",
@@ -12483,6 +13406,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "emplace(IH<$::dasvector`smart_ptr`TypeDecl>,&I1<H<ast::TypeDecl>>?W,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -12502,6 +13426,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "emplace(IH<$::dasvector`smart_ptr`TypeDecl>,&I1<H<ast::TypeDecl>>?W):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -12517,6 +13442,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "pop(IH<$::dasvector`smart_ptr`TypeDecl>):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -12528,6 +13454,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "clear(IH<$::dasvector`smart_ptr`TypeDecl>):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -12539,6 +13466,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "resize(IH<$::dasvector`smart_ptr`TypeDecl>,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -12554,6 +13482,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "erase(IH<$::dasvector`smart_ptr`TypeDecl>,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -12569,6 +13498,7 @@
 		},
 		{
 			"resMn" : "1<&1<H<ast::TypeDecl>>?W>G",
+			"mn" : "each(I=H<$::dasvector`smart_ptr`TypeDecl>):1<&1<H<ast::TypeDecl>>?W>G",
 			"args" : [
 				{
 					"mn" : "I=H<$::dasvector`smart_ptr`TypeDecl>",
@@ -12579,6 +13509,7 @@
 		},
 		{
 			"resMn" : "1<C&1<H<ast::TypeDecl>>?W>G",
+			"mn" : "each(CI=H<$::dasvector`smart_ptr`TypeDecl>):1<C&1<H<ast::TypeDecl>>?W>G",
 			"args" : [
 				{
 					"mn" : "CI=H<$::dasvector`smart_ptr`TypeDecl>",
@@ -12589,6 +13520,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "pop(IH<$::dasvector`das_string>):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -12600,6 +13532,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "clear(IH<$::dasvector`das_string>):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -12611,6 +13544,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "resize(IH<$::dasvector`das_string>,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -12626,6 +13560,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "erase(IH<$::dasvector`das_string>,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -12641,6 +13576,7 @@
 		},
 		{
 			"resMn" : "1<&H<$::das_string>>G",
+			"mn" : "each(I=H<$::dasvector`das_string>):1<&H<$::das_string>>G",
 			"args" : [
 				{
 					"mn" : "I=H<$::dasvector`das_string>",
@@ -12651,6 +13587,7 @@
 		},
 		{
 			"resMn" : "1<C&H<$::das_string>>G",
+			"mn" : "each(CI=H<$::dasvector`das_string>):1<C&H<$::das_string>>G",
 			"args" : [
 				{
 					"mn" : "CI=H<$::dasvector`das_string>",
@@ -12661,6 +13598,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "emplace(IH<$::dasvector`int>,&Ii,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -12680,6 +13618,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "emplace(IH<$::dasvector`int>,&Ii):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -12695,6 +13634,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "push(IH<$::dasvector`int>,Ci,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -12714,6 +13654,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "push(IH<$::dasvector`int>,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -12729,6 +13670,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "pop(IH<$::dasvector`int>):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -12740,6 +13682,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "clear(IH<$::dasvector`int>):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -12751,6 +13694,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "resize(IH<$::dasvector`int>,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -12766,6 +13710,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "erase(IH<$::dasvector`int>,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -12781,6 +13726,7 @@
 		},
 		{
 			"resMn" : "1<&i>G",
+			"mn" : "each(I=H<$::dasvector`int>):1<&i>G",
 			"args" : [
 				{
 					"mn" : "I=H<$::dasvector`int>",
@@ -12791,6 +13737,7 @@
 		},
 		{
 			"resMn" : "1<C&i>G",
+			"mn" : "each(CI=H<$::dasvector`int>):1<C&i>G",
 			"args" : [
 				{
 					"mn" : "CI=H<$::dasvector`int>",
@@ -12801,6 +13748,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "emplace(IH<$::dasvector`smart_ptr`Expression>,&I1<H<ast::Expression>>?W,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -12820,6 +13768,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "emplace(IH<$::dasvector`smart_ptr`Expression>,&I1<H<ast::Expression>>?W):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -12835,6 +13784,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "pop(IH<$::dasvector`smart_ptr`Expression>):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -12846,6 +13796,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "clear(IH<$::dasvector`smart_ptr`Expression>):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -12857,6 +13808,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "resize(IH<$::dasvector`smart_ptr`Expression>,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -12872,6 +13824,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "erase(IH<$::dasvector`smart_ptr`Expression>,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -12887,6 +13840,7 @@
 		},
 		{
 			"resMn" : "1<&1<H<ast::Expression>>?W>G",
+			"mn" : "each(I=H<$::dasvector`smart_ptr`Expression>):1<&1<H<ast::Expression>>?W>G",
 			"args" : [
 				{
 					"mn" : "I=H<$::dasvector`smart_ptr`Expression>",
@@ -12897,6 +13851,7 @@
 		},
 		{
 			"resMn" : "1<C&1<H<ast::Expression>>?W>G",
+			"mn" : "each(CI=H<$::dasvector`smart_ptr`Expression>):1<C&1<H<ast::Expression>>?W>G",
 			"args" : [
 				{
 					"mn" : "CI=H<$::dasvector`smart_ptr`Expression>",
@@ -12907,6 +13862,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "pop(IH<$::dasvector`FieldDeclaration>):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -12918,6 +13874,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "clear(IH<$::dasvector`FieldDeclaration>):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -12929,6 +13886,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "resize(IH<$::dasvector`FieldDeclaration>,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -12944,6 +13902,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "erase(IH<$::dasvector`FieldDeclaration>,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -12959,6 +13918,7 @@
 		},
 		{
 			"resMn" : "1<&H<ast::FieldDeclaration>>G",
+			"mn" : "each(I=H<$::dasvector`FieldDeclaration>):1<&H<ast::FieldDeclaration>>G",
 			"args" : [
 				{
 					"mn" : "I=H<$::dasvector`FieldDeclaration>",
@@ -12969,6 +13929,7 @@
 		},
 		{
 			"resMn" : "1<C&H<ast::FieldDeclaration>>G",
+			"mn" : "each(CI=H<$::dasvector`FieldDeclaration>):1<C&H<ast::FieldDeclaration>>G",
 			"args" : [
 				{
 					"mn" : "CI=H<$::dasvector`FieldDeclaration>",
@@ -12979,6 +13940,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "pop(IH<$::dasvector`EnumEntry>):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -12990,6 +13952,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "clear(IH<$::dasvector`EnumEntry>):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -13001,6 +13964,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "resize(IH<$::dasvector`EnumEntry>,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -13016,6 +13980,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "erase(IH<$::dasvector`EnumEntry>,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -13031,6 +13996,7 @@
 		},
 		{
 			"resMn" : "1<&H<ast::EnumEntry>>G",
+			"mn" : "each(I=H<$::dasvector`EnumEntry>):1<&H<ast::EnumEntry>>G",
 			"args" : [
 				{
 					"mn" : "I=H<$::dasvector`EnumEntry>",
@@ -13041,6 +14007,7 @@
 		},
 		{
 			"resMn" : "1<C&H<ast::EnumEntry>>G",
+			"mn" : "each(CI=H<$::dasvector`EnumEntry>):1<C&H<ast::EnumEntry>>G",
 			"args" : [
 				{
 					"mn" : "CI=H<$::dasvector`EnumEntry>",
@@ -13051,6 +14018,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "emplace(IH<$::dasvector`smart_ptr`Variable>,&I1<H<ast::Variable>>?W,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -13070,6 +14038,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "emplace(IH<$::dasvector`smart_ptr`Variable>,&I1<H<ast::Variable>>?W):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -13085,6 +14054,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "pop(IH<$::dasvector`smart_ptr`Variable>):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -13096,6 +14066,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "clear(IH<$::dasvector`smart_ptr`Variable>):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -13107,6 +14078,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "resize(IH<$::dasvector`smart_ptr`Variable>,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -13122,6 +14094,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "erase(IH<$::dasvector`smart_ptr`Variable>,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -13137,6 +14110,7 @@
 		},
 		{
 			"resMn" : "1<&1<H<ast::Variable>>?W>G",
+			"mn" : "each(I=H<$::dasvector`smart_ptr`Variable>):1<&1<H<ast::Variable>>?W>G",
 			"args" : [
 				{
 					"mn" : "I=H<$::dasvector`smart_ptr`Variable>",
@@ -13147,6 +14121,7 @@
 		},
 		{
 			"resMn" : "1<C&1<H<ast::Variable>>?W>G",
+			"mn" : "each(CI=H<$::dasvector`smart_ptr`Variable>):1<C&1<H<ast::Variable>>?W>G",
 			"args" : [
 				{
 					"mn" : "CI=H<$::dasvector`smart_ptr`Variable>",
@@ -13157,6 +14132,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "emplace(H<$::dasvector`InferHistory>,H<ast::InferHistory>,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -13176,6 +14152,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "emplace(H<$::dasvector`InferHistory>,H<ast::InferHistory>):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -13191,6 +14168,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "push(H<$::dasvector`InferHistory>,CH<ast::InferHistory>,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -13210,6 +14188,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "push(H<$::dasvector`InferHistory>,CH<ast::InferHistory>):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -13225,6 +14204,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "pop(IH<$::dasvector`InferHistory>):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -13236,6 +14216,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "clear(IH<$::dasvector`InferHistory>):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -13247,6 +14228,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "resize(IH<$::dasvector`InferHistory>,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -13262,6 +14244,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "erase(IH<$::dasvector`InferHistory>,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -13277,6 +14260,7 @@
 		},
 		{
 			"resMn" : "1<&H<ast::InferHistory>>G",
+			"mn" : "each(I=H<$::dasvector`InferHistory>):1<&H<ast::InferHistory>>G",
 			"args" : [
 				{
 					"mn" : "I=H<$::dasvector`InferHistory>",
@@ -13287,6 +14271,7 @@
 		},
 		{
 			"resMn" : "1<C&H<ast::InferHistory>>G",
+			"mn" : "each(CI=H<$::dasvector`InferHistory>):1<C&H<ast::InferHistory>>G",
 			"args" : [
 				{
 					"mn" : "CI=H<$::dasvector`InferHistory>",
@@ -13297,6 +14282,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "emplace(H<$::dasvector`pair`uint`uint>,0<u;u>U,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -13316,6 +14302,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "emplace(H<$::dasvector`pair`uint`uint>,0<u;u>U):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -13331,6 +14318,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "push(H<$::dasvector`pair`uint`uint>,C0<u;u>U,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -13350,6 +14338,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "push(H<$::dasvector`pair`uint`uint>,C0<u;u>U):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -13365,6 +14354,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "pop(IH<$::dasvector`pair`uint`uint>):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -13376,6 +14366,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "clear(IH<$::dasvector`pair`uint`uint>):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -13387,6 +14378,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "resize(IH<$::dasvector`pair`uint`uint>,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -13402,6 +14394,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "erase(IH<$::dasvector`pair`uint`uint>,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -13417,6 +14410,7 @@
 		},
 		{
 			"resMn" : "1<&0<u;u>U>G",
+			"mn" : "each(I=H<$::dasvector`pair`uint`uint>):1<&0<u;u>U>G",
 			"args" : [
 				{
 					"mn" : "I=H<$::dasvector`pair`uint`uint>",
@@ -13427,6 +14421,7 @@
 		},
 		{
 			"resMn" : "1<C&0<u;u>U>G",
+			"mn" : "each(CI=H<$::dasvector`pair`uint`uint>):1<C&0<u;u>U>G",
 			"args" : [
 				{
 					"mn" : "CI=H<$::dasvector`pair`uint`uint>",
@@ -13437,6 +14432,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "emplace(H<$::dasvector`LineInfo>,H<rtti::LineInfo>,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -13456,6 +14452,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "emplace(H<$::dasvector`LineInfo>,H<rtti::LineInfo>):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -13471,6 +14468,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "push(H<$::dasvector`LineInfo>,CH<rtti::LineInfo>,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -13490,6 +14488,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "push(H<$::dasvector`LineInfo>,CH<rtti::LineInfo>):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -13505,6 +14504,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "pop(IH<$::dasvector`LineInfo>):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -13516,6 +14516,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "clear(IH<$::dasvector`LineInfo>):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -13527,6 +14528,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "resize(IH<$::dasvector`LineInfo>,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -13542,6 +14544,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "erase(IH<$::dasvector`LineInfo>,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -13557,6 +14560,7 @@
 		},
 		{
 			"resMn" : "1<&H<rtti::LineInfo>>G",
+			"mn" : "each(I=H<$::dasvector`LineInfo>):1<&H<rtti::LineInfo>>G",
 			"args" : [
 				{
 					"mn" : "I=H<$::dasvector`LineInfo>",
@@ -13567,6 +14571,7 @@
 		},
 		{
 			"resMn" : "1<C&H<rtti::LineInfo>>G",
+			"mn" : "each(CI=H<$::dasvector`LineInfo>):1<C&H<rtti::LineInfo>>G",
 			"args" : [
 				{
 					"mn" : "CI=H<$::dasvector`LineInfo>",
@@ -13577,6 +14582,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "emplace(IH<$::dasvector`smart_ptr`MakeStruct>,&I1<H<ast::MakeStruct>>?W,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -13596,6 +14602,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "emplace(IH<$::dasvector`smart_ptr`MakeStruct>,&I1<H<ast::MakeStruct>>?W):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -13611,6 +14618,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "pop(IH<$::dasvector`smart_ptr`MakeStruct>):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -13622,6 +14630,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "clear(IH<$::dasvector`smart_ptr`MakeStruct>):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -13633,6 +14642,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "resize(IH<$::dasvector`smart_ptr`MakeStruct>,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -13648,6 +14658,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "erase(IH<$::dasvector`smart_ptr`MakeStruct>,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -13663,6 +14674,7 @@
 		},
 		{
 			"resMn" : "1<&1<H<ast::MakeStruct>>?W>G",
+			"mn" : "each(I=H<$::dasvector`smart_ptr`MakeStruct>):1<&1<H<ast::MakeStruct>>?W>G",
 			"args" : [
 				{
 					"mn" : "I=H<$::dasvector`smart_ptr`MakeStruct>",
@@ -13673,6 +14685,7 @@
 		},
 		{
 			"resMn" : "1<C&1<H<ast::MakeStruct>>?W>G",
+			"mn" : "each(CI=H<$::dasvector`smart_ptr`MakeStruct>):1<C&1<H<ast::MakeStruct>>?W>G",
 			"args" : [
 				{
 					"mn" : "CI=H<$::dasvector`smart_ptr`MakeStruct>",
@@ -13683,6 +14696,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "emplace(IH<$::dasvector`smart_ptr`MakeFieldDecl>,&I1<H<ast::MakeFieldDecl>>?W,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -13702,6 +14716,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "emplace(IH<$::dasvector`smart_ptr`MakeFieldDecl>,&I1<H<ast::MakeFieldDecl>>?W):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -13717,6 +14732,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "pop(IH<$::dasvector`smart_ptr`MakeFieldDecl>):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -13728,6 +14744,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "clear(IH<$::dasvector`smart_ptr`MakeFieldDecl>):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -13739,6 +14756,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "resize(IH<$::dasvector`smart_ptr`MakeFieldDecl>,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -13754,6 +14772,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "erase(IH<$::dasvector`smart_ptr`MakeFieldDecl>,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -13769,6 +14788,7 @@
 		},
 		{
 			"resMn" : "1<&1<H<ast::MakeFieldDecl>>?W>G",
+			"mn" : "each(I=H<$::dasvector`smart_ptr`MakeFieldDecl>):1<&1<H<ast::MakeFieldDecl>>?W>G",
 			"args" : [
 				{
 					"mn" : "I=H<$::dasvector`smart_ptr`MakeFieldDecl>",
@@ -13779,6 +14799,7 @@
 		},
 		{
 			"resMn" : "1<C&1<H<ast::MakeFieldDecl>>?W>G",
+			"mn" : "each(CI=H<$::dasvector`smart_ptr`MakeFieldDecl>):1<C&1<H<ast::MakeFieldDecl>>?W>G",
 			"args" : [
 				{
 					"mn" : "CI=H<$::dasvector`smart_ptr`MakeFieldDecl>",
@@ -13789,6 +14810,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "emplace(IH<$::dasvector`uint8>,&Iu8,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -13808,6 +14830,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "emplace(IH<$::dasvector`uint8>,&Iu8):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -13823,6 +14846,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "push(IH<$::dasvector`uint8>,Cu8,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -13842,6 +14866,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "push(IH<$::dasvector`uint8>,Cu8):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -13857,6 +14882,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "pop(IH<$::dasvector`uint8>):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -13868,6 +14894,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "clear(IH<$::dasvector`uint8>):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -13879,6 +14906,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "resize(IH<$::dasvector`uint8>,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -13894,6 +14922,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "erase(IH<$::dasvector`uint8>,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -13909,6 +14938,7 @@
 		},
 		{
 			"resMn" : "1<&u8>G",
+			"mn" : "each(I=H<$::dasvector`uint8>):1<&u8>G",
 			"args" : [
 				{
 					"mn" : "I=H<$::dasvector`uint8>",
@@ -13919,6 +14949,7 @@
 		},
 		{
 			"resMn" : "1<C&u8>G",
+			"mn" : "each(CI=H<$::dasvector`uint8>):1<C&u8>G",
 			"args" : [
 				{
 					"mn" : "CI=H<$::dasvector`uint8>",
@@ -13929,6 +14960,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "pop(IH<$::dasvector`CaptureEntry>):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -13940,6 +14972,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "clear(IH<$::dasvector`CaptureEntry>):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -13951,6 +14984,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "resize(IH<$::dasvector`CaptureEntry>,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -13966,6 +15000,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "erase(IH<$::dasvector`CaptureEntry>,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -13981,6 +15016,7 @@
 		},
 		{
 			"resMn" : "1<&H<ast::CaptureEntry>>G",
+			"mn" : "each(I=H<$::dasvector`CaptureEntry>):1<&H<ast::CaptureEntry>>G",
 			"args" : [
 				{
 					"mn" : "I=H<$::dasvector`CaptureEntry>",
@@ -13991,6 +15027,7 @@
 		},
 		{
 			"resMn" : "1<C&H<ast::CaptureEntry>>G",
+			"mn" : "each(CI=H<$::dasvector`CaptureEntry>):1<C&H<ast::CaptureEntry>>G",
 			"args" : [
 				{
 					"mn" : "CI=H<$::dasvector`CaptureEntry>",
@@ -14001,6 +15038,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "emplace(H<$::dasvector`TestObjectFoo>,H<UnitTest::TestObjectFoo>,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -14020,6 +15058,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "emplace(H<$::dasvector`TestObjectFoo>,H<UnitTest::TestObjectFoo>):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -14035,6 +15074,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "push(H<$::dasvector`TestObjectFoo>,CH<UnitTest::TestObjectFoo>,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -14054,6 +15094,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "push(H<$::dasvector`TestObjectFoo>,CH<UnitTest::TestObjectFoo>):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -14069,6 +15110,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "pop(IH<$::dasvector`TestObjectFoo>):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -14080,6 +15122,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "clear(IH<$::dasvector`TestObjectFoo>):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -14091,6 +15134,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "resize(IH<$::dasvector`TestObjectFoo>,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -14106,6 +15150,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "erase(IH<$::dasvector`TestObjectFoo>,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -14121,6 +15166,7 @@
 		},
 		{
 			"resMn" : "1<&H<UnitTest::TestObjectFoo>>G",
+			"mn" : "each(I=H<$::dasvector`TestObjectFoo>):1<&H<UnitTest::TestObjectFoo>>G",
 			"args" : [
 				{
 					"mn" : "I=H<$::dasvector`TestObjectFoo>",
@@ -14131,6 +15177,7 @@
 		},
 		{
 			"resMn" : "1<C&H<UnitTest::TestObjectFoo>>G",
+			"mn" : "each(CI=H<$::dasvector`TestObjectFoo>):1<C&H<UnitTest::TestObjectFoo>>G",
 			"args" : [
 				{
 					"mn" : "CI=H<$::dasvector`TestObjectFoo>",
@@ -14141,6 +15188,7 @@
 		},
 		{
 			"resMn" : "f",
+			"mn" : "sin(Cf):f",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -14151,6 +15199,7 @@
 		},
 		{
 			"resMn" : "f",
+			"mn" : "cos(Cf):f",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -14161,6 +15210,7 @@
 		},
 		{
 			"resMn" : "f",
+			"mn" : "tan(Cf):f",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -14171,6 +15221,7 @@
 		},
 		{
 			"resMn" : "f",
+			"mn" : "atan(Cf):f",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -14181,6 +15232,7 @@
 		},
 		{
 			"resMn" : "f",
+			"mn" : "asin(Cf):f",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -14191,6 +15243,7 @@
 		},
 		{
 			"resMn" : "f",
+			"mn" : "acos(Cf):f",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -14201,6 +15254,7 @@
 		},
 		{
 			"resMn" : "f",
+			"mn" : "atan2(Cf,Cf):f",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -14215,6 +15269,7 @@
 		},
 		{
 			"resMn" : "f",
+			"mn" : "atan2_est(Cf,Cf):f",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -14229,6 +15284,7 @@
 		},
 		{
 			"resMn" : "f2",
+			"mn" : "sin(Cf2):f2",
 			"args" : [
 				{
 					"mn" : "Cf2",
@@ -14239,6 +15295,7 @@
 		},
 		{
 			"resMn" : "f2",
+			"mn" : "cos(Cf2):f2",
 			"args" : [
 				{
 					"mn" : "Cf2",
@@ -14249,6 +15306,7 @@
 		},
 		{
 			"resMn" : "f2",
+			"mn" : "tan(Cf2):f2",
 			"args" : [
 				{
 					"mn" : "Cf2",
@@ -14259,6 +15317,7 @@
 		},
 		{
 			"resMn" : "f2",
+			"mn" : "atan(Cf2):f2",
 			"args" : [
 				{
 					"mn" : "Cf2",
@@ -14269,6 +15328,7 @@
 		},
 		{
 			"resMn" : "f2",
+			"mn" : "asin(Cf2):f2",
 			"args" : [
 				{
 					"mn" : "Cf2",
@@ -14279,6 +15339,7 @@
 		},
 		{
 			"resMn" : "f2",
+			"mn" : "acos(Cf2):f2",
 			"args" : [
 				{
 					"mn" : "Cf2",
@@ -14289,6 +15350,7 @@
 		},
 		{
 			"resMn" : "f2",
+			"mn" : "atan2(Cf2,Cf2):f2",
 			"args" : [
 				{
 					"mn" : "Cf2",
@@ -14303,6 +15365,7 @@
 		},
 		{
 			"resMn" : "f2",
+			"mn" : "atan2_est(Cf2,Cf2):f2",
 			"args" : [
 				{
 					"mn" : "Cf2",
@@ -14317,6 +15380,7 @@
 		},
 		{
 			"resMn" : "f3",
+			"mn" : "sin(Cf3):f3",
 			"args" : [
 				{
 					"mn" : "Cf3",
@@ -14327,6 +15391,7 @@
 		},
 		{
 			"resMn" : "f3",
+			"mn" : "cos(Cf3):f3",
 			"args" : [
 				{
 					"mn" : "Cf3",
@@ -14337,6 +15402,7 @@
 		},
 		{
 			"resMn" : "f3",
+			"mn" : "tan(Cf3):f3",
 			"args" : [
 				{
 					"mn" : "Cf3",
@@ -14347,6 +15413,7 @@
 		},
 		{
 			"resMn" : "f3",
+			"mn" : "atan(Cf3):f3",
 			"args" : [
 				{
 					"mn" : "Cf3",
@@ -14357,6 +15424,7 @@
 		},
 		{
 			"resMn" : "f3",
+			"mn" : "asin(Cf3):f3",
 			"args" : [
 				{
 					"mn" : "Cf3",
@@ -14367,6 +15435,7 @@
 		},
 		{
 			"resMn" : "f3",
+			"mn" : "acos(Cf3):f3",
 			"args" : [
 				{
 					"mn" : "Cf3",
@@ -14377,6 +15446,7 @@
 		},
 		{
 			"resMn" : "f3",
+			"mn" : "atan2(Cf3,Cf3):f3",
 			"args" : [
 				{
 					"mn" : "Cf3",
@@ -14391,6 +15461,7 @@
 		},
 		{
 			"resMn" : "f3",
+			"mn" : "atan2_est(Cf3,Cf3):f3",
 			"args" : [
 				{
 					"mn" : "Cf3",
@@ -14405,6 +15476,7 @@
 		},
 		{
 			"resMn" : "f4",
+			"mn" : "sin(Cf4):f4",
 			"args" : [
 				{
 					"mn" : "Cf4",
@@ -14415,6 +15487,7 @@
 		},
 		{
 			"resMn" : "f4",
+			"mn" : "cos(Cf4):f4",
 			"args" : [
 				{
 					"mn" : "Cf4",
@@ -14425,6 +15498,7 @@
 		},
 		{
 			"resMn" : "f4",
+			"mn" : "tan(Cf4):f4",
 			"args" : [
 				{
 					"mn" : "Cf4",
@@ -14435,6 +15509,7 @@
 		},
 		{
 			"resMn" : "f4",
+			"mn" : "atan(Cf4):f4",
 			"args" : [
 				{
 					"mn" : "Cf4",
@@ -14445,6 +15520,7 @@
 		},
 		{
 			"resMn" : "f4",
+			"mn" : "asin(Cf4):f4",
 			"args" : [
 				{
 					"mn" : "Cf4",
@@ -14455,6 +15531,7 @@
 		},
 		{
 			"resMn" : "f4",
+			"mn" : "acos(Cf4):f4",
 			"args" : [
 				{
 					"mn" : "Cf4",
@@ -14465,6 +15542,7 @@
 		},
 		{
 			"resMn" : "f4",
+			"mn" : "atan2(Cf4,Cf4):f4",
 			"args" : [
 				{
 					"mn" : "Cf4",
@@ -14479,6 +15557,7 @@
 		},
 		{
 			"resMn" : "f4",
+			"mn" : "atan2_est(Cf4,Cf4):f4",
 			"args" : [
 				{
 					"mn" : "Cf4",
@@ -14493,6 +15572,7 @@
 		},
 		{
 			"resMn" : "f",
+			"mn" : "exp(Cf):f",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -14503,6 +15583,7 @@
 		},
 		{
 			"resMn" : "f",
+			"mn" : "log(Cf):f",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -14513,6 +15594,7 @@
 		},
 		{
 			"resMn" : "f",
+			"mn" : "exp2(Cf):f",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -14523,6 +15605,7 @@
 		},
 		{
 			"resMn" : "f",
+			"mn" : "log2(Cf):f",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -14533,6 +15616,7 @@
 		},
 		{
 			"resMn" : "f",
+			"mn" : "rcp(Cf):f",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -14543,6 +15627,7 @@
 		},
 		{
 			"resMn" : "f",
+			"mn" : "rcp_est(Cf):f",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -14553,6 +15638,7 @@
 		},
 		{
 			"resMn" : "f",
+			"mn" : "pow(Cf,Cf):f",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -14567,6 +15653,7 @@
 		},
 		{
 			"resMn" : "f2",
+			"mn" : "exp(Cf2):f2",
 			"args" : [
 				{
 					"mn" : "Cf2",
@@ -14577,6 +15664,7 @@
 		},
 		{
 			"resMn" : "f2",
+			"mn" : "log(Cf2):f2",
 			"args" : [
 				{
 					"mn" : "Cf2",
@@ -14587,6 +15675,7 @@
 		},
 		{
 			"resMn" : "f2",
+			"mn" : "exp2(Cf2):f2",
 			"args" : [
 				{
 					"mn" : "Cf2",
@@ -14597,6 +15686,7 @@
 		},
 		{
 			"resMn" : "f2",
+			"mn" : "log2(Cf2):f2",
 			"args" : [
 				{
 					"mn" : "Cf2",
@@ -14607,6 +15697,7 @@
 		},
 		{
 			"resMn" : "f2",
+			"mn" : "rcp(Cf2):f2",
 			"args" : [
 				{
 					"mn" : "Cf2",
@@ -14617,6 +15708,7 @@
 		},
 		{
 			"resMn" : "f2",
+			"mn" : "rcp_est(Cf2):f2",
 			"args" : [
 				{
 					"mn" : "Cf2",
@@ -14627,6 +15719,7 @@
 		},
 		{
 			"resMn" : "f2",
+			"mn" : "pow(Cf2,Cf2):f2",
 			"args" : [
 				{
 					"mn" : "Cf2",
@@ -14641,6 +15734,7 @@
 		},
 		{
 			"resMn" : "f3",
+			"mn" : "exp(Cf3):f3",
 			"args" : [
 				{
 					"mn" : "Cf3",
@@ -14651,6 +15745,7 @@
 		},
 		{
 			"resMn" : "f3",
+			"mn" : "log(Cf3):f3",
 			"args" : [
 				{
 					"mn" : "Cf3",
@@ -14661,6 +15756,7 @@
 		},
 		{
 			"resMn" : "f3",
+			"mn" : "exp2(Cf3):f3",
 			"args" : [
 				{
 					"mn" : "Cf3",
@@ -14671,6 +15767,7 @@
 		},
 		{
 			"resMn" : "f3",
+			"mn" : "log2(Cf3):f3",
 			"args" : [
 				{
 					"mn" : "Cf3",
@@ -14681,6 +15778,7 @@
 		},
 		{
 			"resMn" : "f3",
+			"mn" : "rcp(Cf3):f3",
 			"args" : [
 				{
 					"mn" : "Cf3",
@@ -14691,6 +15789,7 @@
 		},
 		{
 			"resMn" : "f3",
+			"mn" : "rcp_est(Cf3):f3",
 			"args" : [
 				{
 					"mn" : "Cf3",
@@ -14701,6 +15800,7 @@
 		},
 		{
 			"resMn" : "f3",
+			"mn" : "pow(Cf3,Cf3):f3",
 			"args" : [
 				{
 					"mn" : "Cf3",
@@ -14715,6 +15815,7 @@
 		},
 		{
 			"resMn" : "f4",
+			"mn" : "exp(Cf4):f4",
 			"args" : [
 				{
 					"mn" : "Cf4",
@@ -14725,6 +15826,7 @@
 		},
 		{
 			"resMn" : "f4",
+			"mn" : "log(Cf4):f4",
 			"args" : [
 				{
 					"mn" : "Cf4",
@@ -14735,6 +15837,7 @@
 		},
 		{
 			"resMn" : "f4",
+			"mn" : "exp2(Cf4):f4",
 			"args" : [
 				{
 					"mn" : "Cf4",
@@ -14745,6 +15848,7 @@
 		},
 		{
 			"resMn" : "f4",
+			"mn" : "log2(Cf4):f4",
 			"args" : [
 				{
 					"mn" : "Cf4",
@@ -14755,6 +15859,7 @@
 		},
 		{
 			"resMn" : "f4",
+			"mn" : "rcp(Cf4):f4",
 			"args" : [
 				{
 					"mn" : "Cf4",
@@ -14765,6 +15870,7 @@
 		},
 		{
 			"resMn" : "f4",
+			"mn" : "rcp_est(Cf4):f4",
 			"args" : [
 				{
 					"mn" : "Cf4",
@@ -14775,6 +15881,7 @@
 		},
 		{
 			"resMn" : "f4",
+			"mn" : "pow(Cf4,Cf4):f4",
 			"args" : [
 				{
 					"mn" : "Cf4",
@@ -14789,6 +15896,7 @@
 		},
 		{
 			"resMn" : "f",
+			"mn" : "mad(Cf,Cf,Cf):f",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -14807,6 +15915,7 @@
 		},
 		{
 			"resMn" : "f",
+			"mn" : "lerp(Cf,Cf,Cf):f",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -14825,6 +15934,7 @@
 		},
 		{
 			"resMn" : "f2",
+			"mn" : "mad(Cf2,Cf2,Cf2):f2",
 			"args" : [
 				{
 					"mn" : "Cf2",
@@ -14843,6 +15953,7 @@
 		},
 		{
 			"resMn" : "f2",
+			"mn" : "lerp(Cf2,Cf2,Cf2):f2",
 			"args" : [
 				{
 					"mn" : "Cf2",
@@ -14861,6 +15972,7 @@
 		},
 		{
 			"resMn" : "f3",
+			"mn" : "mad(Cf3,Cf3,Cf3):f3",
 			"args" : [
 				{
 					"mn" : "Cf3",
@@ -14879,6 +15991,7 @@
 		},
 		{
 			"resMn" : "f3",
+			"mn" : "lerp(Cf3,Cf3,Cf3):f3",
 			"args" : [
 				{
 					"mn" : "Cf3",
@@ -14897,6 +16010,7 @@
 		},
 		{
 			"resMn" : "f4",
+			"mn" : "mad(Cf4,Cf4,Cf4):f4",
 			"args" : [
 				{
 					"mn" : "Cf4",
@@ -14915,6 +16029,7 @@
 		},
 		{
 			"resMn" : "f4",
+			"mn" : "lerp(Cf4,Cf4,Cf4):f4",
 			"args" : [
 				{
 					"mn" : "Cf4",
@@ -14933,6 +16048,7 @@
 		},
 		{
 			"resMn" : "f2",
+			"mn" : "mad(Cf2,Cf,Cf2):f2",
 			"args" : [
 				{
 					"mn" : "Cf2",
@@ -14951,6 +16067,7 @@
 		},
 		{
 			"resMn" : "f3",
+			"mn" : "mad(Cf3,Cf,Cf3):f3",
 			"args" : [
 				{
 					"mn" : "Cf3",
@@ -14969,6 +16086,7 @@
 		},
 		{
 			"resMn" : "f4",
+			"mn" : "mad(Cf4,Cf,Cf4):f4",
 			"args" : [
 				{
 					"mn" : "Cf4",
@@ -14987,6 +16105,7 @@
 		},
 		{
 			"resMn" : "f",
+			"mn" : "floor(Cf):f",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -14997,6 +16116,7 @@
 		},
 		{
 			"resMn" : "f",
+			"mn" : "ceil(Cf):f",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -15007,6 +16127,7 @@
 		},
 		{
 			"resMn" : "f",
+			"mn" : "sqrt(Cf):f",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -15017,6 +16138,7 @@
 		},
 		{
 			"resMn" : "f",
+			"mn" : "rsqrt(Cf):f",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -15027,6 +16149,7 @@
 		},
 		{
 			"resMn" : "f",
+			"mn" : "rsqrt_est(Cf):f",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -15037,6 +16160,7 @@
 		},
 		{
 			"resMn" : "f",
+			"mn" : "saturate(Cf):f",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -15047,6 +16171,7 @@
 		},
 		{
 			"resMn" : "f2",
+			"mn" : "floor(Cf2):f2",
 			"args" : [
 				{
 					"mn" : "Cf2",
@@ -15057,6 +16182,7 @@
 		},
 		{
 			"resMn" : "f2",
+			"mn" : "ceil(Cf2):f2",
 			"args" : [
 				{
 					"mn" : "Cf2",
@@ -15067,6 +16193,7 @@
 		},
 		{
 			"resMn" : "f2",
+			"mn" : "sqrt(Cf2):f2",
 			"args" : [
 				{
 					"mn" : "Cf2",
@@ -15077,6 +16204,7 @@
 		},
 		{
 			"resMn" : "f2",
+			"mn" : "rsqrt(Cf2):f2",
 			"args" : [
 				{
 					"mn" : "Cf2",
@@ -15087,6 +16215,7 @@
 		},
 		{
 			"resMn" : "f2",
+			"mn" : "rsqrt_est(Cf2):f2",
 			"args" : [
 				{
 					"mn" : "Cf2",
@@ -15097,6 +16226,7 @@
 		},
 		{
 			"resMn" : "f2",
+			"mn" : "saturate(Cf2):f2",
 			"args" : [
 				{
 					"mn" : "Cf2",
@@ -15107,6 +16237,7 @@
 		},
 		{
 			"resMn" : "f3",
+			"mn" : "floor(Cf3):f3",
 			"args" : [
 				{
 					"mn" : "Cf3",
@@ -15117,6 +16248,7 @@
 		},
 		{
 			"resMn" : "f3",
+			"mn" : "ceil(Cf3):f3",
 			"args" : [
 				{
 					"mn" : "Cf3",
@@ -15127,6 +16259,7 @@
 		},
 		{
 			"resMn" : "f3",
+			"mn" : "sqrt(Cf3):f3",
 			"args" : [
 				{
 					"mn" : "Cf3",
@@ -15137,6 +16270,7 @@
 		},
 		{
 			"resMn" : "f3",
+			"mn" : "rsqrt(Cf3):f3",
 			"args" : [
 				{
 					"mn" : "Cf3",
@@ -15147,6 +16281,7 @@
 		},
 		{
 			"resMn" : "f3",
+			"mn" : "rsqrt_est(Cf3):f3",
 			"args" : [
 				{
 					"mn" : "Cf3",
@@ -15157,6 +16292,7 @@
 		},
 		{
 			"resMn" : "f3",
+			"mn" : "saturate(Cf3):f3",
 			"args" : [
 				{
 					"mn" : "Cf3",
@@ -15167,6 +16303,7 @@
 		},
 		{
 			"resMn" : "f4",
+			"mn" : "floor(Cf4):f4",
 			"args" : [
 				{
 					"mn" : "Cf4",
@@ -15177,6 +16314,7 @@
 		},
 		{
 			"resMn" : "f4",
+			"mn" : "ceil(Cf4):f4",
 			"args" : [
 				{
 					"mn" : "Cf4",
@@ -15187,6 +16325,7 @@
 		},
 		{
 			"resMn" : "f4",
+			"mn" : "sqrt(Cf4):f4",
 			"args" : [
 				{
 					"mn" : "Cf4",
@@ -15197,6 +16336,7 @@
 		},
 		{
 			"resMn" : "f4",
+			"mn" : "rsqrt(Cf4):f4",
 			"args" : [
 				{
 					"mn" : "Cf4",
@@ -15207,6 +16347,7 @@
 		},
 		{
 			"resMn" : "f4",
+			"mn" : "rsqrt_est(Cf4):f4",
 			"args" : [
 				{
 					"mn" : "Cf4",
@@ -15217,6 +16358,7 @@
 		},
 		{
 			"resMn" : "f4",
+			"mn" : "saturate(Cf4):f4",
 			"args" : [
 				{
 					"mn" : "Cf4",
@@ -15227,6 +16369,7 @@
 		},
 		{
 			"resMn" : "i",
+			"mn" : "min(Ci,Ci):i",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -15241,6 +16384,7 @@
 		},
 		{
 			"resMn" : "i",
+			"mn" : "max(Ci,Ci):i",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -15255,6 +16399,7 @@
 		},
 		{
 			"resMn" : "i",
+			"mn" : "clamp(Ci,Ci,Ci):i",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -15273,6 +16418,7 @@
 		},
 		{
 			"resMn" : "i",
+			"mn" : "abs(Ci):i",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -15283,6 +16429,7 @@
 		},
 		{
 			"resMn" : "i",
+			"mn" : "sign(Ci):i",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -15293,6 +16440,7 @@
 		},
 		{
 			"resMn" : "i2",
+			"mn" : "min(Ci2,Ci2):i2",
 			"args" : [
 				{
 					"mn" : "Ci2",
@@ -15307,6 +16455,7 @@
 		},
 		{
 			"resMn" : "i2",
+			"mn" : "max(Ci2,Ci2):i2",
 			"args" : [
 				{
 					"mn" : "Ci2",
@@ -15321,6 +16470,7 @@
 		},
 		{
 			"resMn" : "i2",
+			"mn" : "clamp(Ci2,Ci2,Ci2):i2",
 			"args" : [
 				{
 					"mn" : "Ci2",
@@ -15339,6 +16489,7 @@
 		},
 		{
 			"resMn" : "i2",
+			"mn" : "abs(Ci2):i2",
 			"args" : [
 				{
 					"mn" : "Ci2",
@@ -15349,6 +16500,7 @@
 		},
 		{
 			"resMn" : "i2",
+			"mn" : "sign(Ci2):i2",
 			"args" : [
 				{
 					"mn" : "Ci2",
@@ -15359,6 +16511,7 @@
 		},
 		{
 			"resMn" : "i3",
+			"mn" : "min(Ci3,Ci3):i3",
 			"args" : [
 				{
 					"mn" : "Ci3",
@@ -15373,6 +16526,7 @@
 		},
 		{
 			"resMn" : "i3",
+			"mn" : "max(Ci3,Ci3):i3",
 			"args" : [
 				{
 					"mn" : "Ci3",
@@ -15387,6 +16541,7 @@
 		},
 		{
 			"resMn" : "i3",
+			"mn" : "clamp(Ci3,Ci3,Ci3):i3",
 			"args" : [
 				{
 					"mn" : "Ci3",
@@ -15405,6 +16560,7 @@
 		},
 		{
 			"resMn" : "i3",
+			"mn" : "abs(Ci3):i3",
 			"args" : [
 				{
 					"mn" : "Ci3",
@@ -15415,6 +16571,7 @@
 		},
 		{
 			"resMn" : "i3",
+			"mn" : "sign(Ci3):i3",
 			"args" : [
 				{
 					"mn" : "Ci3",
@@ -15425,6 +16582,7 @@
 		},
 		{
 			"resMn" : "i4",
+			"mn" : "min(Ci4,Ci4):i4",
 			"args" : [
 				{
 					"mn" : "Ci4",
@@ -15439,6 +16597,7 @@
 		},
 		{
 			"resMn" : "i4",
+			"mn" : "max(Ci4,Ci4):i4",
 			"args" : [
 				{
 					"mn" : "Ci4",
@@ -15453,6 +16612,7 @@
 		},
 		{
 			"resMn" : "i4",
+			"mn" : "clamp(Ci4,Ci4,Ci4):i4",
 			"args" : [
 				{
 					"mn" : "Ci4",
@@ -15471,6 +16631,7 @@
 		},
 		{
 			"resMn" : "i4",
+			"mn" : "abs(Ci4):i4",
 			"args" : [
 				{
 					"mn" : "Ci4",
@@ -15481,6 +16642,7 @@
 		},
 		{
 			"resMn" : "i4",
+			"mn" : "sign(Ci4):i4",
 			"args" : [
 				{
 					"mn" : "Ci4",
@@ -15491,6 +16653,7 @@
 		},
 		{
 			"resMn" : "u",
+			"mn" : "min(Cu,Cu):u",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -15505,6 +16668,7 @@
 		},
 		{
 			"resMn" : "u",
+			"mn" : "max(Cu,Cu):u",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -15519,6 +16683,7 @@
 		},
 		{
 			"resMn" : "u",
+			"mn" : "clamp(Cu,Cu,Cu):u",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -15537,6 +16702,7 @@
 		},
 		{
 			"resMn" : "u",
+			"mn" : "abs(Cu):u",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -15547,6 +16713,7 @@
 		},
 		{
 			"resMn" : "u",
+			"mn" : "sign(Cu):u",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -15557,6 +16724,7 @@
 		},
 		{
 			"resMn" : "f",
+			"mn" : "min(Cf,Cf):f",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -15571,6 +16739,7 @@
 		},
 		{
 			"resMn" : "f",
+			"mn" : "max(Cf,Cf):f",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -15585,6 +16754,7 @@
 		},
 		{
 			"resMn" : "f",
+			"mn" : "clamp(Cf,Cf,Cf):f",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -15603,6 +16773,7 @@
 		},
 		{
 			"resMn" : "f",
+			"mn" : "abs(Cf):f",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -15613,6 +16784,7 @@
 		},
 		{
 			"resMn" : "f",
+			"mn" : "sign(Cf):f",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -15623,6 +16795,7 @@
 		},
 		{
 			"resMn" : "f2",
+			"mn" : "min(Cf2,Cf2):f2",
 			"args" : [
 				{
 					"mn" : "Cf2",
@@ -15637,6 +16810,7 @@
 		},
 		{
 			"resMn" : "f2",
+			"mn" : "max(Cf2,Cf2):f2",
 			"args" : [
 				{
 					"mn" : "Cf2",
@@ -15651,6 +16825,7 @@
 		},
 		{
 			"resMn" : "f2",
+			"mn" : "clamp(Cf2,Cf2,Cf2):f2",
 			"args" : [
 				{
 					"mn" : "Cf2",
@@ -15669,6 +16844,7 @@
 		},
 		{
 			"resMn" : "f2",
+			"mn" : "abs(Cf2):f2",
 			"args" : [
 				{
 					"mn" : "Cf2",
@@ -15679,6 +16855,7 @@
 		},
 		{
 			"resMn" : "f2",
+			"mn" : "sign(Cf2):f2",
 			"args" : [
 				{
 					"mn" : "Cf2",
@@ -15689,6 +16866,7 @@
 		},
 		{
 			"resMn" : "f3",
+			"mn" : "min(Cf3,Cf3):f3",
 			"args" : [
 				{
 					"mn" : "Cf3",
@@ -15703,6 +16881,7 @@
 		},
 		{
 			"resMn" : "f3",
+			"mn" : "max(Cf3,Cf3):f3",
 			"args" : [
 				{
 					"mn" : "Cf3",
@@ -15717,6 +16896,7 @@
 		},
 		{
 			"resMn" : "f3",
+			"mn" : "clamp(Cf3,Cf3,Cf3):f3",
 			"args" : [
 				{
 					"mn" : "Cf3",
@@ -15735,6 +16915,7 @@
 		},
 		{
 			"resMn" : "f3",
+			"mn" : "abs(Cf3):f3",
 			"args" : [
 				{
 					"mn" : "Cf3",
@@ -15745,6 +16926,7 @@
 		},
 		{
 			"resMn" : "f3",
+			"mn" : "sign(Cf3):f3",
 			"args" : [
 				{
 					"mn" : "Cf3",
@@ -15755,6 +16937,7 @@
 		},
 		{
 			"resMn" : "f4",
+			"mn" : "min(Cf4,Cf4):f4",
 			"args" : [
 				{
 					"mn" : "Cf4",
@@ -15769,6 +16952,7 @@
 		},
 		{
 			"resMn" : "f4",
+			"mn" : "max(Cf4,Cf4):f4",
 			"args" : [
 				{
 					"mn" : "Cf4",
@@ -15783,6 +16967,7 @@
 		},
 		{
 			"resMn" : "f4",
+			"mn" : "clamp(Cf4,Cf4,Cf4):f4",
 			"args" : [
 				{
 					"mn" : "Cf4",
@@ -15801,6 +16986,7 @@
 		},
 		{
 			"resMn" : "f4",
+			"mn" : "abs(Cf4):f4",
 			"args" : [
 				{
 					"mn" : "Cf4",
@@ -15811,6 +16997,7 @@
 		},
 		{
 			"resMn" : "f4",
+			"mn" : "sign(Cf4):f4",
 			"args" : [
 				{
 					"mn" : "Cf4",
@@ -15821,6 +17008,7 @@
 		},
 		{
 			"resMn" : "d",
+			"mn" : "min(Cd,Cd):d",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -15835,6 +17023,7 @@
 		},
 		{
 			"resMn" : "d",
+			"mn" : "max(Cd,Cd):d",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -15849,6 +17038,7 @@
 		},
 		{
 			"resMn" : "d",
+			"mn" : "clamp(Cd,Cd,Cd):d",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -15867,6 +17057,7 @@
 		},
 		{
 			"resMn" : "d",
+			"mn" : "abs(Cd):d",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -15877,6 +17068,7 @@
 		},
 		{
 			"resMn" : "d",
+			"mn" : "sign(Cd):d",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -15887,6 +17079,7 @@
 		},
 		{
 			"resMn" : "i64",
+			"mn" : "min(Ci64,Ci64):i64",
 			"args" : [
 				{
 					"mn" : "Ci64",
@@ -15901,6 +17094,7 @@
 		},
 		{
 			"resMn" : "i64",
+			"mn" : "max(Ci64,Ci64):i64",
 			"args" : [
 				{
 					"mn" : "Ci64",
@@ -15915,6 +17109,7 @@
 		},
 		{
 			"resMn" : "i64",
+			"mn" : "clamp(Ci64,Ci64,Ci64):i64",
 			"args" : [
 				{
 					"mn" : "Ci64",
@@ -15933,6 +17128,7 @@
 		},
 		{
 			"resMn" : "i64",
+			"mn" : "abs(Ci64):i64",
 			"args" : [
 				{
 					"mn" : "Ci64",
@@ -15943,6 +17139,7 @@
 		},
 		{
 			"resMn" : "i64",
+			"mn" : "sign(Ci64):i64",
 			"args" : [
 				{
 					"mn" : "Ci64",
@@ -15953,6 +17150,7 @@
 		},
 		{
 			"resMn" : "u64",
+			"mn" : "min(Cu64,Cu64):u64",
 			"args" : [
 				{
 					"mn" : "Cu64",
@@ -15967,6 +17165,7 @@
 		},
 		{
 			"resMn" : "u64",
+			"mn" : "max(Cu64,Cu64):u64",
 			"args" : [
 				{
 					"mn" : "Cu64",
@@ -15981,6 +17180,7 @@
 		},
 		{
 			"resMn" : "u64",
+			"mn" : "clamp(Cu64,Cu64,Cu64):u64",
 			"args" : [
 				{
 					"mn" : "Cu64",
@@ -15999,6 +17199,7 @@
 		},
 		{
 			"resMn" : "u64",
+			"mn" : "abs(Cu64):u64",
 			"args" : [
 				{
 					"mn" : "Cu64",
@@ -16009,6 +17210,7 @@
 		},
 		{
 			"resMn" : "u64",
+			"mn" : "sign(Cu64):u64",
 			"args" : [
 				{
 					"mn" : "Cu64",
@@ -16019,6 +17221,7 @@
 		},
 		{
 			"resMn" : "u",
+			"mn" : "uint32_hash(Cu):u",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -16029,6 +17232,7 @@
 		},
 		{
 			"resMn" : "u",
+			"mn" : "uint_noise_1D(Ci,Cu):u",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -16043,6 +17247,7 @@
 		},
 		{
 			"resMn" : "u",
+			"mn" : "uint_noise_2D(Ci2,Cu):u",
 			"args" : [
 				{
 					"mn" : "Ci2",
@@ -16057,6 +17262,7 @@
 		},
 		{
 			"resMn" : "u",
+			"mn" : "uint_noise_3D(Ci3,Cu):u",
 			"args" : [
 				{
 					"mn" : "Ci3",
@@ -16071,6 +17277,7 @@
 		},
 		{
 			"resMn" : "f",
+			"mn" : "dot(Cf2,Cf2):f",
 			"args" : [
 				{
 					"mn" : "Cf2",
@@ -16085,6 +17292,7 @@
 		},
 		{
 			"resMn" : "f",
+			"mn" : "dot(Cf3,Cf3):f",
 			"args" : [
 				{
 					"mn" : "Cf3",
@@ -16099,6 +17307,7 @@
 		},
 		{
 			"resMn" : "f",
+			"mn" : "dot(Cf4,Cf4):f",
 			"args" : [
 				{
 					"mn" : "Cf4",
@@ -16113,6 +17322,7 @@
 		},
 		{
 			"resMn" : "f3",
+			"mn" : "cross(Cf3,Cf3):f3",
 			"args" : [
 				{
 					"mn" : "Cf3",
@@ -16127,6 +17337,7 @@
 		},
 		{
 			"resMn" : "f2",
+			"mn" : "fast_normalize(Cf2):f2",
 			"args" : [
 				{
 					"mn" : "Cf2",
@@ -16137,6 +17348,7 @@
 		},
 		{
 			"resMn" : "f3",
+			"mn" : "fast_normalize(Cf3):f3",
 			"args" : [
 				{
 					"mn" : "Cf3",
@@ -16147,6 +17359,7 @@
 		},
 		{
 			"resMn" : "f4",
+			"mn" : "fast_normalize(Cf4):f4",
 			"args" : [
 				{
 					"mn" : "Cf4",
@@ -16157,6 +17370,7 @@
 		},
 		{
 			"resMn" : "f2",
+			"mn" : "normalize(Cf2):f2",
 			"args" : [
 				{
 					"mn" : "Cf2",
@@ -16167,6 +17381,7 @@
 		},
 		{
 			"resMn" : "f3",
+			"mn" : "normalize(Cf3):f3",
 			"args" : [
 				{
 					"mn" : "Cf3",
@@ -16177,6 +17392,7 @@
 		},
 		{
 			"resMn" : "f4",
+			"mn" : "normalize(Cf4):f4",
 			"args" : [
 				{
 					"mn" : "Cf4",
@@ -16187,6 +17403,7 @@
 		},
 		{
 			"resMn" : "f",
+			"mn" : "length(Cf2):f",
 			"args" : [
 				{
 					"mn" : "Cf2",
@@ -16197,6 +17414,7 @@
 		},
 		{
 			"resMn" : "f",
+			"mn" : "length(Cf3):f",
 			"args" : [
 				{
 					"mn" : "Cf3",
@@ -16207,6 +17425,7 @@
 		},
 		{
 			"resMn" : "f",
+			"mn" : "length(Cf4):f",
 			"args" : [
 				{
 					"mn" : "Cf4",
@@ -16217,6 +17436,7 @@
 		},
 		{
 			"resMn" : "f",
+			"mn" : "inv_length(Cf2):f",
 			"args" : [
 				{
 					"mn" : "Cf2",
@@ -16227,6 +17447,7 @@
 		},
 		{
 			"resMn" : "f",
+			"mn" : "inv_length(Cf3):f",
 			"args" : [
 				{
 					"mn" : "Cf3",
@@ -16237,6 +17458,7 @@
 		},
 		{
 			"resMn" : "f",
+			"mn" : "inv_length(Cf4):f",
 			"args" : [
 				{
 					"mn" : "Cf4",
@@ -16247,6 +17469,7 @@
 		},
 		{
 			"resMn" : "f",
+			"mn" : "inv_length_sq(Cf2):f",
 			"args" : [
 				{
 					"mn" : "Cf2",
@@ -16257,6 +17480,7 @@
 		},
 		{
 			"resMn" : "f",
+			"mn" : "inv_length_sq(Cf3):f",
 			"args" : [
 				{
 					"mn" : "Cf3",
@@ -16267,6 +17491,7 @@
 		},
 		{
 			"resMn" : "f",
+			"mn" : "inv_length_sq(Cf4):f",
 			"args" : [
 				{
 					"mn" : "Cf4",
@@ -16277,6 +17502,7 @@
 		},
 		{
 			"resMn" : "f",
+			"mn" : "length_sq(Cf2):f",
 			"args" : [
 				{
 					"mn" : "Cf2",
@@ -16287,6 +17513,7 @@
 		},
 		{
 			"resMn" : "f",
+			"mn" : "length_sq(Cf3):f",
 			"args" : [
 				{
 					"mn" : "Cf3",
@@ -16297,6 +17524,7 @@
 		},
 		{
 			"resMn" : "f",
+			"mn" : "length_sq(Cf4):f",
 			"args" : [
 				{
 					"mn" : "Cf4",
@@ -16307,6 +17535,7 @@
 		},
 		{
 			"resMn" : "f",
+			"mn" : "distance(Cf3,Cf3):f",
 			"args" : [
 				{
 					"mn" : "Cf3",
@@ -16321,6 +17550,7 @@
 		},
 		{
 			"resMn" : "f",
+			"mn" : "distance_sq(Cf3,Cf3):f",
 			"args" : [
 				{
 					"mn" : "Cf3",
@@ -16335,6 +17565,7 @@
 		},
 		{
 			"resMn" : "f",
+			"mn" : "inv_distance(Cf3,Cf3):f",
 			"args" : [
 				{
 					"mn" : "Cf3",
@@ -16349,6 +17580,7 @@
 		},
 		{
 			"resMn" : "f",
+			"mn" : "inv_distance_sq(Cf3,Cf3):f",
 			"args" : [
 				{
 					"mn" : "Cf3",
@@ -16363,6 +17595,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "is_nan(Cf):b",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -16373,6 +17606,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "is_finite(Cf):b",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -16383,6 +17617,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "is_nan(Cd):b",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -16393,6 +17628,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "is_finite(Cd):b",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -16403,6 +17639,7 @@
 		},
 		{
 			"resMn" : "d",
+			"mn" : "sqrt(Cd):d",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -16413,6 +17650,7 @@
 		},
 		{
 			"resMn" : "d",
+			"mn" : "exp(Cd):d",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -16423,6 +17661,7 @@
 		},
 		{
 			"resMn" : "d",
+			"mn" : "rcp(Cd):d",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -16433,6 +17672,7 @@
 		},
 		{
 			"resMn" : "d",
+			"mn" : "log(Cd):d",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -16443,6 +17683,7 @@
 		},
 		{
 			"resMn" : "d",
+			"mn" : "pow(Cd,Cd):d",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -16457,6 +17698,7 @@
 		},
 		{
 			"resMn" : "d",
+			"mn" : "exp2(Cd):d",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -16467,6 +17709,7 @@
 		},
 		{
 			"resMn" : "d",
+			"mn" : "log2(Cd):d",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -16477,6 +17720,7 @@
 		},
 		{
 			"resMn" : "d",
+			"mn" : "sin(Cd):d",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -16487,6 +17731,7 @@
 		},
 		{
 			"resMn" : "d",
+			"mn" : "cos(Cd):d",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -16497,6 +17742,7 @@
 		},
 		{
 			"resMn" : "d",
+			"mn" : "asin(Cd):d",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -16507,6 +17753,7 @@
 		},
 		{
 			"resMn" : "d",
+			"mn" : "acos(Cd):d",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -16517,6 +17764,7 @@
 		},
 		{
 			"resMn" : "d",
+			"mn" : "tan(Cd):d",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -16527,6 +17775,7 @@
 		},
 		{
 			"resMn" : "d",
+			"mn" : "atan(Cd):d",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -16537,6 +17786,7 @@
 		},
 		{
 			"resMn" : "d",
+			"mn" : "atan2(Cd,Cd):d",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -16551,6 +17801,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "sincos(Cf,&If,&If):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -16570,6 +17821,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "sincos(Cd,&Id,&Id):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -16589,6 +17841,7 @@
 		},
 		{
 			"resMn" : "f3",
+			"mn" : "reflect(Cf3,Cf3):f3",
 			"args" : [
 				{
 					"mn" : "Cf3",
@@ -16603,6 +17856,7 @@
 		},
 		{
 			"resMn" : "f3",
+			"mn" : "refract(Cf3,Cf3,Cf):f3",
 			"args" : [
 				{
 					"mn" : "Cf3",
@@ -16621,6 +17875,7 @@
 		},
 		{
 			"resMn" : "i",
+			"mn" : "floori(Cf):i",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -16631,6 +17886,7 @@
 		},
 		{
 			"resMn" : "i",
+			"mn" : "ceili(Cf):i",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -16641,6 +17897,7 @@
 		},
 		{
 			"resMn" : "i",
+			"mn" : "roundi(Cf):i",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -16651,6 +17908,7 @@
 		},
 		{
 			"resMn" : "i",
+			"mn" : "trunci(Cf):i",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -16661,6 +17919,7 @@
 		},
 		{
 			"resMn" : "i",
+			"mn" : "floori(Cd):i",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -16671,6 +17930,7 @@
 		},
 		{
 			"resMn" : "i",
+			"mn" : "ceili(Cd):i",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -16681,6 +17941,7 @@
 		},
 		{
 			"resMn" : "i",
+			"mn" : "roundi(Cd):i",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -16691,6 +17952,7 @@
 		},
 		{
 			"resMn" : "i",
+			"mn" : "trunci(Cd):i",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -16701,6 +17963,7 @@
 		},
 		{
 			"resMn" : "i2",
+			"mn" : "floori(Cf2):i2",
 			"args" : [
 				{
 					"mn" : "Cf2",
@@ -16711,6 +17974,7 @@
 		},
 		{
 			"resMn" : "i2",
+			"mn" : "ceili(Cf2):i2",
 			"args" : [
 				{
 					"mn" : "Cf2",
@@ -16721,6 +17985,7 @@
 		},
 		{
 			"resMn" : "i2",
+			"mn" : "roundi(Cf2):i2",
 			"args" : [
 				{
 					"mn" : "Cf2",
@@ -16731,6 +17996,7 @@
 		},
 		{
 			"resMn" : "i2",
+			"mn" : "trunci(Cf2):i2",
 			"args" : [
 				{
 					"mn" : "Cf2",
@@ -16741,6 +18007,7 @@
 		},
 		{
 			"resMn" : "i3",
+			"mn" : "floori(Cf3):i3",
 			"args" : [
 				{
 					"mn" : "Cf3",
@@ -16751,6 +18018,7 @@
 		},
 		{
 			"resMn" : "i3",
+			"mn" : "ceili(Cf3):i3",
 			"args" : [
 				{
 					"mn" : "Cf3",
@@ -16761,6 +18029,7 @@
 		},
 		{
 			"resMn" : "i3",
+			"mn" : "roundi(Cf3):i3",
 			"args" : [
 				{
 					"mn" : "Cf3",
@@ -16771,6 +18040,7 @@
 		},
 		{
 			"resMn" : "i3",
+			"mn" : "trunci(Cf3):i3",
 			"args" : [
 				{
 					"mn" : "Cf3",
@@ -16781,6 +18051,7 @@
 		},
 		{
 			"resMn" : "i4",
+			"mn" : "floori(Cf4):i4",
 			"args" : [
 				{
 					"mn" : "Cf4",
@@ -16791,6 +18062,7 @@
 		},
 		{
 			"resMn" : "i4",
+			"mn" : "ceili(Cf4):i4",
 			"args" : [
 				{
 					"mn" : "Cf4",
@@ -16801,6 +18073,7 @@
 		},
 		{
 			"resMn" : "i4",
+			"mn" : "roundi(Cf4):i4",
 			"args" : [
 				{
 					"mn" : "Cf4",
@@ -16811,6 +18084,7 @@
 		},
 		{
 			"resMn" : "i4",
+			"mn" : "trunci(Cf4):i4",
 			"args" : [
 				{
 					"mn" : "Cf4",
@@ -16821,21 +18095,25 @@
 		},
 		{
 			"resMn" : "H<math::float3x3>",
+			"mn" : "float3x3():H<math::float3x3>",
 			"args" : [],
 			"name" : "float3x3"
 		},
 		{
 			"resMn" : "H<math::float3x4>",
+			"mn" : "float3x4():H<math::float3x4>",
 			"args" : [],
 			"name" : "float3x4"
 		},
 		{
 			"resMn" : "H<math::float4x4>",
+			"mn" : "float4x4():H<math::float4x4>",
 			"args" : [],
 			"name" : "float4x4"
 		},
 		{
 			"resMn" : "v",
+			"mn" : "identity(IH<math::float4x4>):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -16847,11 +18125,13 @@
 		},
 		{
 			"resMn" : "H<math::float4x4>",
+			"mn" : "identity4x4():H<math::float4x4>",
 			"args" : [],
 			"name" : "identity4x4"
 		},
 		{
 			"resMn" : "H<math::float4x4>",
+			"mn" : "translation(Cf3):H<math::float4x4>",
 			"args" : [
 				{
 					"mn" : "Cf3",
@@ -16862,6 +18142,7 @@
 		},
 		{
 			"resMn" : "H<math::float4x4>",
+			"mn" : "transpose(CIH<math::float4x4>):H<math::float4x4>",
 			"args" : [
 				{
 					"mn" : "CIH<math::float4x4>",
@@ -16872,6 +18153,7 @@
 		},
 		{
 			"resMn" : "H<math::float4x4>",
+			"mn" : "persp_forward(Cf,Cf,Cf,Cf):H<math::float4x4>",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -16894,6 +18176,7 @@
 		},
 		{
 			"resMn" : "H<math::float4x4>",
+			"mn" : "persp_reverse(Cf,Cf,Cf,Cf):H<math::float4x4>",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -16916,6 +18199,7 @@
 		},
 		{
 			"resMn" : "H<math::float4x4>",
+			"mn" : "look_at(Cf4,Cf4,Cf4):H<math::float4x4>",
 			"args" : [
 				{
 					"mn" : "Cf4",
@@ -16934,6 +18218,7 @@
 		},
 		{
 			"resMn" : "H<math::float4x4>",
+			"mn" : "compose(Cf4,Cf4,Cf4):H<math::float4x4>",
 			"args" : [
 				{
 					"mn" : "Cf4",
@@ -16952,6 +18237,7 @@
 		},
 		{
 			"resMn" : "H<math::float4x4>",
+			"mn" : "*(CIH<math::float4x4>,CIH<math::float4x4>):H<math::float4x4>",
 			"args" : [
 				{
 					"mn" : "CIH<math::float4x4>",
@@ -16966,6 +18252,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "decompose(CIH<math::float4x4>,&If3,&If4,&If4):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -16989,6 +18276,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "==(CIH<math::float4x4>,CIH<math::float4x4>):b",
 			"args" : [
 				{
 					"mn" : "CIH<math::float4x4>",
@@ -17003,6 +18291,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "!=(CIH<math::float4x4>,CIH<math::float4x4>):b",
 			"args" : [
 				{
 					"mn" : "CIH<math::float4x4>",
@@ -17017,6 +18306,7 @@
 		},
 		{
 			"resMn" : "H<math::float3x4>",
+			"mn" : "float3x4(CIH<math::float4x4>):H<math::float3x4>",
 			"args" : [
 				{
 					"mn" : "CIH<math::float4x4>",
@@ -17027,6 +18317,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "identity(IH<math::float3x4>):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -17038,11 +18329,13 @@
 		},
 		{
 			"resMn" : "H<math::float3x4>",
+			"mn" : "identity3x4():H<math::float3x4>",
 			"args" : [],
 			"name" : "identity3x4"
 		},
 		{
 			"resMn" : "H<math::float3x4>",
+			"mn" : "*(CIH<math::float3x4>,CIH<math::float3x4>):H<math::float3x4>",
 			"args" : [
 				{
 					"mn" : "CIH<math::float3x4>",
@@ -17057,6 +18350,7 @@
 		},
 		{
 			"resMn" : "f3",
+			"mn" : "*(CIH<math::float3x4>,Cf3):f3",
 			"args" : [
 				{
 					"mn" : "CIH<math::float3x4>",
@@ -17071,6 +18365,7 @@
 		},
 		{
 			"resMn" : "f4",
+			"mn" : "*(CIH<math::float4x4>,Cf4):f4",
 			"args" : [
 				{
 					"mn" : "CIH<math::float4x4>",
@@ -17085,6 +18380,7 @@
 		},
 		{
 			"resMn" : "H<math::float3x4>",
+			"mn" : "inverse(CIH<math::float3x4>):H<math::float3x4>",
 			"args" : [
 				{
 					"mn" : "CIH<math::float3x4>",
@@ -17095,6 +18391,7 @@
 		},
 		{
 			"resMn" : "H<math::float4x4>",
+			"mn" : "inverse(CIH<math::float4x4>):H<math::float4x4>",
 			"args" : [
 				{
 					"mn" : "CIH<math::float4x4>",
@@ -17105,6 +18402,7 @@
 		},
 		{
 			"resMn" : "H<math::float4x4>",
+			"mn" : "orthonormal_inverse(CIH<math::float4x4>):H<math::float4x4>",
 			"args" : [
 				{
 					"mn" : "CIH<math::float4x4>",
@@ -17115,6 +18413,7 @@
 		},
 		{
 			"resMn" : "f3",
+			"mn" : "rotate(CIH<math::float3x4>,Cf3):f3",
 			"args" : [
 				{
 					"mn" : "CIH<math::float3x4>",
@@ -17129,6 +18428,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "==(CIH<math::float3x4>,CIH<math::float3x4>):b",
 			"args" : [
 				{
 					"mn" : "CIH<math::float3x4>",
@@ -17143,6 +18443,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "!=(CIH<math::float3x4>,CIH<math::float3x4>):b",
 			"args" : [
 				{
 					"mn" : "CIH<math::float3x4>",
@@ -17157,6 +18458,7 @@
 		},
 		{
 			"resMn" : "f4",
+			"mn" : "un_quat_from_unit_arc(Cf3,Cf3):f4",
 			"args" : [
 				{
 					"mn" : "Cf3",
@@ -17171,6 +18473,7 @@
 		},
 		{
 			"resMn" : "f4",
+			"mn" : "un_quat_from_unit_vec_ang(Cf3,Cf):f4",
 			"args" : [
 				{
 					"mn" : "Cf3",
@@ -17185,6 +18488,7 @@
 		},
 		{
 			"resMn" : "f4",
+			"mn" : "un_quat(CIH<math::float4x4>):f4",
 			"args" : [
 				{
 					"mn" : "CIH<math::float4x4>",
@@ -17195,6 +18499,7 @@
 		},
 		{
 			"resMn" : "f4",
+			"mn" : "quat_mul(Cf4,Cf4):f4",
 			"args" : [
 				{
 					"mn" : "Cf4",
@@ -17209,6 +18514,7 @@
 		},
 		{
 			"resMn" : "f3",
+			"mn" : "quat_mul_vec(Cf4,Cf3):f3",
 			"args" : [
 				{
 					"mn" : "Cf4",
@@ -17223,6 +18529,7 @@
 		},
 		{
 			"resMn" : "f4",
+			"mn" : "quat_conjugate(Cf4):f4",
 			"args" : [
 				{
 					"mn" : "Cf4",
@@ -17233,6 +18540,7 @@
 		},
 		{
 			"resMn" : "H<math::float3x3>",
+			"mn" : "float3x3(CIH<math::float4x4>):H<math::float3x3>",
 			"args" : [
 				{
 					"mn" : "CIH<math::float4x4>",
@@ -17243,6 +18551,7 @@
 		},
 		{
 			"resMn" : "H<math::float3x3>",
+			"mn" : "float3x3(CIH<math::float3x4>):H<math::float3x3>",
 			"args" : [
 				{
 					"mn" : "CIH<math::float3x4>",
@@ -17253,6 +18562,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "identity(IH<math::float3x3>):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -17264,11 +18574,13 @@
 		},
 		{
 			"resMn" : "H<math::float3x3>",
+			"mn" : "identity3x3():H<math::float3x3>",
 			"args" : [],
 			"name" : "identity3x3"
 		},
 		{
 			"resMn" : "H<math::float3x3>",
+			"mn" : "*(CIH<math::float3x3>,CIH<math::float3x3>):H<math::float3x3>",
 			"args" : [
 				{
 					"mn" : "CIH<math::float3x3>",
@@ -17283,6 +18595,7 @@
 		},
 		{
 			"resMn" : "f3",
+			"mn" : "*(CIH<math::float3x3>,Cf3):f3",
 			"args" : [
 				{
 					"mn" : "CIH<math::float3x3>",
@@ -17297,6 +18610,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "==(CIH<math::float3x3>,CIH<math::float3x3>):b",
 			"args" : [
 				{
 					"mn" : "CIH<math::float3x3>",
@@ -17311,6 +18625,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "!=(CIH<math::float3x3>,CIH<math::float3x3>):b",
 			"args" : [
 				{
 					"mn" : "CIH<math::float3x3>",
@@ -17325,6 +18640,7 @@
 		},
 		{
 			"resMn" : "u",
+			"mn" : "pack_float_to_byte(Cf4):u",
 			"args" : [
 				{
 					"mn" : "Cf4",
@@ -17335,6 +18651,7 @@
 		},
 		{
 			"resMn" : "f4",
+			"mn" : "unpack_byte_to_float(Cu):f4",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -17345,6 +18662,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "delete_string(&Is):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -17356,6 +18674,7 @@
 		},
 		{
 			"resMn" : "s",
+			"mn" : "build_string(CI0<H<strings::StringBuilderWriter>>1<v>$):s",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -17367,6 +18686,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "peek_data(CIs,CI0<C#1<u8>A>1<v>$):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -17382,6 +18702,7 @@
 		},
 		{
 			"resMn" : "s",
+			"mn" : "modify_data(CIs,CI0<#1<u8>A>1<v>$):s",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -17397,6 +18718,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "write(H<strings::StringBuilderWriter>,C*):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -17412,6 +18734,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "write_char(IH<strings::StringBuilderWriter>,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -17427,6 +18750,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "write_chars(IH<strings::StringBuilderWriter>,Ci,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -17446,6 +18770,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "write_escape_string(IH<strings::StringBuilderWriter>,CIs):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -17461,6 +18786,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "format(IH<strings::StringBuilderWriter>,CIs,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -17480,6 +18806,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "format(IH<strings::StringBuilderWriter>,CIs,Cu):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -17499,6 +18826,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "format(IH<strings::StringBuilderWriter>,CIs,Ci64):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -17518,6 +18846,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "format(IH<strings::StringBuilderWriter>,CIs,Cu64):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -17537,6 +18866,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "format(IH<strings::StringBuilderWriter>,CIs,Cf):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -17556,6 +18886,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "format(IH<strings::StringBuilderWriter>,CIs,Cd):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -17575,6 +18906,7 @@
 		},
 		{
 			"resMn" : "s",
+			"mn" : "string(CI1<u8>A):s",
 			"args" : [
 				{
 					"mn" : "CI1<u8>A",
@@ -17585,6 +18917,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "builtin_strdup(C*):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -17596,6 +18929,7 @@
 		},
 		{
 			"resMn" : "i",
+			"mn" : "character_at(CIs,Ci):i",
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -17610,6 +18944,7 @@
 		},
 		{
 			"resMn" : "i",
+			"mn" : "character_uat(CIs,Ci):i",
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -17624,6 +18959,7 @@
 		},
 		{
 			"resMn" : "s",
+			"mn" : "repeat(CIs,Ci):s",
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -17638,6 +18974,7 @@
 		},
 		{
 			"resMn" : "s",
+			"mn" : "to_char(Ci):s",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -17648,6 +18985,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "ends_with(CIs,CIs):b",
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -17662,6 +19000,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "ends_with(CIH<$::das_string>,CIs):b",
 			"args" : [
 				{
 					"mn" : "CIH<$::das_string>",
@@ -17676,6 +19015,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "starts_with(CIs,CIs):b",
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -17690,6 +19030,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "starts_with(CIs,CIs,Cu):b",
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -17708,6 +19049,7 @@
 		},
 		{
 			"resMn" : "s",
+			"mn" : "strip(CIs):s",
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -17718,6 +19060,7 @@
 		},
 		{
 			"resMn" : "s",
+			"mn" : "strip_right(CIs):s",
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -17728,6 +19071,7 @@
 		},
 		{
 			"resMn" : "s",
+			"mn" : "strip_left(CIs):s",
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -17738,6 +19082,7 @@
 		},
 		{
 			"resMn" : "s",
+			"mn" : "chop(CIs,Ci,Ci):s",
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -17756,6 +19101,7 @@
 		},
 		{
 			"resMn" : "s",
+			"mn" : "slice(CIs,Ci,Ci):s",
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -17774,6 +19120,7 @@
 		},
 		{
 			"resMn" : "s",
+			"mn" : "slice(CIs,Ci):s",
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -17788,6 +19135,7 @@
 		},
 		{
 			"resMn" : "i",
+			"mn" : "find(CIs,CIs,Ci):i",
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -17806,6 +19154,7 @@
 		},
 		{
 			"resMn" : "i",
+			"mn" : "find(CIs,CIs):i",
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -17820,6 +19169,7 @@
 		},
 		{
 			"resMn" : "i",
+			"mn" : "find(CIs,Ci):i",
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -17834,6 +19184,7 @@
 		},
 		{
 			"resMn" : "i",
+			"mn" : "find(CIs,Ci,Ci):i",
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -17852,6 +19203,7 @@
 		},
 		{
 			"resMn" : "i",
+			"mn" : "length(CIs):i",
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -17862,6 +19214,7 @@
 		},
 		{
 			"resMn" : "s",
+			"mn" : "reverse(CIs):s",
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -17872,6 +19225,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "append(IH<$::das_string>,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -17887,6 +19241,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "resize(IH<$::das_string>,Ci):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -17902,6 +19257,7 @@
 		},
 		{
 			"resMn" : "i",
+			"mn" : "length(CIH<$::das_string>):i",
 			"args" : [
 				{
 					"mn" : "CIH<$::das_string>",
@@ -17912,6 +19268,7 @@
 		},
 		{
 			"resMn" : "s",
+			"mn" : "to_upper(CIs):s",
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -17922,6 +19279,7 @@
 		},
 		{
 			"resMn" : "s",
+			"mn" : "to_lower(CIs):s",
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -17932,6 +19290,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "empty(CIs):b",
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -17942,6 +19301,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "empty(CIH<$::das_string>):b",
 			"args" : [
 				{
 					"mn" : "CIH<$::das_string>",
@@ -17952,6 +19312,7 @@
 		},
 		{
 			"resMn" : "s",
+			"mn" : "to_lower_in_place(CIs):s",
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -17962,6 +19323,7 @@
 		},
 		{
 			"resMn" : "s",
+			"mn" : "to_upper_in_place(CIs):s",
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -17972,6 +19334,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "builtin_string_split_by_char(CIs,CIs,CI$):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -17991,6 +19354,7 @@
 		},
 		{
 			"resMn" : "v",
+			"mn" : "builtin_string_split(CIs,CIs,CI$):v",
 			"sideeffect" : true,
 			"args" : [
 				{
@@ -18010,6 +19374,7 @@
 		},
 		{
 			"resMn" : "i",
+			"mn" : "int(CIs):i",
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -18020,6 +19385,7 @@
 		},
 		{
 			"resMn" : "u",
+			"mn" : "uint(CIs):u",
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -18030,6 +19396,7 @@
 		},
 		{
 			"resMn" : "f",
+			"mn" : "float(CIs):f",
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -18040,6 +19407,7 @@
 		},
 		{
 			"resMn" : "d",
+			"mn" : "double(CIs):d",
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -18050,6 +19418,7 @@
 		},
 		{
 			"resMn" : "i",
+			"mn" : "to_int(CIs,Cb):i",
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -18064,6 +19433,7 @@
 		},
 		{
 			"resMn" : "u",
+			"mn" : "to_uint(CIs,Cb):u",
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -18078,6 +19448,7 @@
 		},
 		{
 			"resMn" : "i64",
+			"mn" : "to_int64(CIs,Cb):i64",
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -18092,6 +19463,7 @@
 		},
 		{
 			"resMn" : "u64",
+			"mn" : "to_uint64(CIs,Cb):u64",
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -18106,6 +19478,7 @@
 		},
 		{
 			"resMn" : "f",
+			"mn" : "to_float(CIs):f",
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -18116,6 +19489,7 @@
 		},
 		{
 			"resMn" : "s",
+			"mn" : "escape(CIs):s",
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -18126,6 +19500,7 @@
 		},
 		{
 			"resMn" : "s",
+			"mn" : "unescape(CIs):s",
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -18136,6 +19511,7 @@
 		},
 		{
 			"resMn" : "s",
+			"mn" : "replace(CIs,CIs,CIs):s",
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -18154,6 +19530,7 @@
 		},
 		{
 			"resMn" : "s",
+			"mn" : "rtrim(CIs):s",
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -18164,6 +19541,7 @@
 		},
 		{
 			"resMn" : "s",
+			"mn" : "format(CIs,Ci):s",
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -18178,6 +19556,7 @@
 		},
 		{
 			"resMn" : "s",
+			"mn" : "format(CIs,Cu):s",
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -18192,6 +19571,7 @@
 		},
 		{
 			"resMn" : "s",
+			"mn" : "format(CIs,Ci64):s",
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -18206,6 +19586,7 @@
 		},
 		{
 			"resMn" : "s",
+			"mn" : "format(CIs,Cu64):s",
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -18220,6 +19601,7 @@
 		},
 		{
 			"resMn" : "s",
+			"mn" : "format(CIs,Cf):s",
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -18234,6 +19616,7 @@
 		},
 		{
 			"resMn" : "s",
+			"mn" : "format(CIs,Cd):s",
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -18248,6 +19631,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "is_alpha(Ci):b",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -18258,6 +19642,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "is_new_line(Ci):b",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -18268,6 +19653,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "is_white_space(Ci):b",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -18278,6 +19664,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "is_number(Ci):b",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -18288,6 +19675,7 @@
 		},
 		{
 			"resMn" : "b",
+			"mn" : "is_char_in_set(Ci,CI[8]u):b",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -18302,6 +19690,7 @@
 		},
 		{
 			"resMn" : "s",
+			"mn" : "reserve_string_buffer(CIs,Ci):s",
 			"args" : [
 				{
 					"mn" : "CIs",

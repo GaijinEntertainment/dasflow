@@ -23,7 +23,7 @@
             "mn": "i",
             "default": "0",
             "validator": "^[-+]?\\d+$",
-            "group": "int",
+            "ctor": "int($)",
             "canCopy": true
         },
         {
@@ -31,7 +31,7 @@
             "mn": "u",
             "default": "0",
             "validator": "^[-+]?\\d+u?$",
-            "group": "int",
+            "ctor": "uint($)",
             "canCopy": true
         },
         {
@@ -39,7 +39,6 @@
             "mn": "i8",
             "default": "0",
             "validator": "^[-+]?\\d+$",
-            "group": "int",
             "ctor": "int8($)",
             "canCopy": true
         },
@@ -48,7 +47,6 @@
             "mn": "i16",
             "default": "0",
             "validator": "^[-+]?\\d+$",
-            "group": "int",
             "ctor": "int16($)",
             "canCopy": true
         },
@@ -57,7 +55,6 @@
             "mn": "i64",
             "default": "0",
             "validator": "^[-+]?\\d+$",
-            "group": "int",
             "ctor": "int64($)",
             "canCopy": true
         },
@@ -66,7 +63,6 @@
             "mn": "u8",
             "default": "0u",
             "validator": "^[-+]?\\d+$",
-            "group": "int",
             "ctor": "uint8($)",
             "canCopy": true
         },
@@ -75,7 +71,6 @@
             "mn": "u16",
             "default": "0",
             "validator": "^[-+]?\\d+$",
-            "group": "int",
             "ctor": "uint16($)",
             "canCopy": true
         },
@@ -84,7 +79,6 @@
             "mn": "u64",
             "default": "0",
             "validator": "^[-+]?\\d+$",
-            "group": "int",
             "ctor": "uint64($)",
             "canCopy": true
         },
@@ -96,7 +90,6 @@
                 "true",
                 "false"
             ],
-            "group": "bool",
             "canCopy": true
         },
         {
@@ -104,7 +97,6 @@
             "mn": "f",
             "default": "0",
             "validator": "^[-+]?\\d+(\\.\\d*)?$",
-            "group": "float",
             "ctor": "float($)",
             "canCopy": true
         },
@@ -113,197 +105,7 @@
             "mn": "d",
             "default": "0",
             "validator": "^[-+]?\\d+(\\.\\d*)?$",
-            "group": "float",
             "ctor": "double($)",
-            "canCopy": true
-        },
-        {
-            "typeName": "float2",
-            "mn": "f2",
-            "struct": [
-                {
-                    "name": "x",
-                    "mn": "f"
-                },
-                {
-                    "name": "y",
-                    "mn": "f"
-                }
-            ],
-            "ctor": "float2($x, $y)",
-            "group": "float2",
-            "canCopy": true
-        },
-        {
-            "typeName": "float3",
-            "mn": "f3",
-            "struct": [
-                {
-                    "name": "x",
-                    "mn": "f"
-                },
-                {
-                    "name": "y",
-                    "mn": "f"
-                },
-                {
-                    "name": "z",
-                    "mn": "f"
-                }
-            ],
-            "ctor": "float3($x, $y, $z)",
-            "group": "float3",
-            "canCopy": true
-        },
-        {
-            "typeName": "float4",
-            "mn": "f4",
-            "struct": [
-                {
-                    "name": "x",
-                    "mn": "f"
-                },
-                {
-                    "name": "y",
-                    "mn": "f"
-                },
-                {
-                    "name": "z",
-                    "mn": "f"
-                },
-                {
-                    "name": "w",
-                    "mn": "f"
-                }
-            ],
-            "ctor": "float4($x, $y, $z, $w)",
-            "group": "float4",
-            "canCopy": true
-        },
-        {
-            "typeName": "int2",
-            "mn": "i2",
-            "struct": [
-                {
-                    "name": "x",
-                    "mn": "i"
-                },
-                {
-                    "name": "y",
-                    "mn": "i"
-                }
-            ],
-            "ctor": "int2($x, $y)",
-            "group": "int2",
-            "canCopy": true
-        },
-        {
-            "typeName": "int3",
-            "mn": "i3",
-            "struct": [
-                {
-                    "name": "x",
-                    "mn": "i"
-                },
-                {
-                    "name": "y",
-                    "mn": "i"
-                },
-                {
-                    "name": "z",
-                    "mn": "i"
-                }
-            ],
-            "ctor": "int3($x, $y, $z)",
-            "group": "int3",
-            "canCopy": true
-        },
-        {
-            "typeName": "int4",
-            "mn": "i4",
-            "struct": [
-                {
-                    "name": "x",
-                    "mn": "i"
-                },
-                {
-                    "name": "y",
-                    "mn": "i"
-                },
-                {
-                    "name": "z",
-                    "mn": "i"
-                },
-                {
-                    "name": "w",
-                    "mn": "i"
-                }
-            ],
-            "ctor": "int4($x, $y, $z, $w)",
-            "group": "int4",
-            "canCopy": true
-        },
-        {
-            "typeName": "uint2",
-            "mn": "u2",
-            "struct": [
-                {
-                    "name": "x",
-                    "mn": "u"
-                },
-                {
-                    "name": "y",
-                    "mn": "u"
-                }
-            ],
-            "ctor": "uint2($x, $y)",
-            "group": "uint2",
-            "canCopy": true
-        },
-        {
-            "typeName": "uint3",
-            "mn": "u3",
-            "struct": [
-                {
-                    "name": "x",
-                    "mn": "u"
-                },
-                {
-                    "name": "y",
-                    "mn": "u"
-                },
-                {
-                    "name": "z",
-                    "mn": "u"
-                }
-            ],
-            "ctor": "uint3($x, $y, $z)",
-            "group": "uint3",
-            "canCopy": true
-        },
-        {
-            "typeName": "uint4",
-            "mn": "u4",
-            "struct": [
-                {
-                    "name": "x",
-                    "mn": "u"
-                },
-                {
-                    "name": "y",
-                    "mn": "u"
-                },
-                {
-                    "name": "z",
-                    "mn": "u"
-                },
-                {
-                    "name": "w",
-                    "mn": "u"
-                }
-            ],
-            "ctor": "uint4($x, $y, $z, $w)",
-            "group": "uint4",
             "canCopy": true
         }
     ]

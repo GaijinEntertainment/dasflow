@@ -22,6 +22,7 @@ struct TypeDesc
 
 struct FuncDesc
     name: string
+    mn: string
     resMn: string
     sideeffect: bool
     ctor: string
@@ -84,6 +85,7 @@ def private dumpModule(ctx: DumpContext; mod: rtti::Module?; var lang: LangDesc)
         // fa.result
 
         let fnName = "{fn.name}"
+        var fnMn = "{fnName}("
         let reqFlow = fn.sideEffectFlags.modifyExternal || fn.sideEffectFlags.modifyArgument || fn.sideEffectFlags.accessGlobal || fn.sideEffectFlags.invoke || fn.sideEffectFlags.userScenario
         lang.functions |> emplace <| [[FuncDesc name=fnName, sideeffect=reqFlow]]
         var fun & = unsafe(lang.functions[length(lang.functions) - 1])
@@ -92,6 +94,7 @@ def private dumpModule(ctx: DumpContext; mod: rtti::Module?; var lang: LangDesc)
         if fn.sideEffectFlags._unsafe
             fun.ctor = "unsafe({fnName}($args))"
 
+        var first = true
         for arg in fn.arguments
             let td = lang |> getTypeDesc(arg._type)
             // print("{td.typeName} {td.mn}\n")
@@ -101,8 +104,12 @@ def private dumpModule(ctx: DumpContext; mod: rtti::Module?; var lang: LangDesc)
             var argType <- [[FuncArg name="{arg.name}", mn=td.mn]]
             fun.args |> emplace <| argType
 
+            fnMn = "{fnMn}{first?"":","}{td.mn}"
+            first = false
+
         var resTypeDesc = lang |> getTypeDesc(fn.result)
         fun.resMn = resTypeDesc.mn
+        fun.mn = "{fnMn}):{resTypeDesc.mn}"
 
 
 def getTypeDesc(var lang: LangDesc; ti: smart_ptr<TypeDecl>): TypeDesc?
@@ -179,7 +186,7 @@ def JV(val: TypeDesc)
 
 
 def JV(val: FuncDesc)
-    var res <- {{"name"=>JV(val.name); "args"=>JV(val.args); "resMn"=>JV(val.resMn)}}
+    var res <- {{"name"=>JV(val.name); "args"=>JV(val.args); "resMn"=>JV(val.resMn); "mn"=>JV(val.mn)}}
     if val.sideeffect
         res["sideeffect"] = JV(val.sideeffect)
     if !empty(val.ctor)

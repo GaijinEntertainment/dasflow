@@ -7,10 +7,8 @@ export interface LangTypeDesc {
     canCopy?: boolean
     default?: string
     ctor?: string
-    group?: string
     validator?: string
     enum?: string[]
-    struct?: { name: string, mn: string }[]
     requirements?: string[]
 }
 
@@ -21,10 +19,11 @@ interface LangFunctionArgDesc {
 
 export interface LangFunctionDesc {
     name: string
+    mn: string
     resMn: string
     sideeffect?: boolean
     unsafe?: boolean
-    ctor?: string
+    ctor?: string;
     args: LangFunctionArgDesc[]
 }
 
