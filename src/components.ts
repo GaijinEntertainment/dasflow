@@ -204,15 +204,20 @@ export function generateCoreNodes(langCore: LangCoreDesc, lang: LangDesc, editor
     for (const func of lang.functions) {
         const langFunction = new LangFunction(func)
         allFunctions.push(langFunction)
+        const resType = getType(func.resMn)
+        if (!resType) {
+            console.error(`function ${func.name} has unknown result type ${func.resMn}`)
+            continue
+        }
         if (func.resMn != voidTypeName && func.resMn != anyTypeName) {
-            const resType = allTypes.get(func.resMn)
             if (resType && resType.desc.typeName == func.name && (func.args.length > 0 || resType.supportTextInput())) {
                 coreTypes.delete(func.resMn)
-                comps.push(new TypeCtor(func.mn, ["ctors", resType.desc.typeName], langFunction, resType))
+                comps.push(new LangFunc(func.mn, ["ctors", resType.desc.typeName], langFunction, resType))
                 continue
             }
         }
-        const fn = new LangFunc(langFunction)
+
+        const fn = new LangFunc(func.mn, ['functions', getTypeName(func.resMn)], langFunction, resType)
         comps.push(fn)
     }
 
@@ -221,7 +226,7 @@ export function generateCoreNodes(langCore: LangCoreDesc, lang: LangDesc, editor
             continue
         const type = allTypes.get(coreType.mn)
         if (type?.supportTextInput())
-            comps.push(new TypeCtor(type.desc.typeName, ["ctors"], null, type))
+            comps.push(new TypeCtor(type.desc.typeName, ["ctors"], type))
     }
 
     for (let comp of comps) {
@@ -329,19 +334,73 @@ export abstract class LangComponent extends Rete.Component {
 
 
 export class TypeCtor extends LangComponent {
-    private baseType: LangType
-    private readonly ctorFn: LangFunction | null
+    private readonly baseType: LangType
     private readonly useLocal: boolean
 
-    constructor(name: string, group: string[], ctorFn: LangFunction | null, type: LangType) {
+    constructor(name: string, group: string[], type: LangType) {
         super(name, group)
         this.baseType = type
-        this.ctorFn = ctorFn
         this.useLocal = this.baseType.desc.canCopy ?? false
     }
 
     async builder(node) {
         const out = new Rete.Output('result', 'Result', this.baseType.getSocket(SocketType.constRef), this.useLocal)
+        node.addOutput(out)
+        const inputControl = new TextInputControl(this.editor, 'value')
+        inputControl.validator = this.baseType.validator
+        inputControl.defaultValue = this.baseType.desc.default ?? ""
+        node.data['value'] ??= this.baseType.desc.default
+        // inputControl.values = this.baseType.desc.enum
+        node.addControl(inputControl)
+    }
+
+    worker(node, inputs, outputs) {
+        const ctorArgs: { [key: string]: string } = {}
+        const nodeRef = this.editor?.nodes.find(n => n.id == node.id)
+        if (nodeRef) {
+            const valueInput = <TextInputControl>nodeRef.controls.get('value')
+            if (valueInput && valueInput.values != this.baseType.desc.enum) {
+                valueInput.values = this.baseType.desc.enum
+                valueInput.setValue(node.data['value'])
+            }
+        }
+
+        outputs['result'] = this.baseType.ctor(inputs.value?.length ? inputs.value : node.data.value, ctorArgs)
+    }
+
+    constructDasNode(node, ctx) {
+        const ctorArgs: { [key: string]: string } = {}
+
+        for (const req in this.baseType.desc.requirements)
+            ctx.addReqModule(req)
+
+        const val = this.baseType.ctor(node.data.value, ctorArgs)
+        // if (this.useLocal && (node.outputs.get('result')?.connections.length ?? 0) > 1)
+        if (this.useLocal)
+            ctx.writeLine(`let ${ctx.nodeId(node)} = ${val}`)
+        else
+            ctx.setNodeRes(node, val)
+        return true
+    }
+}
+
+
+export class LangFunc extends LangComponent {
+    private readonly resType: LangType
+    private readonly ctorFn: LangFunction
+    private readonly useLocal: boolean
+
+    constructor(name: string, group: string[], ctorFn: LangFunction, type: LangType) {
+        super(name, group)
+        this.resType = type
+        this.ctorFn = ctorFn
+        this.useLocal = this.resType.desc.canCopy ?? false
+    }
+
+    async builder(node) {
+        const out = new Rete.Output('result', 'Result', this.resType.getSocket(SocketType.constRef), this.useLocal)
+        if (this.ctorFn.desc.sideeffect)
+            this.addFlowInOut(node)
         node.addOutput(out)
         if (this.ctorFn) {
             for (const field of this.ctorFn.desc.args) {
@@ -362,9 +421,9 @@ export class TypeCtor extends LangComponent {
             }
         } else {
             const inputControl = new TextInputControl(this.editor, 'value')
-            inputControl.validator = this.baseType.validator
-            inputControl.defaultValue = this.baseType.desc.default ?? ""
-            node.data['value'] ??= this.baseType.desc.default
+            inputControl.validator = this.resType.validator
+            inputControl.defaultValue = this.resType.desc.default ?? ""
+            node.data['value'] ??= this.resType.desc.default
             // inputControl.values = this.baseType.desc.enum
             node.addControl(inputControl)
         }
@@ -373,30 +432,34 @@ export class TypeCtor extends LangComponent {
     worker(node, inputs, outputs) {
         const ctorArgs: { [key: string]: string } = {}
         const nodeRef = this.editor?.nodes.find(n => n.id == node.id)
+        if (!nodeRef)
+            return
         if (this.ctorFn) {
-            if (nodeRef) {
-                for (const field of this.ctorFn.desc.args) {
-                    const fieldInput = nodeRef.inputs.get(field.name)
-                    if (!fieldInput)
-                        continue
-                    const inputControl = <TextInputControl>fieldInput.control
-                    if (!inputControl)
-                        continue
-                    const fieldType = getType(field.mn)
-                    inputControl.values = fieldType!.desc.enum
-                }
+            for (const field of this.ctorFn.desc.args) {
+                const fieldInput = nodeRef.inputs.get(field.name)
+                if (!fieldInput)
+                    continue
+                const inputControl = <TextInputControl>fieldInput.control
+                if (!inputControl)
+                    continue
+                const fieldType = getType(field.mn)
+                inputControl.values = fieldType!.desc.enum
             }
             for (const field of this.ctorFn.desc.args)
                 ctorArgs[field.name] = inputs[field.name]?.length ? inputs[field.name] : node.data[field.name]
-        } else if (nodeRef) {
+        } else {
             const valueInput = <TextInputControl>nodeRef.controls.get('value')
-            if (valueInput && valueInput.values != this.baseType.desc.enum) {
-                valueInput.values = this.baseType.desc.enum
+            if (valueInput && valueInput.values != this.resType.desc.enum) {
+                valueInput.values = this.resType.desc.enum
                 valueInput.setValue(node.data['value'])
             }
         }
 
-        outputs['result'] = this.baseType.ctor(inputs.value?.length ? inputs.value : node.data.value, ctorArgs)
+        if (this.ctorFn) {
+            outputs['result'] = this.ctorFn.ctor(ctorArgs)
+        } else {
+            outputs['result'] = this.resType.ctor(inputs.value?.length ? inputs.value : node.data.value, ctorArgs)
+        }
     }
 
     constructDasNode(node, ctx) {
@@ -407,18 +470,25 @@ export class TypeCtor extends LangComponent {
                 if (input) {
                     ctorArgs[field.name] = ctx.nodeId(input)
                 } else {
-                    const baseType = getBaseType(field.mn)
-                    // ignore base type ctors with same name
-                    if (baseType && (this.ctorFn.desc.args.length != 1 || baseType.desc.typeName != this.ctorFn.desc.name)) {
-                        ctorArgs[field.name] = baseType.ctor(node.data[field.name], {}) ?? ""
-                    } else {
-                        ctorArgs[field.name] = node.data[field.name]
+                    const fieldType = getType(field.mn)
+                    for (const req of fieldType?.desc.requirements ?? [])
+                        ctx.addReqModule(req)
+                    if (fieldType?.desc.isConst && !fieldType.desc.isRef) {
+                        const baseType = getBaseType(field.mn)
+                        // ignore base type ctors with same name
+                        if (baseType && (this.ctorFn.desc.args.length != 1 || baseType.desc.typeName != this.ctorFn.desc.name)) {
+                            ctorArgs[field.name] = baseType.ctor(node.data[field.name], {}) ?? node.data[field.name]
+                            continue
+                        }
                     }
+                    ctorArgs[field.name] = fieldType?.ctor(node.data[field.name], {}) ?? node.data[field.name]
                 }
             }
         }
+        for (const req in this.resType.desc.requirements)
+            ctx.addReqModule(req)
 
-        const val = this.ctorFn ? this.ctorFn.ctor(ctorArgs) : this.baseType.ctor(node.data.value, ctorArgs)
+        const val = this.ctorFn ? this.ctorFn.ctor(ctorArgs) : this.resType.ctor(node.data.value, ctorArgs)
         // if (this.useLocal && (node.outputs.get('result')?.connections.length ?? 0) > 1)
         if (this.useLocal)
             ctx.writeLine(`let ${ctx.nodeId(node)} = ${val}`)
@@ -429,74 +499,8 @@ export class TypeCtor extends LangComponent {
 }
 
 
-export class LangFunc extends LangComponent {
-    private fn: LangFunction
-    private readonly useLocal: boolean
-
-    constructor(fn: LangFunction) {
-        const resTypeName = getTypeName(fn.desc.resMn)
-        super(fn.desc.mn, ['language', resTypeName.substring(0, 2), resTypeName, fn.desc.name.substring(0, 1)])
-        this.fn = fn
-        this.useLocal = getType(this.fn.desc.resMn)?.desc.canCopy ?? false
-    }
-
-    async builder(node) {
-        if (this.fn.desc.sideeffect)
-            this.addFlowInOut(node)
-        for (let arg of this.fn.desc.args) {
-            const argType = getBaseType(arg.mn)
-            if (!argType) {
-                console.error(`Func ${this.fn.desc.name} arg ${arg.name} has unknown type ${arg.mn}`)
-                continue
-            }
-            // if (argType.desc.baseMn)
-            //     argType = getType(argType.desc.baseMn)
-            // if (!argType) {
-            //     console.error(`Func ${this.fn.name} arg ${arg.name} has unknown base type ${arg.mn}`)
-            //     continue
-            // }
-            // TODO: copy const/ref from arg.mn type
-            // TODO: handle canCopy flag
-            const fieldInput = new Rete.Input(arg.name, arg.name, argType.getSocket(SocketType.constant), false)
-            // fieldInput.addControl(new TextInputControl(this.editor, field.name))
-            node.addInput(fieldInput)
-        }
-
-        const result = new Rete.Output('result', 'result', getType(this.fn.desc.resMn)!.getSocket(SocketType.constant), this.useLocal)
-        // fieldInput.addControl(new TextInputControl(this.editor, field.name))
-        node.addOutput(result)
-    }
-
-    constructDasNode(node: Node, ctx: ConstructDasCtx): boolean {
-        const args: { [key: string]: string } = {}
-        for (let arg of this.fn.desc.args) {
-            const argNode = this.constructInNode(node, arg.name, ctx)
-            if (!argNode)
-                return false
-            for (let req of getType(arg.mn)?.desc.requirements ?? []) {
-                ctx.addReqModule(req)
-            }
-            args[arg.name] = ctx.nodeId(argNode)
-        }
-        const resType = getType(this.fn.desc.resMn)
-        for (let req of resType?.desc.requirements ?? []) {
-            ctx.addReqModule(req)
-        }
-        const ctor = this.fn.ctor(args)
-        let line = this.useLocal ? `let ${ctx.nodeId(node)} = ${ctor}` : ctor
-        // if (this.useLocal && (node.outputs.get('result')?.connections.length ?? 0) > 1)
-        if (this.useLocal)
-            ctx.writeLine(line)
-        else
-            ctx.setNodeRes(node, line)
-        return true
-    }
-
-
-}
-
 export class Debug extends LangComponent {
-    private anyType: Socket
+    private readonly anyType: Socket
 
     constructor(anyType: Socket) {
         super('Debug', ['functions'])
