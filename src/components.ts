@@ -419,6 +419,7 @@ export class TypeCtor extends LangComponent {
         }
 
         const val = this.ctorFn ? this.ctorFn.ctor(ctorArgs) : this.baseType.ctor(node.data.value, ctorArgs)
+        // if (this.useLocal && (node.outputs.get('result')?.connections.length ?? 0) > 1)
         if (this.useLocal)
             ctx.writeLine(`let ${ctx.nodeId(node)} = ${val}`)
         else
@@ -483,6 +484,7 @@ export class LangFunc extends LangComponent {
         }
         const ctor = this.fn.ctor(args)
         let line = this.useLocal ? `let ${ctx.nodeId(node)} = ${ctor}` : ctor
+        // if (this.useLocal && (node.outputs.get('result')?.connections.length ?? 0) > 1)
         if (this.useLocal)
             ctx.writeLine(line)
         else
