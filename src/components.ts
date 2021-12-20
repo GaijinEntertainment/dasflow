@@ -70,9 +70,8 @@ export class LangType {
         const argsKeys = Object.keys(args)
         if (argsKeys.length > 0) {
             let res = this.desc.ctor
-            for (const argName of argsKeys) {
+            for (const argName of argsKeys)
                 res = res.replace(`\$${argName}`, args[argName])
-            }
             return res
         }
         return this.desc.ctor.replace('$', s) ?? s
@@ -94,17 +93,12 @@ export class LangFunction {
         if (!this.desc.ctor) {
             if (this.isOperator(this.desc.name)) {
                 if (this.desc.args.length == 1)
-                    return `${this.desc.name} ${args['arg0']}`
-                return `${args['arg0']} ${this.desc.name} ${args['arg1']}`
+                    return `${this.desc.name} ${args[this.desc.args[0].name]}`
+                return `${args['arg0']} ${this.desc.name} ${args[this.desc.args[1].name]}`
             }
 
-            let res = `${this.desc.name}(`
-            let first = true
-            for (let arg of this.desc.args) {
-                res += `${first ? '' : ', '}${args[arg.name]}`
-                first = false
-            }
-            return `${res})`
+            const argsStr = this.desc.args.map(arg => args[arg.name]).join(', ')
+            return `${this.desc.name}(${argsStr})`
         }
         let res = this.desc.ctor
         for (let arg of this.desc.args)
@@ -122,7 +116,6 @@ export class LangFunction {
 }
 
 
-// TODO: immutable, mutable and any types
 const allTypes = new Map</*mn*/string, LangType>()
 const allFunctions = new Array<LangFunction>()
 
@@ -132,22 +125,11 @@ function getType(mn: string): LangType | undefined {
 }
 
 
-function getTypeName(mn: string): string {
-    const type = getType(mn)
-    return type ? type.desc.typeName : mn
-}
-
-
 function getBaseType(mn: string): LangType | undefined {
     const res = getType(mn)
     if (res && res.desc.baseMn)
         return getType(res.desc.baseMn) ?? res
     return res
-}
-
-export function getBaseTypeName(mn: string): string {
-    const res = getBaseType(mn)
-    return res ? res.desc.typeName : mn
 }
 
 
@@ -162,9 +144,8 @@ export function getTypeByMN(types: LangType[], mn: string): LangType {
 
 
 export function generateCoreNodes(langCore: LangCoreDesc, lang: LangDesc, editor: NodeEditor, engine: Engine) {
-    // console.log(langCore)
     const coreTypes = new Map</*mn*/string, LangTypeDesc>()
-    for (const typeDesc of langCore.types)
+    for (const typeDesc of langCore.types ?? [])
         coreTypes.set(typeDesc.mn, typeDesc)
 
     const logicTypeName = langCore.logicType
@@ -177,10 +158,7 @@ export function generateCoreNodes(langCore: LangCoreDesc, lang: LangDesc, editor
         comps.push(new Debug(anyTypeSocket))
     comps.push(new Function())
 
-    if (langCore.functions)
-        console.error("core functions are not supported yet")
-
-    for (const typeDesc of lang.types) {
+    for (const typeDesc of lang.types ?? []) {
         if (allTypes.has(typeDesc.mn)) {
             console.error(`type ${typeDesc.mn} already exists`)
         }
@@ -201,7 +179,7 @@ export function generateCoreNodes(langCore: LangCoreDesc, lang: LangDesc, editor
             comps.push(new TypeCtor(type.desc.typeName, ["ctors", type.desc.typeName], type))
     }
 
-    for (const func of lang.functions) {
+    for (const func of lang.functions ?? []) {
         const langFunction = new LangFunction(func)
         allFunctions.push(langFunction)
         const resType = getType(func.resMn)
@@ -213,10 +191,22 @@ export function generateCoreNodes(langCore: LangCoreDesc, lang: LangDesc, editor
         if (func.resMn != voidTypeName && func.resMn != anyTypeName && resType.desc.typeName == func.name) {
             group.push("ctors", resType.desc.typeName)
         } else {
-            const typeName = getTypeName(func.resMn);
+            const typeName = resType.desc.typeName
             group.push('functions', typeName.substring(0, 2), typeName, func.name.substring(0, 1))
         }
         const fn = new LangFunc(func.mn, group, langFunction, resType)
+        comps.push(fn)
+    }
+
+    for (const func of langCore.functions ?? []) {
+        const langFunction = new LangFunction(func)
+        allFunctions.push(langFunction)
+        const resType = getType(func.resMn)
+        if (!resType) {
+            console.error(`function ${func.name} has unknown result type ${func.resMn}`)
+            continue
+        }
+        const fn = new LangFunc(func.mn, ['core'], langFunction, resType)
         comps.push(fn)
     }
 
@@ -412,17 +402,17 @@ export class LangFunc extends LangComponent {
 
     worker(node, inputs, outputs) {
         const nodeRef = this.editor?.nodes.find(n => n.id == node.id)
-        if (!nodeRef)
-            return
-        for (const field of this.ctorFn.desc.args) {
-            const fieldInput = nodeRef.inputs.get(field.name)
-            const inputControl = <TextInputControl>fieldInput?.control
-            if (!inputControl)
-                continue
-            const fieldType = getBaseType(field.mn)
-            if (inputControl.values != fieldType!.desc.enum) {
-                inputControl.values = fieldType!.desc.enum
-                inputControl.setValue(node.data['value'])
+        if (nodeRef) {
+            for (const field of this.ctorFn.desc.args) {
+                const fieldInput = nodeRef.inputs.get(field.name)
+                const inputControl = <TextInputControl>fieldInput?.control
+                if (!inputControl)
+                    continue
+                const fieldType = getBaseType(field.mn)
+                if (inputControl.values != fieldType!.desc.enum) {
+                    inputControl.values = fieldType!.desc.enum
+                    inputControl.setValue(node.data[field.name])
+                }
             }
         }
 
@@ -430,11 +420,7 @@ export class LangFunc extends LangComponent {
         for (const field of this.ctorFn.desc.args)
             ctorArgs[field.name] = inputs[field.name]?.length ? inputs[field.name] : node.data[field.name]
 
-        if (this.ctorFn) {
-            outputs['result'] = this.ctorFn.ctor(ctorArgs)
-        } else {
-            outputs['result'] = this.resType.ctor(inputs.value?.length ? inputs.value : node.data.value, ctorArgs)
-        }
+        outputs['result'] = this.ctorFn.ctor(ctorArgs)
     }
 
     constructDasNode(node, ctx) {
@@ -712,7 +698,8 @@ export class ConstructDasCtx {
                 this.code = `require ${req}\n` + this.code
             this.requirements.clear()
         }
-        this.processedNodes.forEach(it => this.requiredNodes.delete(it))
+        for (const it of this.processedNodes)
+            this.requiredNodes.delete(it)
         for (let requiredNode of this.requiredNodes) {
             this.addErrorId(requiredNode, "Node is not processed")
         }

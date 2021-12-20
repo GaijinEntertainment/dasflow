@@ -31,11 +31,11 @@ export interface LangCoreDesc {
     logicType: string
     anyType: string
     voidType: string
-    types: LangTypeDesc[]
-    functions: LangFunctionDesc[]
+    types?: LangTypeDesc[]
+    functions?: LangFunctionDesc[]
 }
 
 export interface LangDesc {
-    types: LangTypeDesc[]
-    functions: LangFunctionDesc[]
+    types?: LangTypeDesc[]
+    functions?: LangFunctionDesc[]
 }
