@@ -40,16 +40,18 @@ class LangSocket extends Socket {
 
 
 export class LangType {
-    constructor(typeDesc: LangTypeDesc, anyTypeSocket: Socket | undefined) {
+    constructor(typeDesc: LangTypeDesc, anyTypeSocket: Socket | undefined, isVoid: boolean) {
         this.desc = typeDesc
         this.anyTypeSocket = anyTypeSocket
         if (typeDesc.validator)
             this.validator = new RegExp(typeDesc.validator)
+        this.isVoid = isVoid
     }
 
     readonly desc: LangTypeDesc
+    readonly isVoid: boolean
     readonly validator?: RegExp
-    private readonly anyTypeSocket?: Socket
+    anyTypeSocket?: Socket
 
     private sockets = new Map<SocketType, LangSocket>()
 
@@ -133,16 +135,6 @@ function getBaseType(mn: string): LangType | undefined {
 }
 
 
-export function getTypeByMN(types: LangType[], mn: string): LangType {
-    for (let baseType of types) {
-        if (baseType.desc.mn == mn) {
-            return baseType
-        }
-    }
-    return types[0]
-}
-
-
 export function generateCoreNodes(langCore: LangCoreDesc, lang: LangDesc, editor: NodeEditor, engine: Engine) {
     const coreTypes = new Map</*mn*/string, LangTypeDesc>()
     for (const typeDesc of langCore.types ?? [])
@@ -151,20 +143,28 @@ export function generateCoreNodes(langCore: LangCoreDesc, lang: LangDesc, editor
     const logicTypeName = langCore.logicType
     const anyTypeName = langCore.anyType
     const voidTypeName = langCore.voidType
-    const anyTypeSocket = anyTypeName ? new Rete.Socket(anyTypeName) : undefined
+    let anyTypeSocket: Socket | undefined
 
     const comps: Component[] = []
-    if (anyTypeSocket)
-        comps.push(new Debug(anyTypeSocket))
     comps.push(new Function())
 
     for (const typeDesc of lang.types ?? []) {
+        if (typeDesc.mn == langCore.anyType) {
+            const type = new LangType(typeDesc, undefined, typeDesc.mn == voidTypeName)
+            type.anyTypeSocket = anyTypeSocket = type.getSocket(SocketType.constant)
+            allTypes.set(typeDesc.mn, type)
+            break
+        }
+    }
+    for (const typeDesc of lang.types ?? []) {
+        if (typeDesc.mn == langCore.anyType)
+            continue
         if (allTypes.has(typeDesc.mn)) {
             console.error(`type ${typeDesc.mn} already exists`)
         }
         const coreType = coreTypes.get(typeDesc.mn)
         const mergeTypeDesc = coreType ? Object.assign({}, typeDesc, coreType) : typeDesc
-        const type = new LangType(mergeTypeDesc, anyTypeSocket)
+        const type = new LangType(mergeTypeDesc, anyTypeSocket, typeDesc.mn == voidTypeName)
         allTypes.set(typeDesc.mn, type)
 
         if (typeDesc.mn == logicTypeName)
@@ -378,10 +378,12 @@ export class LangFunc extends LangComponent {
     }
 
     async builder(node) {
-        const out = new Rete.Output('result', 'Result', this.resType.getSocket(SocketType.constRef), this.useLocal)
+        if (!this.resType.isVoid) {
+            const out = new Rete.Output('result', 'Result', this.resType.getSocket(SocketType.constRef), this.useLocal)
+            node.addOutput(out)
+        }
         if (this.ctorFn.desc.sideeffect)
             this.addFlowInOut(node)
-        node.addOutput(out)
         for (const field of this.ctorFn.desc.args) {
             const fieldType = getBaseType(field.mn)
             if (!fieldType) {
@@ -416,11 +418,13 @@ export class LangFunc extends LangComponent {
             }
         }
 
-        const ctorArgs: { [key: string]: string } = {}
-        for (const field of this.ctorFn.desc.args)
-            ctorArgs[field.name] = inputs[field.name]?.length ? inputs[field.name] : node.data[field.name]
+        if (!this.resType.isVoid) {
+            const ctorArgs: { [key: string]: string } = {}
+            for (const field of this.ctorFn.desc.args)
+                ctorArgs[field.name] = inputs[field.name]?.length ? inputs[field.name] : node.data[field.name]
 
-        outputs['result'] = this.ctorFn.ctor(ctorArgs)
+            outputs['result'] = this.ctorFn.ctor(ctorArgs)
+        }
     }
 
     constructDasNode(node, ctx) {
@@ -453,43 +457,13 @@ export class LangFunc extends LangComponent {
 
         const val = this.ctorFn.ctor(ctorArgs)
         // if (this.useLocal && (node.outputs.get('result')?.connections.length ?? 0) > 1)
-        if (this.useLocal)
-            ctx.writeLine(`let ${ctx.nodeId(node)} = ${val}`)
-        else
+        if (this.useLocal) {
+            if (this.resType.isVoid)
+                ctx.writeLine(val)
+            else
+                ctx.writeLine(`let ${ctx.nodeId(node)} = ${val}`)
+        } else
             ctx.setNodeRes(node, val)
-        return true
-    }
-}
-
-
-export class Debug extends LangComponent {
-    private readonly anyType: Socket
-
-    constructor(anyType: Socket) {
-        super('Debug', ['language'])
-        this.anyType = anyType
-    }
-
-    async builder(node) {
-        this.addFlowInOut(node)
-        const input = new Rete.Input('value', 'Value', this.anyType)
-        node.addInput(input)
-        node.addControl(new LabelControl(this.editor, 'label', true))
-    }
-
-    worker(node, inputs, outputs) {
-        const val = inputs.value?.length ? inputs.value : node.data.value
-        const refNode = this.editor?.nodes.find(n => n.id === node.id)
-        const label = <LabelControl>refNode?.controls.get('label')
-        label.setValue(val)
-    }
-
-    constructDasNode(node, ctx) {
-        const inNode = this.constructInNode(node, 'value', ctx)
-        if (!inNode)
-            return false
-        ctx.reqNode(inNode)
-        ctx.writeLine(`debug(${ctx.nodeId(inNode)})`)
         return true
     }
 }

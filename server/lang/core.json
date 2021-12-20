@@ -1,6 +1,6 @@
 {
     "logicType": "b",
-    "anyType": "*",
+    "anyType": "C*",
     "voidType": "v",
     "types": [
         {
@@ -107,6 +107,36 @@
             "validator": "^[-+]?\\d+(\\.\\d*)?$",
             "ctor": "double($)",
             "canCopy": true
+        }
+    ],
+    "functions": [
+        {
+            "resMn": "v",
+            "mn": "debug(*):v",
+            "args": [
+                {
+                    "mn": "C*",
+                    "name": "value"
+                }
+            ],
+            "name": "debug",
+            "sideeffect": true
+        },
+        {
+            "resMn": "v",
+            "mn": "debug(*,Cs):v",
+            "args": [
+                {
+                    "mn": "C*",
+                    "name": "value"
+                },
+                {
+                    "mn": "CIs",
+                    "name": "name"
+                }
+            ],
+            "name": "debug",
+            "sideeffect": true
         }
     ]
 }
