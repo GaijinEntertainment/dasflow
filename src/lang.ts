@@ -29,8 +29,8 @@ export interface LangFunctionDesc {
 
 export interface LangCoreDesc {
     logicType: string
-    anyType: string
-    voidType: string
+    anyTypes: string[]
+    voidTypes: string[]
     types?: LangTypeDesc[]
     functions?: LangFunctionDesc[]
 }

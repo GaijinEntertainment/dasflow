@@ -1,7 +1,12 @@
 {
     "logicType": "b",
-    "anyType": "C*",
-    "voidType": "v",
+    "anyTypes": [
+        "C*",
+        "*"
+    ],
+    "voidTypes": [
+        "v"
+    ],
     "types": [
         {
             "typeName": "any",

@@ -17,22 +17,28 @@ enum SocketType {
 class LangSocket extends Socket {
     typeName: string
     socketType: SocketType
+    isAny: boolean
 
-    constructor(typeName: string, socketType: SocketType) {
+    constructor(typeName: string, socketType: SocketType, isAny: boolean) {
         super(typeName + (socketType & 0b1 ? ' const' : '') + (socketType & 0b10 ? ' &' : ''))
         this.typeName = typeName
         this.socketType = socketType
+        this.isAny = isAny;
     }
 
     compatibleWith(socket: Socket): boolean {
         if (this === socket)
             return true
-        if (socket instanceof LangSocket && socket.typeName == this.typeName) {
-            if (socket.socketType == SocketType.ref)
-                return this.socketType == SocketType.ref
-            if (socket.socketType == SocketType.constRef)
-                return this.socketType == SocketType.constRef || this.socketType == SocketType.ref
-            return true
+        if (socket instanceof LangSocket) {
+            if (socket.isAny)
+                return true
+            if (socket.typeName == this.typeName) {
+                if (socket.socketType == SocketType.ref)
+                    return this.socketType == SocketType.ref
+                if (socket.socketType == SocketType.constRef)
+                    return this.socketType == SocketType.constRef || this.socketType == SocketType.ref
+                return true
+            }
         }
         return super.compatibleWith(socket)
     }
@@ -40,18 +46,18 @@ class LangSocket extends Socket {
 
 
 export class LangType {
-    constructor(typeDesc: LangTypeDesc, anyTypeSocket: Socket | undefined, isVoid: boolean) {
+    constructor(typeDesc: LangTypeDesc, isVoid: boolean, isAny: boolean) {
         this.desc = typeDesc
-        this.anyTypeSocket = anyTypeSocket
         if (typeDesc.validator)
             this.validator = new RegExp(typeDesc.validator)
         this.isVoid = isVoid
+        this.isAny = isAny
     }
 
     readonly desc: LangTypeDesc
     readonly isVoid: boolean
+    readonly isAny: boolean;
     readonly validator?: RegExp
-    anyTypeSocket?: Socket
 
     private sockets = new Map<SocketType, LangSocket>()
 
@@ -59,9 +65,7 @@ export class LangType {
         if (this.sockets.has(socketType))
             return this.sockets.get(socketType)!
 
-        const res = new LangSocket(this.desc.baseMn ?? this.desc.mn, socketType)
-        if (this.anyTypeSocket)
-            res.combineWith(this.anyTypeSocket)
+        const res = new LangSocket(this.desc.baseMn ?? this.desc.mn, socketType, this.isAny)
         this.sockets.set(socketType, res)
         return res
     }
@@ -127,18 +131,18 @@ function getType(mn: string): LangType | undefined {
 }
 
 
-function getBaseTypeOf(type: LangType | undefined): LangType | undefined {
-    if (type && type.desc.baseMn)
-        return getType(type.desc.baseMn) ?? type
-    return type
-}
+// function getBaseTypeOf(type: LangType | undefined): LangType | undefined {
+//     if (type && type.desc.baseMn)
+//         return getType(type.desc.baseMn) ?? type
+//     return type
+// }
 
-function getBaseType(mn: string): LangType | undefined {
-    const res = getType(mn)
-    if (res && res.desc.baseMn)
-        return getType(res.desc.baseMn) ?? res
-    return res
-}
+// function getBaseType(mn: string): LangType | undefined {
+//     const res = getType(mn)
+//     if (res && res.desc.baseMn)
+//         return getType(res.desc.baseMn) ?? res
+//     return res
+// }
 
 
 export function generateCoreNodes(langCore: LangCoreDesc, lang: LangDesc, editor: NodeEditor, engine: Engine) {
@@ -147,30 +151,26 @@ export function generateCoreNodes(langCore: LangCoreDesc, lang: LangDesc, editor
         coreTypes.set(typeDesc.mn, typeDesc)
 
     const logicTypeName = langCore.logicType
-    const anyTypeName = langCore.anyType
-    const voidTypeName = langCore.voidType
-    let anyTypeSocket: Socket | undefined
 
     const comps: Component[] = []
     comps.push(new Function())
 
     for (const typeDesc of lang.types ?? []) {
-        if (typeDesc.mn == langCore.anyType) {
-            const type = new LangType(typeDesc, undefined, typeDesc.mn == voidTypeName)
-            type.anyTypeSocket = anyTypeSocket = type.getSocket(SocketType.constant)
+        if (langCore.anyTypes.indexOf(typeDesc.mn) >= 0) {
+            const type = new LangType(typeDesc, langCore.voidTypes.indexOf(typeDesc.mn) >= 0, true)
             allTypes.set(typeDesc.mn, type)
             break
         }
     }
     for (const typeDesc of lang.types ?? []) {
-        if (typeDesc.mn == langCore.anyType)
+        if (langCore.anyTypes.indexOf(typeDesc.mn) >= 0)
             continue
         if (allTypes.has(typeDesc.mn)) {
             console.error(`type ${typeDesc.mn} already exists`)
         }
-        const coreType = coreTypes.get(typeDesc.mn)
+        const coreType = !typeDesc.isRef && typeDesc.baseMn ? coreTypes.get(typeDesc.baseMn) ?? coreTypes.get(typeDesc.mn) : coreTypes.get(typeDesc.mn)
         const mergeTypeDesc = coreType ? Object.assign({}, typeDesc, coreType) : typeDesc
-        const type = new LangType(mergeTypeDesc, anyTypeSocket, typeDesc.mn == voidTypeName)
+        const type = new LangType(mergeTypeDesc, langCore.voidTypes.indexOf(typeDesc.mn) >= 0, false)
         allTypes.set(typeDesc.mn, type)
 
         if (typeDesc.mn == logicTypeName)
@@ -178,7 +178,7 @@ export function generateCoreNodes(langCore: LangCoreDesc, lang: LangDesc, editor
     }
 
     for (const coreType of coreTypes.values()) {
-        if (coreType.mn == anyTypeName || coreType.mn == voidTypeName)
+        if (langCore.voidTypes.indexOf(coreType.mn) >= 0 || langCore.anyTypes.indexOf(coreType.mn) >= 0)
             continue
         const type = allTypes.get(coreType.mn)
         if (type?.supportTextInput())
@@ -194,7 +194,7 @@ export function generateCoreNodes(langCore: LangCoreDesc, lang: LangDesc, editor
             continue
         }
         const group: string[] = []
-        if (func.resMn != voidTypeName && func.resMn != anyTypeName && resType.desc.typeName == func.name) {
+        if (langCore.voidTypes.indexOf(func.resMn) < 0 && langCore.anyTypes.indexOf(func.resMn) < 0 && resType.desc.typeName == func.name) {
             group.push("ctors", resType.desc.typeName)
         } else {
             const typeName = resType.desc.typeName
@@ -391,7 +391,7 @@ export class LangFunc extends LangComponent {
         if (this.ctorFn.desc.sideeffect)
             this.addFlowInOut(node)
         for (const field of this.ctorFn.desc.args) {
-            const fieldType = getBaseType(field.mn)
+            const fieldType = getType(field.mn)
             if (!fieldType) {
                 console.error(`type ${field.mn} not found`)
                 continue
@@ -416,7 +416,7 @@ export class LangFunc extends LangComponent {
                 const inputControl = <TextInputControl>fieldInput?.control
                 if (!inputControl)
                     continue
-                const fieldType = getBaseType(field.mn)
+                const fieldType = getType(field.mn)
                 if (inputControl.values != fieldType!.desc.enum) {
                     inputControl.values = fieldType!.desc.enum
                     inputControl.setValue(node.data[field.name])
@@ -437,12 +437,11 @@ export class LangFunc extends LangComponent {
         const ctorArgs: { [key: string]: string } = {}
         for (const field of this.ctorFn.desc.args) {
             const fieldType = getType(field.mn)
-            const baseType = getBaseTypeOf(fieldType)
             if (!fieldType) {
                 console.error(`type ${field.mn} not found`)
                 continue
             }
-            const input = baseType?.supportTextInput() || fieldType.supportTextInput() ? this.constructOptionalInNode(node, field.name, ctx) : this.constructInNode(node, field.name, ctx)
+            const input = fieldType.supportTextInput() ? this.constructOptionalInNode(node, field.name, ctx) : this.constructInNode(node, field.name, ctx)
             if (input) {
                 ctorArgs[field.name] = ctx.nodeId(input)
                 continue
@@ -450,12 +449,9 @@ export class LangFunc extends LangComponent {
 
             for (const req of fieldType.desc.requirements ?? [])
                 ctx.addReqModule(req)
-            if (fieldType.desc.isConst && !fieldType.desc.isRef) {
-                // ignore base type ctors with same name
-                if (baseType && (this.ctorFn.desc.args.length != 1 || baseType.desc.typeName != this.ctorFn.desc.name)) {
-                    ctorArgs[field.name] = baseType.ctor(node.data[field.name], {}) ?? node.data[field.name]
-                    continue
-                }
+            if (this.ctorFn.desc.args.length != 1 || fieldType.desc.typeName != this.ctorFn.desc.name) {
+                ctorArgs[field.name] = fieldType.ctor(node.data[field.name], {}) ?? node.data[field.name]
+                continue
             }
             ctorArgs[field.name] = fieldType.ctor(node.data[field.name], {}) ?? node.data[field.name]
         }
