@@ -10,6 +10,13 @@ require daslib/json_boost
 require daslib/defer
 
 
+let
+    operators = [[string "!"; "~"; "+="; "-="; "*="; "/="; "%="; "&="; "|="; "^="; "&&="; "||="; "^^="; "&&"; "||"; "^^"; "+"; "-";
+                         "*"; "/"; "%"; "<"; ">"; "=="; "!="; "<="; ">="; "&"; "|"; "^"; "++"; "--"; "<<"; ">>"; "<<=";
+                         ">>="; "<<<"; ">>>"; "<<<="; ">>>="]]
+    postOperators <- {{ "+++"=>"++"; "---"=>"--" }}
+
+
 struct TypeDesc
     typeName: string
     mn: string
@@ -82,17 +89,12 @@ def private dumpModule(ctx: DumpContext; mod: rtti::Module?; var lang: LangDesc)
     var faNum = 0
     mod |> for_each_function("") <| $(fn)
         faNum += 1
-        // fa.result
 
         let fnName = "{fn.name}"
         var fnMn = "{fnName}("
         let reqFlow = fn.sideEffectFlags.modifyExternal || fn.sideEffectFlags.modifyArgument || fn.sideEffectFlags.accessGlobal || fn.sideEffectFlags.invoke || fn.sideEffectFlags.userScenario
         lang.functions |> emplace <| [[FuncDesc name=fnName, sideeffect=reqFlow]]
         var fun & = unsafe(lang.functions[length(lang.functions) - 1])
-
-
-        if fn.sideEffectFlags._unsafe
-            fun.ctor = "unsafe({fnName}($args))"
 
         var first = true
         for arg in fn.arguments
@@ -106,6 +108,26 @@ def private dumpModule(ctx: DumpContext; mod: rtti::Module?; var lang: LangDesc)
 
             fnMn = "{fnMn}{first?"":","}{td.mn}"
             first = false
+
+        if operators |> has_value(fnName)
+            if postOperators |> key_exists(fnName)
+                assert(fn.arguments.length == 1)
+                fun.ctor = "{fnName} ${postOperators|>find(fnName)}"
+            else
+                assert(fn.arguments.length == 1 || fn.arguments.length == 2)
+                if fn.arguments.length == 1
+                    fun.ctor = "${fun.args[0].name} {fnName}"
+                else
+                    fun.ctor = "${fun.args[0].name} {fnName} ${fun.args[1].name}"
+
+        if fn.sideEffectFlags._unsafe
+            if !empty(fun.ctor)
+                fun.ctor = "unsafe {fun.ctor}"
+            else
+                fun.ctor = "unsafe("
+                for arg in fun.args
+                    fun.ctor += "{arg.name}, "
+                fun.ctor = fun.ctor + ")"
 
         var resTypeDesc = lang |> getTypeDesc(fn.result)
         fun.resMn = resTypeDesc.mn

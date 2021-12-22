@@ -3,6 +3,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "==(Cb,Cb):b",
+			"ctor" : "$arg0 == $arg1",
 			"args" : [
 				{
 					"mn" : "Cb",
@@ -18,6 +19,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "!=(Cb,Cb):b",
+			"ctor" : "$arg0 != $arg1",
 			"args" : [
 				{
 					"mn" : "Cb",
@@ -33,6 +35,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "!(Cb):b",
+			"ctor" : "$arg0 !",
 			"args" : [
 				{
 					"mn" : "Cb",
@@ -44,6 +47,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "&&(Cb,Cb):b",
+			"ctor" : "$arg0 && $arg1",
 			"args" : [
 				{
 					"mn" : "Cb",
@@ -59,6 +63,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "||(Cb,Cb):b",
+			"ctor" : "$arg0 || $arg1",
 			"args" : [
 				{
 					"mn" : "Cb",
@@ -74,6 +79,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "^^(Cb,Cb):b",
+			"ctor" : "$arg0 ^^ $arg1",
 			"args" : [
 				{
 					"mn" : "Cb",
@@ -90,6 +96,7 @@
 			"resMn" : "v",
 			"mn" : "&&=(&Ib,Cb):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 &&= $arg1",
 			"args" : [
 				{
 					"mn" : "&Ib",
@@ -106,6 +113,7 @@
 			"resMn" : "v",
 			"mn" : "||=(&Ib,Cb):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 ||= $arg1",
 			"args" : [
 				{
 					"mn" : "&Ib",
@@ -122,6 +130,7 @@
 			"resMn" : "v",
 			"mn" : "^^=(&Ib,Cb):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 ^^= $arg1",
 			"args" : [
 				{
 					"mn" : "&Ib",
@@ -137,6 +146,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "==(CI?,CI?):b",
+			"ctor" : "$arg0 == $arg1",
 			"args" : [
 				{
 					"mn" : "CI?",
@@ -152,6 +162,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "!=(CI?,CI?):b",
+			"ctor" : "$arg0 != $arg1",
 			"args" : [
 				{
 					"mn" : "CI?",
@@ -675,6 +686,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "==(Ci,Ci):b",
+			"ctor" : "$arg0 == $arg1",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -690,6 +702,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "!=(Ci,Ci):b",
+			"ctor" : "$arg0 != $arg1",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -705,6 +718,7 @@
 		{
 			"resMn" : "i",
 			"mn" : "+(Ci,Ci):i",
+			"ctor" : "$arg0 + $arg1",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -721,6 +735,7 @@
 			"resMn" : "v",
 			"mn" : "+=(&Ii,Ci):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 += $arg1",
 			"args" : [
 				{
 					"mn" : "&Ii",
@@ -736,6 +751,7 @@
 		{
 			"resMn" : "i",
 			"mn" : "+(Ci):i",
+			"ctor" : "$arg0 +",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -747,6 +763,7 @@
 		{
 			"resMn" : "i",
 			"mn" : "-(Ci):i",
+			"ctor" : "$arg0 -",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -758,6 +775,7 @@
 		{
 			"resMn" : "i",
 			"mn" : "-(Ci,Ci):i",
+			"ctor" : "$arg0 - $arg1",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -774,6 +792,7 @@
 			"resMn" : "v",
 			"mn" : "-=(&Ii,Ci):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 -= $arg1",
 			"args" : [
 				{
 					"mn" : "&Ii",
@@ -789,6 +808,7 @@
 		{
 			"resMn" : "i",
 			"mn" : "*(Ci,Ci):i",
+			"ctor" : "$arg0 * $arg1",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -804,6 +824,7 @@
 		{
 			"resMn" : "i",
 			"mn" : "/(Ci,Ci):i",
+			"ctor" : "$arg0 / $arg1",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -820,6 +841,7 @@
 			"resMn" : "v",
 			"mn" : "*=(&Ii,Ci):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 *= $arg1",
 			"args" : [
 				{
 					"mn" : "&Ii",
@@ -836,6 +858,7 @@
 			"resMn" : "v",
 			"mn" : "/=(&Ii,Ci):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 /= $arg1",
 			"args" : [
 				{
 					"mn" : "&Ii",
@@ -851,6 +874,7 @@
 		{
 			"resMn" : "i",
 			"mn" : "%(Ci,Ci):i",
+			"ctor" : "$arg0 % $arg1",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -867,6 +891,7 @@
 			"resMn" : "v",
 			"mn" : "%=(&Ii,Ci):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 %= $arg1",
 			"args" : [
 				{
 					"mn" : "&Ii",
@@ -883,6 +908,7 @@
 			"resMn" : "i",
 			"mn" : "++(&Ii):i",
 			"sideeffect" : true,
+			"ctor" : "$arg0 ++",
 			"args" : [
 				{
 					"mn" : "&Ii",
@@ -895,6 +921,7 @@
 			"resMn" : "i",
 			"mn" : "--(&Ii):i",
 			"sideeffect" : true,
+			"ctor" : "$arg0 --",
 			"args" : [
 				{
 					"mn" : "&Ii",
@@ -930,6 +957,7 @@
 		{
 			"resMn" : "b",
 			"mn" : ">=(Ci,Ci):b",
+			"ctor" : "$arg0 >= $arg1",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -945,6 +973,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "<=(Ci,Ci):b",
+			"ctor" : "$arg0 <= $arg1",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -960,6 +989,7 @@
 		{
 			"resMn" : "b",
 			"mn" : ">(Ci,Ci):b",
+			"ctor" : "$arg0 > $arg1",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -975,6 +1005,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "<(Ci,Ci):b",
+			"ctor" : "$arg0 < $arg1",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -990,6 +1021,7 @@
 		{
 			"resMn" : "i",
 			"mn" : "~(Ci):i",
+			"ctor" : "$arg0 ~",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -1001,6 +1033,7 @@
 		{
 			"resMn" : "i",
 			"mn" : "&(Ci,Ci):i",
+			"ctor" : "$arg0 & $arg1",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -1016,6 +1049,7 @@
 		{
 			"resMn" : "i",
 			"mn" : "|(Ci,Ci):i",
+			"ctor" : "$arg0 | $arg1",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -1031,6 +1065,7 @@
 		{
 			"resMn" : "i",
 			"mn" : "^(Ci,Ci):i",
+			"ctor" : "$arg0 ^ $arg1",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -1047,6 +1082,7 @@
 			"resMn" : "v",
 			"mn" : "&=(&Ii,Ci):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 &= $arg1",
 			"args" : [
 				{
 					"mn" : "&Ii",
@@ -1063,6 +1099,7 @@
 			"resMn" : "v",
 			"mn" : "|=(&Ii,Ci):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 |= $arg1",
 			"args" : [
 				{
 					"mn" : "&Ii",
@@ -1079,6 +1116,7 @@
 			"resMn" : "v",
 			"mn" : "^=(&Ii,Ci):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 ^= $arg1",
 			"args" : [
 				{
 					"mn" : "&Ii",
@@ -1094,6 +1132,7 @@
 		{
 			"resMn" : "i",
 			"mn" : "<<(Ci,Ci):i",
+			"ctor" : "$arg0 << $arg1",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -1109,6 +1148,7 @@
 		{
 			"resMn" : "i",
 			"mn" : ">>(Ci,Ci):i",
+			"ctor" : "$arg0 >> $arg1",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -1124,6 +1164,7 @@
 		{
 			"resMn" : "i",
 			"mn" : "<<<(Ci,Ci):i",
+			"ctor" : "$arg0 <<< $arg1",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -1139,6 +1180,7 @@
 		{
 			"resMn" : "i",
 			"mn" : ">>>(Ci,Ci):i",
+			"ctor" : "$arg0 >>> $arg1",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -1155,6 +1197,7 @@
 			"resMn" : "v",
 			"mn" : "<<=(&Ii,Ci):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 <<= $arg1",
 			"args" : [
 				{
 					"mn" : "&Ii",
@@ -1171,6 +1214,7 @@
 			"resMn" : "v",
 			"mn" : ">>=(&Ii,Ci):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 >>= $arg1",
 			"args" : [
 				{
 					"mn" : "&Ii",
@@ -1187,6 +1231,7 @@
 			"resMn" : "v",
 			"mn" : "<<<=(&Ii,Ci):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 <<<= $arg1",
 			"args" : [
 				{
 					"mn" : "&Ii",
@@ -1203,6 +1248,7 @@
 			"resMn" : "v",
 			"mn" : ">>>=(&Ii,Ci):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 >>>= $arg1",
 			"args" : [
 				{
 					"mn" : "&Ii",
@@ -1345,6 +1391,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "==(Cu,Cu):b",
+			"ctor" : "$arg0 == $arg1",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -1360,6 +1407,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "!=(Cu,Cu):b",
+			"ctor" : "$arg0 != $arg1",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -1375,6 +1423,7 @@
 		{
 			"resMn" : "u",
 			"mn" : "+(Cu,Cu):u",
+			"ctor" : "$arg0 + $arg1",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -1391,6 +1440,7 @@
 			"resMn" : "v",
 			"mn" : "+=(&Iu,Cu):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 += $arg1",
 			"args" : [
 				{
 					"mn" : "&Iu",
@@ -1406,6 +1456,7 @@
 		{
 			"resMn" : "u",
 			"mn" : "+(Cu):u",
+			"ctor" : "$arg0 +",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -1417,6 +1468,7 @@
 		{
 			"resMn" : "u",
 			"mn" : "-(Cu):u",
+			"ctor" : "$arg0 -",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -1428,6 +1480,7 @@
 		{
 			"resMn" : "u",
 			"mn" : "-(Cu,Cu):u",
+			"ctor" : "$arg0 - $arg1",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -1444,6 +1497,7 @@
 			"resMn" : "v",
 			"mn" : "-=(&Iu,Cu):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 -= $arg1",
 			"args" : [
 				{
 					"mn" : "&Iu",
@@ -1459,6 +1513,7 @@
 		{
 			"resMn" : "u",
 			"mn" : "*(Cu,Cu):u",
+			"ctor" : "$arg0 * $arg1",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -1474,6 +1529,7 @@
 		{
 			"resMn" : "u",
 			"mn" : "/(Cu,Cu):u",
+			"ctor" : "$arg0 / $arg1",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -1490,6 +1546,7 @@
 			"resMn" : "v",
 			"mn" : "*=(&Iu,Cu):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 *= $arg1",
 			"args" : [
 				{
 					"mn" : "&Iu",
@@ -1506,6 +1563,7 @@
 			"resMn" : "v",
 			"mn" : "/=(&Iu,Cu):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 /= $arg1",
 			"args" : [
 				{
 					"mn" : "&Iu",
@@ -1521,6 +1579,7 @@
 		{
 			"resMn" : "u",
 			"mn" : "%(Cu,Cu):u",
+			"ctor" : "$arg0 % $arg1",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -1537,6 +1596,7 @@
 			"resMn" : "v",
 			"mn" : "%=(&Iu,Cu):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 %= $arg1",
 			"args" : [
 				{
 					"mn" : "&Iu",
@@ -1553,6 +1613,7 @@
 			"resMn" : "u",
 			"mn" : "++(&Iu):u",
 			"sideeffect" : true,
+			"ctor" : "$arg0 ++",
 			"args" : [
 				{
 					"mn" : "&Iu",
@@ -1565,6 +1626,7 @@
 			"resMn" : "u",
 			"mn" : "--(&Iu):u",
 			"sideeffect" : true,
+			"ctor" : "$arg0 --",
 			"args" : [
 				{
 					"mn" : "&Iu",
@@ -1600,6 +1662,7 @@
 		{
 			"resMn" : "b",
 			"mn" : ">=(Cu,Cu):b",
+			"ctor" : "$arg0 >= $arg1",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -1615,6 +1678,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "<=(Cu,Cu):b",
+			"ctor" : "$arg0 <= $arg1",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -1630,6 +1694,7 @@
 		{
 			"resMn" : "b",
 			"mn" : ">(Cu,Cu):b",
+			"ctor" : "$arg0 > $arg1",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -1645,6 +1710,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "<(Cu,Cu):b",
+			"ctor" : "$arg0 < $arg1",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -1660,6 +1726,7 @@
 		{
 			"resMn" : "u",
 			"mn" : "~(Cu):u",
+			"ctor" : "$arg0 ~",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -1671,6 +1738,7 @@
 		{
 			"resMn" : "u",
 			"mn" : "&(Cu,Cu):u",
+			"ctor" : "$arg0 & $arg1",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -1686,6 +1754,7 @@
 		{
 			"resMn" : "u",
 			"mn" : "|(Cu,Cu):u",
+			"ctor" : "$arg0 | $arg1",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -1701,6 +1770,7 @@
 		{
 			"resMn" : "u",
 			"mn" : "^(Cu,Cu):u",
+			"ctor" : "$arg0 ^ $arg1",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -1717,6 +1787,7 @@
 			"resMn" : "v",
 			"mn" : "&=(&Iu,Cu):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 &= $arg1",
 			"args" : [
 				{
 					"mn" : "&Iu",
@@ -1733,6 +1804,7 @@
 			"resMn" : "v",
 			"mn" : "|=(&Iu,Cu):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 |= $arg1",
 			"args" : [
 				{
 					"mn" : "&Iu",
@@ -1749,6 +1821,7 @@
 			"resMn" : "v",
 			"mn" : "^=(&Iu,Cu):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 ^= $arg1",
 			"args" : [
 				{
 					"mn" : "&Iu",
@@ -1764,6 +1837,7 @@
 		{
 			"resMn" : "u",
 			"mn" : "<<(Cu,Cu):u",
+			"ctor" : "$arg0 << $arg1",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -1779,6 +1853,7 @@
 		{
 			"resMn" : "u",
 			"mn" : ">>(Cu,Cu):u",
+			"ctor" : "$arg0 >> $arg1",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -1794,6 +1869,7 @@
 		{
 			"resMn" : "u",
 			"mn" : "<<<(Cu,Cu):u",
+			"ctor" : "$arg0 <<< $arg1",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -1809,6 +1885,7 @@
 		{
 			"resMn" : "u",
 			"mn" : ">>>(Cu,Cu):u",
+			"ctor" : "$arg0 >>> $arg1",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -1825,6 +1902,7 @@
 			"resMn" : "v",
 			"mn" : "<<=(&Iu,Cu):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 <<= $arg1",
 			"args" : [
 				{
 					"mn" : "&Iu",
@@ -1841,6 +1919,7 @@
 			"resMn" : "v",
 			"mn" : ">>=(&Iu,Cu):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 >>= $arg1",
 			"args" : [
 				{
 					"mn" : "&Iu",
@@ -1857,6 +1936,7 @@
 			"resMn" : "v",
 			"mn" : "<<<=(&Iu,Cu):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 <<<= $arg1",
 			"args" : [
 				{
 					"mn" : "&Iu",
@@ -1873,6 +1953,7 @@
 			"resMn" : "v",
 			"mn" : ">>>=(&Iu,Cu):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 >>>= $arg1",
 			"args" : [
 				{
 					"mn" : "&Iu",
@@ -2142,6 +2223,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "==(Ct,Ct):b",
+			"ctor" : "$arg0 == $arg1",
 			"args" : [
 				{
 					"mn" : "Ct",
@@ -2157,6 +2239,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "!=(Ct,Ct):b",
+			"ctor" : "$arg0 != $arg1",
 			"args" : [
 				{
 					"mn" : "Ct",
@@ -2172,6 +2255,7 @@
 		{
 			"resMn" : "t",
 			"mn" : "~(Ct):t",
+			"ctor" : "$arg0 ~",
 			"args" : [
 				{
 					"mn" : "Ct",
@@ -2183,6 +2267,7 @@
 		{
 			"resMn" : "t",
 			"mn" : "&(Ct,Ct):t",
+			"ctor" : "$arg0 & $arg1",
 			"args" : [
 				{
 					"mn" : "Ct",
@@ -2198,6 +2283,7 @@
 		{
 			"resMn" : "t",
 			"mn" : "|(Ct,Ct):t",
+			"ctor" : "$arg0 | $arg1",
 			"args" : [
 				{
 					"mn" : "Ct",
@@ -2213,6 +2299,7 @@
 		{
 			"resMn" : "t",
 			"mn" : "^(Ct,Ct):t",
+			"ctor" : "$arg0 ^ $arg1",
 			"args" : [
 				{
 					"mn" : "Ct",
@@ -2229,6 +2316,7 @@
 			"resMn" : "v",
 			"mn" : "&=(&It,Ct):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 &= $arg1",
 			"args" : [
 				{
 					"mn" : "&It",
@@ -2245,6 +2333,7 @@
 			"resMn" : "v",
 			"mn" : "|=(&It,Ct):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 |= $arg1",
 			"args" : [
 				{
 					"mn" : "&It",
@@ -2261,6 +2350,7 @@
 			"resMn" : "v",
 			"mn" : "^=(&It,Ct):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 ^= $arg1",
 			"args" : [
 				{
 					"mn" : "&It",
@@ -2276,6 +2366,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "==(Ci64,Ci64):b",
+			"ctor" : "$arg0 == $arg1",
 			"args" : [
 				{
 					"mn" : "Ci64",
@@ -2291,6 +2382,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "!=(Ci64,Ci64):b",
+			"ctor" : "$arg0 != $arg1",
 			"args" : [
 				{
 					"mn" : "Ci64",
@@ -2306,6 +2398,7 @@
 		{
 			"resMn" : "i64",
 			"mn" : "+(Ci64,Ci64):i64",
+			"ctor" : "$arg0 + $arg1",
 			"args" : [
 				{
 					"mn" : "Ci64",
@@ -2322,6 +2415,7 @@
 			"resMn" : "v",
 			"mn" : "+=(&Ii64,Ci64):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 += $arg1",
 			"args" : [
 				{
 					"mn" : "&Ii64",
@@ -2337,6 +2431,7 @@
 		{
 			"resMn" : "i64",
 			"mn" : "+(Ci64):i64",
+			"ctor" : "$arg0 +",
 			"args" : [
 				{
 					"mn" : "Ci64",
@@ -2348,6 +2443,7 @@
 		{
 			"resMn" : "i64",
 			"mn" : "-(Ci64):i64",
+			"ctor" : "$arg0 -",
 			"args" : [
 				{
 					"mn" : "Ci64",
@@ -2359,6 +2455,7 @@
 		{
 			"resMn" : "i64",
 			"mn" : "-(Ci64,Ci64):i64",
+			"ctor" : "$arg0 - $arg1",
 			"args" : [
 				{
 					"mn" : "Ci64",
@@ -2375,6 +2472,7 @@
 			"resMn" : "v",
 			"mn" : "-=(&Ii64,Ci64):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 -= $arg1",
 			"args" : [
 				{
 					"mn" : "&Ii64",
@@ -2390,6 +2488,7 @@
 		{
 			"resMn" : "i64",
 			"mn" : "*(Ci64,Ci64):i64",
+			"ctor" : "$arg0 * $arg1",
 			"args" : [
 				{
 					"mn" : "Ci64",
@@ -2405,6 +2504,7 @@
 		{
 			"resMn" : "i64",
 			"mn" : "/(Ci64,Ci64):i64",
+			"ctor" : "$arg0 / $arg1",
 			"args" : [
 				{
 					"mn" : "Ci64",
@@ -2421,6 +2521,7 @@
 			"resMn" : "v",
 			"mn" : "*=(&Ii64,Ci64):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 *= $arg1",
 			"args" : [
 				{
 					"mn" : "&Ii64",
@@ -2437,6 +2538,7 @@
 			"resMn" : "v",
 			"mn" : "/=(&Ii64,Ci64):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 /= $arg1",
 			"args" : [
 				{
 					"mn" : "&Ii64",
@@ -2452,6 +2554,7 @@
 		{
 			"resMn" : "i64",
 			"mn" : "%(Ci64,Ci64):i64",
+			"ctor" : "$arg0 % $arg1",
 			"args" : [
 				{
 					"mn" : "Ci64",
@@ -2468,6 +2571,7 @@
 			"resMn" : "v",
 			"mn" : "%=(&Ii64,Ci64):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 %= $arg1",
 			"args" : [
 				{
 					"mn" : "&Ii64",
@@ -2484,6 +2588,7 @@
 			"resMn" : "i64",
 			"mn" : "++(&Ii64):i64",
 			"sideeffect" : true,
+			"ctor" : "$arg0 ++",
 			"args" : [
 				{
 					"mn" : "&Ii64",
@@ -2496,6 +2601,7 @@
 			"resMn" : "i64",
 			"mn" : "--(&Ii64):i64",
 			"sideeffect" : true,
+			"ctor" : "$arg0 --",
 			"args" : [
 				{
 					"mn" : "&Ii64",
@@ -2531,6 +2637,7 @@
 		{
 			"resMn" : "b",
 			"mn" : ">=(Ci64,Ci64):b",
+			"ctor" : "$arg0 >= $arg1",
 			"args" : [
 				{
 					"mn" : "Ci64",
@@ -2546,6 +2653,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "<=(Ci64,Ci64):b",
+			"ctor" : "$arg0 <= $arg1",
 			"args" : [
 				{
 					"mn" : "Ci64",
@@ -2561,6 +2669,7 @@
 		{
 			"resMn" : "b",
 			"mn" : ">(Ci64,Ci64):b",
+			"ctor" : "$arg0 > $arg1",
 			"args" : [
 				{
 					"mn" : "Ci64",
@@ -2576,6 +2685,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "<(Ci64,Ci64):b",
+			"ctor" : "$arg0 < $arg1",
 			"args" : [
 				{
 					"mn" : "Ci64",
@@ -2591,6 +2701,7 @@
 		{
 			"resMn" : "i64",
 			"mn" : "~(Ci64):i64",
+			"ctor" : "$arg0 ~",
 			"args" : [
 				{
 					"mn" : "Ci64",
@@ -2602,6 +2713,7 @@
 		{
 			"resMn" : "i64",
 			"mn" : "&(Ci64,Ci64):i64",
+			"ctor" : "$arg0 & $arg1",
 			"args" : [
 				{
 					"mn" : "Ci64",
@@ -2617,6 +2729,7 @@
 		{
 			"resMn" : "i64",
 			"mn" : "|(Ci64,Ci64):i64",
+			"ctor" : "$arg0 | $arg1",
 			"args" : [
 				{
 					"mn" : "Ci64",
@@ -2632,6 +2745,7 @@
 		{
 			"resMn" : "i64",
 			"mn" : "^(Ci64,Ci64):i64",
+			"ctor" : "$arg0 ^ $arg1",
 			"args" : [
 				{
 					"mn" : "Ci64",
@@ -2648,6 +2762,7 @@
 			"resMn" : "v",
 			"mn" : "&=(&Ii64,Ci64):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 &= $arg1",
 			"args" : [
 				{
 					"mn" : "&Ii64",
@@ -2664,6 +2779,7 @@
 			"resMn" : "v",
 			"mn" : "|=(&Ii64,Ci64):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 |= $arg1",
 			"args" : [
 				{
 					"mn" : "&Ii64",
@@ -2680,6 +2796,7 @@
 			"resMn" : "v",
 			"mn" : "^=(&Ii64,Ci64):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 ^= $arg1",
 			"args" : [
 				{
 					"mn" : "&Ii64",
@@ -2695,6 +2812,7 @@
 		{
 			"resMn" : "i64",
 			"mn" : "<<(Ci64,Ci64):i64",
+			"ctor" : "$arg0 << $arg1",
 			"args" : [
 				{
 					"mn" : "Ci64",
@@ -2710,6 +2828,7 @@
 		{
 			"resMn" : "i64",
 			"mn" : ">>(Ci64,Ci64):i64",
+			"ctor" : "$arg0 >> $arg1",
 			"args" : [
 				{
 					"mn" : "Ci64",
@@ -2725,6 +2844,7 @@
 		{
 			"resMn" : "i64",
 			"mn" : "<<<(Ci64,Ci64):i64",
+			"ctor" : "$arg0 <<< $arg1",
 			"args" : [
 				{
 					"mn" : "Ci64",
@@ -2740,6 +2860,7 @@
 		{
 			"resMn" : "i64",
 			"mn" : ">>>(Ci64,Ci64):i64",
+			"ctor" : "$arg0 >>> $arg1",
 			"args" : [
 				{
 					"mn" : "Ci64",
@@ -2756,6 +2877,7 @@
 			"resMn" : "v",
 			"mn" : "<<=(&Ii64,Ci64):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 <<= $arg1",
 			"args" : [
 				{
 					"mn" : "&Ii64",
@@ -2772,6 +2894,7 @@
 			"resMn" : "v",
 			"mn" : ">>=(&Ii64,Ci64):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 >>= $arg1",
 			"args" : [
 				{
 					"mn" : "&Ii64",
@@ -2788,6 +2911,7 @@
 			"resMn" : "v",
 			"mn" : "<<<=(&Ii64,Ci64):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 <<<= $arg1",
 			"args" : [
 				{
 					"mn" : "&Ii64",
@@ -2804,6 +2928,7 @@
 			"resMn" : "v",
 			"mn" : ">>>=(&Ii64,Ci64):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 >>>= $arg1",
 			"args" : [
 				{
 					"mn" : "&Ii64",
@@ -2946,6 +3071,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "==(Cu64,Cu64):b",
+			"ctor" : "$arg0 == $arg1",
 			"args" : [
 				{
 					"mn" : "Cu64",
@@ -2961,6 +3087,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "!=(Cu64,Cu64):b",
+			"ctor" : "$arg0 != $arg1",
 			"args" : [
 				{
 					"mn" : "Cu64",
@@ -2976,6 +3103,7 @@
 		{
 			"resMn" : "u64",
 			"mn" : "+(Cu64,Cu64):u64",
+			"ctor" : "$arg0 + $arg1",
 			"args" : [
 				{
 					"mn" : "Cu64",
@@ -2992,6 +3120,7 @@
 			"resMn" : "v",
 			"mn" : "+=(&Iu64,Cu64):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 += $arg1",
 			"args" : [
 				{
 					"mn" : "&Iu64",
@@ -3007,6 +3136,7 @@
 		{
 			"resMn" : "u64",
 			"mn" : "+(Cu64):u64",
+			"ctor" : "$arg0 +",
 			"args" : [
 				{
 					"mn" : "Cu64",
@@ -3018,6 +3148,7 @@
 		{
 			"resMn" : "u64",
 			"mn" : "-(Cu64):u64",
+			"ctor" : "$arg0 -",
 			"args" : [
 				{
 					"mn" : "Cu64",
@@ -3029,6 +3160,7 @@
 		{
 			"resMn" : "u64",
 			"mn" : "-(Cu64,Cu64):u64",
+			"ctor" : "$arg0 - $arg1",
 			"args" : [
 				{
 					"mn" : "Cu64",
@@ -3045,6 +3177,7 @@
 			"resMn" : "v",
 			"mn" : "-=(&Iu64,Cu64):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 -= $arg1",
 			"args" : [
 				{
 					"mn" : "&Iu64",
@@ -3060,6 +3193,7 @@
 		{
 			"resMn" : "u64",
 			"mn" : "*(Cu64,Cu64):u64",
+			"ctor" : "$arg0 * $arg1",
 			"args" : [
 				{
 					"mn" : "Cu64",
@@ -3075,6 +3209,7 @@
 		{
 			"resMn" : "u64",
 			"mn" : "/(Cu64,Cu64):u64",
+			"ctor" : "$arg0 / $arg1",
 			"args" : [
 				{
 					"mn" : "Cu64",
@@ -3091,6 +3226,7 @@
 			"resMn" : "v",
 			"mn" : "*=(&Iu64,Cu64):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 *= $arg1",
 			"args" : [
 				{
 					"mn" : "&Iu64",
@@ -3107,6 +3243,7 @@
 			"resMn" : "v",
 			"mn" : "/=(&Iu64,Cu64):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 /= $arg1",
 			"args" : [
 				{
 					"mn" : "&Iu64",
@@ -3122,6 +3259,7 @@
 		{
 			"resMn" : "u64",
 			"mn" : "%(Cu64,Cu64):u64",
+			"ctor" : "$arg0 % $arg1",
 			"args" : [
 				{
 					"mn" : "Cu64",
@@ -3138,6 +3276,7 @@
 			"resMn" : "v",
 			"mn" : "%=(&Iu64,Cu64):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 %= $arg1",
 			"args" : [
 				{
 					"mn" : "&Iu64",
@@ -3154,6 +3293,7 @@
 			"resMn" : "u64",
 			"mn" : "++(&Iu64):u64",
 			"sideeffect" : true,
+			"ctor" : "$arg0 ++",
 			"args" : [
 				{
 					"mn" : "&Iu64",
@@ -3166,6 +3306,7 @@
 			"resMn" : "u64",
 			"mn" : "--(&Iu64):u64",
 			"sideeffect" : true,
+			"ctor" : "$arg0 --",
 			"args" : [
 				{
 					"mn" : "&Iu64",
@@ -3201,6 +3342,7 @@
 		{
 			"resMn" : "b",
 			"mn" : ">=(Cu64,Cu64):b",
+			"ctor" : "$arg0 >= $arg1",
 			"args" : [
 				{
 					"mn" : "Cu64",
@@ -3216,6 +3358,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "<=(Cu64,Cu64):b",
+			"ctor" : "$arg0 <= $arg1",
 			"args" : [
 				{
 					"mn" : "Cu64",
@@ -3231,6 +3374,7 @@
 		{
 			"resMn" : "b",
 			"mn" : ">(Cu64,Cu64):b",
+			"ctor" : "$arg0 > $arg1",
 			"args" : [
 				{
 					"mn" : "Cu64",
@@ -3246,6 +3390,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "<(Cu64,Cu64):b",
+			"ctor" : "$arg0 < $arg1",
 			"args" : [
 				{
 					"mn" : "Cu64",
@@ -3261,6 +3406,7 @@
 		{
 			"resMn" : "u64",
 			"mn" : "~(Cu64):u64",
+			"ctor" : "$arg0 ~",
 			"args" : [
 				{
 					"mn" : "Cu64",
@@ -3272,6 +3418,7 @@
 		{
 			"resMn" : "u64",
 			"mn" : "&(Cu64,Cu64):u64",
+			"ctor" : "$arg0 & $arg1",
 			"args" : [
 				{
 					"mn" : "Cu64",
@@ -3287,6 +3434,7 @@
 		{
 			"resMn" : "u64",
 			"mn" : "|(Cu64,Cu64):u64",
+			"ctor" : "$arg0 | $arg1",
 			"args" : [
 				{
 					"mn" : "Cu64",
@@ -3302,6 +3450,7 @@
 		{
 			"resMn" : "u64",
 			"mn" : "^(Cu64,Cu64):u64",
+			"ctor" : "$arg0 ^ $arg1",
 			"args" : [
 				{
 					"mn" : "Cu64",
@@ -3318,6 +3467,7 @@
 			"resMn" : "v",
 			"mn" : "&=(&Iu64,Cu64):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 &= $arg1",
 			"args" : [
 				{
 					"mn" : "&Iu64",
@@ -3334,6 +3484,7 @@
 			"resMn" : "v",
 			"mn" : "|=(&Iu64,Cu64):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 |= $arg1",
 			"args" : [
 				{
 					"mn" : "&Iu64",
@@ -3350,6 +3501,7 @@
 			"resMn" : "v",
 			"mn" : "^=(&Iu64,Cu64):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 ^= $arg1",
 			"args" : [
 				{
 					"mn" : "&Iu64",
@@ -3365,6 +3517,7 @@
 		{
 			"resMn" : "u64",
 			"mn" : "<<(Cu64,Cu64):u64",
+			"ctor" : "$arg0 << $arg1",
 			"args" : [
 				{
 					"mn" : "Cu64",
@@ -3380,6 +3533,7 @@
 		{
 			"resMn" : "u64",
 			"mn" : ">>(Cu64,Cu64):u64",
+			"ctor" : "$arg0 >> $arg1",
 			"args" : [
 				{
 					"mn" : "Cu64",
@@ -3395,6 +3549,7 @@
 		{
 			"resMn" : "u64",
 			"mn" : "<<<(Cu64,Cu64):u64",
+			"ctor" : "$arg0 <<< $arg1",
 			"args" : [
 				{
 					"mn" : "Cu64",
@@ -3410,6 +3565,7 @@
 		{
 			"resMn" : "u64",
 			"mn" : ">>>(Cu64,Cu64):u64",
+			"ctor" : "$arg0 >>> $arg1",
 			"args" : [
 				{
 					"mn" : "Cu64",
@@ -3426,6 +3582,7 @@
 			"resMn" : "v",
 			"mn" : "<<=(&Iu64,Cu64):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 <<= $arg1",
 			"args" : [
 				{
 					"mn" : "&Iu64",
@@ -3442,6 +3599,7 @@
 			"resMn" : "v",
 			"mn" : ">>=(&Iu64,Cu64):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 >>= $arg1",
 			"args" : [
 				{
 					"mn" : "&Iu64",
@@ -3458,6 +3616,7 @@
 			"resMn" : "v",
 			"mn" : "<<<=(&Iu64,Cu64):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 <<<= $arg1",
 			"args" : [
 				{
 					"mn" : "&Iu64",
@@ -3474,6 +3633,7 @@
 			"resMn" : "v",
 			"mn" : ">>>=(&Iu64,Cu64):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 >>>= $arg1",
 			"args" : [
 				{
 					"mn" : "&Iu64",
@@ -3616,6 +3776,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "==(Cf,Cf):b",
+			"ctor" : "$arg0 == $arg1",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -3631,6 +3792,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "!=(Cf,Cf):b",
+			"ctor" : "$arg0 != $arg1",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -3646,6 +3808,7 @@
 		{
 			"resMn" : "f",
 			"mn" : "+(Cf,Cf):f",
+			"ctor" : "$arg0 + $arg1",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -3662,6 +3825,7 @@
 			"resMn" : "v",
 			"mn" : "+=(&If,Cf):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 += $arg1",
 			"args" : [
 				{
 					"mn" : "&If",
@@ -3677,6 +3841,7 @@
 		{
 			"resMn" : "f",
 			"mn" : "+(Cf):f",
+			"ctor" : "$arg0 +",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -3688,6 +3853,7 @@
 		{
 			"resMn" : "f",
 			"mn" : "-(Cf):f",
+			"ctor" : "$arg0 -",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -3699,6 +3865,7 @@
 		{
 			"resMn" : "f",
 			"mn" : "-(Cf,Cf):f",
+			"ctor" : "$arg0 - $arg1",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -3715,6 +3882,7 @@
 			"resMn" : "v",
 			"mn" : "-=(&If,Cf):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 -= $arg1",
 			"args" : [
 				{
 					"mn" : "&If",
@@ -3730,6 +3898,7 @@
 		{
 			"resMn" : "f",
 			"mn" : "*(Cf,Cf):f",
+			"ctor" : "$arg0 * $arg1",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -3745,6 +3914,7 @@
 		{
 			"resMn" : "f",
 			"mn" : "/(Cf,Cf):f",
+			"ctor" : "$arg0 / $arg1",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -3761,6 +3931,7 @@
 			"resMn" : "v",
 			"mn" : "*=(&If,Cf):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 *= $arg1",
 			"args" : [
 				{
 					"mn" : "&If",
@@ -3777,6 +3948,7 @@
 			"resMn" : "v",
 			"mn" : "/=(&If,Cf):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 /= $arg1",
 			"args" : [
 				{
 					"mn" : "&If",
@@ -3792,6 +3964,7 @@
 		{
 			"resMn" : "f",
 			"mn" : "%(Cf,Cf):f",
+			"ctor" : "$arg0 % $arg1",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -3808,6 +3981,7 @@
 			"resMn" : "v",
 			"mn" : "%=(&If,Cf):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 %= $arg1",
 			"args" : [
 				{
 					"mn" : "&If",
@@ -3824,6 +3998,7 @@
 			"resMn" : "f",
 			"mn" : "++(&If):f",
 			"sideeffect" : true,
+			"ctor" : "$arg0 ++",
 			"args" : [
 				{
 					"mn" : "&If",
@@ -3836,6 +4011,7 @@
 			"resMn" : "f",
 			"mn" : "--(&If):f",
 			"sideeffect" : true,
+			"ctor" : "$arg0 --",
 			"args" : [
 				{
 					"mn" : "&If",
@@ -3871,6 +4047,7 @@
 		{
 			"resMn" : "b",
 			"mn" : ">=(Cf,Cf):b",
+			"ctor" : "$arg0 >= $arg1",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -3886,6 +4063,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "<=(Cf,Cf):b",
+			"ctor" : "$arg0 <= $arg1",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -3901,6 +4079,7 @@
 		{
 			"resMn" : "b",
 			"mn" : ">(Cf,Cf):b",
+			"ctor" : "$arg0 > $arg1",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -3916,6 +4095,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "<(Cf,Cf):b",
+			"ctor" : "$arg0 < $arg1",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -4058,6 +4238,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "==(Cd,Cd):b",
+			"ctor" : "$arg0 == $arg1",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -4073,6 +4254,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "!=(Cd,Cd):b",
+			"ctor" : "$arg0 != $arg1",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -4088,6 +4270,7 @@
 		{
 			"resMn" : "d",
 			"mn" : "+(Cd,Cd):d",
+			"ctor" : "$arg0 + $arg1",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -4104,6 +4287,7 @@
 			"resMn" : "v",
 			"mn" : "+=(&Id,Cd):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 += $arg1",
 			"args" : [
 				{
 					"mn" : "&Id",
@@ -4119,6 +4303,7 @@
 		{
 			"resMn" : "d",
 			"mn" : "+(Cd):d",
+			"ctor" : "$arg0 +",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -4130,6 +4315,7 @@
 		{
 			"resMn" : "d",
 			"mn" : "-(Cd):d",
+			"ctor" : "$arg0 -",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -4141,6 +4327,7 @@
 		{
 			"resMn" : "d",
 			"mn" : "-(Cd,Cd):d",
+			"ctor" : "$arg0 - $arg1",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -4157,6 +4344,7 @@
 			"resMn" : "v",
 			"mn" : "-=(&Id,Cd):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 -= $arg1",
 			"args" : [
 				{
 					"mn" : "&Id",
@@ -4172,6 +4360,7 @@
 		{
 			"resMn" : "d",
 			"mn" : "*(Cd,Cd):d",
+			"ctor" : "$arg0 * $arg1",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -4187,6 +4376,7 @@
 		{
 			"resMn" : "d",
 			"mn" : "/(Cd,Cd):d",
+			"ctor" : "$arg0 / $arg1",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -4203,6 +4393,7 @@
 			"resMn" : "v",
 			"mn" : "*=(&Id,Cd):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 *= $arg1",
 			"args" : [
 				{
 					"mn" : "&Id",
@@ -4219,6 +4410,7 @@
 			"resMn" : "v",
 			"mn" : "/=(&Id,Cd):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 /= $arg1",
 			"args" : [
 				{
 					"mn" : "&Id",
@@ -4234,6 +4426,7 @@
 		{
 			"resMn" : "d",
 			"mn" : "%(Cd,Cd):d",
+			"ctor" : "$arg0 % $arg1",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -4250,6 +4443,7 @@
 			"resMn" : "v",
 			"mn" : "%=(&Id,Cd):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 %= $arg1",
 			"args" : [
 				{
 					"mn" : "&Id",
@@ -4266,6 +4460,7 @@
 			"resMn" : "d",
 			"mn" : "++(&Id):d",
 			"sideeffect" : true,
+			"ctor" : "$arg0 ++",
 			"args" : [
 				{
 					"mn" : "&Id",
@@ -4278,6 +4473,7 @@
 			"resMn" : "d",
 			"mn" : "--(&Id):d",
 			"sideeffect" : true,
+			"ctor" : "$arg0 --",
 			"args" : [
 				{
 					"mn" : "&Id",
@@ -4313,6 +4509,7 @@
 		{
 			"resMn" : "b",
 			"mn" : ">=(Cd,Cd):b",
+			"ctor" : "$arg0 >= $arg1",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -4328,6 +4525,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "<=(Cd,Cd):b",
+			"ctor" : "$arg0 <= $arg1",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -4343,6 +4541,7 @@
 		{
 			"resMn" : "b",
 			"mn" : ">(Cd,Cd):b",
+			"ctor" : "$arg0 > $arg1",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -4358,6 +4557,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "<(Cd,Cd):b",
+			"ctor" : "$arg0 < $arg1",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -4500,6 +4700,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "==(Ci8,Ci8):b",
+			"ctor" : "$arg0 == $arg1",
 			"args" : [
 				{
 					"mn" : "Ci8",
@@ -4515,6 +4716,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "!=(Ci8,Ci8):b",
+			"ctor" : "$arg0 != $arg1",
 			"args" : [
 				{
 					"mn" : "Ci8",
@@ -4530,6 +4732,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "==(Cu8,Cu8):b",
+			"ctor" : "$arg0 == $arg1",
 			"args" : [
 				{
 					"mn" : "Cu8",
@@ -4545,6 +4748,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "!=(Cu8,Cu8):b",
+			"ctor" : "$arg0 != $arg1",
 			"args" : [
 				{
 					"mn" : "Cu8",
@@ -4560,6 +4764,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "==(Ci16,Ci16):b",
+			"ctor" : "$arg0 == $arg1",
 			"args" : [
 				{
 					"mn" : "Ci16",
@@ -4575,6 +4780,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "!=(Ci16,Ci16):b",
+			"ctor" : "$arg0 != $arg1",
 			"args" : [
 				{
 					"mn" : "Ci16",
@@ -4590,6 +4796,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "==(Cu16,Cu16):b",
+			"ctor" : "$arg0 == $arg1",
 			"args" : [
 				{
 					"mn" : "Cu16",
@@ -4605,6 +4812,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "!=(Cu16,Cu16):b",
+			"ctor" : "$arg0 != $arg1",
 			"args" : [
 				{
 					"mn" : "Cu16",
@@ -4620,6 +4828,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "==(CE,CE):b",
+			"ctor" : "$arg0 == $arg1",
 			"args" : [
 				{
 					"mn" : "CE",
@@ -4635,6 +4844,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "!=(CE,CE):b",
+			"ctor" : "$arg0 != $arg1",
 			"args" : [
 				{
 					"mn" : "CE",
@@ -4672,6 +4882,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "==(CE8,CE8):b",
+			"ctor" : "$arg0 == $arg1",
 			"args" : [
 				{
 					"mn" : "CE8",
@@ -4687,6 +4898,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "!=(CE8,CE8):b",
+			"ctor" : "$arg0 != $arg1",
 			"args" : [
 				{
 					"mn" : "CE8",
@@ -4724,6 +4936,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "==(CE16,CE16):b",
+			"ctor" : "$arg0 == $arg1",
 			"args" : [
 				{
 					"mn" : "CE16",
@@ -4739,6 +4952,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "!=(CE16,CE16):b",
+			"ctor" : "$arg0 != $arg1",
 			"args" : [
 				{
 					"mn" : "CE16",
@@ -4776,6 +4990,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "==(C@@,C@@):b",
+			"ctor" : "$arg0 == $arg1",
 			"args" : [
 				{
 					"mn" : "C@@",
@@ -4791,6 +5006,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "!=(C@@,C@@):b",
+			"ctor" : "$arg0 != $arg1",
 			"args" : [
 				{
 					"mn" : "C@@",
@@ -4806,6 +5022,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "==(C@@,CI?):b",
+			"ctor" : "$arg0 == $arg1",
 			"args" : [
 				{
 					"mn" : "C@@",
@@ -4821,6 +5038,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "!=(C@@,CI?):b",
+			"ctor" : "$arg0 != $arg1",
 			"args" : [
 				{
 					"mn" : "C@@",
@@ -4836,6 +5054,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "==(C@,CI?):b",
+			"ctor" : "$arg0 == $arg1",
 			"args" : [
 				{
 					"mn" : "C@",
@@ -4851,6 +5070,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "!=(C@,CI?):b",
+			"ctor" : "$arg0 != $arg1",
 			"args" : [
 				{
 					"mn" : "C@",
@@ -4866,6 +5086,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "==(CIs,CIs):b",
+			"ctor" : "$arg0 == $arg1",
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -4881,6 +5102,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "!=(CIs,CIs):b",
+			"ctor" : "$arg0 != $arg1",
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -4896,6 +5118,7 @@
 		{
 			"resMn" : "b",
 			"mn" : ">=(CIs,CIs):b",
+			"ctor" : "$arg0 >= $arg1",
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -4911,6 +5134,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "<=(CIs,CIs):b",
+			"ctor" : "$arg0 <= $arg1",
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -4926,6 +5150,7 @@
 		{
 			"resMn" : "b",
 			"mn" : ">(CIs,CIs):b",
+			"ctor" : "$arg0 > $arg1",
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -4941,6 +5166,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "<(CIs,CIs):b",
+			"ctor" : "$arg0 < $arg1",
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -4956,6 +5182,7 @@
 		{
 			"resMn" : "s",
 			"mn" : "+(CIs,CIs):s",
+			"ctor" : "$arg0 + $arg1",
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -4972,6 +5199,7 @@
 			"resMn" : "v",
 			"mn" : "+=(&Is,CIs):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 += $arg1",
 			"args" : [
 				{
 					"mn" : "&Is",
@@ -5042,6 +5270,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "==(Cf2,Cf2):b",
+			"ctor" : "$arg0 == $arg1",
 			"args" : [
 				{
 					"mn" : "Cf2",
@@ -5057,6 +5286,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "!=(Cf2,Cf2):b",
+			"ctor" : "$arg0 != $arg1",
 			"args" : [
 				{
 					"mn" : "Cf2",
@@ -5072,6 +5302,7 @@
 		{
 			"resMn" : "f2",
 			"mn" : "+(Cf2,Cf2):f2",
+			"ctor" : "$arg0 + $arg1",
 			"args" : [
 				{
 					"mn" : "Cf2",
@@ -5088,6 +5319,7 @@
 			"resMn" : "v",
 			"mn" : "+=(&If2,Cf2):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 += $arg1",
 			"args" : [
 				{
 					"mn" : "&If2",
@@ -5103,6 +5335,7 @@
 		{
 			"resMn" : "f2",
 			"mn" : "+(Cf2):f2",
+			"ctor" : "$arg0 +",
 			"args" : [
 				{
 					"mn" : "Cf2",
@@ -5114,6 +5347,7 @@
 		{
 			"resMn" : "f2",
 			"mn" : "-(Cf2):f2",
+			"ctor" : "$arg0 -",
 			"args" : [
 				{
 					"mn" : "Cf2",
@@ -5125,6 +5359,7 @@
 		{
 			"resMn" : "f2",
 			"mn" : "-(Cf2,Cf2):f2",
+			"ctor" : "$arg0 - $arg1",
 			"args" : [
 				{
 					"mn" : "Cf2",
@@ -5141,6 +5376,7 @@
 			"resMn" : "v",
 			"mn" : "-=(&If2,Cf2):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 -= $arg1",
 			"args" : [
 				{
 					"mn" : "&If2",
@@ -5156,6 +5392,7 @@
 		{
 			"resMn" : "f2",
 			"mn" : "*(Cf2,Cf2):f2",
+			"ctor" : "$arg0 * $arg1",
 			"args" : [
 				{
 					"mn" : "Cf2",
@@ -5171,6 +5408,7 @@
 		{
 			"resMn" : "f2",
 			"mn" : "/(Cf2,Cf2):f2",
+			"ctor" : "$arg0 / $arg1",
 			"args" : [
 				{
 					"mn" : "Cf2",
@@ -5187,6 +5425,7 @@
 			"resMn" : "v",
 			"mn" : "*=(&If2,Cf2):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 *= $arg1",
 			"args" : [
 				{
 					"mn" : "&If2",
@@ -5203,6 +5442,7 @@
 			"resMn" : "v",
 			"mn" : "/=(&If2,Cf2):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 /= $arg1",
 			"args" : [
 				{
 					"mn" : "&If2",
@@ -5218,6 +5458,7 @@
 		{
 			"resMn" : "f2",
 			"mn" : "*(Cf,Cf2):f2",
+			"ctor" : "$arg0 * $arg1",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -5233,6 +5474,7 @@
 		{
 			"resMn" : "f2",
 			"mn" : "/(Cf,Cf2):f2",
+			"ctor" : "$arg0 / $arg1",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -5248,6 +5490,7 @@
 		{
 			"resMn" : "f2",
 			"mn" : "*(Cf2,Cf):f2",
+			"ctor" : "$arg0 * $arg1",
 			"args" : [
 				{
 					"mn" : "Cf2",
@@ -5263,6 +5506,7 @@
 		{
 			"resMn" : "f2",
 			"mn" : "/(Cf2,Cf):f2",
+			"ctor" : "$arg0 / $arg1",
 			"args" : [
 				{
 					"mn" : "Cf2",
@@ -5279,6 +5523,7 @@
 			"resMn" : "v",
 			"mn" : "*=(&If2,Cf):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 *= $arg1",
 			"args" : [
 				{
 					"mn" : "&If2",
@@ -5295,6 +5540,7 @@
 			"resMn" : "v",
 			"mn" : "/=(&If2,Cf):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 /= $arg1",
 			"args" : [
 				{
 					"mn" : "&If2",
@@ -5310,6 +5556,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "==(Cf3,Cf3):b",
+			"ctor" : "$arg0 == $arg1",
 			"args" : [
 				{
 					"mn" : "Cf3",
@@ -5325,6 +5572,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "!=(Cf3,Cf3):b",
+			"ctor" : "$arg0 != $arg1",
 			"args" : [
 				{
 					"mn" : "Cf3",
@@ -5340,6 +5588,7 @@
 		{
 			"resMn" : "f3",
 			"mn" : "+(Cf3,Cf3):f3",
+			"ctor" : "$arg0 + $arg1",
 			"args" : [
 				{
 					"mn" : "Cf3",
@@ -5356,6 +5605,7 @@
 			"resMn" : "v",
 			"mn" : "+=(&If3,Cf3):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 += $arg1",
 			"args" : [
 				{
 					"mn" : "&If3",
@@ -5371,6 +5621,7 @@
 		{
 			"resMn" : "f3",
 			"mn" : "+(Cf3):f3",
+			"ctor" : "$arg0 +",
 			"args" : [
 				{
 					"mn" : "Cf3",
@@ -5382,6 +5633,7 @@
 		{
 			"resMn" : "f3",
 			"mn" : "-(Cf3):f3",
+			"ctor" : "$arg0 -",
 			"args" : [
 				{
 					"mn" : "Cf3",
@@ -5393,6 +5645,7 @@
 		{
 			"resMn" : "f3",
 			"mn" : "-(Cf3,Cf3):f3",
+			"ctor" : "$arg0 - $arg1",
 			"args" : [
 				{
 					"mn" : "Cf3",
@@ -5409,6 +5662,7 @@
 			"resMn" : "v",
 			"mn" : "-=(&If3,Cf3):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 -= $arg1",
 			"args" : [
 				{
 					"mn" : "&If3",
@@ -5424,6 +5678,7 @@
 		{
 			"resMn" : "f3",
 			"mn" : "*(Cf3,Cf3):f3",
+			"ctor" : "$arg0 * $arg1",
 			"args" : [
 				{
 					"mn" : "Cf3",
@@ -5439,6 +5694,7 @@
 		{
 			"resMn" : "f3",
 			"mn" : "/(Cf3,Cf3):f3",
+			"ctor" : "$arg0 / $arg1",
 			"args" : [
 				{
 					"mn" : "Cf3",
@@ -5455,6 +5711,7 @@
 			"resMn" : "v",
 			"mn" : "*=(&If3,Cf3):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 *= $arg1",
 			"args" : [
 				{
 					"mn" : "&If3",
@@ -5471,6 +5728,7 @@
 			"resMn" : "v",
 			"mn" : "/=(&If3,Cf3):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 /= $arg1",
 			"args" : [
 				{
 					"mn" : "&If3",
@@ -5486,6 +5744,7 @@
 		{
 			"resMn" : "f3",
 			"mn" : "*(Cf,Cf3):f3",
+			"ctor" : "$arg0 * $arg1",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -5501,6 +5760,7 @@
 		{
 			"resMn" : "f3",
 			"mn" : "/(Cf,Cf3):f3",
+			"ctor" : "$arg0 / $arg1",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -5516,6 +5776,7 @@
 		{
 			"resMn" : "f3",
 			"mn" : "*(Cf3,Cf):f3",
+			"ctor" : "$arg0 * $arg1",
 			"args" : [
 				{
 					"mn" : "Cf3",
@@ -5531,6 +5792,7 @@
 		{
 			"resMn" : "f3",
 			"mn" : "/(Cf3,Cf):f3",
+			"ctor" : "$arg0 / $arg1",
 			"args" : [
 				{
 					"mn" : "Cf3",
@@ -5547,6 +5809,7 @@
 			"resMn" : "v",
 			"mn" : "*=(&If3,Cf):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 *= $arg1",
 			"args" : [
 				{
 					"mn" : "&If3",
@@ -5563,6 +5826,7 @@
 			"resMn" : "v",
 			"mn" : "/=(&If3,Cf):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 /= $arg1",
 			"args" : [
 				{
 					"mn" : "&If3",
@@ -5578,6 +5842,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "==(Cf4,Cf4):b",
+			"ctor" : "$arg0 == $arg1",
 			"args" : [
 				{
 					"mn" : "Cf4",
@@ -5593,6 +5858,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "!=(Cf4,Cf4):b",
+			"ctor" : "$arg0 != $arg1",
 			"args" : [
 				{
 					"mn" : "Cf4",
@@ -5608,6 +5874,7 @@
 		{
 			"resMn" : "f4",
 			"mn" : "+(Cf4,Cf4):f4",
+			"ctor" : "$arg0 + $arg1",
 			"args" : [
 				{
 					"mn" : "Cf4",
@@ -5624,6 +5891,7 @@
 			"resMn" : "v",
 			"mn" : "+=(&If4,Cf4):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 += $arg1",
 			"args" : [
 				{
 					"mn" : "&If4",
@@ -5639,6 +5907,7 @@
 		{
 			"resMn" : "f4",
 			"mn" : "+(Cf4):f4",
+			"ctor" : "$arg0 +",
 			"args" : [
 				{
 					"mn" : "Cf4",
@@ -5650,6 +5919,7 @@
 		{
 			"resMn" : "f4",
 			"mn" : "-(Cf4):f4",
+			"ctor" : "$arg0 -",
 			"args" : [
 				{
 					"mn" : "Cf4",
@@ -5661,6 +5931,7 @@
 		{
 			"resMn" : "f4",
 			"mn" : "-(Cf4,Cf4):f4",
+			"ctor" : "$arg0 - $arg1",
 			"args" : [
 				{
 					"mn" : "Cf4",
@@ -5677,6 +5948,7 @@
 			"resMn" : "v",
 			"mn" : "-=(&If4,Cf4):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 -= $arg1",
 			"args" : [
 				{
 					"mn" : "&If4",
@@ -5692,6 +5964,7 @@
 		{
 			"resMn" : "f4",
 			"mn" : "*(Cf4,Cf4):f4",
+			"ctor" : "$arg0 * $arg1",
 			"args" : [
 				{
 					"mn" : "Cf4",
@@ -5707,6 +5980,7 @@
 		{
 			"resMn" : "f4",
 			"mn" : "/(Cf4,Cf4):f4",
+			"ctor" : "$arg0 / $arg1",
 			"args" : [
 				{
 					"mn" : "Cf4",
@@ -5723,6 +5997,7 @@
 			"resMn" : "v",
 			"mn" : "*=(&If4,Cf4):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 *= $arg1",
 			"args" : [
 				{
 					"mn" : "&If4",
@@ -5739,6 +6014,7 @@
 			"resMn" : "v",
 			"mn" : "/=(&If4,Cf4):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 /= $arg1",
 			"args" : [
 				{
 					"mn" : "&If4",
@@ -5754,6 +6030,7 @@
 		{
 			"resMn" : "f4",
 			"mn" : "*(Cf,Cf4):f4",
+			"ctor" : "$arg0 * $arg1",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -5769,6 +6046,7 @@
 		{
 			"resMn" : "f4",
 			"mn" : "/(Cf,Cf4):f4",
+			"ctor" : "$arg0 / $arg1",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -5784,6 +6062,7 @@
 		{
 			"resMn" : "f4",
 			"mn" : "*(Cf4,Cf):f4",
+			"ctor" : "$arg0 * $arg1",
 			"args" : [
 				{
 					"mn" : "Cf4",
@@ -5799,6 +6078,7 @@
 		{
 			"resMn" : "f4",
 			"mn" : "/(Cf4,Cf):f4",
+			"ctor" : "$arg0 / $arg1",
 			"args" : [
 				{
 					"mn" : "Cf4",
@@ -5815,6 +6095,7 @@
 			"resMn" : "v",
 			"mn" : "*=(&If4,Cf):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 *= $arg1",
 			"args" : [
 				{
 					"mn" : "&If4",
@@ -5831,6 +6112,7 @@
 			"resMn" : "v",
 			"mn" : "/=(&If4,Cf):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 /= $arg1",
 			"args" : [
 				{
 					"mn" : "&If4",
@@ -5846,6 +6128,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "==(Ci2,Ci2):b",
+			"ctor" : "$arg0 == $arg1",
 			"args" : [
 				{
 					"mn" : "Ci2",
@@ -5861,6 +6144,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "!=(Ci2,Ci2):b",
+			"ctor" : "$arg0 != $arg1",
 			"args" : [
 				{
 					"mn" : "Ci2",
@@ -5876,6 +6160,7 @@
 		{
 			"resMn" : "i2",
 			"mn" : "+(Ci2,Ci2):i2",
+			"ctor" : "$arg0 + $arg1",
 			"args" : [
 				{
 					"mn" : "Ci2",
@@ -5892,6 +6177,7 @@
 			"resMn" : "v",
 			"mn" : "+=(&Ii2,Ci2):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 += $arg1",
 			"args" : [
 				{
 					"mn" : "&Ii2",
@@ -5907,6 +6193,7 @@
 		{
 			"resMn" : "i2",
 			"mn" : "+(Ci2):i2",
+			"ctor" : "$arg0 +",
 			"args" : [
 				{
 					"mn" : "Ci2",
@@ -5918,6 +6205,7 @@
 		{
 			"resMn" : "i2",
 			"mn" : "-(Ci2):i2",
+			"ctor" : "$arg0 -",
 			"args" : [
 				{
 					"mn" : "Ci2",
@@ -5929,6 +6217,7 @@
 		{
 			"resMn" : "i2",
 			"mn" : "-(Ci2,Ci2):i2",
+			"ctor" : "$arg0 - $arg1",
 			"args" : [
 				{
 					"mn" : "Ci2",
@@ -5945,6 +6234,7 @@
 			"resMn" : "v",
 			"mn" : "-=(&Ii2,Ci2):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 -= $arg1",
 			"args" : [
 				{
 					"mn" : "&Ii2",
@@ -5960,6 +6250,7 @@
 		{
 			"resMn" : "i2",
 			"mn" : "*(Ci2,Ci2):i2",
+			"ctor" : "$arg0 * $arg1",
 			"args" : [
 				{
 					"mn" : "Ci2",
@@ -5975,6 +6266,7 @@
 		{
 			"resMn" : "i2",
 			"mn" : "/(Ci2,Ci2):i2",
+			"ctor" : "$arg0 / $arg1",
 			"args" : [
 				{
 					"mn" : "Ci2",
@@ -5991,6 +6283,7 @@
 			"resMn" : "v",
 			"mn" : "*=(&Ii2,Ci2):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 *= $arg1",
 			"args" : [
 				{
 					"mn" : "&Ii2",
@@ -6007,6 +6300,7 @@
 			"resMn" : "v",
 			"mn" : "/=(&Ii2,Ci2):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 /= $arg1",
 			"args" : [
 				{
 					"mn" : "&Ii2",
@@ -6022,6 +6316,7 @@
 		{
 			"resMn" : "i2",
 			"mn" : "*(Ci,Ci2):i2",
+			"ctor" : "$arg0 * $arg1",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -6037,6 +6332,7 @@
 		{
 			"resMn" : "i2",
 			"mn" : "/(Ci,Ci2):i2",
+			"ctor" : "$arg0 / $arg1",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -6052,6 +6348,7 @@
 		{
 			"resMn" : "i2",
 			"mn" : "*(Ci2,Ci):i2",
+			"ctor" : "$arg0 * $arg1",
 			"args" : [
 				{
 					"mn" : "Ci2",
@@ -6067,6 +6364,7 @@
 		{
 			"resMn" : "i2",
 			"mn" : "/(Ci2,Ci):i2",
+			"ctor" : "$arg0 / $arg1",
 			"args" : [
 				{
 					"mn" : "Ci2",
@@ -6083,6 +6381,7 @@
 			"resMn" : "v",
 			"mn" : "*=(&Ii2,Ci):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 *= $arg1",
 			"args" : [
 				{
 					"mn" : "&Ii2",
@@ -6099,6 +6398,7 @@
 			"resMn" : "v",
 			"mn" : "/=(&Ii2,Ci):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 /= $arg1",
 			"args" : [
 				{
 					"mn" : "&Ii2",
@@ -6114,6 +6414,7 @@
 		{
 			"resMn" : "i2",
 			"mn" : "&(Ci2,Ci2):i2",
+			"ctor" : "$arg0 & $arg1",
 			"args" : [
 				{
 					"mn" : "Ci2",
@@ -6129,6 +6430,7 @@
 		{
 			"resMn" : "i2",
 			"mn" : "|(Ci2,Ci2):i2",
+			"ctor" : "$arg0 | $arg1",
 			"args" : [
 				{
 					"mn" : "Ci2",
@@ -6144,6 +6446,7 @@
 		{
 			"resMn" : "i2",
 			"mn" : "^(Ci2,Ci2):i2",
+			"ctor" : "$arg0 ^ $arg1",
 			"args" : [
 				{
 					"mn" : "Ci2",
@@ -6159,6 +6462,7 @@
 		{
 			"resMn" : "i2",
 			"mn" : "<<(Ci2,Ci):i2",
+			"ctor" : "$arg0 << $arg1",
 			"args" : [
 				{
 					"mn" : "Ci2",
@@ -6174,6 +6478,7 @@
 		{
 			"resMn" : "i2",
 			"mn" : ">>(Ci2,Ci):i2",
+			"ctor" : "$arg0 >> $arg1",
 			"args" : [
 				{
 					"mn" : "Ci2",
@@ -6190,6 +6495,7 @@
 			"resMn" : "v",
 			"mn" : "&=(&Ii2,Ci2):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 &= $arg1",
 			"args" : [
 				{
 					"mn" : "&Ii2",
@@ -6206,6 +6512,7 @@
 			"resMn" : "v",
 			"mn" : "|=(&Ii2,Ci2):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 |= $arg1",
 			"args" : [
 				{
 					"mn" : "&Ii2",
@@ -6222,6 +6529,7 @@
 			"resMn" : "v",
 			"mn" : "^=(&Ii2,Ci2):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 ^= $arg1",
 			"args" : [
 				{
 					"mn" : "&Ii2",
@@ -6238,6 +6546,7 @@
 			"resMn" : "v",
 			"mn" : "<<=(&Ii2,Ci):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 <<= $arg1",
 			"args" : [
 				{
 					"mn" : "&Ii2",
@@ -6254,6 +6563,7 @@
 			"resMn" : "v",
 			"mn" : ">>=(&Ii2,Ci):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 >>= $arg1",
 			"args" : [
 				{
 					"mn" : "&Ii2",
@@ -6269,6 +6579,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "==(Ci3,Ci3):b",
+			"ctor" : "$arg0 == $arg1",
 			"args" : [
 				{
 					"mn" : "Ci3",
@@ -6284,6 +6595,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "!=(Ci3,Ci3):b",
+			"ctor" : "$arg0 != $arg1",
 			"args" : [
 				{
 					"mn" : "Ci3",
@@ -6299,6 +6611,7 @@
 		{
 			"resMn" : "i3",
 			"mn" : "+(Ci3,Ci3):i3",
+			"ctor" : "$arg0 + $arg1",
 			"args" : [
 				{
 					"mn" : "Ci3",
@@ -6315,6 +6628,7 @@
 			"resMn" : "v",
 			"mn" : "+=(&Ii3,Ci3):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 += $arg1",
 			"args" : [
 				{
 					"mn" : "&Ii3",
@@ -6330,6 +6644,7 @@
 		{
 			"resMn" : "i3",
 			"mn" : "+(Ci3):i3",
+			"ctor" : "$arg0 +",
 			"args" : [
 				{
 					"mn" : "Ci3",
@@ -6341,6 +6656,7 @@
 		{
 			"resMn" : "i3",
 			"mn" : "-(Ci3):i3",
+			"ctor" : "$arg0 -",
 			"args" : [
 				{
 					"mn" : "Ci3",
@@ -6352,6 +6668,7 @@
 		{
 			"resMn" : "i3",
 			"mn" : "-(Ci3,Ci3):i3",
+			"ctor" : "$arg0 - $arg1",
 			"args" : [
 				{
 					"mn" : "Ci3",
@@ -6368,6 +6685,7 @@
 			"resMn" : "v",
 			"mn" : "-=(&Ii3,Ci3):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 -= $arg1",
 			"args" : [
 				{
 					"mn" : "&Ii3",
@@ -6383,6 +6701,7 @@
 		{
 			"resMn" : "i3",
 			"mn" : "*(Ci3,Ci3):i3",
+			"ctor" : "$arg0 * $arg1",
 			"args" : [
 				{
 					"mn" : "Ci3",
@@ -6398,6 +6717,7 @@
 		{
 			"resMn" : "i3",
 			"mn" : "/(Ci3,Ci3):i3",
+			"ctor" : "$arg0 / $arg1",
 			"args" : [
 				{
 					"mn" : "Ci3",
@@ -6414,6 +6734,7 @@
 			"resMn" : "v",
 			"mn" : "*=(&Ii3,Ci3):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 *= $arg1",
 			"args" : [
 				{
 					"mn" : "&Ii3",
@@ -6430,6 +6751,7 @@
 			"resMn" : "v",
 			"mn" : "/=(&Ii3,Ci3):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 /= $arg1",
 			"args" : [
 				{
 					"mn" : "&Ii3",
@@ -6445,6 +6767,7 @@
 		{
 			"resMn" : "i3",
 			"mn" : "*(Ci,Ci3):i3",
+			"ctor" : "$arg0 * $arg1",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -6460,6 +6783,7 @@
 		{
 			"resMn" : "i3",
 			"mn" : "/(Ci,Ci3):i3",
+			"ctor" : "$arg0 / $arg1",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -6475,6 +6799,7 @@
 		{
 			"resMn" : "i3",
 			"mn" : "*(Ci3,Ci):i3",
+			"ctor" : "$arg0 * $arg1",
 			"args" : [
 				{
 					"mn" : "Ci3",
@@ -6490,6 +6815,7 @@
 		{
 			"resMn" : "i3",
 			"mn" : "/(Ci3,Ci):i3",
+			"ctor" : "$arg0 / $arg1",
 			"args" : [
 				{
 					"mn" : "Ci3",
@@ -6506,6 +6832,7 @@
 			"resMn" : "v",
 			"mn" : "*=(&Ii3,Ci):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 *= $arg1",
 			"args" : [
 				{
 					"mn" : "&Ii3",
@@ -6522,6 +6849,7 @@
 			"resMn" : "v",
 			"mn" : "/=(&Ii3,Ci):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 /= $arg1",
 			"args" : [
 				{
 					"mn" : "&Ii3",
@@ -6537,6 +6865,7 @@
 		{
 			"resMn" : "i3",
 			"mn" : "&(Ci3,Ci3):i3",
+			"ctor" : "$arg0 & $arg1",
 			"args" : [
 				{
 					"mn" : "Ci3",
@@ -6552,6 +6881,7 @@
 		{
 			"resMn" : "i3",
 			"mn" : "|(Ci3,Ci3):i3",
+			"ctor" : "$arg0 | $arg1",
 			"args" : [
 				{
 					"mn" : "Ci3",
@@ -6567,6 +6897,7 @@
 		{
 			"resMn" : "i3",
 			"mn" : "^(Ci3,Ci3):i3",
+			"ctor" : "$arg0 ^ $arg1",
 			"args" : [
 				{
 					"mn" : "Ci3",
@@ -6582,6 +6913,7 @@
 		{
 			"resMn" : "i3",
 			"mn" : "<<(Ci3,Ci):i3",
+			"ctor" : "$arg0 << $arg1",
 			"args" : [
 				{
 					"mn" : "Ci3",
@@ -6597,6 +6929,7 @@
 		{
 			"resMn" : "i3",
 			"mn" : ">>(Ci3,Ci):i3",
+			"ctor" : "$arg0 >> $arg1",
 			"args" : [
 				{
 					"mn" : "Ci3",
@@ -6613,6 +6946,7 @@
 			"resMn" : "v",
 			"mn" : "&=(&Ii3,Ci3):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 &= $arg1",
 			"args" : [
 				{
 					"mn" : "&Ii3",
@@ -6629,6 +6963,7 @@
 			"resMn" : "v",
 			"mn" : "|=(&Ii3,Ci3):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 |= $arg1",
 			"args" : [
 				{
 					"mn" : "&Ii3",
@@ -6645,6 +6980,7 @@
 			"resMn" : "v",
 			"mn" : "^=(&Ii3,Ci3):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 ^= $arg1",
 			"args" : [
 				{
 					"mn" : "&Ii3",
@@ -6661,6 +6997,7 @@
 			"resMn" : "v",
 			"mn" : "<<=(&Ii3,Ci):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 <<= $arg1",
 			"args" : [
 				{
 					"mn" : "&Ii3",
@@ -6677,6 +7014,7 @@
 			"resMn" : "v",
 			"mn" : ">>=(&Ii3,Ci):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 >>= $arg1",
 			"args" : [
 				{
 					"mn" : "&Ii3",
@@ -6692,6 +7030,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "==(Ci4,Ci4):b",
+			"ctor" : "$arg0 == $arg1",
 			"args" : [
 				{
 					"mn" : "Ci4",
@@ -6707,6 +7046,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "!=(Ci4,Ci4):b",
+			"ctor" : "$arg0 != $arg1",
 			"args" : [
 				{
 					"mn" : "Ci4",
@@ -6722,6 +7062,7 @@
 		{
 			"resMn" : "i4",
 			"mn" : "+(Ci4,Ci4):i4",
+			"ctor" : "$arg0 + $arg1",
 			"args" : [
 				{
 					"mn" : "Ci4",
@@ -6738,6 +7079,7 @@
 			"resMn" : "v",
 			"mn" : "+=(&Ii4,Ci4):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 += $arg1",
 			"args" : [
 				{
 					"mn" : "&Ii4",
@@ -6753,6 +7095,7 @@
 		{
 			"resMn" : "i4",
 			"mn" : "+(Ci4):i4",
+			"ctor" : "$arg0 +",
 			"args" : [
 				{
 					"mn" : "Ci4",
@@ -6764,6 +7107,7 @@
 		{
 			"resMn" : "i4",
 			"mn" : "-(Ci4):i4",
+			"ctor" : "$arg0 -",
 			"args" : [
 				{
 					"mn" : "Ci4",
@@ -6775,6 +7119,7 @@
 		{
 			"resMn" : "i4",
 			"mn" : "-(Ci4,Ci4):i4",
+			"ctor" : "$arg0 - $arg1",
 			"args" : [
 				{
 					"mn" : "Ci4",
@@ -6791,6 +7136,7 @@
 			"resMn" : "v",
 			"mn" : "-=(&Ii4,Ci4):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 -= $arg1",
 			"args" : [
 				{
 					"mn" : "&Ii4",
@@ -6806,6 +7152,7 @@
 		{
 			"resMn" : "i4",
 			"mn" : "*(Ci4,Ci4):i4",
+			"ctor" : "$arg0 * $arg1",
 			"args" : [
 				{
 					"mn" : "Ci4",
@@ -6821,6 +7168,7 @@
 		{
 			"resMn" : "i4",
 			"mn" : "/(Ci4,Ci4):i4",
+			"ctor" : "$arg0 / $arg1",
 			"args" : [
 				{
 					"mn" : "Ci4",
@@ -6837,6 +7185,7 @@
 			"resMn" : "v",
 			"mn" : "*=(&Ii4,Ci4):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 *= $arg1",
 			"args" : [
 				{
 					"mn" : "&Ii4",
@@ -6853,6 +7202,7 @@
 			"resMn" : "v",
 			"mn" : "/=(&Ii4,Ci4):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 /= $arg1",
 			"args" : [
 				{
 					"mn" : "&Ii4",
@@ -6868,6 +7218,7 @@
 		{
 			"resMn" : "i4",
 			"mn" : "*(Ci,Ci4):i4",
+			"ctor" : "$arg0 * $arg1",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -6883,6 +7234,7 @@
 		{
 			"resMn" : "i4",
 			"mn" : "/(Ci,Ci4):i4",
+			"ctor" : "$arg0 / $arg1",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -6898,6 +7250,7 @@
 		{
 			"resMn" : "i4",
 			"mn" : "*(Ci4,Ci):i4",
+			"ctor" : "$arg0 * $arg1",
 			"args" : [
 				{
 					"mn" : "Ci4",
@@ -6913,6 +7266,7 @@
 		{
 			"resMn" : "i4",
 			"mn" : "/(Ci4,Ci):i4",
+			"ctor" : "$arg0 / $arg1",
 			"args" : [
 				{
 					"mn" : "Ci4",
@@ -6929,6 +7283,7 @@
 			"resMn" : "v",
 			"mn" : "*=(&Ii4,Ci):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 *= $arg1",
 			"args" : [
 				{
 					"mn" : "&Ii4",
@@ -6945,6 +7300,7 @@
 			"resMn" : "v",
 			"mn" : "/=(&Ii4,Ci):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 /= $arg1",
 			"args" : [
 				{
 					"mn" : "&Ii4",
@@ -6960,6 +7316,7 @@
 		{
 			"resMn" : "i4",
 			"mn" : "&(Ci4,Ci4):i4",
+			"ctor" : "$arg0 & $arg1",
 			"args" : [
 				{
 					"mn" : "Ci4",
@@ -6975,6 +7332,7 @@
 		{
 			"resMn" : "i4",
 			"mn" : "|(Ci4,Ci4):i4",
+			"ctor" : "$arg0 | $arg1",
 			"args" : [
 				{
 					"mn" : "Ci4",
@@ -6990,6 +7348,7 @@
 		{
 			"resMn" : "i4",
 			"mn" : "^(Ci4,Ci4):i4",
+			"ctor" : "$arg0 ^ $arg1",
 			"args" : [
 				{
 					"mn" : "Ci4",
@@ -7005,6 +7364,7 @@
 		{
 			"resMn" : "i4",
 			"mn" : "<<(Ci4,Ci):i4",
+			"ctor" : "$arg0 << $arg1",
 			"args" : [
 				{
 					"mn" : "Ci4",
@@ -7020,6 +7380,7 @@
 		{
 			"resMn" : "i4",
 			"mn" : ">>(Ci4,Ci):i4",
+			"ctor" : "$arg0 >> $arg1",
 			"args" : [
 				{
 					"mn" : "Ci4",
@@ -7036,6 +7397,7 @@
 			"resMn" : "v",
 			"mn" : "&=(&Ii4,Ci4):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 &= $arg1",
 			"args" : [
 				{
 					"mn" : "&Ii4",
@@ -7052,6 +7414,7 @@
 			"resMn" : "v",
 			"mn" : "|=(&Ii4,Ci4):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 |= $arg1",
 			"args" : [
 				{
 					"mn" : "&Ii4",
@@ -7068,6 +7431,7 @@
 			"resMn" : "v",
 			"mn" : "^=(&Ii4,Ci4):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 ^= $arg1",
 			"args" : [
 				{
 					"mn" : "&Ii4",
@@ -7084,6 +7448,7 @@
 			"resMn" : "v",
 			"mn" : "<<=(&Ii4,Ci):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 <<= $arg1",
 			"args" : [
 				{
 					"mn" : "&Ii4",
@@ -7100,6 +7465,7 @@
 			"resMn" : "v",
 			"mn" : ">>=(&Ii4,Ci):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 >>= $arg1",
 			"args" : [
 				{
 					"mn" : "&Ii4",
@@ -7115,6 +7481,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "==(Cu2,Cu2):b",
+			"ctor" : "$arg0 == $arg1",
 			"args" : [
 				{
 					"mn" : "Cu2",
@@ -7130,6 +7497,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "!=(Cu2,Cu2):b",
+			"ctor" : "$arg0 != $arg1",
 			"args" : [
 				{
 					"mn" : "Cu2",
@@ -7145,6 +7513,7 @@
 		{
 			"resMn" : "u2",
 			"mn" : "+(Cu2,Cu2):u2",
+			"ctor" : "$arg0 + $arg1",
 			"args" : [
 				{
 					"mn" : "Cu2",
@@ -7161,6 +7530,7 @@
 			"resMn" : "v",
 			"mn" : "+=(&Iu2,Cu2):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 += $arg1",
 			"args" : [
 				{
 					"mn" : "&Iu2",
@@ -7176,6 +7546,7 @@
 		{
 			"resMn" : "u2",
 			"mn" : "+(Cu2):u2",
+			"ctor" : "$arg0 +",
 			"args" : [
 				{
 					"mn" : "Cu2",
@@ -7187,6 +7558,7 @@
 		{
 			"resMn" : "u2",
 			"mn" : "-(Cu2):u2",
+			"ctor" : "$arg0 -",
 			"args" : [
 				{
 					"mn" : "Cu2",
@@ -7198,6 +7570,7 @@
 		{
 			"resMn" : "u2",
 			"mn" : "-(Cu2,Cu2):u2",
+			"ctor" : "$arg0 - $arg1",
 			"args" : [
 				{
 					"mn" : "Cu2",
@@ -7214,6 +7587,7 @@
 			"resMn" : "v",
 			"mn" : "-=(&Iu2,Cu2):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 -= $arg1",
 			"args" : [
 				{
 					"mn" : "&Iu2",
@@ -7229,6 +7603,7 @@
 		{
 			"resMn" : "u2",
 			"mn" : "*(Cu2,Cu2):u2",
+			"ctor" : "$arg0 * $arg1",
 			"args" : [
 				{
 					"mn" : "Cu2",
@@ -7244,6 +7619,7 @@
 		{
 			"resMn" : "u2",
 			"mn" : "/(Cu2,Cu2):u2",
+			"ctor" : "$arg0 / $arg1",
 			"args" : [
 				{
 					"mn" : "Cu2",
@@ -7260,6 +7636,7 @@
 			"resMn" : "v",
 			"mn" : "*=(&Iu2,Cu2):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 *= $arg1",
 			"args" : [
 				{
 					"mn" : "&Iu2",
@@ -7276,6 +7653,7 @@
 			"resMn" : "v",
 			"mn" : "/=(&Iu2,Cu2):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 /= $arg1",
 			"args" : [
 				{
 					"mn" : "&Iu2",
@@ -7291,6 +7669,7 @@
 		{
 			"resMn" : "u2",
 			"mn" : "*(Cu,Cu2):u2",
+			"ctor" : "$arg0 * $arg1",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -7306,6 +7685,7 @@
 		{
 			"resMn" : "u2",
 			"mn" : "/(Cu,Cu2):u2",
+			"ctor" : "$arg0 / $arg1",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -7321,6 +7701,7 @@
 		{
 			"resMn" : "u2",
 			"mn" : "*(Cu2,Cu):u2",
+			"ctor" : "$arg0 * $arg1",
 			"args" : [
 				{
 					"mn" : "Cu2",
@@ -7336,6 +7717,7 @@
 		{
 			"resMn" : "u2",
 			"mn" : "/(Cu2,Cu):u2",
+			"ctor" : "$arg0 / $arg1",
 			"args" : [
 				{
 					"mn" : "Cu2",
@@ -7352,6 +7734,7 @@
 			"resMn" : "v",
 			"mn" : "*=(&Iu2,Cu):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 *= $arg1",
 			"args" : [
 				{
 					"mn" : "&Iu2",
@@ -7368,6 +7751,7 @@
 			"resMn" : "v",
 			"mn" : "/=(&Iu2,Cu):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 /= $arg1",
 			"args" : [
 				{
 					"mn" : "&Iu2",
@@ -7383,6 +7767,7 @@
 		{
 			"resMn" : "u2",
 			"mn" : "&(Cu2,Cu2):u2",
+			"ctor" : "$arg0 & $arg1",
 			"args" : [
 				{
 					"mn" : "Cu2",
@@ -7398,6 +7783,7 @@
 		{
 			"resMn" : "u2",
 			"mn" : "|(Cu2,Cu2):u2",
+			"ctor" : "$arg0 | $arg1",
 			"args" : [
 				{
 					"mn" : "Cu2",
@@ -7413,6 +7799,7 @@
 		{
 			"resMn" : "u2",
 			"mn" : "^(Cu2,Cu2):u2",
+			"ctor" : "$arg0 ^ $arg1",
 			"args" : [
 				{
 					"mn" : "Cu2",
@@ -7428,6 +7815,7 @@
 		{
 			"resMn" : "u2",
 			"mn" : "<<(Cu2,Ci):u2",
+			"ctor" : "$arg0 << $arg1",
 			"args" : [
 				{
 					"mn" : "Cu2",
@@ -7443,6 +7831,7 @@
 		{
 			"resMn" : "u2",
 			"mn" : ">>(Cu2,Ci):u2",
+			"ctor" : "$arg0 >> $arg1",
 			"args" : [
 				{
 					"mn" : "Cu2",
@@ -7459,6 +7848,7 @@
 			"resMn" : "v",
 			"mn" : "&=(&Iu2,Cu2):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 &= $arg1",
 			"args" : [
 				{
 					"mn" : "&Iu2",
@@ -7475,6 +7865,7 @@
 			"resMn" : "v",
 			"mn" : "|=(&Iu2,Cu2):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 |= $arg1",
 			"args" : [
 				{
 					"mn" : "&Iu2",
@@ -7491,6 +7882,7 @@
 			"resMn" : "v",
 			"mn" : "^=(&Iu2,Cu2):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 ^= $arg1",
 			"args" : [
 				{
 					"mn" : "&Iu2",
@@ -7507,6 +7899,7 @@
 			"resMn" : "v",
 			"mn" : "<<=(&Iu2,Ci):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 <<= $arg1",
 			"args" : [
 				{
 					"mn" : "&Iu2",
@@ -7523,6 +7916,7 @@
 			"resMn" : "v",
 			"mn" : ">>=(&Iu2,Ci):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 >>= $arg1",
 			"args" : [
 				{
 					"mn" : "&Iu2",
@@ -7538,6 +7932,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "==(Cu3,Cu3):b",
+			"ctor" : "$arg0 == $arg1",
 			"args" : [
 				{
 					"mn" : "Cu3",
@@ -7553,6 +7948,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "!=(Cu3,Cu3):b",
+			"ctor" : "$arg0 != $arg1",
 			"args" : [
 				{
 					"mn" : "Cu3",
@@ -7568,6 +7964,7 @@
 		{
 			"resMn" : "u3",
 			"mn" : "+(Cu3,Cu3):u3",
+			"ctor" : "$arg0 + $arg1",
 			"args" : [
 				{
 					"mn" : "Cu3",
@@ -7584,6 +7981,7 @@
 			"resMn" : "v",
 			"mn" : "+=(&Iu3,Cu3):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 += $arg1",
 			"args" : [
 				{
 					"mn" : "&Iu3",
@@ -7599,6 +7997,7 @@
 		{
 			"resMn" : "u3",
 			"mn" : "+(Cu3):u3",
+			"ctor" : "$arg0 +",
 			"args" : [
 				{
 					"mn" : "Cu3",
@@ -7610,6 +8009,7 @@
 		{
 			"resMn" : "u3",
 			"mn" : "-(Cu3):u3",
+			"ctor" : "$arg0 -",
 			"args" : [
 				{
 					"mn" : "Cu3",
@@ -7621,6 +8021,7 @@
 		{
 			"resMn" : "u3",
 			"mn" : "-(Cu3,Cu3):u3",
+			"ctor" : "$arg0 - $arg1",
 			"args" : [
 				{
 					"mn" : "Cu3",
@@ -7637,6 +8038,7 @@
 			"resMn" : "v",
 			"mn" : "-=(&Iu3,Cu3):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 -= $arg1",
 			"args" : [
 				{
 					"mn" : "&Iu3",
@@ -7652,6 +8054,7 @@
 		{
 			"resMn" : "u3",
 			"mn" : "*(Cu3,Cu3):u3",
+			"ctor" : "$arg0 * $arg1",
 			"args" : [
 				{
 					"mn" : "Cu3",
@@ -7667,6 +8070,7 @@
 		{
 			"resMn" : "u3",
 			"mn" : "/(Cu3,Cu3):u3",
+			"ctor" : "$arg0 / $arg1",
 			"args" : [
 				{
 					"mn" : "Cu3",
@@ -7683,6 +8087,7 @@
 			"resMn" : "v",
 			"mn" : "*=(&Iu3,Cu3):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 *= $arg1",
 			"args" : [
 				{
 					"mn" : "&Iu3",
@@ -7699,6 +8104,7 @@
 			"resMn" : "v",
 			"mn" : "/=(&Iu3,Cu3):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 /= $arg1",
 			"args" : [
 				{
 					"mn" : "&Iu3",
@@ -7714,6 +8120,7 @@
 		{
 			"resMn" : "u3",
 			"mn" : "*(Cu,Cu3):u3",
+			"ctor" : "$arg0 * $arg1",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -7729,6 +8136,7 @@
 		{
 			"resMn" : "u3",
 			"mn" : "/(Cu,Cu3):u3",
+			"ctor" : "$arg0 / $arg1",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -7744,6 +8152,7 @@
 		{
 			"resMn" : "u3",
 			"mn" : "*(Cu3,Cu):u3",
+			"ctor" : "$arg0 * $arg1",
 			"args" : [
 				{
 					"mn" : "Cu3",
@@ -7759,6 +8168,7 @@
 		{
 			"resMn" : "u3",
 			"mn" : "/(Cu3,Cu):u3",
+			"ctor" : "$arg0 / $arg1",
 			"args" : [
 				{
 					"mn" : "Cu3",
@@ -7775,6 +8185,7 @@
 			"resMn" : "v",
 			"mn" : "*=(&Iu3,Cu):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 *= $arg1",
 			"args" : [
 				{
 					"mn" : "&Iu3",
@@ -7791,6 +8202,7 @@
 			"resMn" : "v",
 			"mn" : "/=(&Iu3,Cu):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 /= $arg1",
 			"args" : [
 				{
 					"mn" : "&Iu3",
@@ -7806,6 +8218,7 @@
 		{
 			"resMn" : "u3",
 			"mn" : "&(Cu3,Cu3):u3",
+			"ctor" : "$arg0 & $arg1",
 			"args" : [
 				{
 					"mn" : "Cu3",
@@ -7821,6 +8234,7 @@
 		{
 			"resMn" : "u3",
 			"mn" : "|(Cu3,Cu3):u3",
+			"ctor" : "$arg0 | $arg1",
 			"args" : [
 				{
 					"mn" : "Cu3",
@@ -7836,6 +8250,7 @@
 		{
 			"resMn" : "u3",
 			"mn" : "^(Cu3,Cu3):u3",
+			"ctor" : "$arg0 ^ $arg1",
 			"args" : [
 				{
 					"mn" : "Cu3",
@@ -7851,6 +8266,7 @@
 		{
 			"resMn" : "u3",
 			"mn" : "<<(Cu3,Ci):u3",
+			"ctor" : "$arg0 << $arg1",
 			"args" : [
 				{
 					"mn" : "Cu3",
@@ -7866,6 +8282,7 @@
 		{
 			"resMn" : "u3",
 			"mn" : ">>(Cu3,Ci):u3",
+			"ctor" : "$arg0 >> $arg1",
 			"args" : [
 				{
 					"mn" : "Cu3",
@@ -7882,6 +8299,7 @@
 			"resMn" : "v",
 			"mn" : "&=(&Iu3,Cu3):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 &= $arg1",
 			"args" : [
 				{
 					"mn" : "&Iu3",
@@ -7898,6 +8316,7 @@
 			"resMn" : "v",
 			"mn" : "|=(&Iu3,Cu3):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 |= $arg1",
 			"args" : [
 				{
 					"mn" : "&Iu3",
@@ -7914,6 +8333,7 @@
 			"resMn" : "v",
 			"mn" : "^=(&Iu3,Cu3):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 ^= $arg1",
 			"args" : [
 				{
 					"mn" : "&Iu3",
@@ -7930,6 +8350,7 @@
 			"resMn" : "v",
 			"mn" : "<<=(&Iu3,Ci):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 <<= $arg1",
 			"args" : [
 				{
 					"mn" : "&Iu3",
@@ -7946,6 +8367,7 @@
 			"resMn" : "v",
 			"mn" : ">>=(&Iu3,Ci):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 >>= $arg1",
 			"args" : [
 				{
 					"mn" : "&Iu3",
@@ -7961,6 +8383,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "==(Cu4,Cu4):b",
+			"ctor" : "$arg0 == $arg1",
 			"args" : [
 				{
 					"mn" : "Cu4",
@@ -7976,6 +8399,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "!=(Cu4,Cu4):b",
+			"ctor" : "$arg0 != $arg1",
 			"args" : [
 				{
 					"mn" : "Cu4",
@@ -7991,6 +8415,7 @@
 		{
 			"resMn" : "u4",
 			"mn" : "+(Cu4,Cu4):u4",
+			"ctor" : "$arg0 + $arg1",
 			"args" : [
 				{
 					"mn" : "Cu4",
@@ -8007,6 +8432,7 @@
 			"resMn" : "v",
 			"mn" : "+=(&Iu4,Cu4):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 += $arg1",
 			"args" : [
 				{
 					"mn" : "&Iu4",
@@ -8022,6 +8448,7 @@
 		{
 			"resMn" : "u4",
 			"mn" : "+(Cu4):u4",
+			"ctor" : "$arg0 +",
 			"args" : [
 				{
 					"mn" : "Cu4",
@@ -8033,6 +8460,7 @@
 		{
 			"resMn" : "u4",
 			"mn" : "-(Cu4):u4",
+			"ctor" : "$arg0 -",
 			"args" : [
 				{
 					"mn" : "Cu4",
@@ -8044,6 +8472,7 @@
 		{
 			"resMn" : "u4",
 			"mn" : "-(Cu4,Cu4):u4",
+			"ctor" : "$arg0 - $arg1",
 			"args" : [
 				{
 					"mn" : "Cu4",
@@ -8060,6 +8489,7 @@
 			"resMn" : "v",
 			"mn" : "-=(&Iu4,Cu4):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 -= $arg1",
 			"args" : [
 				{
 					"mn" : "&Iu4",
@@ -8075,6 +8505,7 @@
 		{
 			"resMn" : "u4",
 			"mn" : "*(Cu4,Cu4):u4",
+			"ctor" : "$arg0 * $arg1",
 			"args" : [
 				{
 					"mn" : "Cu4",
@@ -8090,6 +8521,7 @@
 		{
 			"resMn" : "u4",
 			"mn" : "/(Cu4,Cu4):u4",
+			"ctor" : "$arg0 / $arg1",
 			"args" : [
 				{
 					"mn" : "Cu4",
@@ -8106,6 +8538,7 @@
 			"resMn" : "v",
 			"mn" : "*=(&Iu4,Cu4):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 *= $arg1",
 			"args" : [
 				{
 					"mn" : "&Iu4",
@@ -8122,6 +8555,7 @@
 			"resMn" : "v",
 			"mn" : "/=(&Iu4,Cu4):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 /= $arg1",
 			"args" : [
 				{
 					"mn" : "&Iu4",
@@ -8137,6 +8571,7 @@
 		{
 			"resMn" : "u4",
 			"mn" : "*(Cu,Cu4):u4",
+			"ctor" : "$arg0 * $arg1",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -8152,6 +8587,7 @@
 		{
 			"resMn" : "u4",
 			"mn" : "/(Cu,Cu4):u4",
+			"ctor" : "$arg0 / $arg1",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -8167,6 +8603,7 @@
 		{
 			"resMn" : "u4",
 			"mn" : "*(Cu4,Cu):u4",
+			"ctor" : "$arg0 * $arg1",
 			"args" : [
 				{
 					"mn" : "Cu4",
@@ -8182,6 +8619,7 @@
 		{
 			"resMn" : "u4",
 			"mn" : "/(Cu4,Cu):u4",
+			"ctor" : "$arg0 / $arg1",
 			"args" : [
 				{
 					"mn" : "Cu4",
@@ -8198,6 +8636,7 @@
 			"resMn" : "v",
 			"mn" : "*=(&Iu4,Cu):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 *= $arg1",
 			"args" : [
 				{
 					"mn" : "&Iu4",
@@ -8214,6 +8653,7 @@
 			"resMn" : "v",
 			"mn" : "/=(&Iu4,Cu):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 /= $arg1",
 			"args" : [
 				{
 					"mn" : "&Iu4",
@@ -8229,6 +8669,7 @@
 		{
 			"resMn" : "u4",
 			"mn" : "&(Cu4,Cu4):u4",
+			"ctor" : "$arg0 & $arg1",
 			"args" : [
 				{
 					"mn" : "Cu4",
@@ -8244,6 +8685,7 @@
 		{
 			"resMn" : "u4",
 			"mn" : "|(Cu4,Cu4):u4",
+			"ctor" : "$arg0 | $arg1",
 			"args" : [
 				{
 					"mn" : "Cu4",
@@ -8259,6 +8701,7 @@
 		{
 			"resMn" : "u4",
 			"mn" : "^(Cu4,Cu4):u4",
+			"ctor" : "$arg0 ^ $arg1",
 			"args" : [
 				{
 					"mn" : "Cu4",
@@ -8274,6 +8717,7 @@
 		{
 			"resMn" : "u4",
 			"mn" : "<<(Cu4,Ci):u4",
+			"ctor" : "$arg0 << $arg1",
 			"args" : [
 				{
 					"mn" : "Cu4",
@@ -8289,6 +8733,7 @@
 		{
 			"resMn" : "u4",
 			"mn" : ">>(Cu4,Ci):u4",
+			"ctor" : "$arg0 >> $arg1",
 			"args" : [
 				{
 					"mn" : "Cu4",
@@ -8305,6 +8750,7 @@
 			"resMn" : "v",
 			"mn" : "&=(&Iu4,Cu4):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 &= $arg1",
 			"args" : [
 				{
 					"mn" : "&Iu4",
@@ -8321,6 +8767,7 @@
 			"resMn" : "v",
 			"mn" : "|=(&Iu4,Cu4):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 |= $arg1",
 			"args" : [
 				{
 					"mn" : "&Iu4",
@@ -8337,6 +8784,7 @@
 			"resMn" : "v",
 			"mn" : "^=(&Iu4,Cu4):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 ^= $arg1",
 			"args" : [
 				{
 					"mn" : "&Iu4",
@@ -8353,6 +8801,7 @@
 			"resMn" : "v",
 			"mn" : "<<=(&Iu4,Ci):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 <<= $arg1",
 			"args" : [
 				{
 					"mn" : "&Iu4",
@@ -8369,6 +8818,7 @@
 			"resMn" : "v",
 			"mn" : ">>=(&Iu4,Ci):v",
 			"sideeffect" : true,
+			"ctor" : "$arg0 >>= $arg1",
 			"args" : [
 				{
 					"mn" : "&Iu4",
@@ -8384,6 +8834,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "==(Cr,Cr):b",
+			"ctor" : "$arg0 == $arg1",
 			"args" : [
 				{
 					"mn" : "Cr",
@@ -8399,6 +8850,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "!=(Cr,Cr):b",
+			"ctor" : "$arg0 != $arg1",
 			"args" : [
 				{
 					"mn" : "Cr",
@@ -8414,6 +8866,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "==(Cz,Cz):b",
+			"ctor" : "$arg0 == $arg1",
 			"args" : [
 				{
 					"mn" : "Cz",
@@ -8429,6 +8882,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "!=(Cz,Cz):b",
+			"ctor" : "$arg0 != $arg1",
 			"args" : [
 				{
 					"mn" : "Cz",
@@ -10951,6 +11405,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "==(C&I1<v>?M,C&I1<v>?M):b",
+			"ctor" : "$arg0 == $arg1",
 			"args" : [
 				{
 					"mn" : "C&I1<v>?M",
@@ -10966,6 +11421,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "!=(C&I1<v>?M,C&I1<v>?M):b",
+			"ctor" : "$arg0 != $arg1",
 			"args" : [
 				{
 					"mn" : "C&I1<v>?M",
@@ -10981,6 +11437,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "==(CI?,C&I1<v>?M):b",
+			"ctor" : "$arg0 == $arg1",
 			"args" : [
 				{
 					"mn" : "CI?",
@@ -10996,6 +11453,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "!=(CI?,C&I1<v>?M):b",
+			"ctor" : "$arg0 != $arg1",
 			"args" : [
 				{
 					"mn" : "CI?",
@@ -11011,6 +11469,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "==(C&I1<v>?M,CI?):b",
+			"ctor" : "$arg0 == $arg1",
 			"args" : [
 				{
 					"mn" : "C&I1<v>?M",
@@ -11026,6 +11485,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "!=(C&I1<v>?M,CI?):b",
+			"ctor" : "$arg0 != $arg1",
 			"args" : [
 				{
 					"mn" : "C&I1<v>?M",
@@ -11373,6 +11833,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "==(CIH<$::das_string>,CIH<$::das_string>):b",
+			"ctor" : "$arg0 == $arg1",
 			"args" : [
 				{
 					"mn" : "CIH<$::das_string>",
@@ -11388,6 +11849,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "!=(CIH<$::das_string>,CIH<$::das_string>):b",
+			"ctor" : "$arg0 != $arg1",
 			"args" : [
 				{
 					"mn" : "CIH<$::das_string>",
@@ -11403,6 +11865,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "==(CIs,CIH<$::das_string>):b",
+			"ctor" : "$arg0 == $arg1",
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -11418,6 +11881,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "==(CIH<$::das_string>,CIs):b",
+			"ctor" : "$arg0 == $arg1",
 			"args" : [
 				{
 					"mn" : "CIH<$::das_string>",
@@ -11433,6 +11897,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "!=(CIs,CIH<$::das_string>):b",
+			"ctor" : "$arg0 != $arg1",
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -11448,6 +11913,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "!=(CIH<$::das_string>,CIs):b",
+			"ctor" : "$arg0 != $arg1",
 			"args" : [
 				{
 					"mn" : "CIH<$::das_string>",
@@ -11463,6 +11929,7 @@
 		{
 			"resMn" : "b",
 			"mn" : ">=(CIs,CIH<$::das_string>):b",
+			"ctor" : "$arg0 >= $arg1",
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -11478,6 +11945,7 @@
 		{
 			"resMn" : "b",
 			"mn" : ">=(CIH<$::das_string>,CIs):b",
+			"ctor" : "$arg0 >= $arg1",
 			"args" : [
 				{
 					"mn" : "CIH<$::das_string>",
@@ -11493,6 +11961,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "<=(CIs,CIH<$::das_string>):b",
+			"ctor" : "$arg0 <= $arg1",
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -11508,6 +11977,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "<=(CIH<$::das_string>,CIs):b",
+			"ctor" : "$arg0 <= $arg1",
 			"args" : [
 				{
 					"mn" : "CIH<$::das_string>",
@@ -11523,6 +11993,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "<(CIs,CIH<$::das_string>):b",
+			"ctor" : "$arg0 < $arg1",
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -11538,6 +12009,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "<(CIH<$::das_string>,CIs):b",
+			"ctor" : "$arg0 < $arg1",
 			"args" : [
 				{
 					"mn" : "CIH<$::das_string>",
@@ -11553,6 +12025,7 @@
 		{
 			"resMn" : "b",
 			"mn" : ">(CIs,CIH<$::das_string>):b",
+			"ctor" : "$arg0 > $arg1",
 			"args" : [
 				{
 					"mn" : "CIs",
@@ -11568,6 +12041,7 @@
 		{
 			"resMn" : "b",
 			"mn" : ">(CIH<$::das_string>,CIs):b",
+			"ctor" : "$arg0 > $arg1",
 			"args" : [
 				{
 					"mn" : "CIH<$::das_string>",
@@ -13198,6 +13672,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "==(CH<$::clock>,CH<$::clock>):b",
+			"ctor" : "$arg0 == $arg1",
 			"args" : [
 				{
 					"mn" : "CH<$::clock>",
@@ -13213,6 +13688,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "!=(CH<$::clock>,CH<$::clock>):b",
+			"ctor" : "$arg0 != $arg1",
 			"args" : [
 				{
 					"mn" : "CH<$::clock>",
@@ -13228,6 +13704,7 @@
 		{
 			"resMn" : "b",
 			"mn" : ">=(CH<$::clock>,CH<$::clock>):b",
+			"ctor" : "$arg0 >= $arg1",
 			"args" : [
 				{
 					"mn" : "CH<$::clock>",
@@ -13243,6 +13720,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "<=(CH<$::clock>,CH<$::clock>):b",
+			"ctor" : "$arg0 <= $arg1",
 			"args" : [
 				{
 					"mn" : "CH<$::clock>",
@@ -13258,6 +13736,7 @@
 		{
 			"resMn" : "b",
 			"mn" : ">(CH<$::clock>,CH<$::clock>):b",
+			"ctor" : "$arg0 > $arg1",
 			"args" : [
 				{
 					"mn" : "CH<$::clock>",
@@ -13273,6 +13752,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "<(CH<$::clock>,CH<$::clock>):b",
+			"ctor" : "$arg0 < $arg1",
 			"args" : [
 				{
 					"mn" : "CH<$::clock>",
@@ -13288,6 +13768,7 @@
 		{
 			"resMn" : "f",
 			"mn" : "-(CH<$::clock>,CH<$::clock>):f",
+			"ctor" : "$arg0 - $arg1",
 			"args" : [
 				{
 					"mn" : "CH<$::clock>",
@@ -18238,6 +18719,7 @@
 		{
 			"resMn" : "H<math::float4x4>",
 			"mn" : "*(CIH<math::float4x4>,CIH<math::float4x4>):H<math::float4x4>",
+			"ctor" : "$x * $y",
 			"args" : [
 				{
 					"mn" : "CIH<math::float4x4>",
@@ -18277,6 +18759,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "==(CIH<math::float4x4>,CIH<math::float4x4>):b",
+			"ctor" : "$x == $y",
 			"args" : [
 				{
 					"mn" : "CIH<math::float4x4>",
@@ -18292,6 +18775,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "!=(CIH<math::float4x4>,CIH<math::float4x4>):b",
+			"ctor" : "$x != $y",
 			"args" : [
 				{
 					"mn" : "CIH<math::float4x4>",
@@ -18336,6 +18820,7 @@
 		{
 			"resMn" : "H<math::float3x4>",
 			"mn" : "*(CIH<math::float3x4>,CIH<math::float3x4>):H<math::float3x4>",
+			"ctor" : "$x * $y",
 			"args" : [
 				{
 					"mn" : "CIH<math::float3x4>",
@@ -18351,6 +18836,7 @@
 		{
 			"resMn" : "f3",
 			"mn" : "*(CIH<math::float3x4>,Cf3):f3",
+			"ctor" : "$x * $y",
 			"args" : [
 				{
 					"mn" : "CIH<math::float3x4>",
@@ -18366,6 +18852,7 @@
 		{
 			"resMn" : "f4",
 			"mn" : "*(CIH<math::float4x4>,Cf4):f4",
+			"ctor" : "$x * $y",
 			"args" : [
 				{
 					"mn" : "CIH<math::float4x4>",
@@ -18429,6 +18916,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "==(CIH<math::float3x4>,CIH<math::float3x4>):b",
+			"ctor" : "$x == $y",
 			"args" : [
 				{
 					"mn" : "CIH<math::float3x4>",
@@ -18444,6 +18932,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "!=(CIH<math::float3x4>,CIH<math::float3x4>):b",
+			"ctor" : "$x != $y",
 			"args" : [
 				{
 					"mn" : "CIH<math::float3x4>",
@@ -18581,6 +19070,7 @@
 		{
 			"resMn" : "H<math::float3x3>",
 			"mn" : "*(CIH<math::float3x3>,CIH<math::float3x3>):H<math::float3x3>",
+			"ctor" : "$x * $y",
 			"args" : [
 				{
 					"mn" : "CIH<math::float3x3>",
@@ -18596,6 +19086,7 @@
 		{
 			"resMn" : "f3",
 			"mn" : "*(CIH<math::float3x3>,Cf3):f3",
+			"ctor" : "$x * $y",
 			"args" : [
 				{
 					"mn" : "CIH<math::float3x3>",
@@ -18611,6 +19102,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "==(CIH<math::float3x3>,CIH<math::float3x3>):b",
+			"ctor" : "$x == $y",
 			"args" : [
 				{
 					"mn" : "CIH<math::float3x3>",
@@ -18626,6 +19118,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "!=(CIH<math::float3x3>,CIH<math::float3x3>):b",
+			"ctor" : "$x != $y",
 			"args" : [
 				{
 					"mn" : "CIH<math::float3x3>",

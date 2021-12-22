@@ -97,12 +97,6 @@ export class LangFunction {
 
     ctor(args: { [key: string]: string }): string {
         if (!this.desc.ctor) {
-            if (this.isOperator(this.desc.name)) {
-                if (this.desc.args.length == 1)
-                    return `${this.desc.name} ${args[this.desc.args[0].name]}`
-                return `${args['arg0']} ${this.desc.name} ${args[this.desc.args[1].name]}`
-            }
-
             const argsStr = this.desc.args.map(arg => args[arg.name]).join(', ')
             return `${this.desc.name}(${argsStr})`
         }
@@ -110,14 +104,6 @@ export class LangFunction {
         for (let arg of this.desc.args)
             res = res.replace(`\$${arg.name}`, args[arg.name])
         return res
-    }
-
-    // TODO: move operators list to core.json
-    isOperator(n: string) {
-        return n == "--" || n == "++" || n == "==" || n == "!="
-            || n == ">" || n == "<" || n == ">=" || n == "<=" || n == "+++" || n == "---"
-            || n == "&&" || n == "||" || n == "!" || n == "*" || n == "/" || n == "%"
-            || n == "+" || n == "-" || n == "&" || n == "|" || n == "^" || n == "<<" || n == ">>"
     }
 }
 
