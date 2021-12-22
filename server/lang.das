@@ -34,6 +34,7 @@ struct FuncDesc
     sideeffect: bool
     ctor: string
     args: array<FuncArg>
+    requirements: array<string>
 
 
 struct FuncArg
@@ -129,6 +130,9 @@ def private dumpModule(ctx: DumpContext; mod: rtti::Module?; var lang: LangDesc)
                     fun.ctor += "{arg.name}, "
                 fun.ctor = fun.ctor + ")"
 
+        if modName != "$"
+            fun.requirements <- [{string[1] modName}]
+
         var resTypeDesc = lang |> getTypeDesc(fn.result)
         fun.resMn = resTypeDesc.mn
         fun.mn = "{fnMn}):{resTypeDesc.mn}"
@@ -213,6 +217,8 @@ def JV(val: FuncDesc)
         res["sideeffect"] = JV(val.sideeffect)
     if !empty(val.ctor)
         res["ctor"] = JV(val.ctor)
+    if !empty(val.requirements)
+        res["requirements"] = JV(val.requirements)
     return JV(res)
 
 

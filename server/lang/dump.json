@@ -15676,7 +15676,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "sin"
+			"name" : "sin",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f",
@@ -15687,7 +15690,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "cos"
+			"name" : "cos",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f",
@@ -15698,7 +15704,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "tan"
+			"name" : "tan",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f",
@@ -15709,7 +15718,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "atan"
+			"name" : "atan",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f",
@@ -15720,7 +15732,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "asin"
+			"name" : "asin",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f",
@@ -15731,7 +15746,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "acos"
+			"name" : "acos",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f",
@@ -15746,7 +15764,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "atan2"
+			"name" : "atan2",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f",
@@ -15761,7 +15782,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "atan2_est"
+			"name" : "atan2_est",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f2",
@@ -15772,7 +15796,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "sin"
+			"name" : "sin",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f2",
@@ -15783,7 +15810,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "cos"
+			"name" : "cos",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f2",
@@ -15794,7 +15824,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "tan"
+			"name" : "tan",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f2",
@@ -15805,7 +15838,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "atan"
+			"name" : "atan",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f2",
@@ -15816,7 +15852,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "asin"
+			"name" : "asin",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f2",
@@ -15827,7 +15866,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "acos"
+			"name" : "acos",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f2",
@@ -15842,7 +15884,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "atan2"
+			"name" : "atan2",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f2",
@@ -15857,7 +15902,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "atan2_est"
+			"name" : "atan2_est",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f3",
@@ -15868,7 +15916,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "sin"
+			"name" : "sin",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f3",
@@ -15879,7 +15930,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "cos"
+			"name" : "cos",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f3",
@@ -15890,7 +15944,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "tan"
+			"name" : "tan",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f3",
@@ -15901,7 +15958,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "atan"
+			"name" : "atan",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f3",
@@ -15912,7 +15972,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "asin"
+			"name" : "asin",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f3",
@@ -15923,7 +15986,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "acos"
+			"name" : "acos",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f3",
@@ -15938,7 +16004,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "atan2"
+			"name" : "atan2",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f3",
@@ -15953,7 +16022,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "atan2_est"
+			"name" : "atan2_est",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f4",
@@ -15964,7 +16036,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "sin"
+			"name" : "sin",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f4",
@@ -15975,7 +16050,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "cos"
+			"name" : "cos",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f4",
@@ -15986,7 +16064,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "tan"
+			"name" : "tan",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f4",
@@ -15997,7 +16078,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "atan"
+			"name" : "atan",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f4",
@@ -16008,7 +16092,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "asin"
+			"name" : "asin",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f4",
@@ -16019,7 +16106,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "acos"
+			"name" : "acos",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f4",
@@ -16034,7 +16124,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "atan2"
+			"name" : "atan2",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f4",
@@ -16049,7 +16142,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "atan2_est"
+			"name" : "atan2_est",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f",
@@ -16060,7 +16156,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "exp"
+			"name" : "exp",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f",
@@ -16071,7 +16170,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "log"
+			"name" : "log",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f",
@@ -16082,7 +16184,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "exp2"
+			"name" : "exp2",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f",
@@ -16093,7 +16198,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "log2"
+			"name" : "log2",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f",
@@ -16104,7 +16212,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "rcp"
+			"name" : "rcp",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f",
@@ -16115,7 +16226,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "rcp_est"
+			"name" : "rcp_est",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f",
@@ -16130,7 +16244,10 @@
 					"name" : "y"
 				}
 			],
-			"name" : "pow"
+			"name" : "pow",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f2",
@@ -16141,7 +16258,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "exp"
+			"name" : "exp",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f2",
@@ -16152,7 +16272,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "log"
+			"name" : "log",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f2",
@@ -16163,7 +16286,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "exp2"
+			"name" : "exp2",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f2",
@@ -16174,7 +16300,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "log2"
+			"name" : "log2",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f2",
@@ -16185,7 +16314,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "rcp"
+			"name" : "rcp",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f2",
@@ -16196,7 +16328,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "rcp_est"
+			"name" : "rcp_est",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f2",
@@ -16211,7 +16346,10 @@
 					"name" : "y"
 				}
 			],
-			"name" : "pow"
+			"name" : "pow",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f3",
@@ -16222,7 +16360,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "exp"
+			"name" : "exp",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f3",
@@ -16233,7 +16374,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "log"
+			"name" : "log",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f3",
@@ -16244,7 +16388,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "exp2"
+			"name" : "exp2",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f3",
@@ -16255,7 +16402,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "log2"
+			"name" : "log2",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f3",
@@ -16266,7 +16416,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "rcp"
+			"name" : "rcp",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f3",
@@ -16277,7 +16430,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "rcp_est"
+			"name" : "rcp_est",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f3",
@@ -16292,7 +16448,10 @@
 					"name" : "y"
 				}
 			],
-			"name" : "pow"
+			"name" : "pow",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f4",
@@ -16303,7 +16462,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "exp"
+			"name" : "exp",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f4",
@@ -16314,7 +16476,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "log"
+			"name" : "log",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f4",
@@ -16325,7 +16490,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "exp2"
+			"name" : "exp2",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f4",
@@ -16336,7 +16504,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "log2"
+			"name" : "log2",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f4",
@@ -16347,7 +16518,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "rcp"
+			"name" : "rcp",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f4",
@@ -16358,7 +16532,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "rcp_est"
+			"name" : "rcp_est",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f4",
@@ -16373,7 +16550,10 @@
 					"name" : "y"
 				}
 			],
-			"name" : "pow"
+			"name" : "pow",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f",
@@ -16392,7 +16572,10 @@
 					"name" : "c"
 				}
 			],
-			"name" : "mad"
+			"name" : "mad",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f",
@@ -16411,7 +16594,10 @@
 					"name" : "t"
 				}
 			],
-			"name" : "lerp"
+			"name" : "lerp",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f2",
@@ -16430,7 +16616,10 @@
 					"name" : "c"
 				}
 			],
-			"name" : "mad"
+			"name" : "mad",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f2",
@@ -16449,7 +16638,10 @@
 					"name" : "t"
 				}
 			],
-			"name" : "lerp"
+			"name" : "lerp",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f3",
@@ -16468,7 +16660,10 @@
 					"name" : "c"
 				}
 			],
-			"name" : "mad"
+			"name" : "mad",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f3",
@@ -16487,7 +16682,10 @@
 					"name" : "t"
 				}
 			],
-			"name" : "lerp"
+			"name" : "lerp",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f4",
@@ -16506,7 +16704,10 @@
 					"name" : "c"
 				}
 			],
-			"name" : "mad"
+			"name" : "mad",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f4",
@@ -16525,7 +16726,10 @@
 					"name" : "t"
 				}
 			],
-			"name" : "lerp"
+			"name" : "lerp",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f2",
@@ -16544,7 +16748,10 @@
 					"name" : "c"
 				}
 			],
-			"name" : "mad"
+			"name" : "mad",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f3",
@@ -16563,7 +16770,10 @@
 					"name" : "c"
 				}
 			],
-			"name" : "mad"
+			"name" : "mad",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f4",
@@ -16582,7 +16792,10 @@
 					"name" : "c"
 				}
 			],
-			"name" : "mad"
+			"name" : "mad",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f",
@@ -16593,7 +16806,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "floor"
+			"name" : "floor",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f",
@@ -16604,7 +16820,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "ceil"
+			"name" : "ceil",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f",
@@ -16615,7 +16834,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "sqrt"
+			"name" : "sqrt",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f",
@@ -16626,7 +16848,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "rsqrt"
+			"name" : "rsqrt",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f",
@@ -16637,7 +16862,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "rsqrt_est"
+			"name" : "rsqrt_est",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f",
@@ -16648,7 +16876,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "saturate"
+			"name" : "saturate",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f2",
@@ -16659,7 +16890,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "floor"
+			"name" : "floor",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f2",
@@ -16670,7 +16904,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "ceil"
+			"name" : "ceil",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f2",
@@ -16681,7 +16918,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "sqrt"
+			"name" : "sqrt",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f2",
@@ -16692,7 +16932,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "rsqrt"
+			"name" : "rsqrt",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f2",
@@ -16703,7 +16946,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "rsqrt_est"
+			"name" : "rsqrt_est",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f2",
@@ -16714,7 +16960,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "saturate"
+			"name" : "saturate",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f3",
@@ -16725,7 +16974,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "floor"
+			"name" : "floor",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f3",
@@ -16736,7 +16988,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "ceil"
+			"name" : "ceil",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f3",
@@ -16747,7 +17002,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "sqrt"
+			"name" : "sqrt",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f3",
@@ -16758,7 +17016,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "rsqrt"
+			"name" : "rsqrt",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f3",
@@ -16769,7 +17030,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "rsqrt_est"
+			"name" : "rsqrt_est",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f3",
@@ -16780,7 +17044,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "saturate"
+			"name" : "saturate",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f4",
@@ -16791,7 +17058,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "floor"
+			"name" : "floor",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f4",
@@ -16802,7 +17072,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "ceil"
+			"name" : "ceil",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f4",
@@ -16813,7 +17086,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "sqrt"
+			"name" : "sqrt",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f4",
@@ -16824,7 +17100,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "rsqrt"
+			"name" : "rsqrt",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f4",
@@ -16835,7 +17114,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "rsqrt_est"
+			"name" : "rsqrt_est",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f4",
@@ -16846,7 +17128,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "saturate"
+			"name" : "saturate",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "i",
@@ -16861,7 +17146,10 @@
 					"name" : "y"
 				}
 			],
-			"name" : "min"
+			"name" : "min",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "i",
@@ -16876,7 +17164,10 @@
 					"name" : "y"
 				}
 			],
-			"name" : "max"
+			"name" : "max",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "i",
@@ -16895,7 +17186,10 @@
 					"name" : "b"
 				}
 			],
-			"name" : "clamp"
+			"name" : "clamp",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "i",
@@ -16906,7 +17200,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "abs"
+			"name" : "abs",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "i",
@@ -16917,7 +17214,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "sign"
+			"name" : "sign",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "i2",
@@ -16932,7 +17232,10 @@
 					"name" : "y"
 				}
 			],
-			"name" : "min"
+			"name" : "min",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "i2",
@@ -16947,7 +17250,10 @@
 					"name" : "y"
 				}
 			],
-			"name" : "max"
+			"name" : "max",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "i2",
@@ -16966,7 +17272,10 @@
 					"name" : "b"
 				}
 			],
-			"name" : "clamp"
+			"name" : "clamp",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "i2",
@@ -16977,7 +17286,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "abs"
+			"name" : "abs",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "i2",
@@ -16988,7 +17300,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "sign"
+			"name" : "sign",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "i3",
@@ -17003,7 +17318,10 @@
 					"name" : "y"
 				}
 			],
-			"name" : "min"
+			"name" : "min",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "i3",
@@ -17018,7 +17336,10 @@
 					"name" : "y"
 				}
 			],
-			"name" : "max"
+			"name" : "max",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "i3",
@@ -17037,7 +17358,10 @@
 					"name" : "b"
 				}
 			],
-			"name" : "clamp"
+			"name" : "clamp",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "i3",
@@ -17048,7 +17372,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "abs"
+			"name" : "abs",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "i3",
@@ -17059,7 +17386,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "sign"
+			"name" : "sign",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "i4",
@@ -17074,7 +17404,10 @@
 					"name" : "y"
 				}
 			],
-			"name" : "min"
+			"name" : "min",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "i4",
@@ -17089,7 +17422,10 @@
 					"name" : "y"
 				}
 			],
-			"name" : "max"
+			"name" : "max",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "i4",
@@ -17108,7 +17444,10 @@
 					"name" : "b"
 				}
 			],
-			"name" : "clamp"
+			"name" : "clamp",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "i4",
@@ -17119,7 +17458,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "abs"
+			"name" : "abs",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "i4",
@@ -17130,7 +17472,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "sign"
+			"name" : "sign",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "u",
@@ -17145,7 +17490,10 @@
 					"name" : "y"
 				}
 			],
-			"name" : "min"
+			"name" : "min",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "u",
@@ -17160,7 +17508,10 @@
 					"name" : "y"
 				}
 			],
-			"name" : "max"
+			"name" : "max",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "u",
@@ -17179,7 +17530,10 @@
 					"name" : "b"
 				}
 			],
-			"name" : "clamp"
+			"name" : "clamp",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "u",
@@ -17190,7 +17544,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "abs"
+			"name" : "abs",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "u",
@@ -17201,7 +17558,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "sign"
+			"name" : "sign",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f",
@@ -17216,7 +17576,10 @@
 					"name" : "y"
 				}
 			],
-			"name" : "min"
+			"name" : "min",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f",
@@ -17231,7 +17594,10 @@
 					"name" : "y"
 				}
 			],
-			"name" : "max"
+			"name" : "max",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f",
@@ -17250,7 +17616,10 @@
 					"name" : "b"
 				}
 			],
-			"name" : "clamp"
+			"name" : "clamp",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f",
@@ -17261,7 +17630,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "abs"
+			"name" : "abs",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f",
@@ -17272,7 +17644,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "sign"
+			"name" : "sign",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f2",
@@ -17287,7 +17662,10 @@
 					"name" : "y"
 				}
 			],
-			"name" : "min"
+			"name" : "min",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f2",
@@ -17302,7 +17680,10 @@
 					"name" : "y"
 				}
 			],
-			"name" : "max"
+			"name" : "max",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f2",
@@ -17321,7 +17702,10 @@
 					"name" : "b"
 				}
 			],
-			"name" : "clamp"
+			"name" : "clamp",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f2",
@@ -17332,7 +17716,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "abs"
+			"name" : "abs",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f2",
@@ -17343,7 +17730,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "sign"
+			"name" : "sign",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f3",
@@ -17358,7 +17748,10 @@
 					"name" : "y"
 				}
 			],
-			"name" : "min"
+			"name" : "min",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f3",
@@ -17373,7 +17766,10 @@
 					"name" : "y"
 				}
 			],
-			"name" : "max"
+			"name" : "max",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f3",
@@ -17392,7 +17788,10 @@
 					"name" : "b"
 				}
 			],
-			"name" : "clamp"
+			"name" : "clamp",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f3",
@@ -17403,7 +17802,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "abs"
+			"name" : "abs",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f3",
@@ -17414,7 +17816,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "sign"
+			"name" : "sign",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f4",
@@ -17429,7 +17834,10 @@
 					"name" : "y"
 				}
 			],
-			"name" : "min"
+			"name" : "min",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f4",
@@ -17444,7 +17852,10 @@
 					"name" : "y"
 				}
 			],
-			"name" : "max"
+			"name" : "max",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f4",
@@ -17463,7 +17874,10 @@
 					"name" : "b"
 				}
 			],
-			"name" : "clamp"
+			"name" : "clamp",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f4",
@@ -17474,7 +17888,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "abs"
+			"name" : "abs",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f4",
@@ -17485,7 +17902,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "sign"
+			"name" : "sign",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "d",
@@ -17500,7 +17920,10 @@
 					"name" : "y"
 				}
 			],
-			"name" : "min"
+			"name" : "min",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "d",
@@ -17515,7 +17938,10 @@
 					"name" : "y"
 				}
 			],
-			"name" : "max"
+			"name" : "max",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "d",
@@ -17534,7 +17960,10 @@
 					"name" : "b"
 				}
 			],
-			"name" : "clamp"
+			"name" : "clamp",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "d",
@@ -17545,7 +17974,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "abs"
+			"name" : "abs",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "d",
@@ -17556,7 +17988,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "sign"
+			"name" : "sign",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "i64",
@@ -17571,7 +18006,10 @@
 					"name" : "y"
 				}
 			],
-			"name" : "min"
+			"name" : "min",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "i64",
@@ -17586,7 +18024,10 @@
 					"name" : "y"
 				}
 			],
-			"name" : "max"
+			"name" : "max",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "i64",
@@ -17605,7 +18046,10 @@
 					"name" : "b"
 				}
 			],
-			"name" : "clamp"
+			"name" : "clamp",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "i64",
@@ -17616,7 +18060,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "abs"
+			"name" : "abs",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "i64",
@@ -17627,7 +18074,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "sign"
+			"name" : "sign",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "u64",
@@ -17642,7 +18092,10 @@
 					"name" : "y"
 				}
 			],
-			"name" : "min"
+			"name" : "min",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "u64",
@@ -17657,7 +18110,10 @@
 					"name" : "y"
 				}
 			],
-			"name" : "max"
+			"name" : "max",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "u64",
@@ -17676,7 +18132,10 @@
 					"name" : "b"
 				}
 			],
-			"name" : "clamp"
+			"name" : "clamp",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "u64",
@@ -17687,7 +18146,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "abs"
+			"name" : "abs",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "u64",
@@ -17698,7 +18160,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "sign"
+			"name" : "sign",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "u",
@@ -17709,7 +18174,10 @@
 					"name" : "seed"
 				}
 			],
-			"name" : "uint32_hash"
+			"name" : "uint32_hash",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "u",
@@ -17724,7 +18192,10 @@
 					"name" : "seed"
 				}
 			],
-			"name" : "uint_noise_1D"
+			"name" : "uint_noise_1D",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "u",
@@ -17739,7 +18210,10 @@
 					"name" : "seed"
 				}
 			],
-			"name" : "uint_noise_2D"
+			"name" : "uint_noise_2D",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "u",
@@ -17754,7 +18228,10 @@
 					"name" : "seed"
 				}
 			],
-			"name" : "uint_noise_3D"
+			"name" : "uint_noise_3D",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f",
@@ -17769,7 +18246,10 @@
 					"name" : "y"
 				}
 			],
-			"name" : "dot"
+			"name" : "dot",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f",
@@ -17784,7 +18264,10 @@
 					"name" : "y"
 				}
 			],
-			"name" : "dot"
+			"name" : "dot",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f",
@@ -17799,7 +18282,10 @@
 					"name" : "y"
 				}
 			],
-			"name" : "dot"
+			"name" : "dot",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f3",
@@ -17814,7 +18300,10 @@
 					"name" : "y"
 				}
 			],
-			"name" : "cross"
+			"name" : "cross",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f2",
@@ -17825,7 +18314,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "fast_normalize"
+			"name" : "fast_normalize",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f3",
@@ -17836,7 +18328,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "fast_normalize"
+			"name" : "fast_normalize",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f4",
@@ -17847,7 +18342,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "fast_normalize"
+			"name" : "fast_normalize",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f2",
@@ -17858,7 +18356,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "normalize"
+			"name" : "normalize",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f3",
@@ -17869,7 +18370,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "normalize"
+			"name" : "normalize",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f4",
@@ -17880,7 +18384,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "normalize"
+			"name" : "normalize",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f",
@@ -17891,7 +18398,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "length"
+			"name" : "length",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f",
@@ -17902,7 +18412,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "length"
+			"name" : "length",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f",
@@ -17913,7 +18426,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "length"
+			"name" : "length",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f",
@@ -17924,7 +18440,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "inv_length"
+			"name" : "inv_length",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f",
@@ -17935,7 +18454,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "inv_length"
+			"name" : "inv_length",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f",
@@ -17946,7 +18468,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "inv_length"
+			"name" : "inv_length",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f",
@@ -17957,7 +18482,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "inv_length_sq"
+			"name" : "inv_length_sq",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f",
@@ -17968,7 +18496,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "inv_length_sq"
+			"name" : "inv_length_sq",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f",
@@ -17979,7 +18510,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "inv_length_sq"
+			"name" : "inv_length_sq",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f",
@@ -17990,7 +18524,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "length_sq"
+			"name" : "length_sq",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f",
@@ -18001,7 +18538,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "length_sq"
+			"name" : "length_sq",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f",
@@ -18012,7 +18552,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "length_sq"
+			"name" : "length_sq",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f",
@@ -18027,7 +18570,10 @@
 					"name" : "y"
 				}
 			],
-			"name" : "distance"
+			"name" : "distance",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f",
@@ -18042,7 +18588,10 @@
 					"name" : "y"
 				}
 			],
-			"name" : "distance_sq"
+			"name" : "distance_sq",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f",
@@ -18057,7 +18606,10 @@
 					"name" : "y"
 				}
 			],
-			"name" : "inv_distance"
+			"name" : "inv_distance",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f",
@@ -18072,7 +18624,10 @@
 					"name" : "y"
 				}
 			],
-			"name" : "inv_distance_sq"
+			"name" : "inv_distance_sq",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "b",
@@ -18083,7 +18638,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "is_nan"
+			"name" : "is_nan",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "b",
@@ -18094,7 +18652,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "is_finite"
+			"name" : "is_finite",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "b",
@@ -18105,7 +18666,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "is_nan"
+			"name" : "is_nan",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "b",
@@ -18116,7 +18680,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "is_finite"
+			"name" : "is_finite",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "d",
@@ -18127,7 +18694,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "sqrt"
+			"name" : "sqrt",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "d",
@@ -18138,7 +18708,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "exp"
+			"name" : "exp",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "d",
@@ -18149,7 +18722,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "rcp"
+			"name" : "rcp",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "d",
@@ -18160,7 +18736,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "log"
+			"name" : "log",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "d",
@@ -18175,7 +18754,10 @@
 					"name" : "y"
 				}
 			],
-			"name" : "pow"
+			"name" : "pow",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "d",
@@ -18186,7 +18768,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "exp2"
+			"name" : "exp2",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "d",
@@ -18197,7 +18782,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "log2"
+			"name" : "log2",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "d",
@@ -18208,7 +18796,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "sin"
+			"name" : "sin",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "d",
@@ -18219,7 +18810,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "cos"
+			"name" : "cos",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "d",
@@ -18230,7 +18824,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "asin"
+			"name" : "asin",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "d",
@@ -18241,7 +18838,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "acos"
+			"name" : "acos",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "d",
@@ -18252,7 +18852,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "tan"
+			"name" : "tan",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "d",
@@ -18263,7 +18866,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "atan"
+			"name" : "atan",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "d",
@@ -18278,7 +18884,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "atan2"
+			"name" : "atan2",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "v",
@@ -18298,7 +18907,10 @@
 					"name" : "c"
 				}
 			],
-			"name" : "sincos"
+			"name" : "sincos",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "v",
@@ -18318,7 +18930,10 @@
 					"name" : "c"
 				}
 			],
-			"name" : "sincos"
+			"name" : "sincos",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f3",
@@ -18333,7 +18948,10 @@
 					"name" : "n"
 				}
 			],
-			"name" : "reflect"
+			"name" : "reflect",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f3",
@@ -18352,7 +18970,10 @@
 					"name" : "nint"
 				}
 			],
-			"name" : "refract"
+			"name" : "refract",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "i",
@@ -18363,7 +18984,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "floori"
+			"name" : "floori",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "i",
@@ -18374,7 +18998,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "ceili"
+			"name" : "ceili",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "i",
@@ -18385,7 +19012,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "roundi"
+			"name" : "roundi",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "i",
@@ -18396,7 +19026,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "trunci"
+			"name" : "trunci",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "i",
@@ -18407,7 +19040,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "floori"
+			"name" : "floori",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "i",
@@ -18418,7 +19054,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "ceili"
+			"name" : "ceili",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "i",
@@ -18429,7 +19068,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "roundi"
+			"name" : "roundi",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "i",
@@ -18440,7 +19082,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "trunci"
+			"name" : "trunci",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "i2",
@@ -18451,7 +19096,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "floori"
+			"name" : "floori",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "i2",
@@ -18462,7 +19110,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "ceili"
+			"name" : "ceili",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "i2",
@@ -18473,7 +19124,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "roundi"
+			"name" : "roundi",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "i2",
@@ -18484,7 +19138,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "trunci"
+			"name" : "trunci",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "i3",
@@ -18495,7 +19152,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "floori"
+			"name" : "floori",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "i3",
@@ -18506,7 +19166,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "ceili"
+			"name" : "ceili",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "i3",
@@ -18517,7 +19180,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "roundi"
+			"name" : "roundi",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "i3",
@@ -18528,7 +19194,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "trunci"
+			"name" : "trunci",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "i4",
@@ -18539,7 +19208,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "floori"
+			"name" : "floori",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "i4",
@@ -18550,7 +19222,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "ceili"
+			"name" : "ceili",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "i4",
@@ -18561,7 +19236,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "roundi"
+			"name" : "roundi",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "i4",
@@ -18572,25 +19250,37 @@
 					"name" : "x"
 				}
 			],
-			"name" : "trunci"
+			"name" : "trunci",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "H<math::float3x3>",
 			"mn" : "float3x3():H<math::float3x3>",
 			"args" : [],
-			"name" : "float3x3"
+			"name" : "float3x3",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "H<math::float3x4>",
 			"mn" : "float3x4():H<math::float3x4>",
 			"args" : [],
-			"name" : "float3x4"
+			"name" : "float3x4",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "H<math::float4x4>",
 			"mn" : "float4x4():H<math::float4x4>",
 			"args" : [],
-			"name" : "float4x4"
+			"name" : "float4x4",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "v",
@@ -18602,13 +19292,19 @@
 					"name" : "x"
 				}
 			],
-			"name" : "identity"
+			"name" : "identity",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "H<math::float4x4>",
 			"mn" : "identity4x4():H<math::float4x4>",
 			"args" : [],
-			"name" : "identity4x4"
+			"name" : "identity4x4",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "H<math::float4x4>",
@@ -18619,7 +19315,10 @@
 					"name" : "xyz"
 				}
 			],
-			"name" : "translation"
+			"name" : "translation",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "H<math::float4x4>",
@@ -18630,7 +19329,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "transpose"
+			"name" : "transpose",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "H<math::float4x4>",
@@ -18653,7 +19355,10 @@
 					"name" : "zf"
 				}
 			],
-			"name" : "persp_forward"
+			"name" : "persp_forward",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "H<math::float4x4>",
@@ -18676,7 +19381,10 @@
 					"name" : "zf"
 				}
 			],
-			"name" : "persp_reverse"
+			"name" : "persp_reverse",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "H<math::float4x4>",
@@ -18695,7 +19403,10 @@
 					"name" : "up"
 				}
 			],
-			"name" : "look_at"
+			"name" : "look_at",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "H<math::float4x4>",
@@ -18714,7 +19425,10 @@
 					"name" : "scale"
 				}
 			],
-			"name" : "compose"
+			"name" : "compose",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "H<math::float4x4>",
@@ -18730,7 +19444,10 @@
 					"name" : "y"
 				}
 			],
-			"name" : "*"
+			"name" : "*",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "v",
@@ -18754,7 +19471,10 @@
 					"name" : "scale"
 				}
 			],
-			"name" : "decompose"
+			"name" : "decompose",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "b",
@@ -18770,7 +19490,10 @@
 					"name" : "y"
 				}
 			],
-			"name" : "=="
+			"name" : "==",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "b",
@@ -18786,7 +19509,10 @@
 					"name" : "y"
 				}
 			],
-			"name" : "!="
+			"name" : "!=",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "H<math::float3x4>",
@@ -18797,7 +19523,10 @@
 					"name" : "arg0"
 				}
 			],
-			"name" : "float3x4"
+			"name" : "float3x4",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "v",
@@ -18809,13 +19538,19 @@
 					"name" : "x"
 				}
 			],
-			"name" : "identity"
+			"name" : "identity",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "H<math::float3x4>",
 			"mn" : "identity3x4():H<math::float3x4>",
 			"args" : [],
-			"name" : "identity3x4"
+			"name" : "identity3x4",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "H<math::float3x4>",
@@ -18831,7 +19566,10 @@
 					"name" : "y"
 				}
 			],
-			"name" : "*"
+			"name" : "*",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f3",
@@ -18847,7 +19585,10 @@
 					"name" : "y"
 				}
 			],
-			"name" : "*"
+			"name" : "*",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f4",
@@ -18863,7 +19604,10 @@
 					"name" : "y"
 				}
 			],
-			"name" : "*"
+			"name" : "*",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "H<math::float3x4>",
@@ -18874,7 +19618,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "inverse"
+			"name" : "inverse",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "H<math::float4x4>",
@@ -18885,7 +19632,10 @@
 					"name" : "m"
 				}
 			],
-			"name" : "inverse"
+			"name" : "inverse",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "H<math::float4x4>",
@@ -18896,7 +19646,10 @@
 					"name" : "m"
 				}
 			],
-			"name" : "orthonormal_inverse"
+			"name" : "orthonormal_inverse",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f3",
@@ -18911,7 +19664,10 @@
 					"name" : "y"
 				}
 			],
-			"name" : "rotate"
+			"name" : "rotate",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "b",
@@ -18927,7 +19683,10 @@
 					"name" : "y"
 				}
 			],
-			"name" : "=="
+			"name" : "==",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "b",
@@ -18943,7 +19702,10 @@
 					"name" : "y"
 				}
 			],
-			"name" : "!="
+			"name" : "!=",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f4",
@@ -18958,7 +19720,10 @@
 					"name" : "v1"
 				}
 			],
-			"name" : "un_quat_from_unit_arc"
+			"name" : "un_quat_from_unit_arc",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f4",
@@ -18973,7 +19738,10 @@
 					"name" : "ang"
 				}
 			],
-			"name" : "un_quat_from_unit_vec_ang"
+			"name" : "un_quat_from_unit_vec_ang",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f4",
@@ -18984,7 +19752,10 @@
 					"name" : "m"
 				}
 			],
-			"name" : "un_quat"
+			"name" : "un_quat",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f4",
@@ -18999,7 +19770,10 @@
 					"name" : "q2"
 				}
 			],
-			"name" : "quat_mul"
+			"name" : "quat_mul",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f3",
@@ -19014,7 +19788,10 @@
 					"name" : "v"
 				}
 			],
-			"name" : "quat_mul_vec"
+			"name" : "quat_mul_vec",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f4",
@@ -19025,7 +19802,10 @@
 					"name" : "q"
 				}
 			],
-			"name" : "quat_conjugate"
+			"name" : "quat_conjugate",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "H<math::float3x3>",
@@ -19036,7 +19816,10 @@
 					"name" : "arg0"
 				}
 			],
-			"name" : "float3x3"
+			"name" : "float3x3",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "H<math::float3x3>",
@@ -19047,7 +19830,10 @@
 					"name" : "arg0"
 				}
 			],
-			"name" : "float3x3"
+			"name" : "float3x3",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "v",
@@ -19059,13 +19845,19 @@
 					"name" : "x"
 				}
 			],
-			"name" : "identity"
+			"name" : "identity",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "H<math::float3x3>",
 			"mn" : "identity3x3():H<math::float3x3>",
 			"args" : [],
-			"name" : "identity3x3"
+			"name" : "identity3x3",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "H<math::float3x3>",
@@ -19081,7 +19873,10 @@
 					"name" : "y"
 				}
 			],
-			"name" : "*"
+			"name" : "*",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f3",
@@ -19097,7 +19892,10 @@
 					"name" : "y"
 				}
 			],
-			"name" : "*"
+			"name" : "*",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "b",
@@ -19113,7 +19911,10 @@
 					"name" : "y"
 				}
 			],
-			"name" : "=="
+			"name" : "==",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "b",
@@ -19129,7 +19930,10 @@
 					"name" : "y"
 				}
 			],
-			"name" : "!="
+			"name" : "!=",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "u",
@@ -19140,7 +19944,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "pack_float_to_byte"
+			"name" : "pack_float_to_byte",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "f4",
@@ -19151,7 +19958,10 @@
 					"name" : "x"
 				}
 			],
-			"name" : "unpack_byte_to_float"
+			"name" : "unpack_byte_to_float",
+			"requirements" : [
+				"math"
+			]
 		},
 		{
 			"resMn" : "v",
@@ -19163,7 +19973,10 @@
 					"name" : "str"
 				}
 			],
-			"name" : "delete_string"
+			"name" : "delete_string",
+			"requirements" : [
+				"strings"
+			]
 		},
 		{
 			"resMn" : "s",
@@ -19175,7 +19988,10 @@
 					"name" : "block"
 				}
 			],
-			"name" : "build_string"
+			"name" : "build_string",
+			"requirements" : [
+				"strings"
+			]
 		},
 		{
 			"resMn" : "v",
@@ -19191,7 +20007,10 @@
 					"name" : "block"
 				}
 			],
-			"name" : "peek_data"
+			"name" : "peek_data",
+			"requirements" : [
+				"strings"
+			]
 		},
 		{
 			"resMn" : "s",
@@ -19207,7 +20026,10 @@
 					"name" : "block"
 				}
 			],
-			"name" : "modify_data"
+			"name" : "modify_data",
+			"requirements" : [
+				"strings"
+			]
 		},
 		{
 			"resMn" : "v",
@@ -19223,7 +20045,10 @@
 					"name" : "anything"
 				}
 			],
-			"name" : "write"
+			"name" : "write",
+			"requirements" : [
+				"strings"
+			]
 		},
 		{
 			"resMn" : "v",
@@ -19239,7 +20064,10 @@
 					"name" : "ch"
 				}
 			],
-			"name" : "write_char"
+			"name" : "write_char",
+			"requirements" : [
+				"strings"
+			]
 		},
 		{
 			"resMn" : "v",
@@ -19259,7 +20087,10 @@
 					"name" : "count"
 				}
 			],
-			"name" : "write_chars"
+			"name" : "write_chars",
+			"requirements" : [
+				"strings"
+			]
 		},
 		{
 			"resMn" : "v",
@@ -19275,7 +20106,10 @@
 					"name" : "str"
 				}
 			],
-			"name" : "write_escape_string"
+			"name" : "write_escape_string",
+			"requirements" : [
+				"strings"
+			]
 		},
 		{
 			"resMn" : "v",
@@ -19295,7 +20129,10 @@
 					"name" : "value"
 				}
 			],
-			"name" : "format"
+			"name" : "format",
+			"requirements" : [
+				"strings"
+			]
 		},
 		{
 			"resMn" : "v",
@@ -19315,7 +20152,10 @@
 					"name" : "value"
 				}
 			],
-			"name" : "format"
+			"name" : "format",
+			"requirements" : [
+				"strings"
+			]
 		},
 		{
 			"resMn" : "v",
@@ -19335,7 +20175,10 @@
 					"name" : "value"
 				}
 			],
-			"name" : "format"
+			"name" : "format",
+			"requirements" : [
+				"strings"
+			]
 		},
 		{
 			"resMn" : "v",
@@ -19355,7 +20198,10 @@
 					"name" : "value"
 				}
 			],
-			"name" : "format"
+			"name" : "format",
+			"requirements" : [
+				"strings"
+			]
 		},
 		{
 			"resMn" : "v",
@@ -19375,7 +20221,10 @@
 					"name" : "value"
 				}
 			],
-			"name" : "format"
+			"name" : "format",
+			"requirements" : [
+				"strings"
+			]
 		},
 		{
 			"resMn" : "v",
@@ -19395,7 +20244,10 @@
 					"name" : "value"
 				}
 			],
-			"name" : "format"
+			"name" : "format",
+			"requirements" : [
+				"strings"
+			]
 		},
 		{
 			"resMn" : "s",
@@ -19406,7 +20258,10 @@
 					"name" : "bytes"
 				}
 			],
-			"name" : "string"
+			"name" : "string",
+			"requirements" : [
+				"strings"
+			]
 		},
 		{
 			"resMn" : "v",
@@ -19418,7 +20273,10 @@
 					"name" : "anything"
 				}
 			],
-			"name" : "builtin_strdup"
+			"name" : "builtin_strdup",
+			"requirements" : [
+				"strings"
+			]
 		},
 		{
 			"resMn" : "i",
@@ -19433,7 +20291,10 @@
 					"name" : "idx"
 				}
 			],
-			"name" : "character_at"
+			"name" : "character_at",
+			"requirements" : [
+				"strings"
+			]
 		},
 		{
 			"resMn" : "i",
@@ -19448,7 +20309,10 @@
 					"name" : "idx"
 				}
 			],
-			"name" : "character_uat"
+			"name" : "character_uat",
+			"requirements" : [
+				"strings"
+			]
 		},
 		{
 			"resMn" : "s",
@@ -19463,7 +20327,10 @@
 					"name" : "count"
 				}
 			],
-			"name" : "repeat"
+			"name" : "repeat",
+			"requirements" : [
+				"strings"
+			]
 		},
 		{
 			"resMn" : "s",
@@ -19474,7 +20341,10 @@
 					"name" : "char"
 				}
 			],
-			"name" : "to_char"
+			"name" : "to_char",
+			"requirements" : [
+				"strings"
+			]
 		},
 		{
 			"resMn" : "b",
@@ -19489,7 +20359,10 @@
 					"name" : "cmp"
 				}
 			],
-			"name" : "ends_with"
+			"name" : "ends_with",
+			"requirements" : [
+				"strings"
+			]
 		},
 		{
 			"resMn" : "b",
@@ -19504,7 +20377,10 @@
 					"name" : "cmp"
 				}
 			],
-			"name" : "ends_with"
+			"name" : "ends_with",
+			"requirements" : [
+				"strings"
+			]
 		},
 		{
 			"resMn" : "b",
@@ -19519,7 +20395,10 @@
 					"name" : "cmp"
 				}
 			],
-			"name" : "starts_with"
+			"name" : "starts_with",
+			"requirements" : [
+				"strings"
+			]
 		},
 		{
 			"resMn" : "b",
@@ -19538,7 +20417,10 @@
 					"name" : "cmpLen"
 				}
 			],
-			"name" : "starts_with"
+			"name" : "starts_with",
+			"requirements" : [
+				"strings"
+			]
 		},
 		{
 			"resMn" : "s",
@@ -19549,7 +20431,10 @@
 					"name" : "str"
 				}
 			],
-			"name" : "strip"
+			"name" : "strip",
+			"requirements" : [
+				"strings"
+			]
 		},
 		{
 			"resMn" : "s",
@@ -19560,7 +20445,10 @@
 					"name" : "str"
 				}
 			],
-			"name" : "strip_right"
+			"name" : "strip_right",
+			"requirements" : [
+				"strings"
+			]
 		},
 		{
 			"resMn" : "s",
@@ -19571,7 +20459,10 @@
 					"name" : "str"
 				}
 			],
-			"name" : "strip_left"
+			"name" : "strip_left",
+			"requirements" : [
+				"strings"
+			]
 		},
 		{
 			"resMn" : "s",
@@ -19590,7 +20481,10 @@
 					"name" : "length"
 				}
 			],
-			"name" : "chop"
+			"name" : "chop",
+			"requirements" : [
+				"strings"
+			]
 		},
 		{
 			"resMn" : "s",
@@ -19609,7 +20503,10 @@
 					"name" : "end"
 				}
 			],
-			"name" : "slice"
+			"name" : "slice",
+			"requirements" : [
+				"strings"
+			]
 		},
 		{
 			"resMn" : "s",
@@ -19624,7 +20521,10 @@
 					"name" : "start"
 				}
 			],
-			"name" : "slice"
+			"name" : "slice",
+			"requirements" : [
+				"strings"
+			]
 		},
 		{
 			"resMn" : "i",
@@ -19643,7 +20543,10 @@
 					"name" : "start"
 				}
 			],
-			"name" : "find"
+			"name" : "find",
+			"requirements" : [
+				"strings"
+			]
 		},
 		{
 			"resMn" : "i",
@@ -19658,7 +20561,10 @@
 					"name" : "substr"
 				}
 			],
-			"name" : "find"
+			"name" : "find",
+			"requirements" : [
+				"strings"
+			]
 		},
 		{
 			"resMn" : "i",
@@ -19673,7 +20579,10 @@
 					"name" : "substr"
 				}
 			],
-			"name" : "find"
+			"name" : "find",
+			"requirements" : [
+				"strings"
+			]
 		},
 		{
 			"resMn" : "i",
@@ -19692,7 +20601,10 @@
 					"name" : "start"
 				}
 			],
-			"name" : "find"
+			"name" : "find",
+			"requirements" : [
+				"strings"
+			]
 		},
 		{
 			"resMn" : "i",
@@ -19703,7 +20615,10 @@
 					"name" : "str"
 				}
 			],
-			"name" : "length"
+			"name" : "length",
+			"requirements" : [
+				"strings"
+			]
 		},
 		{
 			"resMn" : "s",
@@ -19714,7 +20629,10 @@
 					"name" : "str"
 				}
 			],
-			"name" : "reverse"
+			"name" : "reverse",
+			"requirements" : [
+				"strings"
+			]
 		},
 		{
 			"resMn" : "v",
@@ -19730,7 +20648,10 @@
 					"name" : "ch"
 				}
 			],
-			"name" : "append"
+			"name" : "append",
+			"requirements" : [
+				"strings"
+			]
 		},
 		{
 			"resMn" : "v",
@@ -19746,7 +20667,10 @@
 					"name" : "new_length"
 				}
 			],
-			"name" : "resize"
+			"name" : "resize",
+			"requirements" : [
+				"strings"
+			]
 		},
 		{
 			"resMn" : "i",
@@ -19757,7 +20681,10 @@
 					"name" : "str"
 				}
 			],
-			"name" : "length"
+			"name" : "length",
+			"requirements" : [
+				"strings"
+			]
 		},
 		{
 			"resMn" : "s",
@@ -19768,7 +20695,10 @@
 					"name" : "str"
 				}
 			],
-			"name" : "to_upper"
+			"name" : "to_upper",
+			"requirements" : [
+				"strings"
+			]
 		},
 		{
 			"resMn" : "s",
@@ -19779,7 +20709,10 @@
 					"name" : "str"
 				}
 			],
-			"name" : "to_lower"
+			"name" : "to_lower",
+			"requirements" : [
+				"strings"
+			]
 		},
 		{
 			"resMn" : "b",
@@ -19790,7 +20723,10 @@
 					"name" : "str"
 				}
 			],
-			"name" : "empty"
+			"name" : "empty",
+			"requirements" : [
+				"strings"
+			]
 		},
 		{
 			"resMn" : "b",
@@ -19801,7 +20737,10 @@
 					"name" : "str"
 				}
 			],
-			"name" : "empty"
+			"name" : "empty",
+			"requirements" : [
+				"strings"
+			]
 		},
 		{
 			"resMn" : "s",
@@ -19812,7 +20751,10 @@
 					"name" : "str"
 				}
 			],
-			"name" : "to_lower_in_place"
+			"name" : "to_lower_in_place",
+			"requirements" : [
+				"strings"
+			]
 		},
 		{
 			"resMn" : "s",
@@ -19823,7 +20765,10 @@
 					"name" : "str"
 				}
 			],
-			"name" : "to_upper_in_place"
+			"name" : "to_upper_in_place",
+			"requirements" : [
+				"strings"
+			]
 		},
 		{
 			"resMn" : "v",
@@ -19843,7 +20788,10 @@
 					"name" : "block"
 				}
 			],
-			"name" : "builtin_string_split_by_char"
+			"name" : "builtin_string_split_by_char",
+			"requirements" : [
+				"strings"
+			]
 		},
 		{
 			"resMn" : "v",
@@ -19863,7 +20811,10 @@
 					"name" : "block"
 				}
 			],
-			"name" : "builtin_string_split"
+			"name" : "builtin_string_split",
+			"requirements" : [
+				"strings"
+			]
 		},
 		{
 			"resMn" : "i",
@@ -19874,7 +20825,10 @@
 					"name" : "str"
 				}
 			],
-			"name" : "int"
+			"name" : "int",
+			"requirements" : [
+				"strings"
+			]
 		},
 		{
 			"resMn" : "u",
@@ -19885,7 +20839,10 @@
 					"name" : "str"
 				}
 			],
-			"name" : "uint"
+			"name" : "uint",
+			"requirements" : [
+				"strings"
+			]
 		},
 		{
 			"resMn" : "f",
@@ -19896,7 +20853,10 @@
 					"name" : "str"
 				}
 			],
-			"name" : "float"
+			"name" : "float",
+			"requirements" : [
+				"strings"
+			]
 		},
 		{
 			"resMn" : "d",
@@ -19907,7 +20867,10 @@
 					"name" : "str"
 				}
 			],
-			"name" : "double"
+			"name" : "double",
+			"requirements" : [
+				"strings"
+			]
 		},
 		{
 			"resMn" : "i",
@@ -19922,7 +20885,10 @@
 					"name" : "hex"
 				}
 			],
-			"name" : "to_int"
+			"name" : "to_int",
+			"requirements" : [
+				"strings"
+			]
 		},
 		{
 			"resMn" : "u",
@@ -19937,7 +20903,10 @@
 					"name" : "hex"
 				}
 			],
-			"name" : "to_uint"
+			"name" : "to_uint",
+			"requirements" : [
+				"strings"
+			]
 		},
 		{
 			"resMn" : "i64",
@@ -19952,7 +20921,10 @@
 					"name" : "hex"
 				}
 			],
-			"name" : "to_int64"
+			"name" : "to_int64",
+			"requirements" : [
+				"strings"
+			]
 		},
 		{
 			"resMn" : "u64",
@@ -19967,7 +20939,10 @@
 					"name" : "hex"
 				}
 			],
-			"name" : "to_uint64"
+			"name" : "to_uint64",
+			"requirements" : [
+				"strings"
+			]
 		},
 		{
 			"resMn" : "f",
@@ -19978,7 +20953,10 @@
 					"name" : "value"
 				}
 			],
-			"name" : "to_float"
+			"name" : "to_float",
+			"requirements" : [
+				"strings"
+			]
 		},
 		{
 			"resMn" : "s",
@@ -19989,7 +20967,10 @@
 					"name" : "str"
 				}
 			],
-			"name" : "escape"
+			"name" : "escape",
+			"requirements" : [
+				"strings"
+			]
 		},
 		{
 			"resMn" : "s",
@@ -20000,7 +20981,10 @@
 					"name" : "str"
 				}
 			],
-			"name" : "unescape"
+			"name" : "unescape",
+			"requirements" : [
+				"strings"
+			]
 		},
 		{
 			"resMn" : "s",
@@ -20019,7 +21003,10 @@
 					"name" : "replace"
 				}
 			],
-			"name" : "replace"
+			"name" : "replace",
+			"requirements" : [
+				"strings"
+			]
 		},
 		{
 			"resMn" : "s",
@@ -20030,7 +21017,10 @@
 					"name" : "str"
 				}
 			],
-			"name" : "rtrim"
+			"name" : "rtrim",
+			"requirements" : [
+				"strings"
+			]
 		},
 		{
 			"resMn" : "s",
@@ -20045,7 +21035,10 @@
 					"name" : "value"
 				}
 			],
-			"name" : "format"
+			"name" : "format",
+			"requirements" : [
+				"strings"
+			]
 		},
 		{
 			"resMn" : "s",
@@ -20060,7 +21053,10 @@
 					"name" : "value"
 				}
 			],
-			"name" : "format"
+			"name" : "format",
+			"requirements" : [
+				"strings"
+			]
 		},
 		{
 			"resMn" : "s",
@@ -20075,7 +21071,10 @@
 					"name" : "value"
 				}
 			],
-			"name" : "format"
+			"name" : "format",
+			"requirements" : [
+				"strings"
+			]
 		},
 		{
 			"resMn" : "s",
@@ -20090,7 +21089,10 @@
 					"name" : "value"
 				}
 			],
-			"name" : "format"
+			"name" : "format",
+			"requirements" : [
+				"strings"
+			]
 		},
 		{
 			"resMn" : "s",
@@ -20105,7 +21107,10 @@
 					"name" : "value"
 				}
 			],
-			"name" : "format"
+			"name" : "format",
+			"requirements" : [
+				"strings"
+			]
 		},
 		{
 			"resMn" : "s",
@@ -20120,7 +21125,10 @@
 					"name" : "value"
 				}
 			],
-			"name" : "format"
+			"name" : "format",
+			"requirements" : [
+				"strings"
+			]
 		},
 		{
 			"resMn" : "b",
@@ -20131,7 +21139,10 @@
 					"name" : "Character"
 				}
 			],
-			"name" : "is_alpha"
+			"name" : "is_alpha",
+			"requirements" : [
+				"strings"
+			]
 		},
 		{
 			"resMn" : "b",
@@ -20142,7 +21153,10 @@
 					"name" : "Character"
 				}
 			],
-			"name" : "is_new_line"
+			"name" : "is_new_line",
+			"requirements" : [
+				"strings"
+			]
 		},
 		{
 			"resMn" : "b",
@@ -20153,7 +21167,10 @@
 					"name" : "Character"
 				}
 			],
-			"name" : "is_white_space"
+			"name" : "is_white_space",
+			"requirements" : [
+				"strings"
+			]
 		},
 		{
 			"resMn" : "b",
@@ -20164,7 +21181,10 @@
 					"name" : "Character"
 				}
 			],
-			"name" : "is_number"
+			"name" : "is_number",
+			"requirements" : [
+				"strings"
+			]
 		},
 		{
 			"resMn" : "b",
@@ -20179,7 +21199,10 @@
 					"name" : "Charset"
 				}
 			],
-			"name" : "is_char_in_set"
+			"name" : "is_char_in_set",
+			"requirements" : [
+				"strings"
+			]
 		},
 		{
 			"resMn" : "s",
@@ -20194,7 +21217,10 @@
 					"name" : "length"
 				}
 			],
-			"name" : "reserve_string_buffer"
+			"name" : "reserve_string_buffer",
+			"requirements" : [
+				"strings"
+			]
 		}
 	],
 	"types" : [

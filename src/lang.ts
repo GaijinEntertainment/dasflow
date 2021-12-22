@@ -25,6 +25,7 @@ export interface LangFunctionDesc {
     unsafe?: boolean
     ctor?: string;
     args: LangFunctionArgDesc[]
+    requirements?: string[]
 }
 
 export interface LangCoreDesc {

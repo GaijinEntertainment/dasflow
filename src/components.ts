@@ -343,7 +343,7 @@ export class TypeCtor extends LangComponent {
     constructDasNode(node, ctx) {
         const ctorArgs: { [key: string]: string } = {}
 
-        for (const req in this.baseType.desc.requirements)
+        for (const req of this.baseType.desc.requirements ?? [])
             ctx.addReqModule(req)
 
         const val = this.baseType.ctor(node.data.value, ctorArgs)
@@ -441,7 +441,9 @@ export class LangFunc extends LangComponent {
             }
             ctorArgs[field.name] = fieldType.ctor(node.data[field.name], {}) ?? node.data[field.name]
         }
-        for (const req in this.resType.desc.requirements)
+        for (const req of this.resType.desc.requirements ?? [])
+            ctx.addReqModule(req)
+        for (const req of this.ctorFn.desc.requirements ?? [])
             ctx.addReqModule(req)
 
         const val = this.ctorFn.ctor(ctorArgs)
