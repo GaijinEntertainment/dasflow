@@ -127,6 +127,12 @@ function getType(mn: string): LangType | undefined {
 }
 
 
+function getBaseTypeOf(type: LangType | undefined): LangType | undefined {
+    if (type && type.desc.baseMn)
+        return getType(type.desc.baseMn) ?? type
+    return type
+}
+
 function getBaseType(mn: string): LangType | undefined {
     const res = getType(mn)
     if (res && res.desc.baseMn)
@@ -321,7 +327,7 @@ export class TypeCtor extends LangComponent {
     constructor(name: string, group: string[], type: LangType) {
         super(name, group)
         this.baseType = type
-        this.useLocal = this.baseType.desc.canCopy ?? false
+        this.useLocal = this.baseType.desc.isLocal ?? false
     }
 
     async builder(node) {
@@ -374,7 +380,7 @@ export class LangFunc extends LangComponent {
         super(name, group)
         this.resType = type
         this.ctorFn = ctorFn
-        this.useLocal = this.resType.desc.canCopy ?? false
+        this.useLocal = this.resType.desc.isLocal ?? false
     }
 
     async builder(node) {
@@ -430,27 +436,28 @@ export class LangFunc extends LangComponent {
     constructDasNode(node, ctx) {
         const ctorArgs: { [key: string]: string } = {}
         for (const field of this.ctorFn.desc.args) {
-            const input = this.constructOptionalInNode(node, field.name, ctx)
+            const fieldType = getType(field.mn)
+            const baseType = getBaseTypeOf(fieldType)
+            if (!fieldType) {
+                console.error(`type ${field.mn} not found`)
+                continue
+            }
+            const input = baseType?.supportTextInput() || fieldType.supportTextInput() ? this.constructOptionalInNode(node, field.name, ctx) : this.constructInNode(node, field.name, ctx)
             if (input) {
                 ctorArgs[field.name] = ctx.nodeId(input)
                 continue
             }
-            const fieldType = getType(field.mn)
-            if (fieldType) {
-                for (const req of fieldType.desc.requirements ?? [])
-                    ctx.addReqModule(req)
-                if (fieldType.desc.isConst && !fieldType.desc.isRef) {
-                    const baseType = getBaseType(field.mn)
-                    // ignore base type ctors with same name
-                    if (baseType && (this.ctorFn.desc.args.length != 1 || baseType.desc.typeName != this.ctorFn.desc.name)) {
-                        ctorArgs[field.name] = baseType.ctor(node.data[field.name], {}) ?? node.data[field.name]
-                        continue
-                    }
+
+            for (const req of fieldType.desc.requirements ?? [])
+                ctx.addReqModule(req)
+            if (fieldType.desc.isConst && !fieldType.desc.isRef) {
+                // ignore base type ctors with same name
+                if (baseType && (this.ctorFn.desc.args.length != 1 || baseType.desc.typeName != this.ctorFn.desc.name)) {
+                    ctorArgs[field.name] = baseType.ctor(node.data[field.name], {}) ?? node.data[field.name]
+                    continue
                 }
-                ctorArgs[field.name] = fieldType.ctor(node.data[field.name], {}) ?? node.data[field.name]
-                continue
             }
-            ctorArgs[field.name] = node.data[field.name]
+            ctorArgs[field.name] = fieldType.ctor(node.data[field.name], {}) ?? node.data[field.name]
         }
         for (const req in this.resType.desc.requirements)
             ctx.addReqModule(req)

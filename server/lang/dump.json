@@ -19711,7 +19711,8 @@
 			"typeName" : "iterator<UnitTest::TestObjectFoo&>",
 			"requirements" : [
 				"UnitTest"
-			]
+			],
+			"isLocal" : true
 		},
 		{
 			"mn" : "I=H<$::dasvector`uint8>",
@@ -19721,301 +19722,307 @@
 		},
 		{
 			"mn" : "i8",
-			"canCopy" : true,
-			"typeName" : "int8"
+			"typeName" : "int8",
+			"isLocal" : true
 		},
 		{
 			"mn" : "u8",
-			"canCopy" : true,
-			"typeName" : "uint8"
+			"typeName" : "uint8",
+			"isLocal" : true
 		},
 		{
 			"mn" : "Cb",
 			"baseMn" : "b",
-			"canCopy" : true,
 			"isConst" : true,
-			"typeName" : "bool const"
+			"typeName" : "bool const",
+			"isLocal" : true
 		},
 		{
 			"mn" : "Cf",
 			"baseMn" : "f",
-			"canCopy" : true,
 			"isConst" : true,
-			"typeName" : "float const"
+			"typeName" : "float const",
+			"isLocal" : true
 		},
 		{
 			"mn" : "Cd",
 			"baseMn" : "d",
-			"canCopy" : true,
 			"isConst" : true,
-			"typeName" : "double const"
+			"typeName" : "double const",
+			"isLocal" : true
 		},
 		{
 			"mn" : "Ci",
 			"baseMn" : "i",
-			"canCopy" : true,
 			"isConst" : true,
-			"typeName" : "int const"
+			"typeName" : "int const",
+			"isLocal" : true
 		},
 		{
 			"mn" : "Cu",
 			"baseMn" : "u",
-			"canCopy" : true,
 			"isConst" : true,
-			"typeName" : "uint const"
+			"typeName" : "uint const",
+			"isLocal" : true
 		},
 		{
 			"mn" : "Ct",
 			"baseMn" : "t",
-			"canCopy" : true,
 			"isConst" : true,
-			"typeName" : "bitfield const"
+			"typeName" : "bitfield const",
+			"isLocal" : true
 		},
 		{
 			"mn" : "CE",
 			"baseMn" : "E",
-			"canCopy" : true,
 			"isConst" : true,
-			"typeName" : "enum const E"
+			"typeName" : "enum const E",
+			"isLocal" : true
 		},
 		{
 			"mn" : "C@",
 			"baseMn" : "@",
 			"isConst" : true,
-			"typeName" : "lambda<> const"
+			"typeName" : "lambda<> const",
+			"isLocal" : true
 		},
 		{
 			"mn" : "f2",
-			"canCopy" : true,
-			"typeName" : "float2"
+			"typeName" : "float2",
+			"isLocal" : true
 		},
 		{
 			"mn" : "C@@",
 			"baseMn" : "@@",
-			"canCopy" : true,
 			"isConst" : true,
-			"typeName" : "function<> const"
+			"typeName" : "function<> const",
+			"isLocal" : true
 		},
 		{
 			"mn" : "CI?",
 			"baseMn" : "?",
-			"canCopy" : true,
 			"isConst" : true,
-			"typeName" : "void? const implicit"
+			"typeName" : "void? const implicit",
+			"isLocal" : true
 		},
 		{
 			"mn" : "Cu8",
 			"baseMn" : "u8",
-			"canCopy" : true,
 			"isConst" : true,
-			"typeName" : "uint8 const"
+			"typeName" : "uint8 const",
+			"isLocal" : true
 		},
 		{
 			"mn" : "Ci8",
 			"baseMn" : "i8",
-			"canCopy" : true,
 			"isConst" : true,
-			"typeName" : "int8 const"
+			"typeName" : "int8 const",
+			"isLocal" : true
 		},
 		{
 			"mn" : "CE8",
 			"baseMn" : "E8",
-			"canCopy" : true,
 			"isConst" : true,
-			"typeName" : "enum const E8"
+			"typeName" : "enum const E8",
+			"isLocal" : true
 		},
 		{
 			"mn" : "CIs",
 			"baseMn" : "s",
-			"canCopy" : true,
 			"isConst" : true,
-			"typeName" : "string const implicit"
+			"typeName" : "string const implicit",
+			"isLocal" : true
 		},
 		{
 			"mn" : "C_c",
 			"baseMn" : "_c",
-			"canCopy" : true,
 			"isConst" : true,
-			"typeName" : "__context const"
+			"typeName" : "__context const",
+			"isLocal" : true
 		},
 		{
 			"mn" : "Cf2",
 			"baseMn" : "f2",
-			"canCopy" : true,
 			"isConst" : true,
-			"typeName" : "float2 const"
+			"typeName" : "float2 const",
+			"isLocal" : true
 		},
 		{
 			"mn" : "Cf3",
 			"baseMn" : "f3",
-			"canCopy" : true,
 			"isConst" : true,
-			"typeName" : "float3 const"
+			"typeName" : "float3 const",
+			"isLocal" : true
 		},
 		{
 			"mn" : "f3",
-			"canCopy" : true,
-			"typeName" : "float3"
+			"typeName" : "float3",
+			"isLocal" : true
 		},
 		{
 			"mn" : "Cf4",
 			"baseMn" : "f4",
-			"canCopy" : true,
 			"isConst" : true,
-			"typeName" : "float4 const"
+			"typeName" : "float4 const",
+			"isLocal" : true
 		},
 		{
 			"mn" : "f4",
-			"canCopy" : true,
-			"typeName" : "float4"
+			"typeName" : "float4",
+			"isLocal" : true
 		},
 		{
 			"mn" : "Ci2",
 			"baseMn" : "i2",
-			"canCopy" : true,
 			"isConst" : true,
-			"typeName" : "int2 const"
+			"typeName" : "int2 const",
+			"isLocal" : true
 		},
 		{
 			"mn" : "i2",
-			"canCopy" : true,
-			"typeName" : "int2"
+			"typeName" : "int2",
+			"isLocal" : true
 		},
 		{
 			"mn" : "Ci3",
 			"baseMn" : "i3",
-			"canCopy" : true,
 			"isConst" : true,
-			"typeName" : "int3 const"
+			"typeName" : "int3 const",
+			"isLocal" : true
 		},
 		{
 			"mn" : "i3",
-			"canCopy" : true,
-			"typeName" : "int3"
+			"typeName" : "int3",
+			"isLocal" : true
 		},
 		{
 			"mn" : "Ci4",
 			"baseMn" : "i4",
-			"canCopy" : true,
 			"isConst" : true,
-			"typeName" : "int4 const"
+			"typeName" : "int4 const",
+			"isLocal" : true
 		},
 		{
 			"mn" : "i4",
-			"canCopy" : true,
-			"typeName" : "int4"
+			"typeName" : "int4",
+			"isLocal" : true
 		},
 		{
 			"mn" : "Cu2",
 			"baseMn" : "u2",
-			"canCopy" : true,
 			"isConst" : true,
-			"typeName" : "uint2 const"
+			"typeName" : "uint2 const",
+			"isLocal" : true
 		},
 		{
 			"mn" : "u2",
-			"canCopy" : true,
-			"typeName" : "uint2"
+			"typeName" : "uint2",
+			"isLocal" : true
 		},
 		{
 			"mn" : "Cu3",
 			"baseMn" : "u3",
-			"canCopy" : true,
 			"isConst" : true,
-			"typeName" : "uint3 const"
+			"typeName" : "uint3 const",
+			"isLocal" : true
 		},
 		{
 			"mn" : "u3",
-			"canCopy" : true,
-			"typeName" : "uint3"
+			"typeName" : "uint3",
+			"isLocal" : true
 		},
 		{
 			"mn" : "Cu4",
 			"baseMn" : "u4",
-			"canCopy" : true,
 			"isConst" : true,
-			"typeName" : "uint4 const"
+			"typeName" : "uint4 const",
+			"isLocal" : true
 		},
 		{
 			"mn" : "u4",
-			"canCopy" : true,
-			"typeName" : "uint4"
+			"typeName" : "uint4",
+			"isLocal" : true
 		},
 		{
 			"mn" : "Cr",
 			"baseMn" : "r",
-			"canCopy" : true,
 			"isConst" : true,
-			"typeName" : "range const"
+			"typeName" : "range const",
+			"isLocal" : true
 		},
 		{
 			"mn" : "Cz",
 			"baseMn" : "z",
-			"canCopy" : true,
 			"isConst" : true,
-			"typeName" : "urange const"
+			"typeName" : "urange const",
+			"isLocal" : true
 		},
 		{
 			"mn" : "IA",
 			"isRef" : true,
 			"baseMn" : "A",
-			"typeName" : "array implicit"
+			"typeName" : "array implicit",
+			"isLocal" : true
 		},
 		{
 			"mn" : "CIA",
 			"isRef" : true,
 			"baseMn" : "A",
 			"isConst" : true,
-			"typeName" : "array const implicit"
+			"typeName" : "array const implicit",
+			"isLocal" : true
 		},
 		{
 			"mn" : "CIG",
 			"isRef" : true,
 			"baseMn" : "G",
 			"isConst" : true,
-			"typeName" : "iterator const implicit"
+			"typeName" : "iterator const implicit",
+			"isLocal" : true
 		},
 		{
 			"mn" : "IG",
 			"isRef" : true,
 			"baseMn" : "G",
-			"typeName" : "iterator implicit"
+			"typeName" : "iterator implicit",
+			"isLocal" : true
 		},
 		{
 			"mn" : "C*",
 			"baseMn" : "*",
-			"canCopy" : true,
 			"isConst" : true,
-			"typeName" : "any const"
+			"typeName" : "any const",
+			"isLocal" : true
 		},
 		{
 			"mn" : "C_l",
 			"baseMn" : "_l",
-			"canCopy" : true,
 			"isConst" : true,
-			"typeName" : "__lineInfo const"
+			"typeName" : "__lineInfo const",
+			"isLocal" : true
 		},
 		{
 			"mn" : "CIV",
 			"isRef" : true,
 			"baseMn" : "V",
-			"canCopy" : true,
 			"isConst" : true,
-			"typeName" : "variant<> const implicit"
+			"typeName" : "variant<> const implicit",
+			"isLocal" : true
 		},
 		{
 			"mn" : "IV",
 			"isRef" : true,
 			"baseMn" : "V",
-			"canCopy" : true,
-			"typeName" : "variant<> implicit"
+			"typeName" : "variant<> implicit",
+			"isLocal" : true
 		},
 		{
 			"mn" : "CA",
 			"isRef" : true,
 			"baseMn" : "A",
 			"isConst" : true,
-			"typeName" : "array const"
+			"typeName" : "array const",
+			"isLocal" : true
 		},
 		{
 			"mn" : "C$",
@@ -20028,20 +20035,23 @@
 			"mn" : "IT",
 			"isRef" : true,
 			"baseMn" : "T",
-			"typeName" : "table implicit"
+			"typeName" : "table implicit",
+			"isLocal" : true
 		},
 		{
 			"mn" : "CIT",
 			"isRef" : true,
 			"baseMn" : "T",
 			"isConst" : true,
-			"typeName" : "table const implicit"
+			"typeName" : "table const implicit",
+			"isLocal" : true
 		},
 		{
 			"mn" : "CI1<v>?M",
 			"baseMn" : "1<v>?M",
 			"isConst" : true,
-			"typeName" : "smart_ptr<void> const implicit"
+			"typeName" : "smart_ptr<void> const implicit",
+			"isLocal" : true
 		},
 		{
 			"mn" : "CI$",
@@ -20074,11 +20084,11 @@
 			"mn" : "IH<math::float4x4>",
 			"isRef" : true,
 			"baseMn" : "H<math::float4x4>",
-			"canCopy" : true,
 			"typeName" : "math::float4x4 implicit",
 			"requirements" : [
 				"math"
-			]
+			],
+			"isLocal" : true
 		},
 		{
 			"mn" : "I=H<$::dasvector`InferHistory>",
@@ -20096,16 +20106,16 @@
 			"mn" : "CI[8]u",
 			"isRef" : true,
 			"baseMn" : "[8]u",
-			"canCopy" : true,
 			"isConst" : true,
-			"typeName" : "uint const[8] implicit"
+			"typeName" : "uint const[8] implicit",
+			"isLocal" : true
 		},
 		{
 			"mn" : "CH<$::clock>",
 			"baseMn" : "H<$::clock>",
-			"canCopy" : true,
 			"isConst" : true,
-			"typeName" : "$::clock const"
+			"typeName" : "$::clock const",
+			"isLocal" : true
 		},
 		{
 			"mn" : "&I1<H<ast::MakeFieldDecl>>?W",
@@ -20114,7 +20124,8 @@
 			"typeName" : "smart_ptr<ast::MakeFieldDecl>& implicit",
 			"requirements" : [
 				"ast"
-			]
+			],
+			"isLocal" : true
 		},
 		{
 			"mn" : "CI=H<$::dasvector`Error>",
@@ -20126,7 +20137,8 @@
 		{
 			"mn" : "1<&H<$::das_string>>G",
 			"isRef" : true,
-			"typeName" : "iterator<$::das_string&>"
+			"typeName" : "iterator<$::das_string&>",
+			"isLocal" : true
 		},
 		{
 			"mn" : "1<C&1<H<ast::Variable>>?W>G",
@@ -20134,7 +20146,8 @@
 			"typeName" : "iterator<smart_ptr<ast::Variable> const&>",
 			"requirements" : [
 				"ast"
-			]
+			],
+			"isLocal" : true
 		},
 		{
 			"mn" : "I=H<$::dasvector`TestObjectFoo>",
@@ -20145,16 +20158,16 @@
 		{
 			"mn" : "Ci16",
 			"baseMn" : "i16",
-			"canCopy" : true,
 			"isConst" : true,
-			"typeName" : "int16 const"
+			"typeName" : "int16 const",
+			"isLocal" : true
 		},
 		{
 			"mn" : "Ci64",
 			"baseMn" : "i64",
-			"canCopy" : true,
 			"isConst" : true,
-			"typeName" : "int64 const"
+			"typeName" : "int64 const",
+			"isLocal" : true
 		},
 		{
 			"mn" : "CI=H<$::dasvector`uint8>",
@@ -20167,22 +20180,22 @@
 			"mn" : "CH<UnitTest::TestObjectFoo>",
 			"isRef" : true,
 			"baseMn" : "H<UnitTest::TestObjectFoo>",
-			"canCopy" : true,
 			"isConst" : true,
 			"typeName" : "UnitTest::TestObjectFoo const",
 			"requirements" : [
 				"UnitTest"
-			]
+			],
+			"isLocal" : true
 		},
 		{
 			"mn" : "i16",
-			"canCopy" : true,
-			"typeName" : "int16"
+			"typeName" : "int16",
+			"isLocal" : true
 		},
 		{
 			"mn" : "i64",
-			"canCopy" : true,
-			"typeName" : "int64"
+			"typeName" : "int64",
+			"isLocal" : true
 		},
 		{
 			"mn" : "1<&1<H<ast::MakeStruct>>?W>G",
@@ -20190,12 +20203,14 @@
 			"typeName" : "iterator<smart_ptr<ast::MakeStruct>&>",
 			"requirements" : [
 				"ast"
-			]
+			],
+			"isLocal" : true
 		},
 		{
 			"mn" : "1<&i>G",
 			"isRef" : true,
-			"typeName" : "iterator<int&>"
+			"typeName" : "iterator<int&>",
+			"isLocal" : true
 		},
 		{
 			"mn" : "IH<$::dasvector`pair`uint`uint>",
@@ -20209,7 +20224,8 @@
 			"typeName" : "iterator<smart_ptr<ast::MakeFieldDecl>&>",
 			"requirements" : [
 				"ast"
-			]
+			],
+			"isLocal" : true
 		},
 		{
 			"mn" : "H<$::dasvector`InferHistory>",
@@ -20242,14 +20258,15 @@
 			"typeName" : "smart_ptr<ast::TypeDecl>& implicit",
 			"requirements" : [
 				"ast"
-			]
+			],
+			"isLocal" : true
 		},
 		{
 			"mn" : "CI1<i>?",
 			"baseMn" : "1<i>?",
-			"canCopy" : true,
 			"isConst" : true,
-			"typeName" : "int? const implicit"
+			"typeName" : "int? const implicit",
+			"isLocal" : true
 		},
 		{
 			"mn" : "&I1<H<ast::MakeStruct>>?W",
@@ -20258,7 +20275,8 @@
 			"typeName" : "smart_ptr<ast::MakeStruct>& implicit",
 			"requirements" : [
 				"ast"
-			]
+			],
+			"isLocal" : true
 		},
 		{
 			"mn" : "CI0<i;i>1<b>$",
@@ -20282,7 +20300,8 @@
 			"mn" : "&I1<v>?M",
 			"isRef" : true,
 			"baseMn" : "1<v>?M",
-			"typeName" : "smart_ptr<void>& implicit"
+			"typeName" : "smart_ptr<void>& implicit",
+			"isLocal" : true
 		},
 		{
 			"mn" : "1<C&H<rtti::LineInfo>>G",
@@ -20290,16 +20309,17 @@
 			"typeName" : "iterator<rtti::LineInfo const&>",
 			"requirements" : [
 				"rtti"
-			]
+			],
+			"isLocal" : true
 		},
 		{
 			"mn" : "H<math::float4x4>",
 			"isRef" : true,
-			"canCopy" : true,
 			"typeName" : "math::float4x4",
 			"requirements" : [
 				"math"
-			]
+			],
+			"isLocal" : true
 		},
 		{
 			"mn" : "I=H<$::dasvector`int>",
@@ -20311,12 +20331,12 @@
 			"mn" : "CIH<math::float4x4>",
 			"isRef" : true,
 			"baseMn" : "H<math::float4x4>",
-			"canCopy" : true,
 			"isConst" : true,
 			"typeName" : "math::float4x4 const implicit",
 			"requirements" : [
 				"math"
-			]
+			],
+			"isLocal" : true
 		},
 		{
 			"mn" : "CI=H<$::dasvector`InferHistory>",
@@ -20354,13 +20374,13 @@
 		},
 		{
 			"mn" : "u16",
-			"canCopy" : true,
-			"typeName" : "uint16"
+			"typeName" : "uint16",
+			"isLocal" : true
 		},
 		{
 			"mn" : "u64",
-			"canCopy" : true,
-			"typeName" : "uint64"
+			"typeName" : "uint64",
+			"isLocal" : true
 		},
 		{
 			"mn" : "1<&H<ast::FieldDeclaration>>G",
@@ -20368,7 +20388,8 @@
 			"typeName" : "iterator<ast::FieldDeclaration&>",
 			"requirements" : [
 				"ast"
-			]
+			],
+			"isLocal" : true
 		},
 		{
 			"mn" : "I=H<$::dasvector`FieldDeclaration>",
@@ -20392,7 +20413,8 @@
 		{
 			"mn" : "1<C&i>G",
 			"isRef" : true,
-			"typeName" : "iterator<int const&>"
+			"typeName" : "iterator<int const&>",
+			"isLocal" : true
 		},
 		{
 			"mn" : "CI0<u;u>1<b>$",
@@ -20404,24 +20426,24 @@
 		{
 			"mn" : "CI1<u64>?",
 			"baseMn" : "1<u64>?",
-			"canCopy" : true,
 			"isConst" : true,
-			"typeName" : "uint64? const implicit"
+			"typeName" : "uint64? const implicit",
+			"isLocal" : true
 		},
 		{
 			"mn" : "CI1<u>?",
 			"baseMn" : "1<u>?",
-			"canCopy" : true,
 			"isConst" : true,
-			"typeName" : "uint? const implicit"
+			"typeName" : "uint? const implicit",
+			"isLocal" : true
 		},
 		{
 			"mn" : "C0<u;u>U",
 			"isRef" : true,
 			"baseMn" : "0<u;u>U",
-			"canCopy" : true,
 			"isConst" : true,
-			"typeName" : "tuple<uint;uint> const"
+			"typeName" : "tuple<uint;uint> const",
+			"isLocal" : true
 		},
 		{
 			"mn" : "1<&1<H<ast::Expression>>?W>G",
@@ -20429,7 +20451,8 @@
 			"typeName" : "iterator<smart_ptr<ast::Expression>&>",
 			"requirements" : [
 				"ast"
-			]
+			],
+			"isLocal" : true
 		},
 		{
 			"mn" : "CI0<z;z>1<b>$",
@@ -20444,7 +20467,8 @@
 			"typeName" : "iterator<ast::EnumEntry const&>",
 			"requirements" : [
 				"ast"
-			]
+			],
+			"isLocal" : true
 		},
 		{
 			"mn" : "IH<$::dasvector`Error>",
@@ -20455,7 +20479,8 @@
 		{
 			"mn" : "1<C&0<u;u>U>G",
 			"isRef" : true,
-			"typeName" : "iterator<tuple<uint;uint> const&>"
+			"typeName" : "iterator<tuple<uint;uint> const&>",
+			"isLocal" : true
 		},
 		{
 			"mn" : "CI0<i4;i4>1<b>$",
@@ -20470,7 +20495,8 @@
 			"typeName" : "iterator<rtti::Error const&>",
 			"requirements" : [
 				"rtti"
-			]
+			],
+			"isLocal" : true
 		},
 		{
 			"mn" : "CI0<i64;i64>1<b>$",
@@ -20482,16 +20508,16 @@
 		{
 			"mn" : "Cu16",
 			"baseMn" : "u16",
-			"canCopy" : true,
 			"isConst" : true,
-			"typeName" : "uint16 const"
+			"typeName" : "uint16 const",
+			"isLocal" : true
 		},
 		{
 			"mn" : "Cu64",
 			"baseMn" : "u64",
-			"canCopy" : true,
 			"isConst" : true,
-			"typeName" : "uint64 const"
+			"typeName" : "uint64 const",
+			"isLocal" : true
 		},
 		{
 			"mn" : "IH<$::dasvector`TestObjectFoo>",
@@ -20505,7 +20531,8 @@
 			"typeName" : "iterator<smart_ptr<ast::Expression> const&>",
 			"requirements" : [
 				"ast"
-			]
+			],
+			"isLocal" : true
 		},
 		{
 			"mn" : "IH<strings::StringBuilderWriter>",
@@ -20522,7 +20549,8 @@
 			"typeName" : "iterator<smart_ptr<ast::MakeFieldDecl> const&>",
 			"requirements" : [
 				"ast"
-			]
+			],
+			"isLocal" : true
 		},
 		{
 			"mn" : "1<&H<ast::EnumEntry>>G",
@@ -20530,18 +20558,19 @@
 			"typeName" : "iterator<ast::EnumEntry&>",
 			"requirements" : [
 				"ast"
-			]
+			],
+			"isLocal" : true
 		},
 		{
 			"mn" : "CH<rtti::LineInfo>",
 			"isRef" : true,
 			"baseMn" : "H<rtti::LineInfo>",
-			"canCopy" : true,
 			"isConst" : true,
 			"typeName" : "rtti::LineInfo const",
 			"requirements" : [
 				"rtti"
-			]
+			],
+			"isLocal" : true
 		},
 		{
 			"mn" : "&I1<H<ast::Expression>>?W",
@@ -20550,7 +20579,8 @@
 			"typeName" : "smart_ptr<ast::Expression>& implicit",
 			"requirements" : [
 				"ast"
-			]
+			],
+			"isLocal" : true
 		},
 		{
 			"mn" : "IH<$::dasvector`LineInfo>",
@@ -20561,9 +20591,9 @@
 		{
 			"mn" : "CI1<i64>?",
 			"baseMn" : "1<i64>?",
-			"canCopy" : true,
 			"isConst" : true,
-			"typeName" : "int64? const implicit"
+			"typeName" : "int64? const implicit",
+			"isLocal" : true
 		},
 		{
 			"mn" : "CI0<u2;u2>1<b>$",
@@ -20598,7 +20628,8 @@
 			"typeName" : "iterator<ast::CaptureEntry const&>",
 			"requirements" : [
 				"ast"
-			]
+			],
+			"isLocal" : true
 		},
 		{
 			"mn" : "&I1<H<ast::Variable>>?W",
@@ -20607,7 +20638,8 @@
 			"typeName" : "smart_ptr<ast::Variable>& implicit",
 			"requirements" : [
 				"ast"
-			]
+			],
+			"isLocal" : true
 		},
 		{
 			"mn" : "IH<$::dasvector`smart_ptr`TypeDecl>",
@@ -20621,7 +20653,8 @@
 			"typeName" : "iterator<ast::InferHistory const&>",
 			"requirements" : [
 				"ast"
-			]
+			],
+			"isLocal" : true
 		},
 		{
 			"mn" : "CI0<d;d>1<b>$",
@@ -20635,7 +20668,8 @@
 			"isRef" : true,
 			"baseMn" : "1<u8>A",
 			"isConst" : true,
-			"typeName" : "array<uint8> const implicit"
+			"typeName" : "array<uint8> const implicit",
+			"isLocal" : true
 		},
 		{
 			"mn" : "I=H<$::dasvector`smart_ptr`MakeStruct>",
@@ -20649,12 +20683,14 @@
 			"typeName" : "iterator<smart_ptr<ast::MakeStruct> const&>",
 			"requirements" : [
 				"ast"
-			]
+			],
+			"isLocal" : true
 		},
 		{
 			"mn" : "1<&u8>G",
 			"isRef" : true,
-			"typeName" : "iterator<uint8&>"
+			"typeName" : "iterator<uint8&>",
+			"isLocal" : true
 		},
 		{
 			"mn" : "H<$::dasvector`pair`uint`uint>",
@@ -20677,45 +20713,46 @@
 		{
 			"mn" : "1<&0<u;u>U>G",
 			"isRef" : true,
-			"typeName" : "iterator<tuple<uint;uint>&>"
+			"typeName" : "iterator<tuple<uint;uint>&>",
+			"isLocal" : true
 		},
 		{
 			"mn" : "0<u;u>U",
 			"isRef" : true,
-			"canCopy" : true,
-			"typeName" : "tuple<uint;uint>"
+			"typeName" : "tuple<uint;uint>",
+			"isLocal" : true
 		},
 		{
 			"mn" : "CY<print_flags>N<escapeString;namesAndDimensions;typeQualifiers;refAddresses;humanReadable;singleLine>t",
 			"baseMn" : "Y<print_flags>N<escapeString;namesAndDimensions;typeQualifiers;refAddresses;humanReadable;singleLine>t",
-			"canCopy" : true,
 			"isConst" : true,
-			"typeName" : "bitfield<escapeString;namesAndDimensions;typeQualifiers;refAddresses;humanReadable;singleLine> aka print_flags const"
+			"typeName" : "bitfield<escapeString;namesAndDimensions;typeQualifiers;refAddresses;humanReadable;singleLine> aka print_flags const",
+			"isLocal" : true
 		},
 		{
 			"mn" : "&Ii64",
 			"isRef" : true,
 			"baseMn" : "i64",
-			"canCopy" : true,
-			"typeName" : "int64& implicit"
+			"typeName" : "int64& implicit",
+			"isLocal" : true
 		},
 		{
 			"mn" : "H<math::float3x3>",
 			"isRef" : true,
-			"canCopy" : true,
 			"typeName" : "math::float3x3",
 			"requirements" : [
 				"math"
-			]
+			],
+			"isLocal" : true
 		},
 		{
 			"mn" : "H<math::float3x4>",
 			"isRef" : true,
-			"canCopy" : true,
 			"typeName" : "math::float3x4",
 			"requirements" : [
 				"math"
-			]
+			],
+			"isLocal" : true
 		},
 		{
 			"mn" : "I=H<$::dasvector`smart_ptr`Variable>",
@@ -20735,16 +20772,17 @@
 			"typeName" : "iterator<smart_ptr<ast::TypeDecl> const&>",
 			"requirements" : [
 				"ast"
-			]
+			],
+			"isLocal" : true
 		},
 		{
 			"mn" : "H<UnitTest::TestObjectFoo>",
 			"isRef" : true,
-			"canCopy" : true,
 			"typeName" : "UnitTest::TestObjectFoo",
 			"requirements" : [
 				"UnitTest"
-			]
+			],
+			"isLocal" : true
 		},
 		{
 			"mn" : "CI=H<$::dasvector`smart_ptr`TypeDecl>",
@@ -20763,21 +20801,21 @@
 			"mn" : "IH<math::float3x4>",
 			"isRef" : true,
 			"baseMn" : "H<math::float3x4>",
-			"canCopy" : true,
 			"typeName" : "math::float3x4 implicit",
 			"requirements" : [
 				"math"
-			]
+			],
+			"isLocal" : true
 		},
 		{
 			"mn" : "IH<math::float3x3>",
 			"isRef" : true,
 			"baseMn" : "H<math::float3x3>",
-			"canCopy" : true,
 			"typeName" : "math::float3x3 implicit",
 			"requirements" : [
 				"math"
-			]
+			],
+			"isLocal" : true
 		},
 		{
 			"mn" : "CI0<r;r>1<b>$",
@@ -20788,65 +20826,66 @@
 		},
 		{
 			"mn" : "b",
-			"canCopy" : true,
-			"typeName" : "bool"
+			"typeName" : "bool",
+			"isLocal" : true
 		},
 		{
 			"mn" : "v",
-			"canCopy" : true,
-			"typeName" : "void"
+			"typeName" : "void",
+			"isLocal" : true
 		},
 		{
 			"mn" : "i",
-			"canCopy" : true,
-			"typeName" : "int"
+			"typeName" : "int",
+			"isLocal" : true
 		},
 		{
 			"mn" : "u",
-			"canCopy" : true,
-			"typeName" : "uint"
+			"typeName" : "uint",
+			"isLocal" : true
 		},
 		{
 			"mn" : "t",
-			"canCopy" : true,
-			"typeName" : "bitfield"
+			"typeName" : "bitfield",
+			"isLocal" : true
 		},
 		{
 			"mn" : "f",
-			"canCopy" : true,
-			"typeName" : "float"
+			"typeName" : "float",
+			"isLocal" : true
 		},
 		{
 			"mn" : "d",
-			"canCopy" : true,
-			"typeName" : "double"
+			"typeName" : "double",
+			"isLocal" : true
 		},
 		{
 			"mn" : "s",
-			"canCopy" : true,
-			"typeName" : "string"
+			"typeName" : "string",
+			"isLocal" : true
 		},
 		{
 			"mn" : "r",
-			"canCopy" : true,
-			"typeName" : "range"
+			"typeName" : "range",
+			"isLocal" : true
 		},
 		{
 			"mn" : "z",
-			"canCopy" : true,
-			"typeName" : "urange"
+			"typeName" : "urange",
+			"isLocal" : true
 		},
 		{
 			"mn" : "C&I1<v>?M",
 			"isRef" : true,
 			"baseMn" : "1<v>?M",
 			"isConst" : true,
-			"typeName" : "smart_ptr<void> const& implicit"
+			"typeName" : "smart_ptr<void> const& implicit",
+			"isLocal" : true
 		},
 		{
 			"mn" : "?",
-			"canCopy" : true,
-			"typeName" : "void?"
+			"typeName" : "void?",
+			"isLocal" : true
 		},
 		{
 			"mn" : "CI0<s;s>1<b>$",
@@ -20873,57 +20912,57 @@
 			"mn" : "&If",
 			"isRef" : true,
 			"baseMn" : "f",
-			"canCopy" : true,
-			"typeName" : "float& implicit"
+			"typeName" : "float& implicit",
+			"isLocal" : true
 		},
 		{
 			"mn" : "&Ib",
 			"isRef" : true,
 			"baseMn" : "b",
-			"canCopy" : true,
-			"typeName" : "bool& implicit"
+			"typeName" : "bool& implicit",
+			"isLocal" : true
 		},
 		{
 			"mn" : "&Ii",
 			"isRef" : true,
 			"baseMn" : "i",
-			"canCopy" : true,
-			"typeName" : "int& implicit"
+			"typeName" : "int& implicit",
+			"isLocal" : true
 		},
 		{
 			"mn" : "&Iu",
 			"isRef" : true,
 			"baseMn" : "u",
-			"canCopy" : true,
-			"typeName" : "uint& implicit"
+			"typeName" : "uint& implicit",
+			"isLocal" : true
 		},
 		{
 			"mn" : "&It",
 			"isRef" : true,
 			"baseMn" : "t",
-			"canCopy" : true,
-			"typeName" : "bitfield& implicit"
+			"typeName" : "bitfield& implicit",
+			"isLocal" : true
 		},
 		{
 			"mn" : "&Id",
 			"isRef" : true,
 			"baseMn" : "d",
-			"canCopy" : true,
-			"typeName" : "double& implicit"
+			"typeName" : "double& implicit",
+			"isLocal" : true
 		},
 		{
 			"mn" : "&Is",
 			"isRef" : true,
 			"baseMn" : "s",
-			"canCopy" : true,
-			"typeName" : "string& implicit"
+			"typeName" : "string& implicit",
+			"isLocal" : true
 		},
 		{
 			"mn" : "&I?",
 			"isRef" : true,
 			"baseMn" : "?",
-			"canCopy" : true,
-			"typeName" : "void?& implicit"
+			"typeName" : "void?& implicit",
+			"isLocal" : true
 		},
 		{
 			"mn" : "CI0<f3;f3>1<b>$",
@@ -20949,7 +20988,8 @@
 		{
 			"mn" : "1<C&u8>G",
 			"isRef" : true,
-			"typeName" : "iterator<uint8 const&>"
+			"typeName" : "iterator<uint8 const&>",
+			"isLocal" : true
 		},
 		{
 			"mn" : "1<&H<ast::CaptureEntry>>G",
@@ -20957,7 +20997,8 @@
 			"typeName" : "iterator<ast::CaptureEntry&>",
 			"requirements" : [
 				"ast"
-			]
+			],
+			"isLocal" : true
 		},
 		{
 			"mn" : "I=H<$::dasvector`EnumEntry>",
@@ -20969,23 +21010,23 @@
 			"mn" : "CIH<math::float3x4>",
 			"isRef" : true,
 			"baseMn" : "H<math::float3x4>",
-			"canCopy" : true,
 			"isConst" : true,
 			"typeName" : "math::float3x4 const implicit",
 			"requirements" : [
 				"math"
-			]
+			],
+			"isLocal" : true
 		},
 		{
 			"mn" : "CIH<math::float3x3>",
 			"isRef" : true,
 			"baseMn" : "H<math::float3x3>",
-			"canCopy" : true,
 			"isConst" : true,
 			"typeName" : "math::float3x3 const implicit",
 			"requirements" : [
 				"math"
-			]
+			],
+			"isLocal" : true
 		},
 		{
 			"mn" : "1<C&H<UnitTest::TestObjectFoo>>G",
@@ -20993,7 +21034,8 @@
 			"typeName" : "iterator<UnitTest::TestObjectFoo const&>",
 			"requirements" : [
 				"UnitTest"
-			]
+			],
+			"isLocal" : true
 		},
 		{
 			"mn" : "CI0<f;f>1<b>$",
@@ -21021,13 +21063,13 @@
 			"typeName" : "iterator<rtti::LineInfo&>",
 			"requirements" : [
 				"rtti"
-			]
+			],
+			"isLocal" : true
 		},
 		{
 			"mn" : "CH<ast::InferHistory>",
 			"isRef" : true,
 			"baseMn" : "H<ast::InferHistory>",
-			"canCopy" : true,
 			"isConst" : true,
 			"typeName" : "ast::InferHistory const",
 			"requirements" : [
@@ -21037,9 +21079,9 @@
 		{
 			"mn" : "CI1<d>?",
 			"baseMn" : "1<d>?",
-			"canCopy" : true,
 			"isConst" : true,
-			"typeName" : "double? const implicit"
+			"typeName" : "double? const implicit",
+			"isLocal" : true
 		},
 		{
 			"mn" : "IH<$::dasvector`smart_ptr`Expression>",
@@ -21053,7 +21095,8 @@
 			"typeName" : "iterator<ast::InferHistory&>",
 			"requirements" : [
 				"ast"
-			]
+			],
+			"isLocal" : true
 		},
 		{
 			"mn" : "CI=H<$::dasvector`smart_ptr`Variable>",
@@ -21068,7 +21111,8 @@
 			"typeName" : "iterator<smart_ptr<ast::Variable>&>",
 			"requirements" : [
 				"ast"
-			]
+			],
+			"isLocal" : true
 		},
 		{
 			"mn" : "IH<$::dasvector`uint8>",
@@ -21082,7 +21126,8 @@
 			"typeName" : "iterator<rtti::Error&>",
 			"requirements" : [
 				"rtti"
-			]
+			],
+			"isLocal" : true
 		},
 		{
 			"mn" : "CI0<H<strings::StringBuilderWriter>>1<v>$",
@@ -21094,7 +21139,6 @@
 		{
 			"mn" : "H<ast::InferHistory>",
 			"isRef" : true,
-			"canCopy" : true,
 			"typeName" : "ast::InferHistory",
 			"requirements" : [
 				"ast"
@@ -21103,9 +21147,9 @@
 		{
 			"mn" : "CI1<f>?",
 			"baseMn" : "1<f>?",
-			"canCopy" : true,
 			"isConst" : true,
-			"typeName" : "float? const implicit"
+			"typeName" : "float? const implicit",
+			"isLocal" : true
 		},
 		{
 			"mn" : "CI0<C#s>1<v>$",
@@ -21116,8 +21160,8 @@
 		},
 		{
 			"mn" : "H<$::clock>",
-			"canCopy" : true,
-			"typeName" : "$::clock"
+			"typeName" : "$::clock",
+			"isLocal" : true
 		},
 		{
 			"mn" : "1<&1<H<ast::TypeDecl>>?W>G",
@@ -21125,7 +21169,8 @@
 			"typeName" : "iterator<smart_ptr<ast::TypeDecl>&>",
 			"requirements" : [
 				"ast"
-			]
+			],
+			"isLocal" : true
 		},
 		{
 			"mn" : "IH<$::das_string>",
@@ -21143,79 +21188,80 @@
 		{
 			"mn" : "1<C&H<$::das_string>>G",
 			"isRef" : true,
-			"typeName" : "iterator<$::das_string const&>"
+			"typeName" : "iterator<$::das_string const&>",
+			"isLocal" : true
 		},
 		{
 			"mn" : "H<rtti::LineInfo>",
 			"isRef" : true,
-			"canCopy" : true,
 			"typeName" : "rtti::LineInfo",
 			"requirements" : [
 				"rtti"
-			]
+			],
+			"isLocal" : true
 		},
 		{
 			"mn" : "&Iu2",
 			"isRef" : true,
 			"baseMn" : "u2",
-			"canCopy" : true,
-			"typeName" : "uint2& implicit"
+			"typeName" : "uint2& implicit",
+			"isLocal" : true
 		},
 		{
 			"mn" : "&Ii3",
 			"isRef" : true,
 			"baseMn" : "i3",
-			"canCopy" : true,
-			"typeName" : "int3& implicit"
+			"typeName" : "int3& implicit",
+			"isLocal" : true
 		},
 		{
 			"mn" : "&If2",
 			"isRef" : true,
 			"baseMn" : "f2",
-			"canCopy" : true,
-			"typeName" : "float2& implicit"
+			"typeName" : "float2& implicit",
+			"isLocal" : true
 		},
 		{
 			"mn" : "&If3",
 			"isRef" : true,
 			"baseMn" : "f3",
-			"canCopy" : true,
-			"typeName" : "float3& implicit"
+			"typeName" : "float3& implicit",
+			"isLocal" : true
 		},
 		{
 			"mn" : "&If4",
 			"isRef" : true,
 			"baseMn" : "f4",
-			"canCopy" : true,
-			"typeName" : "float4& implicit"
+			"typeName" : "float4& implicit",
+			"isLocal" : true
 		},
 		{
 			"mn" : "&Ii2",
 			"isRef" : true,
 			"baseMn" : "i2",
-			"canCopy" : true,
-			"typeName" : "int2& implicit"
+			"typeName" : "int2& implicit",
+			"isLocal" : true
 		},
 		{
 			"mn" : "&Ii4",
 			"isRef" : true,
 			"baseMn" : "i4",
-			"canCopy" : true,
-			"typeName" : "int4& implicit"
+			"typeName" : "int4& implicit",
+			"isLocal" : true
 		},
 		{
 			"mn" : "&Iu3",
 			"isRef" : true,
 			"baseMn" : "u3",
-			"canCopy" : true,
-			"typeName" : "uint3& implicit"
+			"typeName" : "uint3& implicit",
+			"isLocal" : true
 		},
 		{
 			"mn" : "&Iu4",
 			"isRef" : true,
 			"baseMn" : "u4",
-			"canCopy" : true,
-			"typeName" : "uint4& implicit"
+			"typeName" : "uint4& implicit",
+			"isLocal" : true
 		},
 		{
 			"mn" : "CI0<f4;f4>1<b>$",
@@ -21241,15 +21287,15 @@
 			"mn" : "&Iu8",
 			"isRef" : true,
 			"baseMn" : "u8",
-			"canCopy" : true,
-			"typeName" : "uint8& implicit"
+			"typeName" : "uint8& implicit",
+			"isLocal" : true
 		},
 		{
 			"mn" : "CE16",
 			"baseMn" : "E16",
-			"canCopy" : true,
 			"isConst" : true,
-			"typeName" : "enum const E16"
+			"typeName" : "enum const E16",
+			"isLocal" : true
 		},
 		{
 			"mn" : "IH<$::dasvector`int>",
@@ -21259,7 +21305,8 @@
 		},
 		{
 			"mn" : "1<v>?M",
-			"typeName" : "smart_ptr<void>"
+			"typeName" : "smart_ptr<void>",
+			"isLocal" : true
 		},
 		{
 			"mn" : "I=H<$::dasvector`Error>",
@@ -21277,8 +21324,8 @@
 			"mn" : "&Iu64",
 			"isRef" : true,
 			"baseMn" : "u64",
-			"canCopy" : true,
-			"typeName" : "uint64& implicit"
+			"typeName" : "uint64& implicit",
+			"isLocal" : true
 		},
 		{
 			"mn" : "IH<$::dasvector`smart_ptr`Variable>",
@@ -21319,7 +21366,8 @@
 			"typeName" : "iterator<ast::FieldDeclaration const&>",
 			"requirements" : [
 				"ast"
-			]
+			],
+			"isLocal" : true
 		},
 		{
 			"mn" : "CI=H<$::dasvector`das_string>",

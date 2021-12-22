@@ -17,7 +17,7 @@ struct TypeDesc
     requirements: array<string>
     isConst: bool
     isRef: bool
-    canCopy: bool
+    isLocal: bool
 
 
 struct FuncDesc
@@ -116,7 +116,7 @@ def getTypeDesc(var lang: LangDesc; ti: smart_ptr<TypeDecl>): TypeDesc?
     let mangledName = ti |> get_mangled_name()
 
     if !key_exists(lang.types, mangledName)
-        var t <- [[TypeDesc mn=mangledName, typeName=ti |> describe(), isConst=ti.isConst, isRef=ti.isRef, canCopy=ti.canCopy]]
+        var t <- [[TypeDesc mn=mangledName, typeName=ti |> describe(), isConst=ti.isConst, isRef=ti.isRef, isLocal=ti.isLocal]]
 
         // print("{t.typeName} {t.mn}\n")
         // debug(t)
@@ -178,8 +178,8 @@ def JV(val: TypeDesc)
         res["isConst"] = JV(val.isConst)
     if val.isRef
         res["isRef"] = JV(val.isRef)
-    if val.canCopy
-        res["canCopy"] = JV(val.canCopy)
+    if val.isLocal
+        res["isLocal"] = JV(val.isLocal)
     if !empty(val.requirements)
         res["requirements"] = JV(val.requirements)
     return JV(res)
