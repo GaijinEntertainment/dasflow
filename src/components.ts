@@ -1,7 +1,7 @@
 import Rete, {Engine, Input, Output, Socket} from 'rete'
 import {Node} from 'rete/types/node'
 import {NodeEditor} from 'rete/types/editor'
-import {LabelControl, TextInputControl} from "./controls"
+import {LabelControl, MultilineLabelControl, TextInputControl} from "./controls"
 import {LangCoreDesc, LangDesc, LangFunctionDesc, LangTypeDesc} from "./lang"
 import {Component} from "rete/types"
 
@@ -129,8 +129,7 @@ export function generateCoreNodes(langCore: LangCoreDesc, lang: LangDesc, editor
 
     const logicTypeName = langCore.logicType
 
-    const comps: Component[] = []
-    comps.push(new Function())
+    const comps: Component[] = [new Function(), new InjectTopLevelCode(), new InjectCode()]
 
     for (const typeDesc of lang.types ?? []) {
         if (langCore.anyTypes.indexOf(typeDesc.mn) >= 0) {
@@ -554,6 +553,59 @@ export class Function extends LangComponent {
     }
 
     constructDasNode(node: Node, ctx: ConstructDasCtx): boolean {
+        return true
+    }
+}
+
+
+export class InjectTopLevelCode extends LangComponent {
+    constructor() {
+        super('InjectTopLevelCode')
+        this._topLevel = true
+    }
+
+    async builder(node) {
+        this.addFlowOut(node)
+        node.addControl(new MultilineLabelControl(this.editor, 'code'))
+    }
+
+    constructDas(node, ctx) {
+        if (node.data.code) {
+            const code = <string>node.data.code
+            for (let string of code.split("\n")) {
+                ctx.writeLine(string)
+            }
+        }
+
+        ctx.indenting += "\t"
+        this.constructDasFlowOut(node, ctx)
+        ctx.indenting = ""
+        return true
+    }
+
+    constructDasNode(node: Node, ctx: ConstructDasCtx): boolean {
+        return true
+    }
+}
+
+
+export class InjectCode extends LangComponent {
+    constructor() {
+        super('InjectCode')
+    }
+
+    async builder(node) {
+        this.addFlowInOut(node)
+        node.addControl(new MultilineLabelControl(this.editor, 'code'))
+    }
+
+    constructDasNode(node: Node, ctx: ConstructDasCtx): boolean {
+        if (node.data.code) {
+            const code = <string>node.data.code
+            for (let string of code.split("\n")) {
+                ctx.writeLine(string)
+            }
+        }
         return true
     }
 }
