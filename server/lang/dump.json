@@ -1,6 +1,1138 @@
 {
 	"functions" : [
 		{
+			"resMn" : "u64",
+			"mn" : "intptr(C1<v>?):u64",
+			"args" : [
+				{
+					"mn" : "C1<v>?",
+					"name" : "p"
+				}
+			],
+			"name" : "intptr"
+		},
+		{
+			"resMn" : "u64",
+			"mn" : "intptr(C1<.>?M):u64",
+			"args" : [
+				{
+					"mn" : "C1<.>?M",
+					"name" : "p"
+				}
+			],
+			"name" : "intptr"
+		},
+		{
+			"resMn" : ".",
+			"mn" : "_move_with_lockcheck(&Y<valA>.,&Y<valB>.):.",
+			"args" : [
+				{
+					"mn" : "&Y<valA>.",
+					"name" : "a"
+				},
+				{
+					"mn" : "&Y<valB>.",
+					"name" : "b"
+				}
+			],
+			"name" : "_move_with_lockcheck"
+		},
+		{
+			"resMn" : "&Y<valT>L",
+			"mn" : "_return_with_lockcheck(&Y<valT>.):&Y<valT>L",
+			"args" : [
+				{
+					"mn" : "&Y<valT>.",
+					"name" : "a"
+				}
+			],
+			"name" : "_return_with_lockcheck"
+		},
+		{
+			"resMn" : ".",
+			"mn" : "resize(1<Y<numT>.>A,Ci):.",
+			"args" : [
+				{
+					"mn" : "1<Y<numT>.>A",
+					"name" : "Arr"
+				},
+				{
+					"mn" : "Ci",
+					"name" : "newSize"
+				}
+			],
+			"name" : "resize"
+		},
+		{
+			"resMn" : ".",
+			"mn" : "reserve(1<Y<numT>.>A,Ci):.",
+			"args" : [
+				{
+					"mn" : "1<Y<numT>.>A",
+					"name" : "Arr"
+				},
+				{
+					"mn" : "Ci",
+					"name" : "newSize"
+				}
+			],
+			"name" : "reserve"
+		},
+		{
+			"resMn" : ".",
+			"mn" : "pop(1<Y<numT>.>A):.",
+			"args" : [
+				{
+					"mn" : "1<Y<numT>.>A",
+					"name" : "Arr"
+				}
+			],
+			"name" : "pop"
+		},
+		{
+			"resMn" : ".",
+			"mn" : "push(1<Y<numT>.>A,CY<numT>L,Ci):.",
+			"args" : [
+				{
+					"mn" : "1<Y<numT>.>A",
+					"name" : "Arr"
+				},
+				{
+					"mn" : "CY<numT>L",
+					"name" : "value"
+				},
+				{
+					"mn" : "Ci",
+					"name" : "at"
+				}
+			],
+			"name" : "push"
+		},
+		{
+			"resMn" : ".",
+			"mn" : "push(1<Y<numT>.>A,CY<numT>L):.",
+			"args" : [
+				{
+					"mn" : "1<Y<numT>.>A",
+					"name" : "Arr"
+				},
+				{
+					"mn" : "CY<numT>L",
+					"name" : "value"
+				}
+			],
+			"name" : "push"
+		},
+		{
+			"resMn" : ".",
+			"mn" : "emplace(1<Y<numT>.>A,Y<numT>L,Ci):.",
+			"args" : [
+				{
+					"mn" : "1<Y<numT>.>A",
+					"name" : "Arr"
+				},
+				{
+					"mn" : "Y<numT>L",
+					"name" : "value"
+				},
+				{
+					"mn" : "Ci",
+					"name" : "at"
+				}
+			],
+			"name" : "emplace"
+		},
+		{
+			"resMn" : ".",
+			"mn" : "emplace(1<Y<numT>.>A,Y<numT>L):.",
+			"args" : [
+				{
+					"mn" : "1<Y<numT>.>A",
+					"name" : "Arr"
+				},
+				{
+					"mn" : "Y<numT>L",
+					"name" : "value"
+				}
+			],
+			"name" : "emplace"
+		},
+		{
+			"resMn" : ".",
+			"mn" : "push_clone(1<Y<numT>.>A,CIY<numT>L,Ci):.",
+			"args" : [
+				{
+					"mn" : "1<Y<numT>.>A",
+					"name" : "Arr"
+				},
+				{
+					"mn" : "CIY<numT>L",
+					"name" : "value"
+				},
+				{
+					"mn" : "Ci",
+					"name" : "at"
+				}
+			],
+			"name" : "push_clone"
+		},
+		{
+			"resMn" : ".",
+			"mn" : "push_clone(1<Y<numT>.>A,CIY<numT>L):.",
+			"args" : [
+				{
+					"mn" : "1<Y<numT>.>A",
+					"name" : "Arr"
+				},
+				{
+					"mn" : "CIY<numT>L",
+					"name" : "value"
+				}
+			],
+			"name" : "push_clone"
+		},
+		{
+			"resMn" : ".",
+			"mn" : "push_clone(Y<CT>.,CIY<TT>.):.",
+			"args" : [
+				{
+					"mn" : "Y<CT>.",
+					"name" : "A"
+				},
+				{
+					"mn" : "CIY<TT>.",
+					"name" : "b"
+				}
+			],
+			"name" : "push_clone"
+		},
+		{
+			"resMn" : "&Y<TT>L",
+			"mn" : "back(=1<Y<TT>.>A):&Y<TT>L",
+			"args" : [
+				{
+					"mn" : "=1<Y<TT>.>A",
+					"name" : "a"
+				}
+			],
+			"name" : "back"
+		},
+		{
+			"resMn" : "C&Y<TT>L",
+			"mn" : "back(C=1<Y<TT>.>A):C&Y<TT>L",
+			"args" : [
+				{
+					"mn" : "C=1<Y<TT>.>A",
+					"name" : "a"
+				}
+			],
+			"name" : "back"
+		},
+		{
+			"resMn" : ".",
+			"mn" : "erase(1<Y<numT>.>A,Ci):.",
+			"args" : [
+				{
+					"mn" : "1<Y<numT>.>A",
+					"name" : "Arr"
+				},
+				{
+					"mn" : "Ci",
+					"name" : "at"
+				}
+			],
+			"name" : "erase"
+		},
+		{
+			"resMn" : "i",
+			"mn" : "length(C[-1].):i",
+			"args" : [
+				{
+					"mn" : "C[-1].",
+					"name" : "a"
+				}
+			],
+			"name" : "length"
+		},
+		{
+			"resMn" : "b",
+			"mn" : "empty(C1<.>A):b",
+			"args" : [
+				{
+					"mn" : "C1<.>A",
+					"name" : "a"
+				}
+			],
+			"name" : "empty"
+		},
+		{
+			"resMn" : ".",
+			"mn" : "find(C1<Y<keyT>.>2<Y<valT>.>T,CIY<keyT>L,CN<p>0<C1<Y<valT>L>?>1<v>$):.",
+			"args" : [
+				{
+					"mn" : "C1<Y<keyT>.>2<Y<valT>.>T",
+					"name" : "Tab"
+				},
+				{
+					"mn" : "CIY<keyT>L",
+					"name" : "at"
+				},
+				{
+					"mn" : "CN<p>0<C1<Y<valT>L>?>1<v>$",
+					"name" : "blk"
+				}
+			],
+			"name" : "find"
+		},
+		{
+			"resMn" : ".",
+			"mn" : "find_if_exists(C1<Y<keyT>.>2<Y<valT>.>T,CIY<keyT>L,CN<p>0<C1<Y<valT>L>?>1<v>$):.",
+			"args" : [
+				{
+					"mn" : "C1<Y<keyT>.>2<Y<valT>.>T",
+					"name" : "Tab"
+				},
+				{
+					"mn" : "CIY<keyT>L",
+					"name" : "at"
+				},
+				{
+					"mn" : "CN<p>0<C1<Y<valT>L>?>1<v>$",
+					"name" : "blk"
+				}
+			],
+			"name" : "find_if_exists"
+		},
+		{
+			"resMn" : "1<CY<valT>L>?",
+			"mn" : "find(C1<Y<keyT>.>2<Y<valT>.>T,CIY<keyT>L):1<CY<valT>L>?",
+			"args" : [
+				{
+					"mn" : "C1<Y<keyT>.>2<Y<valT>.>T",
+					"name" : "Tab"
+				},
+				{
+					"mn" : "CIY<keyT>L",
+					"name" : "at"
+				}
+			],
+			"name" : "find"
+		},
+		{
+			"resMn" : "#1<CY<valT>L>?",
+			"mn" : "find(C#1<Y<keyT>.>2<Y<valT>.>T,CIY<keyT>L):#1<CY<valT>L>?",
+			"args" : [
+				{
+					"mn" : "C#1<Y<keyT>.>2<Y<valT>.>T",
+					"name" : "Tab"
+				},
+				{
+					"mn" : "CIY<keyT>L",
+					"name" : "at"
+				}
+			],
+			"name" : "find"
+		},
+		{
+			"resMn" : ".",
+			"mn" : "find_for_edit(1<Y<keyT>.>2<Y<valT>.>T,CIY<keyT>L,CN<p>0<1<Y<valT>L>?>1<v>$):.",
+			"args" : [
+				{
+					"mn" : "1<Y<keyT>.>2<Y<valT>.>T",
+					"name" : "Tab"
+				},
+				{
+					"mn" : "CIY<keyT>L",
+					"name" : "at"
+				},
+				{
+					"mn" : "CN<p>0<1<Y<valT>L>?>1<v>$",
+					"name" : "blk"
+				}
+			],
+			"name" : "find_for_edit"
+		},
+		{
+			"resMn" : ".",
+			"mn" : "find_for_edit_if_exists(1<Y<keyT>.>2<Y<valT>.>T,CIY<keyT>L,CN<p>0<1<Y<valT>L>?>1<v>$):.",
+			"args" : [
+				{
+					"mn" : "1<Y<keyT>.>2<Y<valT>.>T",
+					"name" : "Tab"
+				},
+				{
+					"mn" : "CIY<keyT>L",
+					"name" : "at"
+				},
+				{
+					"mn" : "CN<p>0<1<Y<valT>L>?>1<v>$",
+					"name" : "blk"
+				}
+			],
+			"name" : "find_for_edit_if_exists"
+		},
+		{
+			"resMn" : "1<Y<valT>L>?",
+			"mn" : "find_for_edit(1<Y<keyT>.>2<Y<valT>.>T,CIY<keyT>L):1<Y<valT>L>?",
+			"args" : [
+				{
+					"mn" : "1<Y<keyT>.>2<Y<valT>.>T",
+					"name" : "Tab"
+				},
+				{
+					"mn" : "CIY<keyT>L",
+					"name" : "at"
+				}
+			],
+			"name" : "find_for_edit"
+		},
+		{
+			"resMn" : "&Y<valT>L",
+			"mn" : "_at_with_lockcheck(1<Y<keyT>.>2<Y<valT>.>T,CIY<keyT>L):&Y<valT>L",
+			"args" : [
+				{
+					"mn" : "1<Y<keyT>.>2<Y<valT>.>T",
+					"name" : "Tab"
+				},
+				{
+					"mn" : "CIY<keyT>L",
+					"name" : "at"
+				}
+			],
+			"name" : "_at_with_lockcheck"
+		},
+		{
+			"resMn" : "b",
+			"mn" : "erase(1<Y<keyT>.>2<Y<valT>.>T,CIY<keyT>L):b",
+			"args" : [
+				{
+					"mn" : "1<Y<keyT>.>2<Y<valT>.>T",
+					"name" : "Tab"
+				},
+				{
+					"mn" : "CIY<keyT>L",
+					"name" : "at"
+				}
+			],
+			"name" : "erase"
+		},
+		{
+			"resMn" : "b",
+			"mn" : "key_exists(C1<Y<keyT>.>2<Y<valT>.>T,CIY<keyT>L):b",
+			"args" : [
+				{
+					"mn" : "C1<Y<keyT>.>2<Y<valT>.>T",
+					"name" : "Tab"
+				},
+				{
+					"mn" : "CIY<keyT>L",
+					"name" : "at"
+				}
+			],
+			"name" : "key_exists"
+		},
+		{
+			"resMn" : ".",
+			"mn" : "binary_save(C.,CN<data>0<C1<u8>A>1<v>$):.",
+			"args" : [
+				{
+					"mn" : "C.",
+					"name" : "obj"
+				},
+				{
+					"mn" : "CN<data>0<C1<u8>A>1<v>$",
+					"name" : "subexpr"
+				}
+			],
+			"name" : "binary_save"
+		},
+		{
+			"resMn" : ".",
+			"mn" : "binary_load(.,C1<u8>A):.",
+			"args" : [
+				{
+					"mn" : ".",
+					"name" : "obj"
+				},
+				{
+					"mn" : "C1<u8>A",
+					"name" : "data"
+				}
+			],
+			"name" : "binary_load"
+		},
+		{
+			"resMn" : "Y<TT>L",
+			"mn" : "clone_to_move(CIY<TT>.):Y<TT>L",
+			"args" : [
+				{
+					"mn" : "CIY<TT>.",
+					"name" : "clone_src"
+				}
+			],
+			"name" : "clone_to_move"
+		},
+		{
+			"resMn" : ".",
+			"mn" : "clone_dim(.,CI.):.",
+			"args" : [
+				{
+					"mn" : ".",
+					"name" : "a"
+				},
+				{
+					"mn" : "CI.",
+					"name" : "b"
+				}
+			],
+			"name" : "clone_dim"
+		},
+		{
+			"resMn" : ".",
+			"mn" : "clone(1<Y<TT>.>A,C1<Y<TT>L>A):.",
+			"args" : [
+				{
+					"mn" : "1<Y<TT>.>A",
+					"name" : "a"
+				},
+				{
+					"mn" : "C1<Y<TT>L>A",
+					"name" : "b"
+				}
+			],
+			"name" : "clone"
+		},
+		{
+			"resMn" : ".",
+			"mn" : "clone(1<Y<TT>.>A,C#1<Y<TT>L>A):.",
+			"args" : [
+				{
+					"mn" : "1<Y<TT>.>A",
+					"name" : "a"
+				},
+				{
+					"mn" : "C#1<Y<TT>L>A",
+					"name" : "b"
+				}
+			],
+			"name" : "clone"
+		},
+		{
+			"resMn" : ".",
+			"mn" : "clone(1<Y<KT>.>2<Y<VT>.>T,CI1<Y<KT>L>2<Y<VT>L>T):.",
+			"args" : [
+				{
+					"mn" : "1<Y<KT>.>2<Y<VT>.>T",
+					"name" : "a"
+				},
+				{
+					"mn" : "CI1<Y<KT>L>2<Y<VT>L>T",
+					"name" : "b"
+				}
+			],
+			"name" : "clone"
+		},
+		{
+			"resMn" : ".",
+			"mn" : "clone(1<s>2<Y<VT>.>T,CI1<s>2<Y<VT>L>T):.",
+			"args" : [
+				{
+					"mn" : "1<s>2<Y<VT>.>T",
+					"name" : "a"
+				},
+				{
+					"mn" : "CI1<s>2<Y<VT>L>T",
+					"name" : "b"
+				}
+			],
+			"name" : "clone"
+		},
+		{
+			"resMn" : "1<C&Y<keyT>L>G",
+			"mn" : "keys(CI1<Y<keyT>.>2<Y<valT>.>T):1<C&Y<keyT>L>G",
+			"args" : [
+				{
+					"mn" : "CI1<Y<keyT>.>2<Y<valT>.>T",
+					"name" : "a"
+				}
+			],
+			"name" : "keys"
+		},
+		{
+			"resMn" : "1<C&Y<valT>L>G",
+			"mn" : "values(CI=1<Y<keyT>.>2<Y<valT>.>T):1<C&Y<valT>L>G",
+			"args" : [
+				{
+					"mn" : "CI=1<Y<keyT>.>2<Y<valT>.>T",
+					"name" : "a"
+				}
+			],
+			"name" : "values"
+		},
+		{
+			"resMn" : "1<&Y<valT>L>G",
+			"mn" : "values(I=1<Y<keyT>.>2<Y<valT>.>T):1<&Y<valT>L>G",
+			"args" : [
+				{
+					"mn" : "I=1<Y<keyT>.>2<Y<valT>.>T",
+					"name" : "a"
+				}
+			],
+			"name" : "values"
+		},
+		{
+			"resMn" : ".",
+			"mn" : "finalize_dim([-1]Y<TT>.):.",
+			"args" : [
+				{
+					"mn" : "[-1]Y<TT>.",
+					"name" : "a"
+				}
+			],
+			"name" : "finalize_dim"
+		},
+		{
+			"resMn" : ".",
+			"mn" : "finalize(1<Y<TT>.>A):.",
+			"args" : [
+				{
+					"mn" : "1<Y<TT>.>A",
+					"name" : "a"
+				}
+			],
+			"name" : "finalize"
+		},
+		{
+			"resMn" : ".",
+			"mn" : "finalize(1<Y<TK>.>2<Y<TV>.>T):.",
+			"args" : [
+				{
+					"mn" : "1<Y<TK>.>2<Y<TV>.>T",
+					"name" : "a"
+				}
+			],
+			"name" : "finalize"
+		},
+		{
+			"resMn" : ".",
+			"mn" : "lock(C1<Y<keyT>.>2<Y<valT>.>T,CN<t>0<C#1<Y<keyT>L>2<Y<valT>L>T>1<v>$):.",
+			"args" : [
+				{
+					"mn" : "C1<Y<keyT>.>2<Y<valT>.>T",
+					"name" : "Tab"
+				},
+				{
+					"mn" : "CN<t>0<C#1<Y<keyT>L>2<Y<valT>L>T>1<v>$",
+					"name" : "blk"
+				}
+			],
+			"name" : "lock"
+		},
+		{
+			"resMn" : ".",
+			"mn" : "lock(C#1<Y<keyT>.>2<Y<valT>.>T,CN<t>0<C#1<Y<keyT>L>2<Y<valT>L>T>1<v>$):.",
+			"args" : [
+				{
+					"mn" : "C#1<Y<keyT>.>2<Y<valT>.>T",
+					"name" : "Tab"
+				},
+				{
+					"mn" : "CN<t>0<C#1<Y<keyT>L>2<Y<valT>L>T>1<v>$",
+					"name" : "blk"
+				}
+			],
+			"name" : "lock"
+		},
+		{
+			"resMn" : "#1<Y<keyT>L>2<Y<valT>L>T",
+			"mn" : "lock_forever(1<Y<keyT>.>2<Y<valT>.>T):#1<Y<keyT>L>2<Y<valT>L>T",
+			"args" : [
+				{
+					"mn" : "1<Y<keyT>.>2<Y<valT>.>T",
+					"name" : "Tab"
+				}
+			],
+			"name" : "lock_forever"
+		},
+		{
+			"resMn" : "b",
+			"mn" : "next(C1<Y<TT>.>G,&Y<TT>L):b",
+			"args" : [
+				{
+					"mn" : "C1<Y<TT>.>G",
+					"name" : "it"
+				},
+				{
+					"mn" : "&Y<TT>L",
+					"name" : "value"
+				}
+			],
+			"name" : "next"
+		},
+		{
+			"resMn" : ".",
+			"mn" : "length(C.):.",
+			"args" : [
+				{
+					"mn" : "C.",
+					"name" : "vec"
+				}
+			],
+			"name" : "length"
+		},
+		{
+			"resMn" : "1<i>G",
+			"mn" : "each(Cr):1<i>G",
+			"args" : [
+				{
+					"mn" : "Cr",
+					"name" : "rng"
+				}
+			],
+			"name" : "each"
+		},
+		{
+			"resMn" : ".",
+			"mn" : "iter_range(C.):.",
+			"args" : [
+				{
+					"mn" : "C.",
+					"name" : "foo"
+				}
+			],
+			"name" : "iter_range"
+		},
+		{
+			"resMn" : "1<i>G",
+			"mn" : "each(Cs):1<i>G",
+			"args" : [
+				{
+					"mn" : "Cs",
+					"name" : "str"
+				}
+			],
+			"name" : "each"
+		},
+		{
+			"resMn" : "1<&Y<TT>L>G",
+			"mn" : "each(C[-1]Y<TT>.):1<&Y<TT>L>G",
+			"args" : [
+				{
+					"mn" : "C[-1]Y<TT>.",
+					"name" : "a"
+				}
+			],
+			"name" : "each"
+		},
+		{
+			"resMn" : "1<&Y<TT>L>G",
+			"mn" : "each(C1<Y<TT>.>A):1<&Y<TT>L>G",
+			"args" : [
+				{
+					"mn" : "C1<Y<TT>.>A",
+					"name" : "a"
+				}
+			],
+			"name" : "each"
+		},
+		{
+			"resMn" : "1<Y<argT>L>G",
+			"mn" : "each(CN<arg>0<Y<argT>.>1<b>@):1<Y<argT>L>G",
+			"args" : [
+				{
+					"mn" : "CN<arg>0<Y<argT>.>1<b>@",
+					"name" : "lam"
+				}
+			],
+			"name" : "each"
+		},
+		{
+			"resMn" : "1<&Y<argT>L>G",
+			"mn" : "each_ref(CN<arg>0<1<Y<argT>.>?>1<b>@):1<&Y<argT>L>G",
+			"args" : [
+				{
+					"mn" : "CN<arg>0<1<Y<argT>.>?>1<b>@",
+					"name" : "lam"
+				}
+			],
+			"name" : "each_ref"
+		},
+		{
+			"resMn" : "1<Y<TT>L>G",
+			"mn" : "each_enum(CY<TT>.):1<Y<TT>L>G",
+			"args" : [
+				{
+					"mn" : "CY<TT>.",
+					"name" : "tt"
+				}
+			],
+			"name" : "each_enum"
+		},
+		{
+			"resMn" : "1<Y<TT>L>G",
+			"mn" : "nothing(1<Y<TT>.>G):1<Y<TT>L>G",
+			"args" : [
+				{
+					"mn" : "1<Y<TT>.>G",
+					"name" : "it"
+				}
+			],
+			"name" : "nothing"
+		},
+		{
+			"resMn" : "1<Y<TT>L>A",
+			"mn" : "to_array(C1<Y<TT>.>G):1<Y<TT>L>A",
+			"args" : [
+				{
+					"mn" : "C1<Y<TT>.>G",
+					"name" : "it"
+				}
+			],
+			"name" : "to_array"
+		},
+		{
+			"resMn" : "1<Y<TT>L>A",
+			"mn" : "to_array(C[-1]Y<TT>.):1<Y<TT>L>A",
+			"args" : [
+				{
+					"mn" : "C[-1]Y<TT>.",
+					"name" : "a"
+				}
+			],
+			"name" : "to_array"
+		},
+		{
+			"resMn" : "1<Y<TT>L>A",
+			"mn" : "to_array_move([-1]Y<TT>.):1<Y<TT>L>A",
+			"args" : [
+				{
+					"mn" : "[-1]Y<TT>.",
+					"name" : "a"
+				}
+			],
+			"name" : "to_array_move"
+		},
+		{
+			"resMn" : "1<Y<TT>L>A",
+			"mn" : "to_array_move(Y<TT>.):1<Y<TT>L>A",
+			"args" : [
+				{
+					"mn" : "Y<TT>.",
+					"name" : "a"
+				}
+			],
+			"name" : "to_array_move"
+		},
+		{
+			"resMn" : "1<Y<keyT>L>2<Y<valT>L>T",
+			"mn" : "to_table(C[-1]0<Y<keyT>.;Y<valT>.>U):1<Y<keyT>L>2<Y<valT>L>T",
+			"args" : [
+				{
+					"mn" : "C[-1]0<Y<keyT>.;Y<valT>.>U",
+					"name" : "a"
+				}
+			],
+			"name" : "to_table"
+		},
+		{
+			"resMn" : "1<Y<keyT>L>2<Y<valT>L>T",
+			"mn" : "to_table_move([-1]0<Y<keyT>.;Y<valT>.>U):1<Y<keyT>L>2<Y<valT>L>T",
+			"args" : [
+				{
+					"mn" : "[-1]0<Y<keyT>.;Y<valT>.>U",
+					"name" : "a"
+				}
+			],
+			"name" : "to_table_move"
+		},
+		{
+			"resMn" : ".",
+			"mn" : "sort(I[-1]Y<TT>.):.",
+			"args" : [
+				{
+					"mn" : "I[-1]Y<TT>.",
+					"name" : "a"
+				}
+			],
+			"name" : "sort"
+		},
+		{
+			"resMn" : ".",
+			"mn" : "sort(I1<Y<TT>.>A):.",
+			"args" : [
+				{
+					"mn" : "I1<Y<TT>.>A",
+					"name" : "a"
+				}
+			],
+			"name" : "sort"
+		},
+		{
+			"resMn" : ".",
+			"mn" : "sort(I[-1]Y<TT>.,CN<x;y>0<CY<TT>L;CY<TT>L>1<b>$):.",
+			"args" : [
+				{
+					"mn" : "I[-1]Y<TT>.",
+					"name" : "a"
+				},
+				{
+					"mn" : "CN<x;y>0<CY<TT>L;CY<TT>L>1<b>$",
+					"name" : "cmp"
+				}
+			],
+			"name" : "sort"
+		},
+		{
+			"resMn" : ".",
+			"mn" : "sort(I1<Y<TT>.>A,CN<x;y>0<CY<TT>L;CY<TT>L>1<b>$):.",
+			"args" : [
+				{
+					"mn" : "I1<Y<TT>.>A",
+					"name" : "a"
+				},
+				{
+					"mn" : "CN<x;y>0<CY<TT>L;CY<TT>L>1<b>$",
+					"name" : "cmp"
+				}
+			],
+			"name" : "sort"
+		},
+		{
+			"resMn" : ".",
+			"mn" : "lock(=1<Y<TT>.>A,CN<x>0<#I1<Y<TT>L>A>1<.>$):.",
+			"args" : [
+				{
+					"mn" : "=1<Y<TT>.>A",
+					"name" : "a"
+				},
+				{
+					"mn" : "CN<x>0<#I1<Y<TT>L>A>1<.>$",
+					"name" : "blk"
+				}
+			],
+			"name" : "lock"
+		},
+		{
+			"resMn" : ".",
+			"mn" : "lock(C=1<Y<TT>.>A,CN<x>0<C#I1<Y<TT>L>A>1<.>$):.",
+			"args" : [
+				{
+					"mn" : "C=1<Y<TT>.>A",
+					"name" : "a"
+				},
+				{
+					"mn" : "CN<x>0<C#I1<Y<TT>L>A>1<.>$",
+					"name" : "blk"
+				}
+			],
+			"name" : "lock"
+		},
+		{
+			"resMn" : ".",
+			"mn" : "lock_data(=1<Y<TT>.>A,CN<p;s>0<#I1<Y<TT>L>?;Ci>1<.>$):.",
+			"args" : [
+				{
+					"mn" : "=1<Y<TT>.>A",
+					"name" : "a"
+				},
+				{
+					"mn" : "CN<p;s>0<#I1<Y<TT>L>?;Ci>1<.>$",
+					"name" : "blk"
+				}
+			],
+			"name" : "lock_data"
+		},
+		{
+			"resMn" : ".",
+			"mn" : "lock_data(C=1<Y<TT>.>A,CN<p;s>0<C#I1<CY<TT>L>?;Ci>1<.>$):.",
+			"args" : [
+				{
+					"mn" : "C=1<Y<TT>.>A",
+					"name" : "a"
+				},
+				{
+					"mn" : "CN<p;s>0<C#I1<CY<TT>L>?;Ci>1<.>$",
+					"name" : "blk"
+				}
+			],
+			"name" : "lock_data"
+		},
+		{
+			"resMn" : ".",
+			"mn" : "find_index(CI1<Y<TT>.>A,CY<TT>L):.",
+			"args" : [
+				{
+					"mn" : "CI1<Y<TT>.>A",
+					"name" : "arr"
+				},
+				{
+					"mn" : "CY<TT>L",
+					"name" : "key"
+				}
+			],
+			"name" : "find_index"
+		},
+		{
+			"resMn" : ".",
+			"mn" : "find_index(CI[-1]Y<TT>.,CY<TT>L):.",
+			"args" : [
+				{
+					"mn" : "CI[-1]Y<TT>.",
+					"name" : "arr"
+				},
+				{
+					"mn" : "CY<TT>L",
+					"name" : "key"
+				}
+			],
+			"name" : "find_index"
+		},
+		{
+			"resMn" : ".",
+			"mn" : "find_index(C1<Y<TT>.>G,CY<TT>L):.",
+			"args" : [
+				{
+					"mn" : "C1<Y<TT>.>G",
+					"name" : "arr"
+				},
+				{
+					"mn" : "CY<TT>L",
+					"name" : "key"
+				}
+			],
+			"name" : "find_index"
+		},
+		{
+			"resMn" : ".",
+			"mn" : "find_index_if(CI1<Y<TT>.>A,CN<key>0<CY<TT>L>1<b>$):.",
+			"args" : [
+				{
+					"mn" : "CI1<Y<TT>.>A",
+					"name" : "arr"
+				},
+				{
+					"mn" : "CN<key>0<CY<TT>L>1<b>$",
+					"name" : "blk"
+				}
+			],
+			"name" : "find_index_if"
+		},
+		{
+			"resMn" : ".",
+			"mn" : "find_index_if(CI[-1]Y<TT>.,CN<key>0<CY<TT>L>1<b>$):.",
+			"args" : [
+				{
+					"mn" : "CI[-1]Y<TT>.",
+					"name" : "arr"
+				},
+				{
+					"mn" : "CN<key>0<CY<TT>L>1<b>$",
+					"name" : "blk"
+				}
+			],
+			"name" : "find_index_if"
+		},
+		{
+			"resMn" : ".",
+			"mn" : "find_index_if(C1<Y<TT>.>G,CN<key>0<CY<TT>L>1<b>$):.",
+			"args" : [
+				{
+					"mn" : "C1<Y<TT>.>G",
+					"name" : "arr"
+				},
+				{
+					"mn" : "CN<key>0<CY<TT>L>1<b>$",
+					"name" : "blk"
+				}
+			],
+			"name" : "find_index_if"
+		},
+		{
+			"resMn" : ".",
+			"mn" : "has_value(C.,C.):.",
+			"args" : [
+				{
+					"mn" : "C.",
+					"name" : "a"
+				},
+				{
+					"mn" : "C.",
+					"name" : "key"
+				}
+			],
+			"name" : "has_value"
+		},
+		{
+			"resMn" : "1<Y<TT>L>?",
+			"mn" : "get_ptr(C1<Y<TT>.>?M):1<Y<TT>L>?",
+			"args" : [
+				{
+					"mn" : "C1<Y<TT>.>?M",
+					"name" : "src"
+				}
+			],
+			"name" : "get_ptr"
+		},
+		{
+			"resMn" : "1<s>A",
+			"mn" : "get_command_line_arguments():1<s>A",
+			"args" : [],
+			"name" : "get_command_line_arguments"
+		},
+		{
+			"resMn" : ".",
+			"mn" : "map_to_array(C1<v>?,Ci,CN<arg>0<#1<Y<TT>.>A>1<.>$):.",
+			"args" : [
+				{
+					"mn" : "C1<v>?",
+					"name" : "data"
+				},
+				{
+					"mn" : "Ci",
+					"name" : "len"
+				},
+				{
+					"mn" : "CN<arg>0<#1<Y<TT>.>A>1<.>$",
+					"name" : "blk"
+				}
+			],
+			"name" : "map_to_array"
+		},
+		{
+			"resMn" : ".",
+			"mn" : "map_to_ro_array(C1<v>?,Ci,CN<arg>0<C#1<Y<TT>.>A>1<.>$):.",
+			"args" : [
+				{
+					"mn" : "C1<v>?",
+					"name" : "data"
+				},
+				{
+					"mn" : "Ci",
+					"name" : "len"
+				},
+				{
+					"mn" : "CN<arg>0<C#1<Y<TT>.>A>1<.>$",
+					"name" : "blk"
+				}
+			],
+			"name" : "map_to_ro_array"
+		},
+		{
+			"resMn" : ".",
+			"mn" : "swap(&Y<TT>.,&Y<TT>.):.",
+			"args" : [
+				{
+					"mn" : "&Y<TT>.",
+					"name" : "a"
+				},
+				{
+					"mn" : "&Y<TT>.",
+					"name" : "b"
+				}
+			],
+			"name" : "swap"
+		},
+		{
 			"resMn" : "b",
 			"mn" : "==(Cb,Cb):b",
 			"ctor" : "$arg0 == $arg1",
@@ -21237,12 +22369,33 @@
 	],
 	"types" : [
 		{
+			"mn" : "C[-1]Y<TT>.",
+			"isRef" : true,
+			"baseMn" : "[-1]Y<TT>.",
+			"isConst" : true,
+			"typeName" : "auto(TT) const[-1]",
+			"isLocal" : true
+		},
+		{
+			"mn" : "CN<p>0<C1<Y<valT>L>?>1<v>$",
+			"isRef" : true,
+			"baseMn" : "N<p>0<C1<Y<valT>L>?>1<v>$",
+			"isConst" : true,
+			"typeName" : "block<(p:valT? const):void> const"
+		},
+		{
 			"mn" : "1<&H<UnitTest::TestObjectFoo>>G",
 			"isRef" : true,
 			"typeName" : "iterator<UnitTest::TestObjectFoo&>",
 			"requirements" : [
 				"UnitTest"
 			],
+			"isLocal" : true
+		},
+		{
+			"mn" : "1<C&Y<keyT>L>G",
+			"isRef" : true,
+			"typeName" : "iterator<keyT const&>",
 			"isLocal" : true
 		},
 		{
@@ -21259,6 +22412,34 @@
 		{
 			"mn" : "u8",
 			"typeName" : "uint8",
+			"isLocal" : true
+		},
+		{
+			"mn" : "Ci",
+			"baseMn" : "i",
+			"isConst" : true,
+			"typeName" : "int const",
+			"isLocal" : true
+		},
+		{
+			"mn" : "C.",
+			"baseMn" : ".",
+			"isConst" : true,
+			"typeName" : "auto const",
+			"isLocal" : true
+		},
+		{
+			"mn" : "Cr",
+			"baseMn" : "r",
+			"isConst" : true,
+			"typeName" : "range const",
+			"isLocal" : true
+		},
+		{
+			"mn" : "Cs",
+			"baseMn" : "s",
+			"isConst" : true,
+			"typeName" : "string const",
 			"isLocal" : true
 		},
 		{
@@ -21283,13 +22464,6 @@
 			"isLocal" : true
 		},
 		{
-			"mn" : "Ci",
-			"baseMn" : "i",
-			"isConst" : true,
-			"typeName" : "int const",
-			"isLocal" : true
-		},
-		{
 			"mn" : "Cu",
 			"baseMn" : "u",
 			"isConst" : true,
@@ -21311,22 +22485,10 @@
 			"isLocal" : true
 		},
 		{
-			"mn" : "C@",
-			"baseMn" : "@",
+			"mn" : "CI.",
+			"baseMn" : ".",
 			"isConst" : true,
-			"typeName" : "lambda<> const",
-			"isLocal" : true
-		},
-		{
-			"mn" : "f2",
-			"typeName" : "float2",
-			"isLocal" : true
-		},
-		{
-			"mn" : "C@@",
-			"baseMn" : "@@",
-			"isConst" : true,
-			"typeName" : "function<> const",
+			"typeName" : "auto const implicit",
 			"isLocal" : true
 		},
 		{
@@ -21337,13 +22499,6 @@
 			"isLocal" : true
 		},
 		{
-			"mn" : "Cu8",
-			"baseMn" : "u8",
-			"isConst" : true,
-			"typeName" : "uint8 const",
-			"isLocal" : true
-		},
-		{
 			"mn" : "Ci8",
 			"baseMn" : "i8",
 			"isConst" : true,
@@ -21351,10 +22506,31 @@
 			"isLocal" : true
 		},
 		{
+			"mn" : "Cu8",
+			"baseMn" : "u8",
+			"isConst" : true,
+			"typeName" : "uint8 const",
+			"isLocal" : true
+		},
+		{
 			"mn" : "CE8",
 			"baseMn" : "E8",
 			"isConst" : true,
 			"typeName" : "enum const E8",
+			"isLocal" : true
+		},
+		{
+			"mn" : "C@@",
+			"baseMn" : "@@",
+			"isConst" : true,
+			"typeName" : "function<> const",
+			"isLocal" : true
+		},
+		{
+			"mn" : "C@",
+			"baseMn" : "@",
+			"isConst" : true,
+			"typeName" : "lambda<> const",
 			"isLocal" : true
 		},
 		{
@@ -21379,6 +22555,11 @@
 			"isLocal" : true
 		},
 		{
+			"mn" : "f2",
+			"typeName" : "float2",
+			"isLocal" : true
+		},
+		{
 			"mn" : "Cf3",
 			"baseMn" : "f3",
 			"isConst" : true,
@@ -21388,6 +22569,12 @@
 		{
 			"mn" : "f3",
 			"typeName" : "float3",
+			"isLocal" : true
+		},
+		{
+			"mn" : "1<Y<TK>.>2<Y<TV>.>T",
+			"isRef" : true,
+			"typeName" : "table<auto(TK);auto(TV)> -const",
 			"isLocal" : true
 		},
 		{
@@ -21434,6 +22621,23 @@
 			"isLocal" : true
 		},
 		{
+			"mn" : "1<Y<TT>L>G",
+			"isRef" : true,
+			"typeName" : "iterator<TT -const -&>",
+			"isLocal" : true
+		},
+		{
+			"mn" : "1<Y<TT>L>A",
+			"isRef" : true,
+			"typeName" : "array<TT -const -&>",
+			"isLocal" : true
+		},
+		{
+			"mn" : "1<Y<TT>L>?",
+			"typeName" : "TT?",
+			"isLocal" : true
+		},
+		{
 			"mn" : "i4",
 			"typeName" : "int4",
 			"isLocal" : true
@@ -21475,13 +22679,6 @@
 			"isLocal" : true
 		},
 		{
-			"mn" : "Cr",
-			"baseMn" : "r",
-			"isConst" : true,
-			"typeName" : "range const",
-			"isLocal" : true
-		},
-		{
 			"mn" : "Cz",
 			"baseMn" : "z",
 			"isConst" : true,
@@ -21519,10 +22716,22 @@
 			"isLocal" : true
 		},
 		{
+			"mn" : "1<Y<KT>.>2<Y<VT>.>T",
+			"isRef" : true,
+			"typeName" : "table<auto(KT);auto(VT)> -const",
+			"isLocal" : true
+		},
+		{
 			"mn" : "C*",
 			"baseMn" : "*",
 			"isConst" : true,
 			"typeName" : "any const",
+			"isLocal" : true
+		},
+		{
+			"mn" : "1<Y<keyT>.>2<Y<valT>.>T",
+			"isRef" : true,
+			"typeName" : "table<auto(keyT);auto(valT)> -const",
 			"isLocal" : true
 		},
 		{
@@ -21545,6 +22754,12 @@
 			"isRef" : true,
 			"baseMn" : "V",
 			"typeName" : "variant<> implicit",
+			"isLocal" : true
+		},
+		{
+			"mn" : "1<Y<keyT>L>2<Y<valT>L>T",
+			"isRef" : true,
+			"typeName" : "table<keyT -const;valT>",
 			"isLocal" : true
 		},
 		{
@@ -21599,10 +22814,30 @@
 			"typeName" : "block<(uint3;uint3):bool> const implicit"
 		},
 		{
+			"mn" : "C#1<Y<TT>L>A",
+			"isRef" : true,
+			"baseMn" : "1<Y<TT>L>A",
+			"isConst" : true,
+			"typeName" : "array<TT> const#",
+			"isLocal" : true
+		},
+		{
 			"mn" : "IH<$::dasvector`InferHistory>",
 			"isRef" : true,
 			"baseMn" : "H<$::dasvector`InferHistory>",
 			"typeName" : "$::dasvector`InferHistory implicit"
+		},
+		{
+			"mn" : "I=H<$::dasvector`InferHistory>",
+			"isRef" : true,
+			"baseMn" : "=H<$::dasvector`InferHistory>",
+			"typeName" : "$::dasvector`InferHistory implicit =const"
+		},
+		{
+			"mn" : "I=H<$::dasvector`LineInfo>",
+			"isRef" : true,
+			"baseMn" : "=H<$::dasvector`LineInfo>",
+			"typeName" : "$::dasvector`LineInfo implicit =const"
 		},
 		{
 			"mn" : "CI=H<$::dasvector`smart_ptr`MakeFieldDecl>",
@@ -21622,23 +22857,17 @@
 			"isLocal" : true
 		},
 		{
-			"mn" : "I=H<$::dasvector`InferHistory>",
-			"isRef" : true,
-			"baseMn" : "=H<$::dasvector`InferHistory>",
-			"typeName" : "$::dasvector`InferHistory implicit =const"
-		},
-		{
-			"mn" : "I=H<$::dasvector`LineInfo>",
-			"isRef" : true,
-			"baseMn" : "=H<$::dasvector`LineInfo>",
-			"typeName" : "$::dasvector`LineInfo implicit =const"
-		},
-		{
 			"mn" : "CI[8]u",
 			"isRef" : true,
 			"baseMn" : "[8]u",
 			"isConst" : true,
 			"typeName" : "uint const[8] implicit",
+			"isLocal" : true
+		},
+		{
+			"mn" : "1<s>A",
+			"isRef" : true,
+			"typeName" : "array<string>",
 			"isLocal" : true
 		},
 		{
@@ -21664,6 +22893,14 @@
 			"baseMn" : "=H<$::dasvector`Error>",
 			"isConst" : true,
 			"typeName" : "$::dasvector`Error const implicit =const"
+		},
+		{
+			"mn" : "C=1<Y<TT>.>A",
+			"isRef" : true,
+			"baseMn" : "=1<Y<TT>.>A",
+			"isConst" : true,
+			"typeName" : "array<auto(TT)> const =const",
+			"isLocal" : true
 		},
 		{
 			"mn" : "1<&H<$::das_string>>G",
@@ -21729,12 +22966,32 @@
 			"isLocal" : true
 		},
 		{
+			"mn" : "1<Y<numT>.>A",
+			"isRef" : true,
+			"typeName" : "array<auto(numT)> -const",
+			"isLocal" : true
+		},
+		{
 			"mn" : "1<&1<H<ast::MakeStruct>>?W>G",
 			"isRef" : true,
 			"typeName" : "iterator<smart_ptr<ast::MakeStruct>&>",
 			"requirements" : [
 				"ast"
 			],
+			"isLocal" : true
+		},
+		{
+			"mn" : "&Y<TT>L",
+			"isRef" : true,
+			"baseMn" : "Y<TT>L",
+			"typeName" : "TT&",
+			"isLocal" : true
+		},
+		{
+			"mn" : "&Y<TT>.",
+			"isRef" : true,
+			"baseMn" : "Y<TT>.",
+			"typeName" : "auto(TT)& -const",
 			"isLocal" : true
 		},
 		{
@@ -21759,6 +23016,13 @@
 			"isLocal" : true
 		},
 		{
+			"mn" : "C1<v>?",
+			"baseMn" : "1<v>?",
+			"isConst" : true,
+			"typeName" : "void? const",
+			"isLocal" : true
+		},
+		{
 			"mn" : "H<$::dasvector`InferHistory>",
 			"isRef" : true,
 			"typeName" : "$::dasvector`InferHistory"
@@ -21769,6 +23033,14 @@
 			"baseMn" : "0<u64;u64>1<b>$",
 			"isConst" : true,
 			"typeName" : "block<(uint64;uint64):bool> const implicit"
+		},
+		{
+			"mn" : "CI1<Y<keyT>.>2<Y<valT>.>T",
+			"isRef" : true,
+			"baseMn" : "1<Y<keyT>.>2<Y<valT>.>T",
+			"isConst" : true,
+			"typeName" : "table<auto(keyT);auto(valT)> const implicit",
+			"isLocal" : true
 		},
 		{
 			"mn" : "IH<$::dasvector`smart_ptr`MakeStruct>",
@@ -21798,6 +23070,32 @@
 			"isConst" : true,
 			"typeName" : "int? const implicit",
 			"isLocal" : true
+		},
+		{
+			"mn" : "1<CY<valT>L>?",
+			"typeName" : "valT const?",
+			"isLocal" : true
+		},
+		{
+			"mn" : "I[-1]Y<TT>.",
+			"isRef" : true,
+			"baseMn" : "[-1]Y<TT>.",
+			"typeName" : "auto(TT)[-1] implicit -const",
+			"isLocal" : true
+		},
+		{
+			"mn" : "CN<p;s>0<C#I1<CY<TT>L>?;Ci>1<.>$",
+			"isRef" : true,
+			"baseMn" : "N<p;s>0<C#I1<CY<TT>L>?;Ci>1<.>$",
+			"isConst" : true,
+			"typeName" : "block<(p:TT const? const# implicit;s:int const):auto> const"
+		},
+		{
+			"mn" : "CN<x;y>0<CY<TT>L;CY<TT>L>1<b>$",
+			"isRef" : true,
+			"baseMn" : "N<x;y>0<CY<TT>L;CY<TT>L>1<b>$",
+			"isConst" : true,
+			"typeName" : "block<(x:TT const;y:TT const):bool> const"
 		},
 		{
 			"mn" : "&I1<H<ast::MakeStruct>>?W",
@@ -21859,6 +23157,12 @@
 			"typeName" : "$::dasvector`int implicit =const"
 		},
 		{
+			"mn" : "[-1]0<Y<keyT>.;Y<valT>.>U",
+			"isRef" : true,
+			"typeName" : "tuple<auto(keyT);auto(valT)>[-1] -const",
+			"isLocal" : true
+		},
+		{
 			"mn" : "CIH<math::float4x4>",
 			"isRef" : true,
 			"baseMn" : "H<math::float4x4>",
@@ -21877,6 +23181,13 @@
 			"typeName" : "$::dasvector`InferHistory const implicit =const"
 		},
 		{
+			"mn" : "#1<Y<keyT>L>2<Y<valT>L>T",
+			"isRef" : true,
+			"baseMn" : "1<Y<keyT>L>2<Y<valT>L>T",
+			"typeName" : "table<keyT;valT>#",
+			"isLocal" : true
+		},
+		{
 			"mn" : "CI=H<$::dasvector`int>",
 			"isRef" : true,
 			"baseMn" : "=H<$::dasvector`int>",
@@ -21889,6 +23200,20 @@
 			"baseMn" : "=H<$::dasvector`smart_ptr`MakeStruct>",
 			"isConst" : true,
 			"typeName" : "$::dasvector`smart_ptr`MakeStruct const implicit =const"
+		},
+		{
+			"mn" : "C1<Y<TT>L>A",
+			"isRef" : true,
+			"baseMn" : "1<Y<TT>L>A",
+			"isConst" : true,
+			"typeName" : "array<TT> const",
+			"isLocal" : true
+		},
+		{
+			"mn" : "#1<CY<valT>L>?",
+			"baseMn" : "1<CY<valT>L>?",
+			"typeName" : "valT const?#",
+			"isLocal" : true
 		},
 		{
 			"mn" : "I=H<$::dasvector`smart_ptr`TypeDecl>",
@@ -21904,13 +23229,13 @@
 			"typeName" : "$::dasvector`EnumEntry const implicit =const"
 		},
 		{
-			"mn" : "u16",
-			"typeName" : "uint16",
+			"mn" : "u64",
+			"typeName" : "uint64",
 			"isLocal" : true
 		},
 		{
-			"mn" : "u64",
-			"typeName" : "uint64",
+			"mn" : "u16",
+			"typeName" : "uint16",
 			"isLocal" : true
 		},
 		{
@@ -21920,6 +23245,14 @@
 			"requirements" : [
 				"ast"
 			],
+			"isLocal" : true
+		},
+		{
+			"mn" : "C1<Y<keyT>.>2<Y<valT>.>T",
+			"isRef" : true,
+			"baseMn" : "1<Y<keyT>.>2<Y<valT>.>T",
+			"isConst" : true,
+			"typeName" : "table<auto(keyT);auto(valT)> const",
 			"isLocal" : true
 		},
 		{
@@ -21934,6 +23267,26 @@
 			"baseMn" : "=H<$::dasvector`CaptureEntry>",
 			"isConst" : true,
 			"typeName" : "$::dasvector`CaptureEntry const implicit =const"
+		},
+		{
+			"mn" : "&Y<valT>.",
+			"isRef" : true,
+			"baseMn" : "Y<valT>.",
+			"typeName" : "auto(valT)& -const",
+			"isLocal" : true
+		},
+		{
+			"mn" : "&Y<valT>L",
+			"isRef" : true,
+			"baseMn" : "Y<valT>L",
+			"typeName" : "valT&",
+			"isLocal" : true
+		},
+		{
+			"mn" : "1<Y<argT>L>G",
+			"isRef" : true,
+			"typeName" : "iterator<argT -&>",
+			"isLocal" : true
 		},
 		{
 			"mn" : "I=H<$::dasvector`CaptureEntry>",
@@ -21955,6 +23308,23 @@
 			"typeName" : "block<(uint;uint):bool> const implicit"
 		},
 		{
+			"mn" : "Y<CT>.",
+			"typeName" : "auto(CT) -const -#",
+			"isLocal" : true
+		},
+		{
+			"mn" : "1<Y<valT>L>?",
+			"typeName" : "valT?",
+			"isLocal" : true
+		},
+		{
+			"mn" : "CN<arg>0<1<Y<argT>.>?>1<b>@",
+			"baseMn" : "N<arg>0<1<Y<argT>.>?>1<b>@",
+			"isConst" : true,
+			"typeName" : "lambda<(arg:auto(argT)? -const):bool> const",
+			"isLocal" : true
+		},
+		{
 			"mn" : "CI1<u64>?",
 			"baseMn" : "1<u64>?",
 			"isConst" : true,
@@ -21969,6 +23339,14 @@
 			"isLocal" : true
 		},
 		{
+			"mn" : "CI=1<Y<keyT>.>2<Y<valT>.>T",
+			"isRef" : true,
+			"baseMn" : "=1<Y<keyT>.>2<Y<valT>.>T",
+			"isConst" : true,
+			"typeName" : "table<auto(keyT);auto(valT)> const implicit =const",
+			"isLocal" : true
+		},
+		{
 			"mn" : "C0<u;u>U",
 			"isRef" : true,
 			"baseMn" : "0<u;u>U",
@@ -21977,12 +23355,31 @@
 			"isLocal" : true
 		},
 		{
+			"mn" : "CN<x>0<C#I1<Y<TT>L>A>1<.>$",
+			"isRef" : true,
+			"baseMn" : "N<x>0<C#I1<Y<TT>L>A>1<.>$",
+			"isConst" : true,
+			"typeName" : "block<(x:array<TT> const# implicit):auto> const"
+		},
+		{
 			"mn" : "1<&1<H<ast::Expression>>?W>G",
 			"isRef" : true,
 			"typeName" : "iterator<smart_ptr<ast::Expression>&>",
 			"requirements" : [
 				"ast"
 			],
+			"isLocal" : true
+		},
+		{
+			"mn" : "1<Y<TT>.>A",
+			"isRef" : true,
+			"typeName" : "array<auto(TT)> -const",
+			"isLocal" : true
+		},
+		{
+			"mn" : "1<Y<TT>.>G",
+			"isRef" : true,
+			"typeName" : "iterator<auto(TT)> -const",
 			"isLocal" : true
 		},
 		{
@@ -22014,6 +23411,14 @@
 			"isLocal" : true
 		},
 		{
+			"mn" : "CI1<Y<TT>.>A",
+			"isRef" : true,
+			"baseMn" : "1<Y<TT>.>A",
+			"isConst" : true,
+			"typeName" : "array<auto(TT)> const implicit",
+			"isLocal" : true
+		},
+		{
 			"mn" : "CI0<i4;i4>1<b>$",
 			"isRef" : true,
 			"baseMn" : "0<i4;i4>1<b>$",
@@ -22035,6 +23440,13 @@
 			"baseMn" : "0<i64;i64>1<b>$",
 			"isConst" : true,
 			"typeName" : "block<(int64;int64):bool> const implicit"
+		},
+		{
+			"mn" : "CIY<numT>L",
+			"baseMn" : "Y<numT>L",
+			"isConst" : true,
+			"typeName" : "numT const implicit",
+			"isLocal" : true
 		},
 		{
 			"mn" : "Cu16",
@@ -22147,6 +23559,21 @@
 			"typeName" : "$::das_string const implicit"
 		},
 		{
+			"mn" : "CI[-1]Y<TT>.",
+			"isRef" : true,
+			"baseMn" : "[-1]Y<TT>.",
+			"isConst" : true,
+			"typeName" : "auto(TT) const[-1] implicit",
+			"isLocal" : true
+		},
+		{
+			"mn" : "CN<p;s>0<#I1<Y<TT>L>?;Ci>1<.>$",
+			"isRef" : true,
+			"baseMn" : "N<p;s>0<#I1<Y<TT>L>?;Ci>1<.>$",
+			"isConst" : true,
+			"typeName" : "block<(p:TT?# implicit -const;s:int const):auto> const"
+		},
+		{
 			"mn" : "CI0<i3;i3>1<b>$",
 			"isRef" : true,
 			"baseMn" : "0<i3;i3>1<b>$",
@@ -22163,6 +23590,26 @@
 			"isLocal" : true
 		},
 		{
+			"mn" : "CY<TT>.",
+			"baseMn" : "Y<TT>.",
+			"isConst" : true,
+			"typeName" : "auto(TT) const",
+			"isLocal" : true
+		},
+		{
+			"mn" : "CY<TT>L",
+			"baseMn" : "Y<TT>L",
+			"isConst" : true,
+			"typeName" : "TT const",
+			"isLocal" : true
+		},
+		{
+			"mn" : "IH<$::dasvector`smart_ptr`TypeDecl>",
+			"isRef" : true,
+			"baseMn" : "H<$::dasvector`smart_ptr`TypeDecl>",
+			"typeName" : "$::dasvector`smart_ptr`TypeDecl implicit"
+		},
+		{
 			"mn" : "&I1<H<ast::Variable>>?W",
 			"isRef" : true,
 			"baseMn" : "1<H<ast::Variable>>?W",
@@ -22171,12 +23618,6 @@
 				"ast"
 			],
 			"isLocal" : true
-		},
-		{
-			"mn" : "IH<$::dasvector`smart_ptr`TypeDecl>",
-			"isRef" : true,
-			"baseMn" : "H<$::dasvector`smart_ptr`TypeDecl>",
-			"typeName" : "$::dasvector`smart_ptr`TypeDecl implicit"
 		},
 		{
 			"mn" : "1<C&H<ast::InferHistory>>G",
@@ -22193,6 +23634,13 @@
 			"baseMn" : "0<d;d>1<b>$",
 			"isConst" : true,
 			"typeName" : "block<(double;double):bool> const implicit"
+		},
+		{
+			"mn" : "I1<Y<TT>.>A",
+			"isRef" : true,
+			"baseMn" : "1<Y<TT>.>A",
+			"typeName" : "array<auto(TT)> implicit -const",
+			"isLocal" : true
 		},
 		{
 			"mn" : "CI1<u8>A",
@@ -22218,9 +23666,29 @@
 			"isLocal" : true
 		},
 		{
+			"mn" : "1<C&Y<valT>L>G",
+			"isRef" : true,
+			"typeName" : "iterator<valT const&>",
+			"isLocal" : true
+		},
+		{
 			"mn" : "1<&u8>G",
 			"isRef" : true,
 			"typeName" : "iterator<uint8&>",
+			"isLocal" : true
+		},
+		{
+			"mn" : "CIY<keyT>L",
+			"baseMn" : "Y<keyT>L",
+			"isConst" : true,
+			"typeName" : "keyT const implicit",
+			"isLocal" : true
+		},
+		{
+			"mn" : "&Y<valB>.",
+			"isRef" : true,
+			"baseMn" : "Y<valB>.",
+			"typeName" : "auto(valB)& -const",
 			"isLocal" : true
 		},
 		{
@@ -22242,9 +23710,38 @@
 			"typeName" : "$::dasvector`smart_ptr`Expression implicit =const"
 		},
 		{
+			"mn" : "C1<Y<TT>.>G",
+			"isRef" : true,
+			"baseMn" : "1<Y<TT>.>G",
+			"isConst" : true,
+			"typeName" : "iterator<auto(TT)> const",
+			"isLocal" : true
+		},
+		{
+			"mn" : "C1<Y<TT>.>A",
+			"isRef" : true,
+			"baseMn" : "1<Y<TT>.>A",
+			"isConst" : true,
+			"typeName" : "array<auto(TT)> const",
+			"isLocal" : true
+		},
+		{
 			"mn" : "1<&0<u;u>U>G",
 			"isRef" : true,
 			"typeName" : "iterator<tuple<uint;uint>&>",
+			"isLocal" : true
+		},
+		{
+			"mn" : "&Y<valA>.",
+			"isRef" : true,
+			"baseMn" : "Y<valA>.",
+			"typeName" : "auto(valA)& -const",
+			"isLocal" : true
+		},
+		{
+			"mn" : "1<&Y<valT>L>G",
+			"isRef" : true,
+			"typeName" : "iterator<valT&>",
 			"isLocal" : true
 		},
 		{
@@ -22259,6 +23756,28 @@
 			"isConst" : true,
 			"typeName" : "bitfield<escapeString;namesAndDimensions;typeQualifiers;refAddresses;humanReadable;singleLine> aka print_flags const",
 			"isLocal" : true
+		},
+		{
+			"mn" : "C1<u8>A",
+			"isRef" : true,
+			"baseMn" : "1<u8>A",
+			"isConst" : true,
+			"typeName" : "array<uint8> const",
+			"isLocal" : true
+		},
+		{
+			"mn" : "CN<x>0<#I1<Y<TT>L>A>1<.>$",
+			"isRef" : true,
+			"baseMn" : "N<x>0<#I1<Y<TT>L>A>1<.>$",
+			"isConst" : true,
+			"typeName" : "block<(x:array<TT># implicit -const):auto> const"
+		},
+		{
+			"mn" : "CN<p>0<1<Y<valT>L>?>1<v>$",
+			"isRef" : true,
+			"baseMn" : "N<p>0<1<Y<valT>L>?>1<v>$",
+			"isConst" : true,
+			"typeName" : "block<(p:valT? -const):void> const"
 		},
 		{
 			"mn" : "&Ii64",
@@ -22286,10 +23805,26 @@
 			"isLocal" : true
 		},
 		{
+			"mn" : "C1<.>A",
+			"isRef" : true,
+			"baseMn" : "1<.>A",
+			"isConst" : true,
+			"typeName" : "array<auto> const",
+			"isLocal" : true
+		},
+		{
 			"mn" : "I=H<$::dasvector`smart_ptr`Variable>",
 			"isRef" : true,
 			"baseMn" : "=H<$::dasvector`smart_ptr`Variable>",
 			"typeName" : "$::dasvector`smart_ptr`Variable implicit =const"
+		},
+		{
+			"mn" : "C[-1]0<Y<keyT>.;Y<valT>.>U",
+			"isRef" : true,
+			"baseMn" : "[-1]0<Y<keyT>.;Y<valT>.>U",
+			"isConst" : true,
+			"typeName" : "tuple<auto(keyT);auto(valT)> const[-1]",
+			"isLocal" : true
 		},
 		{
 			"mn" : "I=H<$::dasvector`pair`uint`uint>",
@@ -22356,6 +23891,24 @@
 			"typeName" : "block<(range;range):bool> const implicit"
 		},
 		{
+			"mn" : ".",
+			"typeName" : "auto",
+			"isLocal" : true
+		},
+		{
+			"mn" : "C[-1].",
+			"isRef" : true,
+			"baseMn" : "[-1].",
+			"isConst" : true,
+			"typeName" : "auto const[-1]",
+			"isLocal" : true
+		},
+		{
+			"mn" : "i",
+			"typeName" : "int",
+			"isLocal" : true
+		},
+		{
 			"mn" : "b",
 			"typeName" : "bool",
 			"isLocal" : true
@@ -22363,11 +23916,6 @@
 		{
 			"mn" : "v",
 			"typeName" : "void",
-			"isLocal" : true
-		},
-		{
-			"mn" : "i",
-			"typeName" : "int",
 			"isLocal" : true
 		},
 		{
@@ -22391,6 +23939,13 @@
 			"isLocal" : true
 		},
 		{
+			"mn" : "C1<.>?M",
+			"baseMn" : "1<.>?M",
+			"isConst" : true,
+			"typeName" : "smart_ptr<auto> const",
+			"isLocal" : true
+		},
+		{
 			"mn" : "s",
 			"typeName" : "string",
 			"isLocal" : true
@@ -22406,6 +23961,16 @@
 			"isLocal" : true
 		},
 		{
+			"mn" : "Y<TT>L",
+			"typeName" : "TT -const -#",
+			"isLocal" : true
+		},
+		{
+			"mn" : "Y<TT>.",
+			"typeName" : "auto(TT) -const",
+			"isLocal" : true
+		},
+		{
 			"mn" : "C&I1<v>?M",
 			"isRef" : true,
 			"baseMn" : "1<v>?M",
@@ -22416,34 +23981,6 @@
 		{
 			"mn" : "?",
 			"typeName" : "void?",
-			"isLocal" : true
-		},
-		{
-			"mn" : "CI0<s;s>1<b>$",
-			"isRef" : true,
-			"baseMn" : "0<s;s>1<b>$",
-			"isConst" : true,
-			"typeName" : "block<(string;string):bool> const implicit"
-		},
-		{
-			"mn" : "CI=H<$::dasvector`smart_ptr`Expression>",
-			"isRef" : true,
-			"baseMn" : "=H<$::dasvector`smart_ptr`Expression>",
-			"isConst" : true,
-			"typeName" : "$::dasvector`smart_ptr`Expression const implicit =const"
-		},
-		{
-			"mn" : "CI=H<$::dasvector`TestObjectFoo>",
-			"isRef" : true,
-			"baseMn" : "=H<$::dasvector`TestObjectFoo>",
-			"isConst" : true,
-			"typeName" : "$::dasvector`TestObjectFoo const implicit =const"
-		},
-		{
-			"mn" : "&If",
-			"isRef" : true,
-			"baseMn" : "f",
-			"typeName" : "float& implicit",
 			"isLocal" : true
 		},
 		{
@@ -22475,6 +24012,13 @@
 			"isLocal" : true
 		},
 		{
+			"mn" : "&If",
+			"isRef" : true,
+			"baseMn" : "f",
+			"typeName" : "float& implicit",
+			"isLocal" : true
+		},
+		{
 			"mn" : "&Id",
 			"isRef" : true,
 			"baseMn" : "d",
@@ -22503,6 +24047,20 @@
 			"typeName" : "block<(float3;float3):bool> const implicit"
 		},
 		{
+			"mn" : "CI0<s;s>1<b>$",
+			"isRef" : true,
+			"baseMn" : "0<s;s>1<b>$",
+			"isConst" : true,
+			"typeName" : "block<(string;string):bool> const implicit"
+		},
+		{
+			"mn" : "CI=H<$::dasvector`smart_ptr`Expression>",
+			"isRef" : true,
+			"baseMn" : "=H<$::dasvector`smart_ptr`Expression>",
+			"isConst" : true,
+			"typeName" : "$::dasvector`smart_ptr`Expression const implicit =const"
+		},
+		{
 			"mn" : "CI0<f2;f2>1<b>$",
 			"isRef" : true,
 			"baseMn" : "0<f2;f2>1<b>$",
@@ -22510,11 +24068,25 @@
 			"typeName" : "block<(float2;float2):bool> const implicit"
 		},
 		{
+			"mn" : "CI=H<$::dasvector`TestObjectFoo>",
+			"isRef" : true,
+			"baseMn" : "=H<$::dasvector`TestObjectFoo>",
+			"isConst" : true,
+			"typeName" : "$::dasvector`TestObjectFoo const implicit =const"
+		},
+		{
 			"mn" : "CI=H<$::dasvector`FieldDeclaration>",
 			"isRef" : true,
 			"baseMn" : "=H<$::dasvector`FieldDeclaration>",
 			"isConst" : true,
 			"typeName" : "$::dasvector`FieldDeclaration const implicit =const"
+		},
+		{
+			"mn" : "CN<arg>0<#1<Y<TT>.>A>1<.>$",
+			"isRef" : true,
+			"baseMn" : "N<arg>0<#1<Y<TT>.>A>1<.>$",
+			"isConst" : true,
+			"typeName" : "block<(arg:array<auto(TT)># -const):auto> const"
 		},
 		{
 			"mn" : "1<C&u8>G",
@@ -22569,6 +24141,40 @@
 			"isLocal" : true
 		},
 		{
+			"mn" : "CN<arg>0<C#1<Y<TT>.>A>1<.>$",
+			"isRef" : true,
+			"baseMn" : "N<arg>0<C#1<Y<TT>.>A>1<.>$",
+			"isConst" : true,
+			"typeName" : "block<(arg:array<auto(TT)> const#):auto> const"
+		},
+		{
+			"mn" : "C&Y<TT>L",
+			"isRef" : true,
+			"baseMn" : "Y<TT>L",
+			"isConst" : true,
+			"typeName" : "TT const&",
+			"isLocal" : true
+		},
+		{
+			"mn" : "1<&Y<TT>L>G",
+			"isRef" : true,
+			"typeName" : "iterator<TT&>",
+			"isLocal" : true
+		},
+		{
+			"mn" : "CIY<TT>.",
+			"baseMn" : "Y<TT>.",
+			"isConst" : true,
+			"typeName" : "auto(TT) const implicit",
+			"isLocal" : true
+		},
+		{
+			"mn" : "[-1]Y<TT>.",
+			"isRef" : true,
+			"typeName" : "auto(TT)[-1] -const",
+			"isLocal" : true
+		},
+		{
 			"mn" : "CI0<f;f>1<b>$",
 			"isRef" : true,
 			"baseMn" : "0<f;f>1<b>$",
@@ -22580,6 +24186,12 @@
 			"isRef" : true,
 			"baseMn" : "H<$::dasvector`CaptureEntry>",
 			"typeName" : "$::dasvector`CaptureEntry implicit"
+		},
+		{
+			"mn" : "1<s>2<Y<VT>.>T",
+			"isRef" : true,
+			"typeName" : "table<string;auto(VT)> -const",
+			"isLocal" : true
 		},
 		{
 			"mn" : "CI=H<$::dasvector`LineInfo>",
@@ -22598,6 +24210,19 @@
 			"isLocal" : true
 		},
 		{
+			"mn" : "1<i>G",
+			"isRef" : true,
+			"typeName" : "iterator<int>",
+			"isLocal" : true
+		},
+		{
+			"mn" : "CN<arg>0<Y<argT>.>1<b>@",
+			"baseMn" : "N<arg>0<Y<argT>.>1<b>@",
+			"isConst" : true,
+			"typeName" : "lambda<(arg:auto(argT) -const):bool> const",
+			"isLocal" : true
+		},
+		{
 			"mn" : "CH<ast::InferHistory>",
 			"isRef" : true,
 			"baseMn" : "H<ast::InferHistory>",
@@ -22606,6 +24231,11 @@
 			"requirements" : [
 				"ast"
 			]
+		},
+		{
+			"mn" : "Y<numT>L",
+			"typeName" : "numT -const",
+			"isLocal" : true
 		},
 		{
 			"mn" : "CI1<d>?",
@@ -22619,6 +24249,13 @@
 			"isRef" : true,
 			"baseMn" : "H<$::dasvector`smart_ptr`Expression>",
 			"typeName" : "$::dasvector`smart_ptr`Expression implicit"
+		},
+		{
+			"mn" : "C1<Y<TT>.>?M",
+			"baseMn" : "1<Y<TT>.>?M",
+			"isConst" : true,
+			"typeName" : "smart_ptr<auto(TT)> const",
+			"isLocal" : true
 		},
 		{
 			"mn" : "1<&H<ast::InferHistory>>G",
@@ -22650,6 +24287,14 @@
 			"isRef" : true,
 			"baseMn" : "H<$::dasvector`uint8>",
 			"typeName" : "$::dasvector`uint8 implicit"
+		},
+		{
+			"mn" : "C#1<Y<keyT>.>2<Y<valT>.>T",
+			"isRef" : true,
+			"baseMn" : "1<Y<keyT>.>2<Y<valT>.>T",
+			"isConst" : true,
+			"typeName" : "table<auto(keyT);auto(valT)> const#",
+			"isLocal" : true
 		},
 		{
 			"mn" : "1<&H<rtti::Error>>G",
@@ -22695,6 +24340,13 @@
 			"isLocal" : true
 		},
 		{
+			"mn" : "I=1<Y<keyT>.>2<Y<valT>.>T",
+			"isRef" : true,
+			"baseMn" : "=1<Y<keyT>.>2<Y<valT>.>T",
+			"typeName" : "table<auto(keyT);auto(valT)> implicit =const -const",
+			"isLocal" : true
+		},
+		{
 			"mn" : "1<&1<H<ast::TypeDecl>>?W>G",
 			"isRef" : true,
 			"typeName" : "iterator<smart_ptr<ast::TypeDecl>&>",
@@ -22732,17 +24384,18 @@
 			"isLocal" : true
 		},
 		{
+			"mn" : "CI1<s>2<Y<VT>L>T",
+			"isRef" : true,
+			"baseMn" : "1<s>2<Y<VT>L>T",
+			"isConst" : true,
+			"typeName" : "table<string;VT> const implicit",
+			"isLocal" : true
+		},
+		{
 			"mn" : "&Iu2",
 			"isRef" : true,
 			"baseMn" : "u2",
 			"typeName" : "uint2& implicit",
-			"isLocal" : true
-		},
-		{
-			"mn" : "&Ii3",
-			"isRef" : true,
-			"baseMn" : "i3",
-			"typeName" : "int3& implicit",
 			"isLocal" : true
 		},
 		{
@@ -22753,11 +24406,24 @@
 			"isLocal" : true
 		},
 		{
+			"mn" : "1<&Y<argT>L>G",
+			"isRef" : true,
+			"typeName" : "iterator<argT&>",
+			"isLocal" : true
+		},
+		{
 			"mn" : "&If3",
 			"isRef" : true,
 			"baseMn" : "f3",
 			"typeName" : "float3& implicit",
 			"isLocal" : true
+		},
+		{
+			"mn" : "CN<t>0<C#1<Y<keyT>L>2<Y<valT>L>T>1<v>$",
+			"isRef" : true,
+			"baseMn" : "N<t>0<C#1<Y<keyT>L>2<Y<valT>L>T>1<v>$",
+			"isConst" : true,
+			"typeName" : "block<(t:table<keyT;valT> const#):void> const"
 		},
 		{
 			"mn" : "&If4",
@@ -22767,10 +24433,25 @@
 			"isLocal" : true
 		},
 		{
+			"mn" : "CI1<Y<KT>L>2<Y<VT>L>T",
+			"isRef" : true,
+			"baseMn" : "1<Y<KT>L>2<Y<VT>L>T",
+			"isConst" : true,
+			"typeName" : "table<KT;VT> const implicit",
+			"isLocal" : true
+		},
+		{
 			"mn" : "&Ii2",
 			"isRef" : true,
 			"baseMn" : "i2",
 			"typeName" : "int2& implicit",
+			"isLocal" : true
+		},
+		{
+			"mn" : "&Ii3",
+			"isRef" : true,
+			"baseMn" : "i3",
+			"typeName" : "int3& implicit",
 			"isLocal" : true
 		},
 		{
@@ -22788,6 +24469,13 @@
 			"isLocal" : true
 		},
 		{
+			"mn" : "CY<numT>L",
+			"baseMn" : "Y<numT>L",
+			"isConst" : true,
+			"typeName" : "numT const",
+			"isLocal" : true
+		},
+		{
 			"mn" : "&Iu4",
 			"isRef" : true,
 			"baseMn" : "u4",
@@ -22802,6 +24490,12 @@
 			"typeName" : "block<(float4;float4):bool> const implicit"
 		},
 		{
+			"mn" : "IH<$::dasvector`EnumEntry>",
+			"isRef" : true,
+			"baseMn" : "H<$::dasvector`EnumEntry>",
+			"typeName" : "$::dasvector`EnumEntry implicit"
+		},
+		{
 			"mn" : "CI=H<$::dasvector`pair`uint`uint>",
 			"isRef" : true,
 			"baseMn" : "=H<$::dasvector`pair`uint`uint>",
@@ -22809,23 +24503,17 @@
 			"typeName" : "$::dasvector`pair`uint`uint const implicit =const"
 		},
 		{
-			"mn" : "IH<$::dasvector`EnumEntry>",
-			"isRef" : true,
-			"baseMn" : "H<$::dasvector`EnumEntry>",
-			"typeName" : "$::dasvector`EnumEntry implicit"
+			"mn" : "CE16",
+			"baseMn" : "E16",
+			"isConst" : true,
+			"typeName" : "enum const E16",
+			"isLocal" : true
 		},
 		{
 			"mn" : "&Iu8",
 			"isRef" : true,
 			"baseMn" : "u8",
 			"typeName" : "uint8& implicit",
-			"isLocal" : true
-		},
-		{
-			"mn" : "CE16",
-			"baseMn" : "E16",
-			"isConst" : true,
-			"typeName" : "enum const E16",
 			"isLocal" : true
 		},
 		{
@@ -22856,6 +24544,12 @@
 			"isRef" : true,
 			"baseMn" : "u64",
 			"typeName" : "uint64& implicit",
+			"isLocal" : true
+		},
+		{
+			"mn" : "=1<Y<TT>.>A",
+			"isRef" : true,
+			"typeName" : "array<auto(TT)> =const -const",
 			"isLocal" : true
 		},
 		{
@@ -22890,6 +24584,20 @@
 			"baseMn" : "0<#1<u8>A>1<v>$",
 			"isConst" : true,
 			"typeName" : "block<(array<uint8>#):void> const implicit"
+		},
+		{
+			"mn" : "CN<key>0<CY<TT>L>1<b>$",
+			"isRef" : true,
+			"baseMn" : "N<key>0<CY<TT>L>1<b>$",
+			"isConst" : true,
+			"typeName" : "block<(key:TT const):bool> const"
+		},
+		{
+			"mn" : "CN<data>0<C1<u8>A>1<v>$",
+			"isRef" : true,
+			"baseMn" : "N<data>0<C1<u8>A>1<v>$",
+			"isConst" : true,
+			"typeName" : "block<(data:array<uint8> const):void> const"
 		},
 		{
 			"mn" : "1<C&H<ast::FieldDeclaration>>G",

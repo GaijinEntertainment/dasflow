@@ -86,55 +86,58 @@ def private dumpModule(ctx: DumpContext; mod: rtti::Module?; var lang: LangDesc)
     //     print("td {typeName} {tp} \n")
     // mod |> for_each_structure <| $(st)
     //     print("st {st.name}\n")
-
-    var faNum = 0
+    // mod |> for_each_global <| $(gl)
+    //     debug(gl.name)
+    mod |> for_each_generic <| $(fn)
+        ctx |> add_function(fn, modName, lang)
     mod |> for_each_function("") <| $(fn)
-        faNum += 1
+        ctx |> add_function(fn, modName, lang)
 
-        let fnName = "{fn.name}"
-        var fnMn = "{fnName}("
-        let reqFlow = fn.sideEffectFlags.modifyExternal || fn.sideEffectFlags.modifyArgument || fn.sideEffectFlags.accessGlobal || fn.sideEffectFlags.invoke || fn.sideEffectFlags.userScenario
-        lang.functions |> emplace <| [[FuncDesc name=fnName, sideeffect=reqFlow]]
-        var fun & = unsafe(lang.functions[length(lang.functions) - 1])
+def add_function(ctx: DumpContext; fn: smart_ptr<ast::Function>&; modName: string; var lang: LangDesc)
+    let fnName = "{fn.name}"
+    var fnMn = "{fnName}("
+    let reqFlow = fn.sideEffectFlags.modifyExternal || fn.sideEffectFlags.modifyArgument || fn.sideEffectFlags.accessGlobal || fn.sideEffectFlags.invoke || fn.sideEffectFlags.userScenario
+    lang.functions |> emplace <| [[FuncDesc name=fnName, sideeffect=reqFlow]]
+    var fun & = unsafe(lang.functions[length(lang.functions) - 1])
 
-        var first = true
-        for arg in fn.arguments
-            let td = lang |> getTypeDesc(arg._type)
-            // print("{td.typeName} {td.mn}\n")
-            if ctx.ignoredArgumentTypes |> has_value(td.mn)
-                continue
+    var first = true
+    for arg in fn.arguments
+        let td = lang |> getTypeDesc(arg._type)
+        // print("{td.typeName} {td.mn}\n")
+        if ctx.ignoredArgumentTypes |> has_value(td.mn)
+            continue
 
-            var argType <- [[FuncArg name="{arg.name}", mn=td.mn]]
-            fun.args |> emplace <| argType
+        var argType <- [[FuncArg name="{arg.name}", mn=td.mn]]
+        fun.args |> emplace <| argType
 
-            fnMn = "{fnMn}{first?"":","}{td.mn}"
-            first = false
+        fnMn = "{fnMn}{first?"":","}{td.mn}"
+        first = false
 
-        if operators |> has_value(fnName)
-            if fn.arguments.length == 1 && postOperators |> key_exists(fnName)
-                fun.ctor = "${fun.args[0].name}{postOperators|>find(fnName)}"
+    if operators |> has_value(fnName)
+        if fn.arguments.length == 1 && postOperators |> key_exists(fnName)
+            fun.ctor = "${fun.args[0].name}{postOperators|>find(fnName)}"
+        else
+            assert(fn.arguments.length == 1 || fn.arguments.length == 2)
+            if fn.arguments.length == 1
+                fun.ctor = "{fnName}${fun.args[0].name}"
             else
-                assert(fn.arguments.length == 1 || fn.arguments.length == 2)
-                if fn.arguments.length == 1
-                    fun.ctor = "{fnName}${fun.args[0].name}"
-                else
-                    fun.ctor = "${fun.args[0].name} {fnName} ${fun.args[1].name}"
+                fun.ctor = "${fun.args[0].name} {fnName} ${fun.args[1].name}"
 
-        if fn.sideEffectFlags._unsafe
-            if !empty(fun.ctor)
-                fun.ctor = "unsafe {fun.ctor}"
-            else
-                fun.ctor = "unsafe("
-                for arg in fun.args
-                    fun.ctor += "{arg.name}, "
-                fun.ctor = fun.ctor + ")"
+    if fn.sideEffectFlags._unsafe
+        if !empty(fun.ctor)
+            fun.ctor = "unsafe {fun.ctor}"
+        else
+            fun.ctor = "unsafe("
+            for arg in fun.args
+                fun.ctor += "{arg.name}, "
+            fun.ctor = fun.ctor + ")"
 
-        if modName != "$"
-            fun.requirements <- [{string[1] modName}]
+    if modName != "$"
+        fun.requirements <- [{string[1] modName}]
 
-        var resTypeDesc = lang |> getTypeDesc(fn.result)
-        fun.resMn = resTypeDesc.mn
-        fun.mn = "{fnMn}):{resTypeDesc.mn}"
+    var resTypeDesc = lang |> getTypeDesc(fn.result)
+    fun.resMn = resTypeDesc.mn
+    fun.mn = "{fnMn}):{resTypeDesc.mn}"
 
 
 def getTypeDesc(var lang: LangDesc; ti: smart_ptr<TypeDecl>): TypeDesc?

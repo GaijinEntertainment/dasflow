@@ -262,6 +262,7 @@ export abstract class LangComponent extends Rete.Component {
             return null
         }
         LangComponent.constructAutoInit(inNode, ctx)
+        ctx.reqNode(inNode)
         return inNode
     }
 
@@ -649,11 +650,9 @@ export class ConstructDasCtx {
     }
 
     build() {
-        if (this.requirements.size > 0) {
-            for (const req of this.requirements)
-                this.code = `require ${req}\n` + this.code
-            this.requirements.clear()
-        }
+        for (const req of this.requirements)
+            this.code = `require ${req}\n` + this.code
+        this.requirements.clear()
         for (const it of this.processedNodes)
             this.requiredNodes.delete(it)
         for (let requiredNode of this.requiredNodes) {
