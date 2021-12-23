@@ -118,16 +118,7 @@ function getType(mn: string): LangType | undefined {
 
 
 // function getBaseTypeOf(type: LangType | undefined): LangType | undefined {
-//     if (type && type.desc.baseMn)
-//         return getType(type.desc.baseMn) ?? type
-//     return type
-// }
-
-// function getBaseType(mn: string): LangType | undefined {
-//     const res = getType(mn)
-//     if (res && res.desc.baseMn)
-//         return getType(res.desc.baseMn) ?? res
-//     return res
+//     return type && type.desc.baseMn ? getType(type.desc.baseMn) ?? type : type;
 // }
 
 

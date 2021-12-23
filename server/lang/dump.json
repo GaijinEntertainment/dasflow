@@ -35,7 +35,7 @@
 		{
 			"resMn" : "b",
 			"mn" : "!(Cb):b",
-			"ctor" : "$arg0 !",
+			"ctor" : "!$arg0",
 			"args" : [
 				{
 					"mn" : "Cb",
@@ -751,7 +751,7 @@
 		{
 			"resMn" : "i",
 			"mn" : "+(Ci):i",
-			"ctor" : "$arg0 +",
+			"ctor" : "+$arg0",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -763,7 +763,7 @@
 		{
 			"resMn" : "i",
 			"mn" : "-(Ci):i",
-			"ctor" : "$arg0 -",
+			"ctor" : "-$arg0",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -908,7 +908,7 @@
 			"resMn" : "i",
 			"mn" : "++(&Ii):i",
 			"sideeffect" : true,
-			"ctor" : "$arg0 ++",
+			"ctor" : "++$arg0",
 			"args" : [
 				{
 					"mn" : "&Ii",
@@ -921,7 +921,7 @@
 			"resMn" : "i",
 			"mn" : "--(&Ii):i",
 			"sideeffect" : true,
-			"ctor" : "$arg0 --",
+			"ctor" : "--$arg0",
 			"args" : [
 				{
 					"mn" : "&Ii",
@@ -934,6 +934,7 @@
 			"resMn" : "i",
 			"mn" : "+++(&Ii):i",
 			"sideeffect" : true,
+			"ctor" : "$arg0++",
 			"args" : [
 				{
 					"mn" : "&Ii",
@@ -946,6 +947,7 @@
 			"resMn" : "i",
 			"mn" : "---(&Ii):i",
 			"sideeffect" : true,
+			"ctor" : "$arg0--",
 			"args" : [
 				{
 					"mn" : "&Ii",
@@ -1021,7 +1023,7 @@
 		{
 			"resMn" : "i",
 			"mn" : "~(Ci):i",
-			"ctor" : "$arg0 ~",
+			"ctor" : "~$arg0",
 			"args" : [
 				{
 					"mn" : "Ci",
@@ -1456,7 +1458,7 @@
 		{
 			"resMn" : "u",
 			"mn" : "+(Cu):u",
-			"ctor" : "$arg0 +",
+			"ctor" : "+$arg0",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -1468,7 +1470,7 @@
 		{
 			"resMn" : "u",
 			"mn" : "-(Cu):u",
-			"ctor" : "$arg0 -",
+			"ctor" : "-$arg0",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -1613,7 +1615,7 @@
 			"resMn" : "u",
 			"mn" : "++(&Iu):u",
 			"sideeffect" : true,
-			"ctor" : "$arg0 ++",
+			"ctor" : "++$arg0",
 			"args" : [
 				{
 					"mn" : "&Iu",
@@ -1626,7 +1628,7 @@
 			"resMn" : "u",
 			"mn" : "--(&Iu):u",
 			"sideeffect" : true,
-			"ctor" : "$arg0 --",
+			"ctor" : "--$arg0",
 			"args" : [
 				{
 					"mn" : "&Iu",
@@ -1639,6 +1641,7 @@
 			"resMn" : "u",
 			"mn" : "+++(&Iu):u",
 			"sideeffect" : true,
+			"ctor" : "$arg0++",
 			"args" : [
 				{
 					"mn" : "&Iu",
@@ -1651,6 +1654,7 @@
 			"resMn" : "u",
 			"mn" : "---(&Iu):u",
 			"sideeffect" : true,
+			"ctor" : "$arg0--",
 			"args" : [
 				{
 					"mn" : "&Iu",
@@ -1726,7 +1730,7 @@
 		{
 			"resMn" : "u",
 			"mn" : "~(Cu):u",
-			"ctor" : "$arg0 ~",
+			"ctor" : "~$arg0",
 			"args" : [
 				{
 					"mn" : "Cu",
@@ -2255,7 +2259,7 @@
 		{
 			"resMn" : "t",
 			"mn" : "~(Ct):t",
-			"ctor" : "$arg0 ~",
+			"ctor" : "~$arg0",
 			"args" : [
 				{
 					"mn" : "Ct",
@@ -2431,7 +2435,7 @@
 		{
 			"resMn" : "i64",
 			"mn" : "+(Ci64):i64",
-			"ctor" : "$arg0 +",
+			"ctor" : "+$arg0",
 			"args" : [
 				{
 					"mn" : "Ci64",
@@ -2443,7 +2447,7 @@
 		{
 			"resMn" : "i64",
 			"mn" : "-(Ci64):i64",
-			"ctor" : "$arg0 -",
+			"ctor" : "-$arg0",
 			"args" : [
 				{
 					"mn" : "Ci64",
@@ -2588,7 +2592,7 @@
 			"resMn" : "i64",
 			"mn" : "++(&Ii64):i64",
 			"sideeffect" : true,
-			"ctor" : "$arg0 ++",
+			"ctor" : "++$arg0",
 			"args" : [
 				{
 					"mn" : "&Ii64",
@@ -2601,7 +2605,7 @@
 			"resMn" : "i64",
 			"mn" : "--(&Ii64):i64",
 			"sideeffect" : true,
-			"ctor" : "$arg0 --",
+			"ctor" : "--$arg0",
 			"args" : [
 				{
 					"mn" : "&Ii64",
@@ -2614,6 +2618,7 @@
 			"resMn" : "i64",
 			"mn" : "+++(&Ii64):i64",
 			"sideeffect" : true,
+			"ctor" : "$arg0++",
 			"args" : [
 				{
 					"mn" : "&Ii64",
@@ -2626,6 +2631,7 @@
 			"resMn" : "i64",
 			"mn" : "---(&Ii64):i64",
 			"sideeffect" : true,
+			"ctor" : "$arg0--",
 			"args" : [
 				{
 					"mn" : "&Ii64",
@@ -2701,7 +2707,7 @@
 		{
 			"resMn" : "i64",
 			"mn" : "~(Ci64):i64",
-			"ctor" : "$arg0 ~",
+			"ctor" : "~$arg0",
 			"args" : [
 				{
 					"mn" : "Ci64",
@@ -3136,7 +3142,7 @@
 		{
 			"resMn" : "u64",
 			"mn" : "+(Cu64):u64",
-			"ctor" : "$arg0 +",
+			"ctor" : "+$arg0",
 			"args" : [
 				{
 					"mn" : "Cu64",
@@ -3148,7 +3154,7 @@
 		{
 			"resMn" : "u64",
 			"mn" : "-(Cu64):u64",
-			"ctor" : "$arg0 -",
+			"ctor" : "-$arg0",
 			"args" : [
 				{
 					"mn" : "Cu64",
@@ -3293,7 +3299,7 @@
 			"resMn" : "u64",
 			"mn" : "++(&Iu64):u64",
 			"sideeffect" : true,
-			"ctor" : "$arg0 ++",
+			"ctor" : "++$arg0",
 			"args" : [
 				{
 					"mn" : "&Iu64",
@@ -3306,7 +3312,7 @@
 			"resMn" : "u64",
 			"mn" : "--(&Iu64):u64",
 			"sideeffect" : true,
-			"ctor" : "$arg0 --",
+			"ctor" : "--$arg0",
 			"args" : [
 				{
 					"mn" : "&Iu64",
@@ -3319,6 +3325,7 @@
 			"resMn" : "u64",
 			"mn" : "+++(&Iu64):u64",
 			"sideeffect" : true,
+			"ctor" : "$arg0++",
 			"args" : [
 				{
 					"mn" : "&Iu64",
@@ -3331,6 +3338,7 @@
 			"resMn" : "u64",
 			"mn" : "---(&Iu64):u64",
 			"sideeffect" : true,
+			"ctor" : "$arg0--",
 			"args" : [
 				{
 					"mn" : "&Iu64",
@@ -3406,7 +3414,7 @@
 		{
 			"resMn" : "u64",
 			"mn" : "~(Cu64):u64",
-			"ctor" : "$arg0 ~",
+			"ctor" : "~$arg0",
 			"args" : [
 				{
 					"mn" : "Cu64",
@@ -3841,7 +3849,7 @@
 		{
 			"resMn" : "f",
 			"mn" : "+(Cf):f",
-			"ctor" : "$arg0 +",
+			"ctor" : "+$arg0",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -3853,7 +3861,7 @@
 		{
 			"resMn" : "f",
 			"mn" : "-(Cf):f",
-			"ctor" : "$arg0 -",
+			"ctor" : "-$arg0",
 			"args" : [
 				{
 					"mn" : "Cf",
@@ -3998,7 +4006,7 @@
 			"resMn" : "f",
 			"mn" : "++(&If):f",
 			"sideeffect" : true,
-			"ctor" : "$arg0 ++",
+			"ctor" : "++$arg0",
 			"args" : [
 				{
 					"mn" : "&If",
@@ -4011,7 +4019,7 @@
 			"resMn" : "f",
 			"mn" : "--(&If):f",
 			"sideeffect" : true,
-			"ctor" : "$arg0 --",
+			"ctor" : "--$arg0",
 			"args" : [
 				{
 					"mn" : "&If",
@@ -4024,6 +4032,7 @@
 			"resMn" : "f",
 			"mn" : "+++(&If):f",
 			"sideeffect" : true,
+			"ctor" : "$arg0++",
 			"args" : [
 				{
 					"mn" : "&If",
@@ -4036,6 +4045,7 @@
 			"resMn" : "f",
 			"mn" : "---(&If):f",
 			"sideeffect" : true,
+			"ctor" : "$arg0--",
 			"args" : [
 				{
 					"mn" : "&If",
@@ -4303,7 +4313,7 @@
 		{
 			"resMn" : "d",
 			"mn" : "+(Cd):d",
-			"ctor" : "$arg0 +",
+			"ctor" : "+$arg0",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -4315,7 +4325,7 @@
 		{
 			"resMn" : "d",
 			"mn" : "-(Cd):d",
-			"ctor" : "$arg0 -",
+			"ctor" : "-$arg0",
 			"args" : [
 				{
 					"mn" : "Cd",
@@ -4460,7 +4470,7 @@
 			"resMn" : "d",
 			"mn" : "++(&Id):d",
 			"sideeffect" : true,
-			"ctor" : "$arg0 ++",
+			"ctor" : "++$arg0",
 			"args" : [
 				{
 					"mn" : "&Id",
@@ -4473,7 +4483,7 @@
 			"resMn" : "d",
 			"mn" : "--(&Id):d",
 			"sideeffect" : true,
-			"ctor" : "$arg0 --",
+			"ctor" : "--$arg0",
 			"args" : [
 				{
 					"mn" : "&Id",
@@ -4486,6 +4496,7 @@
 			"resMn" : "d",
 			"mn" : "+++(&Id):d",
 			"sideeffect" : true,
+			"ctor" : "$arg0++",
 			"args" : [
 				{
 					"mn" : "&Id",
@@ -4498,6 +4509,7 @@
 			"resMn" : "d",
 			"mn" : "---(&Id):d",
 			"sideeffect" : true,
+			"ctor" : "$arg0--",
 			"args" : [
 				{
 					"mn" : "&Id",
@@ -5335,7 +5347,7 @@
 		{
 			"resMn" : "f2",
 			"mn" : "+(Cf2):f2",
-			"ctor" : "$arg0 +",
+			"ctor" : "+$arg0",
 			"args" : [
 				{
 					"mn" : "Cf2",
@@ -5347,7 +5359,7 @@
 		{
 			"resMn" : "f2",
 			"mn" : "-(Cf2):f2",
-			"ctor" : "$arg0 -",
+			"ctor" : "-$arg0",
 			"args" : [
 				{
 					"mn" : "Cf2",
@@ -5621,7 +5633,7 @@
 		{
 			"resMn" : "f3",
 			"mn" : "+(Cf3):f3",
-			"ctor" : "$arg0 +",
+			"ctor" : "+$arg0",
 			"args" : [
 				{
 					"mn" : "Cf3",
@@ -5633,7 +5645,7 @@
 		{
 			"resMn" : "f3",
 			"mn" : "-(Cf3):f3",
-			"ctor" : "$arg0 -",
+			"ctor" : "-$arg0",
 			"args" : [
 				{
 					"mn" : "Cf3",
@@ -5907,7 +5919,7 @@
 		{
 			"resMn" : "f4",
 			"mn" : "+(Cf4):f4",
-			"ctor" : "$arg0 +",
+			"ctor" : "+$arg0",
 			"args" : [
 				{
 					"mn" : "Cf4",
@@ -5919,7 +5931,7 @@
 		{
 			"resMn" : "f4",
 			"mn" : "-(Cf4):f4",
-			"ctor" : "$arg0 -",
+			"ctor" : "-$arg0",
 			"args" : [
 				{
 					"mn" : "Cf4",
@@ -6193,7 +6205,7 @@
 		{
 			"resMn" : "i2",
 			"mn" : "+(Ci2):i2",
-			"ctor" : "$arg0 +",
+			"ctor" : "+$arg0",
 			"args" : [
 				{
 					"mn" : "Ci2",
@@ -6205,7 +6217,7 @@
 		{
 			"resMn" : "i2",
 			"mn" : "-(Ci2):i2",
-			"ctor" : "$arg0 -",
+			"ctor" : "-$arg0",
 			"args" : [
 				{
 					"mn" : "Ci2",
@@ -6644,7 +6656,7 @@
 		{
 			"resMn" : "i3",
 			"mn" : "+(Ci3):i3",
-			"ctor" : "$arg0 +",
+			"ctor" : "+$arg0",
 			"args" : [
 				{
 					"mn" : "Ci3",
@@ -6656,7 +6668,7 @@
 		{
 			"resMn" : "i3",
 			"mn" : "-(Ci3):i3",
-			"ctor" : "$arg0 -",
+			"ctor" : "-$arg0",
 			"args" : [
 				{
 					"mn" : "Ci3",
@@ -7095,7 +7107,7 @@
 		{
 			"resMn" : "i4",
 			"mn" : "+(Ci4):i4",
-			"ctor" : "$arg0 +",
+			"ctor" : "+$arg0",
 			"args" : [
 				{
 					"mn" : "Ci4",
@@ -7107,7 +7119,7 @@
 		{
 			"resMn" : "i4",
 			"mn" : "-(Ci4):i4",
-			"ctor" : "$arg0 -",
+			"ctor" : "-$arg0",
 			"args" : [
 				{
 					"mn" : "Ci4",
@@ -7546,7 +7558,7 @@
 		{
 			"resMn" : "u2",
 			"mn" : "+(Cu2):u2",
-			"ctor" : "$arg0 +",
+			"ctor" : "+$arg0",
 			"args" : [
 				{
 					"mn" : "Cu2",
@@ -7558,7 +7570,7 @@
 		{
 			"resMn" : "u2",
 			"mn" : "-(Cu2):u2",
-			"ctor" : "$arg0 -",
+			"ctor" : "-$arg0",
 			"args" : [
 				{
 					"mn" : "Cu2",
@@ -7997,7 +8009,7 @@
 		{
 			"resMn" : "u3",
 			"mn" : "+(Cu3):u3",
-			"ctor" : "$arg0 +",
+			"ctor" : "+$arg0",
 			"args" : [
 				{
 					"mn" : "Cu3",
@@ -8009,7 +8021,7 @@
 		{
 			"resMn" : "u3",
 			"mn" : "-(Cu3):u3",
-			"ctor" : "$arg0 -",
+			"ctor" : "-$arg0",
 			"args" : [
 				{
 					"mn" : "Cu3",
@@ -8448,7 +8460,7 @@
 		{
 			"resMn" : "u4",
 			"mn" : "+(Cu4):u4",
-			"ctor" : "$arg0 +",
+			"ctor" : "+$arg0",
 			"args" : [
 				{
 					"mn" : "Cu4",
@@ -8460,7 +8472,7 @@
 		{
 			"resMn" : "u4",
 			"mn" : "-(Cu4):u4",
-			"ctor" : "$arg0 -",
+			"ctor" : "-$arg0",
 			"args" : [
 				{
 					"mn" : "Cu4",

@@ -13,7 +13,7 @@ require daslib/defer
 let
     operators = [[string "!"; "~"; "+="; "-="; "*="; "/="; "%="; "&="; "|="; "^="; "&&="; "||="; "^^="; "&&"; "||"; "^^"; "+"; "-";
                          "*"; "/"; "%"; "<"; ">"; "=="; "!="; "<="; ">="; "&"; "|"; "^"; "++"; "--"; "<<"; ">>"; "<<=";
-                         ">>="; "<<<"; ">>>"; "<<<="; ">>>="]]
+                         ">>="; "<<<"; ">>>"; "<<<="; ">>>="; "+++"; "---"]]
     postOperators <- {{ "+++"=>"++"; "---"=>"--" }}
 
 
@@ -111,13 +111,12 @@ def private dumpModule(ctx: DumpContext; mod: rtti::Module?; var lang: LangDesc)
             first = false
 
         if operators |> has_value(fnName)
-            if postOperators |> key_exists(fnName)
-                assert(fn.arguments.length == 1)
-                fun.ctor = "{fnName} ${postOperators|>find(fnName)}"
+            if fn.arguments.length == 1 && postOperators |> key_exists(fnName)
+                fun.ctor = "${fun.args[0].name}{postOperators|>find(fnName)}"
             else
                 assert(fn.arguments.length == 1 || fn.arguments.length == 2)
                 if fn.arguments.length == 1
-                    fun.ctor = "${fun.args[0].name} {fnName}"
+                    fun.ctor = "{fnName}${fun.args[0].name}"
                 else
                     fun.ctor = "${fun.args[0].name} {fnName} ${fun.args[1].name}"
 
