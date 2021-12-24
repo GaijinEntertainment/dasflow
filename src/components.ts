@@ -693,34 +693,39 @@ export class Sequence extends LangComponent {
         this.addFlowIn(node)
         node.addControl(new NumControl(this.editor, 'numExits'))
         const reqNumExits = node.data.numExits ?? 0
-        for (let i = 0; i < reqNumExits; i++) {
-            const out = new Rete.Output(`out${i}`, `Output ${i + 1}`, flowSocket, false)
-            node.addOutput(out)
-        }
+        for (let i = 0; i < reqNumExits; i++)
+            this.addOutput(node, i)
+    }
+
+    private addOutput(node: Node, i: number) {
+        const out = new Rete.Output(`out${i}`, `Output ${i + 1}`, flowSocket, false)
+        node.addOutput(out)
     }
 
     worker(node, inputs, outputs) {
-        const nodeRef = this.editor?.nodes.find(it => it.id == node.id)
+        if (!this.editor)
+            return
+        const nodeRef = this.editor.nodes.find(it => it.id == node.id)
         if (!nodeRef)
             return
         const reqNumExits = node.data.numExits ?? 0
-        const exitsInput = <NumControl>nodeRef.controls.get('numExits')
         outputs['numExits'] = reqNumExits
+        const exitsInput = <NumControl>nodeRef.controls.get('numExits')
         if (exitsInput)
             exitsInput.setValue(reqNumExits)
         const numExits = nodeRef?.outputs.size ?? 0 - 1
+        if (numExits == reqNumExits)
+            return
         if (numExits < reqNumExits) {
-            for (let i = numExits; i < reqNumExits; i++) {
-                const out = new Rete.Output(`out${i}`, `Output ${i + 1}`, flowSocket, false)
-                nodeRef.addOutput(out)
-            }
+            for (let i = numExits; i < reqNumExits; i++)
+                this.addOutput(nodeRef, i)
             nodeRef.update()
-        } else if (numExits > reqNumExits) {
+        } else {
             for (let i = reqNumExits; i < numExits; i++) {
                 const out = nodeRef.outputs.get(`out${i}`)
                 if (out) {
-                    if (out.connections.length > 0)
-                        this.editor!.removeConnection(out.connections[0])
+                    for (const conn of [...out.connections])
+                        this.editor.removeConnection(conn)
                     nodeRef.removeOutput(out)
                 }
             }
@@ -730,9 +735,8 @@ export class Sequence extends LangComponent {
 
     constructDasNode(node: Node, ctx: ConstructDasCtx): boolean {
         let res = false
-        for (let i = 0; i < node.outputs.size; ++i) {
+        for (let i = 0; i < node.outputs.size; ++i)
             res = this.constructDasFlowOut(node, ctx, `out${i}`) || res
-        }
         return res
     }
 }
