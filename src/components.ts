@@ -632,7 +632,7 @@ export class Var extends LangComponent {
         const type = node.data.typeName ? getType(node.data.typeName) ?? this.anyType : this.anyType
         const out = new Rete.Output('result', 'Result', type.getSocket(SocketType.ref), true)
         node.addOutput(out)
-        const input = new Rete.Input('value', 'Value', type.getSocket(SocketType.constant))
+        const input = new Rete.Input('value', 'Value', this.anyType.getSocket(SocketType.constant))
         node.addInput(input)
     }
 
