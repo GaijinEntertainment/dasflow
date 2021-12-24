@@ -95,6 +95,15 @@ export class LangFunction {
 
     constructor(desc: LangFunctionDesc) {
         this.desc = desc
+        for (const arg of desc.args) {
+            const argType = getType(arg.mn)
+            if (!argType) {
+                console.error(`Function's ${desc.name} argument ${arg.name} with unknown type ${arg.mn}`)
+                continue
+            }
+            if (argType.isVoid)
+                console.error(`Function's ${desc.name} argument ${arg.name} is void`)
+        }
     }
 
     ctor(args: { [key: string]: string }): string {
