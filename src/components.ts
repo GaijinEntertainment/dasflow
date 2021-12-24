@@ -257,16 +257,15 @@ export abstract class LangComponent extends Rete.Component {
 
     // writer
 
-    constructDas(node: Node, ctx: ConstructDasCtx): boolean {
+    constructDas(node: Node, ctx: ConstructDasCtx): void {
         ctx.addProcessedNode(node)
-        const res = this.constructDasNode(node, ctx)
-        if (res && this.flowOut)
+        this.constructDasNode(node, ctx)
+        if (this.flowOut)
             this.constructDasFlowOut(node, ctx)
-        return res
     }
 
 
-    abstract constructDasNode(node: Node, ctx: ConstructDasCtx): boolean
+    abstract constructDasNode(node: Node, ctx: ConstructDasCtx): void
 
 
     constructOptionalInNode(node: Node, name: string, ctx: ConstructDasCtx): Node | null {
@@ -310,7 +309,8 @@ export abstract class LangComponent extends Rete.Component {
         if (!nextNode)
             return false
         const component = <LangComponent>ctx.editor.components.get(nextNode.name)
-        return component.constructDas(nextNode, ctx)
+        component.constructDas(nextNode, ctx)
+        return true
     }
 }
 
@@ -349,7 +349,7 @@ export class TypeCtor extends LangComponent {
         outputs['result'] = this.baseType.ctor(inputs.value?.length ? inputs.value : node.data.value, ctorArgs)
     }
 
-    constructDasNode(node, ctx) {
+    constructDasNode(node, ctx): void {
         const ctorArgs: { [key: string]: string } = {}
 
         for (const req of this.baseType.desc.requirements ?? [])
@@ -361,7 +361,6 @@ export class TypeCtor extends LangComponent {
             ctx.writeLine(`let ${ctx.nodeId(node)} = ${val}`)
         else
             ctx.setNodeRes(node, val)
-        return true
     }
 }
 
@@ -464,7 +463,6 @@ export class LangFunc extends LangComponent {
                 ctx.writeLine(`let ${ctx.nodeId(node)} = ${val}`)
         } else
             ctx.setNodeRes(node, val)
-        return true
     }
 }
 
@@ -499,7 +497,7 @@ export class If extends LangComponent {
         ctx.indenting += "\t"
         if (!this.constructDasFlowOut(node, ctx, 'then')) {
             ctx.addError(node, 'then exit expected')
-            return false
+            return
         }
         ctx.indenting = indenting
         ctx.writeLine("else")
@@ -507,7 +505,6 @@ export class If extends LangComponent {
         if (!this.constructDasFlowOut(node, ctx, 'else'))
             ctx.writeLine('pass')
         ctx.indenting = indenting
-        return true
     }
 }
 
@@ -531,7 +528,7 @@ export class While extends LangComponent {
     constructDasNode(node, ctx) {
         const inNode = this.constructInNode(node, 'inValue', ctx)
         if (!inNode)
-            return false
+            return
 
         ctx.writeLine(`while (${ctx.nodeId(inNode)})`)
 
@@ -539,9 +536,8 @@ export class While extends LangComponent {
         // TODO: push/pop indenting
         ctx.indenting += "\t"
         if (!this.constructDasFlowOut(node, ctx, 'body'))
-            return false
+            ctx.writeLine('pass')
         ctx.indenting = indenting
-        return true
     }
 }
 
@@ -557,21 +553,17 @@ export class Function extends LangComponent {
         node.addControl(new LabelControl(this.editor, 'name'))
     }
 
-    constructDas(node, ctx) {
+    constructDas(node, ctx): void {
         // TODO: create new ctx to patch fn arguments
         ctx.writeLine(`[export]\ndef ${node.data.name}()`)
         ctx.indenting += "\t"
-
-        const res = this.constructDasFlowOut(node, ctx)
-        if (!res)
+        if (!this.constructDasFlowOut(node, ctx))
             ctx.writeLine("pass")
         ctx.indenting = ""
         ctx.writeLine("")
-        return true
     }
 
-    constructDasNode(node: Node, ctx: ConstructDasCtx): boolean {
-        return true
+    constructDasNode(node: Node, ctx: ConstructDasCtx): void {
     }
 }
 
@@ -587,7 +579,7 @@ export class InjectTopLevelCode extends LangComponent {
         node.addControl(new MultilineLabelControl(this.editor, 'code'))
     }
 
-    constructDas(node, ctx) {
+    constructDas(node, ctx): void {
         if (node.data.code) {
             const code = <string>node.data.code
             for (let string of code.split("\n")) {
@@ -598,7 +590,6 @@ export class InjectTopLevelCode extends LangComponent {
         ctx.indenting += "\t"
         this.constructDasFlowOut(node, ctx)
         ctx.indenting = ""
-        return true
     }
 
     constructDasNode(node: Node, ctx: ConstructDasCtx): boolean {
@@ -617,14 +608,12 @@ export class InjectCode extends LangComponent {
         node.addControl(new MultilineLabelControl(this.editor, 'code'))
     }
 
-    constructDasNode(node: Node, ctx: ConstructDasCtx): boolean {
+    constructDasNode(node: Node, ctx: ConstructDasCtx): void {
         if (node.data.code) {
             const code = <string>node.data.code
-            for (let string of code.split("\n")) {
+            for (let string of code.split("\n"))
                 ctx.writeLine(string)
-            }
         }
-        return true
     }
 }
 
@@ -674,12 +663,13 @@ export class Var extends LangComponent {
         }
     }
 
-    constructDasNode(node, ctx) {
+    constructDasNode(node, ctx): void {
         const inNode = this.constructInNode(node, 'value', ctx)
-        if (!inNode)
-            return false
+        if (!inNode) {
+            ctx.addError(node, 'No input value')
+            return
+        }
         ctx.writeLine(`var ${ctx.nodeId(node)} = ${ctx.nodeId(inNode)}`)
-        return true
     }
 }
 
@@ -733,11 +723,9 @@ export class Sequence extends LangComponent {
         }
     }
 
-    constructDasNode(node: Node, ctx: ConstructDasCtx): boolean {
-        let res = false
+    constructDasNode(node: Node, ctx: ConstructDasCtx): void {
         for (let i = 0; i < node.outputs.size; ++i)
-            res = this.constructDasFlowOut(node, ctx, `out${i}`) || res
-        return res
+            this.constructDasFlowOut(node, ctx, `out${i}`)
     }
 }
 
