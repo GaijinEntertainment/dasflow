@@ -1,7 +1,7 @@
 import Rete, {Engine, Input, Output, Socket} from 'rete'
 import {Node} from 'rete/types/node'
 import {NodeEditor} from 'rete/types/editor'
-import {LabelControl, MultilineLabelControl, TextInputControl} from "./controls"
+import {LabelControl, MultilineLabelControl, NumControl, TextInputControl} from "./controls"
 import {LangCoreDesc, LangDesc, LangFunctionDesc, LangTypeDesc} from "./lang"
 import {Component} from "rete/types"
 
@@ -140,7 +140,7 @@ export function generateCoreNodes(langCore: LangCoreDesc, lang: LangDesc, editor
 
     const logicTypeName = langCore.logicType
 
-    const comps: Component[] = [new Function(), new InjectTopLevelCode(), new InjectCode()]
+    const comps: Component[] = [new Function(), new InjectTopLevelCode(), new InjectCode(), new Sequence()]
 
     for (const typeDesc of lang.types ?? []) {
         if (langCore.anyTypes.indexOf(typeDesc.mn) >= 0) {
@@ -680,6 +680,60 @@ export class Var extends LangComponent {
             return false
         ctx.writeLine(`var ${ctx.nodeId(node)} = ${ctx.nodeId(inNode)}`)
         return true
+    }
+}
+
+
+export class Sequence extends LangComponent {
+    constructor() {
+        super('Sequence')
+    }
+
+    async builder(node) {
+        this.addFlowIn(node)
+        node.addControl(new NumControl(this.editor, 'numExits'))
+        const reqNumExits = node.data.numExits ?? 0
+        for (let i = 0; i < reqNumExits; i++) {
+            const out = new Rete.Output(`out${i}`, `Output ${i + 1}`, flowSocket, false)
+            node.addOutput(out)
+        }
+    }
+
+    worker(node, inputs, outputs) {
+        const nodeRef = this.editor?.nodes.find(it => it.id == node.id)
+        if (!nodeRef)
+            return
+        const reqNumExits = node.data.numExits ?? 0
+        const exitsInput = <NumControl>nodeRef.controls.get('numExits')
+        outputs['numExits'] = reqNumExits
+        if (exitsInput)
+            exitsInput.setValue(reqNumExits)
+        const numExits = nodeRef?.outputs.size ?? 0 - 1
+        if (numExits < reqNumExits) {
+            for (let i = numExits; i < reqNumExits; i++) {
+                const out = new Rete.Output(`out${i}`, `Output ${i + 1}`, flowSocket, false)
+                nodeRef.addOutput(out)
+            }
+            nodeRef.update()
+        } else if (numExits > reqNumExits) {
+            for (let i = reqNumExits; i < numExits; i++) {
+                const out = nodeRef.outputs.get(`out${i}`)
+                if (out) {
+                    if (out.connections.length > 0)
+                        this.editor!.removeConnection(out.connections[0])
+                    nodeRef.removeOutput(out)
+                }
+            }
+            nodeRef.update()
+        }
+    }
+
+    constructDasNode(node: Node, ctx: ConstructDasCtx): boolean {
+        let res = false
+        for (let i = 0; i < node.outputs.size; ++i) {
+            res = this.constructDasFlowOut(node, ctx, `out${i}`) || res
+        }
+        return res
     }
 }
 

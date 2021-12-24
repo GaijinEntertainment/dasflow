@@ -5,6 +5,7 @@ import ConnectionPlugin from 'rete-connection-plugin'
 import VueRenderPlugin from 'rete-vue-render-plugin'
 import ContextMenuPlugin from 'rete-context-menu-plugin'
 import CommentPlugin from 'rete-comment-plugin'
+// import DockPlugin from 'rete-dock-plugin'
 import {JsonRpcError, JsonRpcWebsocket} from "jsonrpc-client-websocket"
 
 import {generateCoreNodes, LangComponent} from "./components"
@@ -12,9 +13,6 @@ import {generateCoreNodes, LangComponent} from "./components"
 import {DasflowContext} from "./dasflow"
 import {LangRpc} from "./rpc"
 import {Component} from "rete/types"
-
-// import DockPlugin from 'rete-dock-plugin'
-
 
 
 (async function () {
