@@ -13,6 +13,9 @@ import {DasflowContext} from "./dasflow"
 import {LangRpc} from "./rpc"
 import {Component} from "rete/types"
 
+// import DockPlugin from 'rete-dock-plugin'
+
+
 
 (async function () {
 
@@ -21,13 +24,20 @@ import {Component} from "rete/types"
             console.log(error)
         })
 
-    const container = document.querySelector('#rete')
+    const container = document.querySelector('.editor')
     const ctx = new DasflowContext(websocket)
     const editor = new Rete.NodeEditor(ctx.EDITOR_VER, <HTMLElement>container)
     ctx.editor = editor
     const engine = new Rete.Engine(ctx.EDITOR_VER)
 
     await websocket.open()
+
+    // editor.use(DockPlugin, {
+    //     container: <HTMLElement>document.querySelector('.dock'),
+    //     // itemClass: 'item' // default: dock-item
+    //     plugins: [VueRenderPlugin], // render plugins
+    //     itemClass: 'dock-item', // default: dock-item
+    // })
 
     const langCore = await LangRpc.getLangCore(websocket)
     const lang = await LangRpc.getLang(websocket)
