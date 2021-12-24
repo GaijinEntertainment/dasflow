@@ -6,6 +6,8 @@ import {LangCoreDesc, LangDesc, LangFunctionDesc, LangTypeDesc} from "./lang"
 import {Component} from "rete/types"
 
 
+const optimizeFlow = true
+
 const flowSocket = new Rete.Socket('execution-flow')
 
 enum SocketType {
@@ -192,6 +194,13 @@ export function generateCoreNodes(langCore: LangCoreDesc, lang: LangDesc, editor
         comps.push(fn)
     }
 
+    for (const type of allTypes.values()) {
+        if (type.isAny) {
+            comps.push(new Var('Variable', ['language'], type))
+            break
+        }
+    }
+
     for (let comp of comps) {
         engine.register(comp)
         editor.register(comp)
@@ -338,8 +347,8 @@ export class TypeCtor extends LangComponent {
             ctx.addReqModule(req)
 
         const val = this.baseType.ctor(node.data.value, ctorArgs)
-        // if (this.useLocal && (node.outputs.get('result')?.connections.length ?? 0) > 1)
-        if (this.useLocal)
+        const outConnectionsNum = node.outputs.get('result')?.connections.length ?? 0
+        if (this.useLocal && (!optimizeFlow || outConnectionsNum > 1))
             ctx.writeLine(`let ${ctx.nodeId(node)} = ${val}`)
         else
             ctx.setNodeRes(node, val)
@@ -438,9 +447,9 @@ export class LangFunc extends LangComponent {
             ctx.addReqModule(req)
 
         const val = this.ctorFn.ctor(ctorArgs)
-        // if (this.useLocal && (node.outputs.get('result')?.connections.length ?? 0) > 1)
-        if (this.useLocal) {
-            if (this.resType.isVoid)
+        const outConnectionsNum = node.outputs.get('result')?.connections.length ?? 0
+        if (this.useLocal && (!optimizeFlow || this.ctorFn.desc.sideeffect || outConnectionsNum > 1)) {
+            if (this.resType.isVoid || outConnectionsNum == 0)
                 ctx.writeLine(val)
             else
                 ctx.writeLine(`let ${ctx.nodeId(node)} = ${val}`)
@@ -606,6 +615,61 @@ export class InjectCode extends LangComponent {
                 ctx.writeLine(string)
             }
         }
+        return true
+    }
+}
+
+
+export class Var extends LangComponent {
+    private readonly anyType: LangType
+
+    constructor(name: string, group: string[], anyType: LangType) {
+        super(name, group)
+        this.anyType = anyType
+    }
+
+    async builder(node) {
+        const type = node.data.typeName ? getType(node.data.typeName) ?? this.anyType : this.anyType
+        const out = new Rete.Output('result', 'Result', type.getSocket(SocketType.ref), true)
+        node.addOutput(out)
+        const input = new Rete.Input('value', 'Value', type.getSocket(SocketType.constant))
+        node.addInput(input)
+    }
+
+    worker(node, inputs, outputs) {
+        const nodeRef = this.editor?.nodes.find(it => it.id == node.id)
+        const result = nodeRef?.outputs.get('result')
+        if (nodeRef && result) {
+            const prevSocket = result.socket
+            let resetSocket = true
+            const input = nodeRef.inputs.get('value')
+            if (input?.hasConnection()) {
+                const connection = input.connections[0]
+                const output: Output = connection.output
+                const socket = <LangSocket>output.socket
+                const inType = getType(socket.typeName)
+                if (inType) {
+                    resetSocket = false
+                    result.socket = inType.getSocket(SocketType.ref)
+                }
+            }
+            if (resetSocket)
+                result.socket = this.anyType.getSocket(SocketType.ref)
+            if (prevSocket != result.socket) {
+                for (const connection of [...result.connections]) {
+                    if (!connection.output.socket.compatibleWith(connection.input.socket))
+                        this.editor?.removeConnection(connection)
+                }
+            }
+            node.data.typeName = (<LangSocket>result.socket).typeName
+        }
+    }
+
+    constructDasNode(node, ctx) {
+        const inNode = this.constructInNode(node, 'value', ctx)
+        if (!inNode)
+            return false
+        ctx.writeLine(`var ${ctx.nodeId(node)} = ${ctx.nodeId(inNode)}`)
         return true
     }
 }
