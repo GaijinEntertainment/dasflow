@@ -1,3 +1,8 @@
+interface LangTypeArgDesc {
+    name: string
+    mn: string
+}
+
 export interface LangTypeDesc {
     mn: string
     baseMn?: string
@@ -10,6 +15,8 @@ export interface LangTypeDesc {
     validator?: string
     enum?: string[]
     requirements?: string[]
+    isBlock?: boolean
+    args?: LangTypeArgDesc[]
 }
 
 interface LangFunctionArgDesc {

@@ -8,6 +8,7 @@ require strings
 
 require daslib/json_boost
 require daslib/defer
+require daslib/strings_boost
 
 
 let
@@ -25,6 +26,13 @@ struct TypeDesc
     isConst: bool
     isRef: bool
     isLocal: bool
+    isBlock: bool
+    args: array<TypeArg>
+
+
+struct TypeArg
+    name: string
+    mn: string
 
 
 struct FuncDesc
@@ -158,6 +166,14 @@ def getTypeDesc(var lang: LangDesc; ti: smart_ptr<TypeDecl>): TypeDesc?
         if ti.flags._implicit
             t.baseMn = t.baseMn |> removePrefix("I")
 
+        t.isBlock = ti.isGoodBlockType
+        for idx, argType in iter_range(ti.argTypes), ti.argTypes
+            let argTypeDesc = lang |> getTypeDesc(argType)
+            if argTypeDesc == null
+                print("[E] argTypeDesc is null")
+                continue
+            t.args |> emplace <| [[TypeArg name=length(ti.argNames) > idx ? "{ti.argNames[idx]}" : "arg{idx+1}", mn=argTypeDesc.mn]]
+
         ti |> get_modules <| $(mod)
             if !empty(mod) && mod != "$"
                 t |> add_req <| mod
@@ -208,6 +224,10 @@ def JV(val: TypeDesc)
         res["isRef"] = JV(val.isRef)
     if val.isLocal
         res["isLocal"] = JV(val.isLocal)
+    if val.isBlock
+        res["isBlock"] = JV(val.isBlock)
+    if !empty(val.args)
+        res["args"] = JV(val.args)
     if !empty(val.requirements)
         res["requirements"] = JV(val.requirements)
     return JV(res)

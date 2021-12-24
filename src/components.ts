@@ -185,7 +185,7 @@ export function generateCoreNodes(langCore: LangCoreDesc, lang: LangDesc, editor
             group.push("ctors", resType.desc.typeName)
         } else {
             const typeName = resType.desc.typeName
-            group.push('functions', typeName.substring(0, 2), typeName, func.name.substring(0, 1))
+            group.push('functions', typeName.substring(0, 2), func.args.length.toString(), typeName, func.name.substring(0, 1))
         }
         const fn = new LangFunc(func.mn, group, langFunction, resType)
         comps.push(fn)
