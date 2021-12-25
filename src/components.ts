@@ -492,19 +492,16 @@ export class If extends LangComponent {
 
         ctx.writeLine(`if (${ctx.nodeId(inNode)})`)
 
-        const indenting = ctx.indenting
-        // TODO: push/pop indenting
-        ctx.indenting += "\t"
-        if (!this.constructDasFlowOut(node, ctx, 'then')) {
+        const thenChildCtx = ctx.getChild()
+        if (!this.constructDasFlowOut(node, thenChildCtx, 'then'))
             ctx.addError(node, 'then exit expected')
-            return
+        ctx.closeChild(thenChildCtx)
+
+        const elseChildCtx = ctx.getChild()
+        if (this.constructDasFlowOut(node, elseChildCtx, 'else')) {
+            ctx.writeLine("else")
+            ctx.closeChild(elseChildCtx)
         }
-        ctx.indenting = indenting
-        ctx.writeLine("else")
-        ctx.indenting += "\t"
-        if (!this.constructDasFlowOut(node, ctx, 'else'))
-            ctx.writeLine('pass')
-        ctx.indenting = indenting
     }
 }
 
@@ -532,12 +529,11 @@ export class While extends LangComponent {
 
         ctx.writeLine(`while (${ctx.nodeId(inNode)})`)
 
-        const indenting = ctx.indenting
-        // TODO: push/pop indenting
-        ctx.indenting += "\t"
-        if (!this.constructDasFlowOut(node, ctx, 'body'))
+        const childCtx = ctx.getChild()
+        if (this.constructDasFlowOut(node, childCtx, 'body'))
+            ctx.closeChild(childCtx)
+        else
             ctx.writeLine('pass')
-        ctx.indenting = indenting
     }
 }
 
@@ -556,10 +552,11 @@ export class Function extends LangComponent {
     constructDas(node, ctx): void {
         // TODO: create new ctx to patch fn arguments
         ctx.writeLine(`[export]\ndef ${node.data.name}()`)
-        ctx.indenting += "\t"
-        if (!this.constructDasFlowOut(node, ctx))
+        const childCtx = ctx.getChild()
+        if (this.constructDasFlowOut(node, childCtx))
+            ctx.closeChild(childCtx)
+        else
             ctx.writeLine("pass")
-        ctx.indenting = ""
         ctx.writeLine("")
     }
 
@@ -587,9 +584,9 @@ export class InjectTopLevelCode extends LangComponent {
             }
         }
 
-        ctx.indenting += "\t"
-        this.constructDasFlowOut(node, ctx)
-        ctx.indenting = ""
+        const childCtx = ctx.getChild()
+        if (this.constructDasFlowOut(node, childCtx))
+            ctx.closeChild(childCtx)
     }
 
     constructDasNode(node: Node, ctx: ConstructDasCtx): boolean {
@@ -731,10 +728,17 @@ export class Sequence extends LangComponent {
 
 
 export class ConstructDasCtx {
+    get code(): string {
+        return this._code;
+    }
 
-    editor: NodeEditor
-    indenting = ""
-    code = ""
+    get indenting(): string {
+        return this._indenting;
+    }
+
+    readonly editor: NodeEditor
+    private _indenting = ""
+    private _code = ""
     errors = new Map<number, string[]>()
     private lazyInited = new Set<number>()
     private requirements = new Set<string>()
@@ -747,16 +751,20 @@ export class ConstructDasCtx {
         this.editor = editor
     }
 
-    getChild(): ConstructDasCtx {
+    getChild(extraIndent = '\t'): ConstructDasCtx {
         let res = new ConstructDasCtx(this.editor)
+        res._indenting = this._indenting + extraIndent
         res.errors = this.errors
         res.lazyInited = this.lazyInited
         res.requirements = this.requirements
+        res.nodeResults = this.nodeResults
+        res.processedNodes = this.processedNodes
+        res.requiredNodes = this.requiredNodes
         return res
     }
 
     writeLine(str: string): void {
-        this.code += `\n${this.indenting}${str}`
+        this._code += `${this._indenting}${str}\n`
     }
 
     addError(node: Node, msg: string): boolean {
@@ -821,13 +829,19 @@ export class ConstructDasCtx {
     }
 
     build() {
+        if (this.requirements.size > 0)
+            this._code = "\n\n" + this._code
         for (const req of this.requirements)
-            this.code = `require ${req}\n` + this.code
+            this._code = `require ${req}\n` + this._code
         this.requirements.clear()
         for (const it of this.processedNodes)
             this.requiredNodes.delete(it)
         for (let requiredNode of this.requiredNodes) {
             this.addErrorId(requiredNode, "Node is not processed")
         }
+    }
+
+    closeChild(child: ConstructDasCtx) {
+        this._code += child._code
     }
 }
