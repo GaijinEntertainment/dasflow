@@ -242,11 +242,11 @@ export class TextInputControl extends Rete.Control {
 
 const VueLangTypeSelectControl = {
     props: ['readonly', 'emitter', 'ikey', 'types', 'getData', 'putData'],
-    template: '<select :value="value" @change="change($event)" @dblclick.stop="" @pointerdown.stop="" @pointermove.stop="">\n' +
-        '   <option v-for="v of types" :value="v.desc.mn" :selected="this.value == v.desc.mn">{{ v.desc.typeName }}</option>\n' +
+    template: '<select :value="value" @change="change($event)" style="width: 120pt" @dblclick.stop="" @pointerdown.stop="" @pointermove.stop="">\n' +
+        '   <option v-for="v of types.values()" v-if="v.desc.isLocal && !v.desc.isRef && !v.desc.isBlock && !v.isAny && !v.isVoid" :value="v.desc.mn" :selected="this.typeName == v.desc.mn">{{ v.desc.typeName }}</option>\n' +
         '</select>',
     data() {
-        return {value: "",}
+        return { value: ""}
     },
     methods: {
         change(e) {
@@ -269,7 +269,7 @@ export class LangTypeSelectControl extends Rete.Control {
     props: { [key: string]: unknown }
     vueContext: any
 
-    constructor(emitter: NodeEditor | null, key: string, types: LangType[], readonly: boolean = false) {
+    constructor(emitter: NodeEditor | null, key: string, types: Map<string, LangType>, readonly: boolean = false) {
         super(key)
         this.component = VueLangTypeSelectControl
         this.props = {emitter, ikey: key, readonly, types}
