@@ -574,7 +574,7 @@ export class Function extends LangComponent {
         const argsInput = <NumControl>nodeRef.controls.get('numArgs')
         if (argsInput)
             argsInput.setValue(reqNumArgs)
-        const numArgs = nodeRef?.inputs.size ?? 0 - 1
+        const numArgs = Math.max(0, nodeRef?.inputs.size ?? 0 - 1)
         if (numArgs < reqNumArgs) {
             for (let i = numArgs; i < reqNumArgs; i++)
                 this.addArgInput(nodeRef, i)
@@ -603,21 +603,21 @@ export class Function extends LangComponent {
     }
 
     constructDas(node, ctx): void {
-        let args = ""
+        let args: string[] = []
         const numArgs = node.data.numArgs ?? 0
         const argNames = new Set<string>()
         for (let i = 0; i < numArgs; i++) {
             const inNode = LangComponent.constructInNode(node, `arg${i}`, ctx)
             if (!inNode)
-                continue
+                continue // constructInNode adds an error
             const argName = ctx.nodeId(inNode)
             if (argNames.has(argName))
                 ctx.addError(node, `Duplicate argument name: ${argName}`)
             argNames.add(argName)
-            const arg = FunctionArgument.constructDeclaration(inNode, ctx)
-            args += args.length == 0 ? `${arg}` : `; ${arg}`
+            args.push(FunctionArgument.constructDeclaration(inNode, ctx))
         }
-        ctx.writeLine(`[export]\ndef ${node.data.name}(${args})`)
+        // TODO: add func annotations
+        ctx.writeLine(`[export]\ndef ${node.data.name}(${args.join('; ')})`)
         const childCtx = ctx.getChild()
         if (LangComponent.constructDasFlowOut(node, childCtx))
             ctx.closeChild(childCtx)
@@ -631,10 +631,10 @@ export class Function extends LangComponent {
 }
 
 
-export class Identifier extends LangComponent {
+export abstract class Identifier extends LangComponent {
     private readonly anyType: LangType
 
-    constructor(name: string, anyType: LangType) {
+    protected constructor(name: string, anyType: LangType) {
         super(name)
         this.anyType = anyType
     }
@@ -650,23 +650,26 @@ export class Identifier extends LangComponent {
 
     worker(node, inputs, outputs) {
         const nodeRef = this.editor?.nodes.find(it => it.id == node.id)
-        const input = nodeRef?.inputs.get('value')
+        if (!nodeRef)
+            return
+        const input = nodeRef.inputs.get('value')
         let updateNode = false
-        let inType: LangType | undefined = undefined
-        if (input?.showControl()) {
-            inType = getType(node.data.typeName) ?? this.anyType
-        }
-        if (input?.hasConnection()) {
-            const connection = input.connections[0]
-            inType = getType((<LangSocket>connection.output.socket).typeName)
-            if (inType && !inType.desc.isLocal && !inType.isAny) {
-                // TODO: show error, cannot assign to !isLocal type
-                inType = this.anyType
-                this.editor?.removeConnection(connection)
-                updateNode = true
+        let inType: LangType | undefined
+        if (input) {
+            if (input.showControl()) {
+                inType = getType(node.data.typeName) ?? this.anyType
+            } else {
+                const connection = input.connections[0]
+                inType = getType((<LangSocket>connection.output.socket).typeName)
+                if (inType && !inType.desc.isLocal && !inType.isAny) {
+                    // TODO: show error, cannot assign to !isLocal type
+                    inType = this.anyType
+                    this.editor?.removeConnection(connection)
+                    updateNode = true
+                }
             }
         }
-        const result = nodeRef?.outputs.get('result')
+        const result = nodeRef.outputs.get('result')
         if (result) {
             const prevSocket = result.socket
             result.socket = (inType ?? this.anyType).getSocket(SocketType.ref)
@@ -680,11 +683,10 @@ export class Identifier extends LangComponent {
             node.data.typeName = (<LangSocket>result.socket).typeName
         }
         if (updateNode)
-            nodeRef?.update()
+            nodeRef.update()
     }
 
     constructDasNode(node, ctx): void {
-
     }
 }
 
@@ -697,11 +699,14 @@ export class FunctionArgument extends Identifier {
 
     static constructDeclaration(node: Node, ctx: ConstructDasCtx): string {
         const inNode = LangComponent.constructOptionalInNode(node, 'value', ctx)
-        if (inNode) {
+        if (inNode)
             return `${ctx.nodeId(node)} = ${ctx.nodeId(inNode)}`
-        } else {
-            return `${ctx.nodeId(node)}: ${getType(<string>node.data.typeName)?.desc.typeName}`
-        }
+
+        const inType = getType(<string>node.data.typeName)
+        if (inType)
+            return `${ctx.nodeId(node)}: ${inType.desc.typeName}`
+
+        return `${ctx.nodeId(node)}`
     }
 }
 
