@@ -8,6 +8,7 @@ require fio
 require dasweb/web_server
 require dasweb/web_server_debug
 require dasweb/jsonrpc_boost
+require dasweb/agent_jsonrpc_boost
 
 require lang
 
@@ -21,10 +22,8 @@ var compilerPath: string
 def main()
     initialize()
     while true
-        server->tick()
+        tick_agent()
         sleep(10u)
-
-    server->stop()
 
 [export]
 def initialize()
@@ -33,20 +32,7 @@ def initialize()
     let args <- get_command_line_arguments()
     compilerPath = args[0]
 
-    server = new WebServer()
-    // server.debugLogs = true
-    jsonRpc = new JsonRpcHandler()
-
-    jsonRpc->addCall("lang.getCore", new MFunctionRpcCall(@@lang_getCore))
-    jsonRpc->addCall("lang.get", new MFunctionRpcCall(@@lang_get))
-    jsonRpc->addCall("lang.execute", new MFunctionRpcCall(@@lang_execute))
-    jsonRpc->addCall("files.load", new MFunctionRpcCall(@@files_load))
-    jsonRpc->addCall("files.save", new MFunctionRpcCall(@@files_save))
-    jsonRpc->addCall("files.list", new MFunctionRpcCall(@@files_list))
-
-    jsonRpc->listen(server)
-    jsonRpc->listenUnhandled(server)
-    start_server(server)
+    start_agent()
 
     var ctx: DumpContext
     ctx.modules <- [{string[] "$"; "math"; "strings"}]
@@ -56,20 +42,16 @@ def initialize()
 
 [export]
 def act()
-    server->tick()
+    tick_agent()
 
 
 [export]
 def shutdown()
     print("shutdown main.das\n")
-    server->stop()
 
 
-def send_response(var data: JsonValue?; id: uint64)
-    jsonRpc->sendResponse(server, data, id)
 
-
-[rpc_call]
+[auto_rpc_call(name="files.load")]
 def files_load(filePath: string; id: uint64)
     let path = flowsDir + filePath
     print("< req load data `{path}`\n")
@@ -88,7 +70,7 @@ def files_load(filePath: string; id: uint64)
         send_response(JVNull(), id)
 
 
-[rpc_call]
+[auto_rpc_call(name="files.save")]
 def files_save(filePath: string; data: string; code: string; id: uint64)
     let path = flowsDir + filePath
     print("< req run save data `{path}`\n{data}\n")
@@ -104,7 +86,7 @@ def files_save(filePath: string; data: string; code: string; id: uint64)
     send_response(JV(ok), id)
 
 
-[rpc_call]
+[auto_rpc_call(name="files.list")]
 def files_list(id: uint64)
     var files: array<string>
     scan_dir(flowsDir, files)
@@ -116,7 +98,7 @@ def files_list(id: uint64)
     // jsonRpc->sendError(server, "foobar", 0lf, null, id)
 
 
-[rpc_call]
+[auto_rpc_call(name="lang.getCore")]
 def lang_getCore(id: uint64)
     print("< req lang.getCore\n")
     var ok = false
@@ -131,7 +113,7 @@ def lang_getCore(id: uint64)
 
 
 
-[rpc_call]
+[auto_rpc_call(name="lang.get")]
 def lang_get(id: uint64)
     print("< req lang.get\n")
     var ok = false
@@ -146,7 +128,7 @@ def lang_get(id: uint64)
 
 
 
-[rpc_call]
+[auto_rpc_call(name="lang.execute")]
 def lang_execute(code: string; id: uint64)
     print("< req run code\n{code}\n")
     send_response(JV("run! " + code), id)
