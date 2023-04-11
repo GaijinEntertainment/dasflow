@@ -9,6 +9,7 @@ require strings
 require daslib/json_boost
 require daslib/defer
 require daslib/strings_boost
+require dasweb/agent_server_boost
 
 
 let
@@ -122,11 +123,12 @@ def add_function(ctx: DumpContext; fn: smart_ptr<ast::Function>&; modName: strin
         first = false
 
     if operators |> has_value(fnName)
-        if fn.arguments.length == 1 && postOperators |> key_exists(fnName)
-            fun.ctor = "${fun.args[0].name}{postOperators|>find(fnName)}"
+        if length(fn.arguments) == 1 && postOperators |> key_exists(fnName)
+            unsafe
+                fun.ctor = "${fun.args[0].name}{(postOperators)?[fnName]}"
         else
-            assert(fn.arguments.length == 1 || fn.arguments.length == 2)
-            if fn.arguments.length == 1
+            assert(length(fn.arguments) == 1 || length(fn.arguments) == 2)
+            if length(fn.arguments) == 1
                 fun.ctor = "{fnName}${fun.args[0].name}"
             else
                 fun.ctor = "${fun.args[0].name} {fnName} ${fun.args[1].name}"
@@ -183,7 +185,8 @@ def getTypeDesc(var lang: LangDesc; ti: smart_ptr<TypeDecl>): TypeDesc?
 
         lang.types[t.mn] <- t
 
-    return unsafe(lang.types |> find_for_edit(mangledName))
+    unsafe
+        return (lang.types)?[mangledName]
 
 
 def get_modules(ti: smart_ptr<TypeDecl>; blk: block<(mod: string): void>): void
@@ -209,7 +212,7 @@ def add_req(var td: TypeDesc; req: string)
 
 
 def JV(val: LangDesc)
-    var types <- [{ for val in values(val.types); JV(val) }]
+    var types <- [{ for value in values(val.types); JV(value) }]
     defer_delete(types)
     return JV({{"functions"=>JV(val.functions); "types"=>JV(types)}})
 
