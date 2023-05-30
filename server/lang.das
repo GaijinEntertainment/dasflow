@@ -1,4 +1,5 @@
 options rtti
+options strict_smart_pointers
 options remove_unused_symbols = false
 
 require rtti

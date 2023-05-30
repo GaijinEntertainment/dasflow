@@ -1,4 +1,5 @@
 options rtti
+options strict_smart_pointers
 
 require ast
 require rtti
