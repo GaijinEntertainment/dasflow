@@ -1,0 +1,7 @@
+// {"id":"dasflow@0.0.1","nodes":{"92":{"id":92,"data":{"name":"foo","numArgs":2,"typeName":"i"},"inputs":{"arg0":{"connections":[{"node":285,"output":"result","data":{}}]},"arg1":{"connections":[{"node":266,"output":"result","data":{}}]}},"outputs":{"fout":{"connections":[{"node":139,"input":"fin","data":{}}]},"out0":{"connections":[{"node":139,"input":"value","data":{}}]},"out1":{"connections":[{"node":267,"input":"value","data":{}}]}},"position":[-669.5308592719557,-1008.4918540864008],"name":"Function"},"139":{"id":139,"data":{},"inputs":{"fin":{"connections":[{"node":92,"output":"fout","data":{}}]},"value":{"connections":[{"node":92,"output":"out0","data":{}}]}},"outputs":{"fout":{"connections":[{"node":267,"input":"fin","data":{}}]}},"position":[-237.69488829855834,-1239.7792251738906],"name":"debug(*):v"},"266":{"id":266,"data":{"value":"10"},"inputs":{},"outputs":{"result":{"connections":[{"node":92,"input":"arg1","data":{}}]}},"position":[-1128.5442091834286,-793.193977229346],"name":"int"},"267":{"id":267,"data":{},"inputs":{"fin":{"connections":[{"node":139,"output":"fout","data":{}}]},"value":{"connections":[{"node":92,"output":"out1","data":{}}]}},"outputs":{"fout":{"connections":[]}},"position":[-0.2789209898997491,-1096.6997921518607],"name":"debug(*):v"},"285":{"id":285,"data":{"value":"20"},"inputs":{},"outputs":{"result":{"connections":[{"node":92,"input":"arg0","data":{}}]}},"position":[-1132.2987361280416,-998.3267888179477],"name":"int"}},"comments":[]}
+
+[export]
+def foo(_285 = int(20); _266 = int(10))
+	debug(_285)
+	debug(_266)
+
