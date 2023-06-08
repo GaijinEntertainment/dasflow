@@ -1,5 +1,7 @@
 options rtti
 options strict_smart_pointers
+options debugger
+require daslib/debug
 
 require ast
 require rtti
@@ -18,6 +20,16 @@ var server: WebServer?
 
 var flowsDir = "flows/"
 var compilerPath: string
+
+struct CompileError
+    line : uint
+    message : string
+    file : string
+
+struct SaveStatus
+    saved : bool
+    compiled : bool
+    errors : array<CompileError>
 
 [export]
 def main()
@@ -75,16 +87,30 @@ def files_load(filePath: string; id: uint64)
 def files_save(filePath: string; data: string; code: string; id: uint64)
     let path = flowsDir + filePath
     print("< req run save data `{path}`\n{data}\n")
-    var ok = false
+    var saveOkay = false
     fopen(path, "wb") <| $(f)
         if f != null
-            ok = true
+            saveOkay = true
             f |> fwrite("// ")
             f |> fwrite(data)
             f |> fwrite("\n\n")
             f |> fwrite(code)
 
-    send_response(JV(ok), id)
+    var inscope access <- make_file_access("")
+
+    using <| $(var mg:ModuleGroup)
+        using <| $(var cop:CodeOfPolicies)
+            cop.aot_module = true
+            compile_file(path, access, unsafe(addr(mg)), cop) <| $(compileOkay, program, output)
+                var status : SaveStatus
+                status.saved = saveOkay
+                status.compiled = compileOkay
+                for err in program.errors
+                    status.errors |> emplace([[CompileError message=string(err.what), file=string(err.at.fileInfo.name), line=err.at.line]])
+                debug(program)
+                debug(output)
+                debug(status)
+                send_response(JV(status), id)
 
 
 [auto_rpc_call(name="files.list")]

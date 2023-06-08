@@ -3,6 +3,20 @@ import {NodeEditor} from "rete/types/editor"
 import {LangCoreDesc, LangDesc} from "./lang"
 
 
+export interface CompileError
+{
+    line : number
+    message : string
+    file : string
+}
+
+export interface SaveResult
+{
+    saved : boolean
+    compiled : boolean
+    errors : CompileError[]
+}
+
 export namespace FilesRpc {
     export async function list(ws: JsonRpcWebsocket): Promise<string[]> {
         return ws.call('files.list').then(res => <string[]>res.result)
@@ -16,9 +30,9 @@ export namespace FilesRpc {
         })
     }
 
-    export async function save(ws: JsonRpcWebsocket, editor: NodeEditor, code: string, path: string): Promise<boolean> {
+    export async function save(ws: JsonRpcWebsocket, editor: NodeEditor, code: string, path: string): Promise<SaveResult> {
         const data = JSON.stringify(editor.toJSON())
-        return ws.call('files.save', [path, data, code]).then(res => !!res.result)
+        return ws.call('files.save', [path, data, code]).then(res => <SaveResult>res.result)
     }
 }
 
