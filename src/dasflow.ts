@@ -1,6 +1,6 @@
 import {JsonRpcWebsocket} from "jsonrpc-client-websocket"
 import {NodeEditor} from "rete/types/editor"
-import {FilesRpc} from "./rpc"
+import {FilesRpc, SaveResult} from "./rpc"
 import {SubEvent} from 'sub-events'
 import {ConstructDasCtx, LangComponent} from "./components"
 
@@ -51,7 +51,7 @@ export class DasflowContext {
         return ctx
     }
 
-    async save(): Promise<boolean> {
+    async save(): Promise<SaveResult> {
         const dasCtx = this.constructDas()
         const hasErrors = dasCtx.hasErrors()
         if (hasErrors) {

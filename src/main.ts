@@ -47,7 +47,7 @@ import {Component} from "rete/types"
             ctx.reload()
         },
         save() {
-            ctx.save()
+            console.log(ctx.save())
         },
         close() {
             ctx.close()
