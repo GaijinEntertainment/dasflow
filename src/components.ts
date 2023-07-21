@@ -10,12 +10,6 @@ const optimizeFlow = true
 
 const flowSocket = new Rete.Socket('exec-flow')
 
-enum SocketType {
-    constant = 0b01, // 0b ref const
-    ref = 0b10,
-    constRef = 0b11,
-}
-
 
 class LangCtx {
     allTypes = new Map</*mn*/string, LangType>()
@@ -31,13 +25,11 @@ class LangCtx {
 
 class LangSocket extends Socket {
     typeName: string
-    socketType: SocketType
     isAny: boolean
 
-    constructor(typeName: string, socketType: SocketType, isAny: boolean) {
-        super(typeName + (socketType & 0b1 ? ' const' : '') + (socketType & 0b10 ? ' &' : ''))
+    constructor(typeName: string, isAny: boolean) {
+        super(typeName)
         this.typeName = typeName
-        this.socketType = socketType
         this.isAny = isAny;
     }
 
@@ -47,16 +39,9 @@ class LangSocket extends Socket {
         if (socket instanceof LangSocket) {
             if (socket.isAny)
                 return true
-            if (socket.typeName == this.typeName) {
-                if (socket.socketType == SocketType.ref)
-                    return this.socketType == SocketType.ref
-                if (socket.socketType == SocketType.constRef)
-                    return this.socketType == SocketType.constRef || this.socketType == SocketType.ref
-                return true
-            }
+            return socket.typeName == this.typeName
         }
         return false
-        // return super.compatibleWith(socket)
     }
 }
 
@@ -68,6 +53,7 @@ export class LangType {
             this.validator = new RegExp(typeDesc.validator)
         this.isVoid = isVoid
         this.isAny = isAny
+        this.socket = new LangSocket(this.desc.baseMn ?? this.desc.mn, this.isAny)
     }
 
     readonly desc: LangTypeDesc
@@ -75,15 +61,10 @@ export class LangType {
     readonly isAny: boolean;
     readonly validator?: RegExp
 
-    private sockets = new Map<SocketType, LangSocket>()
+    readonly socket: LangSocket
 
-    getSocket(socketType: SocketType): LangSocket {
-        if (this.sockets.has(socketType))
-            return this.sockets.get(socketType)!
-
-        const res = new LangSocket(this.desc.baseMn ?? this.desc.mn, socketType, this.isAny)
-        this.sockets.set(socketType, res)
-        return res
+    getSocket(): LangSocket {
+        return this.socket
     }
 
     ctor(s: string, args: { [key: string]: string }): string {
@@ -345,7 +326,7 @@ export class TypeCtor extends LangComponent {
     }
 
     async builder(node) {
-        const out = new Rete.Output('result', 'Result', this.baseType.getSocket(SocketType.constRef), this.useLocal)
+        const out = new Rete.Output('result', 'Result', this.baseType.getSocket(), this.useLocal)
         node.addOutput(out)
         const inputControl = new TextInputControl(this.editor, 'value')
         inputControl.validator = this.baseType.validator
@@ -405,7 +386,7 @@ export class LangFunc extends LangComponent {
 
     async builder(node) {
         if (!this.resType.isVoid) {
-            const out = new Rete.Output('result', 'Result', this.resType.getSocket(SocketType.constRef), this.useLocal)
+            const out = new Rete.Output('result', 'Result', this.resType.getSocket(), this.useLocal)
             node.addOutput(out)
         }
         if (this.ctorFn.desc.sideeffect)
@@ -417,7 +398,7 @@ export class LangFunc extends LangComponent {
                 continue
             }
             node.data[field.name] ??= fieldType.desc.default
-            const fieldInput = new Rete.Input(field.name, field.name, fieldType.getSocket(SocketType.constant), false)
+            const fieldInput = new Rete.Input(field.name, field.name, fieldType.getSocket(), false)
             if (fieldType.supportTextInput()) {
                 const inputControl = new TextInputControl(this.editor, field.name)
                 inputControl.validator = fieldType.validator
@@ -506,7 +487,7 @@ export class If extends LangComponent {
         onTrue.name = 'then'
         const onFalse = this.addFlowOut(node, 'else')
         onFalse.name = 'else'
-        const input = new Rete.Input('inValue', 'Condition', this.langCtx.logicType.getSocket(SocketType.constant))
+        const input = new Rete.Input('inValue', 'Condition', this.langCtx.logicType.getSocket())
         node.addInput(input)
     }
 
@@ -543,7 +524,7 @@ export class While extends LangComponent {
         this.addFlowInOut(node)
         const body = this.addFlowOut(node, 'body')
         body.name = 'body'
-        const input = new Rete.Input('inValue', 'Condition', this.langCtx.logicType.getSocket(SocketType.constant))
+        const input = new Rete.Input('inValue', 'Condition', this.langCtx.logicType.getSocket())
         node.addInput(input)
     }
 
@@ -586,14 +567,14 @@ export class Function extends LangComponent {
     }
 
     private addArgInput(node: Node, i: number) {
-        const argInput = new Rete.Input(`arg${i}`, `Argument ${i + 1}`, this.langCtx.anyType.getSocket(SocketType.constant), false)
+        const argInput = new Rete.Input(`arg${i}`, `Argument ${i + 1}`, this.langCtx.anyType.getSocket(), false)
         argInput.addControl(new LangTypeSelectControl(this.editor, 'typeName', this.langCtx.allTypes))
         node.addInput(argInput)
     }
 
     private addArgOutput(node, i: number) {
         const type = node.data.typeName ? this.langCtx.getType(node.data.typeName) ?? this.langCtx.anyType : this.langCtx.anyType
-        const argOutput = new Rete.Output(`out${i}`, `Output ${i + 1}`, type.getSocket(SocketType.ref), true)
+        const argOutput = new Rete.Output(`out${i}`, `Output ${i + 1}`, type.getSocket(), true)
         node.addOutput(argOutput)
     }
 
@@ -618,7 +599,7 @@ export class Function extends LangComponent {
         const result = nodeRef.outputs.get(`out${i}`)
             if (result) {
                 const prevSocket = result.socket
-                result.socket = (inType ?? this.langCtx.anyType).getSocket(SocketType.ref)
+                result.socket = (inType ?? this.langCtx.anyType).getSocket()
                 if (prevSocket != result.socket) {
                     for (const connection of [...result.connections]) {
                         if (!connection.output.socket.compatibleWith(connection.input.socket))
@@ -712,12 +693,7 @@ export class Function extends LangComponent {
                 if (connectionsNum > 1) {
                     childStr = `${ctx.nodeId(inNode)}`
                 } else {
-                    if (!this.editor)
-                        continue
-                    const nodeRef = this.editor.nodes.find(it => it.id == node.id)
-                    if (!nodeRef)
-                        continue
-                    const argInput = nodeRef.inputs.get(`arg${i}`)
+                    const argInput = this.editor?.nodes.find(it => it.id == node.id)?.inputs.get(`arg${i}`)
                     if (!argInput)
                         continue
 
@@ -766,9 +742,9 @@ export abstract class Identifier extends LangComponent {
 
     async builder(node) {
         const type = node.data.typeName ? this.langCtx.getType(node.data.typeName) ?? this.langCtx.anyType : this.langCtx.anyType
-        const out = new Rete.Output('result', 'Result', type.getSocket(SocketType.ref), true)
+        const out = new Rete.Output('result', 'Result', type.getSocket(), true)
         node.addOutput(out)
-        const input = new Rete.Input('value', 'Value', this.langCtx.anyType.getSocket(SocketType.constant))
+        const input = new Rete.Input('value', 'Value', this.langCtx.anyType.getSocket())
         input.addControl(new LangTypeSelectControl(this.editor, 'typeName', this.langCtx.allTypes))
         node.addInput(input)
     }
@@ -797,7 +773,7 @@ export abstract class Identifier extends LangComponent {
         const result = nodeRef.outputs.get('result')
         if (result) {
             const prevSocket = result.socket
-            result.socket = (inType ?? this.langCtx.anyType).getSocket(SocketType.ref)
+            result.socket = (inType ?? this.langCtx.anyType).getSocket()
             if (prevSocket != result.socket) {
                 for (const connection of [...result.connections]) {
                     if (!connection.output.socket.compatibleWith(connection.input.socket))
