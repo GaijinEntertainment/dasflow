@@ -25,6 +25,8 @@ struct CompileError
     line : uint
     message : string
     file : string
+    fixme : string
+    extra : string
 
 struct SaveStatus
     saved : bool
@@ -106,7 +108,8 @@ def files_save(filePath: string; data: string; code: string; id: uint64)
                 status.saved = saveOkay
                 status.compiled = compileOkay
                 for err in program.errors
-                    status.errors |> emplace([[CompileError message=string(err.what), file=string(err.at.fileInfo.name), line=err.at.line]])
+                    status.errors |> emplace([[CompileError message=string(err.what), file=string(err.at.fileInfo.name),
+                                                            line=err.at.line, fixme=string(err.fixme), extra=string(err.extra)]])
                 debug(program)
                 debug(output)
                 debug(status)

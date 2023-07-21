@@ -21,14 +21,37 @@ export class DasflowContext {
 
     private readonly websocket: JsonRpcWebsocket
     public editor: NodeEditor
-    private _currentFile = 'default.dasflow'
+    private _currentFile = 'demo.dasflow'
+    private logComments = new Set()
+    private compileComments = new Set()
 
 
     constructor(websocket: JsonRpcWebsocket) {
         this.websocket = websocket
     }
 
+    storeComment(comment): void {
+        if (comment.text) {
+            if (comment.text[0] == '\u00A0') {
+                if (comment.text[1] == '\u00A0')
+                    this.compileComments.add(comment)
+                else
+                    this.logComments.add(comment)
+            }
+        }
+    }
+
+    deleteComments(comments: Set<any>) {
+        for (const comment of comments) {
+            // @ts-ignore
+            this.editor?.trigger('removecomment', ({ comment }))
+        }
+        comments.clear()
+    }
+
     async loadFile(path: string): Promise<boolean> {
+        this.compileComments.clear()
+        this.logComments.clear()
         let res = FilesRpc.load(this.websocket, this.editor, path)
         res.then((res) => {
             this.currentFile = path
@@ -37,6 +60,8 @@ export class DasflowContext {
     }
 
     async reload(): Promise<boolean> {
+        this.compileComments.clear()
+        this.logComments.clear()
         return FilesRpc.load(this.websocket, this.editor, this.currentFile)
     }
 
@@ -52,13 +77,34 @@ export class DasflowContext {
     }
 
     async save(): Promise<SaveResult> {
+        this.deleteComments(this.logComments)
+        this.deleteComments(this.compileComments)
+
         const dasCtx = this.constructDas()
         const hasErrors = dasCtx.hasErrors()
         if (hasErrors) {
             dasCtx.logErrors()
         }
         console.log(dasCtx.code)
-        return FilesRpc.save(this.websocket, this.editor, !hasErrors ? dasCtx.code : "", this.currentFile)
+
+        for (const comment of this.logComments) {
+            // @ts-ignore
+            this.editor?.trigger('removecomment', ({ comment }))
+        }
+
+        return FilesRpc.save(this.websocket, this.editor, !hasErrors ? dasCtx.code : "", this.currentFile).then(res => {
+            if (res.errors.length > 0) {
+                console.log(res.errors)
+                dasCtx.addNativeErrors(res.errors, this.currentFile)
+            }
+            let temp = new Set(this.logComments)
+            for (const comment of temp) {
+                // @ts-ignore
+                this.editor?.trigger('addcomment', ({ type: 'inline', text: comment.text, position: [comment.x, comment.y] }))
+                this.logComments.delete(comment)
+            }
+            return res
+        })
     }
 
     async firstStart(): Promise<boolean> {

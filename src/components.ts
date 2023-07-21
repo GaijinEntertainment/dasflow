@@ -4,6 +4,7 @@ import {NodeEditor} from 'rete/types/editor'
 import {LabelControl, LangTypeSelectControl, MultilineLabelControl, NumControl, TextInputControl} from "./controls"
 import {LangCoreDesc, LangDesc, LangFunctionDesc, LangTypeDesc} from "./lang"
 import {Component} from "rete/types"
+import { CompileError } from './rpc'
 
 
 const optimizeFlow = true
@@ -362,7 +363,7 @@ export class TypeCtor extends LangComponent {
 
         if (!(outConnectionsNum == 1 && firstOutNode.name == "Function")) {
             if (this.useLocal && (!optimizeFlow || outConnectionsNum > 1))
-                ctx.writeLine(`let ${ctx.nodeId(node)} = ${val}`)
+                ctx.writeLine(node, `let ${ctx.nodeId(node)} = ${val}`)
             else
                 ctx.setNodeRes(node, val)
         }
@@ -464,9 +465,9 @@ export class LangFunc extends LangComponent {
         const outConnectionsNum = node.outputs.get('result')?.connections.length ?? 0
         if (this.useLocal && (!optimizeFlow || this.ctorFn.desc.sideeffect || outConnectionsNum > 1)) {
             if (this.resType.isVoid || outConnectionsNum == 0)
-                ctx.writeLine(val)
+                ctx.writeLine(node, val)
             else
-                ctx.writeLine(`let ${ctx.nodeId(node)} = ${val}`)
+                ctx.writeLine(node, `let ${ctx.nodeId(node)} = ${val}`)
         } else
             ctx.setNodeRes(node, val)
     }
@@ -496,7 +497,7 @@ export class If extends LangComponent {
         if (!inNode)
             return false
 
-        ctx.writeLine(`if (${ctx.nodeId(inNode)})`)
+        ctx.writeLine(node, `if (${ctx.nodeId(inNode)})`)
 
         const thenChildCtx = ctx.getChild()
         if (!LangComponent.constructDasFlowOut(node, thenChildCtx, 'then'))
@@ -505,7 +506,7 @@ export class If extends LangComponent {
 
         const elseChildCtx = ctx.getChild()
         if (LangComponent.constructDasFlowOut(node, elseChildCtx, 'else')) {
-            ctx.writeLine("else")
+            ctx.writeLine(node, "else")
             ctx.closeChild(elseChildCtx)
         }
     }
@@ -533,13 +534,13 @@ export class While extends LangComponent {
         if (!inNode)
             return
 
-        ctx.writeLine(`while (${ctx.nodeId(inNode)})`)
+        ctx.writeLine(node, `while (${ctx.nodeId(inNode)})`)
 
         const childCtx = ctx.getChild()
         if (LangComponent.constructDasFlowOut(node, childCtx, 'body'))
             ctx.closeChild(childCtx)
         else
-            ctx.writeLine('pass')
+            ctx.writeLine(node, 'pass')
     }
 }
 
@@ -718,13 +719,13 @@ export class Function extends LangComponent {
         }
 
         // TODO: add func annotations
-        ctx.writeLine(`[export]\ndef ${node.data.name}(${args.join('; ')})`)
+        ctx.writeLine(node, `[export]\ndef ${node.data.name}(${args.join('; ')})`)
         const childCtx = ctx.getChild()
         if (LangComponent.constructDasFlowOut(node, childCtx))
             ctx.closeChild(childCtx)
         else
-            ctx.writeLine("pass")
-        ctx.writeLine("")
+            ctx.writeLine(node, "pass")
+        ctx.writeLine(node, "")
     }
 
     constructDasNode(node: Node, ctx: ConstructDasCtx): void {
@@ -801,9 +802,9 @@ export class Var extends Identifier {
     constructDasNode(node, ctx): void {
         const inNode = LangComponent.constructOptionalInNode(node, 'value', ctx)
         if (inNode)
-            ctx.writeLine(`var ${ctx.nodeId(node)} = ${ctx.nodeId(inNode)}`)
+            ctx.writeLine(node, `var ${ctx.nodeId(node)} = ${ctx.nodeId(inNode)}`)
         else
-            ctx.writeLine(`var ${ctx.nodeId(node)}: ${this.langCtx.getType(<string>node.data.typeName)?.desc.typeName}`)
+            ctx.writeLine(node, `var ${ctx.nodeId(node)}: ${this.langCtx.getType(<string>node.data.typeName)?.desc.typeName}`)
     }
 }
 
@@ -823,7 +824,7 @@ export class InjectTopLevelCode extends LangComponent {
         if (node.data.code) {
             const code = <string>node.data.code
             for (let string of code.split("\n"))
-                ctx.writeLine(string)
+                ctx.writeLine(node, string)
         }
 
         const childCtx = ctx.getChild()
@@ -850,7 +851,7 @@ export class InjectCode extends LangComponent {
         if (node.data.code) {
             const code = <string>node.data.code
             for (let string of code.split("\n"))
-                ctx.writeLine(string)
+                ctx.writeLine(node, string)
         }
     }
 }
@@ -931,6 +932,8 @@ export class ConstructDasCtx {
     private nodeResults = new Map<number, string>()
     private processedNodes = new Set<number>()
     private requiredNodes = new Set<number>()
+    private lineToNode = new Map<number, number>()
+    private linesCount = 2
 
     constructor(editor: NodeEditor) {
         this.editor = editor
@@ -948,12 +951,41 @@ export class ConstructDasCtx {
         return res
     }
 
-    writeLine(str: string): void {
+    writeLine(node: Node, str: string): void {
         this._code += `${this._indenting}${str}\n`
+        this.lineToNode.set(node.id, this.linesCount)
+        this.linesCount += str.split('\n').length
     }
 
     addError(node: Node, msg: string): boolean {
         return this.addErrorId(node.id, msg)
+    }
+
+    addNativeErrors(errors: CompileError[], thisFile: string) {
+         for (const error of errors) {
+            const strFile = String(error.file.split('/').slice(-1))
+            if (strFile == thisFile) {
+                let isFound = false
+
+                for (const [id, line] of this.lineToNode) {
+                    if (line == error.line) {
+                        this.addErrorId(id, error.message)
+                        const node = this.editor.nodes.find(n => n.id == id)
+                        // @ts-ignore
+                        this.editor?.trigger('addcomment', ({ type: 'inline', text: '\u00A0\u00A0' + error.message, position: node.position }))
+                        isFound = true
+                        break
+                    }
+                }
+                if (!isFound) {
+                    this.addGlobalError(error.message)
+                }
+            }
+        }
+    }
+
+    addGlobalError(msg: string) {
+        console.log(`Global error:\n\t${msg}\n\t`)
     }
 
     addErrorId(id: number, msg: string): boolean {
@@ -974,6 +1006,8 @@ export class ConstructDasCtx {
         for (const [id, messages] of this.errors) {
             for (const node of this.editor.nodes) {
                 if (node.id == id) {
+                    // @ts-ignore
+                    this.editor?.trigger('addcomment', ({ type: 'inline', text: '\u00A0' + messages, position: node.position }))
                     console.log(`Node ${node.name}:${node.id}\n\t${messages.join('\n\t')}`)
                     break
                 }
