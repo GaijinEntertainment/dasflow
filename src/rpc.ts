@@ -8,6 +8,8 @@ export interface CompileError
     line : number
     message : string
     file : string
+    fixme : string
+    extra : string
 }
 
 export interface SaveResult

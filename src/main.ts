@@ -122,6 +122,11 @@ import {Component} from "rete/types"
         await engine.process(editor.toJSON())
     })
 
+    // @ts-ignore
+    editor.on('commentcreated', function (comment) {
+        ctx.storeComment(comment)
+    })
+
     editor.view.resize()
     editor.trigger('process')
 
