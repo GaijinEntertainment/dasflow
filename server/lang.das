@@ -11,6 +11,7 @@ require daslib/json_boost
 require daslib/defer
 require daslib/strings_boost
 require dasweb/agent_server_boost
+require dasweb/array_boost
 
 
 let
@@ -29,6 +30,7 @@ struct TypeDesc
     isRef: bool
     isLocal: bool
     isBlock: bool
+    isIterable: bool
     args: array<TypeArg>
 
 
@@ -151,6 +153,17 @@ def add_function(ctx: DumpContext; fn: smart_ptr<ast::Function>&; modName: strin
     fun.mn = "{fnMn}):{resTypeDesc.mn}"
 
 
+def is_iterable_type(ti: smart_ptr<TypeDecl>) : bool
+    return true if !empty(ti.dim)
+    return true if ti.isGoodArrayType
+    return true if ti.isString
+    return true if ti.isGoodIteratorType
+    return true if ti.isRange
+    return true if ti.isHandle && ti.annotation != null && ti.annotation.isIterable
+
+    return false
+
+
 def getTypeDesc(var lang: LangDesc; ti: smart_ptr<TypeDecl>): TypeDesc?
     let mangledName = ti |> get_mangled_name()
 
@@ -168,6 +181,8 @@ def getTypeDesc(var lang: LangDesc; ti: smart_ptr<TypeDecl>): TypeDesc?
             t.baseMn = t.baseMn |> removePrefix("#")
         if ti.flags._implicit
             t.baseMn = t.baseMn |> removePrefix("I")
+
+        t.isIterable = ti |> is_iterable_type()
 
         t.isBlock = ti.isGoodBlockType
         for idx, argType in iter_range(ti.argTypes), ti.argTypes
@@ -230,6 +245,8 @@ def JV(val: TypeDesc)
         res["isLocal"] = JV(val.isLocal)
     if val.isBlock
         res["isBlock"] = JV(val.isBlock)
+    if val.isIterable
+        res["isIterable"] = JV(val.isIterable)
     if !empty(val.args)
         res["args"] = JV(val.args)
     if !empty(val.requirements)

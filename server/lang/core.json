@@ -21,7 +21,8 @@
             "mn": "s",
             "default": "",
             "ctor": "\"$\"",
-            "canCopy": true
+            "canCopy": true,
+            "isIterable": true
         },
         {
             "typeName": "int",
