@@ -567,23 +567,24 @@ export class Function extends LangComponent {
         }
     }
 
-    private addArgInput(node: Node, i: number) {
+    private addArgInput(node, i: number) {
         const argInput = new Rete.Input(`arg${i}`, `Argument ${i + 1}`, this.langCtx.anyType.getSocket(), false)
         argInput.addControl(new LangTypeSelectControl(this.editor, 'typeName', this.langCtx.allTypes))
         node.addInput(argInput)
     }
 
     private addArgOutput(node, i: number) {
-        const type = node.data.typeName ? this.langCtx.getType(node.data.typeName) ?? this.langCtx.anyType : this.langCtx.anyType
+        const type = node.data.typeName[i] ? this.langCtx.getType(node.data.typeName[i]) ?? this.langCtx.anyType : this.langCtx.anyType
         const argOutput = new Rete.Output(`out${i}`, `Output ${i + 1}`, type.getSocket(), true)
         node.addOutput(argOutput)
     }
 
-    private getInType(node, argInput) {
+    private getInType(node, argInput, i: number) {
         let inType: LangType | undefined
         if (argInput) {
             if (argInput.showControl()) {
-                inType = this.langCtx.getType(node.data.typeName) ?? this.langCtx.anyType
+                node.data.typeName[i] = this.langCtx.anyType.getSocket().typeName
+                inType = this.langCtx.anyType
             } else {
                 const connection = argInput.connections[0]
                 inType = this.langCtx.getType((<LangSocket>connection.output.socket).typeName)
@@ -607,11 +608,11 @@ export class Function extends LangComponent {
                             this.editor?.removeConnection(connection)
                     }
                 }
-                node.data.typeName = (<LangSocket>result.socket).typeName
+                node.data.typeName[i] = (<LangSocket>result.socket).typeName
             }
     }
 
-    private controleNumArgs(nodeRef, numArgs, reqNumArgs) {
+    private controleNumArgs(node, nodeRef, numArgs, reqNumArgs) {
         if (!this.editor)
             return false
 
@@ -619,6 +620,7 @@ export class Function extends LangComponent {
             for (let i = numArgs; i < reqNumArgs; i++) {
                 this.addArgInput(nodeRef, i)
                 this.addArgOutput(nodeRef, i)
+                node.data.typeName.push(this.langCtx.anyType.getSocket().typeName)
             }
             return true
         } else if (numArgs > reqNumArgs) {
@@ -635,6 +637,7 @@ export class Function extends LangComponent {
                         this.editor.removeConnection(conn)
                     nodeRef.removeOutput(argOutput)
                 }
+                node.data.typeName.pop()
             }
             return true
         }
@@ -655,12 +658,12 @@ export class Function extends LangComponent {
             argsInput.setValue(reqNumArgs)
         const numArgs = Math.max(0, nodeRef?.inputs.size ?? 0 - 1)
 
-        updateNode = this.controleNumArgs(nodeRef, numArgs, reqNumArgs)
+        updateNode = this.controleNumArgs(node, nodeRef, numArgs, reqNumArgs)
 
         for (let i = 0; i < reqNumArgs; i++) {
             let inType: LangType | undefined
             const argInput = nodeRef.inputs.get(`arg${i}`)
-            inType = this.getInType(node, argInput)
+            inType = this.getInType(node, argInput, i)
 
             this.setOutType(node, inType, nodeRef, i)
             updateNode = true
@@ -675,45 +678,39 @@ export class Function extends LangComponent {
         const argNames = new Set<string>()
         for (let i = 0; i < numArgs; i++) {
             let inNode = LangComponent.constructOptionalInNode(node, `arg${i}`, ctx)
-            // if (!inNode)
-            //     continue // constructInNode adds an error
+            if (!inNode)
+                continue // constructInNode adds an error
 
             let childStr
 
-            if (inNode) {
-                const argName = ctx.nodeId(inNode)
-                if (argNames.has(argName))
-                    ctx.addError(node, `Duplicate argument name: ${argName}`)
-                argNames.add(argName)
+            const argName = ctx.nodeId(inNode)
+            if (argNames.has(argName))
+                ctx.addError(node, `Duplicate argument name: ${argName}`)
+            argNames.add(argName)
 
-                const component = <LangComponent>ctx.editor.components.get(inNode.name)
-                if (!(component instanceof TypeCtor))
-                    ctx.addError(node, `Unsupported argument type: ${inNode.name}`)
+            const component = <LangComponent>ctx.editor.components.get(inNode.name)
+            if (!(component instanceof TypeCtor))
+                ctx.addError(node, `Unsupported argument type: ${inNode.name}`)
 
-                const connectionsNum = inNode.outputs.get(`result`)?.connections.length ?? 0
-                if (connectionsNum > 1) {
-                    childStr = `${ctx.nodeId(inNode)}`
-                } else {
-                    const argInput = this.editor?.nodes.find(it => it.id == node.id)?.inputs.get(`arg${i}`)
-                    if (!argInput)
-                        continue
+            const connectionsNum = inNode.outputs.get(`result`)?.connections.length ?? 0
+            if (connectionsNum > 1) {
+                childStr = `${ctx.nodeId(inNode)}`
+            } else {
+                const argInput = this.editor?.nodes.find(it => it.id == node.id)?.inputs.get(`arg${i}`)
+                if (!argInput)
+                    continue
 
-                    const connection = argInput.connections[0]
-                    const type = this.langCtx.getType((<LangSocket>connection.output.socket).typeName)
+                const connection = argInput.connections[0]
+                const type = this.langCtx.getType((<LangSocket>connection.output.socket).typeName)
 
-                    if (type) {
-                        const ctorArgs: { [key: string]: string } = {}
-                        const string_value = String(inNode.data.value)
+                if (type) {
+                    const ctorArgs: { [key: string]: string } = {}
+                    const string_value = String(inNode.data.value)
 
-                        const val = type.ctor(string_value, ctorArgs)
-                        childStr = `${ctx.nodeId(inNode)} = ${val}`
-                    }
+                    const val = type.ctor(string_value, ctorArgs)
+                    childStr = `${ctx.nodeId(inNode)} = ${val}`
                 }
             }
-            // else if (inType)
-            //     childStr = `${ctx.nodeId(inNode)}: ${inType.desc.typeName}`
-            // else
-            //     childStr = `${ctx.nodeId(inNode)}`
 
             args.push(childStr)
         }
@@ -971,8 +968,11 @@ export class ConstructDasCtx {
                     if (line == error.line) {
                         this.addErrorId(id, error.message)
                         const node = this.editor.nodes.find(n => n.id == id)
+                        const error_text = '\u00A0' + '\u00A0' + error.message  +
+                                            (error.fixme == '' ? '' : '\nfixme: ' + error.fixme) +
+                                            (error.extra == '' ? '' : '\nextra: ' + error.extra)
                         // @ts-ignore
-                        this.editor?.trigger('addcomment', ({ type: 'inline', text: '\u00A0\u00A0' + error.message, position: node.position }))
+                        this.editor?.trigger('addcomment', ({ type: 'inline', text: error_text, position: node.position }))
                         isFound = true
                         break
                     }
@@ -985,7 +985,10 @@ export class ConstructDasCtx {
     }
 
     addGlobalError(msg: string) {
-        console.log(`Global error:\n\t${msg}\n\t`)
+        const global_text = '\u00A0\u00A0' + 'Global error:\n\t' + msg
+        console.log(global_text)
+        // @ts-ignore
+        this.editor?.trigger('addcomment', ({ type: 'inline', text: global_text, position: [0, 0] }))
     }
 
     addErrorId(id: number, msg: string): boolean {
