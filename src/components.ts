@@ -54,11 +54,13 @@ export class LangType {
             this.validator = new RegExp(typeDesc.validator)
         this.isVoid = isVoid
         this.isAny = isAny
+        this.isIterable = typeDesc.isIterable
         this.socket = new LangSocket(this.desc.baseMn ?? this.desc.mn, this.isAny)
     }
 
     readonly desc: LangTypeDesc
     readonly isVoid: boolean
+    readonly isIterable?: boolean
     readonly isAny: boolean;
     readonly validator?: RegExp
 
@@ -141,7 +143,7 @@ export function generateCoreNodes(langCore: LangCoreDesc, lang: LangDesc, editor
     }
 
     const comps: Component[] = [new InjectTopLevelCode(), new InjectCode(), new Sequence(), new Var(langCtx),
-        new Function(langCtx), new If(langCtx), new While(langCtx)]
+        new Function(langCtx), new If(langCtx), new While(langCtx), new For(langCtx)]
 
     for (const typeDesc of lang.types ?? []) {
         if (langCore.anyTypes.indexOf(typeDesc.mn) >= 0)
@@ -444,6 +446,12 @@ export class LangFunc extends LangComponent {
             }
             const input = fieldType.supportTextInput() ? LangComponent.constructOptionalInNode(node, field.name, ctx) : LangComponent.constructInNode(node, field.name, ctx)
             if (input) {
+                if (input.name == "For") {
+                    let inValue = node.inputs.get(field.name)
+                    ctorArgs[field.name] = `x${inValue.connections[0].output.key[3]}${ctx.nodeId(input)}`
+                    continue
+                }
+
                 ctorArgs[field.name] = ctx.nodeId(input)
                 continue
             }
@@ -545,6 +553,160 @@ export class While extends LangComponent {
 }
 
 
+export class For extends LangComponent {
+    private readonly langCtx: LangCtx
+
+    constructor(langCtx: LangCtx) {
+        super('For')
+        this.langCtx = langCtx
+    }
+
+    async builder(node) {
+        this.addFlowInOut(node)
+        const body = this.addFlowOut(node, 'body')
+        body.name = 'body'
+
+        node.addControl(new NumControl(this.editor, 'numArgs'))
+
+        const numArgs = node.data.numArgs ?? 1
+        for (let i = 0; i < numArgs; i++) {
+            this.addArgInput(node, i)
+            this.addArgOutput(node, i)
+        }
+    }
+
+    private addArgInput(node, i: number) {
+        const argInput = new Rete.Input(`range${i}`, `Range ${i + 1}`, this.langCtx.anyType.getSocket(), false)
+        argInput.addControl(new LangTypeSelectControl(this.editor, 'typeName', this.langCtx.allTypes))
+        node.addInput(argInput)
+    }
+
+    private addArgOutput(node, i: number) {
+        const type = node.data.typeName[i] ? this.langCtx.getType(node.data.typeName[i]) ?? this.langCtx.anyType : this.langCtx.anyType
+        const argOutput = new Rete.Output(`val${i}`, `Value ${i + 1}`, type.getSocket(), true)
+        node.addOutput(argOutput)
+    }
+
+    private getInType(node, argInput, i: number) {
+        let inType: LangType | undefined
+        if (argInput) {
+            if (argInput.showControl()) {
+                node.data.typeName[i] = this.langCtx.anyType.getSocket().typeName
+                inType = this.langCtx.anyType
+            } else {
+                const connection = argInput.connections[0]
+                let connectedInType = this.langCtx.getType((<LangSocket>connection.output.socket).typeName ?? this.langCtx.anyType)
+                if (connectedInType && !connectedInType.desc.isLocal && !connectedInType.isAny || connectedInType && !connectedInType.isIterable) {
+                    inType = this.langCtx.anyType
+                    this.editor?.removeConnection(connection)
+                } else {
+                    const connectedInput = connection.output.node.inputs.get("arg0")
+                    inType = this.langCtx.getType((<LangSocket>connectedInput.socket).typeName ?? this.langCtx.anyType)
+                }
+            }
+        }
+        return inType
+    }
+
+    private setOutType(node, inType, nodeRef, i: number) {
+        const result = nodeRef.outputs.get(`val${i}`)
+            if (result) {
+                const prevSocket = result.socket
+                result.socket = (inType ?? this.langCtx.anyType).getSocket()
+                if (prevSocket != result.socket) {
+                    for (const connection of [...result.connections]) {
+                        if (!connection.output.socket.compatibleWith(connection.input.socket))
+                            this.editor?.removeConnection(connection)
+                    }
+                }
+                node.data.typeName[i] = (<LangSocket>result.socket).typeName
+            }
+    }
+
+    private controleNumArgs(node, nodeRef, numArgs, reqNumArgs) {
+        if (!this.editor)
+            return false
+
+        if (numArgs < reqNumArgs) {
+            for (let i = numArgs; i < reqNumArgs; i++) {
+                this.addArgInput(nodeRef, i)
+                this.addArgOutput(nodeRef, i)
+                node.data.typeName.push(this.langCtx.anyType.getSocket().typeName)
+            }
+            return true
+        } else if (numArgs > reqNumArgs) {
+            for (let i = reqNumArgs; i < numArgs; i++) {
+                const argInput = nodeRef.inputs.get(`range${i}`)
+                if (argInput) {
+                    for (const conn of [...argInput.connections])
+                        this.editor.removeConnection(conn)
+                    nodeRef.removeInput(argInput)
+                }
+                const argOutput = nodeRef.outputs.get(`val${i}`)
+                if (argOutput) {
+                    for (const conn of [...argOutput.connections])
+                        this.editor.removeConnection(conn)
+                    nodeRef.removeOutput(argOutput)
+                }
+                node.data.typeName.pop()
+            }
+            return true
+        }
+        return false
+    }
+
+    worker(node, inputs, outputs) {
+        if (!this.editor)
+            return
+        const nodeRef = this.editor.nodes.find(it => it.id == node.id)
+        if (!nodeRef)
+            return
+        let updateNode = false
+        const reqNumArgs = node.data.numArgs ?? 1
+        outputs['numArgs'] = reqNumArgs
+        const argsInput = <NumControl>nodeRef.controls.get('numArgs')
+        if (argsInput)
+            argsInput.setValue(reqNumArgs)
+        const numArgs = Math.max(0, nodeRef?.inputs.size - 1 ?? 0 - 1)
+
+        updateNode = this.controleNumArgs(node, nodeRef, numArgs, reqNumArgs)
+
+        for (let i = 0; i < reqNumArgs; i++) {
+            let inType: LangType | undefined
+            const argInput = nodeRef.inputs.get(`range${i}`)
+            inType = this.getInType(node, argInput, i)
+
+            this.setOutType(node, inType, nodeRef, i)
+            updateNode = true
+        }
+        if (updateNode)
+            nodeRef.update()
+    }
+
+    constructDasNode(node, ctx) {
+        let index_part = 'for '
+        let range_part = ' in '
+
+        for (let i = 0; i < node.inputs.size - 1; i++) {
+            const inNode = LangComponent.constructInNode(node, `range${i}`, ctx)
+            if (!inNode)
+                continue
+
+            index_part += `x${i}_${node.id}, `
+            range_part += `${ctx.nodeId(inNode)}, `
+        }
+
+        ctx.writeLine(node, index_part.slice(0, -2) + range_part.slice(0, -2))
+
+        const childCtx = ctx.getChild()
+        if (LangComponent.constructDasFlowOut(node, childCtx, 'body'))
+            ctx.closeChild(childCtx)
+        else
+            ctx.writeLine(node, 'pass')
+    }
+}
+
+
 export class Function extends LangComponent {
     private readonly langCtx: LangCtx
 
@@ -567,23 +729,24 @@ export class Function extends LangComponent {
         }
     }
 
-    private addArgInput(node: Node, i: number) {
+    private addArgInput(node, i: number) {
         const argInput = new Rete.Input(`arg${i}`, `Argument ${i + 1}`, this.langCtx.anyType.getSocket(), false)
         argInput.addControl(new LangTypeSelectControl(this.editor, 'typeName', this.langCtx.allTypes))
         node.addInput(argInput)
     }
 
     private addArgOutput(node, i: number) {
-        const type = node.data.typeName ? this.langCtx.getType(node.data.typeName) ?? this.langCtx.anyType : this.langCtx.anyType
+        const type = node.data.typeName[i] ? this.langCtx.getType(node.data.typeName[i]) ?? this.langCtx.anyType : this.langCtx.anyType
         const argOutput = new Rete.Output(`out${i}`, `Output ${i + 1}`, type.getSocket(), true)
         node.addOutput(argOutput)
     }
 
-    private getInType(node, argInput) {
+    private getInType(node, argInput, i: number) {
         let inType: LangType | undefined
         if (argInput) {
             if (argInput.showControl()) {
-                inType = this.langCtx.getType(node.data.typeName) ?? this.langCtx.anyType
+                node.data.typeName[i] = this.langCtx.anyType.getSocket().typeName
+                inType = this.langCtx.anyType
             } else {
                 const connection = argInput.connections[0]
                 inType = this.langCtx.getType((<LangSocket>connection.output.socket).typeName)
@@ -607,11 +770,11 @@ export class Function extends LangComponent {
                             this.editor?.removeConnection(connection)
                     }
                 }
-                node.data.typeName = (<LangSocket>result.socket).typeName
+                node.data.typeName[i] = (<LangSocket>result.socket).typeName
             }
     }
 
-    private controleNumArgs(nodeRef, numArgs, reqNumArgs) {
+    private controleNumArgs(node, nodeRef, numArgs, reqNumArgs) {
         if (!this.editor)
             return false
 
@@ -619,6 +782,7 @@ export class Function extends LangComponent {
             for (let i = numArgs; i < reqNumArgs; i++) {
                 this.addArgInput(nodeRef, i)
                 this.addArgOutput(nodeRef, i)
+                node.data.typeName.push(this.langCtx.anyType.getSocket().typeName)
             }
             return true
         } else if (numArgs > reqNumArgs) {
@@ -635,6 +799,7 @@ export class Function extends LangComponent {
                         this.editor.removeConnection(conn)
                     nodeRef.removeOutput(argOutput)
                 }
+                node.data.typeName.pop()
             }
             return true
         }
@@ -655,12 +820,12 @@ export class Function extends LangComponent {
             argsInput.setValue(reqNumArgs)
         const numArgs = Math.max(0, nodeRef?.inputs.size ?? 0 - 1)
 
-        updateNode = this.controleNumArgs(nodeRef, numArgs, reqNumArgs)
+        updateNode = this.controleNumArgs(node, nodeRef, numArgs, reqNumArgs)
 
         for (let i = 0; i < reqNumArgs; i++) {
             let inType: LangType | undefined
             const argInput = nodeRef.inputs.get(`arg${i}`)
-            inType = this.getInType(node, argInput)
+            inType = this.getInType(node, argInput, i)
 
             this.setOutType(node, inType, nodeRef, i)
             updateNode = true
@@ -675,45 +840,39 @@ export class Function extends LangComponent {
         const argNames = new Set<string>()
         for (let i = 0; i < numArgs; i++) {
             let inNode = LangComponent.constructOptionalInNode(node, `arg${i}`, ctx)
-            // if (!inNode)
-            //     continue // constructInNode adds an error
+            if (!inNode)
+                continue // constructInNode adds an error
 
             let childStr
 
-            if (inNode) {
-                const argName = ctx.nodeId(inNode)
-                if (argNames.has(argName))
-                    ctx.addError(node, `Duplicate argument name: ${argName}`)
-                argNames.add(argName)
+            const argName = ctx.nodeId(inNode)
+            if (argNames.has(argName))
+                ctx.addError(node, `Duplicate argument name: ${argName}`)
+            argNames.add(argName)
 
-                const component = <LangComponent>ctx.editor.components.get(inNode.name)
-                if (!(component instanceof TypeCtor))
-                    ctx.addError(node, `Unsupported argument type: ${inNode.name}`)
+            const component = <LangComponent>ctx.editor.components.get(inNode.name)
+            if (!(component instanceof TypeCtor))
+                ctx.addError(node, `Unsupported argument type: ${inNode.name}`)
 
-                const connectionsNum = inNode.outputs.get(`result`)?.connections.length ?? 0
-                if (connectionsNum > 1) {
-                    childStr = `${ctx.nodeId(inNode)}`
-                } else {
-                    const argInput = this.editor?.nodes.find(it => it.id == node.id)?.inputs.get(`arg${i}`)
-                    if (!argInput)
-                        continue
+            const connectionsNum = inNode.outputs.get(`result`)?.connections.length ?? 0
+            if (connectionsNum > 1) {
+                childStr = `${ctx.nodeId(inNode)}`
+            } else {
+                const argInput = this.editor?.nodes.find(it => it.id == node.id)?.inputs.get(`arg${i}`)
+                if (!argInput)
+                    continue
 
-                    const connection = argInput.connections[0]
-                    const type = this.langCtx.getType((<LangSocket>connection.output.socket).typeName)
+                const connection = argInput.connections[0]
+                const type = this.langCtx.getType((<LangSocket>connection.output.socket).typeName)
 
-                    if (type) {
-                        const ctorArgs: { [key: string]: string } = {}
-                        const string_value = String(inNode.data.value)
+                if (type) {
+                    const ctorArgs: { [key: string]: string } = {}
+                    const string_value = String(inNode.data.value)
 
-                        const val = type.ctor(string_value, ctorArgs)
-                        childStr = `${ctx.nodeId(inNode)} = ${val}`
-                    }
+                    const val = type.ctor(string_value, ctorArgs)
+                    childStr = `${ctx.nodeId(inNode)} = ${val}`
                 }
             }
-            // else if (inType)
-            //     childStr = `${ctx.nodeId(inNode)}: ${inType.desc.typeName}`
-            // else
-            //     childStr = `${ctx.nodeId(inNode)}`
 
             args.push(childStr)
         }
@@ -971,8 +1130,11 @@ export class ConstructDasCtx {
                     if (line == error.line) {
                         this.addErrorId(id, error.message)
                         const node = this.editor.nodes.find(n => n.id == id)
+                        const error_text = '\u00A0' + '\u00A0' + error.message  +
+                                            (error.fixme == '' ? '' : '\nfixme: ' + error.fixme) +
+                                            (error.extra == '' ? '' : '\nextra: ' + error.extra)
                         // @ts-ignore
-                        this.editor?.trigger('addcomment', ({ type: 'inline', text: '\u00A0\u00A0' + error.message, position: node.position }))
+                        this.editor?.trigger('addcomment', ({ type: 'inline', text: error_text, position: node.position }))
                         isFound = true
                         break
                     }
@@ -985,7 +1147,10 @@ export class ConstructDasCtx {
     }
 
     addGlobalError(msg: string) {
-        console.log(`Global error:\n\t${msg}\n\t`)
+        const global_text = '\u00A0\u00A0' + 'Global error:\n\t' + msg
+        console.log(global_text)
+        // @ts-ignore
+        this.editor?.trigger('addcomment', ({ type: 'inline', text: global_text, position: [0, 0] }))
     }
 
     addErrorId(id: number, msg: string): boolean {

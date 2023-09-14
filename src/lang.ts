@@ -10,6 +10,7 @@ export interface LangTypeDesc {
     isConst?: boolean
     isRef?: boolean
     isLocal?: boolean
+    isIterable?: boolean
     default?: string
     ctor?: string
     validator?: string
