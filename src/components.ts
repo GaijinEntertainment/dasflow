@@ -261,6 +261,11 @@ export abstract class LangComponent extends Rete.Component {
     }
 
 
+    getInputArgName(node, name, input, ctx): string {
+        return ctx.nodeId(input)
+    }
+
+
     abstract constructDasNode(node: Node, ctx: ConstructDasCtx): void
 
 
@@ -273,16 +278,15 @@ export abstract class LangComponent extends Rete.Component {
         if (!inNode) {
             return null
         }
-        if (inNode.name == "Function") {
-            const i = inValue.connections[0].output.key[3];
 
-            const inChildNode = LangComponent.constructOptionalInNode(inNode, `arg${i}`, ctx)
-            return inChildNode
-        }
+        const component = <LangComponent>ctx.editor.components.get(inNode.name)
+        return component.initOptionalInNode(inNode, node, name, ctx)
+    }
 
-        LangComponent.constructAutoInit(inNode, ctx)
-        ctx.reqNode(inNode)
-        return inNode
+    initOptionalInNode(node: Node, parentNode: Node, name: string, ctx: ConstructDasCtx): Node | null {
+        LangComponent.constructAutoInit(node, ctx)
+        ctx.reqNode(node)
+        return node
     }
 
     static constructInNode(node: Node, name: string, ctx: ConstructDasCtx): Node | null {
@@ -293,7 +297,7 @@ export abstract class LangComponent extends Rete.Component {
     }
 
 
-    private static constructAutoInit(node: Node, ctx: ConstructDasCtx) {
+    protected static constructAutoInit(node: Node, ctx: ConstructDasCtx) {
         if (ctx.isLazyInited(node))
             return
         const component = <LangComponent>ctx.editor.components.get(node.name)
@@ -446,13 +450,8 @@ export class LangFunc extends LangComponent {
             }
             const input = fieldType.supportTextInput() ? LangComponent.constructOptionalInNode(node, field.name, ctx) : LangComponent.constructInNode(node, field.name, ctx)
             if (input) {
-                if (input.name == "For") {
-                    let inValue = node.inputs.get(field.name)
-                    ctorArgs[field.name] = `x${inValue.connections[0].output.key[3]}${ctx.nodeId(input)}`
-                    continue
-                }
-
-                ctorArgs[field.name] = ctx.nodeId(input)
+                const component = <LangComponent>ctx.editor.components.get(input.name)
+                ctorArgs[field.name] = component.getInputArgName(node, field.name, input, ctx)
                 continue
             }
 
@@ -505,7 +504,8 @@ export class If extends LangComponent {
         if (!inNode)
             return false
 
-        ctx.writeLine(node, `if (${ctx.nodeId(inNode)})`)
+        const component = <LangComponent>ctx.editor.components.get(inNode.name)
+        ctx.writeLine(node, `if (${component.getInputArgName(node, 'inValue', inNode, ctx)})`)
 
         const thenChildCtx = ctx.getChild()
         if (!LangComponent.constructDasFlowOut(node, thenChildCtx, 'then'))
@@ -542,7 +542,8 @@ export class While extends LangComponent {
         if (!inNode)
             return
 
-        ctx.writeLine(node, `while (${ctx.nodeId(inNode)})`)
+        const component = <LangComponent>ctx.editor.components.get(inNode.name)
+        ctx.writeLine(node, `while (${component.getInputArgName(node, 'inValue', inNode, ctx)})`)
 
         const childCtx = ctx.getChild()
         if (LangComponent.constructDasFlowOut(node, childCtx, 'body'))
@@ -683,6 +684,12 @@ export class For extends LangComponent {
             nodeRef.update()
     }
 
+    getInputArgName(node, argName, inNode, ctx): string {
+        let inValue = node.inputs.get(argName)
+        let i = inValue.connections[0].output.key[3]
+        return `x${i}${ctx.nodeId(inNode)}`
+    }
+
     constructDasNode(node, ctx) {
         let index_part = 'for '
         let range_part = ' in '
@@ -693,7 +700,8 @@ export class For extends LangComponent {
                 continue
 
             index_part += `x${i}_${node.id}, `
-            range_part += `${ctx.nodeId(inNode)}, `
+            const component = <LangComponent>ctx.editor.components.get(inNode.name)
+            range_part += `${component.getInputArgName(node, `range${i}`, inNode, ctx)}, `
         }
 
         ctx.writeLine(node, index_part.slice(0, -2) + range_part.slice(0, -2))
@@ -834,6 +842,17 @@ export class Function extends LangComponent {
             nodeRef.update()
     }
 
+    initOptionalInNode(node: Node, parentNode: Node, name: string, ctx: ConstructDasCtx): Node | null {
+        const inValue = parentNode.inputs.get(name)
+        if (!inValue || inValue.connections.length == 0) {
+            return null
+        }
+
+        const i = inValue.connections[0].output.key[3];
+        const inChildNode = LangComponent.constructOptionalInNode(node, `arg${i}`, ctx)
+        return inChildNode
+    }
+
     constructDas(node, ctx): void {
         let args = new Array<string>()
         const numArgs = node.data.numArgs ?? 0
@@ -845,18 +864,18 @@ export class Function extends LangComponent {
 
             let childStr
 
-            const argName = ctx.nodeId(inNode)
-            if (argNames.has(argName))
-                ctx.addError(node, `Duplicate argument name: ${argName}`)
-            argNames.add(argName)
-
             const component = <LangComponent>ctx.editor.components.get(inNode.name)
             if (!(component instanceof TypeCtor))
                 ctx.addError(node, `Unsupported argument type: ${inNode.name}`)
 
+            const argName = component.getInputArgName(node, `arg${i}`, inNode, ctx)
+            if (argNames.has(argName))
+                ctx.addError(node, `Duplicate argument name: ${argName}`)
+            argNames.add(argName)
+
             const connectionsNum = inNode.outputs.get(`result`)?.connections.length ?? 0
             if (connectionsNum > 1) {
-                childStr = `${ctx.nodeId(inNode)}`
+                childStr = `${argName}`
             } else {
                 const argInput = this.editor?.nodes.find(it => it.id == node.id)?.inputs.get(`arg${i}`)
                 if (!argInput)
@@ -870,7 +889,7 @@ export class Function extends LangComponent {
                     const string_value = String(inNode.data.value)
 
                     const val = type.ctor(string_value, ctorArgs)
-                    childStr = `${ctx.nodeId(inNode)} = ${val}`
+                    childStr = `${argName} = ${val}`
                 }
             }
 
@@ -960,8 +979,10 @@ export class Var extends Identifier {
 
     constructDasNode(node, ctx): void {
         const inNode = LangComponent.constructOptionalInNode(node, 'value', ctx)
-        if (inNode)
-            ctx.writeLine(node, `var ${ctx.nodeId(node)} = ${ctx.nodeId(inNode)}`)
+        if (inNode) {
+            const component = <LangComponent>ctx.editor.components.get(inNode.name)
+            ctx.writeLine(node, `var ${ctx.nodeId(node)} = ${component.getInputArgName(node, 'value', inNode, ctx)}`)
+        }
         else
             ctx.writeLine(node, `var ${ctx.nodeId(node)}: ${this.langCtx.getType(<string>node.data.typeName)?.desc.typeName}`)
     }
