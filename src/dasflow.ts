@@ -76,6 +76,13 @@ export class DasflowContext {
         return ctx
     }
 
+    displayResult(result) {
+        const sim = document.getElementById("sim_id")
+        sim!.hidden = false
+        const sim_res = document.getElementById("sim_res_id")
+        sim_res!.innerHTML = result
+    }
+
     async save(): Promise<SaveResult> {
         this.deleteComments(this.logComments)
         this.deleteComments(this.compileComments)
@@ -97,6 +104,10 @@ export class DasflowContext {
                 console.log(res.errors)
                 dasCtx.addNativeErrors(res.errors, this.currentFile)
             }
+
+            console.log(res.executeResult)
+            this.displayResult(res.executeResult)
+
             let temp = new Set(this.logComments)
             for (const comment of temp) {
                 // @ts-ignore

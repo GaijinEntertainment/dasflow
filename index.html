@@ -31,6 +31,21 @@
         <div class="node-editor"></div>
     </div>
     <div class="dock"></div>
+    <div class="simulation" id="sim_id" hidden="true">
+        <div class="simulation_result" id="sim_res_id" data-placeholder="Press 'save' in menu to see simulation result"></div>
+        <button onclick="document.getElementById('sim_res_id').innerHTML = '' ">clear</button>
+        <button onclick="document.getElementById('sim_id').hidden = true;
+                         document.getElementById('show_button_id').hidden = false;">
+            hide
+        </button>
+    </div>
+    <div id="show_button_id">
+        <button onclick="document.getElementById('sim_id').hidden = false;
+                         document.getElementById('show_button_id').hidden = true;"
+                style="width: 100px;">
+            show
+        </button>
+    </div>
 </div>
 <script type="text/typescript" src="src/main.ts"></script>
 </body>

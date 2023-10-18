@@ -29,7 +29,31 @@
     transform-origin: 50% 0;
 }
 
+.simulation {
+    position: absolute;
+    top: 105px;
+}
+
+.simulation_result {
+    width: 400px;
+    height: 150px;
+    overflow-x: auto;
+    overflow-y: auto;
+    font-size: 18px;
+    font-family: arial;
+    white-space: pre-wrap;
+    border: 2px solid #4e58bf;
+    border-radius: 10px;
+    padding: 6px;
+}
+
+.simulation_result:empty:not(:focus):before {
+    content: attr(data-placeholder);
+    color: rgba(150, 169, 255, 0.8);
+  }
+
 .container {
+    position: absolute;
     flex: 1;
     overflow: hidden;
 }
