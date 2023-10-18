@@ -77,6 +77,8 @@ export class DasflowContext {
     }
 
     displayResult(result) {
+        const button = document.getElementById("show_button_id")
+        button!.hidden = true
         const sim = document.getElementById("sim_id")
         sim!.hidden = false
         const sim_res = document.getElementById("sim_res_id")
