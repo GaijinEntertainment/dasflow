@@ -90,7 +90,7 @@ def files_load(filePath: string; id: uint64)
 
 
 [auto_rpc_call(name="files.save")]
-def files_save(filePath: string; data: string; code: string; name: string; id: uint64)
+def files_save(filePath: string; data: string; code: string; metaInfo: string; id: uint64)
     let path = flowsDir + filePath
     print("< req run save data `{path}`\n{data}\n")
     var saveOkay = false
@@ -99,12 +99,14 @@ def files_save(filePath: string; data: string; code: string; name: string; id: u
             saveOkay = true
             f |> fwrite("// ")
             f |> fwrite(data)
+            f |> fwrite("\n// ")
+            f |> fwrite(metaInfo)
             f |> fwrite("\n\n")
             f |> fwrite(code)
 
     var inscope access <- make_file_access("")
 
-    var mainFunction = name
+    var mainFunction = metaInfo
     var status : SaveStatus
     status.compiled = false
     status.simulated = false

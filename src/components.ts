@@ -1,7 +1,7 @@
 import Rete, {Engine, Input, Output, Socket} from 'rete'
 import {Node} from 'rete/types/node'
 import {NodeEditor} from 'rete/types/editor'
-import {LabelControl, LangTypeSelectControl, MultilineLabelControl, NumControl, TextInputControl} from "./controls"
+import {LabelControl, LangTypeSelectControl, MultilineLabelControl, NumControl, TextInputControl, CheckBoxControl} from "./controls"
 import {LangCoreDesc, LangDesc, LangFunctionDesc, LangTypeDesc} from "./lang"
 import {Component} from "rete/types"
 import { CompileError } from './rpc'
@@ -726,9 +726,17 @@ export class Function extends LangComponent {
 
     async builder(node) {
         this.addFlowOut(node)
+
+        node.addControl(new CheckBoxControl(this.editor, 'mainFuncMark', false))
+
+        node.addControl(new LabelControl(this.editor, 'annotation'))
+
         node.addControl(new LabelControl(this.editor, 'name'))
 
         node.addControl(new NumControl(this.editor, 'numArgs'))
+
+        if(node.data.typeName == null)
+            node.data.typeName = []
 
         const numArgs = node.data.numArgs ?? 0
         for (let i = 0; i < numArgs; i++) {
@@ -896,8 +904,11 @@ export class Function extends LangComponent {
             args.push(childStr)
         }
 
-        // TODO: add func annotations
-        ctx.writeLine(node, `[export]\ndef ${node.data.name}(${args.join('; ')})`)
+        if (node.data.mainFuncMark !== undefined)
+            if(node.data.mainFuncMark)
+                ctx.setMainFunc(node.data.name)
+
+        ctx.writeLine(node, `${node.data.annotation}\ndef ${node.data.name}(${args.join('; ')})`)
         const childCtx = ctx.getChild()
         if (LangComponent.constructDasFlowOut(node, childCtx))
             ctx.closeChild(childCtx)
@@ -1113,7 +1124,8 @@ export class ConstructDasCtx {
     private processedNodes = new Set<number>()
     private requiredNodes = new Set<number>()
     private lineToNode = new Map<number, number>()
-    private linesCount = 2
+    private linesCount = 3
+    private mainFunctions = new Array<string>()
 
     constructor(editor: NodeEditor) {
         this.editor = editor
@@ -1129,6 +1141,15 @@ export class ConstructDasCtx {
         res.processedNodes = this.processedNodes
         res.requiredNodes = this.requiredNodes
         return res
+    }
+
+    setMainFunc(name: string) {
+        this.mainFunctions.push(name)
+    }
+
+    getMainFunc() {
+        console.log(this.mainFunctions)
+        return this.mainFunctions[0]
     }
 
     writeLine(node: Node, str: string): void {

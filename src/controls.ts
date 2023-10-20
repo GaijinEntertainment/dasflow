@@ -119,6 +119,53 @@ export class NumControl extends Rete.Control {
 }
 
 
+const VueCheckBoxControl = {
+    props: ['readonly', 'emitter', 'ikey', 'defaultValue', 'getData', 'putData'],
+    template: '<div> <button type="button"> <label for="checkbox_id">main</label> </button>\n' +
+    '<input type="checkbox" id="checkbox_id" :readonly="readonly" :value="value" v-model="selected" @change="change($event)" @dblclick.stop="" @pointerdown.stop="" @pointermove.stop=""> </div>',
+    data() {
+        return {
+            value: this._props.defaultValue,
+            selected: this._props.defaultValue
+        }
+    },
+    methods: {
+        change(e) {
+            this.value = e.target.checked
+            this.update()
+        },
+        update() {
+            if (this.ikey)
+                this.putData(this.ikey, this.value)
+            this.emitter.trigger('process')
+        }
+    },
+    mounted() {
+        if(this.getData(this.ikey) != undefined)
+            this.value = this.getData(this.ikey)
+        else
+            this.value = this._props.defaultValue
+        this.selected = this.value
+    }
+}
+
+export class CheckBoxControl extends Rete.Control {
+    component: unknown
+    props: { [key: string]: unknown }
+    vueContext: any
+
+    constructor(emitter: NodeEditor | null, key: string, defaultValue: boolean, readonly: boolean = false) {
+        super(key)
+        this.component = VueCheckBoxControl
+        this.props = {emitter, ikey: key, defaultValue, readonly}
+    }
+
+    setValue(val: boolean) {
+        this.vueContext.value = val
+    }
+}
+
+
 const VueComboBoxControl = {
     props: ['readonly', 'emitter', 'ikey', 'keys', 'getData', 'putData'],
     template: '<select :value="value" v-on:change="change($event)" @dblclick.stop="" @pointerdown.stop="" @pointermove.stop="">\n' +

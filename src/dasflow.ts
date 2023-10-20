@@ -101,14 +101,14 @@ export class DasflowContext {
             this.editor?.trigger('removecomment', ({ comment }))
         }
 
-        return FilesRpc.save(this.websocket, this.editor, !hasErrors ? dasCtx.code : "", this.currentFile).then(res => {
+        return FilesRpc.save(this.websocket, this.editor, !hasErrors ? dasCtx.code : "", this.currentFile, dasCtx.getMainFunc()).then(res => {
             if (res.errors.length > 0) {
                 console.log(res.errors)
                 dasCtx.addNativeErrors(res.errors, this.currentFile)
             }
 
-            console.log(res.executeResult)
-            this.displayResult(res.executeResult)
+            if (res.simulated)
+                this.displayResult(res.executeResult)
 
             let temp = new Set(this.logComments)
             for (const comment of temp) {

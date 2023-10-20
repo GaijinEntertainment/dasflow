@@ -36,23 +36,9 @@ export namespace FilesRpc {
         })
     }
 
-    function find_main_func_name(data): string {
-        for (let id in data.nodes)
-            for (let elem in data.nodes[id])
-                if (elem == "data")
-                    for (let data_elem in data.nodes[id][elem])
-                        if (data_elem == "annotation" && data.nodes[id][elem][data_elem].includes("export"))
-                            for (let again in data.nodes[id][elem])
-                                if (again == "name")
-                                    return data.nodes[id][elem][again]
-        return ""
-    }
-
-    export async function save(ws: JsonRpcWebsocket, editor: NodeEditor, code: string, path: string): Promise<SaveResult> {
-        let main_func = find_main_func_name(editor.toJSON())
-
+    export async function save(ws: JsonRpcWebsocket, editor: NodeEditor, code: string, path: string, mainFunc: string): Promise<SaveResult> {
         const data = JSON.stringify(editor.toJSON())
-        return ws.call('files.save', [path, data, code, main_func]).then(res => <SaveResult>res.result)
+        return ws.call('files.save', [path, data, code, mainFunc]).then(res => <SaveResult>res.result)
     }
 }
 
