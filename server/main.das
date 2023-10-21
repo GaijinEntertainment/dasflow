@@ -15,8 +15,8 @@ require dasweb/agent_jsonrpc_boost
 
 require lang
 
-var jsonRpc: JsonRpcHandler?
-var server: WebServer?
+// var jsonRpc: JsonRpcHandler?
+// var server: WebServer?
 
 var flowsDir = "flows/"
 var compilerPath: string
@@ -31,7 +31,11 @@ struct CompileError
 struct SaveStatus
     saved : bool
     compiled : bool
+    simulated : bool
     errors : array<CompileError>
+    executeExitCode : int
+    executeError : string
+    executeResult : string
 
 [export]
 def main()
@@ -86,7 +90,7 @@ def files_load(filePath: string; id: uint64)
 
 
 [auto_rpc_call(name="files.save")]
-def files_save(filePath: string; data: string; code: string; id: uint64)
+def files_save(filePath: string; data: string; code: string; metaInfo: string; id: uint64)
     let path = flowsDir + filePath
     print("< req run save data `{path}`\n{data}\n")
     var saveOkay = false
@@ -95,16 +99,23 @@ def files_save(filePath: string; data: string; code: string; id: uint64)
             saveOkay = true
             f |> fwrite("// ")
             f |> fwrite(data)
+            f |> fwrite("\n// ")
+            f |> fwrite(metaInfo)
             f |> fwrite("\n\n")
             f |> fwrite(code)
 
     var inscope access <- make_file_access("")
 
+    var mainFunction = metaInfo
+    var status : SaveStatus
+    status.compiled = false
+    status.simulated = false
+
     using <| $(var mg:ModuleGroup)
         using <| $(var cop:CodeOfPolicies)
             cop.aot_module = true
             compile_file(path, access, unsafe(addr(mg)), cop) <| $(compileOkay, program, output)
-                var status : SaveStatus
+                // var status : SaveStatus
                 status.saved = saveOkay
                 status.compiled = compileOkay
                 for err in program.errors
@@ -113,7 +124,38 @@ def files_save(filePath: string; data: string; code: string; id: uint64)
                 debug(program)
                 debug(output)
                 debug(status)
-                send_response(JV(status), id)
+
+                if !compileOkay
+                    return
+
+                simulate(program) <| $(simulateOkey, context, serrors)
+                    status.simulated = simulateOkey
+                    debug(serrors)
+                    debug(status)
+
+                    if simulateOkey
+                        return
+
+                    for err in program.errors
+                        status.errors |> emplace([[CompileError message=string(err.what), file=string(err.at.fileInfo.name),
+                                                                line=err.at.line, fixme=string(err.fixme), extra=string(err.extra)]])
+    if !status.simulated
+        send_response(JV(status), id)
+        return
+
+    var args <- get_command_line_arguments() // args[0] == 'dascript'
+    unsafe
+        var execArg = "{args[0]} {path} -main {mainFunction}"
+        status.executeExitCode = popen(execArg) <| $(f)
+            if f == null
+                status.executeError = "Internal error: Failed to execute cmd > {execArg}"
+                return
+            while !feof(f)
+                let st = fgets(f)
+                status.executeResult += st
+
+    debug(status)
+    send_response(JV(status), id)
 
 
 [auto_rpc_call(name="files.list")]

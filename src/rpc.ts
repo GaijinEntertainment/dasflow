@@ -16,7 +16,11 @@ export interface SaveResult
 {
     saved : boolean
     compiled : boolean
+    simulated : boolean
     errors : CompileError[]
+    executeExitCode : number
+    executeError : string
+    executeResult : string
 }
 
 export namespace FilesRpc {
@@ -32,9 +36,9 @@ export namespace FilesRpc {
         })
     }
 
-    export async function save(ws: JsonRpcWebsocket, editor: NodeEditor, code: string, path: string): Promise<SaveResult> {
+    export async function save(ws: JsonRpcWebsocket, editor: NodeEditor, code: string, path: string, mainFunc: string): Promise<SaveResult> {
         const data = JSON.stringify(editor.toJSON())
-        return ws.call('files.save', [path, data, code]).then(res => <SaveResult>res.result)
+        return ws.call('files.save', [path, data, code, mainFunc]).then(res => <SaveResult>res.result)
     }
 }
 
