@@ -1,0 +1,30 @@
+{
+	"funcAnnotations" : [
+		"marker",
+		"generic",
+		"_macro",
+		"macro_function",
+		"hint",
+		"jit",
+		"deprecated",
+		"alias_cmres",
+		"never_alias_cmres",
+		"export",
+		"pinvoke",
+		"no_lint",
+		"sideeffects",
+		"run",
+		"unsafe_operation",
+		"unsafe_outside_of_for",
+		"no_aot",
+		"init",
+		"finalize",
+		"hybrid",
+		"unsafe_deref",
+		"skip_lock_check",
+		"unused_argument",
+		"local_only",
+		"expect_any_vector",
+		"builtin_array_sort"
+	]
+}

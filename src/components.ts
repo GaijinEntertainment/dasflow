@@ -1,8 +1,8 @@
 import Rete, {Engine, Input, Output, Socket} from 'rete'
 import {Node} from 'rete/types/node'
 import {NodeEditor} from 'rete/types/editor'
-import {LabelControl, LangTypeSelectControl, MultilineLabelControl, NumControl, TextInputControl, CheckBoxControl} from "./controls"
-import {LangCoreDesc, LangDesc, LangFunctionDesc, LangTypeDesc} from "./lang"
+import {LabelControl, LangTypeSelectControl, MultilineLabelControl, NumControl, TextInputControl, CheckBoxControl, AutocomplitComboBoxControl} from "./controls"
+import {LangCoreDesc, LangDesc, LangFunctionDesc, LangTypeDesc, LangExtraInfo} from "./lang"
 import {Component} from "rete/types"
 import { CompileError } from './rpc'
 
@@ -15,6 +15,7 @@ const flowSocket = new Rete.Socket('exec-flow')
 class LangCtx {
     allTypes = new Map</*mn*/string, LangType>()
     allFunctions = new Array<LangFunction>()
+    allFuncAnnotations: Array<string>
     anyType: LangType
     logicType: LangType
 
@@ -128,9 +129,11 @@ export class LangFunction {
 }
 
 
-export function generateCoreNodes(langCore: LangCoreDesc, lang: LangDesc, editor: NodeEditor, engine: Engine) {
+export function generateCoreNodes(langCore: LangCoreDesc, lang: LangDesc, extra: LangExtraInfo, editor: NodeEditor, engine: Engine) {
     const langCtx = new LangCtx()
     const coreTypes = new Map</*mn*/string, LangTypeDesc>()
+    langCtx.allFuncAnnotations = [...extra.funcAnnotations]
+
     for (const typeDesc of langCore.types ?? [])
         coreTypes.set(typeDesc.mn, typeDesc)
 
@@ -729,7 +732,7 @@ export class Function extends LangComponent {
 
         node.addControl(new CheckBoxControl(this.editor, 'mainFuncMark', false))
 
-        node.addControl(new LabelControl(this.editor, 'annotation'))
+        node.addControl(new AutocomplitComboBoxControl(this.editor, 'annotation', this.langCtx.allFuncAnnotations))
 
         node.addControl(new LabelControl(this.editor, 'name'))
 
@@ -908,7 +911,7 @@ export class Function extends LangComponent {
             if(node.data.mainFuncMark)
                 ctx.setMainFunc(node.data.name)
 
-        ctx.writeLine(node, `${node.data.annotation}\ndef ${node.data.name}(${args.join('; ')})`)
+        ctx.writeLine(node, `[${node.data.annotation}]\ndef ${node.data.name}(${args.join('; ')})`)
         const childCtx = ctx.getChild()
         if (LangComponent.constructDasFlowOut(node, childCtx))
             ctx.closeChild(childCtx)

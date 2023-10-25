@@ -1,6 +1,6 @@
 import {JsonRpcWebsocket} from "jsonrpc-client-websocket"
 import {NodeEditor} from "rete/types/editor"
-import {LangCoreDesc, LangDesc} from "./lang"
+import {LangCoreDesc, LangDesc, LangExtraInfo} from "./lang"
 
 
 export interface CompileError
@@ -52,6 +52,12 @@ export namespace LangRpc {
     export async function getLang(ws: JsonRpcWebsocket): Promise<LangDesc> {
         return ws.call("lang.get").then(res => {
             return <LangDesc> JSON.parse(res.result)
+        })
+    }
+
+    export async function getExtraInfo(ws: JsonRpcWebsocket): Promise<LangExtraInfo> {
+        return ws.call("lang.getExtra").then(res => {
+            return <LangExtraInfo> JSON.parse(res.result)
         })
     }
 

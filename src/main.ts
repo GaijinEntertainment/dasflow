@@ -39,7 +39,8 @@ import {Component} from "rete/types"
 
     const langCore = await LangRpc.getLangCore(websocket)
     const lang = await LangRpc.getLang(websocket)
-    generateCoreNodes(langCore, lang, editor, engine)
+    const extra = await LangRpc.getExtraInfo(websocket)
+    generateCoreNodes(langCore, lang, extra, editor, engine)
 
 
     const defaultFileMenu = {

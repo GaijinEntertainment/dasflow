@@ -57,6 +57,7 @@ def initialize()
     ctx.modules <- [{string[] "$"; "math"; "strings"}]
     ctx.ignoredArgumentTypes <- [{string[] "C_c"; "C_l"}]
     dumpModules(ctx, "lang/dump.json")
+    dumpExtra(ctx, "lang/extra.json")
 
 
 [export]
@@ -198,6 +199,19 @@ def lang_get(id: uint64)
     if !ok
         send_response(JVNull(), id)
 
+
+[auto_rpc_call(name="lang.getExtra")]
+def lang_getExtra(id: uint64)
+    print("< req lang.getExtra\n")
+    var ok = false
+
+    fopen("lang/extra.json", "rb") <| $(f)
+        if f != null
+            f |> fread <| $(data)
+                ok = false
+                send_response(JV("{data}"), id)
+    if !ok
+        send_response(JVNull(), id)
 
 
 [auto_rpc_call(name="lang.execute")]

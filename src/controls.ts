@@ -206,6 +206,47 @@ export class ComboBoxControl extends Rete.Control {
     }
 }
 
+const VueAutocomplitComboBoxControl = {
+    props: ['readonly', 'emitter', 'ikey', 'keys', 'getData', 'putData'],
+    template: '<div> <input list="combobox_id" :value="value" @change="change($event)" @dblclick.stop="" @pointerdown.stop="" @pointermove.stop=""/>\n' +
+        '<datalist id="combobox_id">\n' +
+        '   <option v-for="(v,i) in keys" :value="v">{{ v }}</option>\n' +
+        '</datalist> </div>',
+    data() {
+        return {value: "",}
+    },
+    methods: {
+        change(e) {
+            this.value = e.target.value
+            this.update()
+        },
+        update() {
+            if (this.ikey)
+                this.putData(this.ikey, this.value)
+            this.emitter.trigger('process')
+        }
+    },
+    mounted() {
+        this.value = this.getData(this.ikey)
+    }
+}
+
+export class AutocomplitComboBoxControl extends Rete.Control {
+    component: unknown
+    props: { [key: string]: unknown }
+    vueContext: any
+
+    constructor(emitter: NodeEditor | null, key: string, keys: { [key: string]: any }, readonly: boolean = false) {
+        super(key)
+        this.component = VueAutocomplitComboBoxControl
+        this.props = {emitter, ikey: key, readonly, keys}
+    }
+
+    setValue(val: string) {
+        this.vueContext.value = val
+    }
+}
+
 const VueTextInputControl = {
     props: ['readonly', 'emitter', 'ikey', 'getData', 'putData', 'bindControl'],
     template: '<span>' +
