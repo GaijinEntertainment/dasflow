@@ -11,7 +11,7 @@ import {JsonRpcError, JsonRpcWebsocket} from "jsonrpc-client-websocket"
 import {generateCoreNodes, LangComponent} from "./components"
 
 import {DasflowContext} from "./dasflow"
-import {LangRpc} from "./rpc"
+import {LangRpc, FileType} from "./rpc"
 import {Component} from "rete/types"
 
 
@@ -56,32 +56,38 @@ import {Component} from "rete/types"
         // delete() { // TODO:
         // }
     }
-    const currentFileMenu = {}
 
     const filesMenu = {
-        'current file': currentFileMenu,
         // create() {
         //     throw "not implemented" // TODO:
         // }
     }
+    const modulesMenu = {}
+
     const filePrefix = './'
-    const refreshFilesList = () => {
-        ctx.refreshFilesList().then((files) => {
-            for (const k of Object.keys(filesMenu)) {
+    const refreshFilesList = (menu, type) => {
+        ctx.refreshFilesList(type).then((files) => {
+            for (const k of Object.keys(menu)) {
                 if (k.startsWith(filePrefix))
-                    delete filesMenu[k]
+                    delete menu[k]
             }
             if (!files)
                 return
             for (const fn of files)
-                filesMenu[`${filePrefix}${fn}`] = {
+                menu[`${filePrefix}${fn}`] = {
                     load() {
-                        ctx.loadFile(fn)
+                        ctx.loadFile(fn, type)
                     },
                 }
         })
     }
-    filesMenu['refresh list'] = refreshFilesList
+    const refreshFiles = function() { refreshFilesList(filesMenu, FileType.Script) }
+    const refreshModules = function() { refreshFilesList(modulesMenu, FileType.Module) }
+
+    filesMenu['refresh list'] = refreshFiles
+    modulesMenu['refresh list'] = refreshModules
+
+    const currentFileMenu = {}
 
     ctx.onCurrentNameChange.subscribe((val) => {
         for (let key of Object.keys(currentFileMenu)) {
@@ -107,7 +113,9 @@ import {Component} from "rete/types"
                 console.log(dasCtx.code)
                 dasCtx.logErrors()
             },
-            files: filesMenu
+            'current file': currentFileMenu,
+            files: filesMenu,
+            modules: modulesMenu
         },
         allocate(component: Component) {
             return (<LangComponent>component).group
@@ -143,6 +151,7 @@ import {Component} from "rete/types"
         }
     }
 
-    refreshFilesList()
+    refreshFiles()
+    refreshModules()
     await ctx.firstStart()
 })()

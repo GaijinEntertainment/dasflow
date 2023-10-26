@@ -23,22 +23,28 @@ export interface SaveResult
     executeResult : string
 }
 
+export const FileType = {
+    Module: "M",
+    Script: "S",
+    None: "N"
+}
+
 export namespace FilesRpc {
-    export async function list(ws: JsonRpcWebsocket): Promise<string[]> {
-        return ws.call('files.list').then(res => <string[]>res.result)
+    export async function list(ws: JsonRpcWebsocket, type: string): Promise<string[]> {
+        return ws.call('files.list', type).then(res => <string[]>res.result)
     }
 
-    export async function load(ws: JsonRpcWebsocket, editor: NodeEditor, path: string): Promise<boolean> {
-        return ws.call('files.load', path).then(res => {
+    export async function load(ws: JsonRpcWebsocket, editor: NodeEditor, path: string, type: string): Promise<boolean> {
+        return ws.call('files.load', [path, type]).then(res => {
             const str = String(res.result)
             const data = JSON.parse(str)
             return editor.fromJSON(data)
         })
     }
 
-    export async function save(ws: JsonRpcWebsocket, editor: NodeEditor, code: string, path: string, mainFunc: string): Promise<SaveResult> {
+    export async function save(ws: JsonRpcWebsocket, editor: NodeEditor, code: string, path: string, type: string, mainFunc: string): Promise<SaveResult> {
         const data = JSON.stringify(editor.toJSON())
-        return ws.call('files.save', [path, data, code, mainFunc]).then(res => <SaveResult>res.result)
+        return ws.call('files.save', [path, type, data, code, mainFunc]).then(res => <SaveResult>res.result)
     }
 }
 
