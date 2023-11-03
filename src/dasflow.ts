@@ -19,6 +19,10 @@ export class DasflowContext {
         return this._currentFile
     }
 
+    public get ctxFile(): string {
+        return this._currentFile
+    }
+
     private readonly websocket: JsonRpcWebsocket
     public editor: NodeEditor
     private _currentFile = 'demo.dasflow'
@@ -59,6 +63,10 @@ export class DasflowContext {
             this.currentFile = path
         })
         return res
+    }
+
+    async getFileData(path: string, fileType: string): Promise<string> {
+        return FilesRpc.getData(this.websocket, this.editor, path, fileType)
     }
 
     async reload(): Promise<boolean> {

@@ -46,6 +46,12 @@ export namespace FilesRpc {
         const data = JSON.stringify(editor.toJSON())
         return ws.call('files.save', [path, type, data, code, mainFunc]).then(res => <SaveResult>res.result)
     }
+
+    export async function getData(ws: JsonRpcWebsocket, editor: NodeEditor, path: string, type: string): Promise<string> {
+        return ws.call('files.load', [path, type]).then(res => {
+            return String(res.result)
+        })
+    }
 }
 
 export namespace LangRpc {

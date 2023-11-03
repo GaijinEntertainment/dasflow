@@ -1,7 +1,7 @@
 import Rete, {Engine, Input, Output, Socket} from 'rete'
 import {Node} from 'rete/types/node'
 import {NodeEditor} from 'rete/types/editor'
-import {LabelControl, LangTypeSelectControl, MultilineLabelControl, NumControl, TextInputControl, CheckBoxControl, AutocomplitComboBoxControl} from "./controls"
+import {LabelControl, LangTypeSelectControl, MultilineLabelControl, NumControl, TextInputControl, CheckBoxControl, AutocomplitComboBoxControl, ComboBoxControl} from "./controls"
 import {LangCoreDesc, LangDesc, LangFunctionDesc, LangTypeDesc, LangExtraInfo} from "./lang"
 import {Component} from "rete/types"
 import { CompileError } from './rpc'
@@ -145,9 +145,6 @@ export function generateCoreNodes(langCore: LangCoreDesc, lang: LangDesc, extra:
         }
     }
 
-    const comps: Component[] = [new InjectTopLevelCode(), new InjectCode(), new Sequence(), new Var(langCtx),
-        new Function(langCtx), new If(langCtx), new While(langCtx), new For(langCtx)]
-
     for (const typeDesc of lang.types ?? []) {
         if (langCore.anyTypes.indexOf(typeDesc.mn) >= 0)
             continue
@@ -162,6 +159,17 @@ export function generateCoreNodes(langCore: LangCoreDesc, lang: LangDesc, extra:
         if (typeDesc.mn == langCore.logicType)
             langCtx.logicType = type
     }
+
+    for (const type of langCtx.allTypes.values()) {
+        if (type.isAny) {
+            langCtx.anyType = type
+            break
+        }
+    }
+
+    const comps: Component[] = [new InjectTopLevelCode(), new InjectCode(), new Sequence(), new Var(langCtx),
+        new Function(langCtx), new If(langCtx), new While(langCtx), new For(langCtx), new ModuleComponent(),
+        new InputComponent(langCtx), new OutputComponent(langCtx)]
 
     for (const coreType of coreTypes.values()) {
         if (langCore.voidTypes.indexOf(coreType.mn) >= 0 || langCore.anyTypes.indexOf(coreType.mn) >= 0)
@@ -200,13 +208,6 @@ export function generateCoreNodes(langCore: LangCoreDesc, lang: LangDesc, extra:
         langCtx.allFunctions.push(langFunction)
         const fn = new LangFunc(func.mn, ['core'], langFunction, resType, langCtx)
         comps.push(fn)
-    }
-
-    for (const type of langCtx.allTypes.values()) {
-        if (type.isAny) {
-            langCtx.anyType = type
-            break
-        }
     }
 
     for (let comp of comps) {
@@ -480,6 +481,85 @@ export class LangFunc extends LangComponent {
                 ctx.writeLine(node, `let ${ctx.nodeId(node)} = ${val}`)
         } else
             ctx.setNodeRes(node, val)
+    }
+}
+
+
+export class InputComponent extends LangComponent {
+    private readonly langCtx: LangCtx
+
+    constructor(langCtx: LangCtx) {
+        super("Input")
+        this.langCtx = langCtx
+        // @ts-ignore
+        this.module = {
+            nodeType: 'input',
+            socket: this.langCtx.anyType.getSocket()
+        }
+    }
+
+    async builder(node) {
+        node.addControl(new LabelControl(this.editor, 'name'))
+        node.addOutput(new Rete.Output('output', "Number", this.langCtx.anyType.getSocket()))
+    }
+
+    constructDasNode(node: Node, ctx: ConstructDasCtx): void {
+    }
+}
+
+
+export class OutputComponent extends LangComponent {
+    private readonly langCtx: LangCtx
+
+    constructor(langCtx: LangCtx) {
+        super("Output")
+        this.langCtx = langCtx
+        // @ts-ignore
+        this.module = {
+            nodeType: 'output',
+            socket: this.langCtx.anyType.getSocket()
+        }
+    }
+
+    async builder(node) {
+        node.addControl(new LabelControl(this.editor, 'name'))
+        node.addInput(new Rete.Input('input', "Number", this.langCtx.anyType.getSocket()))
+    }
+
+    constructDasNode(node: Node, ctx: ConstructDasCtx): void {
+    }
+}
+
+
+export class ModuleComponent extends LangComponent {
+    constructor() {
+        super("Module")
+        // @ts-ignore
+        this.module = {
+            nodeType: 'module'
+        }
+    }
+
+    async builder(node) {
+        var ctrl = new ComboBoxControl(this.editor, 'module', ["", "./firstModule.dasflow"]);
+        ctrl.component.methods.onChange = () => {
+            this.updateModuleSockets(node)
+            node.update()
+        }
+        node.addControl(ctrl)
+    }
+
+    updateModuleSockets(node) { console.assert() }
+
+    // change(node, item) {
+    //     if (!this.editor)
+    //         return false
+
+    //     node.data.module = item;
+    //     this.editor.trigger('process')
+    // }
+
+    constructDasNode(node: Node, ctx: ConstructDasCtx): void {
     }
 }
 

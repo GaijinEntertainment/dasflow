@@ -169,7 +169,7 @@ export class CheckBoxControl extends Rete.Control {
 const VueComboBoxControl = {
     props: ['readonly', 'emitter', 'ikey', 'keys', 'getData', 'putData'],
     template: '<select :value="value" v-on:change="change($event)" @dblclick.stop="" @pointerdown.stop="" @pointermove.stop="">\n' +
-        '   <option v-for="(v,k,i) of keys" :selected="i==0">{{ k }}</option>\n' +
+        '   <option v-for="(v,i) of keys" :selected="i==0">{{ v }}</option>\n' +
         '</select>',
     data() {
         return {value: "",}
@@ -178,12 +178,14 @@ const VueComboBoxControl = {
         change(e) {
             this.value = e.target.value
             this.update()
+            this.onChange()
         },
         update() {
             if (this.ikey)
                 this.putData(this.ikey, this.value)
             this.emitter.trigger('process')
-        }
+        },
+        onChange() { console.assert() }
     },
     mounted() {
         this.value = this.getData(this.ikey)
@@ -191,7 +193,7 @@ const VueComboBoxControl = {
 }
 
 export class ComboBoxControl extends Rete.Control {
-    component: unknown
+    component: any
     props: { [key: string]: unknown }
     vueContext: any
 
