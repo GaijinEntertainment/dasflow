@@ -18,7 +18,8 @@ require lang
 // var jsonRpc: JsonRpcHandler?
 // var server: WebServer?
 
-var flowsDir = "flows/"
+var flowsDir: string
+var modulesDir: string
 var compilerPath: string
 
 struct CompileError
@@ -37,6 +38,17 @@ struct SaveStatus
     executeError : string
     executeResult : string
 
+def private get_arg(args: array<string>; name: string; defVal: string) : string
+    let idx = find_index(args, name)
+    return idx >= 0 && (idx + 1 < length(args)) ? args[idx + 1] : defVal
+
+def private get_folder(fileType: string) : string
+    if fileType == "M" //TODO: add typing
+        return modulesDir
+    if fileType == "S"
+        return flowsDir
+    return ""
+
 [export]
 def main()
     initialize()
@@ -50,6 +62,8 @@ def initialize()
 
     let args <- get_command_line_arguments()
     compilerPath = args[0]
+    flowsDir = args |> get_arg("--scripts", "flows/")
+    modulesDir = args |> get_arg("--modules", "modules/")
 
     start_agent()
 
@@ -57,6 +71,7 @@ def initialize()
     ctx.modules <- [{string[] "$"; "math"; "strings"}]
     ctx.ignoredArgumentTypes <- [{string[] "C_c"; "C_l"}]
     dumpModules(ctx, "lang/dump.json")
+    dumpExtra(ctx, "lang/extra.json")
 
 
 [export]
@@ -71,8 +86,8 @@ def shutdown()
 
 
 [auto_rpc_call(name="files.load")]
-def files_load(filePath: string; id: uint64)
-    let path = flowsDir + filePath
+def files_load(filePath: string; fileType: string; id: uint64)
+    let path = get_folder(fileType) + filePath
     print("< req load data `{path}`\n")
 
     var ok = false
@@ -90,8 +105,8 @@ def files_load(filePath: string; id: uint64)
 
 
 [auto_rpc_call(name="files.save")]
-def files_save(filePath: string; data: string; code: string; metaInfo: string; id: uint64)
-    let path = flowsDir + filePath
+def files_save(filePath: string; fileType: string; data: string; code: string; metaInfo: string; id: uint64)
+    let path = get_folder(fileType) + filePath
     print("< req run save data `{path}`\n{data}\n")
     var saveOkay = false
     fopen(path, "wb") <| $(f)
@@ -159,10 +174,10 @@ def files_save(filePath: string; data: string; code: string; metaInfo: string; i
 
 
 [auto_rpc_call(name="files.list")]
-def files_list(id: uint64)
+def files_list(fileType: string; id: uint64)
     var files: array<string>
-    scan_dir(flowsDir, files)
-    let flowsDirLen = length(flowsDir)
+    scan_dir(get_folder(fileType), files)
+    let flowsDirLen = length(get_folder(fileType))
     for f in files
         f = f |> slice(flowsDirLen)
     print("< req files\n{files}\n")
@@ -198,6 +213,19 @@ def lang_get(id: uint64)
     if !ok
         send_response(JVNull(), id)
 
+
+[auto_rpc_call(name="lang.getExtra")]
+def lang_getExtra(id: uint64)
+    print("< req lang.getExtra\n")
+    var ok = false
+
+    fopen("lang/extra.json", "rb") <| $(f)
+        if f != null
+            f |> fread <| $(data)
+                ok = false
+                send_response(JV("{data}"), id)
+    if !ok
+        send_response(JVNull(), id)
 
 
 [auto_rpc_call(name="lang.execute")]

@@ -30,6 +30,7 @@
     "rete-connection-plugin": "^0.9.0",
     "rete-context-menu-plugin": "0.6.0",
     "rete-vue-render-plugin": "0.5.1",
+    "rete-module-plugin": "0.4.2",
     "sub-events": "^1.8.9",
     "vue": "^2.6.14"
   }

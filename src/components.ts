@@ -1,8 +1,8 @@
 import Rete, {Engine, Input, Output, Socket} from 'rete'
 import {Node} from 'rete/types/node'
 import {NodeEditor} from 'rete/types/editor'
-import {LabelControl, LangTypeSelectControl, MultilineLabelControl, NumControl, TextInputControl, CheckBoxControl} from "./controls"
-import {LangCoreDesc, LangDesc, LangFunctionDesc, LangTypeDesc} from "./lang"
+import {LabelControl, LangTypeSelectControl, MultilineLabelControl, NumControl, TextInputControl, CheckBoxControl, AutocomplitComboBoxControl, ComboBoxControl} from "./controls"
+import {LangCoreDesc, LangDesc, LangFunctionDesc, LangTypeDesc, LangExtraInfo} from "./lang"
 import {Component} from "rete/types"
 import { CompileError } from './rpc'
 
@@ -15,6 +15,7 @@ const flowSocket = new Rete.Socket('exec-flow')
 class LangCtx {
     allTypes = new Map</*mn*/string, LangType>()
     allFunctions = new Array<LangFunction>()
+    allFuncAnnotations: Array<string>
     anyType: LangType
     logicType: LangType
 
@@ -128,9 +129,11 @@ export class LangFunction {
 }
 
 
-export function generateCoreNodes(langCore: LangCoreDesc, lang: LangDesc, editor: NodeEditor, engine: Engine) {
+export function generateCoreNodes(langCore: LangCoreDesc, lang: LangDesc, extra: LangExtraInfo, editor: NodeEditor, engine: Engine) {
     const langCtx = new LangCtx()
     const coreTypes = new Map</*mn*/string, LangTypeDesc>()
+    langCtx.allFuncAnnotations = [...extra.funcAnnotations]
+
     for (const typeDesc of langCore.types ?? [])
         coreTypes.set(typeDesc.mn, typeDesc)
 
@@ -141,9 +144,6 @@ export function generateCoreNodes(langCore: LangCoreDesc, lang: LangDesc, editor
             break
         }
     }
-
-    const comps: Component[] = [new InjectTopLevelCode(), new InjectCode(), new Sequence(), new Var(langCtx),
-        new Function(langCtx), new If(langCtx), new While(langCtx), new For(langCtx)]
 
     for (const typeDesc of lang.types ?? []) {
         if (langCore.anyTypes.indexOf(typeDesc.mn) >= 0)
@@ -159,6 +159,17 @@ export function generateCoreNodes(langCore: LangCoreDesc, lang: LangDesc, editor
         if (typeDesc.mn == langCore.logicType)
             langCtx.logicType = type
     }
+
+    for (const type of langCtx.allTypes.values()) {
+        if (type.isAny) {
+            langCtx.anyType = type
+            break
+        }
+    }
+
+    const comps: Component[] = [new InjectTopLevelCode(), new InjectCode(), new Sequence(), new Var(langCtx),
+        new Function(langCtx), new If(langCtx), new While(langCtx), new For(langCtx), new ModuleComponent(),
+        new InputComponent(langCtx), new OutputComponent(langCtx)]
 
     for (const coreType of coreTypes.values()) {
         if (langCore.voidTypes.indexOf(coreType.mn) >= 0 || langCore.anyTypes.indexOf(coreType.mn) >= 0)
@@ -197,13 +208,6 @@ export function generateCoreNodes(langCore: LangCoreDesc, lang: LangDesc, editor
         langCtx.allFunctions.push(langFunction)
         const fn = new LangFunc(func.mn, ['core'], langFunction, resType, langCtx)
         comps.push(fn)
-    }
-
-    for (const type of langCtx.allTypes.values()) {
-        if (type.isAny) {
-            langCtx.anyType = type
-            break
-        }
     }
 
     for (let comp of comps) {
@@ -481,6 +485,85 @@ export class LangFunc extends LangComponent {
 }
 
 
+export class InputComponent extends LangComponent {
+    private readonly langCtx: LangCtx
+
+    constructor(langCtx: LangCtx) {
+        super("Input")
+        this.langCtx = langCtx
+        // @ts-ignore
+        this.module = {
+            nodeType: 'input',
+            socket: this.langCtx.anyType.getSocket()
+        }
+    }
+
+    async builder(node) {
+        node.addControl(new LabelControl(this.editor, 'name'))
+        node.addOutput(new Rete.Output('output', "Number", this.langCtx.anyType.getSocket()))
+    }
+
+    constructDasNode(node: Node, ctx: ConstructDasCtx): void {
+    }
+}
+
+
+export class OutputComponent extends LangComponent {
+    private readonly langCtx: LangCtx
+
+    constructor(langCtx: LangCtx) {
+        super("Output")
+        this.langCtx = langCtx
+        // @ts-ignore
+        this.module = {
+            nodeType: 'output',
+            socket: this.langCtx.anyType.getSocket()
+        }
+    }
+
+    async builder(node) {
+        node.addControl(new LabelControl(this.editor, 'name'))
+        node.addInput(new Rete.Input('input', "Number", this.langCtx.anyType.getSocket()))
+    }
+
+    constructDasNode(node: Node, ctx: ConstructDasCtx): void {
+    }
+}
+
+
+export class ModuleComponent extends LangComponent {
+    constructor() {
+        super("Module")
+        // @ts-ignore
+        this.module = {
+            nodeType: 'module'
+        }
+    }
+
+    async builder(node) {
+        var ctrl = new ComboBoxControl(this.editor, 'module', ["", "./firstModule.dasflow"]);
+        ctrl.component.methods.onChange = () => {
+            this.updateModuleSockets(node)
+            node.update()
+        }
+        node.addControl(ctrl)
+    }
+
+    updateModuleSockets(node) { console.assert() }
+
+    // change(node, item) {
+    //     if (!this.editor)
+    //         return false
+
+    //     node.data.module = item;
+    //     this.editor.trigger('process')
+    // }
+
+    constructDasNode(node: Node, ctx: ConstructDasCtx): void {
+    }
+}
+
+
 export class If extends LangComponent {
     private readonly langCtx: LangCtx
 
@@ -729,7 +812,7 @@ export class Function extends LangComponent {
 
         node.addControl(new CheckBoxControl(this.editor, 'mainFuncMark', false))
 
-        node.addControl(new LabelControl(this.editor, 'annotation'))
+        node.addControl(new AutocomplitComboBoxControl(this.editor, 'annotation', this.langCtx.allFuncAnnotations))
 
         node.addControl(new LabelControl(this.editor, 'name'))
 
@@ -908,7 +991,7 @@ export class Function extends LangComponent {
             if(node.data.mainFuncMark)
                 ctx.setMainFunc(node.data.name)
 
-        ctx.writeLine(node, `${node.data.annotation}\ndef ${node.data.name}(${args.join('; ')})`)
+        ctx.writeLine(node, `[${node.data.annotation}]\ndef ${node.data.name}(${args.join('; ')})`)
         const childCtx = ctx.getChild()
         if (LangComponent.constructDasFlowOut(node, childCtx))
             ctx.closeChild(childCtx)

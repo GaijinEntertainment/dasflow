@@ -48,3 +48,7 @@ export interface LangDesc {
     types?: LangTypeDesc[]
     functions?: LangFunctionDesc[]
 }
+
+export interface LangExtraInfo {
+    funcAnnotations: string[]
+}

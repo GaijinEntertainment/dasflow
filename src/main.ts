@@ -5,13 +5,13 @@ import ConnectionPlugin from 'rete-connection-plugin'
 import VueRenderPlugin from 'rete-vue-render-plugin'
 import ContextMenuPlugin from 'rete-context-menu-plugin'
 import CommentPlugin from 'rete-comment-plugin'
-// import DockPlugin from 'rete-dock-plugin'
+import ModulePlugin from 'rete-module-plugin'
 import {JsonRpcError, JsonRpcWebsocket} from "jsonrpc-client-websocket"
 
 import {generateCoreNodes, LangComponent} from "./components"
 
 import {DasflowContext} from "./dasflow"
-import {LangRpc} from "./rpc"
+import {LangRpc, FileType} from "./rpc"
 import {Component} from "rete/types"
 
 
@@ -37,9 +37,23 @@ import {Component} from "rete/types"
     //     itemClass: 'dock-item', // default: dock-item
     // })
 
+    var modules = {}
+    const filePrefix = './'
+
+    for (const type in FileType)
+        ctx.refreshFilesList(FileType[type]).then((files) => {
+            for (const fn of files) {
+                ctx.getFileData(fn, FileType[type]).then((temp) => {
+                    modules[`${filePrefix}${fn}`] = { data: JSON.parse(temp) }
+                })
+            }
+        })
+    editor.use(ModulePlugin, {engine, modules})
+
     const langCore = await LangRpc.getLangCore(websocket)
     const lang = await LangRpc.getLang(websocket)
-    generateCoreNodes(langCore, lang, editor, engine)
+    const extra = await LangRpc.getExtraInfo(websocket)
+    generateCoreNodes(langCore, lang, extra, editor, engine)
 
 
     const defaultFileMenu = {
@@ -48,6 +62,7 @@ import {Component} from "rete/types"
         },
         save() {
             console.log(ctx.save())
+            modules[`${filePrefix}${ctx.ctxFile}`] = { data: editor.toJSON() }
         },
         close() {
             ctx.close()
@@ -55,32 +70,43 @@ import {Component} from "rete/types"
         // delete() { // TODO:
         // }
     }
-    const currentFileMenu = {}
 
     const filesMenu = {
-        'current file': currentFileMenu,
         // create() {
         //     throw "not implemented" // TODO:
         // }
     }
-    const filePrefix = './'
-    const refreshFilesList = () => {
-        ctx.refreshFilesList().then((files) => {
-            for (const k of Object.keys(filesMenu)) {
-                if (k.startsWith(filePrefix))
-                    delete filesMenu[k]
+    const modulesMenu = {}
+
+    const refreshFilesList = (menu, type) => {
+        ctx.refreshFilesList(type).then((files) => {
+            for (const k of Object.keys(menu)) {
+                if (k.startsWith(filePrefix)) {
+                    delete menu[k]
+                    delete modules[k]
+                }
             }
             if (!files)
                 return
-            for (const fn of files)
-                filesMenu[`${filePrefix}${fn}`] = {
+            for (const fn of files) {
+                ctx.getFileData(fn, type).then((data) => {
+                    modules[`${filePrefix}${fn}`] = { data: JSON.parse(data) }
+                })
+                menu[`${filePrefix}${fn}`] = {
                     load() {
-                        ctx.loadFile(fn)
+                        ctx.loadFile(fn, type)
                     },
                 }
+            }
         })
     }
-    filesMenu['refresh list'] = refreshFilesList
+    const refreshFiles = function() { refreshFilesList(filesMenu, FileType.Script) }
+    const refreshModules = function() { refreshFilesList(modulesMenu, FileType.Module) }
+
+    filesMenu['refresh list'] = refreshFiles
+    modulesMenu['refresh list'] = refreshModules
+
+    const currentFileMenu = {}
 
     ctx.onCurrentNameChange.subscribe((val) => {
         for (let key of Object.keys(currentFileMenu)) {
@@ -106,7 +132,9 @@ import {Component} from "rete/types"
                 console.log(dasCtx.code)
                 dasCtx.logErrors()
             },
-            files: filesMenu
+            'current file': currentFileMenu,
+            files: filesMenu,
+            modules: modulesMenu
         },
         allocate(component: Component) {
             return (<LangComponent>component).group
@@ -142,6 +170,7 @@ import {Component} from "rete/types"
         }
     }
 
-    refreshFilesList()
+    refreshFiles()
+    refreshModules()
     await ctx.firstStart()
 })()

@@ -169,8 +169,51 @@ export class CheckBoxControl extends Rete.Control {
 const VueComboBoxControl = {
     props: ['readonly', 'emitter', 'ikey', 'keys', 'getData', 'putData'],
     template: '<select :value="value" v-on:change="change($event)" @dblclick.stop="" @pointerdown.stop="" @pointermove.stop="">\n' +
-        '   <option v-for="(v,k,i) of keys" :selected="i==0">{{ k }}</option>\n' +
+        '   <option v-for="(v,i) of keys" :selected="i==0">{{ v }}</option>\n' +
         '</select>',
+    data() {
+        return {value: "",}
+    },
+    methods: {
+        change(e) {
+            this.value = e.target.value
+            this.update()
+            this.onChange()
+        },
+        update() {
+            if (this.ikey)
+                this.putData(this.ikey, this.value)
+            this.emitter.trigger('process')
+        },
+        onChange() { console.assert() }
+    },
+    mounted() {
+        this.value = this.getData(this.ikey)
+    }
+}
+
+export class ComboBoxControl extends Rete.Control {
+    component: any
+    props: { [key: string]: unknown }
+    vueContext: any
+
+    constructor(emitter: NodeEditor | null, key: string, keys: { [key: string]: any }, readonly: boolean = false) {
+        super(key)
+        this.component = VueComboBoxControl
+        this.props = {emitter, ikey: key, readonly, keys}
+    }
+
+    setValue(val: string) {
+        this.vueContext.value = val
+    }
+}
+
+const VueAutocomplitComboBoxControl = {
+    props: ['readonly', 'emitter', 'ikey', 'keys', 'getData', 'putData'],
+    template: '<div> <input list="combobox_id" :value="value" @change="change($event)" @dblclick.stop="" @pointerdown.stop="" @pointermove.stop=""/>\n' +
+        '<datalist id="combobox_id">\n' +
+        '   <option v-for="(v,i) in keys" :value="v">{{ v }}</option>\n' +
+        '</datalist> </div>',
     data() {
         return {value: "",}
     },
@@ -190,14 +233,14 @@ const VueComboBoxControl = {
     }
 }
 
-export class ComboBoxControl extends Rete.Control {
+export class AutocomplitComboBoxControl extends Rete.Control {
     component: unknown
     props: { [key: string]: unknown }
     vueContext: any
 
     constructor(emitter: NodeEditor | null, key: string, keys: { [key: string]: any }, readonly: boolean = false) {
         super(key)
-        this.component = VueComboBoxControl
+        this.component = VueAutocomplitComboBoxControl
         this.props = {emitter, ikey: key, readonly, keys}
     }
 

@@ -58,6 +58,9 @@ struct LangDesc
     types: table<string; TypeDesc> // mangled name -> TypeDesc
     functions: array<FuncDesc> // FunctionDesc
 
+struct LangExtraInfo
+    funcAnnotations: array<string>
+
 struct DumpContext
     modules: array<string>
     ignoredArgumentTypes: array<string>
@@ -227,6 +230,27 @@ def add_req(var td: TypeDesc; req: string)
         td.requirements |> push <| req
 
 
+def dumpExtra(ctx: DumpContext; path: string)
+    var extra: LangExtraInfo
+
+    for modName in ctx.modules
+        var mod = getModule(modName)
+        if mod == null
+            print("[E] module '{modName}' not found")
+            continue
+
+        mod |> module_for_each_annotation <| $(value)
+            if value.isFunctionAnnotation
+                extra.funcAnnotations |> push <| string(value.name)
+
+    fopen(path, "wb") <| $(f)
+        if f == null
+            print("Unable to create file {path}\n")
+            return
+        print("write {path}\n")
+        f |> fwrite(write_json(JV(extra)))
+
+
 def JV(val: LangDesc)
     var types <- [{ for value in values(val.types); JV(value) }]
     defer_delete(types)
@@ -264,6 +288,8 @@ def JV(val: FuncDesc)
         res["requirements"] = JV(val.requirements)
     return JV(res)
 
+def JV(val: LangExtraInfo)
+    return JV({{"funcAnnotations"=>JV(val.funcAnnotations)}})
 
 def removePrefix(str: string; prefix: string; showError = true)
     if str |> starts_with(prefix)
