@@ -37,7 +37,7 @@ import {Component} from "rete/types"
     //     itemClass: 'dock-item', // default: dock-item
     // })
 
-    var modules = {}
+    const modules = {}
     const filePrefix = './'
 
     for (const type in FileType)
