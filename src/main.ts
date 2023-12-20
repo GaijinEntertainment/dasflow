@@ -128,9 +128,10 @@ import {Component} from "rete/types"
     editor.use(ContextMenuPlugin, {
         items: {
             'show code'() {
-                const dasCtx = ctx.constructDas()
-                console.log(dasCtx.code)
-                dasCtx.logErrors()
+                ctx.constructDas().then((dasCtx) => {
+                    console.log(dasCtx.code)
+                    dasCtx.logErrors()
+                })
             },
             'current file': currentFileMenu,
             files: filesMenu,

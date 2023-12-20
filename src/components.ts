@@ -169,7 +169,7 @@ export function generateCoreNodes(langCore: LangCoreDesc, lang: LangDesc, extra:
 
     const comps: Component[] = [new InjectTopLevelCode(), new InjectCode(), new Sequence(), new Var(langCtx),
         new Function(langCtx), new If(langCtx), new While(langCtx), new For(langCtx), new ModuleComponent(),
-        new InputComponent(langCtx), new OutputComponent(langCtx)]
+        new InputComponent(langCtx), new OutputComponent(langCtx), new InputFlowComponent(), new OutputFlowComponent()]
 
     for (const coreType of coreTypes.values()) {
         if (langCore.voidTypes.indexOf(coreType.mn) >= 0 || langCore.anyTypes.indexOf(coreType.mn) >= 0)
@@ -321,8 +321,13 @@ export abstract class LangComponent extends Rete.Component {
         if (!nextNode)
             return false
         const component = <LangComponent>ctx.editor.components.get(nextNode.name)
-        component.constructDas(nextNode, ctx)
+        component.initDasFlowOut(nextNode, out, ctx)
         return true
+    }
+
+    initDasFlowOut(node: Node, out: Output, ctx: ConstructDasCtx) {
+        const component = <LangComponent>ctx.editor.components.get(node.name)
+        component.constructDas(node, ctx)
     }
 }
 
@@ -486,6 +491,27 @@ export class LangFunc extends LangComponent {
 }
 
 
+export class InputFlowComponent extends LangComponent {
+    constructor() {
+        super("InputFlow")
+        // @ts-ignore
+        this.module = {
+            nodeType: 'input',
+            socket: flowSocket
+        }
+    }
+
+    async builder(node) {
+        this.addFlowOut(node, 'output')
+        node.addControl(new LabelControl(this.editor, 'name'))
+    }
+
+    constructDasNode(node: Node, ctx: ConstructDasCtx): void {
+        console.assert()
+    }
+}
+
+
 export class InputComponent extends LangComponent {
     private readonly langCtx: LangCtx
 
@@ -534,7 +560,56 @@ export class InputComponent extends LangComponent {
             nodeRef.update()
     }
 
+    initOptionalInNode(node: Node, parentNode: Node, name: string, ctx: ConstructDasCtx): Node | null {
+        let parentModule = ctx.curModule
+        if (parentModule == null) {
+            ctx.addGlobalError('Input node is not in module')
+            return null
+        }
+
+        ctx.endModule()
+        let nextNode = LangComponent.constructOptionalInNode(parentModule, `${node.data.name}`, ctx)
+        ctx.startModule(parentModule)
+        return nextNode
+    }
+
     constructDasNode(node: Node, ctx: ConstructDasCtx): void {
+        console.assert()
+    }
+}
+
+
+export class OutputFlowComponent extends LangComponent {
+    public parentNode: Node | undefined
+
+    constructor() {
+        super("OutputFlow")
+        // @ts-ignore
+        this.module = {
+            nodeType: 'output',
+            socket: flowSocket
+        }
+    }
+
+    async builder(node) {
+        this.addFlowIn(node, 'input')
+        node.addControl(new LabelControl(this.editor, 'name'))
+    }
+
+    initDasFlowOut(node: Node, out: Output, ctx: ConstructDasCtx): void {
+        let parentModule = ctx.curModule
+        if (parentModule == null) {
+            ctx.addGlobalError('OutputFlow node is not in module')
+            return
+        }
+
+        ctx.endModule()
+        LangComponent.constructDasFlowOut(parentModule, ctx, `${node.data.name}`)
+        ctx.startModule(parentModule)
+    }
+
+    constructDasNode(node: Node, ctx: ConstructDasCtx): void {
+        console.assert()
     }
 }
 
@@ -591,6 +666,7 @@ export class OutputComponent extends LangComponent {
     }
 
     constructDasNode(node: Node, ctx: ConstructDasCtx): void {
+        console.assert()
     }
 }
 
@@ -615,15 +691,38 @@ export class ModuleComponent extends LangComponent {
 
     updateModuleSockets(node) { console.assert() }
 
-    // change(node, item) {
-    //     if (!this.editor)
-    //         return false
+    initOptionalInNode(node: Node, parentNode: Node, name: string, ctx: ConstructDasCtx): Node | null {
+        const inValue = parentNode.inputs.get(name)
+        if (!inValue || inValue.connections.length == 0) {
+            return null
+        }
 
-    //     node.data.module = item;
-    //     this.editor.trigger('process')
-    // }
+        let outputName = inValue.connections[0].output.name
+
+        let nodes = ctx.getModuleNodes.call(ctx.ctx, node.data.module)
+        let outputNode = nodes.find((item) => item.name == 'Output' && item.data.name == outputName)
+
+        ctx.startModule(node)
+        let nextNode = LangComponent.constructOptionalInNode(outputNode, `input`, ctx)
+
+        ctx.endModule()
+        return nextNode
+    }
+
+    initDasFlowOut(node: Node, out: Output, ctx: ConstructDasCtx): void {
+        let inputKey = out.connections[0].input.key
+
+        let nodes = ctx.getModuleNodes.call(ctx.ctx, node.data.module)
+        let inputFlowNode = nodes.find((item) => item.name == 'InputFlow' && item.data.name == inputKey)
+
+        ctx.startModule(node)
+        LangComponent.constructDasFlowOut(inputFlowNode, ctx, 'output')
+
+        ctx.endModule()
+    }
 
     constructDasNode(node: Node, ctx: ConstructDasCtx): void {
+        console.assert()
     }
 }
 
@@ -1263,6 +1362,21 @@ export class ConstructDasCtx {
         return this._indenting;
     }
 
+    get curModule(): Node | null {
+        const len = this._curModule.length
+        if (len == 0)
+            return null
+        return this._curModule[len - 1]
+    }
+
+    startModule(node: Node) {
+        this._curModule.push(node)
+    }
+
+    endModule() {
+        this._curModule.pop()
+    }
+
     readonly editor: NodeEditor
     private _indenting = ""
     private _code = ""
@@ -1277,12 +1391,19 @@ export class ConstructDasCtx {
     private linesCount = 3
     private mainFunctions = new Array<string>()
 
-    constructor(editor: NodeEditor) {
+    private _curModule: Node[]
+    public ctx: any
+    getModuleNodes(name) { console.assert() }
+
+    constructor(editor: NodeEditor, outerFunc, ctx) {
         this.editor = editor
+        this._curModule = []
+        this.getModuleNodes = outerFunc
+        this.ctx = ctx
     }
 
     getChild(extraIndent = '\t'): ConstructDasCtx {
-        let res = new ConstructDasCtx(this.editor)
+        let res = new ConstructDasCtx(this.editor, this.getModuleNodes, this.ctx)
         res._indenting = this._indenting + extraIndent
         res.errors = this.errors
         res.lazyInited = this.lazyInited
@@ -1290,6 +1411,7 @@ export class ConstructDasCtx {
         res.nodeResults = this.nodeResults
         res.processedNodes = this.processedNodes
         res.requiredNodes = this.requiredNodes
+        res._curModule = this._curModule
         return res
     }
 
