@@ -561,7 +561,7 @@ export class InputComponent extends LangComponent {
     }
 
     initOptionalInNode(node: Node, parentNode: Node, name: string, ctx: ConstructDasCtx): Node | null {
-        let parentModule = ctx.curModule
+        let parentModule = ctx.currentModule
         if (parentModule == null) {
             ctx.addGlobalError('Input node is not in module')
             return null
@@ -597,7 +597,7 @@ export class OutputFlowComponent extends LangComponent {
     }
 
     initDasFlowOut(node: Node, out: Output, ctx: ConstructDasCtx): void {
-        let parentModule = ctx.curModule
+        let parentModule = ctx.currentModule
         if (parentModule == null) {
             ctx.addGlobalError('OutputFlow node is not in module')
             return
@@ -1362,19 +1362,19 @@ export class ConstructDasCtx {
         return this._indenting;
     }
 
-    get curModule(): Node | null {
-        const len = this._curModule.length
+    get currentModule(): Node | null {
+        const len = this._currentModule.length
         if (len == 0)
             return null
-        return this._curModule[len - 1]
+        return this._currentModule[len - 1]
     }
 
     startModule(node: Node) {
-        this._curModule.push(node)
+        this._currentModule.push(node)
     }
 
     endModule() {
-        this._curModule.pop()
+        this._currentModule.pop()
     }
 
     readonly editor: NodeEditor
@@ -1391,13 +1391,13 @@ export class ConstructDasCtx {
     private linesCount = 3
     private mainFunctions = new Array<string>()
 
-    private _curModule: Node[]
+    private _currentModule: Node[]
     public ctx: any
     getModuleNodes(name) { console.assert() }
 
     constructor(editor: NodeEditor, outerFunc, ctx) {
         this.editor = editor
-        this._curModule = []
+        this._currentModule = []
         this.getModuleNodes = outerFunc
         this.ctx = ctx
     }
@@ -1411,7 +1411,7 @@ export class ConstructDasCtx {
         res.nodeResults = this.nodeResults
         res.processedNodes = this.processedNodes
         res.requiredNodes = this.requiredNodes
-        res._curModule = this._curModule
+        res._currentModule = this._currentModule
         return res
     }
 
