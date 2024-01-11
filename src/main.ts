@@ -15,6 +15,21 @@ import {LangRpc, FileType} from "./rpc"
 import {Component} from "rete/types"
 
 
+function enterUniqueFileName(files, fileSuffix = '.dasflow'): string | null {
+    let enteredName = prompt("Please enter new file name", "")
+    if (enteredName == null)
+        return null
+
+    enteredName += fileSuffix
+    if (files.includes(enteredName)) {
+        alert("File with this name already exists")
+        return null
+    }
+
+    return enteredName
+}
+
+
 (async function () {
 
     const websocket = new JsonRpcWebsocket("ws://localhost:9000", 2000,
@@ -67,15 +82,9 @@ import {Component} from "rete/types"
         close() {
             ctx.close()
         },
-        // delete() { // TODO:
-        // }
     }
 
-    const filesMenu = {
-        // create() {
-        //     throw "not implemented" // TODO:
-        // }
-    }
+    const filesMenu = {}
     const modulesMenu = {}
 
     const refreshFilesList = (menu, type) => {
@@ -92,9 +101,29 @@ import {Component} from "rete/types"
                 ctx.getFileData(fn, type).then((data) => {
                     modules[`${filePrefix}${fn}`] = { data: JSON.parse(data) }
                 })
+
+                menu['create new'] = () => {
+                    let enteredName = enterUniqueFileName(files)
+                    if (enteredName == null)
+                        return
+                    ctx.create(enteredName, type)
+                    refreshFilesList(menu, type)
+                }
+
                 menu[`${filePrefix}${fn}`] = {
                     load() {
                         ctx.loadFile(fn, type)
+                    },
+                    rename() {
+                        let newName = enterUniqueFileName(files)
+                        if (newName == null)
+                            return
+                        ctx.rename(newName, fn, type)
+                        refreshFilesList(menu, type)
+                    },
+                    delete() {
+                        ctx.delete(fn, type)
+                        refreshFilesList(menu, type)
                     },
                 }
             }

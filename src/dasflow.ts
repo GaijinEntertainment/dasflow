@@ -5,6 +5,7 @@ import {SubEvent} from 'sub-events'
 import {ConstructDasCtx, LangComponent} from "./components"
 import {deepClone} from "./deep_clone"
 
+
 export class DasflowContext {
     EDITOR_VER = 'dasflow@0.0.1'
 
@@ -21,6 +22,10 @@ export class DasflowContext {
 
     public get ctxFile(): string {
         return this._currentFile
+    }
+
+    public get ctxType(): string {
+        return this.type
     }
 
     private readonly websocket: JsonRpcWebsocket
@@ -60,11 +65,16 @@ export class DasflowContext {
             if (node.name != 'Module')
                 continue
 
+            if (this.modulesNodes.has(node.data.module))
+                continue
+
             let data = await this.getFileData(node.data.module, FileType.Module)
 
             if (data == "null") {
-                return []
+                this.modulesNodes.set(node.data.module, [])
+                continue
             }
+
             const curNodesCtx = this.editor.toJSON() // nodes + comments
             await this.editor.fromJSON(JSON.parse(data))
 
@@ -92,6 +102,14 @@ export class DasflowContext {
             this.currentFile = path
         })
         return res
+    }
+
+    create(newName: string, fileType: string): Promise<boolean> {
+        return FilesRpc.create(this.websocket, this.editor, newName, fileType)
+    }
+
+    rename(newName: string, oldName: string, fileType: string): Promise<boolean> {
+        return FilesRpc.rename(this.websocket, newName, oldName, fileType)
     }
 
     getFileData(path: string, fileType: string): Promise<string> {
@@ -178,5 +196,13 @@ export class DasflowContext {
         this.currentFile = ""
         this.type = FileType.None
         this.editor.clear()
+    }
+
+    async delete(path: string, fileType: string): Promise<boolean> {
+        return FilesRpc.deleteFile(this.websocket, path, fileType).then(ok => {
+            if (path == this.currentFile)
+                this.close()
+            return ok
+        })
     }
 }

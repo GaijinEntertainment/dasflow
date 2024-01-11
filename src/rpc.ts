@@ -52,6 +52,18 @@ export namespace FilesRpc {
             return String(res.result)
         })
     }
+
+    export async function create(ws: JsonRpcWebsocket, editor: NodeEditor, path: string, type: string): Promise<boolean> {
+        return ws.call('files.create', [editor.id, path, type]).then(res => <boolean>res.result)
+    }
+
+    export async function rename(ws: JsonRpcWebsocket, newPath: string, path: string, type: string): Promise<boolean> {
+        return ws.call('files.rename', [newPath, path, type]).then(res => <boolean>res.result)
+    }
+
+    export async function deleteFile(ws: JsonRpcWebsocket, path: string, type: string): Promise<boolean> {
+        return ws.call('files.delete', [path, type]).then(res => <boolean>res.result)
+    }
 }
 
 export namespace LangRpc {
