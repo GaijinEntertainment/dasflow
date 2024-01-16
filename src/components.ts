@@ -827,7 +827,6 @@ export class For extends LangComponent {
 
     private addArgInput(node, i: number) {
         const argInput = new Rete.Input(`range${i}`, `Range ${i + 1}`, this.langCtx.anyType.getSocket(), false)
-        argInput.addControl(new LangTypeSelectControl(this.editor, 'typeName', this.langCtx.allTypes))
         node.addInput(argInput)
     }
 
@@ -840,7 +839,7 @@ export class For extends LangComponent {
     private getInType(node, argInput, i: number) {
         let inType: LangType | undefined
         if (argInput) {
-            if (argInput.showControl()) {
+            if (!argInput.hasConnection()) {
                 node.data.typeName[i] = this.langCtx.anyType.getSocket().typeName
                 inType = this.langCtx.anyType
             } else {
@@ -943,15 +942,22 @@ export class For extends LangComponent {
         let index_part = 'for '
         let range_part = ' in '
 
-        for (let i = 0; i < node.inputs.size - 1; i++) { //TODO: correct code when inputs.size - 1 = 0
+        let isRangeExists = false
+
+        for (let i = 0; i < node.inputs.size - 1; i++) {
             const inNode = LangComponent.constructInNode(node, `range${i}`, ctx)
             if (!inNode)
                 continue
+
+            isRangeExists = true
 
             index_part += `x${i}_${node.id}, `
             const component = <LangComponent>ctx.editor.components.get(inNode.name)
             range_part += `${component.getInputArgName(node, `range${i}`, inNode, ctx)}, `
         }
+
+        if (!isRangeExists)
+            return
 
         ctx.writeLine(node, index_part.slice(0, -2) + range_part.slice(0, -2))
 
@@ -984,9 +990,6 @@ export class Function extends LangComponent {
 
         node.addControl(new NumControl(this.editor, 'numArgs'))
 
-        if(node.data.typeName == null)
-            node.data.typeName = []
-
         const numArgs = node.data.numArgs ?? 0
         for (let i = 0; i < numArgs; i++) {
             this.addArgInput(node, i)
@@ -996,22 +999,27 @@ export class Function extends LangComponent {
 
     private addArgInput(node, i: number) {
         const argInput = new Rete.Input(`arg${i}`, `Argument ${i + 1}`, this.langCtx.anyType.getSocket(), false)
-        argInput.addControl(new LangTypeSelectControl(this.editor, 'typeName', this.langCtx.allTypes))
+        argInput.addControl(new LangTypeSelectControl(this.editor, `typeName${i}`, this.langCtx.allTypes))
         node.addInput(argInput)
     }
 
     private addArgOutput(node, i: number) {
-        const type = node.data.typeName[i] ? this.langCtx.getType(node.data.typeName[i]) ?? this.langCtx.anyType : this.langCtx.anyType
+        const type = node.data[`typeName${i}`] ? this.langCtx.getType(node.data[`typeName${i}`]) ?? this.langCtx.anyType : this.langCtx.anyType
         const argOutput = new Rete.Output(`out${i}`, `Output ${i + 1}`, type.getSocket(), true)
         node.addOutput(argOutput)
     }
 
-    private getInType(node, argInput, i: number) {
+    private getInType(node, argInput) {
         let inType: LangType | undefined
         if (argInput) {
             if (argInput.showControl()) {
-                node.data.typeName[i] = this.langCtx.anyType.getSocket().typeName
-                inType = this.langCtx.anyType
+                const argControl = <LangTypeSelectControl>argInput.control
+                if (argControl.vueContext !== undefined) {
+                    const controlVal = argControl.getValue()
+                    inType = this.langCtx.allTypes.get(controlVal)
+                } else {
+                    inType = this.langCtx.anyType
+                }
             } else {
                 const connection = argInput.connections[0]
                 inType = this.langCtx.getType((<LangSocket>connection.output.socket).typeName)
@@ -1035,7 +1043,7 @@ export class Function extends LangComponent {
                             this.editor?.removeConnection(connection)
                     }
                 }
-                node.data.typeName[i] = (<LangSocket>result.socket).typeName
+                node.data[`typeName${i}`] = (<LangSocket>result.socket).typeName
             }
     }
 
@@ -1047,7 +1055,7 @@ export class Function extends LangComponent {
             for (let i = numArgs; i < reqNumArgs; i++) {
                 this.addArgInput(nodeRef, i)
                 this.addArgOutput(nodeRef, i)
-                node.data.typeName.push(this.langCtx.anyType.getSocket().typeName)
+                node.data[`typeName${i}`] = this.langCtx.anyType.getSocket().typeName
             }
             return true
         } else if (numArgs > reqNumArgs) {
@@ -1064,7 +1072,7 @@ export class Function extends LangComponent {
                         this.editor.removeConnection(conn)
                     nodeRef.removeOutput(argOutput)
                 }
-                node.data.typeName.pop()
+                delete node.data[`typeName${i}`]
             }
             return true
         }
@@ -1090,13 +1098,19 @@ export class Function extends LangComponent {
         for (let i = 0; i < reqNumArgs; i++) {
             let inType: LangType | undefined
             const argInput = nodeRef.inputs.get(`arg${i}`)
-            inType = this.getInType(node, argInput, i)
+            inType = this.getInType(node, argInput)
 
             this.setOutType(node, inType, nodeRef, i)
             updateNode = true
         }
         if (updateNode)
             nodeRef.update()
+    }
+
+    getInputArgName(node, argName, inNode, ctx): string {
+        let inValue = node.inputs.get(argName)
+        let i = inValue.connections[0].output.key[3]
+        return `${ctx.nodeId(inNode)}_${i}`
     }
 
     initOptionalInNode(node: Node, parentNode: Node, name: string, ctx: ConstructDasCtx): Node | null {
@@ -1107,7 +1121,7 @@ export class Function extends LangComponent {
 
         const i = inValue.connections[0].output.key[3];
         const inChildNode = LangComponent.constructOptionalInNode(node, `arg${i}`, ctx)
-        return inChildNode
+        return inChildNode == null ? node : inChildNode
     }
 
     constructDas(node, ctx): void {
@@ -1116,8 +1130,16 @@ export class Function extends LangComponent {
         const argNames = new Set<string>()
         for (let i = 0; i < numArgs; i++) {
             let inNode = LangComponent.constructOptionalInNode(node, `arg${i}`, ctx)
-            if (!inNode)
+
+            if (!inNode) {
+                const inType = this.langCtx.getType(<string>node.data[`typeName${i}`])
+                if (inType)
+                    args.push(`${ctx.nodeId(node)}_${i}: ${inType.desc.typeName}`)
+                else
+                    args.push(`${ctx.nodeId(node)}_${i}`)
+
                 continue // constructInNode adds an error
+            }
 
             let childStr
 
