@@ -3,6 +3,7 @@ import {NodeEditor} from "rete/types/editor"
 import {FilesRpc, SaveResult, FileType} from "./rpc"
 import {SubEvent} from 'sub-events'
 import {ConstructDasCtx, LangComponent} from "./components"
+import {deepClone} from "./deep_clone"
 
 
 export class DasflowContext {
@@ -23,12 +24,17 @@ export class DasflowContext {
         return this._currentFile
     }
 
+    public get ctxType(): string {
+        return this.type
+    }
+
     private readonly websocket: JsonRpcWebsocket
     public editor: NodeEditor
     private _currentFile = 'demo.dasflow'
     private type = FileType.Script
     private logComments = new Set()
     private compileComments = new Set()
+    private modulesNodes = new Map<string, Node[]>()
 
 
     constructor(websocket: JsonRpcWebsocket) {
@@ -54,7 +60,40 @@ export class DasflowContext {
         comments.clear()
     }
 
-    async loadFile(path: string, fileType: string): Promise<boolean> {
+    async getAllModulesData(nodes) {
+        for (const node of nodes) {
+            if (node.name != 'Module')
+                continue
+
+            if (this.modulesNodes.has(node.data.module))
+                continue
+
+            let data = await this.getFileData(node.data.module, FileType.Module)
+
+            if (data == "null") {
+                this.modulesNodes.set(node.data.module, [])
+                continue
+            }
+
+            const curNodesCtx = this.editor.toJSON() // nodes + comments
+            await this.editor.fromJSON(JSON.parse(data))
+
+            const nodes: Node[] = []
+            for (let node of this.editor.nodes) {
+                if (node.name == 'Input' || node.name == 'InputFlow' || node.name == 'Output' || node.name == 'OutputFlow')
+                    nodes.push(deepClone(node))
+            }
+            this.modulesNodes.set(node.data.module, nodes)
+
+            await this.editor.fromJSON(curNodesCtx)
+        }
+    }
+
+    getModuleNodes(name: string) {
+        return this.modulesNodes.get(name)
+    }
+
+    loadFile(path: string, fileType: string): Promise<boolean> {
         this.compileComments.clear()
         this.logComments.clear()
         let res = FilesRpc.load(this.websocket, this.editor, path, fileType)
@@ -65,8 +104,16 @@ export class DasflowContext {
         return res
     }
 
-    async getFileData(path: string, fileType: string): Promise<string> {
-        return FilesRpc.getData(this.websocket, this.editor, path, fileType)
+    create(newName: string, fileType: string): Promise<boolean> {
+        return FilesRpc.create(this.websocket, this.editor, newName, fileType)
+    }
+
+    rename(newName: string, oldName: string, fileType: string): Promise<boolean> {
+        return FilesRpc.rename(this.websocket, newName, oldName, fileType)
+    }
+
+    getFileData(path: string, fileType: string): Promise<string> {
+        return FilesRpc.getData(this.websocket, path, fileType)
     }
 
     async reload(): Promise<boolean> {
@@ -75,8 +122,10 @@ export class DasflowContext {
         return FilesRpc.load(this.websocket, this.editor, this.currentFile, this.type)
     }
 
-    constructDas(): ConstructDasCtx {
-        const ctx = new ConstructDasCtx(this.editor)
+    async constructDas(): Promise<ConstructDasCtx> {
+        const ctx = new ConstructDasCtx(this.editor, this.getModuleNodes, this)
+        await this.getAllModulesData(this.editor.nodes)
+
         for (const node of this.editor.nodes) {
             let component = <LangComponent>this.editor.components.get(node.name)
             if (component.topLevel)
@@ -99,7 +148,7 @@ export class DasflowContext {
         this.deleteComments(this.logComments)
         this.deleteComments(this.compileComments)
 
-        const dasCtx = this.constructDas()
+        const dasCtx = await this.constructDas()
         const hasErrors = dasCtx.hasErrors()
         if (hasErrors) {
             dasCtx.logErrors()
@@ -147,5 +196,13 @@ export class DasflowContext {
         this.currentFile = ""
         this.type = FileType.None
         this.editor.clear()
+    }
+
+    async delete(path: string, fileType: string): Promise<boolean> {
+        return FilesRpc.deleteFile(this.websocket, path, fileType).then(ok => {
+            if (path == this.currentFile)
+                this.close()
+            return ok
+        })
     }
 }

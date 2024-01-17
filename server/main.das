@@ -104,6 +104,43 @@ def files_load(filePath: string; fileType: string; id: uint64)
         send_response(JVNull(), id)
 
 
+[auto_rpc_call(name="files.delete")]
+def files_delete(filePath: string; fileType: string; id: uint64)
+    let path = get_folder(fileType) + filePath
+    print("< req delete data `{path}`\n")
+
+    var deleteOkay = false
+    deleteOkay = remove(path)
+    send_response(JV(deleteOkay), id)
+
+
+[auto_rpc_call(name="files.create")]
+def files_create(editorId: string; filePath: string; fileType: string; id: uint64)
+    let path = get_folder(fileType) + filePath
+    print("< req create data `{path}`\n")
+
+    var createOkay = false
+    fopen(path, "wb") <| $(f)
+        if f != null
+            createOkay = true
+            f |> fwrite("// ")
+            f |> fwrite("\{\"id\":\"{editorId}\",\"nodes\":\{\},\"comments\":[]}")
+            f |> fwrite("\n// ")
+
+    send_response(JV(createOkay), id)
+
+
+[auto_rpc_call(name="files.rename")]
+def files_rename(newFilePath: string; filePath: string; fileType: string; id: uint64)
+    let path = get_folder(fileType) + filePath
+    let newPath = get_folder(fileType) + newFilePath
+    print("< req rename data `{path}` to `{newPath}`\n")
+
+    var renameOkay = false
+    renameOkay = rename(path, newPath)
+    send_response(JV(renameOkay), id)
+
+
 [auto_rpc_call(name="files.save")]
 def files_save(filePath: string; fileType: string; data: string; code: string; metaInfo: string; id: uint64)
     let path = get_folder(fileType) + filePath

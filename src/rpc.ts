@@ -47,10 +47,22 @@ export namespace FilesRpc {
         return ws.call('files.save', [path, type, data, code, mainFunc]).then(res => <SaveResult>res.result)
     }
 
-    export async function getData(ws: JsonRpcWebsocket, editor: NodeEditor, path: string, type: string): Promise<string> {
+    export async function getData(ws: JsonRpcWebsocket, path: string, type: string): Promise<string> {
         return ws.call('files.load', [path, type]).then(res => {
             return String(res.result)
         })
+    }
+
+    export async function create(ws: JsonRpcWebsocket, editor: NodeEditor, path: string, type: string): Promise<boolean> {
+        return ws.call('files.create', [editor.id, path, type]).then(res => <boolean>res.result)
+    }
+
+    export async function rename(ws: JsonRpcWebsocket, newPath: string, path: string, type: string): Promise<boolean> {
+        return ws.call('files.rename', [newPath, path, type]).then(res => <boolean>res.result)
+    }
+
+    export async function deleteFile(ws: JsonRpcWebsocket, path: string, type: string): Promise<boolean> {
+        return ws.call('files.delete', [path, type]).then(res => <boolean>res.result)
     }
 }
 
